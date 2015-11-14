@@ -1,0 +1,1653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated file, do not edit -->
+<!-- Copyright 2015 Google Inc. All Rights Reserved -->
+<wsdl:definitions
+  targetNamespace="https://www.google.com/apis/ads/publisher/v201502"
+  xmlns:tns="https://www.google.com/apis/ads/publisher/v201502"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <schema elementFormDefault="qualified" jaxb:version="1.0"
+      targetNamespace="https://www.google.com/apis/ads/publisher/v201502"
+      xmlns="http://www.w3.org/2001/XMLSchema"
+      xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="https://www.google.com/apis/ads/publisher/v201502">
+      <annotation>
+        <appinfo>
+          <jaxb:globalBindings typesafeEnumMaxMembers="999999"/>
+        </appinfo>
+      </annotation>
+      <complexType abstract="true" name="ObjectValue">
+        <annotation>
+          <documentation>
+            Contains an object value.
+            &lt;p&gt;
+            &lt;b&gt;This object is experimental!
+            &lt;code&gt;ObjectValue&lt;/code&gt; is an experimental, innovative, and rapidly
+            changing new feature for DFP. Unfortunately, being on the bleeding edge means that we may make
+            backwards-incompatible changes to
+            &lt;code&gt;ObjectValue&lt;/code&gt;. We will inform the community when this feature
+            is no longer experimental.&lt;/b&gt;
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType abstract="true" name="ApiError">
+        <annotation>
+          <documentation>
+            The API error base class that provides details about an error that occurred
+            while processing a service request.
+            
+            &lt;p&gt;The OGNL field path is provided for parsers to identify the request data
+            element that may have caused the error.&lt;/p&gt;
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="fieldPath" type="xsd:string">
+            <annotation>
+              <documentation>
+                The OGNL field path to identify cause of error.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="trigger" type="xsd:string">
+            <annotation>
+              <documentation>
+                The data that caused the error.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="errorString" type="xsd:string">
+            <annotation>
+              <documentation>
+                A simple string representation of the error and reason.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ApiException">
+        <annotation>
+          <documentation>
+            Exception class for holding a list of service errors.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApplicationException">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="errors" type="tns:ApiError">
+                <annotation>
+                  <documentation>
+                    List of errors.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ApiVersionError">
+        <annotation>
+          <documentation>
+            Errors related to the usage of API versions.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:ApiVersionError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ApplicationException">
+        <annotation>
+          <documentation>
+            Base class for exceptions.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="message" type="xsd:string">
+            <annotation>
+              <documentation>
+                Error message.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ApproveSharedAdUnits">
+        <annotation>
+          <documentation>
+            Action to approve shared ad units.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:SharedAdUnitAction">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="AuthenticationError">
+        <annotation>
+          <documentation>
+            An error for an exception that occurred when authenticating.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:AuthenticationError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="BooleanValue">
+        <annotation>
+          <documentation>
+            Contains a boolean value.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="value" type="xsd:boolean">
+                <annotation>
+                  <documentation>
+                    The boolean value.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="CollectionSizeError">
+        <annotation>
+          <documentation>
+            Error for the size of the collection being too large
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:CollectionSizeError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="CommonError">
+        <annotation>
+          <documentation>
+            A place for common errors that can be used across services.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:CommonError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="Date">
+        <annotation>
+          <documentation>
+            Represents a date.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="year" type="xsd:int">
+            <annotation>
+              <documentation>
+                Year (e.g., 2009)
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="month" type="xsd:int">
+            <annotation>
+              <documentation>
+                Month (1..12)
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="day" type="xsd:int">
+            <annotation>
+              <documentation>
+                Day (1..31)
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="DateTime">
+        <annotation>
+          <documentation>
+            Represents a date combined with the time of day.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="date" type="tns:Date"/>
+          <element maxOccurs="1" minOccurs="0" name="hour" type="xsd:int"/>
+          <element maxOccurs="1" minOccurs="0" name="minute" type="xsd:int"/>
+          <element maxOccurs="1" minOccurs="0" name="second" type="xsd:int"/>
+          <element maxOccurs="1" minOccurs="0" name="timeZoneID" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="DateTimeValue">
+        <annotation>
+          <documentation>
+            Contains a date-time value.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="value" type="tns:DateTime">
+                <annotation>
+                  <documentation>
+                    The {@code DateTime} value.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="DateValue">
+        <annotation>
+          <documentation>
+            Contains a date value.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="value" type="tns:Date">
+                <annotation>
+                  <documentation>
+                    The {@code Date} value.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="FeatureError">
+        <annotation>
+          <documentation>
+            Errors related to feature management.  If you attempt using a feature that is not available to
+            the current network you'll receive a FeatureError with the missing feature as the trigger.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:FeatureError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="InternalApiError">
+        <annotation>
+          <documentation>
+            Indicates that a server-side error has occured. {@code InternalApiError}s
+            are generally not the result of an invalid request or message sent by the
+            client.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:InternalApiError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="AdUnitSize">
+        <annotation>
+          <documentation>
+            An {@code AdUnitSize} represents the size of an ad in an ad unit. Starting
+            with v201108 this also represents the environment, and companions of a
+            particular ad in an ad unit. In most cases, it is a simple size with just a
+            width and a height (sometimes representing an aspect ratio).
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="size" type="tns:Size">
+            <annotation>
+              <documentation>
+                The permissible creative size that can be served inside this ad unit.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="environmentType" type="tns:EnvironmentType">
+            <annotation>
+              <documentation>
+                The environment type of the ad unit size. The default value is
+                {@link EnvironmentType#BROWSER}.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="companions" type="tns:AdUnitSize">
+            <annotation>
+              <documentation>
+                The companions for this ad unit size.
+                Companions are only valid if the environment is {@link EnvironmentType#VIDEO_PLAYER}.
+                If the environment is {@link EnvironmentType#BROWSER} including companions
+                results in an error.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="fullDisplayString" type="xsd:string">
+            <annotation>
+              <documentation>
+                The full (including companion sizes, if applicable) display string of the size,
+                e.g. {@code "300x250"} or {@code "300x250v (180x150)"}
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="NotNullError">
+        <annotation>
+          <documentation>
+            Caused by supplying a null value for an attribute that cannot be null.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:NotNullError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="NumberValue">
+        <annotation>
+          <documentation>
+            Contains a numeric value.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="value" type="xsd:string">
+                <annotation>
+                  <documentation>
+                    The numeric value represented as a string.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ParseError">
+        <annotation>
+          <documentation>
+            Lists errors related to parsing.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:ParseError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="PermissionError">
+        <annotation>
+          <documentation>
+            Errors related to incorrect permission.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:PermissionError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="PublisherQueryLanguageContextError">
+        <annotation>
+          <documentation>
+            An error that occurs while executing a PQL query contained in
+            a {@link Statement} object.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:PublisherQueryLanguageContextError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="PublisherQueryLanguageSyntaxError">
+        <annotation>
+          <documentation>
+            An error that occurs while parsing a PQL query contained in a
+            {@link Statement} object.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:PublisherQueryLanguageSyntaxError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="QuotaError">
+        <annotation>
+          <documentation>
+            Describes a client-side error on which a user is attempting
+            to perform an action to which they have no quota remaining.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:QuotaError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="RejectSharedAdUnits">
+        <annotation>
+          <documentation>
+            Action to reject shared ad units.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:SharedAdUnitAction">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ServerError">
+        <annotation>
+          <documentation>
+            Errors related to the server.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:ServerError.Reason"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="SetValue">
+        <annotation>
+          <documentation>
+            Contains a set of {@link Value Values}. May not contain duplicates.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="values" type="tns:Value">
+                <annotation>
+                  <documentation>
+                    The values. They must all be the same type of {@code Value} and not contain duplicates.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType abstract="true" name="SharedAdUnitAction">
+        <annotation>
+          <documentation>
+            Represents the actions that can be performed on {@link SharedAdUnit} objects.
+          </documentation>
+        </annotation>
+        <sequence/>
+      </complexType>
+      <complexType name="SharedAdUnit">
+        <annotation>
+          <documentation>
+            An ad unit that is shared from a distributor network.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="id" type="xsd:long">
+            <annotation>
+              <documentation>
+                The ID of the shared ad unit.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="name" type="xsd:string">
+            <annotation>
+              <documentation>
+                The name of the shared ad unit.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="distributorName" type="xsd:string">
+            <annotation>
+              <documentation>
+                The name of the distribution partner's network name.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0"
+            name="contentProviderAdUnitId" type="xsd:long">
+            <annotation>
+              <documentation>
+                The ID of the {@link AdUnit}, in the content provider network, that this shared ad unit
+                is linked to. If the shared ad unit was never approved, this value will be {@code null}, as
+                there will be no corresponding ad unit within the content provider network.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="status" type="tns:SharedAdUnitStatus">
+            <annotation>
+              <documentation>
+                The status of the shared ad unit.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="targetPlatform" type="tns:TargetPlatform">
+            <annotation>
+              <documentation>
+                The target platform of the ad unit being shared.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="targetWindow" type="tns:AdUnit.TargetWindow">
+            <annotation>
+              <documentation>
+                The target window of the ad unit being shared.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0"
+            name="adUnitSizes" type="tns:AdUnitSize">
+            <annotation>
+              <documentation>
+                The sizes of the ad unit being shared.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="SharedAdUnitPage">
+        <annotation>
+          <documentation>
+            Captures a page of {@link SharedAdUnit} objects.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="totalResultSetSize" type="xsd:int">
+            <annotation>
+              <documentation>
+                The size of the total result set to which this page belongs.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="startIndex" type="xsd:int">
+            <annotation>
+              <documentation>
+                The absolute index in the total result set on which this page begins.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="results" type="tns:SharedAdUnit">
+            <annotation>
+              <documentation>
+                The collection of shared ad units contained within this page.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="Size">
+        <annotation>
+          <documentation>
+            Represents the dimensions of an {@link AdUnit}, {@link LineItem} or {@link Creative}.
+            &lt;p&gt;
+            For interstitial size (out-of-page), native, ignored and fluid size, {@code Size} must be 1x1.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="width" type="xsd:int">
+            <annotation>
+              <documentation>
+                The width of the {@link AdUnit}, {@link LineItem} or {@link Creative}.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="height" type="xsd:int">
+            <annotation>
+              <documentation>
+                The height of the {@link AdUnit}, {@link LineItem} or {@link Creative}.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="isAspectRatio" type="xsd:boolean">
+            <annotation>
+              <documentation>
+                True if this size represents an aspect ratio, false otherwise.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="SoapRequestHeader">
+        <annotation>
+          <documentation>
+            Represents the SOAP request header used by API requests.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="networkCode" type="xsd:string">
+            <annotation>
+              <documentation>
+                The network code to use in the context of a request.
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="1" minOccurs="0" name="applicationName" type="xsd:string">
+            <annotation>
+              <documentation>
+                The name of client library application.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="SoapResponseHeader">
+        <annotation>
+          <documentation>
+            Represents the SOAP request header used by API responses.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="requestId" type="xsd:string"/>
+          <element maxOccurs="1" minOccurs="0" name="responseTime" type="xsd:long"/>
+        </sequence>
+      </complexType>
+      <complexType name="Statement">
+        <annotation>
+          <documentation>
+            Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
+            PQL query. Statements are typically used to retrieve objects of a predefined
+            domain type, which makes SELECT clause unnecessary.
+            &lt;p&gt;
+            An example query text might be {@code "WHERE status = 'ACTIVE' ORDER BY id
+            LIMIT 30"}.
+            &lt;/p&gt;
+            &lt;p&gt;
+            Statements support bind variables. These are substitutes for literals
+            and can be thought of as input parameters to a PQL query.
+            &lt;/p&gt;
+            &lt;p&gt;
+            An example of such a query might be {@code "WHERE id = :idValue"}.
+            &lt;/p&gt;
+            &lt;p&gt;
+            Statements also support use of the LIKE keyword. This provides partial and
+            wildcard string matching.
+            &lt;/p&gt;
+            &lt;p&gt;
+            An example of such a query might be {@code "WHERE name LIKE 'startswith%'"}.
+            &lt;/p&gt;
+            If using an API version newer than V201010, the value for the variable
+            idValue must then be set with an object of type {@link Value} and is one of
+            {@link NumberValue}, {@link TextValue} or {@link BooleanValue}.
+            &lt;p&gt;
+            If using an API version older than or equal to V201010, the value for the
+            variable idValue must then be set with an object of type {@link Param} and is
+            one of {@link DoubleParam}, {@link LongParam} or {@link StringParam}.
+            &lt;/p&gt;
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="query" type="xsd:string">
+            <annotation>
+              <documentation>
+                Holds the query in PQL syntax. The syntax is:&lt;br&gt;
+                &lt;code&gt;[WHERE &lt;condition&gt; {[AND | OR] &lt;condition&gt; ...}]&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;[ORDER BY &lt;property&gt; [ASC | DESC]]&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;[LIMIT {[&lt;offset&gt;,] &lt;count&gt;} | {&lt;count&gt; OFFSET &lt;offset&gt;}]&lt;/code&gt;&lt;br&gt;
+                &lt;p&gt;
+                &lt;code&gt;&lt;condition&gt;&lt;/code&gt;&lt;br&gt;
+                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                &lt;code&gt;:= &lt;property&gt; {&lt; | &lt;= | &gt; | &gt;= | = | != } &lt;value&gt;&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;&lt;condition&gt;&lt;/code&gt;&lt;br&gt;
+                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                &lt;code&gt;:= &lt;property&gt; {&lt; | &lt;= | &gt; | &gt;= | = | != } &lt;bind variable&gt;&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;&lt;condition&gt; := &lt;property&gt; IN &lt;list&gt;&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;&lt;condition&gt; := &lt;property&gt; IS NULL&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;&lt;condition&gt; := &lt;property&gt; LIKE &lt;wildcard%match&gt;&lt;/code&gt;&lt;br&gt;
+                &lt;code&gt;&lt;bind variable&gt; := :&lt;name&gt;&lt;/code&gt;&lt;br&gt;
+                &lt;/p&gt;
+              </documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="values" type="tns:String_ValueMapEntry">
+            <annotation>
+              <documentation>
+                Holds keys and values for bind variables and their values. The key is the
+                name of the bind variable. The value is the literal value of the variable.
+                &lt;p&gt;
+                In the example {@code "WHERE status = :bindStatus ORDER BY id LIMIT 30"},
+                the bind variable, represented by {@code :bindStatus} is named {@code
+                bindStatus}, which would also be the parameter map key. The bind variable's
+                value would be represented by a parameter map value of type
+                {@link TextValue}. The final result, for example, would be an entry of
+                {@code "bindStatus" =&gt; StringParam("ACTIVE")}.
+                &lt;/p&gt;
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="StatementError">
+        <annotation>
+          <documentation>
+            An error that occurs while parsing {@link Statement} objects.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="reason" type="tns:StatementError.Reason">
+                <annotation>
+                  <documentation>
+                    The error reason represented by an enum.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="String_ValueMapEntry">
+        <annotation>
+          <documentation>
+            This represents an entry in a map with a key of type String
+            and value of type Value.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="key" type="xsd:string"/>
+          <element maxOccurs="1" minOccurs="0" name="value" type="tns:Value"/>
+        </sequence>
+      </complexType>
+      <complexType name="TextValue">
+        <annotation>
+          <documentation>
+            Contains a string value.
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:Value">
+            <sequence>
+              <element maxOccurs="1" minOccurs="0" name="value" type="xsd:string">
+                <annotation>
+                  <documentation>
+                    The string value.
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="UniqueError">
+        <annotation>
+          <documentation>
+            An error for a field which must satisfy a uniqueness constraint
+          </documentation>
+        </annotation>
+        <complexContent>
+          <extension base="tns:ApiError">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="UpdateResult">
+        <annotation>
+          <documentation>
+            Represents the result of performing an action on objects.
+          </documentation>
+        </annotation>
+        <sequence>
+          <element maxOccurs="1" minOccurs="0" name="numChanges" type="xsd:int">
+            <annotation>
+              <documentation>
+                The number of objects that were changed as a result of performing the
+                action.
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType abstract="true" name="Value">
+        <annotation>
+          <documentation>
+            {@code Value} represents a value.
+          </documentation>
+        </annotation>
+        <sequence/>
+      </complexType>
+      <simpleType name="AdUnit.TargetWindow">
+        <annotation>
+          <documentation>
+            Corresponds to an HTML link's {@code target} attribute.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="TOP">
+            <annotation>
+              <documentation>
+                Specifies that the link should open in the full body of the page.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="BLANK">
+            <annotation>
+              <documentation>
+                Specifies that the link should open in a new window.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="ApiVersionError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="UPDATE_TO_NEWER_VERSION">
+            <annotation>
+              <documentation>
+                Indicates that the operation is not allowed in the version the request
+                was made in.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="AuthenticationError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="AMBIGUOUS_SOAP_REQUEST_HEADER">
+            <annotation>
+              <documentation>
+                The SOAP message contains a request header with an ambiguous definition
+                of the authentication header fields. This means either the {@code
+                authToken} and {@code oAuthToken} fields were both null or both were
+                specified. Exactly one value should be specified with each request.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="INVALID_EMAIL">
+            <annotation>
+              <documentation>
+                The login provided is invalid.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="AUTHENTICATION_FAILED">
+            <annotation>
+              <documentation>
+                Tried to authenticate with provided information, but failed.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="INVALID_OAUTH_SIGNATURE">
+            <annotation>
+              <documentation>
+                The OAuth provided is invalid.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="INVALID_SERVICE">
+            <annotation>
+              <documentation>
+                The specified service to use was not recognized.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="MISSING_SOAP_REQUEST_HEADER">
+            <annotation>
+              <documentation>
+                The SOAP message is missing a request header with an {@code authToken}
+                and optional {@code networkCode}.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="MISSING_AUTHENTICATION_HTTP_HEADER">
+            <annotation>
+              <documentation>
+                The HTTP request is missing a request header with an {@code authToken}
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="MISSING_AUTHENTICATION">
+            <annotation>
+              <documentation>
+                The request is missing an {@code authToken}
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="NOT_WHITELISTED_FOR_API_ACCESS">
+            <annotation>
+              <documentation>
+                The customer is not whitelisted for API access.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="NO_NETWORKS_TO_ACCESS">
+            <annotation>
+              <documentation>
+                The user is not associated with any network.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="NETWORK_NOT_FOUND">
+            <annotation>
+              <documentation>
+                No network for the given {@code networkCode} was found.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="NETWORK_CODE_REQUIRED">
+            <annotation>
+              <documentation>
+                The user has access to more than one network, but did not provide a
+                {@code networkCode}.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CONNECTION_ERROR">
+            <annotation>
+              <documentation>
+                An error happened on the server side during connection to authentication
+                service.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK">
+            <annotation>
+              <documentation>
+                The user tried to create a test network using an account that already is
+                associated with a network.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="CollectionSizeError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="TOO_LARGE"/>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="CommonError.Reason">
+        <annotation>
+          <documentation>
+            Describes reasons for common errors
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="NOT_FOUND">
+            <annotation>
+              <documentation>
+                Indicates that an attempt was made to retrieve an entity that does not
+                exist.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ALREADY_EXISTS">
+            <annotation>
+              <documentation>
+                Indicates that an attempt was made to create an entity that already
+                exists.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DUPLICATE_OBJECT">
+            <annotation>
+              <documentation>
+                Indicates that two elements in the collection were identical.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CANNOT_UPDATE">
+            <annotation>
+              <documentation>
+                Indicates that an attempt was made to change an immutable field.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CONCURRENT_MODIFICATION">
+            <annotation>
+              <documentation>
+                Indicates that another request attempted to update the same data in the same network
+                at about the same time. Please wait and try the request again.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="EnvironmentType">
+        <annotation>
+          <documentation>
+            Enum for the valid environments in which ads can be shown.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="BROWSER">
+            <annotation>
+              <documentation>
+                A regular web browser.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="VIDEO_PLAYER">
+            <annotation>
+              <documentation>
+                Video players (such as Flash applications).
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="FeatureError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="MISSING_FEATURE">
+            <annotation>
+              <documentation>
+                A feature is being used that is not enabled on the current network.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="InternalApiError.Reason">
+        <annotation>
+          <documentation>
+            The single reason for the internal API error.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="UNEXPECTED_INTERNAL_API_ERROR">
+            <annotation>
+              <documentation>
+                API encountered an unexpected internal error.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TRANSIENT_ERROR">
+            <annotation>
+              <documentation>
+                A temporary error occurred during the request. Please retry.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The cause of the error is not known or only defined in newer versions.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DOWNTIME">
+            <annotation>
+              <documentation>
+                The API is currently unavailable for a planned downtime.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="NotNullError.Reason">
+        <annotation>
+          <documentation>
+            The reasons for the target error.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="ARG1_NULL">
+            <annotation>
+              <documentation>
+                Assuming that a method will not have more than 3 arguments, if it does,
+                return NULL
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ARG2_NULL"/>
+          <enumeration value="ARG3_NULL"/>
+          <enumeration value="NULL"/>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="ParseError.Reason">
+        <annotation>
+          <documentation>
+            The reasons for the target error.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="UNPARSABLE">
+            <annotation>
+              <documentation>
+                Indicates an error in parsing an attribute.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="PermissionError.Reason">
+        <annotation>
+          <documentation>
+            Describes reasons for permission errors.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="PERMISSION_DENIED">
+            <annotation>
+              <documentation>
+                User does not have the required permission for the request.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="PublisherQueryLanguageContextError.Reason">
+        <annotation>
+          <documentation>
+            The reasons for the target error.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="UNEXECUTABLE">
+            <annotation>
+              <documentation>
+                Indicates that there was an error executing the PQL.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="PublisherQueryLanguageSyntaxError.Reason">
+        <annotation>
+          <documentation>
+            The reasons for the target error.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="UNPARSABLE">
+            <annotation>
+              <documentation>
+                Indicates that there was a PQL syntax error.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="QuotaError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="EXCEEDED_QUOTA">
+            <annotation>
+              <documentation>
+                The number of requests made per second is too high and has exceeded the
+                allowable limit. The recommended approach to handle this error is to wait
+                about 5 seconds and then retry the request. Note that this does not
+                guarantee the request will succeed. If it fails again, try increasing the
+                wait time.
+                &lt;p&gt;
+                Another way to mitigate this error is to limit requests to 2 per second for
+                Small Business networks, or 8 per second for Premium networks. Once again
+                this does not guarantee that every request will succeed, but may help
+                reduce the number of times you receive this error.
+                &lt;/p&gt;
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="ServerError.Reason">
+        <annotation>
+          <documentation>
+            Describes reasons for server errors
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="SERVER_ERROR">
+            <annotation>
+              <documentation>
+                Indicates that an unexpected error occured.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SERVER_BUSY">
+            <annotation>
+              <documentation>
+                Indicates that the server is currently experiencing a high load. Please
+                wait and try your request again.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="SharedAdUnitStatus">
+        <annotation>
+          <documentation>
+            Indicates the supported statuses of {@link SharedAdUnit shared ad units}.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="PENDING">
+            <annotation>
+              <documentation>
+                The initial status of a shared ad unit; this indicates that a distributor network has
+                shared an ad unit with a content provider network, but the content provider has yet to
+                decide whether it's approved or rejected. In this case, the content provider will be unable to
+                target the corresponding ad unit, and thus, the content provider line items that target this
+                ad unit will not serve.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="APPROVED">
+            <annotation>
+              <documentation>
+                This indicates the content provider has approved the corresponding ad unit for shared selling.
+                The ad unit will now be eligible for targeting within the content provider network, and any
+                line items targeting this ad unit will be eligible to be served.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="REJECTED">
+            <annotation>
+              <documentation>
+                This indicates the content provider has rejected the corresponding ad unit for shared selling.
+                The ad unit will not be eligible for targeting within the content provider network, and any
+                line items targeting this ad unit will not be eligible to be served.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNSHARED">
+            <annotation>
+              <documentation>
+                This indicates that a previously shared ad unit has now been unshared by the distributor
+                network. The corresponding ad unit will not be eligible for targeting within the content
+                provider network, and any line items targeting this ad unit will not be eligible to be served.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="PLACEHOLDER">
+            <annotation>
+              <documentation>
+                This indicates that the corresponding ad unit is an ancestor of a shared ad unit,
+                which is synchronized in order to maintain identical hierarchies between the distributor and
+                content provider networks. A content provider's line item which targets this ad unit will
+                serve, but only for requests from explicitly or implicitly shared lower-level ad units.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="StatementError.Reason">
+        <restriction base="xsd:string">
+          <enumeration value="VARIABLE_NOT_BOUND_TO_VALUE">
+            <annotation>
+              <documentation>
+                A bind variable has not been bound to a value.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="UNKNOWN">
+            <annotation>
+              <documentation>
+                The value returned if the actual value is not exposed by the requested API version.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="TargetPlatform">
+        <annotation>
+          <documentation>
+            Indicates the target platform.
+          </documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="WEB">
+            <annotation>
+              <documentation>
+                The desktop web.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="MOBILE">
+            <annotation>
+              <documentation>
+                Mobile devices.
+              </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ANY">
+            <annotation>
+              <documentation>
+                An universal target platform that combines mobile and desktop features.
+              </documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <element name="getSharedAdUnitsByStatement">
+        <annotation>
+          <documentation>
+            Gets a {@link SharedAdUnitPage} of {@link SharedAdUnit} objects that satisfy the given
+            {@link Statement#query}. The following fields are supported for filtering:
+            
+            &lt;table&gt;
+            &lt;tr&gt;
+            &lt;th scope="col"&gt;PQL Property&lt;/th&gt; &lt;th scope="col"&gt;Object Property&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            &lt;td&gt;{@code id}&lt;/td&gt;
+            &lt;td&gt;{@link SharedAdUnit#id}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            &lt;td&gt;{@code name}&lt;/td&gt;
+            &lt;td&gt;{@link SharedAdUnit#name}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            
+            @param filterStatement a Publisher Query Language statement used to filter
+            a set of shared ad units
+            @return the shared ad units that match the given filter
+          </documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="filterStatement" type="tns:Statement"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getSharedAdUnitsByStatementResponse">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="rval" type="tns:SharedAdUnitPage"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApiExceptionFault" type="tns:ApiException">
+        <annotation>
+          <documentation>
+            A fault element of type ApiException.
+          </documentation>
+        </annotation>
+      </element>
+      <element name="performSharedAdUnitAction">
+        <annotation>
+          <documentation>
+            Performs actions on shared ad unit objects that match the given
+            {@link Statement#query}.
+            
+            @param sharedAdUnitAction the action to perform
+            @param filterStatement a Publisher Query Language statement used to filter
+            a set of shared ad units
+            @return the result of the update action, which contains the number of shared ad units
+            on which the action was performed.
+          </documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0"
+              name="sharedAdUnitAction" type="tns:SharedAdUnitAction"/>
+            <element maxOccurs="1" minOccurs="0" name="filterStatement" type="tns:Statement"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="performSharedAdUnitActionResponse">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="rval" type="tns:UpdateResult"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RequestHeader" type="tns:SoapRequestHeader"/>
+      <element name="ResponseHeader" type="tns:SoapResponseHeader"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part element="tns:RequestHeader" name="RequestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseHeader">
+    <wsdl:part element="tns:ResponseHeader" name="ResponseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="getSharedAdUnitsByStatementRequest">
+    <wsdl:part element="tns:getSharedAdUnitsByStatement" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getSharedAdUnitsByStatementResponse">
+    <wsdl:part element="tns:getSharedAdUnitsByStatementResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ApiException">
+    <wsdl:part element="tns:ApiExceptionFault" name="ApiException"/>
+  </wsdl:message>
+  <wsdl:message name="performSharedAdUnitActionRequest">
+    <wsdl:part element="tns:performSharedAdUnitAction" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="performSharedAdUnitActionResponse">
+    <wsdl:part element="tns:performSharedAdUnitActionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SharedAdUnitServiceInterface">
+    <wsdl:documentation>
+      Service for handling {@link SharedAdUnit} objects.
+    </wsdl:documentation>
+    <wsdl:operation name="getSharedAdUnitsByStatement">
+      <wsdl:documentation>
+        Gets a {@link SharedAdUnitPage} of {@link SharedAdUnit} objects that satisfy the given
+        {@link Statement#query}. The following fields are supported for filtering:
+        
+        &lt;table&gt;
+        &lt;tr&gt;
+        &lt;th scope="col"&gt;PQL Property&lt;/th&gt; &lt;th scope="col"&gt;Object Property&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;{@code id}&lt;/td&gt;
+        &lt;td&gt;{@link SharedAdUnit#id}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;{@code name}&lt;/td&gt;
+        &lt;td&gt;{@link SharedAdUnit#name}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+        
+        @param filterStatement a Publisher Query Language statement used to filter
+        a set of shared ad units
+        @return the shared ad units that match the given filter
+      </wsdl:documentation>
+      <wsdl:input message="tns:getSharedAdUnitsByStatementRequest" name="getSharedAdUnitsByStatementRequest"/>
+      <wsdl:output message="tns:getSharedAdUnitsByStatementResponse" name="getSharedAdUnitsByStatementResponse"/>
+      <wsdl:fault message="tns:ApiException" name="ApiException"/>
+    </wsdl:operation>
+    <wsdl:operation name="performSharedAdUnitAction">
+      <wsdl:documentation>
+        Performs actions on shared ad unit objects that match the given
+        {@link Statement#query}.
+        
+        @param sharedAdUnitAction the action to perform
+        @param filterStatement a Publisher Query Language statement used to filter
+        a set of shared ad units
+        @return the result of the update action, which contains the number of shared ad units
+        on which the action was performed.
+      </wsdl:documentation>
+      <wsdl:input message="tns:performSharedAdUnitActionRequest" name="performSharedAdUnitActionRequest"/>
+      <wsdl:output message="tns:performSharedAdUnitActionResponse" name="performSharedAdUnitActionResponse"/>
+      <wsdl:fault message="tns:ApiException" name="ApiException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SharedAdUnitServiceSoapBinding" type="tns:SharedAdUnitServiceInterface">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getSharedAdUnitsByStatement">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getSharedAdUnitsByStatementRequest">
+        <wsdlsoap:header message="tns:RequestHeader"
+          part="RequestHeader" use="literal"/>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSharedAdUnitsByStatementResponse">
+        <wsdlsoap:header message="tns:ResponseHeader"
+          part="ResponseHeader" use="literal"/>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApiException">
+        <wsdlsoap:fault name="ApiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="performSharedAdUnitAction">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="performSharedAdUnitActionRequest">
+        <wsdlsoap:header message="tns:RequestHeader"
+          part="RequestHeader" use="literal"/>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="performSharedAdUnitActionResponse">
+        <wsdlsoap:header message="tns:ResponseHeader"
+          part="ResponseHeader" use="literal"/>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApiException">
+        <wsdlsoap:fault name="ApiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SharedAdUnitService">
+    <wsdl:port binding="tns:SharedAdUnitServiceSoapBinding" name="SharedAdUnitServiceInterfacePort">
+      <wsdlsoap:address location="https://ads.google.com/apis/ads/publisher/v201502/SharedAdUnitService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,10 @@
+*.Rproj
+.httr-oauth
+.RProfile
+.Rproj.user
+.Rhistory
+.RData
+rdfp_token.rds
+rdfp_options.rds
+setup.tar
+misc/*

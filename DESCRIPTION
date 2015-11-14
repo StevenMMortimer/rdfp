@@ -1,0 +1,76 @@
+Package: rdfp
+Title: DoubleClick for Publishers API from R
+Version: 0.0.1
+Description: A tool to interact with DFP from R.
+Authors@R: c(
+    person("Steven", "Mortimer", , "ReportMort@gmail.com", c("aut", "cre"))
+    )
+URL: https://github.com/ReportMort/rdfp
+BugReports: https://github.com/ReportMort/rdfp/issues
+Depends:
+    R (>= 3.1.0)
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+    httr (>= 1.0.0),
+    plyr,
+    XML
+Suggests:
+    knitr,
+    testthat
+RoxygenNote: 5.0.1
+Collate:
+    'ActivityGroupService.R'
+    'ActivityService.R'
+    'AdExclusionRuleService.R'
+    'AdRuleService.R'
+    'AudienceSegmentService.R'
+    'BaseRateService.R'
+    'CompanyService.R'
+    'ContactService.R'
+    'ContentBundleService.R'
+    'ContentMetadataKeyHierarchyService.R'
+    'ContentService.R'
+    'CreativeService.R'
+    'CreativeSetService.R'
+    'CreativeTemplateService.R'
+    'CreativeWrapperService.R'
+    'CustomFieldService.R'
+    'CustomTargetingService.R'
+    'ExchangeRateService.R'
+    'ForecastService.R'
+    'InventoryService.R'
+    'LabelService.R'
+    'LineItemCreativeAssociationService.R'
+    'LineItemService.R'
+    'LineItemTemplateService.R'
+    'LiveStreamEventService.R'
+    'NetworkService.R'
+    'OrderService.R'
+    'PackageService.R'
+    'PlacementService.R'
+    'PremiumRateService.R'
+    'ProductPackageItemService.R'
+    'ProductPackageService.R'
+    'ProductService.R'
+    'ProductTemplateService.R'
+    'ProposalLineItemService.R'
+    'ProposalService.R'
+    'PublisherQueryLanguageService.R'
+    'RateCardService.R'
+    'ReconciliationLineItemReportService.R'
+    'ReconciliationOrderReportService.R'
+    'ReconciliationReportRowService.R'
+    'ReconciliationReportService.R'
+    'ReportService.R'
+    'SharedAdUnitService.R'
+    'SuggestedAdUnitService.R'
+    'TeamService.R'
+    'UserService.R'
+    'UserTeamAssociationService.R'
+    'WorkflowRequestService.R'
+    'dfp_auth.R'
+    'dfp_options_settings.R'
+    'dfp_service_endpoints.R'
+    'dfp_utils.R'
+    'rdfp.R'

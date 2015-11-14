@@ -1,0 +1,19 @@
+#' \code{rdfp} package
+#'
+#' Double Click for Publishers API from R
+#'
+#' The Double Click for Publishers (DFP) API consists of 49 different services 
+#' as of v201508. Each service is written to handle a particular set of 
+#' operations within the API and grouped.
+#'
+#' The official documentation, provided by Google, is available at:
+#' \url{https://developers.google.com/doubleclick-publishers/docs/rel_notes}
+#' 
+#' This package attempts to scrape the functionality and documentation from the 
+#' references and WSDL to provide an interface via R. Each function has its own
+#' documentation, but additional material can be found in the 
+#' \href{https://github.com/reportmort/rdfp}{README} on GitHub
+#'
+#' @docType package
+#' @name rdfp
+NULL
