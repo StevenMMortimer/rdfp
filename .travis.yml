@@ -1,7 +1,7 @@
 language: r
+sudo: required
 warnings_are_errors: false
 r_check_args: "--no-build-vignettes --no-manual --timings"
-sudo: required
 notifications:
   email:
     on_success: change
@@ -23,5 +23,5 @@ r_binary_packages:
 - testthat
 r_packages:
 - rmarkdown
-after_success: git log -n 1 --format=%B | grep -iq "covr"; if [ $? -eq 0 ]; then echo
-  "Checking test coverage with covr"; Rscript -e 'library(covr);coveralls()'; fi
+after_success:
+- Rscript -e 'library(covr);codecov()'
