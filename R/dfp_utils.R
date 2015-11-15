@@ -62,15 +62,17 @@ build_soap_request <- function(body, service = NULL,
   # check for curl errors
   doc_error <- text_response$doc$children$Error
   if(!is.null(doc_error)){
-    invisible(lapply(xmlToList(doc_error), function(x){message(x)}))
+    print(doc_error)
     stop("curl error", call. = FALSE)
   }
 
   # check for api fault errors
   api_fault <- xmlChildren(xmlChildren(xmlRoot(text_response))$Body)$Fault
   if(!is.null(api_fault)){
-    invisible(lapply(xmlToList(api_fault), function(x){message(x)}))
-    stop("api fault", call. = FALSE)
+    print(api_fault)
+    message(paste0('errorString: ', xmlValue(xmlChildren(xmlChildren(xmlChildren(xmlChildren(api_fault)$detail)[[1]])$errors)$errorString)))
+    message(paste0('reason: ', xmlValue(xmlChildren(xmlChildren(xmlChildren(xmlChildren(api_fault)$detail)[[1]])$errors)$reason)))
+    stop('api fault', call. = F)
   }
 
   return(text_response)

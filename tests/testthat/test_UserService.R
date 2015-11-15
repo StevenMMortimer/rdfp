@@ -1,4 +1,4 @@
-context("User Service")
+context("UserService")
 
 rdfp_options <- readRDS("rdfp_options.rds")
 options(rdfp.network_code = rdfp_options$network_code)
@@ -8,11 +8,57 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
-test_that("getCurrentUser", {
-  
-  user_info <- dfp_getCurrentUser()
-  
-  expect_is(user_info, "list")
-  expect_true(all(c('id', 'name', 'email') %in% names(user_info)))
-  
+test_that("dfp_createUsers", {
+
+#  dfp_createUsers_result <- dfp_createUsers()
+
+#  expect_is(dfp_createUsers_result, "list")
+  expect_true(TRUE)
+
 })
+
+test_that("dfp_getAllRoles", {
+
+  dfp_getAllRoles_result <- dfp_getAllRoles()
+  
+  expect_is(dfp_getAllRoles_result, "list")
+  expect_true(all(c('id', 'name', 'description') %in% names(dfp_getAllRoles_result)))
+
+})
+
+test_that("dfp_getCurrentUser", {
+
+ dfp_getCurrentUser_result <- dfp_getCurrentUser()
+
+ expect_is(dfp_getCurrentUser_result, "list")
+ expect_true(all(c('id', 'name', 'email', 'roleId', 'isActive') %in% names(dfp_getCurrentUser_result)))
+
+})
+
+test_that("dfp_getUsersByStatement", {
+
+#  dfp_getUsersByStatement_result <- dfp_getUsersByStatement()
+
+#  expect_is(dfp_getUsersByStatement_result, "list")
+  expect_true(TRUE)
+
+})
+
+test_that("dfp_performUserAction", {
+
+#  dfp_performUserAction_result <- dfp_performUserAction()
+
+#  expect_is(dfp_performUserAction_result, "list")
+  expect_true(TRUE)
+
+})
+
+test_that("dfp_updateUsers", {
+
+#  dfp_updateUsers_result <- dfp_updateUsers()
+
+#  expect_is(dfp_updateUsers_result, "list")
+  expect_true(TRUE)
+
+})
+

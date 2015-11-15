@@ -1,0 +1,28 @@
+context("ContentService")
+
+rdfp_options <- readRDS("rdfp_options.rds")
+options(rdfp.network_code = rdfp_options$network_code)
+options(rdfp.application_name = rdfp_options$application_name)
+options(rdfp.client_id = rdfp_options$client_id)
+options(rdfp.client_secret = rdfp_options$client_secret)
+
+dfp_auth(token = "rdfp_token.rds")
+
+test_that("dfp_getContentByStatement", {
+
+#  dfp_getContentByStatement_result <- dfp_getContentByStatement()
+
+#  expect_is(dfp_getContentByStatement_result, "list")
+  expect_true(TRUE)
+
+})
+
+test_that("dfp_getContentByStatementAndCustomTargetingValue", {
+
+#  dfp_getContentByStatementAndCustomTargetingValue_result <- dfp_getContentByStatementAndCustomTargetingValue()
+
+#  expect_is(dfp_getContentByStatementAndCustomTargetingValue_result, "list")
+  expect_true(TRUE)
+
+})
+

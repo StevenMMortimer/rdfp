@@ -11,7 +11,7 @@ env:
   - CRAN: http://cran.rstudio.com
   - NOT_CRAN: true
 before_install:
-- openssl aes-256-cbc -K $encrypted_6d60904414bd_key -iv $encrypted_6d60904414bd_iv -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
+- openssl aes-256-cbc -K $encrypted_250e83c47055_key -iv $encrypted_250e83c47055_iv -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
 - tar xvf tests/testthat/setup.tar -C tests/testthat
 r_github_packages:
 - ReportMort/httr
