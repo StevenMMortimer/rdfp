@@ -42,6 +42,8 @@ test_that("dfp_updateNetwork", {
 
   expect_is(dfp_updateNetwork_result, "list")
   expect_equals(dfp_updateNetwork_result$displayName='StevesTestNetwork')
+  
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 
