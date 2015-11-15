@@ -41,7 +41,7 @@ test_that("dfp_updateNetwork", {
   dfp_updateNetwork_result <- dfp_updateNetwork(request_data)
 
   expect_is(dfp_updateNetwork_result, "list")
-  expect_equals(dfp_updateNetwork_result$displayName='StevesTestNetwork')
+  expect_equal(dfp_updateNetwork_result$displayName, 'StevesTestNetwork')
   
   options(rdfp.network_code = rdfp_options$network_code)
 

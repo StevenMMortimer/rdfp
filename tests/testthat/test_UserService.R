@@ -18,11 +18,15 @@ test_that("dfp_createUsers", {
 })
 
 test_that("dfp_getAllRoles", {
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
 
   dfp_getAllRoles_result <- dfp_getAllRoles()
   
   expect_is(dfp_getAllRoles_result, "list")
   expect_true(all(c('id', 'name', 'description') %in% names(dfp_getAllRoles_result)))
+  
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 
