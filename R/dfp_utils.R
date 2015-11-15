@@ -4,7 +4,7 @@
 #' make call to the appropriate API service, then 
 #' parse the response.
 #' 
-#' @importFrom XML xmlTreeParse xmlToList xmlChildren xmlRoot
+#' @importFrom XML xmlTreeParse xmlToList xmlChildren xmlRoot xmlValue
 #' @importFrom httr POST content
 #' @include dfp_auth.R
 #' @param body a character string of XML with service name

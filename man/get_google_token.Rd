@@ -9,21 +9,5 @@ get_google_token()
 \description{
 Get token if it's previously stored, else prompt user to get one.
 }
-\keyword{Get}
-\keyword{Google}
-\keyword{Retrieve}
-\keyword{else}
-\keyword{environment}
-\keyword{from}
-\keyword{get}
-\keyword{if}
 \keyword{internal}
-\keyword{it's}
-\keyword{one.}
-\keyword{previously}
-\keyword{prompt}
-\keyword{stored,}
-\keyword{to}
-\keyword{token}
-\keyword{user}
 
