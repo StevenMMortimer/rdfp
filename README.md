@@ -15,8 +15,6 @@ Features:
 
 `rdfp` is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.
 
-Also, the authentication style of `rdfp` in many cases follows verbatim (copy-pasted) code or similar in spirit from the authentication used in the package [googlesheets] (<https://github.com/jennybc/googlesheets>)
-
 ### Function naming convention
 
 All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio.
@@ -73,4 +71,15 @@ head(resultset, 2)
 tail(resultset, -2)
 ```
 
-### More Info To Be Added Soon
+### More Examples To Be Added Soon
+
+### Credits
+
+This application uses other open source software components. The authentication components are mostly verbatim copies of the routines established in the **googlesheets** package (<https://github.com/jennybc/googlesheets>). We acknowledge and are grateful to these developers for their contributions to open source.
+
+### License
+
+The **rdfp** package is licensed under the MIT License (<http://choosealicense.com/licenses/mit/>).
+
+-   COPYING - rdfp package license (MIT)
+-   NOTICE - Copyright notices for additional included software

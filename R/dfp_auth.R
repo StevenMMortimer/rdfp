@@ -1,5 +1,17 @@
-# Authorization Code Taken from https://github.com/jennybc/googlesheets
+# rdfp authentication
+
+# Adapted from googlesheets package https://github.com/jennybc/googlesheets
 # Specifically https://github.com/jennybc/googlesheets/blob/72abc6b218c26eecb9f32d0519cca41c6174aab8/R/gs_auth.R
+
+# Changed elements:
+#  - the scope list points to the dfp authentication endpoint: https://www.googleapis.com/auth/dfp
+#  - the function get_google_token() will attempt to refresh itself before making call instead 
+#    of allowing httr to refresh if 401 error occurs
+#  - renamed the function gs_auth to dfp_auth to be consistent with package endpoint
+
+# Copyright (c) 2015 Jennifer Bryan, Joanna Zhao
+
+# Licensed under MIT license.
 
 # environment to store credentials
 .state <- new.env(parent = emptyenv())
