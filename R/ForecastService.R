@@ -3753,12 +3753,14 @@ dfp_ForecastService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 #' 
-#' @usage dfp_getAvailabilityForecast()
+#' @usage dfp_getAvailabilityForecast(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getAvailabilityForecastResponse
 #' @export
-dfp_getAvailabilityForecast <- function(){
+dfp_getAvailabilityForecast <- function(request_data){
 
-  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=NULL)
+  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastResponse']])$rval
@@ -3772,12 +3774,14 @@ dfp_getAvailabilityForecast <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
-#' @usage dfp_getAvailabilityForecastById()
+#' @usage dfp_getAvailabilityForecastById(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getAvailabilityForecastByIdResponse
 #' @export
-dfp_getAvailabilityForecastById <- function(){
+dfp_getAvailabilityForecastById <- function(request_data){
 
-  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=NULL)
+  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastByIdResponse']])$rval
@@ -3791,12 +3795,14 @@ dfp_getAvailabilityForecastById <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 #' 
-#' @usage dfp_getDeliveryForecast()
+#' @usage dfp_getDeliveryForecast(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getDeliveryForecastResponse
 #' @export
-dfp_getDeliveryForecast <- function(){
+dfp_getDeliveryForecast <- function(request_data){
 
-  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecast', data=NULL)
+  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastResponse']])$rval
@@ -3810,12 +3816,14 @@ dfp_getDeliveryForecast <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
-#' @usage dfp_getDeliveryForecastByIds()
+#' @usage dfp_getDeliveryForecastByIds(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getDeliveryForecastByIdsResponse
 #' @export
-dfp_getDeliveryForecastByIds <- function(){
+dfp_getDeliveryForecastByIds <- function(request_data){
 
-  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=NULL)
+  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastByIdsResponse']])$rval

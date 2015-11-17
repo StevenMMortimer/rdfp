@@ -26,33 +26,34 @@ build_soap_request <- function(body, service = NULL,
     service <- attributes(body)$service
   }
 
-  header <- paste0('<?xml version="1.0" encoding="UTF-8"?>
-                     <soapenv:Envelope 
-                       xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                       <soapenv:Header>
-                         <ns1:RequestHeader
-                           soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
-                           soapenv:mustUnderstand="0"
-                           xmlns:ns1="https://www.google.com/apis/ads/publisher/v201508">
-                             <ns1:networkCode>', network_code, '</ns1:networkCode>
-                             <ns1:applicationName>', application_name, '</ns1:applicationName>
-                         </ns1:RequestHeader>
-                       </soapenv:Header>')
+  header <- paste0('<?xml version="1.0" encoding="UTF-8"?> 
+<soapenv:Envelope
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Header>
+   <ns1:RequestHeader
+     soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
+     soapenv:mustUnderstand="0"
+     xmlns:ns1="https://www.google.com/apis/ads/publisher/v201508">
+       <ns1:networkCode>', network_code, '</ns1:networkCode>
+       <ns1:applicationName>', application_name, '</ns1:applicationName>
+   </ns1:RequestHeader>
+ </soapenv:Header>')
   
-  body <- paste0("<soapenv:Body>", 
-                    body,
-                 "</soapenv:Body>")
+  soap_body <- paste0("<soapenv:Body>\n  ", 
+                        body,
+                     "  \n</soapenv:Body>\n ")
   
   env_close <- '</soapenv:Envelope>' 
   
-  this_body <- paste0(header, body, env_close)
+  this_body <- paste0(header, ' \n ', soap_body, ' \n', env_close)
   
   url <- paste0('https://ads.google.com/apis/ads/publisher/v201508/', service)
 
 #   if(verbose){
 #     message(url)
+#     print(newXMLTextNode(this_body))
 #   }
   
   #use xml2 package ?
@@ -102,7 +103,7 @@ build_soap_request <- function(body, service = NULL,
 #' @keywords internal
 build_xml_from_list <- function(list, root_name=NULL, 
                                 root=NULL, version="v201508"){
-  
+
   if (is.null(root))
     root <- newXMLNode(root_name, 
                        namespaceDefinitions = 
@@ -110,18 +111,35 @@ build_xml_from_list <- function(list, root_name=NULL,
                                   version)))
   
   if(length(list)>0){
-    for(i in 1:length(list)){
-      this <- newXMLNode(names(list)[i], parent=root, 
-                         suppressNamespaceWarning=T)
-      if (typeof(list[[i]]) == "list"){
+
+    for (i in 1:length(list)){
+      
+      if('.attrs' %in% names(list[[i]])){
+        incl_type <- list[[i]][['.attrs']]
+        names(incl_type) <- 'xsi:type'
+        list[[i]][['.attrs']] <- NULL
+      } else {
+        incl_type <- NULL
+      }
+      
+      if (typeof(list[[i]]) == "list") {
+        this <- newXMLNode(names(list)[i], 
+                           attrs=incl_type, 
+                           parent=root,
+                           suppressNamespaceWarning=T)
         build_xml_from_list(list=list[[i]], root=this)
       }
-      else{
-        xmlValue(this) <- list[[i]]
+      else {
+        if (!is.null(list[[i]])){
+          this <- newXMLNode(names(list)[i], 
+                             attrs=incl_type, 
+                             parent=root,
+                             suppressNamespaceWarning=T)
+          xmlValue(this) <- list[[i]]
+        }
       }
     }
   }
-  
   return(root)
 }
 
@@ -138,11 +156,13 @@ build_xml_from_list <- function(list, root_name=NULL,
 #' topmost level of the created XML hierarchy
 #' @param data a \code{list} or \code{data.frame} to create
 #' XML in the request
+#' @param verbose a boolean indicating whether the xml body should be printed
+#' during the function call
 #' @return a character string of XML with service name
 #' as an attribute
 #' 
 #' @keywords internal
-make_request_body <- function(service, root_name, data=NULL){
+make_request_body <- function(service, root_name, data=NULL, verbose=T){
 
   if(!is.null(data)){
     if(is.data.frame(data)){
@@ -153,10 +173,32 @@ make_request_body <- function(service, root_name, data=NULL){
     }
   }
   
-  request_body <- as(build_xml_from_list(data, 
-                                         root_name=root_name), 
-                     'character')
+  if(verbose){
+    xml_body <- build_xml_from_list(data, 
+                                    root_name=root_name)
+    print(xml_body)
+  }
+  
+  request_body <- as(xml_body, 'character')
   attributes(request_body) <- list('service'=service)
   
   return(request_body)
+}
+
+
+#' Reformat parsed list to resubmit
+#' 
+#' Receive a list (usually from the API service that was parsed and 
+#' and contains .attr nodes) and push any .attr nodes to top
+#' of their respective list element so the SOAP request can 
+#' be formatted with the proper types
+#' 
+#' @param list a \code{list} with attributes to be placed 
+#' back appropriately in the hierarchy
+#' @return a \code{list} formatted with attributes at 
+#' the top of the respective list they came from
+#' 
+#' @keywords internal
+dfp_set_above_attributes <- function(list){
+  
 }
