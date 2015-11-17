@@ -8,7 +8,10 @@ dfp_getWorkflowRequestsByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getWorkflowRequestsByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getWorkflowRequestsByStatementResponse
 }
 \description{
 Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering:  Starting in V201405 a type filter must be used 

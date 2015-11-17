@@ -8,7 +8,10 @@ dfp_getProductPackageItemsByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getProductPackageItemsByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getProductPackageItemsByStatementResponse
 }
 \description{
 Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering:  filtering criteria over product packages 

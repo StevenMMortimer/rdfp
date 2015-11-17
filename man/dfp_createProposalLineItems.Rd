@@ -8,7 +8,10 @@ dfp_createProposalLineItems(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createProposalLineItemsResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a createProposalLineItemsResponse
 }
 \description{
 Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>

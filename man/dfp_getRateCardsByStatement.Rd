@@ -8,7 +8,10 @@ dfp_getRateCardsByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getRateCardsByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getRateCardsByStatementResponse
 }
 \description{
 Gets a RateCardPage of RateCard objects that satisfy the given Statement query. The following fields are supported for filtering:  

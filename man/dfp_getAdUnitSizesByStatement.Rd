@@ -8,7 +8,10 @@ dfp_getAdUnitSizesByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getAdUnitSizesByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getAdUnitSizesByStatementResponse
 }
 \description{
 Gets a set of AdUnitSize objects that satisfy the given Statement query. The following fields are supported for filtering:  An exception will be thrown for queries with unsupported fields. Paging is not supported, as aren't the LIMIT and OFFSET PQL keywords. Only "=" operator is supported. a set of ad unit sizes 

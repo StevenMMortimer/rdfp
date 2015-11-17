@@ -8,7 +8,10 @@ dfp_createProposals(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createProposalsResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a createProposalsResponse
 }
 \description{
 Creates new Proposal objects. For each proposal, the following fields are required: <ul> <li>Proposal name</li> </ul>

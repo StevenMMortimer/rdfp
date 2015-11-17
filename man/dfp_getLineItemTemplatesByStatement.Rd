@@ -8,7 +8,10 @@ dfp_getLineItemTemplatesByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getLineItemTemplatesByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getLineItemTemplatesByStatementResponse
 }
 \description{
 Gets a LineItemTemplatePage of LineItemTemplate objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of line item templates 

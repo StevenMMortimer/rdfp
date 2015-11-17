@@ -8,7 +8,10 @@ dfp_createCustomFields(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createCustomFieldsResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a createCustomFieldsResponse
 }
 \description{
 Creates new CustomField objects. The following fields are required: <ul> <li>CustomField name</li> <li>CustomField entityType</li> <li>CustomField dataType</li> <li>CustomField visibility</li> </ul>

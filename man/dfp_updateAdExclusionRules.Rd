@@ -8,7 +8,10 @@ dfp_updateAdExclusionRules(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateAdExclusionRulesResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a updateAdExclusionRulesResponse
 }
 \description{
 Updates the specified AdExclusionRule objects.

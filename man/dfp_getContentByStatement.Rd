@@ -8,7 +8,10 @@ dfp_getContentByStatement(request_data)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getContentByStatementResponse}
+to be formatted for a SOAP request (XML format, but passed as character string)}
+}
+\value{
+a \code{list} containing all the elements of a getContentByStatementResponse
 }
 \description{
 Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering:  filter a set of content 
