@@ -21,9 +21,8 @@ test_that("dfp_getLiveStreamEventsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   dfp_getLiveStreamEventsByStatement_result <- dfp_getLiveStreamEventsByStatement(request_data)
-
-   expect_is(dfp_getLiveStreamEventsByStatement_result, "list")
+   expect_message(try(dfp_getLiveStreamEventsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getLiveStreamEventsByStatement(request_data))
 
 })
 

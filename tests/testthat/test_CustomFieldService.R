@@ -37,11 +37,13 @@ test_that("dfp_getCustomFieldOption", {
 
 test_that("dfp_getCustomFieldsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   options(rdfp.network_code = rdfp_options$test_network_code)
+   request_data <- list('filterStatement'=list('query'="WHERE isActive='TRUE'"))
 
    dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data)
 
    expect_is(dfp_getCustomFieldsByStatement_result, "list")
+   options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

@@ -19,11 +19,11 @@ test_that("dfp_createAdRules", {
 
 test_that("dfp_getAdRulesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getAdRulesByStatement_result <- dfp_getAdRulesByStatement(request_data)
-
-   expect_is(dfp_getAdRulesByStatement_result, "list")
+  # issue with Google, seems weird to switch to using "statement" and not "filterStatement"
+   request_data <- list('statement'=list('query'="WHERE status='ACTIVE'"))
+   
+   expect_message(try(dfp_getAdRulesByStatement(request_data), silent=T), 'SERVER_ERROR')
+   expect_error(dfp_getAdRulesByStatement(request_data))
 
 })
 

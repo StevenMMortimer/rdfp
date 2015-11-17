@@ -18,12 +18,15 @@ test_that("dfp_createTeams", {
 })
 
 test_that("dfp_getTeamsByStatement", {
+  
+  request_data <- list('filterStatement'=list('query'="WHERE id='239587'"))
+  expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'PERMISSION_DENIED')
+  expect_error(dfp_getTeamsByStatement(request_data))
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getTeamsByStatement_result <- dfp_getTeamsByStatement(request_data)
-
-   expect_is(dfp_getTeamsByStatement_result, "list")
+  options(rdfp.network_code = rdfp_options$test_network_code)
+   expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getTeamsByStatement(request_data))
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

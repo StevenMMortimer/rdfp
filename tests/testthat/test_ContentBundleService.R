@@ -21,9 +21,8 @@ test_that("dfp_getContentBundlesByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   dfp_getContentBundlesByStatement_result <- dfp_getContentBundlesByStatement(request_data)
-
-   expect_is(dfp_getContentBundlesByStatement_result, "list")
+   expect_message(try(dfp_getContentBundlesByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getContentBundlesByStatement(request_data))
 
 })
 

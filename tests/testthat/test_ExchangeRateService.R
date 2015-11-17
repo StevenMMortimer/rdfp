@@ -18,12 +18,10 @@ test_that("dfp_createExchangeRates", {
 })
 
 test_that("dfp_getExchangeRatesByStatement", {
-
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getExchangeRatesByStatement_result <- dfp_getExchangeRatesByStatement(request_data)
-
-   expect_is(dfp_getExchangeRatesByStatement_result, "list")
+  
+  request_data <- list('filterStatement'=list('query'="WHERE currencyCode='USD'"))
+  expect_message(try(dfp_getExchangeRatesByStatement(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_getExchangeRatesByStatement(request_data))
 
 })
 

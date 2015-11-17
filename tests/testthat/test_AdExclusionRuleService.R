@@ -19,11 +19,13 @@ test_that("dfp_createAdExclusionRules", {
 
 test_that("dfp_getAdExclusionRulesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getAdExclusionRulesByStatement_result <- dfp_getAdExclusionRulesByStatement(request_data)
-
-   expect_is(dfp_getAdExclusionRulesByStatement_result, "list")
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+  
+  dfp_getAdExclusionRulesByStatement_result <- dfp_getAdExclusionRulesByStatement(request_data)
+  
+  expect_is(dfp_getAdExclusionRulesByStatement_result, "list")
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

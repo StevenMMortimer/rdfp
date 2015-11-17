@@ -19,11 +19,12 @@ test_that("dfp_createUserTeamAssociations", {
 
 test_that("dfp_getUserTeamAssociationsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE userId='142014667'"))
 
    dfp_getUserTeamAssociationsByStatement_result <- dfp_getUserTeamAssociationsByStatement(request_data)
 
    expect_is(dfp_getUserTeamAssociationsByStatement_result, "list")
+   expect_true(all(c('teamId', 'defaultTeamAccessType', 'userId') %in% names(dfp_getUserTeamAssociationsByStatement_result[[3]])))
 
 })
 

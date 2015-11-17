@@ -19,11 +19,13 @@ test_that("dfp_createLabels", {
 
 test_that("dfp_getLabelsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+  options(rdfp.network_code = rdfp_options$test_network_code)
+   request_data <- list('filterStatement'=list('query'="WHERE name='Test'"))
 
    dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
 
    expect_is(dfp_getLabelsByStatement_result, "list")
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

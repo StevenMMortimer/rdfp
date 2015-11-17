@@ -21,9 +21,8 @@ test_that("dfp_getProposalsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   dfp_getProposalsByStatement_result <- dfp_getProposalsByStatement(request_data)
-
-   expect_is(dfp_getProposalsByStatement_result, "list")
+   expect_message(try(dfp_getProposalsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getProposalsByStatement(request_data))
 
 })
 

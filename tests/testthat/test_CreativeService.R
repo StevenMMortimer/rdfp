@@ -19,7 +19,7 @@ test_that("dfp_createCreatives", {
 
 test_that("dfp_getCreativesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE name='Test'"))
 
    dfp_getCreativesByStatement_result <- dfp_getCreativesByStatement(request_data)
 

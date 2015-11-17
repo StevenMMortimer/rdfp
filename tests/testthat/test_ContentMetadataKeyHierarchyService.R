@@ -20,11 +20,10 @@ test_that("dfp_createContentMetadataKeyHierarchies", {
 test_that("dfp_getContentMetadataKeyHierarchiesByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getContentMetadataKeyHierarchiesByStatement_result <- dfp_getContentMetadataKeyHierarchiesByStatement(request_data)
-
-   expect_is(dfp_getContentMetadataKeyHierarchiesByStatement_result, "list")
-
+   
+   expect_message(try(dfp_getContentMetadataKeyHierarchiesByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getContentMetadataKeyHierarchiesByStatement(request_data))
+   
 })
 
 test_that("dfp_performContentMetadataKeyHierarchyAction", {

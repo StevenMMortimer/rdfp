@@ -12,9 +12,8 @@ test_that("dfp_getReconciliationReportsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   dfp_getReconciliationReportsByStatement_result <- dfp_getReconciliationReportsByStatement(request_data)
-
-   expect_is(dfp_getReconciliationReportsByStatement_result, "list")
+   expect_message(try(dfp_getReconciliationReportsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getReconciliationReportsByStatement(request_data))
 
 })
 

@@ -10,11 +10,10 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getWorkflowRequestsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE type='WORKFLOW_APPROVAL_REQUEST'"))
 
-   dfp_getWorkflowRequestsByStatement_result <- dfp_getWorkflowRequestsByStatement(request_data)
-
-   expect_is(dfp_getWorkflowRequestsByStatement_result, "list")
+   expect_message(try(dfp_getWorkflowRequestsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getWorkflowRequestsByStatement(request_data))
 
 })
 

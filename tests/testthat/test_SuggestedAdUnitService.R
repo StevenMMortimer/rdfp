@@ -10,7 +10,7 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getSuggestedAdUnitsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE numRequests>0"))
 
    dfp_getSuggestedAdUnitsByStatement_result <- dfp_getSuggestedAdUnitsByStatement(request_data)
 

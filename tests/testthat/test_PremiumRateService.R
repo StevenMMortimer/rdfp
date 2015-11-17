@@ -19,7 +19,7 @@ test_that("dfp_createPremiumRates", {
 
 test_that("dfp_getPremiumRatesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE pricingMethod='ANY_VALUE'"))
 
    dfp_getPremiumRatesByStatement_result <- dfp_getPremiumRatesByStatement(request_data)
 

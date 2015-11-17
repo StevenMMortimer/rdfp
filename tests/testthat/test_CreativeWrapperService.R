@@ -19,11 +19,14 @@ test_that("dfp_createCreativeWrappers", {
 
 test_that("dfp_getCreativeWrappersByStatement", {
 
+  options(rdfp.network_code = rdfp_options$test_network_code)
+
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getCreativeWrappersByStatement_result <- dfp_getCreativeWrappersByStatement(request_data)
-
-   expect_is(dfp_getCreativeWrappersByStatement_result, "list")
+   
+   expect_message(try(dfp_getCreativeWrappersByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getCreativeWrappersByStatement(request_data))
+   
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

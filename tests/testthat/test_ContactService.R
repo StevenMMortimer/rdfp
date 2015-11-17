@@ -19,7 +19,7 @@ test_that("dfp_createContacts", {
 
 test_that("dfp_getContactsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('statement'=list('query'="WHERE status='ACTIVE'"))
 
    dfp_getContactsByStatement_result <- dfp_getContactsByStatement(request_data)
 

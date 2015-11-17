@@ -10,11 +10,10 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getContentByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
-
-   dfp_getContentByStatement_result <- dfp_getContentByStatement(request_data)
-
-   expect_is(dfp_getContentByStatement_result, "list")
+   request_data <- list('statement'=list('query'="WHERE status='ACTIVE'"))
+   
+   expect_message(try(dfp_getContentByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_error(dfp_getContentByStatement(request_data))
 
 })
 
