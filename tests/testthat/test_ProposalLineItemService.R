@@ -19,10 +19,11 @@ test_that("dfp_createProposalLineItems", {
 
 test_that("dfp_getProposalLineItemsByStatement", {
 
-#  dfp_getProposalLineItemsByStatement_result <- dfp_getProposalLineItemsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getProposalLineItemsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getProposalLineItemsByStatement_result <- dfp_getProposalLineItemsByStatement(request_data)
+
+   expect_is(dfp_getProposalLineItemsByStatement_result, "list")
 
 })
 

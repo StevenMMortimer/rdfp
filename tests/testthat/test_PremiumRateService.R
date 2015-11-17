@@ -19,10 +19,11 @@ test_that("dfp_createPremiumRates", {
 
 test_that("dfp_getPremiumRatesByStatement", {
 
-#  dfp_getPremiumRatesByStatement_result <- dfp_getPremiumRatesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getPremiumRatesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getPremiumRatesByStatement_result <- dfp_getPremiumRatesByStatement(request_data)
+
+   expect_is(dfp_getPremiumRatesByStatement_result, "list")
 
 })
 

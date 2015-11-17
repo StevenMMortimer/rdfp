@@ -19,19 +19,21 @@ test_that("dfp_createAdUnits", {
 
 test_that("dfp_getAdUnitSizesByStatement", {
 
-#  dfp_getAdUnitSizesByStatement_result <- dfp_getAdUnitSizesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getAdUnitSizesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getAdUnitSizesByStatement_result <- dfp_getAdUnitSizesByStatement(request_data)
+
+   expect_is(dfp_getAdUnitSizesByStatement_result, "list")
 
 })
 
 test_that("dfp_getAdUnitsByStatement", {
 
-#  dfp_getAdUnitsByStatement_result <- dfp_getAdUnitsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getAdUnitsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getAdUnitsByStatement_result <- dfp_getAdUnitsByStatement(request_data)
+
+   expect_is(dfp_getAdUnitsByStatement_result, "list")
 
 })
 

@@ -19,10 +19,11 @@ test_that("dfp_createCreativeWrappers", {
 
 test_that("dfp_getCreativeWrappersByStatement", {
 
-#  dfp_getCreativeWrappersByStatement_result <- dfp_getCreativeWrappersByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCreativeWrappersByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCreativeWrappersByStatement_result <- dfp_getCreativeWrappersByStatement(request_data)
+
+   expect_is(dfp_getCreativeWrappersByStatement_result, "list")
 
 })
 

@@ -10,10 +10,11 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getCreativeTemplatesByStatement", {
 
-#  dfp_getCreativeTemplatesByStatement_result <- dfp_getCreativeTemplatesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCreativeTemplatesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCreativeTemplatesByStatement_result <- dfp_getCreativeTemplatesByStatement(request_data)
+
+   expect_is(dfp_getCreativeTemplatesByStatement_result, "list")
 
 })
 

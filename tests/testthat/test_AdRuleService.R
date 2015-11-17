@@ -19,10 +19,11 @@ test_that("dfp_createAdRules", {
 
 test_that("dfp_getAdRulesByStatement", {
 
-#  dfp_getAdRulesByStatement_result <- dfp_getAdRulesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getAdRulesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getAdRulesByStatement_result <- dfp_getAdRulesByStatement(request_data)
+
+   expect_is(dfp_getAdRulesByStatement_result, "list")
 
 })
 

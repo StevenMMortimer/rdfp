@@ -41,10 +41,11 @@ test_that("dfp_getCurrentUser", {
 
 test_that("dfp_getUsersByStatement", {
 
-#  dfp_getUsersByStatement_result <- dfp_getUsersByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getUsersByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getUsersByStatement_result <- dfp_getUsersByStatement(request_data)
+
+   expect_is(dfp_getUsersByStatement_result, "list")
 
 })
 

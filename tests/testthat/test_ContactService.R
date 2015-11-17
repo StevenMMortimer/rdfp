@@ -19,10 +19,11 @@ test_that("dfp_createContacts", {
 
 test_that("dfp_getContactsByStatement", {
 
-#  dfp_getContactsByStatement_result <- dfp_getContactsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getContactsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getContactsByStatement_result <- dfp_getContactsByStatement(request_data)
+
+   expect_is(dfp_getContactsByStatement_result, "list")
 
 })
 

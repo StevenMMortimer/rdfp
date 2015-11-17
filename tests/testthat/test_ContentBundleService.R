@@ -19,10 +19,11 @@ test_that("dfp_createContentBundles", {
 
 test_that("dfp_getContentBundlesByStatement", {
 
-#  dfp_getContentBundlesByStatement_result <- dfp_getContentBundlesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getContentBundlesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getContentBundlesByStatement_result <- dfp_getContentBundlesByStatement(request_data)
+
+   expect_is(dfp_getContentBundlesByStatement_result, "list")
 
 })
 

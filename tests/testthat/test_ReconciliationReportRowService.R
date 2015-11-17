@@ -10,10 +10,11 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getReconciliationReportRowsByStatement", {
 
-#  dfp_getReconciliationReportRowsByStatement_result <- dfp_getReconciliationReportRowsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getReconciliationReportRowsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getReconciliationReportRowsByStatement_result <- dfp_getReconciliationReportRowsByStatement(request_data)
+
+   expect_is(dfp_getReconciliationReportRowsByStatement_result, "list")
 
 })
 

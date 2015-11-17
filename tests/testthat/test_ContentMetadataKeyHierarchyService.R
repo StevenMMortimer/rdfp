@@ -19,10 +19,11 @@ test_that("dfp_createContentMetadataKeyHierarchies", {
 
 test_that("dfp_getContentMetadataKeyHierarchiesByStatement", {
 
-#  dfp_getContentMetadataKeyHierarchiesByStatement_result <- dfp_getContentMetadataKeyHierarchiesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getContentMetadataKeyHierarchiesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getContentMetadataKeyHierarchiesByStatement_result <- dfp_getContentMetadataKeyHierarchiesByStatement(request_data)
+
+   expect_is(dfp_getContentMetadataKeyHierarchiesByStatement_result, "list")
 
 })
 

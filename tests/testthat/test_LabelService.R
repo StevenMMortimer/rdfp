@@ -19,10 +19,11 @@ test_that("dfp_createLabels", {
 
 test_that("dfp_getLabelsByStatement", {
 
-#  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getLabelsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+
+   expect_is(dfp_getLabelsByStatement_result, "list")
 
 })
 

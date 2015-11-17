@@ -19,10 +19,11 @@ test_that("dfp_createCreatives", {
 
 test_that("dfp_getCreativesByStatement", {
 
-#  dfp_getCreativesByStatement_result <- dfp_getCreativesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCreativesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCreativesByStatement_result <- dfp_getCreativesByStatement(request_data)
+
+   expect_is(dfp_getCreativesByStatement_result, "list")
 
 })
 

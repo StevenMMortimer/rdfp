@@ -19,10 +19,11 @@ test_that("dfp_createLineItemCreativeAssociations", {
 
 test_that("dfp_getLineItemCreativeAssociationsByStatement", {
 
-#  dfp_getLineItemCreativeAssociationsByStatement_result <- dfp_getLineItemCreativeAssociationsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getLineItemCreativeAssociationsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getLineItemCreativeAssociationsByStatement_result <- dfp_getLineItemCreativeAssociationsByStatement(request_data)
+
+   expect_is(dfp_getLineItemCreativeAssociationsByStatement_result, "list")
 
 })
 

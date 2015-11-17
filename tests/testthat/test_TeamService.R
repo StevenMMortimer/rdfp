@@ -19,10 +19,11 @@ test_that("dfp_createTeams", {
 
 test_that("dfp_getTeamsByStatement", {
 
-#  dfp_getTeamsByStatement_result <- dfp_getTeamsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getTeamsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getTeamsByStatement_result <- dfp_getTeamsByStatement(request_data)
+
+   expect_is(dfp_getTeamsByStatement_result, "list")
 
 })
 

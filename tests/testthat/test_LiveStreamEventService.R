@@ -19,10 +19,11 @@ test_that("dfp_createLiveStreamEvents", {
 
 test_that("dfp_getLiveStreamEventsByStatement", {
 
-#  dfp_getLiveStreamEventsByStatement_result <- dfp_getLiveStreamEventsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getLiveStreamEventsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getLiveStreamEventsByStatement_result <- dfp_getLiveStreamEventsByStatement(request_data)
+
+   expect_is(dfp_getLiveStreamEventsByStatement_result, "list")
 
 })
 

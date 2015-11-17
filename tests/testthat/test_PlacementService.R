@@ -19,10 +19,11 @@ test_that("dfp_createPlacements", {
 
 test_that("dfp_getPlacementsByStatement", {
 
-#  dfp_getPlacementsByStatement_result <- dfp_getPlacementsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getPlacementsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getPlacementsByStatement_result <- dfp_getPlacementsByStatement(request_data)
+
+   expect_is(dfp_getPlacementsByStatement_result, "list")
 
 })
 

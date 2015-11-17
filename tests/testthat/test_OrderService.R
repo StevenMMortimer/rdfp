@@ -19,10 +19,11 @@ test_that("dfp_createOrders", {
 
 test_that("dfp_getOrdersByStatement", {
 
-#  dfp_getOrdersByStatement_result <- dfp_getOrdersByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getOrdersByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getOrdersByStatement_result <- dfp_getOrdersByStatement(request_data)
+
+   expect_is(dfp_getOrdersByStatement_result, "list")
 
 })
 

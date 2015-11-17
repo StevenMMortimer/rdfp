@@ -10,10 +10,11 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getSuggestedAdUnitsByStatement", {
 
-#  dfp_getSuggestedAdUnitsByStatement_result <- dfp_getSuggestedAdUnitsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getSuggestedAdUnitsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getSuggestedAdUnitsByStatement_result <- dfp_getSuggestedAdUnitsByStatement(request_data)
+
+   expect_is(dfp_getSuggestedAdUnitsByStatement_result, "list")
 
 })
 

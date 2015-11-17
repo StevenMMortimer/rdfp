@@ -37,10 +37,11 @@ test_that("dfp_getCustomFieldOption", {
 
 test_that("dfp_getCustomFieldsByStatement", {
 
-#  dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCustomFieldsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data)
+
+   expect_is(dfp_getCustomFieldsByStatement_result, "list")
 
 })
 

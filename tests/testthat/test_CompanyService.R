@@ -19,10 +19,11 @@ test_that("dfp_createCompanies", {
 
 test_that("dfp_getCompaniesByStatement", {
 
-#  dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCompaniesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data)
+
+   expect_is(dfp_getCompaniesByStatement_result, "list")
 
 })
 

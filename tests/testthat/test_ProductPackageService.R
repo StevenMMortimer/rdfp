@@ -19,10 +19,11 @@ test_that("dfp_createProductPackages", {
 
 test_that("dfp_getProductPackagesByStatement", {
 
-#  dfp_getProductPackagesByStatement_result <- dfp_getProductPackagesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getProductPackagesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getProductPackagesByStatement_result <- dfp_getProductPackagesByStatement(request_data)
+
+   expect_is(dfp_getProductPackagesByStatement_result, "list")
 
 })
 

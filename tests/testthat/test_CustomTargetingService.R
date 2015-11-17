@@ -28,19 +28,21 @@ test_that("dfp_createCustomTargetingValues", {
 
 test_that("dfp_getCustomTargetingKeysByStatement", {
 
-#  dfp_getCustomTargetingKeysByStatement_result <- dfp_getCustomTargetingKeysByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCustomTargetingKeysByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCustomTargetingKeysByStatement_result <- dfp_getCustomTargetingKeysByStatement(request_data)
+
+   expect_is(dfp_getCustomTargetingKeysByStatement_result, "list")
 
 })
 
 test_that("dfp_getCustomTargetingValuesByStatement", {
 
-#  dfp_getCustomTargetingValuesByStatement_result <- dfp_getCustomTargetingValuesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getCustomTargetingValuesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getCustomTargetingValuesByStatement_result <- dfp_getCustomTargetingValuesByStatement(request_data)
+
+   expect_is(dfp_getCustomTargetingValuesByStatement_result, "list")
 
 })
 

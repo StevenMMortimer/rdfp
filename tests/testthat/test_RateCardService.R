@@ -19,10 +19,11 @@ test_that("dfp_createRateCards", {
 
 test_that("dfp_getRateCardsByStatement", {
 
-#  dfp_getRateCardsByStatement_result <- dfp_getRateCardsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getRateCardsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getRateCardsByStatement_result <- dfp_getRateCardsByStatement(request_data)
+
+   expect_is(dfp_getRateCardsByStatement_result, "list")
 
 })
 

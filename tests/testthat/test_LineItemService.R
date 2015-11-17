@@ -19,10 +19,11 @@ test_that("dfp_createLineItems", {
 
 test_that("dfp_getLineItemsByStatement", {
 
-#  dfp_getLineItemsByStatement_result <- dfp_getLineItemsByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getLineItemsByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getLineItemsByStatement_result <- dfp_getLineItemsByStatement(request_data)
+
+   expect_is(dfp_getLineItemsByStatement_result, "list")
 
 })
 

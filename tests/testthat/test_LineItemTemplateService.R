@@ -10,10 +10,11 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_getLineItemTemplatesByStatement", {
 
-#  dfp_getLineItemTemplatesByStatement_result <- dfp_getLineItemTemplatesByStatement()
+   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-#  expect_is(dfp_getLineItemTemplatesByStatement_result, "list")
-  expect_true(TRUE)
+   dfp_getLineItemTemplatesByStatement_result <- dfp_getLineItemTemplatesByStatement(request_data)
+
+   expect_is(dfp_getLineItemTemplatesByStatement_result, "list")
 
 })
 
