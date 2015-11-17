@@ -530,116 +530,8 @@ dfp_NetworkService_object_factory <- function(obj_type, obj_data){
     stop("obj_data must be a list or data.frame")
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ExchangeRateError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InvalidEmailError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='Network'){
     stopifnot(all(sampled_names %in% c('id', 'displayName', 'networkCode', 'propertyCode', 'timeZone', 'currencyCode', 'secondaryCurrencyCodes', 'effectiveRootAdUnitId', 'contentBrowseCustomTargetingKeyId', 'isTest')))
-  }
-
-  if(obj_type=='NetworkError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PrecisionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredCollectionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='StringLengthError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
 }
@@ -701,7 +593,8 @@ dfp_makeTestNetwork <- function(){
 #' 
 #' @usage dfp_updateNetwork(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateNetworkResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateNetworkResponse
 #' @export
 dfp_updateNetwork <- function(request_data){
 

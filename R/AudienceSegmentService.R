@@ -1018,22 +1018,6 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('adUnitId', 'includeDescendants')))
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
   if(obj_type=='AudienceSegment'){
     stopifnot(all(sampled_names %in% c('id', 'name', 'categoryIds', 'description', 'status', 'size', 'dataProvider', 'type')))
   }
@@ -1046,30 +1030,6 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('name')))
   }
 
-  if(obj_type=='AudienceSegmentError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AudienceSegmentPage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='CustomCriteria'){
     stopifnot(all(sampled_names %in% c('keyId', 'valueIds', 'operator')))
   }
@@ -1078,44 +1038,12 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('logicalOperator', 'children')))
   }
 
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='EntityChildrenLimitReachedError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='EntityLimitReachedError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='FirstPartyAudienceSegment'){
     stopifnot(all(sampled_names %in% c('id', 'name', 'categoryIds', 'description', 'status', 'size', 'dataProvider', 'type')))
   }
 
   if(obj_type=='FirstPartyAudienceSegmentRule'){
     stopifnot(all(sampled_names %in% c('inventoryRule', 'customCriteriaRule')))
-  }
-
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='InventoryTargeting'){
@@ -1130,38 +1058,6 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('membershipExpirationDays')))
   }
 
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='RuleBasedFirstPartyAudienceSegment'){
     stopifnot(all(sampled_names %in% c('pageViews', 'recencyDays', 'membershipExpirationDays', 'rule')))
   }
@@ -1170,48 +1066,12 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('pageViews', 'recencyDays', 'membershipExpirationDays')))
   }
 
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
-  }
-
   if(obj_type=='SharedAudienceSegment'){
     stopifnot(all(sampled_names %in% c('id', 'name', 'categoryIds', 'description', 'status', 'size', 'dataProvider', 'type')))
   }
 
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='ThirdPartyAudienceSegment'){
     stopifnot(all(sampled_names %in% c('id', 'name', 'categoryIds', 'description', 'status', 'size', 'dataProvider', 'type', 'approvalStatus', 'cost', 'licenseType', 'startDateTime', 'endDateTime')))
-  }
-
-  if(obj_type=='UpdateResult'){
-    stopifnot(all(sampled_names %in% c('numChanges')))
   }
 
 }
@@ -1222,7 +1082,8 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @usage dfp_createAudienceSegments(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createAudienceSegmentsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a createAudienceSegmentsResponse
 #' @export
 dfp_createAudienceSegments <- function(request_data){
 
@@ -1252,7 +1113,8 @@ dfp_createAudienceSegments <- function(request_data){
 #' 
 #' @usage dfp_getAudienceSegmentsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getAudienceSegmentsByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getAudienceSegmentsByStatementResponse
 #' @export
 dfp_getAudienceSegmentsByStatement <- function(request_data){
 
@@ -1287,7 +1149,8 @@ dfp_performAudienceSegmentAction <- function(){
 #' 
 #' @usage dfp_updateAudienceSegments(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateAudienceSegmentsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateAudienceSegmentsResponse
 #' @export
 dfp_updateAudienceSegments <- function(request_data){
 

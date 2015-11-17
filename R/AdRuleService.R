@@ -1690,52 +1690,12 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('id', 'name', 'priority', 'targeting', 'startDateTime', 'startDateTimeType', 'endDateTime', 'unlimitedEndDateTime', 'status', 'frequencyCapBehavior', 'maxImpressionsPerLineItemPerStream', 'maxImpressionsPerLineItemPerPod', 'preroll', 'midroll', 'postroll')))
   }
 
-  if(obj_type=='AdRuleDateError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdRuleFrequencyCapError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdRulePage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
-  if(obj_type=='AdRulePriorityError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdRuleSlotError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='AdUnitTargeting'){
     stopifnot(all(sampled_names %in% c('adUnitId', 'includeDescendants')))
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
   if(obj_type=='AudienceSegmentCriteria'){
     stopifnot(all(sampled_names %in% c('operator', 'audienceSegmentIds')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='BandwidthGroup'){
@@ -1748,10 +1708,6 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='BaseAdRuleSlot'){
     stopifnot(all(sampled_names %in% c('slotBehavior', 'minVideoAdDuration', 'maxVideoAdDuration', 'videoMidrollFrequencyType', 'videoMidrollFrequency', 'bumper', 'maxBumperDuration', 'minPodDuration', 'maxPodDuration', 'maxAdsInPod')))
-  }
-
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
   if(obj_type=='Browser'){
@@ -1770,20 +1726,8 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('isTargeted', 'browsers')))
   }
 
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='ContentMetadataKeyHierarchyTargeting'){
     stopifnot(all(sampled_names %in% c('customTargetingValueIds')))
-  }
-
-  if(obj_type=='ContentMetadataTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='ContentTargeting'){
@@ -1796,26 +1740,6 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='CustomCriteriaSet'){
     stopifnot(all(sampled_names %in% c('logicalOperator', 'children')))
-  }
-
-  if(obj_type=='CustomTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
   if(obj_type=='DayPart'){
@@ -1850,24 +1774,12 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('isTargeted', 'deviceManufacturers')))
   }
 
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='GeoTargeting'){
     stopifnot(all(sampled_names %in% c('targetedLocations', 'excludedLocations')))
   }
 
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='InventoryTargeting'){
     stopifnot(all(sampled_names %in% c('targetedAdUnits', 'excludedAdUnits', 'targetedPlacementIds')))
-  }
-
-  if(obj_type=='InventoryTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='Location'){
@@ -1902,14 +1814,6 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('slotBehavior', 'minVideoAdDuration', 'maxVideoAdDuration', 'videoMidrollFrequencyType', 'videoMidrollFrequency', 'bumper', 'maxBumperDuration', 'minPodDuration', 'maxPodDuration', 'maxAdsInPod')))
   }
 
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='OperatingSystem'){
     stopifnot(all(sampled_names %in% c('id', 'name')))
   }
@@ -1930,72 +1834,8 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('slotBehavior', 'minVideoAdDuration', 'maxVideoAdDuration', 'videoMidrollFrequencyType', 'videoMidrollFrequency', 'bumper', 'maxBumperDuration', 'minPodDuration', 'maxPodDuration', 'maxAdsInPod')))
   }
 
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PoddingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
-  }
-
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
   if(obj_type=='StandardPoddingAdRuleSlot'){
     stopifnot(all(sampled_names %in% c('slotBehavior', 'minVideoAdDuration', 'maxVideoAdDuration', 'videoMidrollFrequencyType', 'videoMidrollFrequency', 'bumper', 'maxBumperDuration', 'minPodDuration', 'maxPodDuration', 'maxAdsInPod')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
-  if(obj_type=='StringLengthError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='Targeting'){
@@ -2010,20 +1850,12 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('bandwidthGroupTargeting', 'browserTargeting', 'browserLanguageTargeting', 'deviceCapabilityTargeting', 'deviceCategoryTargeting', 'deviceManufacturerTargeting', 'mobileCarrierTargeting', 'mobileDeviceTargeting', 'mobileDeviceSubmodelTargeting', 'operatingSystemTargeting', 'operatingSystemVersionTargeting')))
   }
 
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='TimeOfDay'){
     stopifnot(all(sampled_names %in% c('hour', 'minute')))
   }
 
   if(obj_type=='UnknownAdRuleSlot'){
     stopifnot(all(sampled_names %in% c('slotBehavior', 'minVideoAdDuration', 'maxVideoAdDuration', 'videoMidrollFrequencyType', 'videoMidrollFrequency', 'bumper', 'maxBumperDuration', 'minPodDuration', 'maxPodDuration', 'maxAdsInPod')))
-  }
-
-  if(obj_type=='UpdateResult'){
-    stopifnot(all(sampled_names %in% c('numChanges')))
   }
 
   if(obj_type=='UserDomainTargeting'){
@@ -2054,7 +1886,8 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @usage dfp_createAdRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createAdRulesResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a createAdRulesResponse
 #' @export
 dfp_createAdRules <- function(request_data){
 
@@ -2078,7 +1911,8 @@ dfp_createAdRules <- function(request_data){
 #' 
 #' @usage dfp_getAdRulesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getAdRulesByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getAdRulesByStatementResponse
 #' @export
 dfp_getAdRulesByStatement <- function(request_data){
 
@@ -2113,7 +1947,8 @@ dfp_performAdRuleAction <- function(){
 #' 
 #' @usage dfp_updateAdRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateAdRulesResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateAdRulesResponse
 #' @export
 dfp_updateAdRules <- function(request_data){
 

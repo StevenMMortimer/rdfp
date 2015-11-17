@@ -678,152 +678,12 @@ dfp_ReconciliationReportRowService_object_factory <- function(obj_type, obj_data
     stop("obj_data must be a list or data.frame")
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='Money'){
     stopifnot(all(sampled_names %in% c('currencyCode', 'microAmount')))
   }
 
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RangeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ReconciliationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ReconciliationImportError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='ReconciliationReportRow'){
     stopifnot(all(sampled_names %in% c('reconciliationReportId', 'lineItemId', 'creativeId', 'orderId', 'advertiserId', 'proposalLineItemId', 'proposalId', 'reconciliationSource', 'rateType', 'lineItemCostPerUnit', 'lineItemContractedUnitsBought', 'dfpVolume', 'thirdPartyVolume', 'manualVolume', 'reconciledVolume', 'contractedRevenue', 'dfpRevenue', 'thirdPartyRevenue', 'manualRevenue', 'reconciledRevenue', 'comments')))
-  }
-
-  if(obj_type=='ReconciliationReportRowPage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
-  }
-
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
 }
@@ -855,7 +715,8 @@ dfp_ReconciliationReportRowService_object_factory <- function(obj_type, obj_data
 #' 
 #' @usage dfp_getReconciliationReportRowsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getReconciliationReportRowsByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getReconciliationReportRowsByStatementResponse
 #' @export
 dfp_getReconciliationReportRowsByStatement <- function(request_data){
 
@@ -873,7 +734,8 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data){
 #' 
 #' @usage dfp_updateReconciliationReportRows(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateReconciliationReportRowsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateReconciliationReportRowsResponse
 #' @export
 dfp_updateReconciliationReportRows <- function(request_data){
 

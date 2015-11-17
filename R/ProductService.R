@@ -1943,32 +1943,12 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('adUnitId', 'includeDescendants')))
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
   if(obj_type=='AppliedLabel'){
     stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
   }
 
   if(obj_type=='AudienceSegmentCriteria'){
     stopifnot(all(sampled_names %in% c('operator', 'audienceSegmentIds')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='BandwidthGroup'){
@@ -1981,14 +1961,6 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='BaseCustomFieldValue'){
     stopifnot(all(sampled_names %in% c('customFieldId')))
-  }
-
-  if(obj_type=='BaseRateError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
   if(obj_type=='Browser'){
@@ -2007,20 +1979,8 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('isTargeted', 'browsers')))
   }
 
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='ContentMetadataKeyHierarchyTargeting'){
     stopifnot(all(sampled_names %in% c('customTargetingValueIds')))
-  }
-
-  if(obj_type=='ContentMetadataTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='ContentTargeting'){
@@ -2043,36 +2003,8 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
   }
 
-  if(obj_type=='CustomFieldValueError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='CustomizableAttributes'){
     stopifnot(all(sampled_names %in% c('allowGeoTargetingCustomization', 'allowAdUnitTargetingCustomization', 'allowPlacementTargetingCustomization', 'allowUserDomainTargetingCustomization', 'allowBandwidthGroupTargetingCustomization', 'allowBrowserTargetingCustomization', 'allowBrowserLanguageTargetingCustomization', 'allowOperatingSystemTargetingCustomization', 'allowDeviceCapabilityTargetingCustomization', 'allowDeviceCategoryTargetingCustomization', 'allowMobileCarrierTargetingCustomization', 'allowMobileDeviceAndManufacturerTargetingCustomization', 'allowAudienceSegmentTargetingCustomization', 'isAllCustomTargetingKeysCustomizable', 'customizableCustomTargetingKeyIds', 'allowFrequencyCapsCustomization')))
-  }
-
-  if(obj_type=='CustomTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeRangeTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
   if(obj_type=='DayPart'){
@@ -2081,10 +2013,6 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='DayPartTargeting'){
     stopifnot(all(sampled_names %in% c('dayParts', 'timeZone')))
-  }
-
-  if(obj_type=='DayPartTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='DeviceCapability'){
@@ -2115,44 +2043,16 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
   }
 
-  if(obj_type=='EntityChildrenLimitReachedError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ForecastError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='FrequencyCap'){
     stopifnot(all(sampled_names %in% c('maxImpressions', 'numTimeUnits', 'timeUnit')))
-  }
-
-  if(obj_type=='GenericTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='GeoTargeting'){
     stopifnot(all(sampled_names %in% c('targetedLocations', 'excludedLocations')))
   }
 
-  if(obj_type=='GeoTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='InventoryTargeting'){
     stopifnot(all(sampled_names %in% c('targetedAdUnits', 'excludedAdUnits', 'targetedPlacementIds')))
-  }
-
-  if(obj_type=='InventoryTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='Location'){
@@ -2183,14 +2083,6 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('targetedMobileDevices', 'excludedMobileDevices')))
   }
 
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='OperatingSystem'){
     stopifnot(all(sampled_names %in% c('id', 'name')))
   }
@@ -2207,92 +2099,12 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('targetedOperatingSystemVersions', 'excludedOperatingSystemVersions')))
   }
 
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='Product'){
     stopifnot(all(sampled_names %in% c('name', 'status', 'productType', 'productTemplateId', 'id', 'notes', 'productTemplateDescription', 'lastModifiedDateTime', 'rateType', 'roadblockingType', 'creativePlaceholders', 'lineItemType', 'priority', 'frequencyCaps', 'builtInTargeting', 'customizableAttributes', 'customFieldValues', 'videoMaxDuration')))
   }
 
-  if(obj_type=='ProductActionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ProductError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ProductPage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RangeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredCollectionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
-  }
-
   if(obj_type=='Size'){
     stopifnot(all(sampled_names %in% c('width', 'height', 'isAspectRatio')))
-  }
-
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
-  if(obj_type=='StringLengthError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='Targeting'){
@@ -2307,28 +2119,12 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('bandwidthGroupTargeting', 'browserTargeting', 'browserLanguageTargeting', 'deviceCapabilityTargeting', 'deviceCategoryTargeting', 'deviceManufacturerTargeting', 'mobileCarrierTargeting', 'mobileDeviceTargeting', 'mobileDeviceSubmodelTargeting', 'operatingSystemTargeting', 'operatingSystemVersionTargeting')))
   }
 
-  if(obj_type=='TechnologyTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='TimeOfDay'){
     stopifnot(all(sampled_names %in% c('hour', 'minute')))
   }
 
-  if(obj_type=='UpdateResult'){
-    stopifnot(all(sampled_names %in% c('numChanges')))
-  }
-
   if(obj_type=='UserDomainTargeting'){
     stopifnot(all(sampled_names %in% c('domains', 'targeted')))
-  }
-
-  if(obj_type=='UserDomainTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='VideoPosition'){
@@ -2341,10 +2137,6 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='VideoPositionTargeting'){
     stopifnot(all(sampled_names %in% c('targetedPositions')))
-  }
-
-  if(obj_type=='VideoPositionTargetingError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='VideoPositionWithinPod'){
@@ -2370,7 +2162,8 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @usage dfp_getProductsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getProductsByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getProductsByStatementResponse
 #' @export
 dfp_getProductsByStatement <- function(request_data){
 
@@ -2405,7 +2198,8 @@ dfp_performProductAction <- function(){
 #' 
 #' @usage dfp_updateProducts(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateProductsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateProductsResponse
 #' @export
 dfp_updateProducts <- function(request_data){
 

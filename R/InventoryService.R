@@ -1327,10 +1327,6 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
     stop("obj_data must be a list or data.frame")
   }
 
-  if(obj_type=='AdSenseAccountError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='AdSenseSettings'){
     stopifnot(all(sampled_names %in% c('adSenseEnabled', 'borderColor', 'titleColor', 'backgroundColor', 'textColor', 'urlColor', 'adType', 'borderStyle', 'fontFamily', 'fontSize', 'afcFormats')))
   }
@@ -1343,48 +1339,12 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('id', 'parentId', 'hasChildren', 'parentPath', 'name', 'description', 'targetWindow', 'status', 'adUnitCode', 'adUnitSizes', 'targetPlatform', 'mobilePlatform', 'explicitlyTargeted', 'inheritedAdSenseSettings', 'partnerId', 'appliedLabelFrequencyCaps', 'effectiveLabelFrequencyCaps', 'appliedLabels', 'effectiveAppliedLabels', 'effectiveTeamIds', 'appliedTeamIds', 'lastModifiedDateTime', 'smartSizeMode', 'refreshRate', 'isSharedByDistributor', 'crossSellingDistributor', 'externalSetTopBoxChannelId', 'isSetTopBoxEnabled')))
   }
 
-  if(obj_type=='AdUnitAfcSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdUnitCodeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdUnitHierarchyError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AdUnitPage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
   if(obj_type=='AdUnitParent'){
     stopifnot(all(sampled_names %in% c('id', 'name', 'adUnitCode')))
   }
 
   if(obj_type=='AdUnitSize'){
     stopifnot(all(sampled_names %in% c('size', 'environmentType', 'companions', 'fullDisplayString')))
-  }
-
-  if(obj_type=='AdUnitTypeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
   }
 
   if(obj_type=='AppliedLabel'){
@@ -1395,156 +1355,20 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('placementId')))
   }
 
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CreativeWrapperError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CrossSellError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='CrossSellingDistributor'){
     stopifnot(all(sampled_names %in% c('networkName')))
-  }
-
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='EntityLimitReachedError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='FrequencyCap'){
     stopifnot(all(sampled_names %in% c('maxImpressions', 'numTimeUnits', 'timeUnit')))
   }
 
-  if(obj_type=='FrequencyCapError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InvalidColorError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InventoryUnitError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InventoryUnitPartnerAssociationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InventoryUnitRefreshRateError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InventoryUnitSizesError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='LabelEntityAssociationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='LabelFrequencyCap'){
     stopifnot(all(sampled_names %in% c('frequencyCap', 'labelId')))
   }
 
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RegExError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='RemoveAdUnitsFromPlacement'){
     stopifnot(all(sampled_names %in% c('placementId')))
-  }
-
-  if(obj_type=='RequiredCollectionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
   }
 
   if(obj_type=='Size'){
@@ -1555,42 +1379,6 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('key', 'value')))
   }
 
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
-  if(obj_type=='StringLengthError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='TeamError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='UpdateResult'){
-    stopifnot(all(sampled_names %in% c('numChanges')))
-  }
-
 }
 #' 
 #' createAdUnits
@@ -1599,7 +1387,8 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @usage dfp_createAdUnits(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createAdUnitsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a createAdUnitsResponse
 #' @export
 dfp_createAdUnits <- function(request_data){
 
@@ -1620,7 +1409,8 @@ dfp_createAdUnits <- function(request_data){
 #' 
 #' @usage dfp_getAdUnitSizesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getAdUnitSizesByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getAdUnitSizesByStatementResponse
 #' @export
 dfp_getAdUnitSizesByStatement <- function(request_data){
 
@@ -1646,7 +1436,8 @@ dfp_getAdUnitSizesByStatement <- function(request_data){
 #' 
 #' @usage dfp_getAdUnitsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getAdUnitsByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getAdUnitsByStatementResponse
 #' @export
 dfp_getAdUnitsByStatement <- function(request_data){
 
@@ -1681,7 +1472,8 @@ dfp_performAdUnitAction <- function(){
 #' 
 #' @usage dfp_updateAdUnits(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateAdUnitsResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateAdUnitsResponse
 #' @export
 dfp_updateAdUnits <- function(request_data){
 

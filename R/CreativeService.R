@@ -2717,22 +2717,6 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('codeSnippet')))
   }
 
-  if(obj_type=='ApiError'){
-    stopifnot(all(sampled_names %in% c('fieldPath', 'trigger', 'errorString')))
-  }
-
-  if(obj_type=='ApiException'){
-    stopifnot(all(sampled_names %in% c('message', 'errors')))
-  }
-
-  if(obj_type=='ApiVersionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ApplicationException'){
-    stopifnot(all(sampled_names %in% c('message')))
-  }
-
   if(obj_type=='AppliedLabel'){
     stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
   }
@@ -2743,14 +2727,6 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='AssetCreativeTemplateVariableValue'){
     stopifnot(all(sampled_names %in% c('uniqueName', 'assetId', 'assetByteArray', 'fileName')))
-  }
-
-  if(obj_type=='AssetError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='AuthenticationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='BaseCreativeTemplateVariableValue'){
@@ -2789,20 +2765,8 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('destinationUrl', 'destinationUrlType', 'duration', 'allowDurationOverride', 'trackingUrls', 'companionCreativeIds', 'customParameters', 'vastPreviewUrl', 'sslScanResult', 'sslManualOverride')))
   }
 
-  if(obj_type=='BooleanValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='ClickTrackingCreative'){
     stopifnot(all(sampled_names %in% c('advertiserId', 'id', 'name', 'size', 'previewUrl', 'policyViolations', 'appliedLabels', 'lastModifiedDateTime', 'customFieldValues', 'clickTrackingUrl')))
-  }
-
-  if(obj_type=='CollectionSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CommonError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='ConversionEvent_TrackingUrlsMapEntry'){
@@ -2817,26 +2781,6 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('assetId', 'assetByteArray', 'fileName', 'fileSize', 'assetUrl', 'size', 'imageDensity')))
   }
 
-  if(obj_type=='CreativeAssetMacroError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CreativeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CreativePage'){
-    stopifnot(all(sampled_names %in% c('totalResultSetSize', 'startIndex', 'results')))
-  }
-
-  if(obj_type=='CreativeSetError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='CreativeTemplateError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='CustomCreative'){
     stopifnot(all(sampled_names %in% c('destinationUrl', 'destinationUrlType', 'htmlSnippet', 'customCreativeAssets', 'isInterstitial', 'lockedOrientation', 'sslScanResult', 'sslManualOverride')))
   }
@@ -2845,48 +2789,12 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('macroName', 'assetId', 'assetByteArray', 'fileName', 'fileSize')))
   }
 
-  if(obj_type=='CustomCreativeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='CustomFieldValue'){
     stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
   }
 
-  if(obj_type=='CustomFieldValueError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='Date'){
-    stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
-  }
-
-  if(obj_type=='DateTime'){
-    stopifnot(all(sampled_names %in% c('date', 'hour', 'minute', 'second', 'timeZoneID')))
-  }
-
-  if(obj_type=='DateTimeValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='DateValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
   if(obj_type=='DropDownCustomFieldValue'){
     stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
-  }
-
-  if(obj_type=='EntityLimitReachedError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FeatureError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='FileError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='FlashCreative'){
@@ -2917,10 +2825,6 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('overrideSize', 'primaryImageAsset', 'altText', 'thirdPartyImpressionUrl', 'secondaryImageAssets', 'lockedOrientation')))
   }
 
-  if(obj_type=='ImageError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='ImageOverlayCreative'){
     stopifnot(all(sampled_names %in% c('overrideSize', 'primaryImageAsset', 'companionCreativeIds', 'trackingUrls', 'lockedOrientation', 'customParameters', 'duration', 'vastPreviewUrl')))
   }
@@ -2933,24 +2837,8 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('imageUrl', 'assetSize', 'duration', 'companionCreativeIds', 'trackingUrls', 'customParameters', 'vastPreviewUrl')))
   }
 
-  if(obj_type=='InternalApiError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='InternalRedirectCreative'){
     stopifnot(all(sampled_names %in% c('advertiserId', 'id', 'name', 'size', 'previewUrl', 'policyViolations', 'appliedLabels', 'lastModifiedDateTime', 'customFieldValues', 'lockedOrientation', 'assetSize', 'internalRedirectUrl', 'overrideSize', 'isInterstitial', 'sslScanResult', 'sslManualOverride')))
-  }
-
-  if(obj_type=='InvalidPhoneNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='InvalidUrlError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='LabelEntityAssociationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='LegacyDfpCreative'){
@@ -2961,72 +2849,16 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('destinationUrl', 'destinationUrlType')))
   }
 
-  if(obj_type=='LineItemCreativeAssociationError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='LongCreativeTemplateVariableValue'){
     stopifnot(all(sampled_names %in% c('uniqueName', 'value')))
-  }
-
-  if(obj_type=='NotNullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NullError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='NumberValue'){
-    stopifnot(all(sampled_names %in% c('value')))
-  }
-
-  if(obj_type=='ParseError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PermissionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='ProgrammaticCreative'){
     stopifnot(all(sampled_names %in% c('advertiserId', 'id', 'name', 'size', 'previewUrl', 'policyViolations', 'appliedLabels', 'lastModifiedDateTime', 'customFieldValues')))
   }
 
-  if(obj_type=='PublisherQueryLanguageContextError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='PublisherQueryLanguageSyntaxError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='QuotaError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RangeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='RedirectAsset'){
     stopifnot(all(sampled_names %in% c('redirectUrl')))
-  }
-
-  if(obj_type=='RequiredCollectionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredNumberError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='RequiredSizeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='RichMediaStudioChildAssetProperty'){
@@ -3037,60 +2869,16 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
     stopifnot(all(sampled_names %in% c('studioCreativeId', 'creativeFormat', 'artworkType', 'totalFileSize', 'adTagKeys', 'customKeyValues', 'surveyUrl', 'allImpressionsUrl', 'richMediaImpressionsUrl', 'backupImageImpressionsUrl', 'overrideCss', 'requiredFlashPluginVersion', 'duration', 'billingAttribute', 'richMediaStudioChildAssetProperties', 'sslScanResult', 'sslManualOverride', 'lockedOrientation', 'isInterstitial')))
   }
 
-  if(obj_type=='RichMediaStudioCreativeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='ServerError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
   if(obj_type=='SetTopBoxCreative'){
     stopifnot(all(sampled_names %in% c('duration', 'allowDurationOverride', 'trackingUrls', 'companionCreativeIds', 'customParameters', 'vastPreviewUrl', 'sslScanResult', 'sslManualOverride', 'externalAssetId', 'providerId')))
-  }
-
-  if(obj_type=='SetTopBoxCreativeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SetValue'){
-    stopifnot(all(sampled_names %in% c('values')))
   }
 
   if(obj_type=='Size'){
     stopifnot(all(sampled_names %in% c('width', 'height', 'isAspectRatio')))
   }
 
-  if(obj_type=='SoapRequestHeader'){
-    stopifnot(all(sampled_names %in% c('networkCode', 'applicationName')))
-  }
-
-  if(obj_type=='SoapResponseHeader'){
-    stopifnot(all(sampled_names %in% c('requestId', 'responseTime')))
-  }
-
-  if(obj_type=='Statement'){
-    stopifnot(all(sampled_names %in% c('query', 'values')))
-  }
-
-  if(obj_type=='StatementError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='String_ValueMapEntry'){
-    stopifnot(all(sampled_names %in% c('key', 'value')))
-  }
-
   if(obj_type=='StringCreativeTemplateVariableValue'){
     stopifnot(all(sampled_names %in% c('uniqueName', 'value')))
-  }
-
-  if(obj_type=='StringLengthError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='SwiffyConversionError'){
-    stopifnot(all(sampled_names %in% c('reason')))
   }
 
   if(obj_type=='SwiffyFallbackAsset'){
@@ -3099,14 +2887,6 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
 
   if(obj_type=='TemplateCreative'){
     stopifnot(all(sampled_names %in% c('advertiserId', 'id', 'name', 'size', 'previewUrl', 'policyViolations', 'appliedLabels', 'lastModifiedDateTime', 'customFieldValues', 'creativeTemplateId', 'isInterstitial', 'isNativeEligible', 'destinationUrl', 'creativeTemplateVariableValues', 'sslScanResult', 'sslManualOverride', 'lockedOrientation')))
-  }
-
-  if(obj_type=='TemplateInstantiatedCreativeError'){
-    stopifnot(all(sampled_names %in% c('reason')))
-  }
-
-  if(obj_type=='TextValue'){
-    stopifnot(all(sampled_names %in% c('value')))
   }
 
   if(obj_type=='ThirdPartyCreative'){
@@ -3161,7 +2941,8 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @usage dfp_createCreatives(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a createCreativesResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a createCreativesResponse
 #' @export
 dfp_createCreatives <- function(request_data){
 
@@ -3187,7 +2968,8 @@ dfp_createCreatives <- function(request_data){
 #' 
 #' @usage dfp_getCreativesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a getCreativesByStatementResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a getCreativesByStatementResponse
 #' @export
 dfp_getCreativesByStatement <- function(request_data){
 
@@ -3205,7 +2987,8 @@ dfp_getCreativesByStatement <- function(request_data){
 #' 
 #' @usage dfp_updateCreatives(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)#' @return a \code{list} containing all the elements of a updateCreativesResponse
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @return a \code{list} containing all the elements of a updateCreativesResponse
 #' @export
 dfp_updateCreatives <- function(request_data){
 
