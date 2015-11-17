@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createExchangeRatesResponse
 \description{
 Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCustomTargetingKeysResponse
 \description{
 Creates new CustomTargetingKey objects. The following fields are required: <ul> <li>CustomTargetingKey name</li> <li>CustomTargetingKey type</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+}
 

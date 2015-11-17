@@ -22,4 +22,7 @@ Gets a ContentPage of Content objects that satisfy the given Statement query. Th
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+}
 

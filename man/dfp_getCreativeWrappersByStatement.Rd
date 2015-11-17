@@ -22,4 +22,7 @@ Gets a CreativeWrapperPage of CreativeWrapper objects that satisfy the given Sta
   \item{ordering}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+}
 

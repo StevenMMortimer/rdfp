@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateLineItemsResponse
 \description{
 Updates the specified LineItem objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+}
 

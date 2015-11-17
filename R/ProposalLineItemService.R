@@ -3033,6 +3033,8 @@ dfp_ProposalLineItemService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+#' 
 #' @usage dfp_createProposalLineItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -3062,6 +3064,8 @@ dfp_createProposalLineItems <- function(request_data){
 #'   \item{customThirdPartyAdServerName}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+#' 
 #' @usage dfp_getProposalLineItemsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -3081,6 +3085,8 @@ dfp_getProposalLineItemsByStatement <- function(request_data){
 #' 
 #' Performs actions on ProposalLineItem objects that match the given Statement query. proposal line items
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+#' 
 #' @usage dfp_performProposalLineItemAction()
 #' @return a \code{list} containing all the elements of a performProposalLineItemActionResponse
 #' @export
@@ -3097,6 +3103,8 @@ dfp_performProposalLineItemAction <- function(){
 #' updateProposalLineItems
 #' 
 #' Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 #' 
 #' @usage dfp_updateProposalLineItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

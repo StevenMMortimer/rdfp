@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateLiveStreamEventsResponse
 \description{
 Updates the specified LiveStreamEvent objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+}
 

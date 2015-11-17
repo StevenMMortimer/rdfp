@@ -748,6 +748,8 @@ dfp_ProductPackageItemService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProductPackageItem objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+#' 
 #' @usage dfp_createProductPackageItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -775,6 +777,8 @@ dfp_createProductPackageItems <- function(request_data){
 #'   \item{archived}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+#' 
 #' @usage dfp_getProductPackageItemsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -794,6 +798,8 @@ dfp_getProductPackageItemsByStatement <- function(request_data){
 #' 
 #' Performs actions on ProductPackageItem objects that satisfy the given Statement query. a set of product package items
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+#' 
 #' @usage dfp_performProductPackageItemAction()
 #' @return a \code{list} containing all the elements of a performProductPackageItemActionResponse
 #' @export
@@ -810,6 +816,8 @@ dfp_performProductPackageItemAction <- function(){
 #' updateProductPackageItems
 #' 
 #' Updates the specified ProductPackageItem objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
 #' @usage dfp_updateProductPackageItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

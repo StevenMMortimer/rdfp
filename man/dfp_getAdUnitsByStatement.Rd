@@ -24,4 +24,7 @@ Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The 
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+}
 

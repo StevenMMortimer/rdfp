@@ -2939,6 +2939,8 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Creative objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#createCreatives}{Google Documentation for createCreatives}
+#' 
 #' @usage dfp_createCreatives(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2966,6 +2968,8 @@ dfp_createCreatives <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+#' 
 #' @usage dfp_getCreativesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2984,6 +2988,8 @@ dfp_getCreativesByStatement <- function(request_data){
 #' updateCreatives
 #' 
 #' Updates the specified Creative objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 #' 
 #' @usage dfp_updateCreatives(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

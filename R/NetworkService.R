@@ -540,6 +540,8 @@ dfp_NetworkService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+#' 
 #' @usage dfp_getAllNetworks()
 #' @return a \code{list} containing all the elements of a getAllNetworksResponse
 #' @export
@@ -556,6 +558,8 @@ dfp_getAllNetworks <- function(){
 #' getCurrentNetwork
 #' 
 #' Returns the current network for which requests are being made.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
 #' @usage dfp_getCurrentNetwork()
 #' @return a \code{list} containing all the elements of a getCurrentNetworkResponse
@@ -574,6 +578,8 @@ dfp_getCurrentNetwork <- function(){
 #' 
 #' Creates a new blank network for testing purposes using the current login. <p> Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI. <p> Test networks are limited in the following ways: <ul> <li>Test networks cannot serve ads.</li> <li>Because test networks cannot serve ads, reports will always come back without data.</li> <li>Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.</li> <li>Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager. </li> <li>Test networks are limited to 10,000 objects per entity type.</li> </ul> </p>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+#' 
 #' @usage dfp_makeTestNetwork()
 #' @return a \code{list} containing all the elements of a makeTestNetworkResponse
 #' @export
@@ -590,6 +596,8 @@ dfp_makeTestNetwork <- function(){
 #' updateNetwork
 #' 
 #' Updates the specified network. Currently, only the network display name can be updated.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 #' 
 #' @usage dfp_updateNetwork(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

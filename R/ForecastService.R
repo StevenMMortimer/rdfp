@@ -3751,6 +3751,8 @@ dfp_ForecastService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Gets the availability forecast for a ProspectiveLineItem. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. <p>Note: Beginning in v201502, this replaces the previous getForecast method.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+#' 
 #' @usage dfp_getAvailabilityForecast()
 #' @return a \code{list} containing all the elements of a getAvailabilityForecastResponse
 #' @export
@@ -3767,6 +3769,8 @@ dfp_getAvailabilityForecast <- function(){
 #' getAvailabilityForecastById
 #' 
 #' Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. <p>Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. <p>Note: Beginning in v201502, this replaces the previous getForecastById method.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
 #' @usage dfp_getAvailabilityForecastById()
 #' @return a \code{list} containing all the elements of a getAvailabilityForecastByIdResponse
@@ -3785,6 +3789,8 @@ dfp_getAvailabilityForecastById <- function(){
 #' 
 #' Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+#' 
 #' @usage dfp_getDeliveryForecast()
 #' @return a \code{list} containing all the elements of a getDeliveryForecastResponse
 #' @export
@@ -3801,6 +3807,8 @@ dfp_getDeliveryForecast <- function(){
 #' getDeliveryForecastByIds
 #' 
 #' Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
 #' @usage dfp_getDeliveryForecastByIds()
 #' @return a \code{list} containing all the elements of a getDeliveryForecastByIdsResponse

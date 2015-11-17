@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getCustomFieldOptionResponse
 \description{
 Returns the CustomFieldOption uniquely identified by the given ID.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
+}
 

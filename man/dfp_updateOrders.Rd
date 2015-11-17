@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateOrdersResponse
 \description{
 Updates the specified Order objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#updateOrders}{Google Documentation for updateOrders}
+}
 

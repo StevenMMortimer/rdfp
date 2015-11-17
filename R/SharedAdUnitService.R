@@ -636,6 +636,8 @@ dfp_SharedAdUnitService_object_factory <- function(obj_type, obj_data){
 #'   \item{name}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SharedAdUnitService#getSharedAdUnitsByStatement}{Google Documentation for getSharedAdUnitsByStatement}
+#' 
 #' @usage dfp_getSharedAdUnitsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -654,6 +656,8 @@ dfp_getSharedAdUnitsByStatement <- function(request_data){
 #' performSharedAdUnitAction
 #' 
 #' Performs actions on shared ad unit objects that match the given Statement query. a set of shared ad units on which the action was performed.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SharedAdUnitService#performSharedAdUnitAction}{Google Documentation for performSharedAdUnitAction}
 #' 
 #' @usage dfp_performSharedAdUnitAction()
 #' @return a \code{list} containing all the elements of a performSharedAdUnitActionResponse

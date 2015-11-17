@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performPackageActionResponse
 \description{
 Performs actions on Package objects that match the given Statement.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#performPackageAction}{Google Documentation for performPackageAction}
+}
 

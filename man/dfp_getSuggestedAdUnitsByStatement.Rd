@@ -20,4 +20,7 @@ Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter qu
   \item{numRequests}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
+}
 

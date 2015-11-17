@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCustomFieldOptionsResponse
 \description{
 Creates new CustomFieldOption objects. The following fields are required: <ul> <li>CustomFieldOption displayName</li> <li>CustomFieldOption customFieldId</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+}
 

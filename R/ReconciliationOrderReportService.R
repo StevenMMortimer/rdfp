@@ -669,6 +669,8 @@ dfp_ReconciliationOrderReportService_object_factory <- function(obj_type, obj_da
 #'   \item{submitterId}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+#' 
 #' @usage dfp_getReconciliationOrderReportsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -693,6 +695,8 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data){
 #'   \item{reconciliationReportId}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
+#' 
 #' @usage dfp_performReconciliationOrderReportAction()
 #' @return a \code{list} containing all the elements of a performReconciliationOrderReportActionResponse
 #' @export
@@ -709,6 +713,8 @@ dfp_performReconciliationOrderReportAction <- function(){
 #' updateReconciliationOrderReports
 #' 
 #' Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport. ReconciliationOrderReport reconciliation order reports to update
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 #' 
 #' @usage dfp_updateReconciliationOrderReports(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

@@ -28,4 +28,7 @@ Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given St
   \item{endDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+}
 

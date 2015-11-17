@@ -17,4 +17,7 @@ Performs actions on the ReconciliationOrderReport objects that match the given S
   \item{reconciliationReportId}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
+}
 

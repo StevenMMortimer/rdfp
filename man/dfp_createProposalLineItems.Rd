@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createProposalLineItemsResponse
 \description{
 Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+}
 

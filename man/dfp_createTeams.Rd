@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createTeamsResponse
 \description{
 Creates new Team objects. The following fields are required: <ul> <li>Team name</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#createTeams}{Google Documentation for createTeams}
+}
 

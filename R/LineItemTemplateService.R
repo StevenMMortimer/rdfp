@@ -1836,6 +1836,8 @@ dfp_LineItemTemplateService_object_factory <- function(obj_type, obj_data){
 #'   \item{id}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+#' 
 #' @usage dfp_getLineItemTemplatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)

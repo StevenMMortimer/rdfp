@@ -24,4 +24,7 @@ Gets a UserPage of User objects that satisfy the given Statement query. The foll
   \item{status}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+}
 

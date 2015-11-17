@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateTeamsResponse
 \description{
 Updates the specified Team objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#updateTeams}{Google Documentation for updateTeams}
+}
 

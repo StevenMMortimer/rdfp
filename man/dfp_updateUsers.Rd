@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateUsersResponse
 \description{
 Updates the specified User objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#updateUsers}{Google Documentation for updateUsers}
+}
 

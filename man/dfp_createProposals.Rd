@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createProposalsResponse
 \description{
 Creates new Proposal objects. For each proposal, the following fields are required: <ul> <li>Proposal name</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#createProposals}{Google Documentation for createProposals}
+}
 

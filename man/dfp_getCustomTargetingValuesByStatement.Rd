@@ -23,4 +23,7 @@ Gets a CustomTargetingValuePage of CustomTargetingValue objects that satisfy the
   \item{matchType}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+}
 

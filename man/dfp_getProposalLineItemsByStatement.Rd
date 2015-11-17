@@ -26,4 +26,7 @@ Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given S
   \item{customThirdPartyAdServerName}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+}
 

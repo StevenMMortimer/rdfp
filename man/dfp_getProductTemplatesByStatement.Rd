@@ -27,4 +27,7 @@ Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering
   \item{rateType}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+}
 

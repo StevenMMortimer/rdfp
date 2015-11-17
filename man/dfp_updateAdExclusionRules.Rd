@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateAdExclusionRulesResponse
 \description{
 Updates the specified AdExclusionRule objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
+}
 

@@ -777,6 +777,8 @@ dfp_RateCardService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#createRateCards}{Google Documentation for createRateCards}
+#' 
 #' @usage dfp_createRateCards(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -802,6 +804,8 @@ dfp_createRateCards <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+#' 
 #' @usage dfp_getRateCardsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -821,6 +825,8 @@ dfp_getRateCardsByStatement <- function(request_data){
 #' 
 #' Performs action on RateCard objects that satisfy the given Statement query. a set of rate cards.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+#' 
 #' @usage dfp_performRateCardAction()
 #' @return a \code{list} containing all the elements of a performRateCardActionResponse
 #' @export
@@ -837,6 +843,8 @@ dfp_performRateCardAction <- function(){
 #' updateRateCards
 #' 
 #' Updates a list of RateCard objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
 #' @usage dfp_updateRateCards(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

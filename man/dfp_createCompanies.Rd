@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCompaniesResponse
 \description{
 Creates new Company objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#createCompanies}{Google Documentation for createCompanies}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createBaseRatesResponse
 \description{
 Creates a list of new BaseRate objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+}
 

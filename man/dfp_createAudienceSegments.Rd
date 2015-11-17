@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createAudienceSegmentsResponse
 \description{
 Creates new RuleBasedFirstPartyAudienceSegment objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+}
 

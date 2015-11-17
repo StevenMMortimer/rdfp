@@ -19,4 +19,7 @@ Gets a set of AdUnitSize objects that satisfy the given Statement query. The fol
   \item{targetPlatform}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+}
 

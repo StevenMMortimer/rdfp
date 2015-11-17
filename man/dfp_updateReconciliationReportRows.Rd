@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateReconciliationReportRowsRes
 \description{
 Updates a list of ReconciliationReportRow which belong to same ReconciliationReport.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
+}
 

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getReportJobStatusResponse
 \description{
 Returns the ReportJobStatus of the report job with the specified ID.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+}
 

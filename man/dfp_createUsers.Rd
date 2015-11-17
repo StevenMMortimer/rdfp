@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createUsersResponse
 \description{
 Creates new User objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#createUsers}{Google Documentation for createUsers}
+}
 

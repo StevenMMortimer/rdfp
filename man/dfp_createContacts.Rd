@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createContactsResponse
 \description{
 Creates new Contact objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#createContacts}{Google Documentation for createContacts}
+}
 

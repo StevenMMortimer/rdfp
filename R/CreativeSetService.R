@@ -1016,6 +1016,8 @@ dfp_CreativeSetService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new CreativeSet.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+#' 
 #' @usage dfp_createCreativeSet(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1041,6 +1043,8 @@ dfp_createCreativeSet <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+#' 
 #' @usage dfp_getCreativeSetsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1059,6 +1063,8 @@ dfp_getCreativeSetsByStatement <- function(request_data){
 #' updateCreativeSet
 #' 
 #' Updates the specified CreativeSet.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 #' 
 #' @usage dfp_updateCreativeSet(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

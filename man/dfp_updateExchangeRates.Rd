@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateExchangeRatesResponse
 \description{
 Updates the specified ExchangeRate objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+}
 

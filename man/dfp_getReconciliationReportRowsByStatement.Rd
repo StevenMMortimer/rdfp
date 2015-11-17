@@ -37,4 +37,7 @@ Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satis
   \item{reconciledLineItemDays}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+}
 

@@ -16,4 +16,7 @@ Performs actions on SuggestedAdUnit objects that match the given Statement query
   \item{numRequests}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
+}
 

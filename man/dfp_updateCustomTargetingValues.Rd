@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateCustomTargetingValuesRespon
 \description{
 Updates the specified CustomTargetingValue objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+}
 

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performAudienceSegmentActionRespo
 \description{
 Performs the given AudienceSegmentAction on the set of segments identified by the given statement. segments
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+}
 

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performAdExclusionRuleActionRespo
 \description{
 Performs action on AdExclusionRule objects that satisfy the given Statement query. a set of ad exclusion rules
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+}
 

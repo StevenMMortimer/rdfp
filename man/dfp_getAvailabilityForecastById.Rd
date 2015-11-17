@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getAvailabilityForecastByIdRespon
 \description{
 Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. <p>Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. <p>Note: Beginning in v201502, this replaces the previous getForecastById method.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+}
 

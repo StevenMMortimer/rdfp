@@ -838,6 +838,8 @@ dfp_PremiumRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of new PremiumRate objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+#' 
 #' @usage dfp_createPremiumRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -862,6 +864,8 @@ dfp_createPremiumRates <- function(request_data){
 #'   \item{pricingMethod}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+#' 
 #' @usage dfp_getPremiumRatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -880,6 +884,8 @@ dfp_getPremiumRatesByStatement <- function(request_data){
 #' updatePremiumRates
 #' 
 #' Updates the specified PremiumRate objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
 #' @usage dfp_updatePremiumRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

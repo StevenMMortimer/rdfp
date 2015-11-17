@@ -844,6 +844,8 @@ dfp_CustomTargetingService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new CustomTargetingKey objects. The following fields are required: <ul> <li>CustomTargetingKey name</li> <li>CustomTargetingKey type</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+#' 
 #' @usage dfp_createCustomTargetingKeys(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -862,6 +864,8 @@ dfp_createCustomTargetingKeys <- function(request_data){
 #' createCustomTargetingValues
 #' 
 #' Creates new CustomTargetingValue objects. The following fields are required: <ul> <li>CustomTargetingValue customTargetingKeyId</li> <li>CustomTargetingValue name</li> </ul>
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 #' 
 #' @usage dfp_createCustomTargetingValues(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -889,6 +893,8 @@ dfp_createCustomTargetingValues <- function(request_data){
 #'   \item{type}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+#' 
 #' @usage dfp_getCustomTargetingKeysByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -915,6 +921,8 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data){
 #'   \item{matchType}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+#' 
 #' @usage dfp_getCustomTargetingValuesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -934,6 +942,8 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data){
 #' 
 #' Performs actions on CustomTargetingKey objects that match the given Statement query. a set of custom targeting keys
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+#' 
 #' @usage dfp_performCustomTargetingKeyAction()
 #' @return a \code{list} containing all the elements of a performCustomTargetingKeyActionResponse
 #' @export
@@ -951,6 +961,8 @@ dfp_performCustomTargetingKeyAction <- function(){
 #' 
 #' Performs actions on CustomTargetingValue objects that match the given Statement query. a set of ad units
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+#' 
 #' @usage dfp_performCustomTargetingValueAction()
 #' @return a \code{list} containing all the elements of a performCustomTargetingValueActionResponse
 #' @export
@@ -967,6 +979,8 @@ dfp_performCustomTargetingValueAction <- function(){
 #' updateCustomTargetingKeys
 #' 
 #' Updates the specified CustomTargetingKey objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 #' 
 #' @usage dfp_updateCustomTargetingKeys(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -986,6 +1000,8 @@ dfp_updateCustomTargetingKeys <- function(request_data){
 #' updateCustomTargetingValues
 #' 
 #' Updates the specified CustomTargetingValue objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 #' 
 #' @usage dfp_updateCustomTargetingValues(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

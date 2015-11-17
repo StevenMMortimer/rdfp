@@ -767,6 +767,8 @@ dfp_UserService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new User objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#createUsers}{Google Documentation for createUsers}
+#' 
 #' @usage dfp_createUsers(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -786,6 +788,8 @@ dfp_createUsers <- function(request_data){
 #' 
 #' Returns the Role objects that are defined for the users of the network.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getAllRoles}{Google Documentation for getAllRoles}
+#' 
 #' @usage dfp_getAllRoles()
 #' @return a \code{list} containing all the elements of a getAllRolesResponse
 #' @export
@@ -802,6 +806,8 @@ dfp_getAllRoles <- function(){
 #' getCurrentUser
 #' 
 #' Returns the current User.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
 #' @usage dfp_getCurrentUser()
 #' @return a \code{list} containing all the elements of a getCurrentUserResponse
@@ -828,6 +834,8 @@ dfp_getCurrentUser <- function(){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+#' 
 #' @usage dfp_getUsersByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -847,6 +855,8 @@ dfp_getUsersByStatement <- function(request_data){
 #' 
 #' Performs actions on User objects that match the given Statement query. a set of users
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#performUserAction}{Google Documentation for performUserAction}
+#' 
 #' @usage dfp_performUserAction()
 #' @return a \code{list} containing all the elements of a performUserActionResponse
 #' @export
@@ -863,6 +873,8 @@ dfp_performUserAction <- function(){
 #' updateUsers
 #' 
 #' Updates the specified User objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#updateUsers}{Google Documentation for updateUsers}
 #' 
 #' @usage dfp_updateUsers(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

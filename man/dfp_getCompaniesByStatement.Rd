@@ -22,4 +22,7 @@ Gets a CompanyPage of Company objects that satisfy the given Statement query. Th
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+}
 

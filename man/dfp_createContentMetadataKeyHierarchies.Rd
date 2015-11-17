@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createContentMetadataKeyHierarchi
 \description{
 Creates new ContentMetadataKeyHierarchy objects. The following fields are required: <ul> <li>ContentMetadataKeyHierarchy id</li> <li>ContentMetadataKeyHierarchy name</li> <li>ContentMetadataKeyHierarchy hierarchyLevels</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+}
 

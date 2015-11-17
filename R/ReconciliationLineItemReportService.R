@@ -731,6 +731,8 @@ dfp_ReconciliationLineItemReportService_object_factory <- function(obj_type, obj
 #'   \item{proposalLineItemId}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+#' 
 #' @usage dfp_getReconciliationLineItemReportsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -749,6 +751,8 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data){
 #' updateReconciliationLineItemReports
 #' 
 #' Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport. ReconciliationLineItemReport reconciliation line item reports to update
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
 #' 
 #' @usage dfp_updateReconciliationLineItemReports(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

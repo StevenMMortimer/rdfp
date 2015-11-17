@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a runReportJobResponse
 \description{
 Initiates the execution of a ReportQuery on the server. <p>The following fields are required: <ul> <li>ReportJob reportQuery</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#runReportJob}{Google Documentation for runReportJob}
+}
 

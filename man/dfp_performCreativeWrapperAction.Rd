@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performCreativeWrapperActionRespo
 \description{
 Performs actions on CreativeWrapper objects that match the given Statement query. a set of labels
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+}
 

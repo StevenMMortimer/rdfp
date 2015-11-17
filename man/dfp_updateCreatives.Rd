@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateCreativesResponse
 \description{
 Updates the specified Creative objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+}
 

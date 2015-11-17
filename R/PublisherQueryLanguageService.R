@@ -2167,6 +2167,8 @@ dfp_PublisherQueryLanguageService_object_factory <- function(obj_type, obj_data)
 #' 
 #' Retrieves rows of data that satisfy the given Statement query from the system. specify what data needs to returned
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PublisherQueryLanguageService#select}{Google Documentation for select}
+#' 
 #' @usage dfp_select()
 #' @return a \code{list} containing all the elements of a selectResponse
 #' @export

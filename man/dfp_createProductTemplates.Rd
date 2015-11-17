@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createProductTemplatesResponse
 \description{
 Creates new ProductTemplate objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+}
 

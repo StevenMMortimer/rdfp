@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createLineItemsResponse
 \description{
 Creates new LineItem objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#createLineItems}{Google Documentation for createLineItems}
+}
 

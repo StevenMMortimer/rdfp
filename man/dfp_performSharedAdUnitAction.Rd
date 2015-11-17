@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performSharedAdUnitActionResponse
 \description{
 Performs actions on shared ad unit objects that match the given Statement query. a set of shared ad units on which the action was performed.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SharedAdUnitService#performSharedAdUnitAction}{Google Documentation for performSharedAdUnitAction}
+}
 

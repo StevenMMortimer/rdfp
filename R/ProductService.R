@@ -2160,6 +2160,8 @@ dfp_ProductService_object_factory <- function(obj_type, obj_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+#' 
 #' @usage dfp_getProductsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2179,6 +2181,8 @@ dfp_getProductsByStatement <- function(request_data){
 #' 
 #' Performs action on Product objects that satisfy the given Statement.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#performProductAction}{Google Documentation for performProductAction}
+#' 
 #' @usage dfp_performProductAction()
 #' @return a \code{list} containing all the elements of a performProductActionResponse
 #' @export
@@ -2195,6 +2199,8 @@ dfp_performProductAction <- function(){
 #' updateProducts
 #' 
 #' Updates the specified Product objects. Note non-updatable fields will not be backfilled.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#updateProducts}{Google Documentation for updateProducts}
 #' 
 #' @usage dfp_updateProducts(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

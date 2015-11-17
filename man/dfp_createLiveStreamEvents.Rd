@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createLiveStreamEventsResponse
 \description{
 Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+}
 

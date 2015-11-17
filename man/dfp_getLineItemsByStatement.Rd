@@ -34,4 +34,7 @@ Gets a LineItemPage of LineItem objects that satisfy the given Statement query. 
   \item{UnitsBought}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+}
 

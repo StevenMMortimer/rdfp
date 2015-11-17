@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCreativeSetResponse
 \description{
 Creates a new CreativeSet.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+}
 

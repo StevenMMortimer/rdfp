@@ -706,6 +706,8 @@ dfp_LiveStreamEventService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+#' 
 #' @usage dfp_createLiveStreamEvents(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -728,6 +730,8 @@ dfp_createLiveStreamEvents <- function(request_data){
 #'   \item{id}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+#' 
 #' @usage dfp_getLiveStreamEventsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -747,6 +751,8 @@ dfp_getLiveStreamEventsByStatement <- function(request_data){
 #' 
 #' Performs actions on LiveStreamEvent objects that match the given Statement query. a set of live stream events
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+#' 
 #' @usage dfp_performLiveStreamEventAction()
 #' @return a \code{list} containing all the elements of a performLiveStreamEventActionResponse
 #' @export
@@ -763,6 +769,8 @@ dfp_performLiveStreamEventAction <- function(){
 #' updateLiveStreamEvents
 #' 
 #' Updates the specified LiveStreamEvent objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 #' 
 #' @usage dfp_updateLiveStreamEvents(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

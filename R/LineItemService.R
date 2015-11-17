@@ -3552,6 +3552,8 @@ dfp_LineItemService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new LineItem objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#createLineItems}{Google Documentation for createLineItems}
+#' 
 #' @usage dfp_createLineItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -3589,6 +3591,8 @@ dfp_createLineItems <- function(request_data){
 #'   \item{UnitsBought}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+#' 
 #' @usage dfp_getLineItemsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -3608,6 +3612,8 @@ dfp_getLineItemsByStatement <- function(request_data){
 #' 
 #' Performs actions on LineItem objects that match the given Statement query. a set of line items
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+#' 
 #' @usage dfp_performLineItemAction()
 #' @return a \code{list} containing all the elements of a performLineItemActionResponse
 #' @export
@@ -3624,6 +3630,8 @@ dfp_performLineItemAction <- function(){
 #' updateLineItems
 #' 
 #' Updates the specified LineItem objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
 #' @usage dfp_updateLineItems(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

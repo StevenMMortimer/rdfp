@@ -713,6 +713,8 @@ dfp_ReconciliationReportRowService_object_factory <- function(obj_type, obj_data
 #'   \item{reconciledLineItemDays}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+#' 
 #' @usage dfp_getReconciliationReportRowsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -731,6 +733,8 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data){
 #' updateReconciliationReportRows
 #' 
 #' Updates a list of ReconciliationReportRow which belong to same ReconciliationReport.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
 #' 
 #' @usage dfp_updateReconciliationReportRows(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

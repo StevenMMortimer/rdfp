@@ -694,6 +694,8 @@ dfp_CustomFieldService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new CustomFieldOption objects. The following fields are required: <ul> <li>CustomFieldOption displayName</li> <li>CustomFieldOption customFieldId</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+#' 
 #' @usage dfp_createCustomFieldOptions(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -713,6 +715,8 @@ dfp_createCustomFieldOptions <- function(request_data){
 #' 
 #' Creates new CustomField objects. The following fields are required: <ul> <li>CustomField name</li> <li>CustomField entityType</li> <li>CustomField dataType</li> <li>CustomField visibility</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+#' 
 #' @usage dfp_createCustomFields(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -731,6 +735,8 @@ dfp_createCustomFields <- function(request_data){
 #' getCustomFieldOption
 #' 
 #' Returns the CustomFieldOption uniquely identified by the given ID.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
 #' @usage dfp_getCustomFieldOption()
 #' @return a \code{list} containing all the elements of a getCustomFieldOptionResponse
@@ -756,6 +762,8 @@ dfp_getCustomFieldOption <- function(){
 #'   \item{visibility}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
+#' 
 #' @usage dfp_getCustomFieldsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -775,6 +783,8 @@ dfp_getCustomFieldsByStatement <- function(request_data){
 #' 
 #' Performs actions on CustomField objects that match the given Statement query. a set of custom fields
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
+#' 
 #' @usage dfp_performCustomFieldAction()
 #' @return a \code{list} containing all the elements of a performCustomFieldActionResponse
 #' @export
@@ -791,6 +801,8 @@ dfp_performCustomFieldAction <- function(){
 #' updateCustomFieldOptions
 #' 
 #' Updates the specified CustomFieldOption objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 #' 
 #' @usage dfp_updateCustomFieldOptions(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -810,6 +822,8 @@ dfp_updateCustomFieldOptions <- function(request_data){
 #' updateCustomFields
 #' 
 #' Updates the specified CustomField objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 #' 
 #' @usage dfp_updateCustomFields(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

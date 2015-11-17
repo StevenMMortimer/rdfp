@@ -613,6 +613,8 @@ dfp_ExchangeRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+#' 
 #' @usage dfp_createExchangeRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -638,6 +640,8 @@ dfp_createExchangeRates <- function(request_data){
 #'   \item{direction}
 #'   \item{exchangeRate}
 #' }
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 #' 
 #' @usage dfp_getExchangeRatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -665,6 +669,8 @@ dfp_getExchangeRatesByStatement <- function(request_data){
 #'   \item{exchangeRate}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+#' 
 #' @usage dfp_performExchangeRateAction()
 #' @return a \code{list} containing all the elements of a performExchangeRateActionResponse
 #' @export
@@ -681,6 +687,8 @@ dfp_performExchangeRateAction <- function(){
 #' updateExchangeRates
 #' 
 #' Updates the specified ExchangeRate objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 #' 
 #' @usage dfp_updateExchangeRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

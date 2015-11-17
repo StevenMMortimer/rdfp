@@ -24,4 +24,7 @@ Gets a PackagePage of Package objects that satisfy the given Statement query. Th
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
+}
 

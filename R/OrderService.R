@@ -2201,6 +2201,8 @@ dfp_OrderService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Order objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#createOrders}{Google Documentation for createOrders}
+#' 
 #' @usage dfp_createOrders(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2231,6 +2233,8 @@ dfp_createOrders <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+#' 
 #' @usage dfp_getOrdersByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2250,6 +2254,8 @@ dfp_getOrdersByStatement <- function(request_data){
 #' 
 #' Performs actions on Order objects that match the given Statement query. a set of orders
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+#' 
 #' @usage dfp_performOrderAction()
 #' @return a \code{list} containing all the elements of a performOrderActionResponse
 #' @export
@@ -2266,6 +2272,8 @@ dfp_performOrderAction <- function(){
 #' updateOrders
 #' 
 #' Updates the specified Order objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#updateOrders}{Google Documentation for updateOrders}
 #' 
 #' @usage dfp_updateOrders(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

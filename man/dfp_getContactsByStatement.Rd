@@ -28,4 +28,7 @@ Gets a ContactPage of Contact objects that satisfy the given Statement query. Th
   \item{status}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+}
 

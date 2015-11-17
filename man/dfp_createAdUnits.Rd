@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createAdUnitsResponse
 \description{
 Creates new AdUnit objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+}
 

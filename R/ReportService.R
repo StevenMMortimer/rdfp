@@ -2187,6 +2187,8 @@ dfp_ReportService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Returns the URL at which the report file can be downloaded. <p> The report will be generated as a gzip archive, containing the report file itself.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+#' 
 #' @usage dfp_getReportDownloadURL()
 #' @return a \code{list} containing all the elements of a getReportDownloadURLResponse
 #' @export
@@ -2203,6 +2205,8 @@ dfp_getReportDownloadURL <- function(){
 #' getReportDownloadUrlWithOptions
 #' 
 #' Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report. <p> By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
 #' @usage dfp_getReportDownloadUrlWithOptions()
 #' @return a \code{list} containing all the elements of a getReportDownloadUrlWithOptionsResponse
@@ -2221,6 +2225,8 @@ dfp_getReportDownloadUrlWithOptions <- function(){
 #' 
 #' Returns the ReportJobStatus of the report job with the specified ID.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+#' 
 #' @usage dfp_getReportJobStatus()
 #' @return a \code{list} containing all the elements of a getReportJobStatusResponse
 #' @export
@@ -2237,6 +2243,8 @@ dfp_getReportJobStatus <- function(){
 #' runReportJob
 #' 
 #' Initiates the execution of a ReportQuery on the server. <p>The following fields are required: <ul> <li>ReportJob reportQuery</li> </ul>
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
 #' @usage dfp_runReportJob()
 #' @return a \code{list} containing all the elements of a runReportJobResponse

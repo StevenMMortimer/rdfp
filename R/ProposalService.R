@@ -1647,6 +1647,8 @@ dfp_ProposalService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Proposal objects. For each proposal, the following fields are required: <ul> <li>Proposal name</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#createProposals}{Google Documentation for createProposals}
+#' 
 #' @usage dfp_createProposals(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1677,6 +1679,8 @@ dfp_createProposals <- function(request_data){
 #'   \item{customThirdPartyAdServerName}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' 
 #' @usage dfp_getProposalsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1696,6 +1700,8 @@ dfp_getProposalsByStatement <- function(request_data){
 #' 
 #' Performs actions on Proposal objects that match the given Statement query. The following fields are also required when submitting proposals for approval: <ul> <li>Proposal advertiser</li> <li>Proposal primarySalesperson</li> <li>Proposal primaryTraffickerId</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' 
 #' @usage dfp_performProposalAction()
 #' @return a \code{list} containing all the elements of a performProposalActionResponse
 #' @export
@@ -1712,6 +1718,8 @@ dfp_performProposalAction <- function(){
 #' updateProposals
 #' 
 #' Updates the specified Proposal objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
 #' @usage dfp_updateProposals(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

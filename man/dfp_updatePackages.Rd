@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updatePackagesResponse
 \description{
 Updates the specified Package objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#updatePackages}{Google Documentation for updatePackages}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateAdRulesResponse
 \description{
 Updates the specified AdRule objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
+}
 

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performOrderActionResponse
 \description{
 Performs actions on Order objects that match the given Statement query. a set of orders
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+}
 

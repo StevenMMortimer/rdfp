@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createPlacementsResponse
 \description{
 Creates new Placement objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#createPlacements}{Google Documentation for createPlacements}
+}
 

@@ -741,6 +741,8 @@ dfp_BaseRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of new BaseRate objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+#' 
 #' @usage dfp_createBaseRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -759,6 +761,8 @@ dfp_createBaseRates <- function(request_data){
 #' getBaseRatesByStatement
 #' 
 #' Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr> <td>rateCardId</td> <td>BaseRate rateCardId</td> </tr> <tr> <td>id</td> <td>BaseRate id</td> </tr> <tr> <td>productTemplateId</td> <td>ProductTemplateBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productId. </tr> <td>productId</td> <td>ProductBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productTemplateId. </tr> a set of base rates.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 #' 
 #' @usage dfp_getBaseRatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -779,6 +783,8 @@ dfp_getBaseRatesByStatement <- function(request_data){
 #' 
 #' Performs actions on BaseRate objects that satisfy the given Statement query. a set of base rates.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
+#' 
 #' @usage dfp_performBaseRateAction()
 #' @return a \code{list} containing all the elements of a performBaseRateActionResponse
 #' @export
@@ -795,6 +801,8 @@ dfp_performBaseRateAction <- function(){
 #' updateBaseRates
 #' 
 #' Updates the specified BaseRate objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 #' 
 #' @usage dfp_updateBaseRates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getAllRolesResponse
 \description{
 Returns the Role objects that are defined for the users of the network.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getAllRoles}{Google Documentation for getAllRoles}
+}
 

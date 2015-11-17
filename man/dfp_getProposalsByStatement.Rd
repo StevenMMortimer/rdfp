@@ -27,4 +27,7 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
   \item{customThirdPartyAdServerName}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+}
 

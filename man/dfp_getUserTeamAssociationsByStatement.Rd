@@ -20,4 +20,7 @@ Gets a UserTeamAssociationPage of UserTeamAssociation objects that satisfy the g
   \item{teamId}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+}
 

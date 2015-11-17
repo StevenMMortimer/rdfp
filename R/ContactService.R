@@ -611,6 +611,8 @@ dfp_ContactService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Contact objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#createContacts}{Google Documentation for createContacts}
+#' 
 #' @usage dfp_createContacts(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -642,6 +644,8 @@ dfp_createContacts <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+#' 
 #' @usage dfp_getContactsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -660,6 +664,8 @@ dfp_getContactsByStatement <- function(request_data){
 #' updateContacts
 #' 
 #' Updates the specified Contact objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#updateContacts}{Google Documentation for updateContacts}
 #' 
 #' @usage dfp_updateContacts(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

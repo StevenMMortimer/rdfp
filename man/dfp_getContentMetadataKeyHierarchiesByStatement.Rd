@@ -21,4 +21,7 @@ Gets a ContentMetadataKeyHierarchyPage of ContentMetadataKeyHierarchy objects th
   \item{status}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
+}
 

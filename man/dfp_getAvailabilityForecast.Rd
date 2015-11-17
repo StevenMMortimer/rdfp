@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getAvailabilityForecastResponse
 \description{
 Gets the availability forecast for a ProspectiveLineItem. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. <p>Note: Beginning in v201502, this replaces the previous getForecast method.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+}
 

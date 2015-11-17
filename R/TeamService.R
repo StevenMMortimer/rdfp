@@ -613,6 +613,8 @@ dfp_TeamService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Team objects. The following fields are required: <ul> <li>Team name</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#createTeams}{Google Documentation for createTeams}
+#' 
 #' @usage dfp_createTeams(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -637,6 +639,8 @@ dfp_createTeams <- function(request_data){
 #'   \item{description}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+#' 
 #' @usage dfp_getTeamsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -655,6 +659,8 @@ dfp_getTeamsByStatement <- function(request_data){
 #' updateTeams
 #' 
 #' Updates the specified Team objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
 #' @usage dfp_updateTeams(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

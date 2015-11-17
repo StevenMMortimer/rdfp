@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateProductsResponse
 \description{
 Updates the specified Product objects. Note non-updatable fields will not be backfilled.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#updateProducts}{Google Documentation for updateProducts}
+}
 

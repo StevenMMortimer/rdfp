@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performRateCardActionResponse
 \description{
 Performs action on RateCard objects that satisfy the given Statement query. a set of rate cards.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+}
 

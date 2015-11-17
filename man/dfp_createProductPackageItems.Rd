@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createProductPackageItemsResponse
 \description{
 Creates new ProductPackageItem objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+}
 

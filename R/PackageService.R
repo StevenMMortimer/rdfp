@@ -1175,6 +1175,8 @@ dfp_PackageService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Package objects. For each package, the following fields are required: <ul> <li>Package proposalId</li> <li>Package productPackageId</li> <li>Package name</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#createPackages}{Google Documentation for createPackages}
+#' 
 #' @usage dfp_createPackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1202,6 +1204,8 @@ dfp_createPackages <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
+#' 
 #' @usage dfp_getPackagesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1221,6 +1225,8 @@ dfp_getPackagesByStatement <- function(request_data){
 #' 
 #' Performs actions on Package objects that match the given Statement.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#performPackageAction}{Google Documentation for performPackageAction}
+#' 
 #' @usage dfp_performPackageAction()
 #' @return a \code{list} containing all the elements of a performPackageActionResponse
 #' @export
@@ -1237,6 +1243,8 @@ dfp_performPackageAction <- function(){
 #' updatePackages
 #' 
 #' Updates the specified Package objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#updatePackages}{Google Documentation for updatePackages}
 #' 
 #' @usage dfp_updatePackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getReportDownloadURLResponse
 \description{
 Returns the URL at which the report file can be downloaded. <p> The report will be generated as a gzip archive, containing the report file itself.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+}
 

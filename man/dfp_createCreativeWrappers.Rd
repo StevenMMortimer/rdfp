@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCreativeWrappersResponse
 \description{
 Creates a new CreativeWrapper objects. The following fields are required: <ul> <li>CreativeWrapper labelId</li> <li>CreativeWrapper ordering</li> <li>CreativeWrapper header or CreativeWrapper footer</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+}
 

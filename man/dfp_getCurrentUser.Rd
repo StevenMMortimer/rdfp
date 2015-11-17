@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getCurrentUserResponse
 \description{
 Returns the current User.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+}
 

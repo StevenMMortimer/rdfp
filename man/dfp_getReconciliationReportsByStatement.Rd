@@ -21,4 +21,7 @@ Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy th
   \item{startDate}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+}
 

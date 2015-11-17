@@ -629,6 +629,8 @@ dfp_ContentBundleService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ContentBundle objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+#' 
 #' @usage dfp_createContentBundles(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -653,6 +655,8 @@ dfp_createContentBundles <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+#' 
 #' @usage dfp_getContentBundlesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -672,6 +676,8 @@ dfp_getContentBundlesByStatement <- function(request_data){
 #' 
 #' Performs actions on ContentBundle objects that match the given Statement query. a set of content bundles
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+#' 
 #' @usage dfp_performContentBundleAction()
 #' @return a \code{list} containing all the elements of a performContentBundleActionResponse
 #' @export
@@ -688,6 +694,8 @@ dfp_performContentBundleAction <- function(){
 #' updateContentBundles
 #' 
 #' Updates the specified ContentBundle objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
 #' @usage dfp_updateContentBundles(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

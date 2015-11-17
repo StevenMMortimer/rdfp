@@ -812,6 +812,8 @@ dfp_ProductPackageService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProductPackage objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
+#' 
 #' @usage dfp_createProductPackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -839,6 +841,8 @@ dfp_createProductPackages <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+#' 
 #' @usage dfp_getProductPackagesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -858,6 +862,8 @@ dfp_getProductPackagesByStatement <- function(request_data){
 #' 
 #' Performs actions on ProductPackage objects that match the given Statement query.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+#' 
 #' @usage dfp_performProductPackageAction()
 #' @return a \code{list} containing all the elements of a performProductPackageActionResponse
 #' @export
@@ -874,6 +880,8 @@ dfp_performProductPackageAction <- function(){
 #' updateProductPackages
 #' 
 #' Updates the specified ProductPackage objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
 #' 
 #' @usage dfp_updateProductPackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

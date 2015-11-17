@@ -19,4 +19,7 @@ Performs an action on ExchangeRate objects that satisfy the given Statement quer
   \item{exchangeRate}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+}
 

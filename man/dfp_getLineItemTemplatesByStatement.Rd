@@ -19,4 +19,7 @@ Gets a LineItemTemplatePage of LineItemTemplate objects that satisfy the given S
   \item{id}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+}
 

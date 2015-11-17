@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateActivitiesResponse
 \description{
 Updates the specified Activity objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityService#updateActivities}{Google Documentation for updateActivities}
+}
 

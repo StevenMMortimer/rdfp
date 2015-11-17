@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createAdExclusionRulesResponse
 \description{
 Creates new AdExclusionRule objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+}
 

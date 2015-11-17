@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getAllNetworksResponse
 \description{
 Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+}
 

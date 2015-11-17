@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a getDeliveryForecastResponse
 \description{
 Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCreativesResponse
 \description{
 Creates new Creative objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#createCreatives}{Google Documentation for createCreatives}
+}
 

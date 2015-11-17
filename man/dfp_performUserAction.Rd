@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performUserActionResponse
 \description{
 Performs actions on User objects that match the given Statement query. a set of users
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#performUserAction}{Google Documentation for performUserAction}
+}
 

@@ -714,6 +714,8 @@ dfp_SuggestedAdUnitService_object_factory <- function(obj_type, obj_data){
 #'   \item{numRequests}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
+#' 
 #' @usage dfp_getSuggestedAdUnitsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -736,6 +738,8 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data){
 #'   \item{id}
 #'   \item{numRequests}
 #' }
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 #' 
 #' @usage dfp_performSuggestedAdUnitAction()
 #' @return a \code{list} containing all the elements of a performSuggestedAdUnitActionResponse

@@ -24,4 +24,7 @@ Gets a ProductPackagePage of ProductPackage objects that satisfy the filtering c
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createOrdersResponse
 \description{
 Creates new Order objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#createOrders}{Google Documentation for createOrders}
+}
 

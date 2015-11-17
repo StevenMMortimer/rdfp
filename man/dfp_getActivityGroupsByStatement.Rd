@@ -23,4 +23,7 @@ Gets an ActivityGroupPage of ActivityGroup objects that satisfy the given Statem
   \item{status}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+}
 

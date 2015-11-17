@@ -25,4 +25,7 @@ Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that 
   \item{submitterId}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+}
 

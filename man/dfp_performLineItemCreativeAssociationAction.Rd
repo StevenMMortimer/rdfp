@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performLineItemCreativeAssociatio
 \description{
 Performs actions on LineItemCreativeAssociation objects that match the given Statement query. a set of line item creative associations
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+}
 

@@ -1385,6 +1385,8 @@ dfp_InventoryService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new AdUnit objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+#' 
 #' @usage dfp_createAdUnits(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1406,6 +1408,8 @@ dfp_createAdUnits <- function(request_data){
 #' \itemize{
 #'   \item{targetPlatform}
 #' }
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 #' 
 #' @usage dfp_getAdUnitSizesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
@@ -1434,6 +1438,8 @@ dfp_getAdUnitSizesByStatement <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+#' 
 #' @usage dfp_getAdUnitsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1453,6 +1459,8 @@ dfp_getAdUnitsByStatement <- function(request_data){
 #' 
 #' Performs actions on AdUnit objects that match the given Statement query. a set of ad units
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+#' 
 #' @usage dfp_performAdUnitAction()
 #' @return a \code{list} containing all the elements of a performAdUnitActionResponse
 #' @export
@@ -1469,6 +1477,8 @@ dfp_performAdUnitAction <- function(){
 #' updateAdUnits
 #' 
 #' Updates the specified AdUnit objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
 #' 
 #' @usage dfp_updateAdUnits(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

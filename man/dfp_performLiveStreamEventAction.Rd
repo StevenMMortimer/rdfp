@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performLiveStreamEventActionRespo
 \description{
 Performs actions on LiveStreamEvent objects that match the given Statement query. a set of live stream events
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+}
 

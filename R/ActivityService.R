@@ -615,6 +615,8 @@ dfp_ActivityService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new Activity objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityService#createActivities}{Google Documentation for createActivities}
+#' 
 #' @usage dfp_createActivities(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -641,6 +643,8 @@ dfp_createActivities <- function(request_data){
 #'   \item{activityGroupId}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
+#' 
 #' @usage dfp_getActivitiesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -659,6 +663,8 @@ dfp_getActivitiesByStatement <- function(request_data){
 #' updateActivities
 #' 
 #' Updates the specified Activity objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityService#updateActivities}{Google Documentation for updateActivities}
 #' 
 #' @usage dfp_updateActivities(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

@@ -22,4 +22,7 @@ Gets a CreativeSetPage of CreativeSet objects that satisfy the given Statement q
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateReconciliationLineItemRepor
 \description{
 Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport. ReconciliationLineItemReport reconciliation line item reports to update
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
+}
 

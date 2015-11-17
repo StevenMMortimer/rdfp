@@ -27,4 +27,7 @@ Gets an OrderPage of Order objects that satisfy the given Statement query. The f
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+}
 

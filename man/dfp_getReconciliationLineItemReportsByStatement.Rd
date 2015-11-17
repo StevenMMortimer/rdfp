@@ -24,4 +24,7 @@ Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects 
   \item{proposalLineItemId}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+}
 

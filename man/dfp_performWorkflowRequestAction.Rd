@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performWorkflowRequestActionRespo
 \description{
 Perform actions on WorkflowRequest objects that match the given Statement query. requests
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
+}
 

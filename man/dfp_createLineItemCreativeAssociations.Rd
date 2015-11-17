@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createLineItemCreativeAssociation
 \description{
 Creates new LineItemCreativeAssociation objects create in
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+}
 

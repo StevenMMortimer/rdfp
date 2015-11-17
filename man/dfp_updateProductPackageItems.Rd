@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateProductPackageItemsResponse
 \description{
 Updates the specified ProductPackageItem objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
+}
 

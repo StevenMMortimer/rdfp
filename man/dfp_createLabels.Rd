@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createLabelsResponse
 \description{
 Creates new Label objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#createLabels}{Google Documentation for createLabels}
+}
 

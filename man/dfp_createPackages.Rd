@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createPackagesResponse
 \description{
 Creates new Package objects. For each package, the following fields are required: <ul> <li>Package proposalId</li> <li>Package productPackageId</li> <li>Package name</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#createPackages}{Google Documentation for createPackages}
+}
 

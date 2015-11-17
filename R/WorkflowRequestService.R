@@ -785,6 +785,8 @@ dfp_WorkflowRequestService_object_factory <- function(obj_type, obj_data){
 #'   \item{type}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+#' 
 #' @usage dfp_getWorkflowRequestsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -803,6 +805,8 @@ dfp_getWorkflowRequestsByStatement <- function(request_data){
 #' performWorkflowRequestAction
 #' 
 #' Perform actions on WorkflowRequest objects that match the given Statement query. requests
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
 #' @usage dfp_performWorkflowRequestAction()
 #' @return a \code{list} containing all the elements of a performWorkflowRequestActionResponse

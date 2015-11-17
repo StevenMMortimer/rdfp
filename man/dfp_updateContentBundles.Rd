@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateContentBundlesResponse
 \description{
 Updates the specified ContentBundle objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+}
 

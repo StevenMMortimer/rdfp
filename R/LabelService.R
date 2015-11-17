@@ -653,6 +653,8 @@ dfp_LabelService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Label objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#createLabels}{Google Documentation for createLabels}
+#' 
 #' @usage dfp_createLabels(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -679,6 +681,8 @@ dfp_createLabels <- function(request_data){
 #'   \item{isActive}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
+#' 
 #' @usage dfp_getLabelsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -698,6 +702,8 @@ dfp_getLabelsByStatement <- function(request_data){
 #' 
 #' Performs actions on Label objects that match the given Statement query. a set of labels
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+#' 
 #' @usage dfp_performLabelAction()
 #' @return a \code{list} containing all the elements of a performLabelActionResponse
 #' @export
@@ -714,6 +720,8 @@ dfp_performLabelAction <- function(){
 #' updateLabels
 #' 
 #' Updates the specified Label objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#updateLabels}{Google Documentation for updateLabels}
 #' 
 #' @usage dfp_updateLabels(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performProposalLineItemActionResp
 \description{
 Performs actions on ProposalLineItem objects that match the given Statement query. proposal line items
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+}
 

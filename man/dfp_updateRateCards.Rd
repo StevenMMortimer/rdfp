@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateRateCardsResponse
 \description{
 Updates a list of RateCard objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+}
 

@@ -27,4 +27,7 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+}
 

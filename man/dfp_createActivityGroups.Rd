@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createActivityGroupsResponse
 \description{
 Creates a new ActivityGroup objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+}
 

@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateProposalLineItemsResponse
 \description{
 Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+}
 

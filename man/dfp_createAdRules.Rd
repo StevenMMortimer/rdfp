@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createAdRulesResponse
 \description{
 Creates new AdRule objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+}
 

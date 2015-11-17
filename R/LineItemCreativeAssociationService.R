@@ -1506,6 +1506,8 @@ dfp_LineItemCreativeAssociationService_object_factory <- function(obj_type, obj_
 #' 
 #' Creates new LineItemCreativeAssociation objects create in
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+#' 
 #' @usage dfp_createLineItemCreativeAssociations(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1533,6 +1535,8 @@ dfp_createLineItemCreativeAssociations <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+#' 
 #' @usage dfp_getLineItemCreativeAssociationsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1552,6 +1556,8 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data){
 #' 
 #' Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. creative served to it
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+#' 
 #' @usage dfp_getPreviewUrl()
 #' @return a \code{list} containing all the elements of a getPreviewUrlResponse
 #' @export
@@ -1569,6 +1575,8 @@ dfp_getPreviewUrl <- function(){
 #' 
 #' Performs actions on LineItemCreativeAssociation objects that match the given Statement query. a set of line item creative associations
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+#' 
 #' @usage dfp_performLineItemCreativeAssociationAction()
 #' @return a \code{list} containing all the elements of a performLineItemCreativeAssociationActionResponse
 #' @export
@@ -1585,6 +1593,8 @@ dfp_performLineItemCreativeAssociationAction <- function(){
 #' updateLineItemCreativeAssociations
 #' 
 #' Updates the specified LineItemCreativeAssociation objects update
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
 #' @usage dfp_updateLineItemCreativeAssociations(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

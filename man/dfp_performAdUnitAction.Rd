@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performAdUnitActionResponse
 \description{
 Performs actions on AdUnit objects that match the given Statement query. a set of ad units
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+}
 

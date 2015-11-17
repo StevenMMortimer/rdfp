@@ -24,4 +24,7 @@ Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects th
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+}
 

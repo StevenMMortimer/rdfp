@@ -21,4 +21,7 @@ Gets a ContentBundlePage of ContentBundle objects that satisfy the given Stateme
   \item{status}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+}
 

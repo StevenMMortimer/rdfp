@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateCustomTargetingKeysResponse
 \description{
 Updates the specified CustomTargetingKey objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+}
 

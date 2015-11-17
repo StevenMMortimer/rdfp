@@ -790,6 +790,8 @@ dfp_PlacementService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Placement objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#createPlacements}{Google Documentation for createPlacements}
+#' 
 #' @usage dfp_createPlacements(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -818,6 +820,8 @@ dfp_createPlacements <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+#' 
 #' @usage dfp_getPlacementsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -837,6 +841,8 @@ dfp_getPlacementsByStatement <- function(request_data){
 #' 
 #' Performs actions on Placement objects that match the given Statement query. a set of placements
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+#' 
 #' @usage dfp_performPlacementAction()
 #' @return a \code{list} containing all the elements of a performPlacementActionResponse
 #' @export
@@ -853,6 +859,8 @@ dfp_performPlacementAction <- function(){
 #' updatePlacements
 #' 
 #' Updates the specified Placement objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 #' 
 #' @usage dfp_updatePlacements(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

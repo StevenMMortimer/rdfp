@@ -21,4 +21,7 @@ Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement q
   \item{pricingMethod}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+}
 

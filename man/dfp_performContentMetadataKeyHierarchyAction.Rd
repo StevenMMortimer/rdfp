@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performContentMetadataKeyHierarch
 \description{
 Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query. a set of hierarchies
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
+}
 

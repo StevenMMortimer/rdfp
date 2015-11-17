@@ -654,6 +654,8 @@ dfp_ContentMetadataKeyHierarchyService_object_factory <- function(obj_type, obj_
 #' 
 #' Creates new ContentMetadataKeyHierarchy objects. The following fields are required: <ul> <li>ContentMetadataKeyHierarchy id</li> <li>ContentMetadataKeyHierarchy name</li> <li>ContentMetadataKeyHierarchy hierarchyLevels</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+#' 
 #' @usage dfp_createContentMetadataKeyHierarchies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -678,6 +680,8 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
+#' 
 #' @usage dfp_getContentMetadataKeyHierarchiesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -697,6 +701,8 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
 #' 
 #' Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query. a set of hierarchies
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
+#' 
 #' @usage dfp_performContentMetadataKeyHierarchyAction()
 #' @return a \code{list} containing all the elements of a performContentMetadataKeyHierarchyActionResponse
 #' @export
@@ -713,6 +719,8 @@ dfp_performContentMetadataKeyHierarchyAction <- function(){
 #' updateContentMetadataKeyHierarchies
 #' 
 #' Updates the specified ContentMetadataKeyHierarchy objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
 #' 
 #' @usage dfp_updateContentMetadataKeyHierarchies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

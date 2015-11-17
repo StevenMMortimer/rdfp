@@ -666,6 +666,8 @@ dfp_ContentService_object_factory <- function(obj_type, obj_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+#' 
 #' @usage dfp_getContentByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -690,6 +692,8 @@ dfp_getContentByStatement <- function(request_data){
 #'   \item{name}
 #'   \item{lastModifiedDateTime}
 #' }
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
 #' @usage dfp_getContentByStatementAndCustomTargetingValue()
 #' @return a \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse

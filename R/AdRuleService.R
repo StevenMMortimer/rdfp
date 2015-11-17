@@ -1884,6 +1884,8 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new AdRule objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+#' 
 #' @usage dfp_createAdRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1909,6 +1911,8 @@ dfp_createAdRules <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+#' 
 #' @usage dfp_getAdRulesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1928,6 +1932,8 @@ dfp_getAdRulesByStatement <- function(request_data){
 #' 
 #' Performs actions on AdRule objects that match the given Statement query. a set of ad rules
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+#' 
 #' @usage dfp_performAdRuleAction()
 #' @return a \code{list} containing all the elements of a performAdRuleActionResponse
 #' @export
@@ -1944,6 +1950,8 @@ dfp_performAdRuleAction <- function(){
 #' updateAdRules
 #' 
 #' Updates the specified AdRule objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 #' 
 #' @usage dfp_updateAdRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

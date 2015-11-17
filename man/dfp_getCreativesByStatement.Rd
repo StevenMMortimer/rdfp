@@ -24,4 +24,7 @@ Gets a CreativePage of Creative objects that satisfy the given Statement query. 
   \item{lastModifiedDateTime}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+}
 

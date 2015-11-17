@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performProductPackageActionRespon
 \description{
 Performs actions on ProductPackage objects that match the given Statement query.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+}
 

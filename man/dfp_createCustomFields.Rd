@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a createCustomFieldsResponse
 \description{
 Creates new CustomField objects. The following fields are required: <ul> <li>CustomField name</li> <li>CustomField entityType</li> <li>CustomField dataType</li> <li>CustomField visibility</li> </ul>
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+}
 

@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performProductTemplateActionRespo
 \description{
 Performs action on ProductTemplate objects that satisfy the given Statement query. a set of product templates
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
+}
 

@@ -673,6 +673,8 @@ dfp_CreativeWrapperService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new CreativeWrapper objects. The following fields are required: <ul> <li>CreativeWrapper labelId</li> <li>CreativeWrapper ordering</li> <li>CreativeWrapper header or CreativeWrapper footer</li> </ul>
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+#' 
 #' @usage dfp_createCreativeWrappers(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -698,6 +700,8 @@ dfp_createCreativeWrappers <- function(request_data){
 #'   \item{ordering}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+#' 
 #' @usage dfp_getCreativeWrappersByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -717,6 +721,8 @@ dfp_getCreativeWrappersByStatement <- function(request_data){
 #' 
 #' Performs actions on CreativeWrapper objects that match the given Statement query. a set of labels
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+#' 
 #' @usage dfp_performCreativeWrapperAction()
 #' @return a \code{list} containing all the elements of a performCreativeWrapperActionResponse
 #' @export
@@ -733,6 +739,8 @@ dfp_performCreativeWrapperAction <- function(){
 #' updateCreativeWrappers
 #' 
 #' Updates the specified CreativeWrapper objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 #' 
 #' @usage dfp_updateCreativeWrappers(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

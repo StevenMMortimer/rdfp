@@ -741,6 +741,8 @@ dfp_AdExclusionRuleService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new AdExclusionRule objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+#' 
 #' @usage dfp_createAdExclusionRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -765,6 +767,8 @@ dfp_createAdExclusionRules <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
+#' 
 #' @usage dfp_getAdExclusionRulesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -784,6 +788,8 @@ dfp_getAdExclusionRulesByStatement <- function(request_data){
 #' 
 #' Performs action on AdExclusionRule objects that satisfy the given Statement query. a set of ad exclusion rules
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+#' 
 #' @usage dfp_performAdExclusionRuleAction()
 #' @return a \code{list} containing all the elements of a performAdExclusionRuleActionResponse
 #' @export
@@ -800,6 +806,8 @@ dfp_performAdExclusionRuleAction <- function(){
 #' updateAdExclusionRules
 #' 
 #' Updates the specified AdExclusionRule objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 #' 
 #' @usage dfp_updateAdExclusionRules(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

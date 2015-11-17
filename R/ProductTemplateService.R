@@ -2353,6 +2353,8 @@ dfp_ProductTemplateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProductTemplate objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+#' 
 #' @usage dfp_createProductTemplates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2383,6 +2385,8 @@ dfp_createProductTemplates <- function(request_data){
 #'   \item{rateType}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+#' 
 #' @usage dfp_getProductTemplatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -2402,6 +2406,8 @@ dfp_getProductTemplatesByStatement <- function(request_data){
 #' 
 #' Performs action on ProductTemplate objects that satisfy the given Statement query. a set of product templates
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
+#' 
 #' @usage dfp_performProductTemplateAction()
 #' @return a \code{list} containing all the elements of a performProductTemplateActionResponse
 #' @export
@@ -2418,6 +2424,8 @@ dfp_performProductTemplateAction <- function(){
 #' updateProductTemplates
 #' 
 #' Updates the specified ProductTemplate objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 #' 
 #' @usage dfp_updateProductTemplates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

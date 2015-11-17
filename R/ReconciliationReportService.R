@@ -623,6 +623,8 @@ dfp_ReconciliationReportService_object_factory <- function(obj_type, obj_data){
 #'   \item{startDate}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+#' 
 #' @usage dfp_getReconciliationReportsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -641,6 +643,8 @@ dfp_getReconciliationReportsByStatement <- function(request_data){
 #' updateReconciliationReports
 #' 
 #' Updates the specified ReconciliationReport objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
 #' 
 #' @usage dfp_updateReconciliationReports(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

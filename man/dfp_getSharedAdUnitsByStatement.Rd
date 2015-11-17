@@ -20,4 +20,7 @@ Gets a SharedAdUnitPage of SharedAdUnit objects that satisfy the given Statement
   \item{name}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SharedAdUnitService#getSharedAdUnitsByStatement}{Google Documentation for getSharedAdUnitsByStatement}
+}
 

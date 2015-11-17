@@ -930,6 +930,8 @@ dfp_CompanyService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Company objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#createCompanies}{Google Documentation for createCompanies}
+#' 
 #' @usage dfp_createCompanies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -955,6 +957,8 @@ dfp_createCompanies <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+#' 
 #' @usage dfp_getCompaniesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -973,6 +977,8 @@ dfp_getCompaniesByStatement <- function(request_data){
 #' updateCompanies
 #' 
 #' Updates the specified Company objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 #' 
 #' @usage dfp_updateCompanies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

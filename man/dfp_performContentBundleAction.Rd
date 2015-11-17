@@ -12,4 +12,7 @@ a \code{list} containing all the elements of a performContentBundleActionRespons
 \description{
 Performs actions on ContentBundle objects that match the given Statement query. a set of content bundles
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+}
 

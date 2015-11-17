@@ -1080,6 +1080,8 @@ dfp_AudienceSegmentService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new RuleBasedFirstPartyAudienceSegment objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+#' 
 #' @usage dfp_createAudienceSegments(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1111,6 +1113,8 @@ dfp_createAudienceSegments <- function(request_data){
 #'   \item{endDateTime}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+#' 
 #' @usage dfp_getAudienceSegmentsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -1130,6 +1134,8 @@ dfp_getAudienceSegmentsByStatement <- function(request_data){
 #' 
 #' Performs the given AudienceSegmentAction on the set of segments identified by the given statement. segments
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+#' 
 #' @usage dfp_performAudienceSegmentAction()
 #' @return a \code{list} containing all the elements of a performAudienceSegmentActionResponse
 #' @export
@@ -1146,6 +1152,8 @@ dfp_performAudienceSegmentAction <- function(){
 #' updateAudienceSegments
 #' 
 #' Updates the given RuleBasedFirstPartyAudienceSegment objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 #' 
 #' @usage dfp_updateAudienceSegments(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

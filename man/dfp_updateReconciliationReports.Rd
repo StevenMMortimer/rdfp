@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updateReconciliationReportsRespon
 \description{
 Updates the specified ReconciliationReport objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
+}
 

@@ -24,4 +24,7 @@ Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the fil
   \item{archived}
 }
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+}
 

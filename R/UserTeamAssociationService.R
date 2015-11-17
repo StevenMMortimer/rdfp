@@ -598,6 +598,8 @@ dfp_UserTeamAssociationService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new UserTeamAssociation objects.
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+#' 
 #' @usage dfp_createUserTeamAssociations(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -621,6 +623,8 @@ dfp_createUserTeamAssociations <- function(request_data){
 #'   \item{teamId}
 #' }
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+#' 
 #' @usage dfp_getUserTeamAssociationsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
@@ -640,6 +644,8 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data){
 #' 
 #' Performs actions on UserTeamAssociation objects that match the given Statement query. a set of user team associations
 #' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
+#' 
 #' @usage dfp_performUserTeamAssociationAction()
 #' @return a \code{list} containing all the elements of a performUserTeamAssociationActionResponse
 #' @export
@@ -656,6 +662,8 @@ dfp_performUserTeamAssociationAction <- function(){
 #' updateUserTeamAssociations
 #' 
 #' Updates the specified UserTeamAssociation objects.
+#' 
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 #' 
 #' @usage dfp_updateUserTeamAssociations(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements

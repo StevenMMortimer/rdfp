@@ -16,4 +16,7 @@ a \code{list} containing all the elements of a updatePremiumRatesResponse
 \description{
 Updates the specified PremiumRate objects.
 }
+\seealso{
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+}
 
