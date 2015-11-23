@@ -4,7 +4,7 @@
 \alias{make_request_body}
 \title{Format SOAP Request Body}
 \usage{
-make_request_body(service, root_name, data = NULL)
+make_request_body(service, root_name, data = NULL, verbose = T)
 }
 \arguments{
 \item{service}{a character string matching one of the API
@@ -15,6 +15,9 @@ topmost level of the created XML hierarchy}
 
 \item{data}{a \code{list} or \code{data.frame} to create
 XML in the request}
+
+\item{verbose}{a boolean indicating whether the xml body should be printed
+during the function call}
 }
 \value{
 a character string of XML with service name
