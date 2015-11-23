@@ -4,7 +4,7 @@
 \alias{dfp_report_url_to_dataframe}
 \title{Take report URL and convert to data.frame}
 \usage{
-dfp_report_url_to_dataframe(url)
+dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 }
 \arguments{
 \item{report_url}{a URL character string returned from the function \link{dfp_getReportDownloadURL}}

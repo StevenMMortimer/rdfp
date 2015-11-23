@@ -209,7 +209,7 @@ dfp_set_above_attributes <- function(list){
 #' download data from that URL. Currently, the exportFormat
 #' must have been set for CSV_DUMP
 #' 
-#' @usage dfp_report_url_to_dataframe(url)
+#' @usage dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 #' @param report_url a URL character string returned from the function \link{dfp_getReportDownloadURL}
 #' @param exportFormat a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
 #' This is used to determine how to parse the results.
