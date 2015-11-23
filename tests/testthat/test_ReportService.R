@@ -17,11 +17,29 @@ report_request_data <- list(reportJob=
                                           startDate=list(year=2015, month=10, day=1),
                                           endDate=list(year=2015, month=10, day=31),
                                           dateRangeType='CUSTOM_DATE')))
+# run report
+dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
+
+# check status
+status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+
+# continually check status until complete
+counter <- 0
+while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+  Sys.sleep(3)
+  counter <- counter + 1
+}
+
+# get report URL
+url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
+
+
 
 test_that("dfp_runReportJob", {
   
-  dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
-
   expect_is(dfp_runReportJob_result, "list")
   expect_true(all(c('id', 'reportQuery', 'reportJobStatus') %in% names(dfp_runReportJob_result)))
 
@@ -29,28 +47,11 @@ test_that("dfp_runReportJob", {
 
 test_that("dfp_getReportJobStatus", {
   
-  request_data <- list(reportJobId=dfp_runReportJob_result$id)
-  
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
-  
   expect_is(dfp_getReportJobStatus_result, "character")
   
 })
 
 test_that("dfp_getReportDownloadURL", {
-  
-  dfp_getReportJobStatus_result <- 'IN_PROGRESS'
-  request_data <- list(reportJobId=dfp_runReportJob_result$id)
-  
-  counter <- 0
-  while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
-    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
-    Sys.sleep(3)
-    counter <- counter + 1
-  }
-  
-  request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
   
   expect_is(dfp_getReportDownloadURL_result, "character")
   expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadURL_result))
