@@ -202,3 +202,38 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
 dfp_set_above_attributes <- function(list){
   
 }
+
+#' Take report URL and convert to data.frame
+#' 
+#' Receive a URL (usually from the ReportService) and 
+#' download data from that URL. Currently, the exportFormat
+#' must have been set for CSV_DUMP
+#' 
+#' @usage dfp_report_url_to_dataframe(url)
+#' @param report_url a URL character string returned from the function \link{dfp_getReportDownloadURL}
+#' @param exportFormat a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
+#' This is used to determine how to parse the results.
+#' @return a \code{data.frame} of report results from the specified URL
+#' 
+#' @export
+dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
+  
+  stopifnot(exportFormat %in% c('CSV_DUMP', 'TSV', 'CSV_EXCEL'))
+  
+  # setup encoding and sep, very limited at this point
+  if (exportFormat=='CSV_DUMP'){
+    this_encoding <- 'UTF-8'
+    this_sep <- ','
+  } else if (exportFormat=='TSV'){
+    this_encoding <- 'UTF-8'
+    this_sep <- '\t'
+  } else {
+    this_encoding <- 'UCS-2'
+    this_sep <- '\t'
+  }
+  
+  t <- tempfile()
+  download.file(report_url,t,mode="wb",quiet = T)
+  report_dat <- read.table(gzfile(t, encoding=this_encoding), header = T, fileEncoding=this_encoding, sep=this_sep)
+  return(report_dat)
+}

@@ -107,6 +107,63 @@ tail(resultset, -2)
 ```
 
 
+### Run a Report
+
+Below is an example of how to make a simple report request and format to `data.frame`. 
+The example uses 4 functions from the [ReportService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService) 
+to request the report, check on its status, and download. This basic process flow is required 
+for all reports requested via this service.
+
+```{r eval = FALSE}
+
+# create a reportJob object
+# reportJobs consist of a reportQuery
+# Documentation for the reportQuery object can be found in R using 
+# ?dfp_ReportService_object_factory and searching for ReportQuery
+# please refer to online documentation for complete list of child elements for reportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportQuery
+request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
+                                                     dimensions='AD_UNIT_ID',
+                                                     adUnitView='FLAT',
+                                                     columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
+                                                     startDate=list(year=2015, month=10, day=1),
+                                                     endDate=list(year=2015, month=10, day=31),
+                                                     dateRangeType='CUSTOM_DATE'
+                                                     )))
+
+# the result is a list and most importantly the ID is included for checking its status
+dfp_runReportJob_result <- dfp_runReportJob(request_data)
+dfp_runReportJob_result$id
+dfp_runReportJob_result$reportJobStatus
+
+# to check the status repeatedly you just need to provide the id
+# dfp_getReportJobStatus_result returns a character string of the reportJob status
+request_data <- list(reportJobId=dfp_runReportJob_result$id)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+dfp_getReportJobStatus_result
+
+# a simple while loop can keep checking a long running request until ready
+counter <- 0
+while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+  Sys.sleep(3)
+  counter <- counter + 1
+}
+
+# once the status is "COMPLETED" the data download URL can be retrieved
+request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
+
+# convenience function has been provided to download the data from URL
+# and convert to a data.frame
+# supported exportFormats are currently c('CSV_DUMP', 'TSV', 'CSV_EXCEL')
+report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
+                                          exportFormat='CSV_DUMP')
+head(report_dat)
+
+```
+
+
 ### More Examples To Be Added Soon
 
 
