@@ -73,7 +73,7 @@ tail(resultset, -2)
 
 ### Run a Report
 
-Below is an example of how to make a simple report request and format to `data.frame`. The example uses 4 functions from the [ReportService] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService>) to request the report, check on its status, and download. This basic process flow is required for all reports requested via this service.
+Below is an example of how to make a simple report request and format to `data.frame`. The example uses 3 functions from the [ReportService] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService>) to request the report, check on its status, and download. This basic process flow is required for all reports requested via this service.
 
 ``` r
 
@@ -81,7 +81,7 @@ Below is an example of how to make a simple report request and format to `data.f
 # reportJobs consist of a reportQuery
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
-# please refer to online documentation for complete list of child elements for reportQuery
+# Also online documentation is available that lists available child elements for reportQuery
 # https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
