@@ -232,9 +232,9 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
     this_sep <- '\t'
   }
   
-  t <- tempfile()
-  download.file(report_url,t,mode="wb",quiet = T,method="curl")
-  report_dat <- read.table(gzfile(t, encoding=this_encoding), header = T, fileEncoding=this_encoding, sep=this_sep)
+  temp_destination <- tempfile()
+  download.file(report_url, temp_destination, quiet = T, method="curl") # mode="wb" not used with method!="internal"
+  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, fileEncoding=this_encoding, sep=this_sep)
   return(report_dat)
 }
 
