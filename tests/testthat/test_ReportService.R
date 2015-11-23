@@ -8,20 +8,22 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
-test_that("dfp_runReportJob", {
+report_request_data <- list(reportJob=
+                              list(reportQuery=
+                                     list(dimensions='MONTH_AND_YEAR', 
+                                          dimensions='AD_UNIT_ID',
+                                          adUnitView='FLAT',
+                                          columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
+                                          startDate=list(year=2015, month=10, day=1),
+                                          endDate=list(year=2015, month=10, day=31),
+                                          dateRangeType='CUSTOM_DATE')))
 
-  request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
-                                                       dimensions='AD_UNIT_ID',
-                                                       adUnitView='FLAT',
-                                                       columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                       startDate=list(year=2015, month=10, day=1),
-                                                       endDate=list(year=2015, month=10, day=31),
-                                                       dateRangeType='CUSTOM_DATE'
-                                                       )))
+test_that("dfp_runReportJob", {
   
-  dfp_runReportJob_result <- dfp_runReportJob(request_data)
+  dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 
   expect_is(dfp_runReportJob_result, "list")
+  expect_true(all(c('id', 'reportQuery', 'reportJobStatus') %in% names(dfp_runReportJob_result)))
 
 })
 
@@ -113,5 +115,16 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                     "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
   expect_equal(sum(report_dat$Dimension.MONTH_AND_YEAR=='Total'), 1)
   
+})
+
+test_that("dfp_full_report_wrapper", {
+  
+  report_dat <- dfp_full_report_wrapper(report_request_data)
+  
+  expect_is(report_dat, "data.frame")
+  expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
+                                    "Dimension.AD_UNIT_ID", 
+                                    "Dimension.AD_UNIT_NAME", 
+                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
 })
 

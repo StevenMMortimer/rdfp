@@ -237,3 +237,48 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
   report_dat <- read.table(gzfile(t, encoding=this_encoding), header = T, fileEncoding=this_encoding, sep=this_sep)
   return(report_dat)
 }
+
+
+#' Take report request and return data.frame
+#' 
+#' Take a report request and manage all aspects for user
+#' until returning a data.frame or error
+#' 
+#' @usage dfp_full_report_wrapper(request_data, 
+#'                                check_interval=3, 
+#'                                max_tries=10)
+#' @param request_data a \\code{list} or \\code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' @param check_interval a numeric specifying seconds to wait between report 
+#' status requests to check if complete
+#' @param max_tries a numeric specifying the maximum number of times to check 
+#' whether the report is complete before the function essentially times out
+#' @return a \code{data.frame} of report results as specified by the request_data
+#' 
+#' @seealso dfp_runReportJob dfp_getReportJobStatus dfp_getReportDownloadURL
+#' @export
+dfp_full_report_wrapper <- function(request_data, 
+                                    check_interval=3, 
+                                    max_tries=10){
+  
+  dfp_runReportJob_result <- dfp_runReportJob(request_data)
+  dfp_getReportJobStatus_result <- dfp_runReportJob_result$reportJobStatus
+  
+  status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
+
+  counter <- 0
+  while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
+    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+    Sys.sleep(3)
+    counter <- counter + 1
+  }
+  
+  stopifnot(dfp_getReportJobStatus_result=='COMPLETED')
+  
+  request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
+  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result)
+  
+  return(report_dat)
+  
+}
