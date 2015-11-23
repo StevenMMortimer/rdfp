@@ -26,6 +26,10 @@ Take a report request and manage all aspects for user
 until returning a data.frame or error
 }
 \seealso{
-dfp_runReportJob dfp_getReportJobStatus dfp_getReportDownloadURL
+dfp_runReportJob
+
+dfp_getReportJobStatus
+
+dfp_getReportDownloadURL
 }
 
