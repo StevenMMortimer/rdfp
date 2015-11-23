@@ -2189,12 +2189,14 @@ dfp_ReportService_object_factory <- function(obj_type, obj_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
-#' @usage dfp_getReportDownloadURL()
+#' @usage dfp_getReportDownloadURL(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getReportDownloadURLResponse
 #' @export
-dfp_getReportDownloadURL <- function(){
+dfp_getReportDownloadURL <- function(request_data){
 
-  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadURL', data=NULL)
+  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadURLResponse']])$rval
@@ -2208,12 +2210,14 @@ dfp_getReportDownloadURL <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
-#' @usage dfp_getReportDownloadUrlWithOptions()
+#' @usage dfp_getReportDownloadUrlWithOptions(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getReportDownloadUrlWithOptionsResponse
 #' @export
-dfp_getReportDownloadUrlWithOptions <- function(){
+dfp_getReportDownloadUrlWithOptions <- function(request_data){
 
-  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=NULL)
+  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadUrlWithOptionsResponse']])$rval
@@ -2227,12 +2231,14 @@ dfp_getReportDownloadUrlWithOptions <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
-#' @usage dfp_getReportJobStatus()
+#' @usage dfp_getReportJobStatus(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a getReportJobStatusResponse
 #' @export
-dfp_getReportJobStatus <- function(){
+dfp_getReportJobStatus <- function(request_data){
 
-  request_body <- make_request_body(service='ReportService', root_name='getReportJobStatus', data=NULL)
+  request_body <- make_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportJobStatusResponse']])$rval
@@ -2246,12 +2252,14 @@ dfp_getReportJobStatus <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
-#' @usage dfp_runReportJob()
+#' @usage dfp_runReportJob(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a runReportJobResponse
 #' @export
-dfp_runReportJob <- function(){
+dfp_runReportJob <- function(request_data){
 
-  request_body <- make_request_body(service='ReportService', root_name='runReportJob', data=NULL)
+  request_body <- make_request_body(service='ReportService', root_name='runReportJob', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['runReportJobResponse']])$rval
