@@ -8,12 +8,38 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+# reconstruct from existing id when needed
+line_item_detail<- dfp_getLineItemsByStatement(list(filterStatement=
+                                                      list(query="WHERE status='DELIVERING'")))[[3]]
+
+# replace InventoryTargeting matrices to list
+line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
+                                                                       check.names=F))
+
+hypothetical_line_item <- list(orderId=line_item_detail$orderId, 
+                               startDateTime=list(date=list(year=2017, month=1, day=1), 
+                                                  hour=0,
+                                                  minute=0,
+                                                  second=0,
+                                                  timeZoneID='America/New_York'),
+                               endDateTime=list(date=list(year=2017, month=12, day=31), 
+                                                hour=0,
+                                                minute=0,
+                                                second=0,
+                                                timeZoneID='America/New_York'),
+                               lineItemType=line_item_detail$lineItemType,
+                               costType=line_item_detail$costType, 
+                               primaryGoal=line_item_detail$primaryGoal, 
+                               targeting=line_item_detail$targeting)
+
 test_that("dfp_createLineItems", {
 
-#  dfp_createLineItems_result <- dfp_createLineItems()
+  request_data <- list('lineItems'=hypothetical_line_item)
 
-#  expect_is(dfp_createLineItems_result, "list")
-  expect_true(TRUE)
+  dfp_createLineItems_result <- dfp_createLineItems(request_data)
+
+  expect_message(try(dfp_createLineItems(request_data), silent=T), 'PERMISSION_DENIED')
+  expect_error(dfp_createLineItems(request_data))
 
 })
 
@@ -28,11 +54,12 @@ test_that("dfp_getLineItemsByStatement", {
 })
 
 test_that("dfp_performLineItemAction", {
+  
+  request_data <- list('lineItemAction'='PauseLineItems', 
+                       'filterStatement'=list('query'=paste0("WHERE id=", line_item_detail$id)))
 
-#  dfp_performLineItemAction_result <- dfp_performLineItemAction()
-
-#  expect_is(dfp_performLineItemAction_result, "list")
-  expect_true(TRUE)
+  expect_message(try(dfp_performLineItemAction(request_data), silent=T), 'PERMISSION_DENIED')
+  expect_error(dfp_performLineItemAction(request_data))
 
 })
 

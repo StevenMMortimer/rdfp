@@ -843,12 +843,14 @@ dfp_getPlacementsByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 #' 
-#' @usage dfp_performPlacementAction()
+#' @usage dfp_performPlacementAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performPlacementActionResponse
 #' @export
-dfp_performPlacementAction <- function(){
+dfp_performPlacementAction <- function(request_data){
 
-  request_body <- make_request_body(service='PlacementService', root_name='performPlacementAction', data=NULL)
+  request_body <- make_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPlacementActionResponse']])$rval

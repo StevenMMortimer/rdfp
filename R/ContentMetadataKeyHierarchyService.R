@@ -703,12 +703,14 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
 #' 
-#' @usage dfp_performContentMetadataKeyHierarchyAction()
+#' @usage dfp_performContentMetadataKeyHierarchyAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performContentMetadataKeyHierarchyActionResponse
 #' @export
-dfp_performContentMetadataKeyHierarchyAction <- function(){
+dfp_performContentMetadataKeyHierarchyAction <- function(request_data){
 
-  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=NULL)
+  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentMetadataKeyHierarchyActionResponse']])$rval

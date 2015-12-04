@@ -808,12 +808,14 @@ dfp_getWorkflowRequestsByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
-#' @usage dfp_performWorkflowRequestAction()
+#' @usage dfp_performWorkflowRequestAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performWorkflowRequestActionResponse
 #' @export
-dfp_performWorkflowRequestAction <- function(){
+dfp_performWorkflowRequestAction <- function(request_data){
 
-  request_body <- make_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=NULL)
+  request_body <- make_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performWorkflowRequestActionResponse']])$rval

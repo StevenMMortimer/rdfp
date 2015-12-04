@@ -1136,12 +1136,14 @@ dfp_getAudienceSegmentsByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 #' 
-#' @usage dfp_performAudienceSegmentAction()
+#' @usage dfp_performAudienceSegmentAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performAudienceSegmentActionResponse
 #' @export
-dfp_performAudienceSegmentAction <- function(){
+dfp_performAudienceSegmentAction <- function(request_data){
 
-  request_body <- make_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=NULL)
+  request_body <- make_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAudienceSegmentActionResponse']])$rval

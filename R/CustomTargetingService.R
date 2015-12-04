@@ -944,12 +944,14 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 #' 
-#' @usage dfp_performCustomTargetingKeyAction()
+#' @usage dfp_performCustomTargetingKeyAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performCustomTargetingKeyActionResponse
 #' @export
-dfp_performCustomTargetingKeyAction <- function(){
+dfp_performCustomTargetingKeyAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=NULL)
+  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingKeyActionResponse']])$rval
@@ -963,12 +965,14 @@ dfp_performCustomTargetingKeyAction <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 #' 
-#' @usage dfp_performCustomTargetingValueAction()
+#' @usage dfp_performCustomTargetingValueAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performCustomTargetingValueActionResponse
 #' @export
-dfp_performCustomTargetingValueAction <- function(){
+dfp_performCustomTargetingValueAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=NULL)
+  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingValueActionResponse']])$rval

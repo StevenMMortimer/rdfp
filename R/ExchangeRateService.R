@@ -671,12 +671,14 @@ dfp_getExchangeRatesByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 #' 
-#' @usage dfp_performExchangeRateAction()
+#' @usage dfp_performExchangeRateAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performExchangeRateActionResponse
 #' @export
-dfp_performExchangeRateAction <- function(){
+dfp_performExchangeRateAction <- function(request_data){
 
-  request_body <- make_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=NULL)
+  request_body <- make_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performExchangeRateActionResponse']])$rval

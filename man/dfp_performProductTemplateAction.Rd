@@ -4,7 +4,11 @@
 \alias{dfp_performProductTemplateAction}
 \title{performProductTemplateAction}
 \usage{
-dfp_performProductTemplateAction()
+dfp_performProductTemplateAction(request_data)
+}
+\arguments{
+\item{request_data}{a \code{list} or \code{data.frame} of data elements
+to be formatted for a SOAP request (XML format, but passed as character string)}
 }
 \value{
 a \code{list} containing all the elements of a performProductTemplateActionResponse

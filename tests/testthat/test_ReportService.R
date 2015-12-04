@@ -10,13 +10,41 @@ dfp_auth(token = "rdfp_token.rds")
 
 report_request_data <- list(reportJob=
                               list(reportQuery=
-                                     list(dimensions='MONTH_AND_YEAR', 
-                                          dimensions='AD_UNIT_ID',
+                                     list(dimensions='CUSTOM_TARGETING_VALUE_ID',
                                           adUnitView='FLAT',
-                                          columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
+                                          columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS',
+                                          columns='TOTAL_INVENTORY_LEVEL_CLICKS',
+                                          columns='TOTAL_INVENTORY_LEVEL_CTR',
+                                          columns='TOTAL_INVENTORY_LEVEL_WITHOUT_CPD_AVERAGE_ECPM',
                                           startDate=list(year=2015, month=10, day=1),
-                                          endDate=list(year=2015, month=10, day=31),
-                                          dateRangeType='CUSTOM_DATE')))
+                                          endDate=list(year=2015, month=12, day=31),
+                                          dateRangeType='CUSTOM_DATE', 
+                                          statement=list(query="WHERE AD_UNIT_ID=34976587"))))
+report_dat <- dfp_full_report_wrapper(report_request_data)
+report_dat$ECPM <- report_dat[,6]/1000000
+joined$value_id <- as.numeric(joined$value_id)
+d <- left_join(report_dat, joined, by=c('Dimension.CUSTOM_TARGETING_VALUE_ID'='value_id'))
+d[d$value_name %in% c('Phoenix-753','Bottom'),] %>% 
+  select(key_displayName, value_name, Column.TOTAL_INVENTORY_LEVEL_CTR, rev)
+
+
+report_request_data <- list(reportJob=
+                              list(reportQuery=
+                                     list(dimensions='MONTH_AND_YEAR', 
+                                          columns='SELL_THROUGH_FORECASTED_IMPRESSIONS',
+                                          columns='SELL_THROUGH_AVAILABLE_IMPRESSIONS',
+                                          columns='SELL_THROUGH_RESERVED_IMPRESSIONS',
+                                          #startDate=list(year=2015, month=12, day=4),
+                                          #endDate=list(year=2016, month=3, day=4),
+                                          dateRangeType='NEXT_12_MONTHS',
+                                          statement=list(query="WHERE AD_UNIT_ID=34976587 AND CUSTOM_TARGETING_VALUE_ID=74322824947"))))
+report_dat <- dfp_full_report_wrapper(report_request_data, max_tries=100)
+joined$value_id <- as.numeric(joined$value_id)
+d <- left_join(report_dat, joined, by=c('Dimension.CUSTOM_TARGETING_VALUE_ID'='value_id'))
+d[d$value_name %in% c('Phoenix-753','Bottom'),] %>% 
+  select(key_displayName, value_name, Column.TOTAL_INVENTORY_LEVEL_CTR, rev)
+
+
 # run report
 dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 

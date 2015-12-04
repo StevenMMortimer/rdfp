@@ -1577,12 +1577,14 @@ dfp_getPreviewUrl <- function(){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
-#' @usage dfp_performLineItemCreativeAssociationAction()
+#' @usage dfp_performLineItemCreativeAssociationAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performLineItemCreativeAssociationActionResponse
 #' @export
-dfp_performLineItemCreativeAssociationAction <- function(){
+dfp_performLineItemCreativeAssociationAction <- function(request_data){
 
-  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=NULL)
+  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemCreativeAssociationActionResponse']])$rval

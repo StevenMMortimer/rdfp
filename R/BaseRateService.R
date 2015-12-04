@@ -785,12 +785,14 @@ dfp_getBaseRatesByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 #' 
-#' @usage dfp_performBaseRateAction()
+#' @usage dfp_performBaseRateAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performBaseRateActionResponse
 #' @export
-dfp_performBaseRateAction <- function(){
+dfp_performBaseRateAction <- function(request_data){
 
-  request_body <- make_request_body(service='BaseRateService', root_name='performBaseRateAction', data=NULL)
+  request_body <- make_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performBaseRateActionResponse']])$rval

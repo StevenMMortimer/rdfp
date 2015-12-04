@@ -785,12 +785,14 @@ dfp_getCustomFieldsByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
 #' 
-#' @usage dfp_performCustomFieldAction()
+#' @usage dfp_performCustomFieldAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performCustomFieldActionResponse
 #' @export
-dfp_performCustomFieldAction <- function(){
+dfp_performCustomFieldAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=NULL)
+  request_body <- make_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomFieldActionResponse']])$rval

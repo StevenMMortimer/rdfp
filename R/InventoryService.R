@@ -1461,12 +1461,14 @@ dfp_getAdUnitsByStatement <- function(request_data){
 #' 
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
 #' 
-#' @usage dfp_performAdUnitAction()
+#' @usage dfp_performAdUnitAction(request_data)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @return a \code{list} containing all the elements of a performAdUnitActionResponse
 #' @export
-dfp_performAdUnitAction <- function(){
+dfp_performAdUnitAction <- function(request_data){
 
-  request_body <- make_request_body(service='InventoryService', root_name='performAdUnitAction', data=NULL)
+  request_body <- make_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdUnitActionResponse']])$rval
