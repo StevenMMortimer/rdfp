@@ -118,6 +118,10 @@ build_xml_from_list <- function(list, root_name=NULL,
         incl_type <- list[[i]][['.attrs']]
         names(incl_type) <- 'xsi:type'
         list[[i]][['.attrs']] <- NULL
+      } else if (grepl('[a-zA-Z]+Action$', names(list)[i])) {
+        incl_type <- list[[i]]
+        names(incl_type) <- 'xsi:type'
+        list[[i]] <- ''
       } else {
         incl_type <- NULL
       }
