@@ -93,7 +93,7 @@ test_that("dfp_updateLabels", {
     
     expect_is(dfp_updateLabels_result, "list")
     expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_updateLabels_result)))
-    expect_equal(dfp_updateLabels_result$description, paste0(myuuid, '2'))
+    expect_equal(dfp_updateLabels_result$name, paste0(myuuid, '2'))
 
   options(rdfp.network_code = rdfp_options$network_code)
 
