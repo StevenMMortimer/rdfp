@@ -35,9 +35,7 @@ hypothetical_line_item <- list(orderId=line_item_detail$orderId,
 test_that("dfp_createLineItems", {
 
   request_data <- list('lineItems'=hypothetical_line_item)
-
-  dfp_createLineItems_result <- dfp_createLineItems(request_data)
-
+  
   expect_message(try(dfp_createLineItems(request_data), silent=T), 'PERMISSION_DENIED')
   expect_error(dfp_createLineItems(request_data))
 
@@ -55,10 +53,10 @@ test_that("dfp_getLineItemsByStatement", {
 
 test_that("dfp_performLineItemAction", {
   
-  request_data <- list('lineItemAction'='PauseLineItems', 
-                       'filterStatement'=list('query'=paste0("WHERE id=", line_item_detail$id)))
-
-  expect_message(try(dfp_performLineItemAction(request_data), silent=T), 'PERMISSION_DENIED')
+  request_data <- list(lineItemAction='PauseLineItems',
+                       filterStatement=list('query'=paste0("WHERE id=", line_item_detail$id)))
+  
+  expect_message(try(dfp_performLineItemAction(request_data), silent=T), 'NOT_ALLOWED')
   expect_error(dfp_performLineItemAction(request_data))
 
 })
