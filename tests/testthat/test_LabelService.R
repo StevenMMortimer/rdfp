@@ -84,7 +84,7 @@ test_that("dfp_updateLabels", {
   options(rdfp.network_code = rdfp_options$test_network_code)
   
     hypothetical_label_w_id <- list(id=dfp_createLabels_result$id, 
-                                    name="TestLabel", 
+                                    name=paste0(myuuid, '2'), 
                                     description="Test2", 
                                     types='COMPETITIVE_EXCLUSION')
     request_data <- list('labels'=hypothetical_label_w_id)
@@ -93,7 +93,7 @@ test_that("dfp_updateLabels", {
     
     expect_is(dfp_updateLabels_result, "list")
     expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_updateLabels_result)))
-    expect_equal(dfp_updateLabels_result$description, 'Test2')
+    expect_equal(dfp_updateLabels_result$name, paste0(myuuid, '2'))
 
   options(rdfp.network_code = rdfp_options$network_code)
 
