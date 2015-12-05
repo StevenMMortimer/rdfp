@@ -8,7 +8,9 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
-hypothetical_label <- list(name="TestLabel", 
+# names must be unique, so get uuid
+my_uuid <- system("uuid", intern=T)
+hypothetical_label <- list(name=paste0("TestLabel - ", myuuid), 
                            description="Test", 
                            types='COMPETITIVE_EXCLUSION')
 
