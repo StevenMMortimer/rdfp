@@ -19,11 +19,25 @@ test_that("dfp_getProductsByStatement", {
 
 test_that("dfp_performProductAction", {
 
-#  dfp_performProductAction_result <- dfp_performProductAction()
-
-#  expect_is(dfp_performProductAction_result, "list")
-  expect_true(TRUE)
-
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  request_data <- list(productAction='DeactivateProducts',
+                       filterStatement=list('query'="WHERE status='ACTIVE'"))
+  
+  dfp_performProductAction_result <- dfp_performProductAction(request_data)
+  
+  expect_is(dfp_performProductAction_result, "list")
+  expect_true(all(c('numChanges') %in% names(dfp_performProductAction_result)))
+  expect_equal(dfp_performProductAction_result$numChanges, '1')
+  
+  # check that action worked
+  request_data <- list('filterStatement'=
+                         list('query'=paste0("WHERE isActive=false and id=", 
+                                             dfp_createLabels_result$id)))
+  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+  
+  expect_equal(dfp_getLabelsByStatement_result$totalResultSetSize, '1')
+  
+  options(rdfp.network_code = rdfp_options$network_code)
 })
 
 test_that("dfp_updateProducts", {

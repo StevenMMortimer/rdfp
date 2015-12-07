@@ -10,10 +10,16 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_select", {
 
-#  dfp_select_result <- dfp_select()
-
-#  expect_is(dfp_select_result, "list")
-  expect_true(TRUE)
+  request_data <- list(selectStatement=
+                         list(query=paste('select Id, Name,', 
+                                          'CanonicalParentId, CountryCode,',
+                                          "Type from Geo_Target where CountryCode='US'")))
+  
+  dfp_select_result <- dfp_select(request_data)
+  expect_is(dfp_select_result, "list")
+  
+  final_result <- dfp_select_parse(dfp_select_result)
+  expect_is(final_result, "data.frame")
 
 })
 
