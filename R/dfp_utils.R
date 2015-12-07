@@ -118,7 +118,7 @@ build_xml_from_list <- function(list, root_name=NULL,
         incl_type <- list[[i]][['.attrs']]
         names(incl_type) <- 'xsi:type'
         list[[i]][['.attrs']] <- NULL
-      } else if (grepl('[a-zA-Z]+Action$', names(list)[i])) {
+      } else if (grepl('[a-zA-Z]+Action$|^action$', names(list)[i])) {
         incl_type <- list[[i]]
         names(incl_type) <- 'xsi:type'
         list[[i]] <- ''
@@ -288,4 +288,35 @@ dfp_full_report_wrapper <- function(request_data,
   
   return(report_dat)
   
+}
+
+
+#' Take select request and return data.frame
+#' 
+#' Take a select request result from the 
+#' PublishersQueryLanguage service and parse into a data.frame
+#' 
+#' @usage dfp_select_parse(result_data)
+#' @param request_data a \\code{list} of data returned from \link{dfp_select}
+#' @return a \code{data.frame} of report results as specified by the result_data
+#' 
+#' @seealso dfp_select 
+#' @export
+dfp_select_parse <- function(result_data){
+  
+  these_names <- unlist(result_data[grepl('columnTypes', names(result_data))], 
+                        use.names = F)
+  these_types <- unlist(result_data[['rows']]['.attrs',], use.names = F)
+  these_rows <- ldply(result_data[grepl('rows', names(result_data))], 
+                      .fun=function(x){
+                        x <- x['value',]
+                        names(x) <- these_names
+                        new_x <- as.data.frame(t(x), stringsAsFactors = F)
+                        return(new_x)
+                      }, .id=NULL)
+  these_rows <- sapply(these_rows, as.character, simplify = F)
+  result_set <- data.frame(these_rows)
+  suppressWarnings(result_set[,c(which(these_types=='NumberValue'))] <- sapply(result_set[,c(which(these_types=='NumberValue'))], as.numeric))
+  
+  return(result_set)
 }
