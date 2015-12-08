@@ -66,7 +66,7 @@ test_that("dfp_updateCompanies", {
   dfp_updateCompanies_result <- dfp_updateCompanies(request_data)
   
   expect_is(dfp_updateCompanies_result, "list")
-  expect_true(all(c('id', 'name', 'address', 'email', 'type', 'comment') %in% names(dfp_updateCompanies_result)))
+  expect_true(all(c('id', 'name', 'type', 'creditStatus') %in% names(dfp_updateCompanies_result)))
   expect_equal(dfp_updateCompanies_result$name, paste0("TestCompany - ", myuuid, '2'))
   
   options(rdfp.network_code = rdfp_options$network_code)

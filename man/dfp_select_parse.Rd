@@ -7,7 +7,7 @@
 dfp_select_parse(result_data)
 }
 \arguments{
-\item{request_data}{a \\code{list} of data returned from \link{dfp_select}}
+\item{result_data}{a \code{list} returned from \link{dfp_select}}
 }
 \value{
 a \code{data.frame} of report results as specified by the result_data

@@ -297,7 +297,7 @@ dfp_full_report_wrapper <- function(request_data,
 #' PublishersQueryLanguage service and parse into a data.frame
 #' 
 #' @usage dfp_select_parse(result_data)
-#' @param request_data a \\code{list} of data returned from \link{dfp_select}
+#' @param result_data a \code{list} returned from \link{dfp_select}
 #' @return a \code{data.frame} of report results as specified by the result_data
 #' 
 #' @seealso dfp_select 
