@@ -12,11 +12,11 @@ Features:
 -   Forecasting/Inventory Management/Reporting
 -   Simple Administrative Tools
 
-*rdfp* is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201508`.
+**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201508`.
 
 ### Functions
 
-All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most *rdfp* functions will return a list simply parsed from the XML returned in the SOAP response. Some functions may take additional steps to format the results as data.frame or vector and this will be noted in the function documentation.
+All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a list simply parsed from the XML returned in the SOAP response. Some functions may take additional steps to format the results as data.frame or vector and this will be noted in the function documentation.
 
 ### Install and Load rdfp Library
 
