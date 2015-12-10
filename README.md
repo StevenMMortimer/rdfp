@@ -12,11 +12,11 @@ Features:
 -   Forecasting/Inventory Management/Reporting
 -   Simple Administrative Tools
 
-`rdfp` is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201508`.
+*rdfp* is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201508`.
 
 ### Functions
 
-All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most `rdfp` functions will return a list simply parsed from the XML returned in the SOAP response. Some functions may take additional steps to format the results as data.frame or vector and this will be noted in the function documentation.
+All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most *rdfp* functions will return a list simply parsed from the XML returned in the SOAP response. Some functions may take additional steps to format the results as data.frame or vector and this will be noted in the function documentation.
 
 ### Install and Load rdfp Library
 
@@ -45,6 +45,8 @@ dfp_auth()
 
 ### Simple Administrative Tasks
 
+### Check Current User Info
+
 ``` r
 
 # Check current user or network
@@ -52,7 +54,11 @@ user_info <- dfp_getCurrentUser()
 user_info
 network_info <- dfp_getCurrentNetwork()
 network_info
+```
 
+### Create Team and Users
+
+``` r
 # create a team and user and add the user to that team
 request_data <- list(teams=list(name="TestTeam1", 
                                 description='API Test Team 1', 
@@ -74,8 +80,11 @@ dfp_createUsers_result <- dfp_createUsers(request_data)
 request_data <- list(userTeamAssociations=list(teamId=dfp_createTeams_result$id,
                                                userId=dfp_createUsers_result$id))
 dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations(request_data)
+```
 
+### Create Companies and Contacts
 
+``` r
 # create a company and add a contact to it
 request_data <- list(companies=list(name="TestCompany1", 
                                     type='HOUSE_ADVERTISER', 
@@ -92,6 +101,9 @@ request_data <- list(contacts=list(name="TestContact1",
                                     email='testcontact1@gmail.com'))
 dfp_createContacts_result <- dfp_createContacts(request_data)
 ```
+
+Ad Trafficking Setup
+--------------------
 
 ### Find All Levels of Geotargeting and their Ids
 
@@ -207,8 +219,6 @@ report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_re
                                           exportFormat='CSV_DUMP')
 head(report_dat)
 ```
-
-### More Examples To Be Added Soon
 
 ### Credits
 
