@@ -8,6 +8,23 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+baseuuid <- paste(sample(c(letters[1:6],0:9),30,replace=TRUE),collapse="")
+myuuid <- paste(
+  substr(baseuuid,1,8),
+  "-",
+  substr(baseuuid,9,12),
+  "-",
+  "4",
+  substr(baseuuid,13,15),
+  "-",
+  sample(c("8","9","a","b"),1),
+  substr(baseuuid,16,18),
+  "-",
+  substr(baseuuid,19,30),
+  sep="",
+  collapse=""
+)
+
 test_that("dfp_createProductTemplates", {
   
   request_data <- list('productTemplates'=
