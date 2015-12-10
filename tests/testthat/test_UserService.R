@@ -8,13 +8,41 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+baseuuid <- paste(sample(c(letters[1:6],0:9),30,replace=TRUE),collapse="")
+myuuid <- paste(
+  substr(baseuuid,1,8),
+  "-",
+  substr(baseuuid,9,12),
+  "-",
+  "4",
+  substr(baseuuid,13,15),
+  "-",
+  sample(c("8","9","a","b"),1),
+  substr(baseuuid,16,18),
+  "-",
+  substr(baseuuid,19,30),
+  sep="",
+  collapse=""
+)
+
+validemailaddon <- paste0(sample(1:9,3), collapse='')
+
+options(rdfp.network_code = rdfp_options$test_network_code)
+request_data <- list(users=list(name=paste0("TestUser - ", myuuid),
+                                email=paste0('testuser', validemailaddon, '@gmail.com'), 
+                                roleId=-1))
+dfp_createUsers_result <- dfp_createUsers(request_data)
+options(rdfp.network_code = rdfp_options$network_code)
+
 test_that("dfp_createUsers", {
 
-#  dfp_createUsers_result <- dfp_createUsers()
-
-#  expect_is(dfp_createUsers_result, "list")
-  expect_true(TRUE)
-
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  
+  expect_is(dfp_createUsers_result, "list")
+  expect_true(all(c('id', 'name', 'email', 'roleId', 'roleName', 'isActive') %in% names(dfp_createUsers_result)))
+  
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_getAllRoles", {
@@ -50,20 +78,43 @@ test_that("dfp_getUsersByStatement", {
 })
 
 test_that("dfp_performUserAction", {
-
-#  dfp_performUserAction_result <- dfp_performUserAction()
-
-#  expect_is(dfp_performUserAction_result, "list")
-  expect_true(TRUE)
-
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  request_data <- list(userAction='DeactivateUsers',
+                       filterStatement=list('query'=paste0("WHERE id=", dfp_createUsers_result$id)))
+  
+  dfp_performUserAction_result <- dfp_performUserAction(request_data)
+  
+  expect_is(dfp_performUserAction_result, "list")
+  expect_true(all(c('numChanges') %in% names(dfp_performUserAction_result)))
+  expect_equal(dfp_performUserAction_result$numChanges, '1')
+  
+  # check that action worked
+  request_data <- list('filterStatement'=
+                         list('query'=paste0("WHERE id=", 
+                                             dfp_createUsers_result$id)))
+  dfp_getUsersByStatement_result <- dfp_getUsersByStatement(request_data)
+  
+  expect_equal(dfp_getUsersByStatement_result$results$isActive, 'false')
+  
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_updateUsers", {
-
-#  dfp_updateUsers_result <- dfp_updateUsers()
-
-#  expect_is(dfp_updateUsers_result, "list")
-  expect_true(TRUE)
-
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  request_data <- list(users=list(id=dfp_createUsers_result$id, 
+                                  name=paste0("TestUser - ", myuuid, "2"),
+                                  email=paste0('testuser', validemailaddon, '@gmail.com'), 
+                                  roleId=-1))
+  
+  dfp_updateUsers_result <- dfp_updateUsers(request_data)
+  
+  expect_is(dfp_updateUsers_result, "list")
+  expect_equal(dfp_updateUsers_result$name, paste0("TestUser - ", myuuid, "2"))
+  
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 

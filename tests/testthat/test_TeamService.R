@@ -9,12 +9,17 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createTeams", {
-
-#  dfp_createTeams_result <- dfp_createTeams()
-
-#  expect_is(dfp_createTeams_result, "list")
-  expect_true(TRUE)
-
+  
+  request_data <- list(teams=list(name="TestTeam1", 
+                                  description='API Test Team 1', 
+                                  hasAllCompanies='true', 
+                                  hasAllInventory='true',
+                                  teamAccessType='READ_WRITE'))
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  expect_message(try(dfp_createTeams(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_createTeams(request_data))
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_getTeamsByStatement", {
@@ -32,10 +37,16 @@ test_that("dfp_getTeamsByStatement", {
 
 test_that("dfp_updateTeams", {
 
-#  dfp_updateTeams_result <- dfp_updateTeams()
-
-#  expect_is(dfp_updateTeams_result, "list")
-  expect_true(TRUE)
+  request_data <- list(teams=list(id=99999999, 
+                                  name="TestTeam99", 
+                                  description='API Test Team 99', 
+                                  hasAllCompanies='true', 
+                                  hasAllInventory='true',
+                                  teamAccessType='READ_WRITE'))
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  expect_message(try(dfp_updateTeams(request_data), silent=T), 'NOT_FOUND')
+  expect_error(dfp_updateTeams(request_data))
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

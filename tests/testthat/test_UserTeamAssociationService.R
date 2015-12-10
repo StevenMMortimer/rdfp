@@ -9,11 +9,13 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createUserTeamAssociations", {
-
-#  dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations()
-
-#  expect_is(dfp_createUserTeamAssociations_result, "list")
-  expect_true(TRUE)
+  
+  request_data <- list(userTeamAssociations=list(teamId=239587,
+                                                userId=149461448))
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  expect_message(try(dfp_createUserTeamAssociations(request_data), silent=T), 'NOT_FOUND')
+  expect_error(dfp_createUserTeamAssociations(request_data))
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 
@@ -38,11 +40,13 @@ test_that("dfp_performUserTeamAssociationAction", {
 })
 
 test_that("dfp_updateUserTeamAssociations", {
-
-#  dfp_updateUserTeamAssociations_result <- dfp_updateUserTeamAssociations()
-
-#  expect_is(dfp_updateUserTeamAssociations_result, "list")
-  expect_true(TRUE)
+  
+  request_data <- list(userTeamAssociations=list(teamId=239587,
+                                                 userId=149461448))
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  expect_message(try(dfp_updateUserTeamAssociations(request_data), silent=T), 'NOT_FOUND')
+  expect_error(dfp_updateUserTeamAssociations(request_data))
+  options(rdfp.network_code = rdfp_options$network_code)
 
 })
 
