@@ -8,20 +8,24 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+options(rdfp.network_code = rdfp_options$test_network_code)
+request_data <- list(keys=list(name='TestKey1', 
+                               displayName='TestKey1', 
+                               type='FREEFORM'))
+dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
+options(rdfp.network_code = rdfp_options$network_code)
+
 test_that("dfp_createCustomTargetingKeys", {
 
-#  dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys()
-
-#  expect_is(dfp_createCustomTargetingKeys_result, "list")
-  expect_true(TRUE)
-
+  expect_is(dfp_createCustomTargetingKeys_result, "list")
+  expect_true(all(c('id', 'name', 'displayName', 'type', 'status') %in% names(dfp_createCustomTargetingKeys_result)))
+  
 })
 
 test_that("dfp_createCustomTargetingValues", {
-
-#  dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues()
-
-#  expect_is(dfp_createCustomTargetingValues_result, "list")
+  
+  #dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues()
+  #expect_is(dfp_createCustomTargetingValues_result, "list")
   expect_true(TRUE)
 
 })
