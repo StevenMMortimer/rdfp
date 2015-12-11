@@ -25,9 +25,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -35,8 +35,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -45,7 +45,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -60,7 +60,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AuthenticationError}
@@ -69,7 +69,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -104,7 +104,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -113,7 +113,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -128,7 +128,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -149,7 +149,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.CreativeWrapperError}{Google Documentation for CreativeWrapperError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CreativeWrapperError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CreativeWrapperError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{LABEL_ALREADY_ASSOCIATED_WITH_CREATIVE_WRAPPER - The label is already associated with a CreativeWrapper.}
 #'      \item{INVALID_LABEL_TYPE - The label type of a creative wrapper must be LabelType CREATIVE_WRAPPER.}
@@ -174,9 +174,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -188,7 +188,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -197,7 +197,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -206,7 +206,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DeactivateLabels}
@@ -225,7 +225,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -242,7 +242,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -257,13 +257,13 @@
 #' A Label is additional information that can be added to an entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.Label}{Google Documentation for Label}
 #' \describe{
-#'  \item{id}{a integer -  Unique ID of the Label. This value is readonly and is assigned by Google.}
-#'  \item{name}{a string -  Name of the Label. This is value is required to create a label and has a
+#'  \item{id}{a integer - Unique ID of the Label. This value is readonly and is assigned by Google.}
+#'  \item{name}{a character - Name of the Label. This is value is required to create a label and has a
 #' maximum length of 127 characters.}
-#'  \item{description}{a string -  A description of the label. This value is optional and its maximum length is
+#'  \item{description}{a character - A description of the label. This value is optional and its maximum length is
 #' 255 characters.}
-#'  \item{isActive}{a boolean -  Specifies whether or not the label is active. This attribute is read-only.}
-#'  \item{types}{a LabelType - The types of the Label. This can take one of the following values:
+#'  \item{isActive}{a boolean - Specifies whether or not the label is active. This attribute is read-only.}
+#'  \item{types}{a LabelType - The types of the Label. This can take one of the following values: 
 #'    \itemize{
 #'      \item{COMPETITIVE_EXCLUSION - Allows for the creation of labels to exclude competing ads from showing on
 #' the same page.}
@@ -295,7 +295,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.LabelError}{Google Documentation for LabelError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LabelError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LabelError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_PREFIX - A user created label cannot begin with the Google internal system label
 #' prefix.}
@@ -311,9 +311,9 @@
 #' Captures a page of Label objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.LabelPage}{Google Documentation for LabelPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a Label -  The collection of labels contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a Label - The collection of labels contained within this page.}
 #' }
 #' 
 #' \strong{NotNullError}
@@ -322,7 +322,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -341,7 +341,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -354,7 +354,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -375,7 +375,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -390,7 +390,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -406,7 +406,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -422,7 +422,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -438,7 +438,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -460,7 +460,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -473,7 +473,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -490,7 +490,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -499,8 +499,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -508,30 +508,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -546,7 +533,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -561,7 +548,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -571,7 +558,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -587,7 +574,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TypeError}
@@ -611,7 +598,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -626,26 +613,27 @@
 #' 
 #' @usage dfp_LabelService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_LabelService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='Label'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'types')))
-  }
+ if(obj_type=='Label'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'types')))
+ }
 
 }
 #' 
@@ -658,15 +646,24 @@ dfp_LabelService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createLabels(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createLabelsResponse
+#' @return a \code{list} containing all the elements of a createLabelsResponse 
 #' @export
 dfp_createLabels <- function(request_data){
 
-  request_body <- make_request_body(service='LabelService', root_name='createLabels', data=request_data)
+ request_body <- make_request_body(service='LabelService', root_name='createLabels', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLabelsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createLabelsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -686,15 +683,24 @@ dfp_createLabels <- function(request_data){
 #' @usage dfp_getLabelsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getLabelsByStatementResponse
+#' @return a \code{list} containing all the elements of a getLabelsByStatementResponse 
 #' @export
 dfp_getLabelsByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
+ request_body <- make_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLabelsByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLabelsByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -707,15 +713,24 @@ dfp_getLabelsByStatement <- function(request_data){
 #' @usage dfp_performLabelAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performLabelActionResponse
+#' @return a \code{list} containing all the elements of a performLabelActionResponse 
 #' @export
 dfp_performLabelAction <- function(request_data){
 
-  request_body <- make_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
+ request_body <- make_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLabelActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performLabelActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -728,15 +743,24 @@ dfp_performLabelAction <- function(request_data){
 #' @usage dfp_updateLabels(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateLabelsResponse
+#' @return a \code{list} containing all the elements of a updateLabelsResponse 
 #' @export
 dfp_updateLabels <- function(request_data){
 
-  request_body <- make_request_body(service='LabelService', root_name='updateLabels', data=request_data)
+ request_body <- make_request_body(service='LabelService', root_name='updateLabels', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLabelsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateLabelsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

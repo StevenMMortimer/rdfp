@@ -21,9 +21,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -31,8 +31,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -41,7 +41,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -56,7 +56,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AppliedLabel}
@@ -66,8 +66,8 @@
 #' isNegated set to true.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.AppliedLabel}{Google Documentation for AppliedLabel}
 #' \describe{
-#'  \item{labelId}{a integer -  The ID of a created Label.}
-#'  \item{isNegated}{a boolean -  isNegated should be set to true to negate the effects of labelId.}
+#'  \item{labelId}{a integer - The ID of a created Label.}
+#'  \item{isNegated}{a boolean - isNegated should be set to true to negate the effects of labelId.}
 #' }
 #' 
 #' \strong{ArchiveProposals}
@@ -84,7 +84,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.AudienceSegmentError}{Google Documentation for AudienceSegmentError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values:
+#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED - First party audience segment is not supported.}
 #'      \item{ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED - Only rule-based first-party audience segments can be created.}
@@ -120,7 +120,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -156,7 +156,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.AvailableBillingError}{Google Documentation for AvailableBillingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AvailableBillingError.Reason - This can take one of the following values:
+#'  \item{reason}{a AvailableBillingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{BILLING_SOURCE_IS_NOT_AVAILABLE - The billing source provided is not available in proposal network settings.}
 #'      \item{BILLING_SCHEDULE_IS_NOT_AVAILABLE - The billing schedule provided is not available in proposal network settings.}
@@ -172,7 +172,7 @@
 #' The value of a CustomField for a particular entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.BaseCustomFieldValue}{Google Documentation for BaseCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
 #' }
 #' 
@@ -183,7 +183,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.BillingError}{Google Documentation for BillingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a BillingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a BillingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNSUPPORTED_BILLING_SCHEDULE - Found unsupported billing schedule.}
 #'      \item{UNSUPPORTED_BILLING_CAP - Found unsupported billing cap.}
@@ -207,7 +207,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{BypassProposalWorkflowRules}
@@ -225,7 +225,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -240,7 +240,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -261,9 +261,9 @@
 #' CustomFieldDataType DROP_DOWN.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.CustomFieldValue}{Google Documentation for CustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{value}{a Value -  The value for this field. The appropriate type of Value is determined by the
+#'  \item{value}{a Value - The value for this field. The appropriate type of Value is determined by the
 #' CustomField dataType of the CustomField that this conforms to.}
 #' }
 #' 
@@ -273,7 +273,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 #' that does not exist.}
@@ -292,9 +292,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -306,7 +306,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -315,7 +315,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -324,7 +324,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DropDownCustomFieldValue}
@@ -333,9 +333,9 @@
 #' CustomFieldDataType DROP_DOWN
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.DropDownCustomFieldValue}{Google Documentation for DropDownCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{customFieldOptionId}{a integer -  The CustomFieldOption id ID of the CustomFieldOption for this value.}
+#'  \item{customFieldOptionId}{a integer - The CustomFieldOption id ID of the CustomFieldOption for this value.}
 #' }
 #' 
 #' \strong{EntityChildrenLimitReachedError}
@@ -344,7 +344,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -387,7 +387,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -410,7 +410,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ExchangeRateError}{Google Documentation for ExchangeRateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ExchangeRateError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ExchangeRateError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_CURRENCY_CODE - The currency code is invalid and does not follow ISO 4217.}
 #'      \item{UNSUPPORTED_CURRENCY_CODE - The currency code is not supported.}
@@ -441,7 +441,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -456,7 +456,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ForecastError}{Google Documentation for ForecastError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values:
+#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_NOT_AVAILABLE - The forecast could not be retrieved due to a server side connection problem.
 #' Please try again soon.}
@@ -488,7 +488,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -504,7 +504,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.InvalidUrlError}{Google Documentation for InvalidUrlError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{ILLEGAL_CHARACTERS - The URL contains invalid characters.}
 #'      \item{INVALID_FORMAT - The format of the URL is not allowed. This could occur for a number of
@@ -525,7 +525,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.LabelEntityAssociationError}{Google Documentation for LabelEntityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DUPLICATE_ASSOCIATION - The label has already been attached to the entity.}
 #'      \item{INVALID_ASSOCIATION - A label is being applied to an entity that does not support that entity
@@ -543,7 +543,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.LineItemOperationError}{Google Documentation for LineItemOperationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_ALLOWED - The operation is not allowed due to lack of permissions.}
 #'      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the LineItem.}
@@ -569,8 +569,8 @@
 #' Represents a money amount.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.Money}{Google Documentation for Money}
 #' \describe{
-#'  \item{currencyCode}{a string -  Three letter currency code in string format.}
-#'  \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+#'  \item{currencyCode}{a character - Three letter currency code in string format.}
+#'  \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 #' of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 #' }
 #' 
@@ -580,7 +580,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -599,7 +599,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -620,7 +620,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PackageActionError}{Google Documentation for PackageActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PackageActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PackageActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PROPOSAL_LINE_ITEMS_HAVE_BEEN_CREATED - The operation is not applicable because the proposal line items under these
 #' packages have already been created.}
@@ -638,7 +638,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PackageError}{Google Documentation for PackageError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PackageError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PackageError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVAILD_PRODUCT_PACKAGE - Package cannot be created from an inactive or archived product package.}
 #'      \item{INACTIVE_RATE_CARD - The rate card is inactive.}
@@ -658,7 +658,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -673,7 +673,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -688,7 +688,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PrecisionError}{Google Documentation for PrecisionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PrecisionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PrecisionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{WRONG_PRECISION - The lowest N digits of the number must be zero.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -703,7 +703,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProductError}{Google Documentation for ProductError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductError.Reason - This can take one of the following values:
+#'  \item{reason}{a ProductError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TEMPLATE_NOT_FOUND - The specified template is not found.}
 #'      \item{MALFORMED_PRODUCT_ID - The productId is not correctly formed.}
@@ -725,17 +725,17 @@
 #' and a buyer that specifies the details of an advertising campaign.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.Proposal}{Google Documentation for Proposal}
 #' \describe{
-#'  \item{id}{a integer -  The unique ID of the Proposal. This attribute is readonly and is assigned by
+#'  \item{id}{a integer - The unique ID of the Proposal. This attribute is readonly and is assigned by
 #' Google.}
-#'  \item{dfpOrderId}{a integer -  The unique ID of corresponding Order. This attribute is readonly. This will
+#'  \item{dfpOrderId}{a integer - The unique ID of corresponding Order. This attribute is readonly. This will
 #' be null if the Proposal has not been pushed to DFP.}
-#'  \item{name}{a string -  The name of the Proposal. This value is required to create a proposal and
+#'  \item{name}{a character - The name of the Proposal. This value is required to create a proposal and
 #' has a maximum length of 255 characters. This attribute is copied to Order
 #' name when the proposal turns into an order. This attribute can be configured
 #' as editable after the proposal has been submitted. Please check with your
 #' network administrator for editable fields configuration.}
 #'  \item{pricingModel}{a PricingModel - The option to specify whether the Proposal uses the Net or Gross pricing
-#' model. This field is optional and defaults to PricingModel NET. This can take one of the following values:
+#' model. This field is optional and defaults to PricingModel NET. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NET - Indicates using net pricing model to calculate the price.}
 #'      \item{GROSS - Indicates using gross pricing model to calculate the price.}
@@ -743,21 +743,21 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{startDateTime}{a DateTime -  The date and time at which the order and line items associated with the
+#'  \item{startDateTime}{a DateTime - The date and time at which the order and line items associated with the
 #' Proposal are eligible to begin serving. This attribute is readonly and is
 #' derived from the proposal line item of the proposal which has the earliest
 #' ProposalLineItem startDateTime. This attribute will be null, if this
 #' proposal has no related line items, or none of its line items have a start
 #' time.}
-#'  \item{endDateTime}{a DateTime -  The date and time at which the order and line items associated with the
+#'  \item{endDateTime}{a DateTime - The date and time at which the order and line items associated with the
 #' Proposal stop being served. This attribute is readonly and is derived from
 #' the proposal line item of the proposal which has the latest ProposalLineItem
 #' endDateTime. This attribute will be null, if this proposal has no related
 #' line items, or none of its line items have an end time.}
-#'  \item{timeZoneId}{a string -  The time zone ID in tz database format (e.g. "America/Los_Angeles") for this
+#'  \item{timeZoneId}{a character - The time zone ID in tz database format (e.g. "America/Los_Angeles") for this
 #' Proposal. The startDateTime and endDateTime will be returned in this time
 #' zone. This attribute is optional and defaults to the network?s time zone.}
-#'  \item{status}{a ProposalStatus - The status of the Proposal. This attribute is readonly. This can take one of the following values:
+#'  \item{status}{a ProposalStatus - The status of the Proposal. This attribute is readonly. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DRAFT - Indicates that the Proposal has just been created or retracted but no
 #' approval has been requested yet.}
@@ -768,20 +768,20 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{isArchived}{a boolean -  The archival status of the Proposal. This attribute is readonly.}
-#'  \item{advertiser}{a ProposalCompanyAssociation -  The advertiser, to which this Proposal belongs, and a set of Contact objects
+#'  \item{isArchived}{a boolean - The archival status of the Proposal. This attribute is readonly.}
+#'  \item{advertiser}{a ProposalCompanyAssociation - The advertiser, to which this Proposal belongs, and a set of Contact objects
 #' associated with the advertiser. The ProposalCompanyAssociation type of this
 #' attribute should be ProposalCompanyAssociationType ADVERTISER. This
 #' attribute is required when the proposal turns into an order, and its
 #' ProposalCompanyAssociation companyId will be copied to Order advertiserId.
 #' This attribute becomes readonly once the Proposal has been pushed.}
-#'  \item{agencies}{a ProposalCompanyAssociation -  List of agencies and the set of Contact objects associated with each agency.
+#'  \item{agencies}{a ProposalCompanyAssociation - List of agencies and the set of Contact objects associated with each agency.
 #' This attribute is optional. A Proposal only has at most one Company with
 #' ProposalCompanyAssociationType PRIMARY_AGENCY type, but a Company can appear
 #' more than once with different ProposalCompanyAssociationType values. If
 #' primary agency exists, its ProposalCompanyAssociation companyId will be
 #' copied to Order agencyId when the proposal turns into an order.}
-#'  \item{probabilityOfClose}{a integer -  The probability to close this Proposal. This percentage value is in terms of
+#'  \item{probabilityOfClose}{a integer - The probability to close this Proposal. This percentage value is in terms of
 #' millipercent, and should be multiples of 10 with the range from 0 to 100000.
 #' This attribute is required and will be used to calculate the revenue in
 #' reporting.}
@@ -789,7 +789,7 @@
 #' value is BillingCap CAPPED_CUMULATIVE. Either this attribute or
 #' billingSchedule will be used, according to the billingSource. This attribute
 #' can be configured as editable after the proposal has been submitted. Please
-#' check with your network administrator for editable fields configuration. This can take one of the following values:
+#' check with your network administrator for editable fields configuration. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NO_CAP - There is no cap for each billing month.}
 #'      \item{CAPPED_CUMULATIVE - Use a billing source of capped actuals with a billing cap of cumulative to
@@ -816,7 +816,7 @@
 #' default value is BillingSchedule PRORATED. Either this attribute or
 #' billingCap will be used, according to the billingSource. This attribute can
 #' be configured as editable after the proposal has been submitted. Please
-#' check with your network administrator for editable fields configuration. This can take one of the following values:
+#' check with your network administrator for editable fields configuration. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PREPAID - Charged based on the contracted value after the first month of the campaign.}
 #'      \item{END_OF_THE_CAMPAIGN - Charged based on the contracted value after the last month of the campaign.}
@@ -835,7 +835,7 @@
 #' CONTRACTED, the billingSchedule will be used for billing, otherwise the
 #' billingCap will be used. This attribute can be configured as editable after
 #' the proposal has been submitted. Please check with your network
-#' administrator for editable fields configuration. This can take one of the following values:
+#' administrator for editable fields configuration. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CONTRACTED - Charge based on the quantity of impressions, clicks, or days booked,
 #' regardless of what actually delivered.}
@@ -849,7 +849,7 @@
 #' CONTRACTED contracted billingSource, set this to BillingBase REVENUE. This
 #' attribute is optional and defaults to BillingBase VOLUME. This attribute can
 #' be configured as editable after the proposal has been submitted. Please
-#' check with your network administrator for editable fields configuration. This can take one of the following values:
+#' check with your network administrator for editable fields configuration. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VOLUME - Billing calculation (eg. proration) should be based on volume.}
 #'      \item{REVENUE - Billing calculation (eg. proration) should be based on revenue.}
@@ -857,92 +857,92 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{poNumber}{a string -  User defined purchase order number for the Proposal. This attribute is
+#'  \item{poNumber}{a character - User defined purchase order number for the Proposal. This attribute is
 #' optional and has a maximum length of 63 characters. It is copied to Order
 #' poNumber when the proposal turns into an order. This attribute can be
 #' configured as editable after the proposal has been submitted. Please check
 #' with your network administrator for editable fields configuration.}
-#'  \item{notes}{a string -  Provides any additional notes that may annotate the Proposal. This attribute
+#'  \item{notes}{a character - Provides any additional notes that may annotate the Proposal. This attribute
 #' is optional and has a maximum length of 65,535 characters. This attribute
 #' can be configured as editable after the proposal has been submitted. Please
 #' check with your network administrator for editable fields configuration.}
-#'  \item{budget}{a Money -  The total budget allocated for all the proposal line items belonging to the
+#'  \item{budget}{a Money - The total budget allocated for all the proposal line items belonging to the
 #' Proposal. It supports precision of 2 decimal places in terms of the
 #' fundamental currency unit, so the Money microAmount must be multiples of
 #' 10000. This attribute is optional and default value is 0. The Money
 #' currencyCode is readonly.}
-#'  \item{primarySalesperson}{a SalespersonSplit -  The primary salesperson who brokered the transaction with the advertiser.
+#'  \item{primarySalesperson}{a SalespersonSplit - The primary salesperson who brokered the transaction with the advertiser.
 #' This attribute is required when the proposal turns into an order. This
 #' attribute can be configured as editable after the proposal has been
 #' submitted. Please check with your network administrator for editable fields
 #' configuration.}
-#'  \item{secondarySalespeople}{a SalespersonSplit -  List of secondary salespeople who are responsible for the sales of the
+#'  \item{secondarySalespeople}{a SalespersonSplit - List of secondary salespeople who are responsible for the sales of the
 #' Proposal besides primary salesperson. This attribute is optional. A proposal
 #' could have 8 secondary salespeople at most, but must also have a
 #' primarySalesperson if any secondary salesperson exists. This attribute can
 #' be configured as editable after the proposal has been submitted. Please
 #' check with your network administrator for editable fields configuration.}
-#'  \item{salesPlannerIds}{a integer -  List of unique IDs of User objects who are the sales planners of the
+#'  \item{salesPlannerIds}{a integer - List of unique IDs of User objects who are the sales planners of the
 #' Proposal. This attribute is optional. A proposal could have 8 sales planners
 #' at most. This attribute can be configured as editable after the proposal has
 #' been submitted. Please check with your network administrator for editable
 #' fields configuration.}
-#'  \item{primaryTraffickerId}{a integer -  The unique ID of the User who is primary trafficker and is responsible for
+#'  \item{primaryTraffickerId}{a integer - The unique ID of the User who is primary trafficker and is responsible for
 #' trafficking the Proposal. This attribute is required when the proposal turns
 #' into an order, and will be copied to Order primaryTraffickerId . This
 #' attribute can be configured as editable after the proposal has been
 #' submitted. Please check with your network administrator for editable fields
 #' configuration.}
-#'  \item{secondaryTraffickerIds}{a integer -  List of unique IDs of User objects who are responsible for trafficking the
+#'  \item{secondaryTraffickerIds}{a integer - List of unique IDs of User objects who are responsible for trafficking the
 #' Proposal besides the primary trafficker. This attribute is optional. A
 #' proposal could have 8 secondary traffickers at most, but must also have a
 #' primary trafficker if any secondary trafficker exists. This attribute can be
 #' configured as editable after the proposal has been submitted. Please check
 #' with your network administrator for editable fields configuration.}
-#'  \item{appliedTeamIds}{a integer -  The IDs of all teams that the Proposal is on directly. This attribute is
+#'  \item{appliedTeamIds}{a integer - The IDs of all teams that the Proposal is on directly. This attribute is
 #' optional. This attribute can be configured as editable after the proposal
 #' has been submitted. Please check with your network administrator for
 #' editable fields configuration.}
-#'  \item{customFieldValues}{a BaseCustomFieldValue -  The values of the custom fields associated with the Proposal. This attribute
+#'  \item{customFieldValues}{a BaseCustomFieldValue - The values of the custom fields associated with the Proposal. This attribute
 #' is optional. This attribute can be configured as editable after the proposal
 #' has been submitted. Please check with your network administrator for
 #' editable fields configuration.}
-#'  \item{appliedLabels}{a AppliedLabel -  The set of labels applied directly to the Proposal. This attribute is
+#'  \item{appliedLabels}{a AppliedLabel - The set of labels applied directly to the Proposal. This attribute is
 #' optional.}
-#'  \item{effectiveAppliedLabels}{a AppliedLabel -  Contains the set of labels applied directly to the proposal as well as those
+#'  \item{effectiveAppliedLabels}{a AppliedLabel - Contains the set of labels applied directly to the proposal as well as those
 #' inherited ones. If a label has been negated, only the negated label is
 #' returned. This field is readonly and is assigned by Google.}
-#'  \item{advertiserDiscount}{a integer -  The discount applied to the Proposal according to the advertiser. The
+#'  \item{advertiserDiscount}{a integer - The discount applied to the Proposal according to the advertiser. The
 #' percentage value is stored as millipercents, and must be multiples of 10
 #' with the range from 0 to 99990. This attribute is optional and default value
 #' is 0.}
-#'  \item{proposalDiscount}{a integer -  The proposal discount, which will be applied to all ProposalLineItem objects
+#'  \item{proposalDiscount}{a integer - The proposal discount, which will be applied to all ProposalLineItem objects
 #' in the Proposal. The percentage value is stored as millipercents, and must
 #' be multiples of 10 with the range from 0 to 99990. This attribute is
 #' optional and default value is 0.}
-#'  \item{currencyCode}{a string -  The currency code of this Proposal. This attribute is optional and defaults
+#'  \item{currencyCode}{a character - The currency code of this Proposal. This attribute is optional and defaults
 #' to network's currency code.}
-#'  \item{exchangeRate}{a integer -  The exchange rate from the currencyCode to the Network currencyCode
+#'  \item{exchangeRate}{a integer - The exchange rate from the currencyCode to the Network currencyCode
 #' network's currency. The value is stored as the exchange rate times
 #' 10,000,000,000 truncated to a long. This attribute is readonly and is
 #' assigned by Google when first created or updated with refreshExchangeRate
 #' set to true. This attribute is ignored if the feature is not enabled.}
-#'  \item{refreshExchangeRate}{a boolean -  Set this field to true to update the exchangeRate to the latest exchange
+#'  \item{refreshExchangeRate}{a boolean - Set this field to true to update the exchangeRate to the latest exchange
 #' rate when updating the proposal. This attribute is optional and defaults to
 #' false. This attribute is ignored if the feature is not enabled.}
-#'  \item{agencyCommission}{a integer -  The commission for the primary agency of the Proposal. The percentage value
+#'  \item{agencyCommission}{a integer - The commission for the primary agency of the Proposal. The percentage value
 #' is stored as millipercents, and must be multiples of 10 with the range from
 #' 0 to 99990. This attribute is optional and default value is 0.}
-#'  \item{valueAddedTax}{a integer -  The value added tax (VAT) applied on final cost of the Proposal. The
+#'  \item{valueAddedTax}{a integer - The value added tax (VAT) applied on final cost of the Proposal. The
 #' percentage value is stored as millipercents, and must be multiples of 10
 #' with the range from 0 to 100000. This attribute is optional and default
 #' value is 0.}
-#'  \item{isSold}{a boolean -  Indicates whether the proposal has been sold, i.e., corresponds to whether
+#'  \item{isSold}{a boolean - Indicates whether the proposal has been sold, i.e., corresponds to whether
 #' the status of an Order is OrderStatus APPROVED or OrderStatus PAUSED. This
 #' attribute is readonly.}
 #'  \item{approvalStatus}{a ProposalApprovalStatus - The approval status of the Proposal for the active user or null if the
 #' active user has no action needed. This attribute is readonly and is assigned
-#' by Google. This can take one of the following values:
+#' by Google. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PENDING - Indicates that the Proposal is pending on active user's approval.}
 #'      \item{NON_PENDING - Indicates that active user is the approver, and the related approval
@@ -952,27 +952,27 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{lastModifiedDateTime}{a DateTime -  The date and time this Proposal was last modified. This attribute is
+#'  \item{lastModifiedDateTime}{a DateTime - The date and time this Proposal was last modified. This attribute is
 #' readonly and is assigned by Google when a Proposal is updated.}
-#'  \item{resources}{a ProposalLink -  The list of resources on this Proposal. This attribute is optional. This
+#'  \item{resources}{a ProposalLink - The list of resources on this Proposal. This attribute is optional. This
 #' attribute can be configured as editable after the proposal has been
 #' submitted. Please check with your network administrator for editable fields
 #' configuration.}
-#'  \item{actualExpiryTime}{a DateTime -  The actual date and time at which the inventory reserved by the Proposal
+#'  \item{actualExpiryTime}{a DateTime - The actual date and time at which the inventory reserved by the Proposal
 #' will expire. This field is read-only / assigned by Google.}
-#'  \item{expectedExpiryTime}{a DateTime -  The expected date and time at which the inventory reserved by the Proposal
+#'  \item{expectedExpiryTime}{a DateTime - The expected date and time at which the inventory reserved by the Proposal
 #' will expire. This field is read-only / assigned by Google.}
-#'  \item{thirdPartyAdServerId}{a integer -  A predefined third party ad server, which will be used to fill in
+#'  \item{thirdPartyAdServerId}{a integer - A predefined third party ad server, which will be used to fill in
 #' reconciliation. All predefined third party ad servers can be found in the
 #' Third_Party_Company PQL table. If actual third party ad server is not in the
 #' predefined list, this field is set to 0, and actual third party ad server
 #' name is set in customThirdPartyAdServerName. Third party ad server is
 #' optional. By default, this field is 0, and customThirdPartyAdServerName is
 #' null which means no third party ad server is specified.}
-#'  \item{customThirdPartyAdServerName}{a string -  When actual third party ad server is not in the predefined list,
+#'  \item{customThirdPartyAdServerName}{a character - When actual third party ad server is not in the predefined list,
 #' thirdPartyAdServerId is set to 0, and actual third party ad server name is
 #' set here. When thirdPartyAdServerId is not 0, this field is ignored.}
-#'  \item{lastRetractionDetails}{a RetractionDetails -  Details describing the most recent proposal retraction. This field is
+#'  \item{lastRetractionDetails}{a RetractionDetails - Details describing the most recent proposal retraction. This field is
 #' readonly and assigned by Google.}
 #' }
 #' 
@@ -997,7 +997,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalActionError}{Google Documentation for ProposalActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProposalActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProposalActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_APPLICABLE - The operation is not applicable to the current state.}
 #'      \item{IS_ARCHIVED - The operation cannot be applied because the proposal is archived.}
@@ -1013,10 +1013,10 @@
 #' Proposal and a set of Contact objects belonging to the company.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalCompanyAssociation}{Google Documentation for ProposalCompanyAssociation}
 #' \describe{
-#'  \item{companyId}{a integer -  The unique ID of the Company associated with the Proposal. This attribute is
+#'  \item{companyId}{a integer - The unique ID of the Company associated with the Proposal. This attribute is
 #' required.}
 #'  \item{type}{a ProposalCompanyAssociationType - The association type of the Company and Proposal. This attribute is
-#' required. This can take one of the following values:
+#' required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PRIMARY_AGENCY - The company is a primary agency.}
 #'      \item{BILLING_AGENCY - The company is a billing agency.}
@@ -1027,7 +1027,7 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{contactIds}{a integer -  List of unique IDs for Contact objects of the Company. This attribute is
+#'  \item{contactIds}{a integer - List of unique IDs for Contact objects of the Company. This attribute is
 #' optional.}
 #' }
 #' 
@@ -1037,7 +1037,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalError}{Google Documentation for ProposalError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProposalError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProposalError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AD_SERVER_UNKNOWN_ERROR - Unknown error from ad-server}
 #'      \item{AD_SERVER_API_ERROR - Ad-server reports an api error for the operation.}
@@ -1072,7 +1072,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalLineItemError}{Google Documentation for ProposalLineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProposalLineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProposalLineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_SAME_RATE_CARD - The proposal line item's rate card is not the same as other proposal line
 #' items in the proposal.}
@@ -1138,16 +1138,16 @@
 #' A link that can be added as a resource to a Proposal.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalLink}{Google Documentation for ProposalLink}
 #' \describe{
-#'  \item{id}{a integer -  The unique ID of the ProposalLink. This attribute is readonly and is
+#'  \item{id}{a integer - The unique ID of the ProposalLink. This attribute is readonly and is
 #' assigned by Google.}
-#'  \item{name}{a string -  The name of the ProposalLink. Must be unique under the same Proposal. This
+#'  \item{name}{a character - The name of the ProposalLink. Must be unique under the same Proposal. This
 #' attribute is required and has a maximum length of 255 characters.}
-#'  \item{creatorId}{a integer -  The unique ID of the User who created the ProposalLink. This attribute is
+#'  \item{creatorId}{a integer - The unique ID of the User who created the ProposalLink. This attribute is
 #' readonly and is assigned by Google.}
-#'  \item{url}{a string -  The link to the ProposalLink resource. This attribute is required.}
-#'  \item{description}{a string -  The description for the ProposalLink. This attribute is optional and has a
+#'  \item{url}{a character - The link to the ProposalLink resource. This attribute is required.}
+#'  \item{description}{a character - The description for the ProposalLink. This attribute is optional and has a
 #' maximum length of 1023 characters.}
-#'  \item{creationDateTime}{a DateTime -  The creation time of the ProposalLink. This attribute is readonly and is
+#'  \item{creationDateTime}{a DateTime - The creation time of the ProposalLink. This attribute is readonly and is
 #' assigned by Google when the ProposalLink is created.}
 #' }
 #' 
@@ -1156,9 +1156,9 @@
 #' Captures a page of Proposal objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ProposalPage}{Google Documentation for ProposalPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a Proposal -  The collection of proposals contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a Proposal - The collection of proposals contained within this page.}
 #' }
 #' 
 #' \strong{PublisherQueryLanguageContextError}
@@ -1168,7 +1168,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1184,7 +1184,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1200,7 +1200,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -1222,7 +1222,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RangeError}{Google Documentation for RangeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RangeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RangeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_HIGH}
 #'      \item{TOO_LOW}
@@ -1238,7 +1238,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - A required collection is missing.}
 #'      \item{TOO_LARGE - Collection size is too large.}
@@ -1255,7 +1255,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -1269,7 +1269,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED}
 #'      \item{TOO_LARGE}
@@ -1287,8 +1287,8 @@
 #' Details describing why a Proposal was retracted.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RetractionDetails}{Google Documentation for RetractionDetails}
 #' \describe{
-#'  \item{retractionReasonId}{a integer -  The ID of the reason for why the Proposal was retracted.}
-#'  \item{comments}{a string -  Comments on why the Proposal was retracted. This field is optional and has a
+#'  \item{retractionReasonId}{a integer - The ID of the reason for why the Proposal was retracted.}
+#'  \item{comments}{a character - Comments on why the Proposal was retracted. This field is optional and has a
 #' maximum length of 1023 characters.}
 #' }
 #' 
@@ -1298,7 +1298,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.RetractProposals}{Google Documentation for RetractProposals}
 #' \describe{
 #'  \item{extends ProposalAction}{see documentation for ProposalAction}
-#'  \item{retractionDetails}{a RetractionDetails -  RetractionDetails Details describing why the Proposal is being retracted.}
+#'  \item{retractionDetails}{a RetractionDetails - RetractionDetails Details describing why the Proposal is being retracted.}
 #' }
 #' 
 #' \strong{SalespersonSplit}
@@ -1306,9 +1306,9 @@
 #' A SalespersonSplit represents a salesperson and his/her split.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.SalespersonSplit}{Google Documentation for SalespersonSplit}
 #' \describe{
-#'  \item{userId}{a integer -  The unique ID of the User responsible for the sales of the Proposal. This
+#'  \item{userId}{a integer - The unique ID of the User responsible for the sales of the Proposal. This
 #' attribute is required.}
-#'  \item{split}{a integer -  The split can be attributed to the salesperson. The percentage value is
+#'  \item{split}{a integer - The split can be attributed to the salesperson. The percentage value is
 #' stored as millipercents, and must be multiples of 10 with the range from 0
 #' to 100000. This attribute is optional and default value is 0.}
 #' }
@@ -1319,7 +1319,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -1336,7 +1336,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -1345,8 +1345,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -1354,30 +1354,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -1392,7 +1379,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1407,7 +1394,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -1417,7 +1404,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -1450,7 +1437,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.TeamError}{Google Documentation for TeamError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ENTITY_NOT_ON_USERS_TEAMS - User cannot use this entity because it is not on any of the user's teams.}
 #'      \item{AD_UNITS_NOT_ON_ORDER_TEAMS - The targeted or excluded ad unit must be on the order's teams.}
@@ -1471,7 +1458,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TimeZoneError}
@@ -1480,7 +1467,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.TimeZoneError}{Google Documentation for TimeZoneError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values:
+#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_TIMEZONE_ID - Indicates that the timezone ID provided is not supported.}
 #'      \item{TIMEZONE_ID_IN_WRONG_FORMAT - Indicates that the timezone ID provided is in the wrong format. The timezone
@@ -1520,7 +1507,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -1537,7 +1524,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.WorkflowActionError}{Google Documentation for WorkflowActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a WorkflowActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a WorkflowActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_APPLICABLE - The action does not exist or is not applicable to the current state.}
 #'      \item{WORKFLOW_DEFINITION_NOT_FOUND - Means there's no workflow definition found for the entity.}
@@ -1566,7 +1553,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService.WorkflowValidationError}{Google Documentation for WorkflowValidationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a WorkflowValidationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a WorkflowValidationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{WARNING - The rule condition validation result triggers a warning.}
 #'      \item{ERROR - The rule condition validation result triggers an error.}
@@ -1580,66 +1567,67 @@
 #' 
 #' @usage dfp_ProposalService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_ProposalService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='AppliedLabel'){
+ stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
+ }
 
-  if(obj_type=='AppliedLabel'){
-    stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
-  }
+ if(obj_type=='BaseCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId')))
+ }
 
-  if(obj_type=='BaseCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId')))
-  }
+ if(obj_type=='CustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
+ }
 
-  if(obj_type=='CustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='DropDownCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
-  }
+ if(obj_type=='DropDownCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
+ }
 
-  if(obj_type=='Money'){
-    stopifnot(all(sampled_names %in% c('currencyCode', 'microAmount')))
-  }
+ if(obj_type=='Money'){
+ stopifnot(all(sampled_names %in% c('currencyCode', 'microAmount')))
+ }
 
-  if(obj_type=='Proposal'){
-    stopifnot(all(sampled_names %in% c('id', 'dfpOrderId', 'name', 'pricingModel', 'startDateTime', 'endDateTime', 'timeZoneId', 'status', 'isArchived', 'advertiser', 'agencies', 'probabilityOfClose', 'billingCap', 'billingSchedule', 'billingSource', 'billingBase', 'poNumber', 'notes', 'budget', 'primarySalesperson', 'secondarySalespeople', 'salesPlannerIds', 'primaryTraffickerId', 'secondaryTraffickerIds', 'appliedTeamIds', 'customFieldValues', 'appliedLabels', 'effectiveAppliedLabels', 'advertiserDiscount', 'proposalDiscount', 'currencyCode', 'exchangeRate', 'refreshExchangeRate', 'agencyCommission', 'valueAddedTax', 'isSold', 'approvalStatus', 'lastModifiedDateTime', 'resources', 'actualExpiryTime', 'expectedExpiryTime', 'thirdPartyAdServerId', 'customThirdPartyAdServerName', 'lastRetractionDetails')))
-  }
+ if(obj_type=='Proposal'){
+ stopifnot(all(sampled_names %in% c('id', 'dfpOrderId', 'name', 'pricingModel', 'startDateTime', 'endDateTime', 'timeZoneId', 'status', 'isArchived', 'advertiser', 'agencies', 'probabilityOfClose', 'billingCap', 'billingSchedule', 'billingSource', 'billingBase', 'poNumber', 'notes', 'budget', 'primarySalesperson', 'secondarySalespeople', 'salesPlannerIds', 'primaryTraffickerId', 'secondaryTraffickerIds', 'appliedTeamIds', 'customFieldValues', 'appliedLabels', 'effectiveAppliedLabels', 'advertiserDiscount', 'proposalDiscount', 'currencyCode', 'exchangeRate', 'refreshExchangeRate', 'agencyCommission', 'valueAddedTax', 'isSold', 'approvalStatus', 'lastModifiedDateTime', 'resources', 'actualExpiryTime', 'expectedExpiryTime', 'thirdPartyAdServerId', 'customThirdPartyAdServerName', 'lastRetractionDetails')))
+ }
 
-  if(obj_type=='ProposalCompanyAssociation'){
-    stopifnot(all(sampled_names %in% c('companyId', 'type', 'contactIds')))
-  }
+ if(obj_type=='ProposalCompanyAssociation'){
+ stopifnot(all(sampled_names %in% c('companyId', 'type', 'contactIds')))
+ }
 
-  if(obj_type=='ProposalLink'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'creatorId', 'url', 'description', 'creationDateTime')))
-  }
+ if(obj_type=='ProposalLink'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'creatorId', 'url', 'description', 'creationDateTime')))
+ }
 
-  if(obj_type=='RetractionDetails'){
-    stopifnot(all(sampled_names %in% c('retractionReasonId', 'comments')))
-  }
+ if(obj_type=='RetractionDetails'){
+ stopifnot(all(sampled_names %in% c('retractionReasonId', 'comments')))
+ }
 
-  if(obj_type=='RetractProposals'){
-    stopifnot(all(sampled_names %in% c('retractionDetails')))
-  }
+ if(obj_type=='RetractProposals'){
+ stopifnot(all(sampled_names %in% c('retractionDetails')))
+ }
 
-  if(obj_type=='SalespersonSplit'){
-    stopifnot(all(sampled_names %in% c('userId', 'split')))
-  }
+ if(obj_type=='SalespersonSplit'){
+ stopifnot(all(sampled_names %in% c('userId', 'split')))
+ }
 
 }
 #' 
@@ -1652,15 +1640,24 @@ dfp_ProposalService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createProposals(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProposalsResponse
+#' @return a \code{list} containing all the elements of a createProposalsResponse 
 #' @export
 dfp_createProposals <- function(request_data){
 
-  request_body <- make_request_body(service='ProposalService', root_name='createProposals', data=request_data)
+ request_body <- make_request_body(service='ProposalService', root_name='createProposals', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProposalsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -1684,15 +1681,24 @@ dfp_createProposals <- function(request_data){
 #' @usage dfp_getProposalsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProposalsByStatementResponse
+#' @return a \code{list} containing all the elements of a getProposalsByStatementResponse 
 #' @export
 dfp_getProposalsByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
+ request_body <- make_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalsByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProposalsByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -1705,15 +1711,24 @@ dfp_getProposalsByStatement <- function(request_data){
 #' @usage dfp_performProposalAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProposalActionResponse
+#' @return a \code{list} containing all the elements of a performProposalActionResponse 
 #' @export
 dfp_performProposalAction <- function(request_data){
 
-  request_body <- make_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
+ request_body <- make_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProposalActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -1726,15 +1741,24 @@ dfp_performProposalAction <- function(request_data){
 #' @usage dfp_updateProposals(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProposalsResponse
+#' @return a \code{list} containing all the elements of a updateProposalsResponse 
 #' @export
 dfp_updateProposals <- function(request_data){
 
-  request_body <- make_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
+ request_body <- make_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProposalsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

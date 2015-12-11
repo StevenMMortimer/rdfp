@@ -30,8 +30,8 @@
 #' Represents targeted or excluded ad units.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.AdUnitTargeting}{Google Documentation for AdUnitTargeting}
 #' \describe{
-#'  \item{adUnitId}{a string -  Included or excluded ad unit id.}
-#'  \item{includeDescendants}{a boolean -  Whether or not all descendants are included (or excluded) as part of
+#'  \item{adUnitId}{a character - Included or excluded ad unit id.}
+#'  \item{includeDescendants}{a boolean - Whether or not all descendants are included (or excluded) as part of
 #' including (or excluding) this ad unit. By default, the value is true which
 #' means targeting this ad unit will target all of its descendants.}
 #' }
@@ -43,9 +43,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -53,8 +53,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -63,7 +63,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -78,7 +78,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AppliedLabel}
@@ -88,8 +88,8 @@
 #' isNegated set to true.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.AppliedLabel}{Google Documentation for AppliedLabel}
 #' \describe{
-#'  \item{labelId}{a integer -  The ID of a created Label.}
-#'  \item{isNegated}{a boolean -  isNegated should be set to true to negate the effects of labelId.}
+#'  \item{labelId}{a integer - The ID of a created Label.}
+#'  \item{isNegated}{a boolean - isNegated should be set to true to negate the effects of labelId.}
 #' }
 #' 
 #' \strong{ArchiveProductTemplates}
@@ -106,13 +106,13 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.AudienceSegmentCriteria}{Google Documentation for AudienceSegmentCriteria}
 #' \describe{
 #'  \item{extends CustomCriteriaLeaf}{see documentation for CustomCriteriaLeaf}
-#'  \item{operator}{a AudienceSegmentCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values:
+#'  \item{operator}{a AudienceSegmentCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{IS}
 #'      \item{IS_NOT}
 #'    }
 #'   }
-#'  \item{audienceSegmentIds}{a integer -  The ids of AudienceSegment objects used to target audience segments. This
+#'  \item{audienceSegmentIds}{a integer - The ids of AudienceSegment objects used to target audience segments. This
 #' attribute is required.}
 #' }
 #' 
@@ -122,7 +122,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -157,9 +157,9 @@
 #' known generic names such as 'Cable' or 'DSL'.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BandwidthGroup}{Google Documentation for BandwidthGroup}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -169,9 +169,9 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BandwidthGroupTargeting}{Google Documentation for BandwidthGroupTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether bandwidth groups should be targeted or excluded. This
+#'  \item{isTargeted}{a boolean - Indicates whether bandwidth groups should be targeted or excluded. This
 #' attribute is optional and defaults to true.}
-#'  \item{bandwidthGroups}{a Technology -  The bandwidth groups that are being targeted or excluded by the LineItem.}
+#'  \item{bandwidthGroups}{a Technology - The bandwidth groups that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{BaseCustomFieldValue}
@@ -179,7 +179,7 @@
 #' The value of a CustomField for a particular entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BaseCustomFieldValue}{Google Documentation for BaseCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
 #' }
 #' 
@@ -189,7 +189,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BaseRateError}{Google Documentation for BaseRateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a BaseRateError.Reason - This can take one of the following values:
+#'  \item{reason}{a BaseRateError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID - The PQL statement contains both productTemplateId and productId fields.}
 #'      \item{INVALID_CURRENCY_CODE - The currency code is invalid.}
@@ -211,7 +211,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{Browser}
@@ -219,12 +219,12 @@
 #' Represents an internet browser.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Browser}{Google Documentation for Browser}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
-#'  \item{majorVersion}{a string -  Browser major version.}
-#'  \item{minorVersion}{a string -  Browser minor version.}
+#'  \item{majorVersion}{a character - Browser major version.}
+#'  \item{minorVersion}{a character - Browser minor version.}
 #' }
 #' 
 #' \strong{BrowserLanguage}
@@ -232,9 +232,9 @@
 #' Represents a Browser's language.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BrowserLanguage}{Google Documentation for BrowserLanguage}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -244,9 +244,9 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BrowserLanguageTargeting}{Google Documentation for BrowserLanguageTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether browsers languages should be targeted or excluded. This
+#'  \item{isTargeted}{a boolean - Indicates whether browsers languages should be targeted or excluded. This
 #' attribute is optional and defaults to true.}
-#'  \item{browserLanguages}{a Technology -  Browser languages that are being targeted or excluded by the LineItem.}
+#'  \item{browserLanguages}{a Technology - Browser languages that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{BrowserTargeting}
@@ -254,9 +254,9 @@
 #' Represents browsers that are being targeted or excluded by the LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.BrowserTargeting}{Google Documentation for BrowserTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether browsers should be targeted or excluded. This attribute is
+#'  \item{isTargeted}{a boolean - Indicates whether browsers should be targeted or excluded. This attribute is
 #' optional and defaults to true.}
-#'  \item{browsers}{a Technology -  Browsers that are being targeted or excluded by the LineItem.}
+#'  \item{browsers}{a Technology - Browsers that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -265,7 +265,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -280,7 +280,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -301,7 +301,7 @@
 #' different CustomTargetingKey custom targeting keys ANDed together.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ContentMetadataKeyHierarchyTargeting}{Google Documentation for ContentMetadataKeyHierarchyTargeting}
 #' \describe{
-#'  \item{customTargetingValueIds}{a integer -  The list of IDs of the targeted CustomTargetingValue objects that are ANDed
+#'  \item{customTargetingValueIds}{a integer - The list of IDs of the targeted CustomTargetingValue objects that are ANDed
 #' together. Targeting values do not need to be in the order of the hierarchy
 #' levels. For example, if the hierarchy is "show > season > genre" the values
 #' could be "season=3, show=30rock, genre=comedy."}
@@ -313,7 +313,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ContentMetadataTargetingError}{Google Documentation for ContentMetadataTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{VALUES_DO_NOT_BELONG_TO_A_HIERARCHY - One or more of the values specified in a ContentMetadataHierarchyTargeting
 #' do not belong to the keys defined in any of the hierarchies on the network.}
@@ -328,29 +328,29 @@
 #' Used to target LineItems to specific videos on a publisher's site.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ContentTargeting}{Google Documentation for ContentTargeting}
 #' \describe{
-#'  \item{targetedContentIds}{a integer -  The IDs of content being targeted by the LineItem.}
-#'  \item{excludedContentIds}{a integer -  The IDs of content being excluded by the LineItem.}
-#'  \item{targetedVideoCategoryIds}{a integer -  A list of video categories, represented by CustomTargetingValue IDs, that
+#'  \item{targetedContentIds}{a integer - The IDs of content being targeted by the LineItem.}
+#'  \item{excludedContentIds}{a integer - The IDs of content being excluded by the LineItem.}
+#'  \item{targetedVideoCategoryIds}{a integer - A list of video categories, represented by CustomTargetingValue IDs, that
 #' are being targeted by the LineItem.  These IDs must be from video
 #' categories, which are a set of CustomTargetingValues that belong to the
 #' content browse key.  The content browse key can be obtained by getting the
 #' Network contentBrowseCustomTargetingKeyId and the acceptable values can be
 #' obtained using the CustomTargetingService
 #' getCustomTargetingValuesByStatement.}
-#'  \item{excludedVideoCategoryIds}{a integer -  A list of video categories, represented by CustomTargetingValue IDs, that
+#'  \item{excludedVideoCategoryIds}{a integer - A list of video categories, represented by CustomTargetingValue IDs, that
 #' are being excluded by the LineItem.  These IDs must be from video
 #' categories, which are a set of CustomTargetingValues that belong to the
 #' content browse key.  The content browse key can be obtained by getting the
 #' Network contentBrowseCustomTargetingKeyId and the acceptable values can be
 #' obtained using the CustomTargetingService
 #' getCustomTargetingValuesByStatement.}
-#'  \item{targetedVideoContentBundleIds}{a integer -  A list of video content bundles, represented by ContentBundle IDs, that are
+#'  \item{targetedVideoContentBundleIds}{a integer - A list of video content bundles, represented by ContentBundle IDs, that are
 #' being targeted by the LineItem.}
-#'  \item{excludedVideoContentBundleIds}{a integer -  A list of video content bundles, represented by ContentBundle IDs, that are
+#'  \item{excludedVideoContentBundleIds}{a integer - A list of video content bundles, represented by ContentBundle IDs, that are
 #' being excluded by the LineItem.}
-#'  \item{targetedContentMetadata}{a ContentMetadataKeyHierarchyTargeting -  A list of content metadata within hierarchies that are being targeted by the
+#'  \item{targetedContentMetadata}{a ContentMetadataKeyHierarchyTargeting - A list of content metadata within hierarchies that are being targeted by the
 #' LineItem.}
-#'  \item{excludedContentMetadata}{a ContentMetadataKeyHierarchyTargeting -  A list of content metadata within hierarchies that are being excluded by the
+#'  \item{excludedContentMetadata}{a ContentMetadataKeyHierarchyTargeting - A list of content metadata within hierarchies that are being excluded by the
 #' LineItem.}
 #' }
 #' 
@@ -364,27 +364,27 @@
 #' VIDEO_PLAYER.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CreativePlaceholder}{Google Documentation for CreativePlaceholder}
 #' \describe{
-#'  \item{size}{a Size -  The dimensions that the creative is expected to have. This attribute is
+#'  \item{size}{a Size - The dimensions that the creative is expected to have. This attribute is
 #' required.}
-#'  \item{creativeTemplateId}{a integer -  The native creative template ID. This value is only required if
+#'  \item{creativeTemplateId}{a integer - The native creative template ID. This value is only required if
 #' creativeSizeType is CreativeSizeType NATIVE.}
-#'  \item{companions}{a CreativePlaceholder -  The companions that the creative is expected to have. This attribute can
+#'  \item{companions}{a CreativePlaceholder - The companions that the creative is expected to have. This attribute can
 #' only be set if the line item it belongs to has a LineItem environmentType of
 #' EnvironmentType VIDEO_PLAYER or LineItem roadblockingType of
 #' RoadblockingType CREATIVE_SET.}
-#'  \item{appliedLabels}{a AppliedLabel -  The set of label frequency caps applied directly to this creative
+#'  \item{appliedLabels}{a AppliedLabel - The set of label frequency caps applied directly to this creative
 #' placeholder.}
-#'  \item{effectiveAppliedLabels}{a AppliedLabel -  Contains the set of labels applied directly to this creative placeholder as
+#'  \item{effectiveAppliedLabels}{a AppliedLabel - Contains the set of labels applied directly to this creative placeholder as
 #' well as those inherited from the creative template from which this creative
 #' placeholder was instantiated. This field is readonly and is assigned by
 #' Google.}
-#'  \item{expectedCreativeCount}{a integer -  Expected number of creatives that will be uploaded corresponding to this
+#'  \item{expectedCreativeCount}{a integer - Expected number of creatives that will be uploaded corresponding to this
 #' creative placeholder. This estimate is used to improve the accuracy of
 #' forecasting; for example, if label frequency capping limits the number of
 #' times a creative may be served.}
 #'  \item{creativeSizeType}{a CreativeSizeType - Describes the types of sizes a creative can be. By default, the creative's
 #' size is CreativeSizeType PIXEL, which is a dimension based size
-#' (width-height pair). This can take one of the following values:
+#' (width-height pair). This can take one of the following values: 
 #'    \itemize{
 #'      \item{PIXEL - Dimension based size, an actual height and width.}
 #'      \item{ASPECT_RATIO - Mobile size, that is expressed as a ratio of say 4 by 1, that could be met
@@ -396,7 +396,7 @@
 #' This must be used with 1x1 size.}
 #'    }
 #'   }
-#'  \item{targetingName}{a string -  The name of the CreativeTargeting for creatives this placeholder represents.
+#'  \item{targetingName}{a character - The name of the CreativeTargeting for creatives this placeholder represents.
 #' This attribute is optional. Specifying creative targeting here is for
 #' forecasting purposes only and has no effect on serving. The same creative
 #' targeting should be specified on a LineItemCreativeAssociation when
@@ -411,11 +411,11 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CustomCriteria}{Google Documentation for CustomCriteria}
 #' \describe{
 #'  \item{extends CustomCriteriaLeaf}{see documentation for CustomCriteriaLeaf}
-#'  \item{keyId}{a integer -  The CustomTargetingKey id of the CustomTargetingKey object that was created
+#'  \item{keyId}{a integer - The CustomTargetingKey id of the CustomTargetingKey object that was created
 #' using CustomTargetingService. This attribute is required.}
-#'  \item{valueIds}{a integer -  The ids of CustomTargetingValue objects to target the custom targeting key
+#'  \item{valueIds}{a integer - The ids of CustomTargetingValue objects to target the custom targeting key
 #' with id CustomCriteria keyId. This attribute is required.}
-#'  \item{operator}{a CustomCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values:
+#'  \item{operator}{a CustomCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{IS}
 #'      \item{IS_NOT}
@@ -452,13 +452,13 @@
 #' \describe{
 #'  \item{extends CustomCriteriaNode}{see documentation for CustomCriteriaNode}
 #'  \item{logicalOperator}{a CustomCriteriaSet.LogicalOperator - The logical operator to be applied to CustomCriteriaSet children. This
-#' attribute is required. This can take one of the following values:
+#' attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AND}
 #'      \item{OR}
 #'    }
 #'   }
-#'  \item{children}{a CustomCriteriaNode -  The custom criteria. This attribute is required.}
+#'  \item{children}{a CustomCriteriaNode - The custom criteria. This attribute is required.}
 #' }
 #' 
 #' \strong{CustomFieldValue}
@@ -467,9 +467,9 @@
 #' CustomFieldDataType DROP_DOWN.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CustomFieldValue}{Google Documentation for CustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{value}{a Value -  The value for this field. The appropriate type of Value is determined by the
+#'  \item{value}{a Value - The value for this field. The appropriate type of Value is determined by the
 #' CustomField dataType of the CustomField that this conforms to.}
 #' }
 #' 
@@ -479,7 +479,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 #' that does not exist.}
@@ -499,51 +499,51 @@
 #' ProductTemplate.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CustomizableAttributes}{Google Documentation for CustomizableAttributes}
 #' \describe{
-#'  \item{allowGeoTargetingCustomization}{a boolean -  Allows customization by salespeople of geographical targeting when creating
+#'  \item{allowGeoTargetingCustomization}{a boolean - Allows customization by salespeople of geographical targeting when creating
 #' proposal line items. This attribute is optional and defaults to false.}
-#'  \item{allowAdUnitTargetingCustomization}{a boolean -  Allows customization by salespeople of ad unit targeting in Targeting
+#'  \item{allowAdUnitTargetingCustomization}{a boolean - Allows customization by salespeople of ad unit targeting in Targeting
 #' inventoryTargeting when creating proposal line items. This attribute is
 #' optional and defaults to false.}
-#'  \item{allowPlacementTargetingCustomization}{a boolean -  Allows customization by salespeople of placement targeting in Targeting
+#'  \item{allowPlacementTargetingCustomization}{a boolean - Allows customization by salespeople of placement targeting in Targeting
 #' inventoryTargeting when creating proposal line items. This attribute is
 #' optional and defaults to false.}
-#'  \item{allowUserDomainTargetingCustomization}{a boolean -  Allows customization by salespeople of user domain targeting when creating
+#'  \item{allowUserDomainTargetingCustomization}{a boolean - Allows customization by salespeople of user domain targeting when creating
 #' proposal line items. This attribute is optional and defaults to false.}
-#'  \item{allowBandwidthGroupTargetingCustomization}{a boolean -  Allows customization by salespeople of bandwidth group targeting when
+#'  \item{allowBandwidthGroupTargetingCustomization}{a boolean - Allows customization by salespeople of bandwidth group targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowBrowserTargetingCustomization}{a boolean -  Allows customization by salespeople of browser targeting when creating
+#'  \item{allowBrowserTargetingCustomization}{a boolean - Allows customization by salespeople of browser targeting when creating
 #' proposal line items. This attribute is optional and defaults to false.}
-#'  \item{allowBrowserLanguageTargetingCustomization}{a boolean -  Allows customization by salespeople of browser language targeting when
+#'  \item{allowBrowserLanguageTargetingCustomization}{a boolean - Allows customization by salespeople of browser language targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowOperatingSystemTargetingCustomization}{a boolean -  Allows customization by salespeople of operating system targeting when
+#'  \item{allowOperatingSystemTargetingCustomization}{a boolean - Allows customization by salespeople of operating system targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowDeviceCapabilityTargetingCustomization}{a boolean -  Allows customization by salespeople of device capability targeting when
+#'  \item{allowDeviceCapabilityTargetingCustomization}{a boolean - Allows customization by salespeople of device capability targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowDeviceCategoryTargetingCustomization}{a boolean -  Allows customization by salespeople of device category targeting when
+#'  \item{allowDeviceCategoryTargetingCustomization}{a boolean - Allows customization by salespeople of device category targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowMobileCarrierTargetingCustomization}{a boolean -  Allows customization by salespeople of mobile carrier targeting when
+#'  \item{allowMobileCarrierTargetingCustomization}{a boolean - Allows customization by salespeople of mobile carrier targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{allowMobileDeviceAndManufacturerTargetingCustomization}{a boolean -  Allows customization by salespeople of device manufacturer, mobile device,
+#'  \item{allowMobileDeviceAndManufacturerTargetingCustomization}{a boolean - Allows customization by salespeople of device manufacturer, mobile device,
 #' and mobile device sub-model targeting when creating proposal line items.
 #' This attribute is optional and defaults to false.}
-#'  \item{allowAudienceSegmentTargetingCustomization}{a boolean -  Allows customization by salespeople of audience segment targeting when
+#'  \item{allowAudienceSegmentTargetingCustomization}{a boolean - Allows customization by salespeople of audience segment targeting when
 #' creating proposal line items. This attribute is optional and defaults to
 #' false.}
-#'  \item{isAllCustomTargetingKeysCustomizable}{a boolean -  Specifies whether all custom targeting keys (except those used in
+#'  \item{isAllCustomTargetingKeysCustomizable}{a boolean - Specifies whether all custom targeting keys (except those used in
 #' ProductSegmentation customTargetingSegment) are allowed to be customized by
 #' salespeople. If it's true, then customizableCustomTargetingKeyIds is
 #' ignored. This attribute is optional and defaults to false.}
-#'  \item{customizableCustomTargetingKeyIds}{a integer -  Specifies what custom criteria salespeople are allow to customize. It refers
+#'  \item{customizableCustomTargetingKeyIds}{a integer - Specifies what custom criteria salespeople are allow to customize. It refers
 #' the key id of customizable custom criteria here. If
 #' isAllCustomTargetingKeysCustomizable is true, then this attribute is
 #' ignored. This attribute is optional.}
-#'  \item{allowFrequencyCapsCustomization}{a boolean -  Allows customization by salespeople of frequency caps when creating proposal
+#'  \item{allowFrequencyCapsCustomization}{a boolean - Allows customization by salespeople of frequency caps when creating proposal
 #' line items. This attribute is optional and defaults to false when
 #' ProductTemplate productType is ProductType DFP.}
 #' }
@@ -555,7 +555,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.CustomTargetingError}{Google Documentation for CustomTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{KEY_NOT_FOUND - Requested CustomTargetingKey is not found.}
 #'      \item{KEY_COUNT_TOO_LARGE - Number of CustomTargetingKey objects created exceeds the limit allowed for
@@ -615,9 +615,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -629,7 +629,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeRangeTargetingError}
@@ -639,7 +639,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DateTimeRangeTargetingError}{Google Documentation for DateTimeRangeTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EMPTY_RANGES - No targeted ranges exists.}
 #'      \item{NOT_SPONSORSHIP_LINEITEM - Type of lineitem is not sponsorship.}
@@ -667,7 +667,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -676,7 +676,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DayPart}
@@ -685,7 +685,7 @@
 #' by a LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DayPart}{Google Documentation for DayPart}
 #' \describe{
-#'  \item{dayOfWeek}{a DayOfWeek - Day of the week the target applies to. This field is required. This can take one of the following values:
+#'  \item{dayOfWeek}{a DayOfWeek - Day of the week the target applies to. This field is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{MONDAY - The day of week named Monday.}
 #'      \item{TUESDAY - The day of week named Tuesday.}
@@ -696,8 +696,8 @@
 #'      \item{SUNDAY - The day of week named Sunday.}
 #'    }
 #'   }
-#'  \item{startTime}{a TimeOfDay -  Represents the start time of the targeted period (inclusive).}
-#'  \item{endTime}{a TimeOfDay -  Represents the end time of the targeted period (exclusive).}
+#'  \item{startTime}{a TimeOfDay - Represents the start time of the targeted period (inclusive).}
+#'  \item{endTime}{a TimeOfDay - Represents the end time of the targeted period (exclusive).}
 #' }
 #' 
 #' \strong{DayPartTargeting}
@@ -706,11 +706,11 @@
 #' default, line items are served at all days and times.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DayPartTargeting}{Google Documentation for DayPartTargeting}
 #' \describe{
-#'  \item{dayParts}{a DayPart -  Specifies days of the week and times at which a LineItem will be delivered.
+#'  \item{dayParts}{a DayPart - Specifies days of the week and times at which a LineItem will be delivered.
 #' If targeting all days and times, this value will be ignored.}
 #'  \item{timeZone}{a DeliveryTimeZone - Specifies the time zone to be used for delivering LineItem objects. This
 #' attribute is optional and defaults to DeliveryTimeZone BROWSER.  Setting
-#' this has no effect if targeting all days and times. This can take one of the following values:
+#' this has no effect if targeting all days and times. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PUBLISHER - Use the time zone of the publisher.}
 #'      \item{BROWSER - Use the time zone of the browser.}
@@ -724,7 +724,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DayPartTargetingError}{Google Documentation for DayPartTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_HOUR - Hour of day must be between 0 and 24, inclusive.}
 #'      \item{INVALID_MINUTE - Minute of hour must be one of 0, 15,30, 45.}
@@ -749,9 +749,9 @@
 #' Represents a capability of a physical device.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceCapability}{Google Documentation for DeviceCapability}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -761,8 +761,8 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceCapabilityTargeting}{Google Documentation for DeviceCapabilityTargeting}
 #' \describe{
-#'  \item{targetedDeviceCapabilities}{a Technology -  Device capabilities that are being targeted by the LineItem.}
-#'  \item{excludedDeviceCapabilities}{a Technology -  Device capabilities that are being excluded by the LineItem.}
+#'  \item{targetedDeviceCapabilities}{a Technology - Device capabilities that are being targeted by the LineItem.}
+#'  \item{excludedDeviceCapabilities}{a Technology - Device capabilities that are being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{DeviceCategory}
@@ -770,9 +770,9 @@
 #' Represents the category of a device.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceCategory}{Google Documentation for DeviceCategory}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -782,8 +782,8 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceCategoryTargeting}{Google Documentation for DeviceCategoryTargeting}
 #' \describe{
-#'  \item{targetedDeviceCategories}{a Technology -  Device categories that are being targeted by the LineItem.}
-#'  \item{excludedDeviceCategories}{a Technology -  Device categories that are being excluded by the LineItem.}
+#'  \item{targetedDeviceCategories}{a Technology - Device categories that are being targeted by the LineItem.}
+#'  \item{excludedDeviceCategories}{a Technology - Device categories that are being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{DeviceManufacturer}
@@ -791,9 +791,9 @@
 #' Represents a mobile device's manufacturer.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceManufacturer}{Google Documentation for DeviceManufacturer}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -803,9 +803,9 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DeviceManufacturerTargeting}{Google Documentation for DeviceManufacturerTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether device manufacturers should be targeted or excluded. This
+#'  \item{isTargeted}{a boolean - Indicates whether device manufacturers should be targeted or excluded. This
 #' attribute is optional and defaults to true.}
-#'  \item{deviceManufacturers}{a Technology -  Device manufacturers that are being targeted or excluded by the LineItem.}
+#'  \item{deviceManufacturers}{a Technology - Device manufacturers that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{DropDownCustomFieldValue}
@@ -814,9 +814,9 @@
 #' CustomFieldDataType DROP_DOWN
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.DropDownCustomFieldValue}{Google Documentation for DropDownCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{customFieldOptionId}{a integer -  The CustomFieldOption id ID of the CustomFieldOption for this value.}
+#'  \item{customFieldOptionId}{a integer - The CustomFieldOption id ID of the CustomFieldOption for this value.}
 #' }
 #' 
 #' \strong{EntityChildrenLimitReachedError}
@@ -825,7 +825,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -868,7 +868,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -893,7 +893,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -908,10 +908,10 @@
 #' the same LineItem in a specified time period.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.FrequencyCap}{Google Documentation for FrequencyCap}
 #' \describe{
-#'  \item{maxImpressions}{a integer -  The maximum number of impressions than can be served to a user within a
+#'  \item{maxImpressions}{a integer - The maximum number of impressions than can be served to a user within a
 #' specified time period.}
-#'  \item{numTimeUnits}{a integer -  The number of FrequencyCap timeUnit to represent the total time period.}
-#'  \item{timeUnit}{a TimeUnit - The unit of time for specifying the time period. This can take one of the following values:
+#'  \item{numTimeUnits}{a integer - The number of FrequencyCap timeUnit to represent the total time period.}
+#'  \item{timeUnit}{a TimeUnit - The unit of time for specifying the time period. This can take one of the following values: 
 #'    \itemize{
 #'      \item{MINUTE}
 #'      \item{HOUR}
@@ -935,7 +935,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.FrequencyCapError}{Google Documentation for FrequencyCapError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{IMPRESSION_LIMIT_EXCEEDED}
 #'      \item{IMPRESSIONS_TOO_LOW}
@@ -955,7 +955,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.GenericTargetingError}{Google Documentation for GenericTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS - Both including and excluding sibling criteria is disallowed.}
 #'      \item{INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA - Including descendants of excluded criteria is disallowed.}
@@ -979,8 +979,8 @@
 #' of New York as one of the targeted locations
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.GeoTargeting}{Google Documentation for GeoTargeting}
 #' \describe{
-#'  \item{targetedLocations}{a Location -  The geographical locations being targeted by the LineItem.}
-#'  \item{excludedLocations}{a Location -  The geographical locations being excluded by the LineItem.}
+#'  \item{targetedLocations}{a Location - The geographical locations being targeted by the LineItem.}
+#'  \item{excludedLocations}{a Location - The geographical locations being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{GeoTargetingError}
@@ -989,7 +989,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.GeoTargetingError}{Google Documentation for GeoTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{TARGETED_LOCATIONS_NOT_EXCLUDABLE - A location that is targeted cannot also be excluded.}
 #'      \item{EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED - Excluded locations cannot have any of their children targeted.}
@@ -1009,7 +1009,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -1024,9 +1024,9 @@
 #' A collection of targeted and excluded ad units and placements.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.InventoryTargeting}{Google Documentation for InventoryTargeting}
 #' \describe{
-#'  \item{targetedAdUnits}{a AdUnitTargeting -  A list of targeted AdUnitTargeting.}
-#'  \item{excludedAdUnits}{a AdUnitTargeting -  A list of excluded AdUnitTargeting.}
-#'  \item{targetedPlacementIds}{a integer -  A list of targeted Placement ids.}
+#'  \item{targetedAdUnits}{a AdUnitTargeting - A list of targeted AdUnitTargeting.}
+#'  \item{excludedAdUnits}{a AdUnitTargeting - A list of excluded AdUnitTargeting.}
+#'  \item{targetedPlacementIds}{a integer - A list of targeted Placement ids.}
 #' }
 #' 
 #' \strong{InventoryTargetingError}
@@ -1036,7 +1036,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.InventoryTargetingError}{Google Documentation for InventoryTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AT_LEAST_ONE_PLACEMENT_OR_INVENTORY_UNIT_REQUIRED - At least one placement or inventory unit is required}
 #'      \item{INVENTORY_CANNOT_BE_TARGETED_AND_EXCLUDED - The same inventory unit or placement cannot be targeted and excluded at the
@@ -1071,11 +1071,11 @@
 #' sub-classed correctly.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Location}{Google Documentation for Location}
 #' \describe{
-#'  \item{id}{a integer -  Uniquely identifies each Location.}
-#'  \item{type}{a string -  The location type for this geographical entity (ex. "COUNTRY", "CITY",
+#'  \item{id}{a integer - Uniquely identifies each Location.}
+#'  \item{type}{a character - The location type for this geographical entity (ex. "COUNTRY", "CITY",
 #' "STATE", "COUNTY", etc.)}
-#'  \item{canonicalParentId}{a integer -  The nearest location parent's ID for this geographical entity.}
-#'  \item{displayName}{a string -  The localized name of the geographical entity.}
+#'  \item{canonicalParentId}{a integer - The nearest location parent's ID for this geographical entity.}
+#'  \item{displayName}{a character - The localized name of the geographical entity.}
 #' }
 #' 
 #' \strong{MobileCarrier}
@@ -1084,9 +1084,9 @@
 #' mobile publishers.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileCarrier}{Google Documentation for MobileCarrier}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -1096,9 +1096,9 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileCarrierTargeting}{Google Documentation for MobileCarrierTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether mobile carriers should be targeted or excluded. This
+#'  \item{isTargeted}{a boolean - Indicates whether mobile carriers should be targeted or excluded. This
 #' attribute is optional and defaults to true.}
-#'  \item{mobileCarriers}{a Technology -  Mobile carriers that are being targeted or excluded by the LineItem.}
+#'  \item{mobileCarriers}{a Technology - Mobile carriers that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{MobileDevice}
@@ -1106,11 +1106,11 @@
 #' Represents a Mobile Device.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileDevice}{Google Documentation for MobileDevice}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
-#'  \item{manufacturerCriterionId}{a integer -  Manufacturer Id.}
+#'  \item{manufacturerCriterionId}{a integer - Manufacturer Id.}
 #' }
 #' 
 #' \strong{MobileDeviceSubmodel}
@@ -1118,12 +1118,12 @@
 #' Represents a mobile device submodel.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileDeviceSubmodel}{Google Documentation for MobileDeviceSubmodel}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
-#'  \item{mobileDeviceCriterionId}{a integer -  The mobile device id.}
-#'  \item{deviceManufacturerCriterionId}{a integer -  The device manufacturer id.}
+#'  \item{mobileDeviceCriterionId}{a integer - The mobile device id.}
+#'  \item{deviceManufacturerCriterionId}{a integer - The device manufacturer id.}
 #' }
 #' 
 #' \strong{MobileDeviceSubmodelTargeting}
@@ -1132,8 +1132,8 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileDeviceSubmodelTargeting}{Google Documentation for MobileDeviceSubmodelTargeting}
 #' \describe{
-#'  \item{targetedMobileDeviceSubmodels}{a Technology -  Mobile device submodels that are being targeted by the LineItem.}
-#'  \item{excludedMobileDeviceSubmodels}{a Technology -  Mobile device submodels that are being excluded by the LineItem.}
+#'  \item{targetedMobileDeviceSubmodels}{a Technology - Mobile device submodels that are being targeted by the LineItem.}
+#'  \item{excludedMobileDeviceSubmodels}{a Technology - Mobile device submodels that are being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{MobileDeviceTargeting}
@@ -1142,8 +1142,8 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.MobileDeviceTargeting}{Google Documentation for MobileDeviceTargeting}
 #' \describe{
-#'  \item{targetedMobileDevices}{a Technology -  Mobile devices that are being targeted by the LineItem.}
-#'  \item{excludedMobileDevices}{a Technology -  Mobile devices that are being excluded by the LineItem.}
+#'  \item{targetedMobileDevices}{a Technology - Mobile devices that are being targeted by the LineItem.}
+#'  \item{excludedMobileDevices}{a Technology - Mobile devices that are being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{NotNullError}
@@ -1152,7 +1152,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -1171,7 +1171,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -1184,7 +1184,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -1204,9 +1204,9 @@
 #' Represents an Operating System, such as Linux, Mac OS or Windows.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.OperatingSystem}{Google Documentation for OperatingSystem}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -1216,9 +1216,9 @@
 #' LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.OperatingSystemTargeting}{Google Documentation for OperatingSystemTargeting}
 #' \describe{
-#'  \item{isTargeted}{a boolean -  Indicates whether operating systems should be targeted or excluded. This
+#'  \item{isTargeted}{a boolean - Indicates whether operating systems should be targeted or excluded. This
 #' attribute is optional and defaults to true.}
-#'  \item{operatingSystems}{a Technology -  Operating systems that are being targeted or excluded by the LineItem.}
+#'  \item{operatingSystems}{a Technology - Operating systems that are being targeted or excluded by the LineItem.}
 #' }
 #' 
 #' \strong{OperatingSystemVersion}
@@ -1226,13 +1226,13 @@
 #' Represents a specific version of an operating system.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.OperatingSystemVersion}{Google Documentation for OperatingSystemVersion}
 #' \describe{
-#'  \item{id}{a integer (inherited from Technology) -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer (inherited from Technology) - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string (inherited from Technology) -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character (inherited from Technology) - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
-#'  \item{majorVersion}{a integer -  The operating system major version.}
-#'  \item{minorVersion}{a integer -  The operating system minor version.}
-#'  \item{microVersion}{a integer -  The operating system micro version.}
+#'  \item{majorVersion}{a integer - The operating system major version.}
+#'  \item{minorVersion}{a integer - The operating system minor version.}
+#'  \item{microVersion}{a integer - The operating system micro version.}
 #' }
 #' 
 #' \strong{OperatingSystemVersionTargeting}
@@ -1241,8 +1241,8 @@
 #' the LineItem.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.OperatingSystemVersionTargeting}{Google Documentation for OperatingSystemVersionTargeting}
 #' \describe{
-#'  \item{targetedOperatingSystemVersions}{a Technology -  Operating system versions that are being targeted by the LineItem.}
-#'  \item{excludedOperatingSystemVersions}{a Technology -  Operating system versions that are being excluded by the LineItem.}
+#'  \item{targetedOperatingSystemVersions}{a Technology - Operating system versions that are being targeted by the LineItem.}
+#'  \item{excludedOperatingSystemVersions}{a Technology - Operating system versions that are being excluded by the LineItem.}
 #' }
 #' 
 #' \strong{ParseError}
@@ -1251,7 +1251,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1266,7 +1266,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1280,7 +1280,7 @@
 #' Specifies what Placement placements are targeted.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.PlacementTargeting}{Google Documentation for PlacementTargeting}
 #' \describe{
-#'  \item{targetedPlacementIds}{a integer -  IDs of the targeted placements.}
+#'  \item{targetedPlacementIds}{a integer - IDs of the targeted placements.}
 #' }
 #' 
 #' \strong{ProductSegmentation}
@@ -1293,37 +1293,37 @@
 #' produce 2 x 2 x 2 = 8 products.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ProductSegmentation}{Google Documentation for ProductSegmentation}
 #' \describe{
-#'  \item{geoSegment}{a GeoTargeting -  The geographic segmentation. Segments should be set on the GeoTargeting
+#'  \item{geoSegment}{a GeoTargeting - The geographic segmentation. Segments should be set on the GeoTargeting
 #' targetedLocations field. This attribute is optional.}
-#'  \item{adUnitSegments}{a AdUnitTargeting -  The ad unit targeting segmentation. For each ad unit segment,
+#'  \item{adUnitSegments}{a AdUnitTargeting - The ad unit targeting segmentation. For each ad unit segment,
 #' AdUnitTargeting includeDescendants must be true. This attribute is optional.}
-#'  \item{placementSegment}{a PlacementTargeting -  The placement targeting segmentation. This attribute is optional.}
-#'  \item{customTargetingSegment}{a CustomCriteria -  The custom targeting segmentation. This attribute is optional.}
-#'  \item{userDomainSegment}{a UserDomainTargeting -  The user domain segmentation. UserDomainTargeting isTargeted must be true.
+#'  \item{placementSegment}{a PlacementTargeting - The placement targeting segmentation. This attribute is optional.}
+#'  \item{customTargetingSegment}{a CustomCriteria - The custom targeting segmentation. This attribute is optional.}
+#'  \item{userDomainSegment}{a UserDomainTargeting - The user domain segmentation. UserDomainTargeting isTargeted must be true.
 #' This attribute is optional.}
-#'  \item{bandwidthSegment}{a BandwidthGroupTargeting -  The bandwidth segmentation. BandwidthGroupTargeting isTargeted must be true.
+#'  \item{bandwidthSegment}{a BandwidthGroupTargeting - The bandwidth segmentation. BandwidthGroupTargeting isTargeted must be true.
 #' This attribute is optional.}
-#'  \item{browserSegment}{a BrowserTargeting -  The browser segmentation. BrowserTargeting isTargeted must be true. This
+#'  \item{browserSegment}{a BrowserTargeting - The browser segmentation. BrowserTargeting isTargeted must be true. This
 #' attribute is optional.}
-#'  \item{browserLanguageSegment}{a BrowserLanguageTargeting -  The browser language segmentation. BrowserLanguageTargeting isTargeted must
+#'  \item{browserLanguageSegment}{a BrowserLanguageTargeting - The browser language segmentation. BrowserLanguageTargeting isTargeted must
 #' be true. This attribute is optional.}
-#'  \item{operatingSystemSegment}{a OperatingSystemTargeting -  The operating system segmentation. OperatingSystemTargeting isTargeted must
+#'  \item{operatingSystemSegment}{a OperatingSystemTargeting - The operating system segmentation. OperatingSystemTargeting isTargeted must
 #' be true. We only allow segment by Operating_System, not
 #' Operating_System_Version (will be ignored). This attribute is optional.}
-#'  \item{mobileCarrierSegment}{a MobileCarrierTargeting -  The mobile carrier segmentation. MobileCarrierTargeting isTargeted must be
+#'  \item{mobileCarrierSegment}{a MobileCarrierTargeting - The mobile carrier segmentation. MobileCarrierTargeting isTargeted must be
 #' true. This attribute is optional.}
-#'  \item{deviceCapabilitySegment}{a DeviceCapabilityTargeting -  The device capability segmentation. DeviceCapabilityTargeting
+#'  \item{deviceCapabilitySegment}{a DeviceCapabilityTargeting - The device capability segmentation. DeviceCapabilityTargeting
 #' excludedDeviceCapabilities must be empty or null. This attribute is
 #' optional.}
-#'  \item{deviceCategorySegment}{a DeviceCategoryTargeting -  The device category segmentation. DeviceCategoryTargeting
+#'  \item{deviceCategorySegment}{a DeviceCategoryTargeting - The device category segmentation. DeviceCategoryTargeting
 #' excludedDeviceCategories must be empty or null. This attribute is optional.}
-#'  \item{deviceManufacturerSegment}{a DeviceManufacturerTargeting -  The device manufacturer segmentation. DeviceFamilyTargeting isTargeted must
+#'  \item{deviceManufacturerSegment}{a DeviceManufacturerTargeting - The device manufacturer segmentation. DeviceFamilyTargeting isTargeted must
 #' be true. This attribute is optional.}
-#'  \item{mobileDeviceSegment}{a MobileDeviceTargeting -  The mobile device segmentation. MobileDeviceTargeting excludedMobileDevices
+#'  \item{mobileDeviceSegment}{a MobileDeviceTargeting - The mobile device segmentation. MobileDeviceTargeting excludedMobileDevices
 #' must be empty or null. This attribute is optional.}
-#'  \item{mobileDeviceSubmodelSegment}{a MobileDeviceSubmodelTargeting -  The mobile device submodel segmentation. MobileDeviceSubmodelTargeting
+#'  \item{mobileDeviceSubmodelSegment}{a MobileDeviceSubmodelTargeting - The mobile device submodel segmentation. MobileDeviceSubmodelTargeting
 #' excludedMobileDeviceSubmodels must be empty or null.}
-#'  \item{videoPositionSegment}{a VideoPositionTargeting -  The video position segmentation. This attribute is optional.}
+#'  \item{videoPositionSegment}{a VideoPositionTargeting - The video position segmentation. This attribute is optional.}
 #' }
 #' 
 #' \strong{ProductTemplate}
@@ -1336,17 +1336,17 @@
 #' line item.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ProductTemplate}{Google Documentation for ProductTemplate}
 #' \describe{
-#'  \item{id}{a integer -  Uniquely identifies the ProductTemplate. This attribute is read-only and is
+#'  \item{id}{a integer - Uniquely identifies the ProductTemplate. This attribute is read-only and is
 #' assigned by Google when a ProductTemplate is created.}
-#'  \item{name}{a string -  The name of the ProductTemplate. This attribute is required and has maximum
+#'  \item{name}{a character - The name of the ProductTemplate. This attribute is required and has maximum
 #' length of 255 characters.}
-#'  \item{creationDateTime}{a DateTime -  The creation time of the ProductTemplate. This attribute is read-only and is
+#'  \item{creationDateTime}{a DateTime - The creation time of the ProductTemplate. This attribute is read-only and is
 #' assigned by Google when a ProductTemplate is created.}
-#'  \item{lastModifiedDateTime}{a DateTime -  The date and time this ProductTemplate was last modified. This attribute is
+#'  \item{lastModifiedDateTime}{a DateTime - The date and time this ProductTemplate was last modified. This attribute is
 #' read-only and is assigned by Google when a ProductTemplate is updated.}
-#'  \item{description}{a string -  The description of the ProductTemplate. This attribute has maximum length of
+#'  \item{description}{a character - The description of the ProductTemplate. This attribute has maximum length of
 #' 511 characters. This attribute is optional.}
-#'  \item{nameMacro}{a string -  The name macro of the ProductTemplate. The name macro is used to generate
+#'  \item{nameMacro}{a character - The name macro of the ProductTemplate. The name macro is used to generate
 #' the Product name. This attribute is required and has maximum length of 1023
 #' characters. The name macro can contain plain text and several placeholders
 #' that will be replaced with values specified in the ProductTemplate when
@@ -1354,7 +1354,7 @@
 #' appear no more than once and all expanded features must have their
 #' corresponding placeholders in the name macro. This attribute is required.}
 #'  \item{status}{a ProductTemplateStatus - The status of the ProductTemplate. This attribute is read-only and is
-#' assigned by Google. This can take one of the following values:
+#' assigned by Google. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVE - Product template is active, and all products it generates without status
 #' overridden are available in product catalog.}
@@ -1369,7 +1369,7 @@
 #'  \item{productType}{a ProductType - The type of generated Product.  Note: if the type is ProductType OFFLINE,
 #' then the following fields must be null or empty: roadblockingType,
 #' lineItemType, frequencyCaps, productSegmentation and targeting.  This
-#' attribute is required. This can take one of the following values:
+#' attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DFP - For line items that are booked and managed in DFP.}
 #'      \item{OFFLINE - Offline charges indicate services you render for a client which are also
@@ -1379,10 +1379,10 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{creatorId}{a integer -  The User ID id of the user who created the ProductTemplate. This attribute
+#'  \item{creatorId}{a integer - The User ID id of the user who created the ProductTemplate. This attribute
 #' is read-only and is assigned by Google.}
 #'  \item{rateType}{a RateType - The method used for billing the created ProposalLineItem. This attribute is
-#' required. This can take one of the following values:
+#' required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CPM - The rate applies to cost per mille (CPM) revenue.}
 #'      \item{CPC - The rate applies to cost per click (CPC) revenue.}
@@ -1396,7 +1396,7 @@
 #'  \item{roadblockingType}{a RoadblockingType - The strategy for serving roadblocked creatives (i.e. instances where
 #' multiple creatives must be served together on a single web page) for the
 #' created ProposalLineItem. This attribute is required when productType is
-#' ProductType DFP. This can take one of the following values:
+#' ProductType DFP. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ONLY_ONE - Only one creative from a line item can serve at a time.}
 #'      \item{ONE_OR_MORE - Any number of creatives from a line item can serve together at a time.}
@@ -1410,12 +1410,12 @@
 #' creativePlaceholders must be set accordingly.}
 #'    }
 #'   }
-#'  \item{creativePlaceholders}{a CreativePlaceholder -  Details about the creatives that are expected to serve for the created
+#'  \item{creativePlaceholders}{a CreativePlaceholder - Details about the creatives that are expected to serve for the created
 #' ProposalLineItem. For a roadblockingType of RoadblockingType CREATIVE_SET,
 #' all creative placeholders must have a master and at least one companion
 #' size. This attribute is required when productType is ProductType DFP.}
 #'  \item{lineItemType}{a LineItemType - Indicates the line item type for the created ProposalLineItem. This
-#' attribute is required when productType is ProductType DFP. This can take one of the following values:
+#' attribute is required when productType is ProductType DFP. This can take one of the following values: 
 #'    \itemize{
 #'      \item{SPONSORSHIP - The type of LineItem for which a percentage of all the impressions that are
 #' being sold are reserved.}
@@ -1450,39 +1450,39 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{priority}{a integer -  Priority of ProposalLineItem. The priority is a value between 1 and 16. If
+#'  \item{priority}{a integer - Priority of ProposalLineItem. The priority is a value between 1 and 16. If
 #' not specified, the default priority of the LineItemType will be assigned.
 #' The following default, minimum and maximum priority values is allowed for
 #' each line item type: Note: it's ignored when productType is ProductType
 #' OFFLINE.}
-#'  \item{frequencyCaps}{a FrequencyCap -  The set of frequency capping units for the created ProposalLineItem. Each
+#'  \item{frequencyCaps}{a FrequencyCap - The set of frequency capping units for the created ProposalLineItem. Each
 #' frequency cap in the list must have unique TimeUnit. This attribute is
 #' optional.}
-#'  \item{productSegmentation}{a ProductSegmentation -  The product segmentation. The combination from the segments and the
+#'  \item{productSegmentation}{a ProductSegmentation - The product segmentation. The combination from the segments and the
 #' targeting will produce the targeting on the resulting ProposalLineItem. Any
 #' type of segmentation cannot also be used for targeting. This attribute is
 #' optional. Note: if you specify ProducSegmentation geoSegment, then
 #' ProductTemplateTargeting geoTargeting must be null or empty, vice versa.
 #' This also applies to other targeting and segmentation.}
-#'  \item{builtInTargeting}{a Targeting -  Targeting to be included in the created ProposalLineItem. Any type targeted
+#'  \item{builtInTargeting}{a Targeting - Targeting to be included in the created ProposalLineItem. Any type targeted
 #' cannot also be used for segmentation. This attribute is optional. Note: if
 #' productType is ProductType DFP and productSegmentation is not specified,
 #' this attribute is required.}
-#'  \item{customizableAttributes}{a CustomizableAttributes -  Specifies what targeting or attributes for the created ProposalLineItem are
+#'  \item{customizableAttributes}{a CustomizableAttributes - Specifies what targeting or attributes for the created ProposalLineItem are
 #' customizable. This attribute is optional. If not specified, then no
 #' targeting or attributes are customizable.}
-#'  \item{customFieldValues}{a BaseCustomFieldValue -  The values of the custom fields associated with this ProductTemplate. This
+#'  \item{customFieldValues}{a BaseCustomFieldValue - The values of the custom fields associated with this ProductTemplate. This
 #' attribute is optional.}
 #'  \item{environmentType}{a EnvironmentType - The environment that the created ProposalLineItem is targeting. The default
 #' value is EnvironmentType BROWSER. If this value is EnvironmentType
 #' VIDEO_PLAYER, then the ProposalLineItem can only target AdUnits that have
-#' AdUnitSizes whose environmentType is also VIDEO_PLAYER. This can take one of the following values:
+#' AdUnitSizes whose environmentType is also VIDEO_PLAYER. This can take one of the following values: 
 #'    \itemize{
 #'      \item{BROWSER - A regular web browser.}
 #'      \item{VIDEO_PLAYER - Video players (such as Flash applications).}
 #'    }
 #'   }
-#'  \item{videoMaxDuration}{a integer -  The max duration of a video creative associated with this ProductTemplate in
+#'  \item{videoMaxDuration}{a integer - The max duration of a video creative associated with this ProductTemplate in
 #' milliseconds. This attribute is optional, defaults to 0, and only meaningful
 #' if this is a video product template.}
 #' }
@@ -1505,7 +1505,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ProductTemplateActionError}{Google Documentation for ProductTemplateActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductTemplateActionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ProductTemplateActionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_APPLICABLE - The operation is not applicable to the current status.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1521,7 +1521,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ProductTemplateError}{Google Documentation for ProductTemplateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductTemplateError.Reason - This can take one of the following values:
+#'  \item{reason}{a ProductTemplateError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_FEATURE_EXPANDED_EXCLUSIVE - One feature affinity should be expanded or not-expanded exclusively.}
 #'      \item{INVALID_EXPANDED_FEATURE_DEFAULT_NOT_TARGETED - Expanded feature should have false default targeting type.}
@@ -1608,9 +1608,9 @@
 #' Captures a page of ProductTemplate objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ProductTemplatePage}{Google Documentation for ProductTemplatePage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a ProductTemplate -  The collection of ProductTemplate contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a ProductTemplate - The collection of ProductTemplate contained within this page.}
 #' }
 #' 
 #' \strong{PublisherQueryLanguageContextError}
@@ -1620,7 +1620,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1636,7 +1636,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1652,7 +1652,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -1674,7 +1674,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.RangeError}{Google Documentation for RangeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RangeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RangeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_HIGH}
 #'      \item{TOO_LOW}
@@ -1690,7 +1690,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - A required collection is missing.}
 #'      \item{TOO_LARGE - Collection size is too large.}
@@ -1707,7 +1707,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -1721,7 +1721,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED}
 #'      \item{TOO_LARGE}
@@ -1740,7 +1740,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -1757,7 +1757,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -1768,9 +1768,9 @@
 #' be 1x1.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Size}{Google Documentation for Size}
 #' \describe{
-#'  \item{width}{a integer -  The width of the AdUnit, LineItem or Creative.}
-#'  \item{height}{a integer -  The height of the AdUnit, LineItem or Creative.}
-#'  \item{isAspectRatio}{a boolean -  True if this size represents an aspect ratio, false otherwise.}
+#'  \item{width}{a integer - The width of the AdUnit, LineItem or Creative.}
+#'  \item{height}{a integer - The height of the AdUnit, LineItem or Creative.}
+#'  \item{isAspectRatio}{a boolean - True if this size represents an aspect ratio, false otherwise.}
 #' }
 #' 
 #' \strong{SoapRequestHeader}
@@ -1778,8 +1778,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -1787,30 +1787,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -1825,7 +1812,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1840,7 +1827,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -1850,7 +1837,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -1865,15 +1852,15 @@
 #' Contains targeting criteria for LineItem objects. See LineItem targeting.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Targeting}{Google Documentation for Targeting}
 #' \describe{
-#'  \item{geoTargeting}{a GeoTargeting -  Specifies what geographical locations are targeted by the LineItem. This
+#'  \item{geoTargeting}{a GeoTargeting - Specifies what geographical locations are targeted by the LineItem. This
 #' attribute is optional.}
-#'  \item{inventoryTargeting}{a InventoryTargeting -  Specifies what inventory is targeted by the LineItem. This attribute is
+#'  \item{inventoryTargeting}{a InventoryTargeting - Specifies what inventory is targeted by the LineItem. This attribute is
 #' required. The line item must target at least one ad unit or placement.}
-#'  \item{dayPartTargeting}{a DayPartTargeting -  Specifies the days of the week and times that are targeted by the LineItem.
+#'  \item{dayPartTargeting}{a DayPartTargeting - Specifies the days of the week and times that are targeted by the LineItem.
 #' This attribute is optional.}
-#'  \item{technologyTargeting}{a TechnologyTargeting -  Specifies the browsing technologies that are targeted by the LineItem. This
+#'  \item{technologyTargeting}{a TechnologyTargeting - Specifies the browsing technologies that are targeted by the LineItem. This
 #' attribute is optional.}
-#'  \item{customTargeting}{a CustomCriteriaSet -  Specifies the collection of custom criteria that is targeted by the
+#'  \item{customTargeting}{a CustomCriteriaSet - Specifies the collection of custom criteria that is targeted by the
 #' LineItem.  Once the LineItem is updated or modified with custom targeting,
 #' the server may return a normalized, but equivalent representation of the
 #' custom targeting expression.  customTargeting will have up to three levels
@@ -1884,12 +1871,12 @@
 #' a CustomCriteria is placed on this level, the server will wrap it in a
 #' CustomCriteriaSet.  The third level can only comprise of CustomCriteria
 #' objects.  The resulting custom targeting tree would be of the form:}
-#'  \item{userDomainTargeting}{a UserDomainTargeting -  Specifies the domains or subdomains that are targeted or excluded by the
+#'  \item{userDomainTargeting}{a UserDomainTargeting - Specifies the domains or subdomains that are targeted or excluded by the
 #' LineItem. Users visiting from an IP address associated with those domains
 #' will be targeted or excluded. This attribute is optional.}
-#'  \item{contentTargeting}{a ContentTargeting -  Specifies the video categories and individual videos targeted by the
+#'  \item{contentTargeting}{a ContentTargeting - Specifies the video categories and individual videos targeted by the
 #' LineItem.}
-#'  \item{videoPositionTargeting}{a VideoPositionTargeting -  Specifies targeting against video position types.}
+#'  \item{videoPositionTargeting}{a VideoPositionTargeting - Specifies targeting against video position types.}
 #' }
 #' 
 #' \strong{Technology}
@@ -1897,9 +1884,9 @@
 #' Represents a technology entity that can be targeted.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.Technology}{Google Documentation for Technology}
 #' \describe{
-#'  \item{id}{a integer -  The unique ID of the Technology. This value is required for all forms of
+#'  \item{id}{a integer - The unique ID of the Technology. This value is required for all forms of
 #' TechnologyTargeting.}
-#'  \item{name}{a string -  The name of the technology being targeting. This value is read-only and is
+#'  \item{name}{a character - The name of the technology being targeting. This value is read-only and is
 #' assigned by Google.}
 #' }
 #' 
@@ -1908,17 +1895,17 @@
 #' Provides LineItem objects the ability to target or exclude technologies.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.TechnologyTargeting}{Google Documentation for TechnologyTargeting}
 #' \describe{
-#'  \item{bandwidthGroupTargeting}{a BandwidthGroupTargeting -  The bandwidth groups being targeted by the LineItem.}
-#'  \item{browserTargeting}{a BrowserTargeting -  The browsers being targeted by the LineItem.}
-#'  \item{browserLanguageTargeting}{a BrowserLanguageTargeting -  The languages of browsers being targeted by the LineItem.}
-#'  \item{deviceCapabilityTargeting}{a DeviceCapabilityTargeting -  The device capabilities being targeted by the LineItem.}
-#'  \item{deviceCategoryTargeting}{a DeviceCategoryTargeting -  The device categories being targeted by the LineItem.}
-#'  \item{deviceManufacturerTargeting}{a DeviceManufacturerTargeting -  The device manufacturers being targeted by the LineItem.}
-#'  \item{mobileCarrierTargeting}{a MobileCarrierTargeting -  The mobile carriers being targeted by the LineItem.}
-#'  \item{mobileDeviceTargeting}{a MobileDeviceTargeting -  The mobile devices being targeted by the LineItem.}
-#'  \item{mobileDeviceSubmodelTargeting}{a MobileDeviceSubmodelTargeting -  The mobile device submodels being targeted by the LineItem.}
-#'  \item{operatingSystemTargeting}{a OperatingSystemTargeting -  The operating systems being targeted by the LineItem.}
-#'  \item{operatingSystemVersionTargeting}{a OperatingSystemVersionTargeting -  The operating system versions being targeted by the LineItem.}
+#'  \item{bandwidthGroupTargeting}{a BandwidthGroupTargeting - The bandwidth groups being targeted by the LineItem.}
+#'  \item{browserTargeting}{a BrowserTargeting - The browsers being targeted by the LineItem.}
+#'  \item{browserLanguageTargeting}{a BrowserLanguageTargeting - The languages of browsers being targeted by the LineItem.}
+#'  \item{deviceCapabilityTargeting}{a DeviceCapabilityTargeting - The device capabilities being targeted by the LineItem.}
+#'  \item{deviceCategoryTargeting}{a DeviceCategoryTargeting - The device categories being targeted by the LineItem.}
+#'  \item{deviceManufacturerTargeting}{a DeviceManufacturerTargeting - The device manufacturers being targeted by the LineItem.}
+#'  \item{mobileCarrierTargeting}{a MobileCarrierTargeting - The mobile carriers being targeted by the LineItem.}
+#'  \item{mobileDeviceTargeting}{a MobileDeviceTargeting - The mobile devices being targeted by the LineItem.}
+#'  \item{mobileDeviceSubmodelTargeting}{a MobileDeviceSubmodelTargeting - The mobile device submodels being targeted by the LineItem.}
+#'  \item{operatingSystemTargeting}{a OperatingSystemTargeting - The operating systems being targeted by the LineItem.}
+#'  \item{operatingSystemVersionTargeting}{a OperatingSystemVersionTargeting - The operating system versions being targeted by the LineItem.}
 #' }
 #' 
 #' \strong{TechnologyTargetingError}
@@ -1927,7 +1914,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.TechnologyTargetingError}{Google Documentation for TechnologyTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA - Mobile line item cannot target web-only targeting criteria.}
 #'      \item{WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA - Web line item cannot target mobile-only targeting criteria.}
@@ -1946,7 +1933,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TimeOfDay}
@@ -1954,10 +1941,10 @@
 #' Represents a specific time in a day.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.TimeOfDay}{Google Documentation for TimeOfDay}
 #' \describe{
-#'  \item{hour}{a integer -  Hour in 24 hour time (0..24). This field must be between 0 and 24,
+#'  \item{hour}{a integer - Hour in 24 hour time (0..24). This field must be between 0 and 24,
 #' inclusive. This field is required.}
 #'  \item{minute}{a MinuteOfHour - Minutes in an hour. Currently, only 0, 15, 30, and 45 are supported. This
-#' field is required. This can take one of the following values:
+#' field is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ZERO - Zero minutes past hour.}
 #'      \item{FIFTEEN - Fifteen minutes past hour.}
@@ -1996,7 +1983,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -2006,10 +1993,10 @@
 #' websites from a list of domains or subdomains.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.UserDomainTargeting}{Google Documentation for UserDomainTargeting}
 #' \describe{
-#'  \item{domains}{a string -  The domains or subdomains that are being targeted or excluded by the
+#'  \item{domains}{a character - The domains or subdomains that are being targeted or excluded by the
 #' LineItem. This attribute is required and the maximum length of each domain
 #' is 67 characters.}
-#'  \item{targeted}{a boolean -  Indicates whether domains should be targeted or excluded. This attribute is
+#'  \item{targeted}{a boolean - Indicates whether domains should be targeted or excluded. This attribute is
 #' optional and defaults to true.}
 #' }
 #' 
@@ -2019,7 +2006,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.UserDomainTargetingError}{Google Documentation for UserDomainTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_DOMAIN_NAMES - Invalid domain names. Domain names must be at most 67 characters long. And
 #' must contain only alphanumeric characters and hyphens.}
@@ -2043,14 +2030,14 @@
 #' mid-roll index.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.VideoPosition}{Google Documentation for VideoPosition}
 #' \describe{
-#'  \item{positionType}{a VideoPosition.Type - The type of video position (pre-roll, mid-roll, or post-roll). This can take one of the following values:
+#'  \item{positionType}{a VideoPosition.Type - The type of video position (pre-roll, mid-roll, or post-roll). This can take one of the following values: 
 #'    \itemize{
 #'      \item{PREROLL - The position defined as showing before the video starts playing.}
 #'      \item{MIDROLL - The position defined as showing within the middle of the playing video.}
 #'      \item{POSTROLL - The position defined as showing after the video is completed.}
 #'    }
 #'   }
-#'  \item{midrollIndex}{a integer -  The index of the mid-roll to target. Only valid if the positionType is
+#'  \item{midrollIndex}{a integer - The index of the mid-roll to target. Only valid if the positionType is
 #' VideoPositionType MIDROLL, otherwise this field will be ignored.}
 #' }
 #' 
@@ -2059,16 +2046,16 @@
 #' Represents the options for targetable positions within a video.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.VideoPositionTarget}{Google Documentation for VideoPositionTarget}
 #' \describe{
-#'  \item{videoPosition}{a VideoPosition -  The video position to target. This attribute is required.}
+#'  \item{videoPosition}{a VideoPosition - The video position to target. This attribute is required.}
 #'  \item{videoBumperType}{a VideoBumperType - The video bumper type to target. To target a video position or a pod
 #' position, this value must be null. To target a bumper position this value
-#' must be populated and the line item must have a bumper type. This can take one of the following values:
+#' must be populated and the line item must have a bumper type. This can take one of the following values: 
 #'    \itemize{
 #'      \item{BEFORE - Represents the bumper position before the ad pod.}
 #'      \item{AFTER - Represents the bumper position after the ad pod.}
 #'    }
 #'   }
-#'  \item{videoPositionWithinPod}{a VideoPositionWithinPod -  The video position within a pod to target. To target a video position or a
+#'  \item{videoPositionWithinPod}{a VideoPositionWithinPod - The video position within a pod to target. To target a video position or a
 #' bumper position, this value must be null. To target a position within a pod
 #' this value must be populated.}
 #' }
@@ -2080,7 +2067,7 @@
 #' (after a video has completed playback) and mid-roll (during video playback).
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.VideoPositionTargeting}{Google Documentation for VideoPositionTargeting}
 #' \describe{
-#'  \item{targetedPositions}{a VideoPositionTarget -  The VideoTargetingPosition objects being targeted by the video LineItem.}
+#'  \item{targetedPositions}{a VideoPositionTarget - The VideoTargetingPosition objects being targeted by the video LineItem.}
 #' }
 #' 
 #' \strong{VideoPositionTargetingError}
@@ -2089,7 +2076,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.VideoPositionTargetingError}{Google Documentation for VideoPositionTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_MIX_BUMPER_AND_NON_BUMPER_TARGETING - Video position targeting cannot contain both bumper and non-bumper targeting
 #' values.}
@@ -2108,7 +2095,7 @@
 #' position.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService.VideoPositionWithinPod}{Google Documentation for VideoPositionWithinPod}
 #' \describe{
-#'  \item{index}{a integer -  The specific index of the pod. The index is defined as: 1 = first 2 = second
+#'  \item{index}{a integer - The specific index of the pod. The index is defined as: 1 = first 2 = second
 #' 3 = third .... 100 = last 100 will always be the last position. For example,
 #' for a pod with 5 positions, 100 would target position 5. Multiple targets
 #' against the index 100 can exist.<br> Positions over 100 are not supported.}
@@ -2118,234 +2105,235 @@
 #' 
 #' @usage dfp_ProductTemplateService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_ProductTemplateService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='AdUnitTargeting'){
+ stopifnot(all(sampled_names %in% c('adUnitId', 'includeDescendants')))
+ }
 
-  if(obj_type=='AdUnitTargeting'){
-    stopifnot(all(sampled_names %in% c('adUnitId', 'includeDescendants')))
-  }
+ if(obj_type=='AppliedLabel'){
+ stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
+ }
 
-  if(obj_type=='AppliedLabel'){
-    stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
-  }
+ if(obj_type=='AudienceSegmentCriteria'){
+ stopifnot(all(sampled_names %in% c('operator', 'audienceSegmentIds')))
+ }
 
-  if(obj_type=='AudienceSegmentCriteria'){
-    stopifnot(all(sampled_names %in% c('operator', 'audienceSegmentIds')))
-  }
+ if(obj_type=='BandwidthGroup'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='BandwidthGroup'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='BandwidthGroupTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'bandwidthGroups')))
+ }
 
-  if(obj_type=='BandwidthGroupTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'bandwidthGroups')))
-  }
+ if(obj_type=='BaseCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId')))
+ }
 
-  if(obj_type=='BaseCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId')))
-  }
+ if(obj_type=='Browser'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'majorVersion', 'minorVersion')))
+ }
 
-  if(obj_type=='Browser'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'majorVersion', 'minorVersion')))
-  }
+ if(obj_type=='BrowserLanguage'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='BrowserLanguage'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='BrowserLanguageTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'browserLanguages')))
+ }
 
-  if(obj_type=='BrowserLanguageTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'browserLanguages')))
-  }
+ if(obj_type=='BrowserTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'browsers')))
+ }
 
-  if(obj_type=='BrowserTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'browsers')))
-  }
+ if(obj_type=='ContentMetadataKeyHierarchyTargeting'){
+ stopifnot(all(sampled_names %in% c('customTargetingValueIds')))
+ }
 
-  if(obj_type=='ContentMetadataKeyHierarchyTargeting'){
-    stopifnot(all(sampled_names %in% c('customTargetingValueIds')))
-  }
+ if(obj_type=='ContentTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedContentIds', 'excludedContentIds', 'targetedVideoCategoryIds', 'excludedVideoCategoryIds', 'targetedVideoContentBundleIds', 'excludedVideoContentBundleIds', 'targetedContentMetadata', 'excludedContentMetadata')))
+ }
 
-  if(obj_type=='ContentTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedContentIds', 'excludedContentIds', 'targetedVideoCategoryIds', 'excludedVideoCategoryIds', 'targetedVideoContentBundleIds', 'excludedVideoContentBundleIds', 'targetedContentMetadata', 'excludedContentMetadata')))
-  }
+ if(obj_type=='CreativePlaceholder'){
+ stopifnot(all(sampled_names %in% c('size', 'creativeTemplateId', 'companions', 'appliedLabels', 'effectiveAppliedLabels', 'expectedCreativeCount', 'creativeSizeType', 'targetingName')))
+ }
 
-  if(obj_type=='CreativePlaceholder'){
-    stopifnot(all(sampled_names %in% c('size', 'creativeTemplateId', 'companions', 'appliedLabels', 'effectiveAppliedLabels', 'expectedCreativeCount', 'creativeSizeType', 'targetingName')))
-  }
+ if(obj_type=='CustomCriteria'){
+ stopifnot(all(sampled_names %in% c('keyId', 'valueIds', 'operator')))
+ }
 
-  if(obj_type=='CustomCriteria'){
-    stopifnot(all(sampled_names %in% c('keyId', 'valueIds', 'operator')))
-  }
+ if(obj_type=='CustomCriteriaSet'){
+ stopifnot(all(sampled_names %in% c('logicalOperator', 'children')))
+ }
 
-  if(obj_type=='CustomCriteriaSet'){
-    stopifnot(all(sampled_names %in% c('logicalOperator', 'children')))
-  }
+ if(obj_type=='CustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
+ }
 
-  if(obj_type=='CustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
-  }
+ if(obj_type=='CustomizableAttributes'){
+ stopifnot(all(sampled_names %in% c('allowGeoTargetingCustomization', 'allowAdUnitTargetingCustomization', 'allowPlacementTargetingCustomization', 'allowUserDomainTargetingCustomization', 'allowBandwidthGroupTargetingCustomization', 'allowBrowserTargetingCustomization', 'allowBrowserLanguageTargetingCustomization', 'allowOperatingSystemTargetingCustomization', 'allowDeviceCapabilityTargetingCustomization', 'allowDeviceCategoryTargetingCustomization', 'allowMobileCarrierTargetingCustomization', 'allowMobileDeviceAndManufacturerTargetingCustomization', 'allowAudienceSegmentTargetingCustomization', 'isAllCustomTargetingKeysCustomizable', 'customizableCustomTargetingKeyIds', 'allowFrequencyCapsCustomization')))
+ }
 
-  if(obj_type=='CustomizableAttributes'){
-    stopifnot(all(sampled_names %in% c('allowGeoTargetingCustomization', 'allowAdUnitTargetingCustomization', 'allowPlacementTargetingCustomization', 'allowUserDomainTargetingCustomization', 'allowBandwidthGroupTargetingCustomization', 'allowBrowserTargetingCustomization', 'allowBrowserLanguageTargetingCustomization', 'allowOperatingSystemTargetingCustomization', 'allowDeviceCapabilityTargetingCustomization', 'allowDeviceCategoryTargetingCustomization', 'allowMobileCarrierTargetingCustomization', 'allowMobileDeviceAndManufacturerTargetingCustomization', 'allowAudienceSegmentTargetingCustomization', 'isAllCustomTargetingKeysCustomizable', 'customizableCustomTargetingKeyIds', 'allowFrequencyCapsCustomization')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='DayPart'){
-    stopifnot(all(sampled_names %in% c('dayOfWeek', 'startTime', 'endTime')))
-  }
+ if(obj_type=='DayPart'){
+ stopifnot(all(sampled_names %in% c('dayOfWeek', 'startTime', 'endTime')))
+ }
 
-  if(obj_type=='DayPartTargeting'){
-    stopifnot(all(sampled_names %in% c('dayParts', 'timeZone')))
-  }
+ if(obj_type=='DayPartTargeting'){
+ stopifnot(all(sampled_names %in% c('dayParts', 'timeZone')))
+ }
 
-  if(obj_type=='DeviceCapability'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='DeviceCapability'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='DeviceCapabilityTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedDeviceCapabilities', 'excludedDeviceCapabilities')))
-  }
+ if(obj_type=='DeviceCapabilityTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedDeviceCapabilities', 'excludedDeviceCapabilities')))
+ }
 
-  if(obj_type=='DeviceCategory'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='DeviceCategory'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='DeviceCategoryTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedDeviceCategories', 'excludedDeviceCategories')))
-  }
+ if(obj_type=='DeviceCategoryTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedDeviceCategories', 'excludedDeviceCategories')))
+ }
 
-  if(obj_type=='DeviceManufacturer'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='DeviceManufacturer'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='DeviceManufacturerTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'deviceManufacturers')))
-  }
+ if(obj_type=='DeviceManufacturerTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'deviceManufacturers')))
+ }
 
-  if(obj_type=='DropDownCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
-  }
+ if(obj_type=='DropDownCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
+ }
 
-  if(obj_type=='FrequencyCap'){
-    stopifnot(all(sampled_names %in% c('maxImpressions', 'numTimeUnits', 'timeUnit')))
-  }
+ if(obj_type=='FrequencyCap'){
+ stopifnot(all(sampled_names %in% c('maxImpressions', 'numTimeUnits', 'timeUnit')))
+ }
 
-  if(obj_type=='GeoTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedLocations', 'excludedLocations')))
-  }
+ if(obj_type=='GeoTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedLocations', 'excludedLocations')))
+ }
 
-  if(obj_type=='InventoryTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedAdUnits', 'excludedAdUnits', 'targetedPlacementIds')))
-  }
+ if(obj_type=='InventoryTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedAdUnits', 'excludedAdUnits', 'targetedPlacementIds')))
+ }
 
-  if(obj_type=='Location'){
-    stopifnot(all(sampled_names %in% c('id', 'type', 'canonicalParentId', 'displayName')))
-  }
+ if(obj_type=='Location'){
+ stopifnot(all(sampled_names %in% c('id', 'type', 'canonicalParentId', 'displayName')))
+ }
 
-  if(obj_type=='MobileCarrier'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='MobileCarrier'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='MobileCarrierTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'mobileCarriers')))
-  }
+ if(obj_type=='MobileCarrierTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'mobileCarriers')))
+ }
 
-  if(obj_type=='MobileDevice'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'manufacturerCriterionId')))
-  }
+ if(obj_type=='MobileDevice'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'manufacturerCriterionId')))
+ }
 
-  if(obj_type=='MobileDeviceSubmodel'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'mobileDeviceCriterionId', 'deviceManufacturerCriterionId')))
-  }
+ if(obj_type=='MobileDeviceSubmodel'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'mobileDeviceCriterionId', 'deviceManufacturerCriterionId')))
+ }
 
-  if(obj_type=='MobileDeviceSubmodelTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedMobileDeviceSubmodels', 'excludedMobileDeviceSubmodels')))
-  }
+ if(obj_type=='MobileDeviceSubmodelTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedMobileDeviceSubmodels', 'excludedMobileDeviceSubmodels')))
+ }
 
-  if(obj_type=='MobileDeviceTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedMobileDevices', 'excludedMobileDevices')))
-  }
+ if(obj_type=='MobileDeviceTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedMobileDevices', 'excludedMobileDevices')))
+ }
 
-  if(obj_type=='OperatingSystem'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='OperatingSystem'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='OperatingSystemTargeting'){
-    stopifnot(all(sampled_names %in% c('isTargeted', 'operatingSystems')))
-  }
+ if(obj_type=='OperatingSystemTargeting'){
+ stopifnot(all(sampled_names %in% c('isTargeted', 'operatingSystems')))
+ }
 
-  if(obj_type=='OperatingSystemVersion'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'majorVersion', 'minorVersion', 'microVersion')))
-  }
+ if(obj_type=='OperatingSystemVersion'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'majorVersion', 'minorVersion', 'microVersion')))
+ }
 
-  if(obj_type=='OperatingSystemVersionTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedOperatingSystemVersions', 'excludedOperatingSystemVersions')))
-  }
+ if(obj_type=='OperatingSystemVersionTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedOperatingSystemVersions', 'excludedOperatingSystemVersions')))
+ }
 
-  if(obj_type=='PlacementTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedPlacementIds')))
-  }
+ if(obj_type=='PlacementTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedPlacementIds')))
+ }
 
-  if(obj_type=='ProductSegmentation'){
-    stopifnot(all(sampled_names %in% c('geoSegment', 'adUnitSegments', 'placementSegment', 'customTargetingSegment', 'userDomainSegment', 'bandwidthSegment', 'browserSegment', 'browserLanguageSegment', 'operatingSystemSegment', 'mobileCarrierSegment', 'deviceCapabilitySegment', 'deviceCategorySegment', 'deviceManufacturerSegment', 'mobileDeviceSegment', 'mobileDeviceSubmodelSegment', 'videoPositionSegment')))
-  }
+ if(obj_type=='ProductSegmentation'){
+ stopifnot(all(sampled_names %in% c('geoSegment', 'adUnitSegments', 'placementSegment', 'customTargetingSegment', 'userDomainSegment', 'bandwidthSegment', 'browserSegment', 'browserLanguageSegment', 'operatingSystemSegment', 'mobileCarrierSegment', 'deviceCapabilitySegment', 'deviceCategorySegment', 'deviceManufacturerSegment', 'mobileDeviceSegment', 'mobileDeviceSubmodelSegment', 'videoPositionSegment')))
+ }
 
-  if(obj_type=='ProductTemplate'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'creationDateTime', 'lastModifiedDateTime', 'description', 'nameMacro', 'status', 'productType', 'creatorId', 'rateType', 'roadblockingType', 'creativePlaceholders', 'lineItemType', 'priority', 'frequencyCaps', 'productSegmentation', 'builtInTargeting', 'customizableAttributes', 'customFieldValues', 'environmentType', 'videoMaxDuration')))
-  }
+ if(obj_type=='ProductTemplate'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'creationDateTime', 'lastModifiedDateTime', 'description', 'nameMacro', 'status', 'productType', 'creatorId', 'rateType', 'roadblockingType', 'creativePlaceholders', 'lineItemType', 'priority', 'frequencyCaps', 'productSegmentation', 'builtInTargeting', 'customizableAttributes', 'customFieldValues', 'environmentType', 'videoMaxDuration')))
+ }
 
-  if(obj_type=='Size'){
-    stopifnot(all(sampled_names %in% c('width', 'height', 'isAspectRatio')))
-  }
+ if(obj_type=='Size'){
+ stopifnot(all(sampled_names %in% c('width', 'height', 'isAspectRatio')))
+ }
 
-  if(obj_type=='Targeting'){
-    stopifnot(all(sampled_names %in% c('geoTargeting', 'inventoryTargeting', 'dayPartTargeting', 'technologyTargeting', 'customTargeting', 'userDomainTargeting', 'contentTargeting', 'videoPositionTargeting')))
-  }
+ if(obj_type=='Targeting'){
+ stopifnot(all(sampled_names %in% c('geoTargeting', 'inventoryTargeting', 'dayPartTargeting', 'technologyTargeting', 'customTargeting', 'userDomainTargeting', 'contentTargeting', 'videoPositionTargeting')))
+ }
 
-  if(obj_type=='Technology'){
-    stopifnot(all(sampled_names %in% c('id', 'name')))
-  }
+ if(obj_type=='Technology'){
+ stopifnot(all(sampled_names %in% c('id', 'name')))
+ }
 
-  if(obj_type=='TechnologyTargeting'){
-    stopifnot(all(sampled_names %in% c('bandwidthGroupTargeting', 'browserTargeting', 'browserLanguageTargeting', 'deviceCapabilityTargeting', 'deviceCategoryTargeting', 'deviceManufacturerTargeting', 'mobileCarrierTargeting', 'mobileDeviceTargeting', 'mobileDeviceSubmodelTargeting', 'operatingSystemTargeting', 'operatingSystemVersionTargeting')))
-  }
+ if(obj_type=='TechnologyTargeting'){
+ stopifnot(all(sampled_names %in% c('bandwidthGroupTargeting', 'browserTargeting', 'browserLanguageTargeting', 'deviceCapabilityTargeting', 'deviceCategoryTargeting', 'deviceManufacturerTargeting', 'mobileCarrierTargeting', 'mobileDeviceTargeting', 'mobileDeviceSubmodelTargeting', 'operatingSystemTargeting', 'operatingSystemVersionTargeting')))
+ }
 
-  if(obj_type=='TimeOfDay'){
-    stopifnot(all(sampled_names %in% c('hour', 'minute')))
-  }
+ if(obj_type=='TimeOfDay'){
+ stopifnot(all(sampled_names %in% c('hour', 'minute')))
+ }
 
-  if(obj_type=='UserDomainTargeting'){
-    stopifnot(all(sampled_names %in% c('domains', 'targeted')))
-  }
+ if(obj_type=='UserDomainTargeting'){
+ stopifnot(all(sampled_names %in% c('domains', 'targeted')))
+ }
 
-  if(obj_type=='VideoPosition'){
-    stopifnot(all(sampled_names %in% c('positionType', 'midrollIndex')))
-  }
+ if(obj_type=='VideoPosition'){
+ stopifnot(all(sampled_names %in% c('positionType', 'midrollIndex')))
+ }
 
-  if(obj_type=='VideoPositionTarget'){
-    stopifnot(all(sampled_names %in% c('videoPosition', 'videoBumperType', 'videoPositionWithinPod')))
-  }
+ if(obj_type=='VideoPositionTarget'){
+ stopifnot(all(sampled_names %in% c('videoPosition', 'videoBumperType', 'videoPositionWithinPod')))
+ }
 
-  if(obj_type=='VideoPositionTargeting'){
-    stopifnot(all(sampled_names %in% c('targetedPositions')))
-  }
+ if(obj_type=='VideoPositionTargeting'){
+ stopifnot(all(sampled_names %in% c('targetedPositions')))
+ }
 
-  if(obj_type=='VideoPositionWithinPod'){
-    stopifnot(all(sampled_names %in% c('index')))
-  }
+ if(obj_type=='VideoPositionWithinPod'){
+ stopifnot(all(sampled_names %in% c('index')))
+ }
 
 }
 #' 
@@ -2358,15 +2346,24 @@ dfp_ProductTemplateService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createProductTemplates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProductTemplatesResponse
+#' @return a \code{list} containing all the elements of a createProductTemplatesResponse 
 #' @export
 dfp_createProductTemplates <- function(request_data){
 
-  request_body <- make_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
+ request_body <- make_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductTemplatesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProductTemplatesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2390,15 +2387,24 @@ dfp_createProductTemplates <- function(request_data){
 #' @usage dfp_getProductTemplatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProductTemplatesByStatementResponse
+#' @return a \code{list} containing all the elements of a getProductTemplatesByStatementResponse 
 #' @export
 dfp_getProductTemplatesByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
+ request_body <- make_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductTemplatesByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProductTemplatesByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2411,15 +2417,24 @@ dfp_getProductTemplatesByStatement <- function(request_data){
 #' @usage dfp_performProductTemplateAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProductTemplateActionResponse
+#' @return a \code{list} containing all the elements of a performProductTemplateActionResponse 
 #' @export
 dfp_performProductTemplateAction <- function(request_data){
 
-  request_body <- make_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
+ request_body <- make_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductTemplateActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProductTemplateActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2432,15 +2447,24 @@ dfp_performProductTemplateAction <- function(request_data){
 #' @usage dfp_updateProductTemplates(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProductTemplatesResponse
+#' @return a \code{list} containing all the elements of a updateProductTemplatesResponse 
 #' @export
 dfp_updateProductTemplates <- function(request_data){
 
-  request_body <- make_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)
+ request_body <- make_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductTemplatesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProductTemplatesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

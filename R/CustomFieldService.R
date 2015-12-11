@@ -25,9 +25,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -35,8 +35,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -45,7 +45,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -60,7 +60,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AuthenticationError}
@@ -69,7 +69,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -104,7 +104,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -113,7 +113,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -128,7 +128,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -148,16 +148,16 @@
 #' An additional, user-created field on an entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CustomField}{Google Documentation for CustomField}
 #' \describe{
-#'  \item{id}{a integer -  Unique ID of the CustomField. This value is readonly and is assigned by
+#'  \item{id}{a integer - Unique ID of the CustomField. This value is readonly and is assigned by
 #' Google.}
-#'  \item{name}{a string -  Name of the CustomField. This is value is required to create a custom field.
+#'  \item{name}{a character - Name of the CustomField. This is value is required to create a custom field.
 #' The max length is 127 characters.}
-#'  \item{description}{a string -  A description of the custom field. This value is optional. The maximum
+#'  \item{description}{a character - A description of the custom field. This value is optional. The maximum
 #' length is 511 characters}
-#'  \item{isActive}{a boolean -  Specifies whether or not the custom fields is active. This attribute is
+#'  \item{isActive}{a boolean - Specifies whether or not the custom fields is active. This attribute is
 #' read-only.}
 #'  \item{entityType}{a CustomFieldEntityType - The type of entity that this custom field is associated with. This attribute
-#' is read-only if there exists a CustomFieldValue for this field. This can take one of the following values:
+#' is read-only if there exists a CustomFieldValue for this field. This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM - Represents the LineItem type.}
 #'      \item{ORDER - Represents the Order type.}
@@ -172,7 +172,7 @@
 #'    }
 #'   }
 #'  \item{dataType}{a CustomFieldDataType - The type of data this custom field contains. This attribute is read-only if
-#' there exists a CustomFieldValue for this field. This can take one of the following values:
+#' there exists a CustomFieldValue for this field. This can take one of the following values: 
 #'    \itemize{
 #'      \item{STRING - A string field. The max length is 255 characters.}
 #'      \item{NUMBER - A number field.}
@@ -182,7 +182,7 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{visibility}{a CustomFieldVisibility - How visible/accessible this field is in the UI. This can take one of the following values:
+#'  \item{visibility}{a CustomFieldVisibility - How visible/accessible this field is in the UI. This can take one of the following values: 
 #'    \itemize{
 #'      \item{API_ONLY - Only visible through the API.}
 #'      \item{READ_ONLY - Visible in the UI, but only editable through the API}
@@ -206,7 +206,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CustomFieldError}{Google Documentation for CustomFieldError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_CUSTOM_FIELD_FOR_OPTION - An attempt was made to create a CustomFieldOption for a CustomField that
 #' does not have CustomFieldDataType DROPDOWN.}
@@ -222,9 +222,9 @@
 #' CustomField dataType of CustomFieldDataType DROP_DOWN.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CustomFieldOption}{Google Documentation for CustomFieldOption}
 #' \describe{
-#'  \item{id}{a integer -  Unique ID of this option. This value is readonly and is assigned by Google.}
-#'  \item{customFieldId}{a integer -  The id of the custom field this option belongs to.}
-#'  \item{displayName}{a string -  The display name of this option.}
+#'  \item{id}{a integer - Unique ID of this option. This value is readonly and is assigned by Google.}
+#'  \item{customFieldId}{a integer - The id of the custom field this option belongs to.}
+#'  \item{displayName}{a character - The display name of this option.}
 #' }
 #' 
 #' \strong{CustomFieldPage}
@@ -232,9 +232,9 @@
 #' Captures a page of CustomField objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.CustomFieldPage}{Google Documentation for CustomFieldPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a CustomField -  The collection of custom fields contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a CustomField - The collection of custom fields contained within this page.}
 #' }
 #' 
 #' \strong{Date}
@@ -242,9 +242,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -256,7 +256,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -265,7 +265,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -274,7 +274,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DeactivateCustomFields}
@@ -290,20 +290,20 @@
 #' A custom field that has the drop-down data type.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.DropDownCustomField}{Google Documentation for DropDownCustomField}
 #' \describe{
-#'  \item{id}{a integer (inherited from CustomField) -  Unique ID of the CustomField. This value is readonly and is assigned by
+#'  \item{id}{a integer (inherited from CustomField) - Unique ID of the CustomField. This value is readonly and is assigned by
 #' Google.}
-#'  \item{name}{a string (inherited from CustomField) -  Name of the CustomField. This is value is required to create a custom field.
+#'  \item{name}{a character (inherited from CustomField) - Name of the CustomField. This is value is required to create a custom field.
 #' The max length is 127 characters.}
-#'  \item{description}{a string (inherited from CustomField) -  A description of the custom field. This value is optional. The maximum
+#'  \item{description}{a character (inherited from CustomField) - A description of the custom field. This value is optional. The maximum
 #' length is 511 characters}
-#'  \item{isActive}{a boolean (inherited from CustomField) -  Specifies whether or not the custom fields is active. This attribute is
+#'  \item{isActive}{a boolean (inherited from CustomField) - Specifies whether or not the custom fields is active. This attribute is
 #' read-only.}
-#'  \item{entityType}{a CustomFieldEntityType (inherited from CustomField) -  The type of entity that this custom field is associated with. This attribute
+#'  \item{entityType}{a CustomFieldEntityType (inherited from CustomField) - The type of entity that this custom field is associated with. This attribute
 #' is read-only if there exists a CustomFieldValue for this field.}
-#'  \item{dataType}{a CustomFieldDataType (inherited from CustomField) -  The type of data this custom field contains. This attribute is read-only if
+#'  \item{dataType}{a CustomFieldDataType (inherited from CustomField) - The type of data this custom field contains. This attribute is read-only if
 #' there exists a CustomFieldValue for this field.}
-#'  \item{visibility}{a CustomFieldVisibility (inherited from CustomField) -  How visible/accessible this field is in the UI.}
-#'  \item{options}{a CustomFieldOption -  The options allowed for this custom field. This is read only.}
+#'  \item{visibility}{a CustomFieldVisibility (inherited from CustomField) - How visible/accessible this field is in the UI.}
+#'  \item{options}{a CustomFieldOption - The options allowed for this custom field. This is read only.}
 #' }
 #' 
 #' \strong{EntityLimitReachedError}
@@ -313,7 +313,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -338,7 +338,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -355,7 +355,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -371,7 +371,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -390,7 +390,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -403,7 +403,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -424,7 +424,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -439,7 +439,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -455,7 +455,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -471,7 +471,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -487,7 +487,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -509,7 +509,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -522,7 +522,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -539,7 +539,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -548,8 +548,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -557,30 +557,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -595,7 +582,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -610,7 +597,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -620,7 +607,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TypeError}
@@ -644,7 +631,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -659,34 +646,35 @@
 #' 
 #' @usage dfp_CustomFieldService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_CustomFieldService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='CustomField'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'entityType', 'dataType', 'visibility')))
+ }
 
-  if(obj_type=='CustomField'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'entityType', 'dataType', 'visibility')))
-  }
+ if(obj_type=='CustomFieldOption'){
+ stopifnot(all(sampled_names %in% c('id', 'customFieldId', 'displayName')))
+ }
 
-  if(obj_type=='CustomFieldOption'){
-    stopifnot(all(sampled_names %in% c('id', 'customFieldId', 'displayName')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='DropDownCustomField'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'entityType', 'dataType', 'visibility', 'options')))
-  }
+ if(obj_type=='DropDownCustomField'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'description', 'isActive', 'entityType', 'dataType', 'visibility', 'options')))
+ }
 
 }
 #' 
@@ -699,15 +687,24 @@ dfp_CustomFieldService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createCustomFieldOptions(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCustomFieldOptionsResponse
+#' @return a \code{list} containing all the elements of a createCustomFieldOptionsResponse 
 #' @export
 dfp_createCustomFieldOptions <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomFieldOptionsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomFieldOptionsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -720,15 +717,24 @@ dfp_createCustomFieldOptions <- function(request_data){
 #' @usage dfp_createCustomFields(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCustomFieldsResponse
+#' @return a \code{list} containing all the elements of a createCustomFieldsResponse 
 #' @export
 dfp_createCustomFields <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomFieldsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomFieldsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -739,15 +745,24 @@ dfp_createCustomFields <- function(request_data){
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
 #' @usage dfp_getCustomFieldOption()
-#' @return a \code{list} containing all the elements of a getCustomFieldOptionResponse
+#' @return a \code{list} containing all the elements of a getCustomFieldOptionResponse 
 #' @export
 dfp_getCustomFieldOption <- function(){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=NULL)
+ request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomFieldOptionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomFieldOptionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -767,15 +782,24 @@ dfp_getCustomFieldOption <- function(){
 #' @usage dfp_getCustomFieldsByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCustomFieldsByStatementResponse
+#' @return a \code{list} containing all the elements of a getCustomFieldsByStatementResponse 
 #' @export
 dfp_getCustomFieldsByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomFieldsByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomFieldsByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -788,15 +812,24 @@ dfp_getCustomFieldsByStatement <- function(request_data){
 #' @usage dfp_performCustomFieldAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performCustomFieldActionResponse
+#' @return a \code{list} containing all the elements of a performCustomFieldActionResponse 
 #' @export
 dfp_performCustomFieldAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomFieldActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomFieldActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -809,15 +842,24 @@ dfp_performCustomFieldAction <- function(request_data){
 #' @usage dfp_updateCustomFieldOptions(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCustomFieldOptionsResponse
+#' @return a \code{list} containing all the elements of a updateCustomFieldOptionsResponse 
 #' @export
 dfp_updateCustomFieldOptions <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomFieldOptionsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomFieldOptionsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -830,15 +872,24 @@ dfp_updateCustomFieldOptions <- function(request_data){
 #' @usage dfp_updateCustomFields(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCustomFieldsResponse
+#' @return a \code{list} containing all the elements of a updateCustomFieldsResponse 
 #' @export
 dfp_updateCustomFields <- function(request_data){
 
-  request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)
+ request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomFieldsResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomFieldsResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

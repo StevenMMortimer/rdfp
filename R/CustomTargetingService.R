@@ -36,9 +36,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -46,8 +46,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -56,7 +56,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -71,7 +71,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AuthenticationError}
@@ -80,7 +80,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -115,7 +115,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -124,7 +124,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -139,7 +139,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -161,7 +161,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CustomTargetingError}{Google Documentation for CustomTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{KEY_NOT_FOUND - Requested CustomTargetingKey is not found.}
 #'      \item{KEY_COUNT_TOO_LARGE - Number of CustomTargetingKey objects created exceeds the limit allowed for
@@ -221,18 +221,18 @@
 #' CustomTargetingKey represents a key used for custom targeting.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CustomTargetingKey}{Google Documentation for CustomTargetingKey}
 #' \describe{
-#'  \item{id}{a integer -  The ID of the CustomTargetingKey. This value is readonly and is populated by
+#'  \item{id}{a integer - The ID of the CustomTargetingKey. This value is readonly and is populated by
 #' Google.}
-#'  \item{name}{a string -  Name of the key. This can be used for encoding . If you don't want users to
+#'  \item{name}{a character - Name of the key. This can be used for encoding . If you don't want users to
 #' be able to see potentially sensitive targeting information in the ad tags of
 #' your site, you can encode your key/values. For example, you can create
 #' key/value g1=abc to represent gender=female. Keys can contain up to 10
 #' characters each. You can use alphanumeric characters and symbols other than
 #' the following: ", ', =, !, +, , *, ~, ;, ^, (, ), <, >, [, ], the white
 #' space character.}
-#'  \item{displayName}{a string -  Descriptive name for the key.}
+#'  \item{displayName}{a character - Descriptive name for the key.}
 #'  \item{type}{a CustomTargetingKey.Type - Indicates whether users will select from predefined values or create new
-#' targeting values, while specifying targeting criteria for a line item. This can take one of the following values:
+#' targeting values, while specifying targeting criteria for a line item. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PREDEFINED - Target audiences by criteria values that are defined in advance.}
 #'      \item{FREEFORM - Target audiences by adding criteria values when creating line items.}
@@ -240,7 +240,7 @@
 #'   }
 #'  \item{status}{a CustomTargetingKey.Status - Status of the CustomTargetingKey. This field is read-only. A key can be
 #' activated and deactivated by calling CustomTargetingService
-#' performCustomTargetingKeyAction. This can take one of the following values:
+#' performCustomTargetingKeyAction. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVE - The object is active.}
 #'      \item{INACTIVE - The object is no longer active.}
@@ -269,9 +269,9 @@
 #' Captures a page of CustomTargetingKey objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CustomTargetingKeyPage}{Google Documentation for CustomTargetingKeyPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a CustomTargetingKey -  The collection of custom targeting keys contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a CustomTargetingKey - The collection of custom targeting keys contained within this page.}
 #' }
 #' 
 #' \strong{CustomTargetingValue}
@@ -279,10 +279,10 @@
 #' CustomTargetingValue represents a value used for custom targeting.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CustomTargetingValue}{Google Documentation for CustomTargetingValue}
 #' \describe{
-#'  \item{customTargetingKeyId}{a integer -  The ID of the CustomTargetingKey for which this is the value.}
-#'  \item{id}{a integer -  The ID of the CustomTargetingValue. This value is readonly and is populated
+#'  \item{customTargetingKeyId}{a integer - The ID of the CustomTargetingKey for which this is the value.}
+#'  \item{id}{a integer - The ID of the CustomTargetingValue. This value is readonly and is populated
 #' by Google.}
-#'  \item{name}{a string -  Name of the value. This can be used for encoding . If you don't want users
+#'  \item{name}{a character - Name of the value. This can be used for encoding . If you don't want users
 #' to be able to see potentially sensitive targeting information in the ad tags
 #' of your site, you can encode your key/values. For example, you can create
 #' key/value g1=abc to represent gender=female. Values can contain up to 40
@@ -290,8 +290,8 @@
 #' the following: ", ', =, !, +, , *, ~, ;, ^, (, ), <, >, [, ]. Values are not
 #' data-specific; all values are treated as string. For example, instead of
 #' using "age>=18 AND <=34", try "18-34"}
-#'  \item{displayName}{a string -  Descriptive name for the value.}
-#'  \item{matchType}{a CustomTargetingValue.MatchType - The way in which the CustomTargetingValue name strings will be matched. This can take one of the following values:
+#'  \item{displayName}{a character - Descriptive name for the value.}
+#'  \item{matchType}{a CustomTargetingValue.MatchType - The way in which the CustomTargetingValue name strings will be matched. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXACT - Used for exact matching. For example, the targeting value car=honda will
 #' only match to the ad request car=honda.}
@@ -325,7 +325,7 @@
 #'   }
 #'  \item{status}{a CustomTargetingValue.Status - Status of the CustomTargetingValue. This field is read-only. A value can be
 #' activated and deactivated by calling CustomTargetingService
-#' performCustomTargetingValueAction. This can take one of the following values:
+#' performCustomTargetingValueAction. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVE - The object is active.}
 #'      \item{INACTIVE - The object is no longer active.}
@@ -352,9 +352,9 @@
 #' Captures a page of CustomTargetingValue objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.CustomTargetingValuePage}{Google Documentation for CustomTargetingValuePage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a CustomTargetingValue -  The collection of custom targeting keys contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a CustomTargetingValue - The collection of custom targeting keys contained within this page.}
 #' }
 #' 
 #' \strong{Date}
@@ -362,9 +362,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -376,7 +376,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -385,7 +385,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -394,7 +394,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DeleteCustomTargetingKeys}
@@ -424,7 +424,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -467,7 +467,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -492,7 +492,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -509,7 +509,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -525,7 +525,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -544,7 +544,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -557,7 +557,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -578,7 +578,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -593,7 +593,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -609,7 +609,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -625,7 +625,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -641,7 +641,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -663,7 +663,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -676,7 +676,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -693,7 +693,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -702,8 +702,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -711,30 +711,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -749,7 +736,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -764,7 +751,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -774,7 +761,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TypeError}
@@ -798,7 +785,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -813,30 +800,31 @@
 #' 
 #' @usage dfp_CustomTargetingService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_CustomTargetingService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='CustomTargetingKey'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'displayName', 'type', 'status')))
+ }
 
-  if(obj_type=='CustomTargetingKey'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'displayName', 'type', 'status')))
-  }
+ if(obj_type=='CustomTargetingValue'){
+ stopifnot(all(sampled_names %in% c('customTargetingKeyId', 'id', 'name', 'displayName', 'matchType', 'status')))
+ }
 
-  if(obj_type=='CustomTargetingValue'){
-    stopifnot(all(sampled_names %in% c('customTargetingKeyId', 'id', 'name', 'displayName', 'matchType', 'status')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
 }
 #' 
@@ -849,15 +837,24 @@ dfp_CustomTargetingService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createCustomTargetingKeys(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCustomTargetingKeysResponse
+#' @return a \code{list} containing all the elements of a createCustomTargetingKeysResponse 
 #' @export
 dfp_createCustomTargetingKeys <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingKeysResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomTargetingKeysResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -870,15 +867,24 @@ dfp_createCustomTargetingKeys <- function(request_data){
 #' @usage dfp_createCustomTargetingValues(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCustomTargetingValuesResponse
+#' @return a \code{list} containing all the elements of a createCustomTargetingValuesResponse 
 #' @export
 dfp_createCustomTargetingValues <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingValuesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomTargetingValuesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -898,15 +904,24 @@ dfp_createCustomTargetingValues <- function(request_data){
 #' @usage dfp_getCustomTargetingKeysByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCustomTargetingKeysByStatementResponse
+#' @return a \code{list} containing all the elements of a getCustomTargetingKeysByStatementResponse 
 #' @export
 dfp_getCustomTargetingKeysByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingKeysByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomTargetingKeysByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -926,15 +941,24 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data){
 #' @usage dfp_getCustomTargetingValuesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCustomTargetingValuesByStatementResponse
+#' @return a \code{list} containing all the elements of a getCustomTargetingValuesByStatementResponse 
 #' @export
 dfp_getCustomTargetingValuesByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingValuesByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomTargetingValuesByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -947,15 +971,24 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data){
 #' @usage dfp_performCustomTargetingKeyAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performCustomTargetingKeyActionResponse
+#' @return a \code{list} containing all the elements of a performCustomTargetingKeyActionResponse 
 #' @export
 dfp_performCustomTargetingKeyAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingKeyActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomTargetingKeyActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -968,15 +1001,24 @@ dfp_performCustomTargetingKeyAction <- function(request_data){
 #' @usage dfp_performCustomTargetingValueAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performCustomTargetingValueActionResponse
+#' @return a \code{list} containing all the elements of a performCustomTargetingValueActionResponse 
 #' @export
 dfp_performCustomTargetingValueAction <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingValueActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomTargetingValueActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -989,15 +1031,24 @@ dfp_performCustomTargetingValueAction <- function(request_data){
 #' @usage dfp_updateCustomTargetingKeys(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCustomTargetingKeysResponse
+#' @return a \code{list} containing all the elements of a updateCustomTargetingKeysResponse 
 #' @export
 dfp_updateCustomTargetingKeys <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingKeysResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomTargetingKeysResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -1010,15 +1061,24 @@ dfp_updateCustomTargetingKeys <- function(request_data){
 #' @usage dfp_updateCustomTargetingValues(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCustomTargetingValuesResponse
+#' @return a \code{list} containing all the elements of a updateCustomTargetingValuesResponse 
 #' @export
 dfp_updateCustomTargetingValues <- function(request_data){
 
-  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)
+ request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingValuesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomTargetingValuesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

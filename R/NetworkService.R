@@ -20,9 +20,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -30,8 +30,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -40,7 +40,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -55,7 +55,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AuthenticationError}
@@ -64,7 +64,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -99,7 +99,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -114,7 +114,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -135,7 +135,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ExchangeRateError}{Google Documentation for ExchangeRateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ExchangeRateError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ExchangeRateError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_CURRENCY_CODE - The currency code is invalid and does not follow ISO 4217.}
 #'      \item{UNSUPPORTED_CURRENCY_CODE - The currency code is not supported.}
@@ -166,7 +166,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -183,7 +183,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -200,7 +200,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.InvalidEmailError}{Google Documentation for InvalidEmailError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_FORMAT - The value is not a valid email address.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -214,28 +214,28 @@
 #' Network represents a network.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.Network}{Google Documentation for Network}
 #' \describe{
-#'  \item{id}{a integer -  The unique ID of the Network. This value is readonly and is assigned by
+#'  \item{id}{a integer - The unique ID of the Network. This value is readonly and is assigned by
 #' Google.}
-#'  \item{displayName}{a string -  The display name of the network.}
-#'  \item{networkCode}{a string -  The network code. If the current login has access to multiple networks, then
+#'  \item{displayName}{a character - The display name of the network.}
+#'  \item{networkCode}{a character - The network code. If the current login has access to multiple networks, then
 #' the network code must be provided in the SOAP request headers for all
 #' requests. Otherwise, it is optional to provide the network code in the SOAP
 #' headers. This field is read-only.}
-#'  \item{propertyCode}{a string -  The property code. This field is read-only.}
-#'  \item{timeZone}{a string -  The time zone associated with the delivery of orders and reporting. This
+#'  \item{propertyCode}{a character - The property code. This field is read-only.}
+#'  \item{timeZone}{a character - The time zone associated with the delivery of orders and reporting. This
 #' field is read-only.}
-#'  \item{currencyCode}{a string -  The primary currency code. This field is read-only.}
-#'  \item{secondaryCurrencyCodes}{a string -  Currencies that can be used as an alternative to the Network currencyCode
+#'  \item{currencyCode}{a character - The primary currency code. This field is read-only.}
+#'  \item{secondaryCurrencyCodes}{a character - Currencies that can be used as an alternative to the Network currencyCode
 #' for trafficking LineItem line items.}
-#'  \item{effectiveRootAdUnitId}{a string -  The AdUnit id of the top most ad unit to which descendant ad units can be
+#'  \item{effectiveRootAdUnitId}{a character - The AdUnit id of the top most ad unit to which descendant ad units can be
 #' added. Should be used for the AdUnit parentId when first building inventory
 #' hierarchy. This field is read-only.}
-#'  \item{contentBrowseCustomTargetingKeyId}{a integer -  The ID of the CustomTargetingKey that is used to categorize video content in
+#'  \item{contentBrowseCustomTargetingKeyId}{a integer - The ID of the CustomTargetingKey that is used to categorize video content in
 #' DFP. Values of this CustomTargetingKey can be used as part of the Targeting
 #' contentTargeting for targeting line items to video categories. Additionally,
 #' you can use the values of this key with the ContentService to search for all
 #' Content that are associated to a particular key/value combination.}
-#'  \item{isTest}{a boolean -  Whether this is a test network. This field is read-only.}
+#'  \item{isTest}{a boolean - Whether this is a test network. This field is read-only.}
 #' }
 #' 
 #' \strong{NetworkError}
@@ -244,7 +244,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.NetworkError}{Google Documentation for NetworkError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NetworkError.Reason - This can take one of the following values:
+#'  \item{reason}{a NetworkError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
 #' version.}
@@ -264,7 +264,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -283,7 +283,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -298,7 +298,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -313,7 +313,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.PrecisionError}{Google Documentation for PrecisionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PrecisionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PrecisionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{WRONG_PRECISION - The lowest N digits of the number must be zero.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -329,7 +329,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -345,7 +345,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -361,7 +361,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -383,7 +383,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - A required collection is missing.}
 #'      \item{TOO_LARGE - Collection size is too large.}
@@ -400,7 +400,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -414,7 +414,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED}
 #'      \item{TOO_LARGE}
@@ -433,7 +433,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -449,8 +449,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -458,7 +458,7 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
@@ -468,7 +468,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -483,7 +483,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -513,26 +513,23 @@
 #' 
 #' @usage dfp_NetworkService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_NetworkService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
-
-  if(obj_type=='Network'){
-    stopifnot(all(sampled_names %in% c('id', 'displayName', 'networkCode', 'propertyCode', 'timeZone', 'currencyCode', 'secondaryCurrencyCodes', 'effectiveRootAdUnitId', 'contentBrowseCustomTargetingKeyId', 'isTest')))
-  }
+ if(obj_type=='Network'){
+ stopifnot(all(sampled_names %in% c('id', 'displayName', 'networkCode', 'propertyCode', 'timeZone', 'currencyCode', 'secondaryCurrencyCodes', 'effectiveRootAdUnitId', 'contentBrowseCustomTargetingKeyId', 'isTest')))
+ }
 
 }
 #' 
@@ -543,15 +540,24 @@ dfp_NetworkService_object_factory <- function(obj_type, obj_data){
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
 #' @usage dfp_getAllNetworks()
-#' @return a \code{list} containing all the elements of a getAllNetworksResponse
+#' @return a \code{list} containing all the elements of a getAllNetworksResponse 
 #' @export
 dfp_getAllNetworks <- function(){
 
-  request_body <- make_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
+ request_body <- make_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllNetworksResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAllNetworksResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -562,15 +568,24 @@ dfp_getAllNetworks <- function(){
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
 #' @usage dfp_getCurrentNetwork()
-#' @return a \code{list} containing all the elements of a getCurrentNetworkResponse
+#' @return a \code{list} containing all the elements of a getCurrentNetworkResponse 
 #' @export
 dfp_getCurrentNetwork <- function(){
 
-  request_body <- make_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
+ request_body <- make_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentNetworkResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCurrentNetworkResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -581,15 +596,24 @@ dfp_getCurrentNetwork <- function(){
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
 #' @usage dfp_makeTestNetwork()
-#' @return a \code{list} containing all the elements of a makeTestNetworkResponse
+#' @return a \code{list} containing all the elements of a makeTestNetworkResponse 
 #' @export
 dfp_makeTestNetwork <- function(){
 
-  request_body <- make_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
+ request_body <- make_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['makeTestNetworkResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[makeTestNetworkResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -602,15 +626,24 @@ dfp_makeTestNetwork <- function(){
 #' @usage dfp_updateNetwork(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateNetworkResponse
+#' @return a \code{list} containing all the elements of a updateNetworkResponse 
 #' @export
 dfp_updateNetwork <- function(request_data){
 
-  request_body <- make_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
+ request_body <- make_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNetworkResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateNetworkResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

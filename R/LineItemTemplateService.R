@@ -18,9 +18,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -28,8 +28,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -38,7 +38,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -53,7 +53,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AudienceExtensionError}
@@ -62,7 +62,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.AudienceExtensionError}{Google Documentation for AudienceExtensionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{FREQUENCY_CAPS_NOT_SUPPORTED - Frequency caps are not supported by audience extension line items}
 #'      \item{INVALID_TARGETING - Audience extension line items can only target geography}
@@ -104,7 +104,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.AudienceSegmentError}{Google Documentation for AudienceSegmentError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values:
+#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED - First party audience segment is not supported.}
 #'      \item{ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED - Only rule-based first-party audience segments can be created.}
@@ -140,7 +140,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -175,7 +175,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{ClickTrackingLineItemError}
@@ -185,7 +185,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ClickTrackingLineItemError}{Google Documentation for ClickTrackingLineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ClickTrackingLineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ClickTrackingLineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{TYPE_IMMUTABLE - The line item type cannot be changed once created.}
 #'      \item{INVALID_TARGETING_TYPE - Click tracking line items can only be targeted at ad unit inventory, all
@@ -209,7 +209,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -224,7 +224,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -245,7 +245,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CompanyCreditStatusError}{Google Documentation for CompanyCreditStatusError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{COMPANY_CREDIT_STATUS_CHANGE_NOT_ALLOWED - The user's role does not have permission to change Company creditStatus from
 #' the default value. The default value is Company.CreditStatus ACTIVE for the
@@ -276,7 +276,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ContentMetadataTargetingError}{Google Documentation for ContentMetadataTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{VALUES_DO_NOT_BELONG_TO_A_HIERARCHY - One or more of the values specified in a ContentMetadataHierarchyTargeting
 #' do not belong to the keys defined in any of the hierarchies on the network.}
@@ -292,7 +292,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CreativeError}{Google Documentation for CreativeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{FLASH_AND_FALLBACK_URL_ARE_SAME - FlashRedirectCreative flashUrl and FlashRedirectCreative fallbackUrl are the
 #' same. The fallback URL is used when the flash URL does not work and must be
@@ -325,7 +325,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CrossSellError}{Google Documentation for CrossSellError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNSUPPORTED_RESERVATION_TYPE - Only standard or sponsorship line item types are supported for cross
 #' selling.}
@@ -361,7 +361,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 #' that does not exist.}
@@ -382,7 +382,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.CustomTargetingError}{Google Documentation for CustomTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{KEY_NOT_FOUND - Requested CustomTargetingKey is not found.}
 #'      \item{KEY_COUNT_TOO_LARGE - Number of CustomTargetingKey objects created exceeds the limit allowed for
@@ -442,9 +442,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -456,7 +456,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeRangeTargetingError}
@@ -466,7 +466,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.DateTimeRangeTargetingError}{Google Documentation for DateTimeRangeTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EMPTY_RANGES - No targeted ranges exists.}
 #'      \item{NOT_SPONSORSHIP_LINEITEM - Type of lineitem is not sponsorship.}
@@ -494,7 +494,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -503,7 +503,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DayPartTargetingError}
@@ -512,7 +512,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.DayPartTargetingError}{Google Documentation for DayPartTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_HOUR - Hour of day must be between 0 and 24, inclusive.}
 #'      \item{INVALID_MINUTE - Minute of hour must be one of 0, 15,30, 45.}
@@ -530,7 +530,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -573,7 +573,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -598,7 +598,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -613,7 +613,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ForecastError}{Google Documentation for ForecastError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values:
+#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_NOT_AVAILABLE - The forecast could not be retrieved due to a server side connection problem.
 #' Please try again soon.}
@@ -643,7 +643,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.FrequencyCapError}{Google Documentation for FrequencyCapError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{IMPRESSION_LIMIT_EXCEEDED}
 #'      \item{IMPRESSIONS_TOO_LOW}
@@ -663,7 +663,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.GenericTargetingError}{Google Documentation for GenericTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS - Both including and excluding sibling criteria is disallowed.}
 #'      \item{INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA - Including descendants of excluded criteria is disallowed.}
@@ -679,7 +679,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.GeoTargetingError}{Google Documentation for GeoTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{TARGETED_LOCATIONS_NOT_EXCLUDABLE - A location that is targeted cannot also be excluded.}
 #'      \item{EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED - Excluded locations cannot have any of their children targeted.}
@@ -697,7 +697,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.GrpSettingsError}{Google Documentation for GrpSettingsError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GrpSettingsError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a GrpSettingsError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_AGE_RANGE - Target age range is not valid.}
 #'      \item{LINE_ITEM_ENVIRONMENT_TYPE_NOT_SUPPORTED - GRP settings are only supported for video line items.}
@@ -725,7 +725,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ImageError}{Google Documentation for ImageError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_IMAGE - The file's format is invalid.}
 #'      \item{INVALID_SIZE - Size width and Size height cannot be negative.}
@@ -769,7 +769,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -785,7 +785,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.InvalidUrlError}{Google Documentation for InvalidUrlError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{ILLEGAL_CHARACTERS - The URL contains invalid characters.}
 #'      \item{INVALID_FORMAT - The format of the URL is not allowed. This could occur for a number of
@@ -807,7 +807,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.InventoryTargetingError}{Google Documentation for InventoryTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AT_LEAST_ONE_PLACEMENT_OR_INVENTORY_UNIT_REQUIRED - At least one placement or inventory unit is required}
 #'      \item{INVENTORY_CANNOT_BE_TARGETED_AND_EXCLUDED - The same inventory unit or placement cannot be targeted and excluded at the
@@ -840,7 +840,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LabelEntityAssociationError}{Google Documentation for LabelEntityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DUPLICATE_ASSOCIATION - The label has already been attached to the entity.}
 #'      \item{INVALID_ASSOCIATION - A label is being applied to an entity that does not support that entity
@@ -858,7 +858,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemActivityAssociationError}{Google Documentation for LineItemActivityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemActivityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemActivityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_ACTIVITY_FOR_ADVERTISER - When associating an activity to a line item the activity must belong to the
 #' same advertiser as the line item.}
@@ -875,7 +875,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemCreativeAssociationError}{Google Documentation for LineItemCreativeAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CREATIVE_IN_WRONG_ADVERTISERS_LIBRARY - Cannot associate a creative to the wrong advertiser}
 #'      \item{INVALID_LINEITEM_CREATIVE_PAIRING - The creative type being associated is a invalid for the line item type.}
@@ -909,7 +909,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemError}{Google Documentation for LineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ALREADY_STARTED - Some changes may not be allowed because a line item has already started.}
 #'      \item{UPDATE_RESERVATION_NOT_ALLOWED - Update reservation is not allowed because a line item has already started,
@@ -1007,7 +1007,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemFlightDateError}{Google Documentation for LineItemFlightDateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemFlightDateError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemFlightDateError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{START_DATE_TIME_IS_IN_PAST}
 #'      \item{END_DATE_TIME_IS_IN_PAST}
@@ -1025,7 +1025,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemOperationError}{Google Documentation for LineItemOperationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_ALLOWED - The operation is not allowed due to lack of permissions.}
 #'      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the LineItem.}
@@ -1052,28 +1052,28 @@
 #' created.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemTemplate}{Google Documentation for LineItemTemplate}
 #' \describe{
-#'  \item{id}{a integer -  Uniquely identifies the LineItemTemplate. This attribute is read-only and is
+#'  \item{id}{a integer - Uniquely identifies the LineItemTemplate. This attribute is read-only and is
 #' assigned by Google when a template is created.}
-#'  \item{name}{a string -  The name of the LineItemTemplate. This attribute is required.}
-#'  \item{isDefault}{a boolean -  Whether or not the LineItemTemplate represents the default choices for
+#'  \item{name}{a character - The name of the LineItemTemplate. This attribute is required.}
+#'  \item{isDefault}{a boolean - Whether or not the LineItemTemplate represents the default choices for
 #' creating a LineItem. Only one default LineItemTemplate is allowed per
 #' Network. This attribute is readonly.}
-#'  \item{lineItemName}{a string -  The default LineItem name name of a new LineItem. This attribute is optional
+#'  \item{lineItemName}{a character - The default LineItem name name of a new LineItem. This attribute is optional
 #' and has a maximum length of 127 characters.}
 #'  \item{targetPlatform}{a TargetPlatform - The default LineItem targetPlatform target platform for a new LineItem. This
-#' attribute is required. This can take one of the following values:
+#' attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{WEB - The desktop web.}
 #'      \item{MOBILE - Mobile devices.}
 #'      \item{ANY - An universal target platform that combines mobile and desktop features.}
 #'    }
 #'   }
-#'  \item{enabledForSameAdvertiserException}{a boolean -  The default value for the LineItem enabledForSameAdvertiserException field
+#'  \item{enabledForSameAdvertiserException}{a boolean - The default value for the LineItem enabledForSameAdvertiserException field
 #' of a new LineItem. This attribute is required.}
-#'  \item{notes}{a string -  The default LineItem notes notes for a new LineItem. This attribute is
+#'  \item{notes}{a character - The default LineItem notes notes for a new LineItem. This attribute is
 #' optional and has a maximum length of 65,535 characters.}
 #'  \item{lineItemType}{a LineItemType - The default LineItem lineItemType type of a new LineItem. This attribute is
-#' required. This can take one of the following values:
+#' required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{SPONSORSHIP - The type of LineItem for which a percentage of all the impressions that are
 #' being sold are reserved.}
@@ -1108,14 +1108,14 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{startTime}{a DateTime -  The default time of the LineItem startDateTime field of a new LineItem. Only
+#'  \item{startTime}{a DateTime - The default time of the LineItem startDateTime field of a new LineItem. Only
 #' the time part is used, and the date part is ignored. This attribute is
 #' optional.}
-#'  \item{endTime}{a DateTime -  The default time of the LineItem endDateTime field of a new LineItem. Only
+#'  \item{endTime}{a DateTime - The default time of the LineItem endDateTime field of a new LineItem. Only
 #' the time part is used, and the date part is ignored. This attribute is
 #' optional.}
 #'  \item{deliveryRateType}{a DeliveryRateType - The default LineItem deliveryRateType delivery strategy for a new LineItem.
-#' This attribute is required. This can take one of the following values:
+#' This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EVENLY - Line items are served as evenly as possible across the number of days
 #' specified in a line item's LineItem duration.}
@@ -1127,7 +1127,7 @@
 #'    }
 #'   }
 #'  \item{roadblockingType}{a RoadblockingType - The default LineItem roadblockingType roadblocking strategy for a new
-#' LineItem. This attribute is required. This can take one of the following values:
+#' LineItem. This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ONLY_ONE - Only one creative from a line item can serve at a time.}
 #'      \item{ONE_OR_MORE - Any number of creatives from a line item can serve together at a time.}
@@ -1142,7 +1142,7 @@
 #'    }
 #'   }
 #'  \item{creativeRotationType}{a CreativeRotationType - The default LineItem creativeRotationType creative rotation strategy for a
-#' new LineItem. This attribute is required. This can take one of the following values:
+#' new LineItem. This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EVEN - Creatives are displayed roughly the same number of times over the duration
 #' of the line item.}
@@ -1160,9 +1160,9 @@
 #' Captures a page of LineItemTemplate objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.LineItemTemplatePage}{Google Documentation for LineItemTemplatePage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a LineItemTemplate -  The collection of line item templates contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a LineItemTemplate - The collection of line item templates contained within this page.}
 #' }
 #' 
 #' \strong{NotNullError}
@@ -1171,7 +1171,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -1190,7 +1190,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -1203,7 +1203,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -1224,7 +1224,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.OrderActionError}{Google Documentation for OrderActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a OrderActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a OrderActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - The operation is not allowed due to lack of permissions.}
 #'      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the Order.}
@@ -1248,7 +1248,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.OrderError}{Google Documentation for OrderError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_CANCELED_ORDER_NOT_ALLOWED - Updating a canceled order is not allowed.}
 #'      \item{UPDATE_PENDING_APPROVAL_ORDER_NOT_ALLOWED - Updating an order that has its approval pending is not allowed.}
@@ -1275,7 +1275,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1290,7 +1290,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1305,7 +1305,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ProgrammaticError}{Google Documentation for ProgrammaticError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProgrammaticError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProgrammaticError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AUDIENCE_EXTENSION_NOT_SUPPORTED - Audience extension is not supported by programmatic line items.}
 #'      \item{AUTO_EXTENSION_DAYS_NOT_SUPPORTED - Auto extension days is not supported by programmatic line items.}
@@ -1338,7 +1338,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1354,7 +1354,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1370,7 +1370,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -1392,7 +1392,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.RangeError}{Google Documentation for RangeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RangeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RangeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_HIGH}
 #'      \item{TOO_LOW}
@@ -1408,7 +1408,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - A required collection is missing.}
 #'      \item{TOO_LARGE - Collection size is too large.}
@@ -1425,7 +1425,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -1439,7 +1439,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED}
 #'      \item{TOO_LARGE}
@@ -1458,7 +1458,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.RequiredSizeError}{Google Documentation for RequiredSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Creative size or LineItem creativeSizes is missing.}
 #'      \item{NOT_ALLOWED - LineItemCreativeAssociation sizes must be a subset of LineItem
@@ -1475,7 +1475,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ReservationDetailsError}{Google Documentation for ReservationDetailsError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ReservationDetailsError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ReservationDetailsError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNLIMITED_UNITS_BOUGHT_NOT_ALLOWED - There is no limit on the number of ads delivered for a line item when you
 #' set LineItem duration to be LineItemSummary.Duration NONE. This can only be
@@ -1514,7 +1514,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -1531,7 +1531,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.SetTopBoxLineItemError}{Google Documentation for SetTopBoxLineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a SetTopBoxLineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a SetTopBoxLineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NON_SET_TOP_BOX_AD_UNIT_TARGETED - The set-top box line item cannot target an ad unit that doesn't have an
 #' external set-top box channel ID.}
@@ -1589,7 +1589,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -1598,8 +1598,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -1607,30 +1607,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -1645,7 +1632,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1660,7 +1647,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -1670,7 +1657,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -1686,7 +1673,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.TeamError}{Google Documentation for TeamError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ENTITY_NOT_ON_USERS_TEAMS - User cannot use this entity because it is not on any of the user's teams.}
 #'      \item{AD_UNITS_NOT_ON_ORDER_TEAMS - The targeted or excluded ad unit must be on the order's teams.}
@@ -1707,7 +1694,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.TechnologyTargetingError}{Google Documentation for TechnologyTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA - Mobile line item cannot target web-only targeting criteria.}
 #'      \item{WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA - Web line item cannot target mobile-only targeting criteria.}
@@ -1726,7 +1713,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TimeZoneError}
@@ -1735,7 +1722,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.TimeZoneError}{Google Documentation for TimeZoneError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values:
+#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_TIMEZONE_ID - Indicates that the timezone ID provided is not supported.}
 #'      \item{TIMEZONE_ID_IN_WRONG_FORMAT - Indicates that the timezone ID provided is in the wrong format. The timezone
@@ -1768,7 +1755,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.UserDomainTargetingError}{Google Documentation for UserDomainTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_DOMAIN_NAMES - Invalid domain names. Domain names must be at most 67 characters long. And
 #' must contain only alphanumeric characters and hyphens.}
@@ -1791,7 +1778,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService.VideoPositionTargetingError}{Google Documentation for VideoPositionTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_MIX_BUMPER_AND_NON_BUMPER_TARGETING - Video position targeting cannot contain both bumper and non-bumper targeting
 #' values.}
@@ -1806,26 +1793,27 @@
 #' 
 #' @usage dfp_LineItemTemplateService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_LineItemTemplateService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='LineItemTemplate'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'isDefault', 'lineItemName', 'targetPlatform', 'enabledForSameAdvertiserException', 'notes', 'lineItemType', 'startTime', 'endTime', 'deliveryRateType', 'roadblockingType', 'creativeRotationType')))
-  }
+ if(obj_type=='LineItemTemplate'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'isDefault', 'lineItemName', 'targetPlatform', 'enabledForSameAdvertiserException', 'notes', 'lineItemType', 'startTime', 'endTime', 'deliveryRateType', 'roadblockingType', 'creativeRotationType')))
+ }
 
 }
 #' 
@@ -1841,15 +1829,24 @@ dfp_LineItemTemplateService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_getLineItemTemplatesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getLineItemTemplatesByStatementResponse
+#' @return a \code{list} containing all the elements of a getLineItemTemplatesByStatementResponse 
 #' @export
 dfp_getLineItemTemplatesByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='LineItemTemplateService', root_name='getLineItemTemplatesByStatement', data=request_data)
+ request_body <- make_request_body(service='LineItemTemplateService', root_name='getLineItemTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemTemplatesByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLineItemTemplatesByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

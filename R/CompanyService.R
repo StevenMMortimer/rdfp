@@ -17,9 +17,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -27,8 +27,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -37,7 +37,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -52,7 +52,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AppliedLabel}
@@ -62,8 +62,8 @@
 #' isNegated set to true.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.AppliedLabel}{Google Documentation for AppliedLabel}
 #' \describe{
-#'  \item{labelId}{a integer -  The ID of a created Label.}
-#'  \item{isNegated}{a boolean -  isNegated should be set to true to negate the effects of labelId.}
+#'  \item{labelId}{a integer - The ID of a created Label.}
+#'  \item{isNegated}{a boolean - isNegated should be set to true to negate the effects of labelId.}
 #' }
 #' 
 #' \strong{AuthenticationError}
@@ -72,7 +72,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -108,7 +108,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.AvailableBillingError}{Google Documentation for AvailableBillingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AvailableBillingError.Reason - This can take one of the following values:
+#'  \item{reason}{a AvailableBillingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{BILLING_SOURCE_IS_NOT_AVAILABLE - The billing source provided is not available in proposal network settings.}
 #'      \item{BILLING_SCHEDULE_IS_NOT_AVAILABLE - The billing schedule provided is not available in proposal network settings.}
@@ -125,7 +125,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -134,7 +134,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -149,7 +149,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -170,11 +170,11 @@
 #' network.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.Company}{Google Documentation for Company}
 #' \describe{
-#'  \item{id}{a integer -  Uniquely identifies the Company. This value is read-only and is assigned by
+#'  \item{id}{a integer - Uniquely identifies the Company. This value is read-only and is assigned by
 #' Google when the company is created. This attribute is required for updates.}
-#'  \item{name}{a string -  The full name of the company. This attribute is required and has a maximum
+#'  \item{name}{a character - The full name of the company. This attribute is required and has a maximum
 #' length of 127 characters.}
-#'  \item{type}{a Company.Type - Specifies what kind of company this is. This attribute is required. This can take one of the following values:
+#'  \item{type}{a Company.Type - Specifies what kind of company this is. This attribute is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{HOUSE_ADVERTISER - The publisher's own advertiser. When no outside advertiser buys its
 #' inventory, the publisher may run its own advertising campaigns.}
@@ -190,22 +190,22 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{address}{a string -  Specifies the address of the company. This attribute is optional and has a
+#'  \item{address}{a character - Specifies the address of the company. This attribute is optional and has a
 #' maximum length of 65,535 characters.}
-#'  \item{email}{a string -  Specifies the email of the company. This attribute is optional and has a
+#'  \item{email}{a character - Specifies the email of the company. This attribute is optional and has a
 #' maximum length of 128 characters.}
-#'  \item{faxPhone}{a string -  Specifies the fax phone number of the company. This attribute is optional
+#'  \item{faxPhone}{a character - Specifies the fax phone number of the company. This attribute is optional
 #' and has a maximum length of 63 characters.}
-#'  \item{primaryPhone}{a string -  Specifies the primary phone number of the company. This attribute is
+#'  \item{primaryPhone}{a character - Specifies the primary phone number of the company. This attribute is
 #' optional and has a maximum length of 63 characters.}
-#'  \item{externalId}{a string -  Specifies the external ID of the company. This attribute is optional and has
+#'  \item{externalId}{a character - Specifies the external ID of the company. This attribute is optional and has
 #' a maximum length of 255 characters.}
-#'  \item{comment}{a string -  Specifies the comment of the company. This attribute is optional and has a
+#'  \item{comment}{a character - Specifies the comment of the company. This attribute is optional and has a
 #' maximum length of 1024 characters.}
 #'  \item{creditStatus}{a Company.CreditStatus - Specifies the company's credit status. This attribute is optional and
 #' defaults to CreditStatus ACTIVE when basic credit status settings are
 #' enabled, and CreditStatus ON_HOLD when advanced credit status settings are
-#' enabled. This can take one of the following values:
+#' enabled. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVE - When the credit status is active, all line items in all orders belonging to
 #' the company will be served. This is a Basic as well as an Advanced Credit
@@ -233,15 +233,15 @@
 #' Status setting.}
 #'    }
 #'   }
-#'  \item{settings}{a CompanySettings -  Specifies the default billing settings of this Company. This attribute is
+#'  \item{settings}{a CompanySettings - Specifies the default billing settings of this Company. This attribute is
 #' optional.}
-#'  \item{appliedLabels}{a AppliedLabel -  The set of labels applied to this company.}
-#'  \item{primaryContactId}{a integer -  The ID of the Contact who is acting as the primary contact for this company.
+#'  \item{appliedLabels}{a AppliedLabel - The set of labels applied to this company.}
+#'  \item{primaryContactId}{a integer - The ID of the Contact who is acting as the primary contact for this company.
 #' This attribute is optional.}
-#'  \item{appliedTeamIds}{a integer -  The IDs of all teams that this company is on directly.}
-#'  \item{thirdPartyCompanyId}{a integer -  Specifies the ID of the Google-recognized canonicalized form of this
+#'  \item{appliedTeamIds}{a integer - The IDs of all teams that this company is on directly.}
+#'  \item{thirdPartyCompanyId}{a integer - Specifies the ID of the Google-recognized canonicalized form of this
 #' company. This attribute is optional.}
-#'  \item{lastModifiedDateTime}{a DateTime -  The date and time this company was last modified.}
+#'  \item{lastModifiedDateTime}{a DateTime - The date and time this company was last modified.}
 #' }
 #' 
 #' \strong{CompanyCreditStatusError}
@@ -250,7 +250,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CompanyCreditStatusError}{Google Documentation for CompanyCreditStatusError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{COMPANY_CREDIT_STATUS_CHANGE_NOT_ALLOWED - The user's role does not have permission to change Company creditStatus from
 #' the default value. The default value is Company.CreditStatus ACTIVE for the
@@ -281,7 +281,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CompanyError}{Google Documentation for CompanyError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CompanyError.Reason - This can take one of the following values:
+#'  \item{reason}{a CompanyError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_SET_THIRD_PARTY_COMPANY_DUE_TO_TYPE - Indicates that an attempt was made to set a third party company for a
 #' company whose type is not the same as the third party company.}
@@ -306,9 +306,9 @@
 #' Captures a page of Company objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CompanyPage}{Google Documentation for CompanyPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a Company -  The collection of companies contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a Company - The collection of companies contained within this page.}
 #' }
 #' 
 #' \strong{CompanySettings}
@@ -320,7 +320,7 @@
 #' Company.Type ADVERTISER in DFP Sales Manager. Return null if default billing
 #' setting feature is disabled or BillingSource is BillingSource CONTRACTED. It
 #' is allowed that all of the BillingCap, BillingSchedule, BillingSource are
-#' null when the company has no setting about these values. This can take one of the following values:
+#' null when the company has no setting about these values. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NO_CAP - There is no cap for each billing month.}
 #'      \item{CAPPED_CUMULATIVE - Use a billing source of capped actuals with a billing cap of cumulative to
@@ -347,7 +347,7 @@
 #' type Company.Type ADVERTISER in DFP Sales Manager. Return null if default
 #' billing setting feature is disabled or BillingSource is not BillingSource
 #' CONTRACTED. It is allowed that all of the BillingCap, BillingSchedule,
-#' BillingSource are null when the company has no setting about these values. This can take one of the following values:
+#' BillingSource are null when the company has no setting about these values. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PREPAID - Charged based on the contracted value after the first month of the campaign.}
 #'      \item{END_OF_THE_CAMPAIGN - Charged based on the contracted value after the last month of the campaign.}
@@ -365,7 +365,7 @@
 #' Company.Type ADVERTISER in DFP Sales Manager. Return null if default billing
 #' setting feature is disabled. It is allowed that all of the BillingCap,
 #' BillingSchedule, BillingSource are null when the company has no setting
-#' about these values. This can take one of the following values:
+#' about these values. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CONTRACTED - Charge based on the quantity of impressions, clicks, or days booked,
 #' regardless of what actually delivered.}
@@ -375,15 +375,15 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{advertiserDiscount}{a integer -  Default advertiser discount for Proposal proposals created by the Company of
+#'  \item{advertiserDiscount}{a integer - Default advertiser discount for Proposal proposals created by the Company of
 #' type Company.Type ADVERTISER in DFP Sales Manager. Return null if default
 #' billing setting feature is disabled or the company has no setting on this
 #' value. It presents in millipercentage (values 0 to 100000).}
-#'  \item{valueAddedTax}{a integer -  Default value added tax for Proposal proposals created by the Company of
+#'  \item{valueAddedTax}{a integer - Default value added tax for Proposal proposals created by the Company of
 #' type Company.Type ADVERTISER in DFP Sales Manager. Return null if default
 #' billing setting feature is disabled or the company has no setting on this
 #' value. It presents in millipercentage (values 0 to 100000).}
-#'  \item{agencyCommission}{a integer -  Default agency commission for Proposal proposals associated with the Company
+#'  \item{agencyCommission}{a integer - Default agency commission for Proposal proposals associated with the Company
 #' of type Company.Type AGENCY in DFP Sales Manager. Return null if the default
 #' billing setting feature is disabled or the company has no setting on this
 #' value. It presents in millipercentage (values 0 to 100000).}
@@ -395,7 +395,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CrossSellError}{Google Documentation for CrossSellError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNSUPPORTED_RESERVATION_TYPE - Only standard or sponsorship line item types are supported for cross
 #' selling.}
@@ -431,7 +431,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 #' that does not exist.}
@@ -450,9 +450,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -464,7 +464,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -473,7 +473,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -482,7 +482,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{FeatureError}
@@ -493,7 +493,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -510,7 +510,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -527,7 +527,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.InvalidEmailError}{Google Documentation for InvalidEmailError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_FORMAT - The value is not a valid email address.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -542,7 +542,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.LabelEntityAssociationError}{Google Documentation for LabelEntityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DUPLICATE_ASSOCIATION - The label has already been attached to the entity.}
 #'      \item{INVALID_ASSOCIATION - A label is being applied to an entity that does not support that entity
@@ -560,7 +560,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -579,7 +579,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_NULL}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -594,7 +594,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -615,7 +615,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -630,7 +630,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -646,7 +646,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -662,7 +662,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -678,7 +678,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -701,7 +701,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.RegExError}{Google Documentation for RegExError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RegExError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RegExError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID - Invalid value found.}
 #'      \item{NULL - Null value found.}
@@ -717,7 +717,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -730,7 +730,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -747,7 +747,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -756,8 +756,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -765,30 +765,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -803,7 +790,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -818,7 +805,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -828,7 +815,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -844,7 +831,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.TeamError}{Google Documentation for TeamError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ENTITY_NOT_ON_USERS_TEAMS - User cannot use this entity because it is not on any of the user's teams.}
 #'      \item{AD_UNITS_NOT_ON_ORDER_TEAMS - The targeted or excluded ad unit must be on the order's teams.}
@@ -865,7 +852,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TypeError}
@@ -895,34 +882,35 @@
 #' 
 #' @usage dfp_CompanyService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_CompanyService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='AppliedLabel'){
+ stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
+ }
 
-  if(obj_type=='AppliedLabel'){
-    stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
-  }
+ if(obj_type=='Company'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'type', 'address', 'email', 'faxPhone', 'primaryPhone', 'externalId', 'comment', 'creditStatus', 'settings', 'appliedLabels', 'primaryContactId', 'appliedTeamIds', 'thirdPartyCompanyId', 'lastModifiedDateTime')))
+ }
 
-  if(obj_type=='Company'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'type', 'address', 'email', 'faxPhone', 'primaryPhone', 'externalId', 'comment', 'creditStatus', 'settings', 'appliedLabels', 'primaryContactId', 'appliedTeamIds', 'thirdPartyCompanyId', 'lastModifiedDateTime')))
-  }
+ if(obj_type=='CompanySettings'){
+ stopifnot(all(sampled_names %in% c('billingCap', 'billingSchedule', 'billingSource', 'advertiserDiscount', 'valueAddedTax', 'agencyCommission')))
+ }
 
-  if(obj_type=='CompanySettings'){
-    stopifnot(all(sampled_names %in% c('billingCap', 'billingSchedule', 'billingSource', 'advertiserDiscount', 'valueAddedTax', 'agencyCommission')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
 }
 #' 
@@ -935,15 +923,24 @@ dfp_CompanyService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createCompanies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCompaniesResponse
+#' @return a \code{list} containing all the elements of a createCompaniesResponse 
 #' @export
 dfp_createCompanies <- function(request_data){
 
-  request_body <- make_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
+ request_body <- make_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCompaniesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCompaniesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -962,15 +959,24 @@ dfp_createCompanies <- function(request_data){
 #' @usage dfp_getCompaniesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCompaniesByStatementResponse
+#' @return a \code{list} containing all the elements of a getCompaniesByStatementResponse 
 #' @export
 dfp_getCompaniesByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
+ request_body <- make_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCompaniesByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCompaniesByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -983,15 +989,24 @@ dfp_getCompaniesByStatement <- function(request_data){
 #' @usage dfp_updateCompanies(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCompaniesResponse
+#' @return a \code{list} containing all the elements of a updateCompaniesResponse 
 #' @export
 dfp_updateCompanies <- function(request_data){
 
-  request_body <- make_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
+ request_body <- make_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCompaniesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCompaniesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

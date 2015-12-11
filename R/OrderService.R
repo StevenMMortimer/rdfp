@@ -22,9 +22,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -32,8 +32,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -42,7 +42,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -57,7 +57,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{AppliedLabel}
@@ -67,8 +67,8 @@
 #' isNegated set to true.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.AppliedLabel}{Google Documentation for AppliedLabel}
 #' \describe{
-#'  \item{labelId}{a integer -  The ID of a created Label.}
-#'  \item{isNegated}{a boolean -  isNegated should be set to true to negate the effects of labelId.}
+#'  \item{labelId}{a integer - The ID of a created Label.}
+#'  \item{isNegated}{a boolean - isNegated should be set to true to negate the effects of labelId.}
 #' }
 #' 
 #' \strong{ApproveAndOverbookOrders}
@@ -77,7 +77,7 @@
 #' objects within the order will be approved as well.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApproveAndOverbookOrders}{Google Documentation for ApproveAndOverbookOrders}
 #' \describe{
-#'  \item{skipInventoryCheck}{a boolean (inherited from ApproveOrders) -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean (inherited from ApproveOrders) - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -88,7 +88,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ApproveOrders}{Google Documentation for ApproveOrders}
 #' \describe{
 #'  \item{extends OrderAction}{see documentation for OrderAction}
-#'  \item{skipInventoryCheck}{a boolean -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -118,7 +118,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.AudienceExtensionError}{Google Documentation for AudienceExtensionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{FREQUENCY_CAPS_NOT_SUPPORTED - Frequency caps are not supported by audience extension line items}
 #'      \item{INVALID_TARGETING - Audience extension line items can only target geography}
@@ -160,7 +160,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.AudienceSegmentError}{Google Documentation for AudienceSegmentError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values:
+#'  \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED - First party audience segment is not supported.}
 #'      \item{ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED - Only rule-based first-party audience segments can be created.}
@@ -196,7 +196,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -230,7 +230,7 @@
 #' The value of a CustomField for a particular entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.BaseCustomFieldValue}{Google Documentation for BaseCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
 #' }
 #' 
@@ -240,7 +240,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{ClickTrackingLineItemError}
@@ -250,7 +250,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ClickTrackingLineItemError}{Google Documentation for ClickTrackingLineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ClickTrackingLineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ClickTrackingLineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{TYPE_IMMUTABLE - The line item type cannot be changed once created.}
 #'      \item{INVALID_TARGETING_TYPE - Click tracking line items can only be targeted at ad unit inventory, all
@@ -274,7 +274,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -289,7 +289,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -310,7 +310,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CompanyCreditStatusError}{Google Documentation for CompanyCreditStatusError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CompanyCreditStatusError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{COMPANY_CREDIT_STATUS_CHANGE_NOT_ALLOWED - The user's role does not have permission to change Company creditStatus from
 #' the default value. The default value is Company.CreditStatus ACTIVE for the
@@ -341,7 +341,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ContentMetadataTargetingError}{Google Documentation for ContentMetadataTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a ContentMetadataTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{VALUES_DO_NOT_BELONG_TO_A_HIERARCHY - One or more of the values specified in a ContentMetadataHierarchyTargeting
 #' do not belong to the keys defined in any of the hierarchies on the network.}
@@ -357,7 +357,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CreativeError}{Google Documentation for CreativeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{FLASH_AND_FALLBACK_URL_ARE_SAME - FlashRedirectCreative flashUrl and FlashRedirectCreative fallbackUrl are the
 #' same. The fallback URL is used when the flash URL does not work and must be
@@ -390,7 +390,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CrossSellError}{Google Documentation for CrossSellError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CrossSellError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNSUPPORTED_RESERVATION_TYPE - Only standard or sponsorship line item types are supported for cross
 #' selling.}
@@ -426,9 +426,9 @@
 #' CustomFieldDataType DROP_DOWN.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CustomFieldValue}{Google Documentation for CustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{value}{a Value -  The value for this field. The appropriate type of Value is determined by the
+#'  \item{value}{a Value - The value for this field. The appropriate type of Value is determined by the
 #' CustomField dataType of the CustomField that this conforms to.}
 #' }
 #' 
@@ -438,7 +438,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 #' that does not exist.}
@@ -459,7 +459,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.CustomTargetingError}{Google Documentation for CustomTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a CustomTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{KEY_NOT_FOUND - Requested CustomTargetingKey is not found.}
 #'      \item{KEY_COUNT_TOO_LARGE - Number of CustomTargetingKey objects created exceeds the limit allowed for
@@ -519,9 +519,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -533,7 +533,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeRangeTargetingError}
@@ -543,7 +543,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DateTimeRangeTargetingError}{Google Documentation for DateTimeRangeTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DateTimeRangeTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{EMPTY_RANGES - No targeted ranges exists.}
 #'      \item{NOT_SPONSORSHIP_LINEITEM - Type of lineitem is not sponsorship.}
@@ -571,7 +571,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -580,7 +580,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DayPartTargetingError}
@@ -589,7 +589,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DayPartTargetingError}{Google Documentation for DayPartTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a DayPartTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_HOUR - Hour of day must be between 0 and 24, inclusive.}
 #'      \item{INVALID_MINUTE - Minute of hour must be one of 0, 15,30, 45.}
@@ -607,7 +607,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DBMClientError}{Google Documentation for DBMClientError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a DBMClientError.Reason - This can take one of the following values:
+#'  \item{reason}{a DBMClientError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AUTHENTICATION_ERROR - Active gaia user does not have access to DBM.}
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
@@ -656,9 +656,9 @@
 #' CustomFieldDataType DROP_DOWN
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.DropDownCustomFieldValue}{Google Documentation for DropDownCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{customFieldOptionId}{a integer -  The CustomFieldOption id ID of the CustomFieldOption for this value.}
+#'  \item{customFieldOptionId}{a integer - The CustomFieldOption id ID of the CustomFieldOption for this value.}
 #' }
 #' 
 #' \strong{EntityChildrenLimitReachedError}
@@ -667,7 +667,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -710,7 +710,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -735,7 +735,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -750,7 +750,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ForecastError}{Google Documentation for ForecastError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values:
+#'  \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_NOT_AVAILABLE - The forecast could not be retrieved due to a server side connection problem.
 #' Please try again soon.}
@@ -780,7 +780,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.FrequencyCapError}{Google Documentation for FrequencyCapError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a FrequencyCapError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{IMPRESSION_LIMIT_EXCEEDED}
 #'      \item{IMPRESSIONS_TOO_LOW}
@@ -800,7 +800,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.GenericTargetingError}{Google Documentation for GenericTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a GenericTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS - Both including and excluding sibling criteria is disallowed.}
 #'      \item{INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA - Including descendants of excluded criteria is disallowed.}
@@ -816,7 +816,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.GeoTargetingError}{Google Documentation for GeoTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a GeoTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{TARGETED_LOCATIONS_NOT_EXCLUDABLE - A location that is targeted cannot also be excluded.}
 #'      \item{EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED - Excluded locations cannot have any of their children targeted.}
@@ -834,7 +834,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.GrpSettingsError}{Google Documentation for GrpSettingsError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a GrpSettingsError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a GrpSettingsError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_AGE_RANGE - Target age range is not valid.}
 #'      \item{LINE_ITEM_ENVIRONMENT_TYPE_NOT_SUPPORTED - GRP settings are only supported for video line items.}
@@ -862,7 +862,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ImageError}{Google Documentation for ImageError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_IMAGE - The file's format is invalid.}
 #'      \item{INVALID_SIZE - Size width and Size height cannot be negative.}
@@ -906,7 +906,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -923,7 +923,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.InvalidEmailError}{Google Documentation for InvalidEmailError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidEmailError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_FORMAT - The value is not a valid email address.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -938,7 +938,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.InvalidUrlError}{Google Documentation for InvalidUrlError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values:
+#'  \item{reason}{a InvalidUrlError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{ILLEGAL_CHARACTERS - The URL contains invalid characters.}
 #'      \item{INVALID_FORMAT - The format of the URL is not allowed. This could occur for a number of
@@ -960,7 +960,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.InventoryTargetingError}{Google Documentation for InventoryTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InventoryTargetingError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AT_LEAST_ONE_PLACEMENT_OR_INVENTORY_UNIT_REQUIRED - At least one placement or inventory unit is required}
 #'      \item{INVENTORY_CANNOT_BE_TARGETED_AND_EXCLUDED - The same inventory unit or placement cannot be targeted and excluded at the
@@ -993,7 +993,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LabelEntityAssociationError}{Google Documentation for LabelEntityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DUPLICATE_ASSOCIATION - The label has already been attached to the entity.}
 #'      \item{INVALID_ASSOCIATION - A label is being applied to an entity that does not support that entity
@@ -1011,7 +1011,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LineItemActivityAssociationError}{Google Documentation for LineItemActivityAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemActivityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemActivityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_ACTIVITY_FOR_ADVERTISER - When associating an activity to a line item the activity must belong to the
 #' same advertiser as the line item.}
@@ -1028,7 +1028,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LineItemCreativeAssociationError}{Google Documentation for LineItemCreativeAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CREATIVE_IN_WRONG_ADVERTISERS_LIBRARY - Cannot associate a creative to the wrong advertiser}
 #'      \item{INVALID_LINEITEM_CREATIVE_PAIRING - The creative type being associated is a invalid for the line item type.}
@@ -1062,7 +1062,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LineItemError}{Google Documentation for LineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ALREADY_STARTED - Some changes may not be allowed because a line item has already started.}
 #'      \item{UPDATE_RESERVATION_NOT_ALLOWED - Update reservation is not allowed because a line item has already started,
@@ -1160,7 +1160,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LineItemFlightDateError}{Google Documentation for LineItemFlightDateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemFlightDateError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemFlightDateError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{START_DATE_TIME_IS_IN_PAST}
 #'      \item{END_DATE_TIME_IS_IN_PAST}
@@ -1178,7 +1178,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.LineItemOperationError}{Google Documentation for LineItemOperationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_ALLOWED - The operation is not allowed due to lack of permissions.}
 #'      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the LineItem.}
@@ -1204,8 +1204,8 @@
 #' Represents a money amount.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.Money}{Google Documentation for Money}
 #' \describe{
-#'  \item{currencyCode}{a string -  Three letter currency code in string format.}
-#'  \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+#'  \item{currencyCode}{a character - Three letter currency code in string format.}
+#'  \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 #' of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 #' }
 #' 
@@ -1215,7 +1215,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -1234,7 +1234,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -1247,7 +1247,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -1268,20 +1268,20 @@
 #' fulfill an ad request from a particular advertiser.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.Order}{Google Documentation for Order}
 #' \describe{
-#'  \item{id}{a integer -  The unique ID of the Order. This value is readonly and is assigned by
+#'  \item{id}{a integer - The unique ID of the Order. This value is readonly and is assigned by
 #' Google.}
-#'  \item{name}{a string -  The name of the Order. This value is required to create an order and has a
+#'  \item{name}{a character - The name of the Order. This value is required to create an order and has a
 #' maximum length of 128 characters.}
-#'  \item{startDateTime}{a DateTime -  The date and time at which the Order and its associated line items are
+#'  \item{startDateTime}{a DateTime - The date and time at which the Order and its associated line items are
 #' eligible to begin serving. This attribute is readonly and is derived from
 #' the line item of the order which has the earliest LineItem startDateTime.}
-#'  \item{endDateTime}{a DateTime -  The date and time at which the Order and its associated line items stop
+#'  \item{endDateTime}{a DateTime - The date and time at which the Order and its associated line items stop
 #' being served. This attribute is readonly and is derived from the line item
 #' of the order which has the latest LineItem endDateTime.}
-#'  \item{unlimitedEndDateTime}{a boolean -  Specifies whether or not the Order has an unlimited end date. This attribute
+#'  \item{unlimitedEndDateTime}{a boolean - Specifies whether or not the Order has an unlimited end date. This attribute
 #' is readonly and is true if any of the order's line items has LineItem
 #' unlimitedEndDateTime set to true.}
-#'  \item{status}{a OrderStatus - The status of the Order. This attribute is read-only. This can take one of the following values:
+#'  \item{status}{a OrderStatus - The status of the Order. This attribute is read-only. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DRAFT - Indicates that the Order has just been created but no approval has been
 #' requested yet.}
@@ -1295,51 +1295,51 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{isArchived}{a boolean -  The archival status of the Order. This attribute is readonly.}
-#'  \item{notes}{a string -  Provides any additional notes that may annotate the Order. This attribute is
+#'  \item{isArchived}{a boolean - The archival status of the Order. This attribute is readonly.}
+#'  \item{notes}{a character - Provides any additional notes that may annotate the Order. This attribute is
 #' optional and has a maximum length of 65,535 characters.}
-#'  \item{externalOrderId}{a integer -  An arbitrary ID to associate to the Order, which can be used as a key to an
+#'  \item{externalOrderId}{a integer - An arbitrary ID to associate to the Order, which can be used as a key to an
 #' external system. This value is optional.}
-#'  \item{poNumber}{a string -  The purchase order number for the Order. This value is optional and has a
+#'  \item{poNumber}{a character - The purchase order number for the Order. This value is optional and has a
 #' maximum length of 63 characters.}
-#'  \item{currencyCode}{a string -  The ISO currency code for the currency used by the Order. This value is
+#'  \item{currencyCode}{a character - The ISO currency code for the currency used by the Order. This value is
 #' read-only and is the network's currency code.}
-#'  \item{advertiserId}{a integer -  The unique ID of the Company, which is of type Company.Type ADVERTISER, to
+#'  \item{advertiserId}{a integer - The unique ID of the Company, which is of type Company.Type ADVERTISER, to
 #' which this order belongs. This attribute is required.}
-#'  \item{advertiserContactIds}{a integer -  List of IDs for advertiser contacts of the order.}
-#'  \item{agencyId}{a integer -  The unique ID of the Company, which is of type Company.Type AGENCY, with
+#'  \item{advertiserContactIds}{a integer - List of IDs for advertiser contacts of the order.}
+#'  \item{agencyId}{a integer - The unique ID of the Company, which is of type Company.Type AGENCY, with
 #' which this order is associated. This attribute is optional.}
-#'  \item{agencyContactIds}{a integer -  List of IDs for agency contacts of the order.}
-#'  \item{creatorId}{a integer -  The unique ID of the User who created the Order on behalf of the advertiser.
+#'  \item{agencyContactIds}{a integer - List of IDs for agency contacts of the order.}
+#'  \item{creatorId}{a integer - The unique ID of the User who created the Order on behalf of the advertiser.
 #' This value is readonly and is assigned by Google.}
-#'  \item{traffickerId}{a integer -  The unique ID of the User responsible for trafficking the Order. This value
+#'  \item{traffickerId}{a integer - The unique ID of the User responsible for trafficking the Order. This value
 #' is required for creating an order.}
-#'  \item{secondaryTraffickerIds}{a integer -  The IDs of the secondary traffickers associated with the order. This value
+#'  \item{secondaryTraffickerIds}{a integer - The IDs of the secondary traffickers associated with the order. This value
 #' is optional.}
-#'  \item{salespersonId}{a integer -  The unique ID of the User responsible for the sales of the Order. This value
+#'  \item{salespersonId}{a integer - The unique ID of the User responsible for the sales of the Order. This value
 #' is optional.}
-#'  \item{secondarySalespersonIds}{a integer -  The IDs of the secondary salespeople associated with the order. This value
+#'  \item{secondarySalespersonIds}{a integer - The IDs of the secondary salespeople associated with the order. This value
 #' is optional.}
-#'  \item{totalImpressionsDelivered}{a integer -  Total impressions delivered for all line items of this Order. This value is
+#'  \item{totalImpressionsDelivered}{a integer - Total impressions delivered for all line items of this Order. This value is
 #' read-only and is assigned by Google.}
-#'  \item{totalClicksDelivered}{a integer -  Total clicks delivered for all line items of this Order. This value is
+#'  \item{totalClicksDelivered}{a integer - Total clicks delivered for all line items of this Order. This value is
 #' read-only and is assigned by Google.}
-#'  \item{totalBudget}{a Money -  Total budget for all line items of this Order. This value is a readonly
+#'  \item{totalBudget}{a Money - Total budget for all line items of this Order. This value is a readonly
 #' field assigned by Google and is calculated from the associated LineItem
 #' costPerUnit values.}
-#'  \item{appliedLabels}{a AppliedLabel -  The set of labels applied directly to this order.}
-#'  \item{effectiveAppliedLabels}{a AppliedLabel -  Contains the set of labels applied directly to the order as well as those
+#'  \item{appliedLabels}{a AppliedLabel - The set of labels applied directly to this order.}
+#'  \item{effectiveAppliedLabels}{a AppliedLabel - Contains the set of labels applied directly to the order as well as those
 #' inherited from the company that owns the order. If a label has been negated,
 #' only the negated label is returned. This field is readonly and is assigned
 #' by Google.}
-#'  \item{lastModifiedByApp}{a string -  The application which modified this order. This attribute is read only and
+#'  \item{lastModifiedByApp}{a character - The application which modified this order. This attribute is read only and
 #' is assigned by Google.}
-#'  \item{isProgrammatic}{a boolean -  Specifies whether or not the Order is a programmatic order. This value is
+#'  \item{isProgrammatic}{a boolean - Specifies whether or not the Order is a programmatic order. This value is
 #' optional and defaults to false.}
-#'  \item{programmaticSettings}{a ProgrammaticSettings -  The programmatic settings associated with this order.}
-#'  \item{appliedTeamIds}{a integer -  The IDs of all teams that this order is on directly.}
-#'  \item{lastModifiedDateTime}{a DateTime -  The date and time this order was last modified.}
-#'  \item{customFieldValues}{a BaseCustomFieldValue -  The values of the custom fields associated with this order.}
+#'  \item{programmaticSettings}{a ProgrammaticSettings - The programmatic settings associated with this order.}
+#'  \item{appliedTeamIds}{a integer - The IDs of all teams that this order is on directly.}
+#'  \item{lastModifiedDateTime}{a DateTime - The date and time this order was last modified.}
+#'  \item{customFieldValues}{a BaseCustomFieldValue - The values of the custom fields associated with this order.}
 #' }
 #' 
 #' \strong{OrderAction}
@@ -1385,7 +1385,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.OrderActionError}{Google Documentation for OrderActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a OrderActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a OrderActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - The operation is not allowed due to lack of permissions.}
 #'      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the Order.}
@@ -1409,7 +1409,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.OrderError}{Google Documentation for OrderError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_CANCELED_ORDER_NOT_ALLOWED - Updating a canceled order is not allowed.}
 #'      \item{UPDATE_PENDING_APPROVAL_ORDER_NOT_ALLOWED - Updating an order that has its approval pending is not allowed.}
@@ -1435,9 +1435,9 @@
 #' Captures a page of Order objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.OrderPage}{Google Documentation for OrderPage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a Order -  The collection of orders contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a Order - The collection of orders contained within this page.}
 #' }
 #' 
 #' \strong{ParseError}
@@ -1446,7 +1446,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1470,7 +1470,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1485,7 +1485,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ProgrammaticError}{Google Documentation for ProgrammaticError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProgrammaticError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProgrammaticError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{AUDIENCE_EXTENSION_NOT_SUPPORTED - Audience extension is not supported by programmatic line items.}
 #'      \item{AUTO_EXTENSION_DAYS_NOT_SUPPORTED - Auto extension days is not supported by programmatic line items.}
@@ -1516,12 +1516,12 @@
 #' Represents the additional settings of a programmatic order.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ProgrammaticSettings}{Google Documentation for ProgrammaticSettings}
 #' \describe{
-#'  \item{adxBuyerNetworkId}{a integer -  The ID of the buyer network that is billed for this order. This field is
+#'  \item{adxBuyerNetworkId}{a integer - The ID of the buyer network that is billed for this order. This field is
 #' only required if the buyer platform is DBM.}
-#'  \item{buyerId}{a integer -  The ID of the buyer as known in the buyer platform. This is used for the
+#'  \item{buyerId}{a integer - The ID of the buyer as known in the buyer platform. This is used for the
 #' buyer to determine who to bill. For DBM, this will be DBM's partner ID. This
 #' field is required.}
-#'  \item{buyerPlatform}{a BuyerPlatform - The buyer platform. This field is required. This can take one of the following values:
+#'  \item{buyerPlatform}{a BuyerPlatform - The buyer platform. This field is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{DCM - Indicates that the buyer being billed is a DoubleClick Campaign Manager
 #' account user.}
@@ -1531,7 +1531,7 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{billingTermsType}{a BillingTermsType - The billing term. This field is required. This can take one of the following values:
+#'  \item{billingTermsType}{a BillingTermsType - The billing term. This field is required. This can take one of the following values: 
 #'    \itemize{
 #'      \item{CAPPED_ACTUALS - Indicates that there are no minimum spend guarantees but there is a total
 #' budget that cannot be exceeded.}
@@ -1539,7 +1539,7 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{status}{a ProgrammaticStatus - The programmatic status. This value is readonly and is assigned by Google. This can take one of the following values:
+#'  \item{status}{a ProgrammaticStatus - The programmatic status. This value is readonly and is assigned by Google. This can take one of the following values: 
 #'    \itemize{
 #'      \item{PRE_APPROVAL - The associated status of the Order is not approved.}
 #'      \item{PENDING_BUYER_APPROVAL - The Order has been submitted for buyer approval.}
@@ -1557,7 +1557,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1573,7 +1573,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1589,7 +1589,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -1611,7 +1611,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.RangeError}{Google Documentation for RangeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RangeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RangeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_HIGH}
 #'      \item{TOO_LOW}
@@ -1627,7 +1627,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - A required collection is missing.}
 #'      \item{TOO_LARGE - Collection size is too large.}
@@ -1644,7 +1644,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.RequiredError}{Google Documentation for RequiredError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Missing required field.}
 #'    }
@@ -1658,7 +1658,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED}
 #'      \item{TOO_LARGE}
@@ -1677,7 +1677,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.RequiredSizeError}{Google Documentation for RequiredSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RequiredSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RequiredSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{REQUIRED - Creative size or LineItem creativeSizes is missing.}
 #'      \item{NOT_ALLOWED - LineItemCreativeAssociation sizes must be a subset of LineItem
@@ -1694,7 +1694,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ReservationDetailsError}{Google Documentation for ReservationDetailsError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ReservationDetailsError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ReservationDetailsError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNLIMITED_UNITS_BOUGHT_NOT_ALLOWED - There is no limit on the number of ads delivered for a line item when you
 #' set LineItem duration to be LineItemSummary.Duration NONE. This can only be
@@ -1733,7 +1733,7 @@
 #' objects within the order will resume as well.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ResumeAndOverbookOrders}{Google Documentation for ResumeAndOverbookOrders}
 #' \describe{
-#'  \item{skipInventoryCheck}{a boolean (inherited from ResumeOrders) -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean (inherited from ResumeOrders) - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -1744,7 +1744,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ResumeOrders}{Google Documentation for ResumeOrders}
 #' \describe{
 #'  \item{extends OrderAction}{see documentation for OrderAction}
-#'  \item{skipInventoryCheck}{a boolean -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -1772,7 +1772,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -1789,7 +1789,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SetTopBoxLineItemError}{Google Documentation for SetTopBoxLineItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a SetTopBoxLineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a SetTopBoxLineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NON_SET_TOP_BOX_AD_UNIT_TARGETED - The set-top box line item cannot target an ad unit that doesn't have an
 #' external set-top box channel ID.}
@@ -1847,7 +1847,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -1856,8 +1856,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -1865,30 +1865,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -1903,7 +1890,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1918,7 +1905,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -1928,7 +1915,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -1944,7 +1931,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SubmitOrdersForApproval}{Google Documentation for SubmitOrdersForApproval}
 #' \describe{
 #'  \item{extends OrderAction}{see documentation for OrderAction}
-#'  \item{skipInventoryCheck}{a boolean -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -1953,7 +1940,7 @@
 #' The action used for submitting and overbooking Order objects for approval.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.SubmitOrdersForApprovalAndOverbook}{Google Documentation for SubmitOrdersForApprovalAndOverbook}
 #' \describe{
-#'  \item{skipInventoryCheck}{a boolean (inherited from SubmitOrdersForApproval) -  Indicates whether the inventory check should be skipped when performing this
+#'  \item{skipInventoryCheck}{a boolean (inherited from SubmitOrdersForApproval) - Indicates whether the inventory check should be skipped when performing this
 #' action. The default value is false.}
 #' }
 #' 
@@ -1973,7 +1960,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.TeamError}{Google Documentation for TeamError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a TeamError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ENTITY_NOT_ON_USERS_TEAMS - User cannot use this entity because it is not on any of the user's teams.}
 #'      \item{AD_UNITS_NOT_ON_ORDER_TEAMS - The targeted or excluded ad unit must be on the order's teams.}
@@ -1994,7 +1981,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.TechnologyTargetingError}{Google Documentation for TechnologyTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a TechnologyTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA - Mobile line item cannot target web-only targeting criteria.}
 #'      \item{WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA - Web line item cannot target mobile-only targeting criteria.}
@@ -2013,7 +2000,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.TemplateInstantiatedCreativeError}{Google Documentation for TemplateInstantiatedCreativeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TemplateInstantiatedCreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a TemplateInstantiatedCreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INACTIVE_CREATIVE_TEMPLATE - A new creative cannot be created from an inactive creative template.}
 #'      \item{FILE_TYPE_NOT_ALLOWED - An uploaded file type is not allowed}
@@ -2029,7 +2016,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{TimeZoneError}
@@ -2038,7 +2025,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.TimeZoneError}{Google Documentation for TimeZoneError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values:
+#'  \item{reason}{a TimeZoneError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_TIMEZONE_ID - Indicates that the timezone ID provided is not supported.}
 #'      \item{TIMEZONE_ID_IN_WRONG_FORMAT - Indicates that the timezone ID provided is in the wrong format. The timezone
@@ -2078,7 +2065,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -2088,7 +2075,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.UserDomainTargetingError}{Google Documentation for UserDomainTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a UserDomainTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_DOMAIN_NAMES - Invalid domain names. Domain names must be at most 67 characters long. And
 #' must contain only alphanumeric characters and hyphens.}
@@ -2111,7 +2098,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService.VideoPositionTargetingError}{Google Documentation for VideoPositionTargetingError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values:
+#'  \item{reason}{a VideoPositionTargetingError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_MIX_BUMPER_AND_NON_BUMPER_TARGETING - Video position targeting cannot contain both bumper and non-bumper targeting
 #' values.}
@@ -2126,74 +2113,75 @@
 #' 
 #' @usage dfp_OrderService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_OrderService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='AppliedLabel'){
+ stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
+ }
 
-  if(obj_type=='AppliedLabel'){
-    stopifnot(all(sampled_names %in% c('labelId', 'isNegated')))
-  }
+ if(obj_type=='ApproveAndOverbookOrders'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
-  if(obj_type=='ApproveAndOverbookOrders'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='ApproveOrders'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
-  if(obj_type=='ApproveOrders'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='BaseCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId')))
+ }
 
-  if(obj_type=='BaseCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId')))
-  }
+ if(obj_type=='CustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
+ }
 
-  if(obj_type=='CustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='DropDownCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
-  }
+ if(obj_type=='DropDownCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
+ }
 
-  if(obj_type=='Money'){
-    stopifnot(all(sampled_names %in% c('currencyCode', 'microAmount')))
-  }
+ if(obj_type=='Money'){
+ stopifnot(all(sampled_names %in% c('currencyCode', 'microAmount')))
+ }
 
-  if(obj_type=='Order'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'startDateTime', 'endDateTime', 'unlimitedEndDateTime', 'status', 'isArchived', 'notes', 'externalOrderId', 'poNumber', 'currencyCode', 'advertiserId', 'advertiserContactIds', 'agencyId', 'agencyContactIds', 'creatorId', 'traffickerId', 'secondaryTraffickerIds', 'salespersonId', 'secondarySalespersonIds', 'totalImpressionsDelivered', 'totalClicksDelivered', 'totalBudget', 'appliedLabels', 'effectiveAppliedLabels', 'lastModifiedByApp', 'isProgrammatic', 'programmaticSettings', 'appliedTeamIds', 'lastModifiedDateTime', 'customFieldValues')))
-  }
+ if(obj_type=='Order'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'startDateTime', 'endDateTime', 'unlimitedEndDateTime', 'status', 'isArchived', 'notes', 'externalOrderId', 'poNumber', 'currencyCode', 'advertiserId', 'advertiserContactIds', 'agencyId', 'agencyContactIds', 'creatorId', 'traffickerId', 'secondaryTraffickerIds', 'salespersonId', 'secondarySalespersonIds', 'totalImpressionsDelivered', 'totalClicksDelivered', 'totalBudget', 'appliedLabels', 'effectiveAppliedLabels', 'lastModifiedByApp', 'isProgrammatic', 'programmaticSettings', 'appliedTeamIds', 'lastModifiedDateTime', 'customFieldValues')))
+ }
 
-  if(obj_type=='ProgrammaticSettings'){
-    stopifnot(all(sampled_names %in% c('adxBuyerNetworkId', 'buyerId', 'buyerPlatform', 'billingTermsType', 'status')))
-  }
+ if(obj_type=='ProgrammaticSettings'){
+ stopifnot(all(sampled_names %in% c('adxBuyerNetworkId', 'buyerId', 'buyerPlatform', 'billingTermsType', 'status')))
+ }
 
-  if(obj_type=='ResumeAndOverbookOrders'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='ResumeAndOverbookOrders'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
-  if(obj_type=='ResumeOrders'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='ResumeOrders'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
-  if(obj_type=='SubmitOrdersForApproval'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='SubmitOrdersForApproval'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
-  if(obj_type=='SubmitOrdersForApprovalAndOverbook'){
-    stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
-  }
+ if(obj_type=='SubmitOrdersForApprovalAndOverbook'){
+ stopifnot(all(sampled_names %in% c('skipInventoryCheck')))
+ }
 
 }
 #' 
@@ -2206,15 +2194,24 @@ dfp_OrderService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createOrders(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createOrdersResponse
+#' @return a \code{list} containing all the elements of a createOrdersResponse 
 #' @export
 dfp_createOrders <- function(request_data){
 
-  request_body <- make_request_body(service='OrderService', root_name='createOrders', data=request_data)
+ request_body <- make_request_body(service='OrderService', root_name='createOrders', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createOrdersResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createOrdersResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2238,15 +2235,24 @@ dfp_createOrders <- function(request_data){
 #' @usage dfp_getOrdersByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getOrdersByStatementResponse
+#' @return a \code{list} containing all the elements of a getOrdersByStatementResponse 
 #' @export
 dfp_getOrdersByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
+ request_body <- make_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getOrdersByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getOrdersByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2259,15 +2265,24 @@ dfp_getOrdersByStatement <- function(request_data){
 #' @usage dfp_performOrderAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performOrderActionResponse
+#' @return a \code{list} containing all the elements of a performOrderActionResponse 
 #' @export
 dfp_performOrderAction <- function(request_data){
 
-  request_body <- make_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
+ request_body <- make_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performOrderActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performOrderActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -2280,15 +2295,24 @@ dfp_performOrderAction <- function(request_data){
 #' @usage dfp_updateOrders(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateOrdersResponse
+#' @return a \code{list} containing all the elements of a updateOrdersResponse 
 #' @export
 dfp_updateOrders <- function(request_data){
 
-  request_body <- make_request_body(service='OrderService', root_name='updateOrders', data=request_data)
+ request_body <- make_request_body(service='OrderService', root_name='updateOrders', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateOrdersResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateOrdersResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 

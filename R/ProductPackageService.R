@@ -32,9 +32,9 @@
 #' parsers to identify the request data element that may have caused the error.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ApiError}{Google Documentation for ApiError}
 #' \describe{
-#'  \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
-#'  \item{trigger}{a string -  The data that caused the error.}
-#'  \item{errorString}{a string -  A simple string representation of the error and reason.}
+#'  \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+#'  \item{trigger}{a character - The data that caused the error.}
+#'  \item{errorString}{a character - A simple string representation of the error and reason.}
 #' }
 #' 
 #' \strong{ApiException}
@@ -42,8 +42,8 @@
 #' Exception class for holding a list of service errors.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ApiException}{Google Documentation for ApiException}
 #' \describe{
-#'  \item{message}{a string (inherited from ApplicationException) -  Error message.}
-#'  \item{errors}{a ApiError -  List of errors.}
+#'  \item{message}{a character (inherited from ApplicationException) - Error message.}
+#'  \item{errors}{a ApiError - List of errors.}
 #' }
 #' 
 #' \strong{ApiVersionError}
@@ -52,7 +52,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ApiVersionError}{Google Documentation for ApiVersionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+#'  \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 #' made in.}
@@ -67,7 +67,7 @@
 #' Base class for exceptions.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ApplicationException}{Google Documentation for ApplicationException}
 #' \describe{
-#'  \item{message}{a string -  Error message.}
+#'  \item{message}{a character - Error message.}
 #' }
 #' 
 #' \strong{ArchiveProductPackages}
@@ -84,7 +84,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.AuthenticationError}{Google Documentation for AuthenticationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+#'  \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 #' the authentication header fields. This means either the authToken and
@@ -118,7 +118,7 @@
 #' The value of a CustomField for a particular entity.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.BaseCustomFieldValue}{Google Documentation for BaseCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
 #' }
 #' 
@@ -128,7 +128,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.BaseRateError}{Google Documentation for BaseRateError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a BaseRateError.Reason - This can take one of the following values:
+#'  \item{reason}{a BaseRateError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID - The PQL statement contains both productTemplateId and productId fields.}
 #'      \item{INVALID_CURRENCY_CODE - The currency code is invalid.}
@@ -150,7 +150,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.BooleanValue}{Google Documentation for BooleanValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a boolean -  The boolean value.}
+#'  \item{value}{a boolean - The boolean value.}
 #' }
 #' 
 #' \strong{CollectionSizeError}
@@ -159,7 +159,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+#'  \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LARGE}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -174,7 +174,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.CommonError}{Google Documentation for CommonError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a CommonError.Reason - This can take one of the following values:
+#'  \item{reason}{a CommonError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 #' exist.}
@@ -195,9 +195,9 @@
 #' CustomFieldDataType DROP_DOWN.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.CustomFieldValue}{Google Documentation for CustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{value}{a Value -  The value for this field. The appropriate type of Value is determined by the
+#'  \item{value}{a Value - The value for this field. The appropriate type of Value is determined by the
 #' CustomField dataType of the CustomField that this conforms to.}
 #' }
 #' 
@@ -206,9 +206,9 @@
 #' Represents a date.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.Date}{Google Documentation for Date}
 #' \describe{
-#'  \item{year}{a integer -  Year (e.g., 2009)}
-#'  \item{month}{a integer -  Month (1..12)}
-#'  \item{day}{a integer -  Day (1..31)}
+#'  \item{year}{a integer - Year (e.g., 2009)}
+#'  \item{month}{a integer - Month (1..12)}
+#'  \item{day}{a integer - Day (1..31)}
 #' }
 #' 
 #' \strong{DateTime}
@@ -220,7 +220,7 @@
 #'  \item{hour}{a integer}
 #'  \item{minute}{a integer}
 #'  \item{second}{a integer}
-#'  \item{timeZoneID}{a string}
+#'  \item{timeZoneID}{a character}
 #' }
 #' 
 #' \strong{DateTimeValue}
@@ -229,7 +229,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.DateTimeValue}{Google Documentation for DateTimeValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a DateTime -  The DateTime value.}
+#'  \item{value}{a DateTime - The DateTime value.}
 #' }
 #' 
 #' \strong{DateValue}
@@ -238,7 +238,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.DateValue}{Google Documentation for DateValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a Date -  The Date value.}
+#'  \item{value}{a Date - The Date value.}
 #' }
 #' 
 #' \strong{DeactivateProductPackages}
@@ -255,9 +255,9 @@
 #' CustomFieldDataType DROP_DOWN
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.DropDownCustomFieldValue}{Google Documentation for DropDownCustomFieldValue}
 #' \describe{
-#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) -  Id of the CustomField to which this value belongs. This attribute is
+#'  \item{customFieldId}{a integer (inherited from BaseCustomFieldValue) - Id of the CustomField to which this value belongs. This attribute is
 #' required.}
-#'  \item{customFieldOptionId}{a integer -  The CustomFieldOption id ID of the CustomFieldOption for this value.}
+#'  \item{customFieldOptionId}{a integer - The CustomFieldOption id ID of the CustomFieldOption for this value.}
 #' }
 #' 
 #' \strong{EntityChildrenLimitReachedError}
@@ -266,7 +266,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 #' allowed per order in the network.}
@@ -309,7 +309,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+#'  \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 #' network.}
@@ -334,7 +334,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.FeatureError}{Google Documentation for FeatureError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a FeatureError.Reason - This can take one of the following values:
+#'  \item{reason}{a FeatureError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -351,7 +351,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.InternalApiError}{Google Documentation for InternalApiError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
 #'      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -367,7 +367,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.NotNullError}{Google Documentation for NotNullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 #' return NULL}
@@ -386,7 +386,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.NullError}{Google Documentation for NullError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
 #'    }
@@ -399,7 +399,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.NumberValue}{Google Documentation for NumberValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The numeric value represented as a string.}
+#'  \item{value}{a character - The numeric value represented as a string.}
 #' }
 #' 
 #' \strong{ObjectValue}
@@ -420,7 +420,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ParseError}{Google Documentation for ParseError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -435,7 +435,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.PermissionError}{Google Documentation for PermissionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PermissionError.Reason - This can take one of the following values:
+#'  \item{reason}{a PermissionError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -449,14 +449,14 @@
 #' A ProductPackage represents a group of products which will be sold together.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ProductPackage}{Google Documentation for ProductPackage}
 #' \describe{
-#'  \item{id}{a integer -  Uniquely identifies the ProductPackage. This attribute is read-only and is
+#'  \item{id}{a integer - Uniquely identifies the ProductPackage. This attribute is read-only and is
 #' assigned by Google when a ProductPackage is created.}
-#'  \item{name}{a string -  The name of the ProductPackage. This attribute is required and has maximum
+#'  \item{name}{a character - The name of the ProductPackage. This attribute is required and has maximum
 #' length of 255 characters.}
-#'  \item{notes}{a string -  The notes of the ProductPackage. This attribute has maximum length of 511
+#'  \item{notes}{a character - The notes of the ProductPackage. This attribute has maximum length of 511
 #' characters. This attribute is optional.}
 #'  \item{status}{a ProductPackageStatus - The status of the ProductPackage. This attribute is read-only and is
-#' assigned by Google. This can take one of the following values:
+#' assigned by Google. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVE}
 #'      \item{INACTIVE}
@@ -464,12 +464,12 @@
 #' version.}
 #'    }
 #'   }
-#'  \item{isArchived}{a boolean -  The archival status of the ProductPackage. This attribute is read-only and
+#'  \item{isArchived}{a boolean - The archival status of the ProductPackage. This attribute is read-only and
 #' is assigned by Google.}
-#'  \item{rateCardIds}{a integer -  RateCard IDs associated with the ProductPackage. This attribute is optional.}
-#'  \item{customFieldValues}{a BaseCustomFieldValue -  The CustomFieldValue objects associated with this ProductPackage. This
+#'  \item{rateCardIds}{a integer - RateCard IDs associated with the ProductPackage. This attribute is optional.}
+#'  \item{customFieldValues}{a BaseCustomFieldValue - The CustomFieldValue objects associated with this ProductPackage. This
 #' attribute is optional.}
-#'  \item{lastModifiedDateTime}{a DateTime -  The date and time this ProductPackage was last modified. This attribute is
+#'  \item{lastModifiedDateTime}{a DateTime - The date and time this ProductPackage was last modified. This attribute is
 #' read-only and is assigned by Google when a ProductPackage is updated.}
 #' }
 #' 
@@ -490,7 +490,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ProductPackageActionError}{Google Documentation for ProductPackageActionError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductPackageActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProductPackageActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ACTIVATE_WITH_INACTIVE_MANDATORY_PRODUCT - The activate operation is not applicable if there's any inactive mandatory
 #' product.}
@@ -507,7 +507,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ProductPackageItemError}{Google Documentation for ProductPackageItemError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductPackageItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProductPackageItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{ARCHIVED_PRODUCT_NOT_ALLOWED - Add a archived product to product package is not allowed.}
 #'      \item{INACTIVE_MANDATORY_PRODUCT_NOT_ALLOWED - Inactive mandatory product is not allowed in active product package.}
@@ -522,9 +522,9 @@
 #' Captures a page of ProductPackageDto objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ProductPackagePage}{Google Documentation for ProductPackagePage}
 #' \describe{
-#'  \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
-#'  \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
-#'  \item{results}{a ProductPackage -  The collection of product packages contained within this page.}
+#'  \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+#'  \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+#'  \item{results}{a ProductPackage - The collection of product packages contained within this page.}
 #' }
 #' 
 #' \strong{ProductPackageRateCardAssociationError}
@@ -533,7 +533,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ProductPackageRateCardAssociationError}{Google Documentation for ProductPackageRateCardAssociationError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ProductPackageRateCardAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a ProductPackageRateCardAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{INVALID_RATE_CARD_ID - The id of associated rate card is invalid or invisible to user.}
 #'      \item{INVALID_PRODUCT_PACKAGE_ID - The id of associated package is invalid.}
@@ -550,7 +550,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -566,7 +566,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -582,7 +582,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.QuotaError}{Google Documentation for QuotaError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a QuotaError.Reason - This can take one of the following values:
+#'  \item{reason}{a QuotaError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 #' allowable limit. The recommended approach to handle this error is to wait
@@ -604,7 +604,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.RangeError}{Google Documentation for RangeError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a RangeError.Reason - This can take one of the following values:
+#'  \item{reason}{a RangeError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_HIGH}
 #'      \item{TOO_LOW}
@@ -620,7 +620,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.ServerError}{Google Documentation for ServerError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a ServerError.Reason - This can take one of the following values:
+#'  \item{reason}{a ServerError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
 #'      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -637,7 +637,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.SetValue}{Google Documentation for SetValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+#'  \item{values}{a Value - The values. They must all be the same type of Value and not contain
 #' duplicates.}
 #' }
 #' 
@@ -646,8 +646,8 @@
 #' Represents the SOAP request header used by API requests.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 #' \describe{
-#'  \item{networkCode}{a string -  The network code to use in the context of a request.}
-#'  \item{applicationName}{a string -  The name of client library application.}
+#'  \item{networkCode}{a character - The network code to use in the context of a request.}
+#'  \item{applicationName}{a character - The name of client library application.}
 #' }
 #' 
 #' \strong{SoapResponseHeader}
@@ -655,30 +655,17 @@
 #' Represents the SOAP request header used by API responses.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 #' \describe{
-#'  \item{requestId}{a string}
+#'  \item{requestId}{a character}
 #'  \item{responseTime}{a integer}
 #' }
 #' 
 #' \strong{Statement}
 #' 
-#' Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-#' are typically used to retrieve objects of a predefined domain type, which
-#' makes SELECT clause unnecessary.  An example query text might be "WHERE
-#' status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-#' These are substitutes for literals and can be thought of as input parameters
-#' to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-#' Statements also support use of the LIKE keyword. This provides partial and
-#' wildcard string matching.  An example of such a query might be "WHERE name
-#' LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-#' for the variable idValue must then be set with an object of type Value and
-#' is one of NumberValue, TextValue or BooleanValue.  If using an API version
-#' older than or equal to V201010, the value for the variable idValue must then
-#' be set with an object of type Param and is one of DoubleParam, LongParam or
-#' StringParam.
+#' Holds the query in PQL syntax. See link for how to form PQL.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.Statement}{Google Documentation for Statement}
 #' \describe{
-#'  \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
-#'  \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+#'  \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+#'  \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 #' name of the bind variable. The value is the literal value of the variable.
 #' In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 #' variable, represented by :bindStatus is named bindStatus, which would also
@@ -693,7 +680,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.StatementError}{Google Documentation for StatementError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+#'  \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
 #'    \itemize{
 #'      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
 #'      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -708,7 +695,7 @@
 #' type Value.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 #' \describe{
-#'  \item{key}{a string}
+#'  \item{key}{a character}
 #'  \item{value}{a Value}
 #' }
 #' 
@@ -718,7 +705,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.StringLengthError}{Google Documentation for StringLengthError}
 #' \describe{
 #'  \item{extends ApiError}{see documentation for ApiError}
-#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+#'  \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
 #'    \itemize{
 #'      \item{TOO_LONG}
 #'      \item{TOO_SHORT}
@@ -734,7 +721,7 @@
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.TextValue}{Google Documentation for TextValue}
 #' \describe{
 #'  \item{extends Value}{see documentation for Value}
-#'  \item{value}{a string -  The string value.}
+#'  \item{value}{a character - The string value.}
 #' }
 #' 
 #' \strong{UnarchiveProductPackages}
@@ -758,7 +745,7 @@
 #' Represents the result of performing an action on objects.
 #' \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService.UpdateResult}{Google Documentation for UpdateResult}
 #' \describe{
-#'  \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+#'  \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 #' action.}
 #' }
 #' 
@@ -773,38 +760,39 @@
 #' 
 #' @usage dfp_ProductPackageService_object_factory(obj_type, obj_data)
 #' 
-#' @param obj_type a string from one of the object types described below
+#' @param obj_type a string from one of the object types described above
 #' @param obj_data a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 #' the obj_type specified. All input names must match the expected attributes for the object.
 #' If submitting a list of attributes to create 1 object make sure to nest it inside top-level list, so that
 #' it is a list of length 1 with 1 list of attributes to create the object.
-#' @return a string of formatted XML that can be inserted into a SOAP request body to the API
+#' @return a string of formatted XML that can be inserted into a SOAP request body to the APT
 #' @export
 dfp_ProductPackageService_object_factory <- function(obj_type, obj_data){
+ if(is.data.frame(obj_data)){
+ sampled_names <- names(obj_data) } else if(is.list(obj_data)){
+ sampled_names <- names(obj_data[[1]])
+ } else { stop("obj_data must be a list or data.frame")
+ }
 
-  if(is.data.frame(obj_data)){
-    sampled_names <- names(obj_data)
-  } else if(is.list(obj_data)){
-    sampled_names <- names(obj_data[[1]])
-  } else {
-    stop("obj_data must be a list or data.frame")
-  }
+ if(obj_type=='BaseCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId')))
+ }
 
-  if(obj_type=='BaseCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId')))
-  }
+ if(obj_type=='CustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
+ }
 
-  if(obj_type=='CustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'value')))
-  }
+ if(obj_type=='Date'){
+ stopifnot(all(sampled_names %in% c('year', 'month', 'day')))
+ }
 
-  if(obj_type=='DropDownCustomFieldValue'){
-    stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
-  }
+ if(obj_type=='DropDownCustomFieldValue'){
+ stopifnot(all(sampled_names %in% c('customFieldId', 'customFieldOptionId')))
+ }
 
-  if(obj_type=='ProductPackage'){
-    stopifnot(all(sampled_names %in% c('id', 'name', 'notes', 'status', 'isArchived', 'rateCardIds', 'customFieldValues', 'lastModifiedDateTime')))
-  }
+ if(obj_type=='ProductPackage'){
+ stopifnot(all(sampled_names %in% c('id', 'name', 'notes', 'status', 'isArchived', 'rateCardIds', 'customFieldValues', 'lastModifiedDateTime')))
+ }
 
 }
 #' 
@@ -817,15 +805,24 @@ dfp_ProductPackageService_object_factory <- function(obj_type, obj_data){
 #' @usage dfp_createProductPackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProductPackagesResponse
+#' @return a \code{list} containing all the elements of a createProductPackagesResponse 
 #' @export
 dfp_createProductPackages <- function(request_data){
 
-  request_body <- make_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
+ request_body <- make_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackagesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProductPackagesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -846,15 +843,24 @@ dfp_createProductPackages <- function(request_data){
 #' @usage dfp_getProductPackagesByStatement(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProductPackagesByStatementResponse
+#' @return a \code{list} containing all the elements of a getProductPackagesByStatementResponse 
 #' @export
 dfp_getProductPackagesByStatement <- function(request_data){
 
-  request_body <- make_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
+ request_body <- make_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackagesByStatementResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProductPackagesByStatementResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -867,15 +873,24 @@ dfp_getProductPackagesByStatement <- function(request_data){
 #' @usage dfp_performProductPackageAction(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProductPackageActionResponse
+#' @return a \code{list} containing all the elements of a performProductPackageActionResponse 
 #' @export
 dfp_performProductPackageAction <- function(request_data){
 
-  request_body <- make_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
+ request_body <- make_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageActionResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProductPackageActionResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
@@ -888,15 +903,24 @@ dfp_performProductPackageAction <- function(request_data){
 #' @usage dfp_updateProductPackages(request_data)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProductPackagesResponse
+#' @return a \code{list} containing all the elements of a updateProductPackagesResponse 
 #' @export
 dfp_updateProductPackages <- function(request_data){
 
-  request_body <- make_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)
+ request_body <- make_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackagesResponse']])$rval
-  response <- if(is.null(response)) NULL else xmlToList(response)
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProductPackagesResponse']])
+  result <- if(is.null(response$rval)){
+    NULL
+  } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+  }
   return(response)
 }
 #' 
