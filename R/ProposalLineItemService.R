@@ -3021,26 +3021,33 @@ dfp_ProposalLineItemService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 #' 
-#' @usage dfp_createProposalLineItems(request_data)
+#' @usage dfp_createProposalLineItems(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProposalLineItemsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createProposalLineItemsResponse 
 #' @export
-dfp_createProposalLineItems <- function(request_data){
-
+dfp_createProposalLineItems <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='createProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3061,26 +3068,33 @@ dfp_createProposalLineItems <- function(request_data){
 #'   \item{customThirdPartyAdServerName}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 #' 
-#' @usage dfp_getProposalLineItemsByStatement(request_data)
+#' @usage dfp_getProposalLineItemsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProposalLineItemsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getProposalLineItemsByStatementResponse 
 #' @export
-dfp_getProposalLineItemsByStatement <- function(request_data){
-
+dfp_getProposalLineItemsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='getProposalLineItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalLineItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3091,26 +3105,33 @@ dfp_getProposalLineItemsByStatement <- function(request_data){
 #' 
 #' Performs actions on ProposalLineItem objects that match the given Statement query. proposal line items
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 #' 
-#' @usage dfp_performProposalLineItemAction(request_data)
+#' @usage dfp_performProposalLineItemAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProposalLineItemActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performProposalLineItemActionResponse 
 #' @export
-dfp_performProposalLineItemAction <- function(request_data){
-
+dfp_performProposalLineItemAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='performProposalLineItemAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalLineItemActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3121,26 +3142,33 @@ dfp_performProposalLineItemAction <- function(request_data){
 #' 
 #' Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 #' 
-#' @usage dfp_updateProposalLineItems(request_data)
+#' @usage dfp_updateProposalLineItems(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProposalLineItemsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateProposalLineItemsResponse 
 #' @export
-dfp_updateProposalLineItems <- function(request_data){
-
+dfp_updateProposalLineItems <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='updateProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

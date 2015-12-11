@@ -601,26 +601,33 @@ dfp_TeamService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new Team objects. The following fields are required: <ul> <li>Team name</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#createTeams}{Google Documentation for createTeams}
 #' 
-#' @usage dfp_createTeams(request_data)
+#' @usage dfp_createTeams(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createTeamsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createTeamsResponse 
 #' @export
-dfp_createTeams <- function(request_data){
-
+dfp_createTeams <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='createTeams', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createTeamsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -636,26 +643,33 @@ dfp_createTeams <- function(request_data){
 #'   \item{description}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 #' 
-#' @usage dfp_getTeamsByStatement(request_data)
+#' @usage dfp_getTeamsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getTeamsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getTeamsByStatementResponse 
 #' @export
-dfp_getTeamsByStatement <- function(request_data){
-
+dfp_getTeamsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getTeamsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -666,26 +680,33 @@ dfp_getTeamsByStatement <- function(request_data){
 #' 
 #' Updates the specified Team objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
-#' @usage dfp_updateTeams(request_data)
+#' @usage dfp_updateTeams(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateTeamsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateTeamsResponse 
 #' @export
-dfp_updateTeams <- function(request_data){
-
+dfp_updateTeams <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='updateTeams', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateTeamsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

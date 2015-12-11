@@ -826,26 +826,33 @@ dfp_PremiumRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of new PremiumRate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
-#' @usage dfp_createPremiumRates(request_data)
+#' @usage dfp_createPremiumRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createPremiumRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createPremiumRatesResponse 
 #' @export
-dfp_createPremiumRates <- function(request_data){
-
+dfp_createPremiumRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPremiumRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -861,26 +868,33 @@ dfp_createPremiumRates <- function(request_data){
 #'   \item{pricingMethod}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
-#' @usage dfp_getPremiumRatesByStatement(request_data)
+#' @usage dfp_getPremiumRatesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getPremiumRatesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getPremiumRatesByStatementResponse 
 #' @export
-dfp_getPremiumRatesByStatement <- function(request_data){
-
+dfp_getPremiumRatesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPremiumRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -891,26 +905,33 @@ dfp_getPremiumRatesByStatement <- function(request_data){
 #' 
 #' Updates the specified PremiumRate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
-#' @usage dfp_updatePremiumRates(request_data)
+#' @usage dfp_updatePremiumRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updatePremiumRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updatePremiumRatesResponse 
 #' @export
-dfp_updatePremiumRates <- function(request_data){
-
+dfp_updatePremiumRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePremiumRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

@@ -729,26 +729,33 @@ dfp_BaseRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of new BaseRate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 #' 
-#' @usage dfp_createBaseRates(request_data)
+#' @usage dfp_createBaseRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createBaseRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createBaseRatesResponse 
 #' @export
-dfp_createBaseRates <- function(request_data){
-
+dfp_createBaseRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='createBaseRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createBaseRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -759,26 +766,33 @@ dfp_createBaseRates <- function(request_data){
 #' 
 #' Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr> <td>rateCardId</td> <td>BaseRate rateCardId</td> </tr> <tr> <td>id</td> <td>BaseRate id</td> </tr> <tr> <td>productTemplateId</td> <td>ProductTemplateBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productId. </tr> <td>productId</td> <td>ProductBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productTemplateId. </tr> a set of base rates.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 #' 
-#' @usage dfp_getBaseRatesByStatement(request_data)
+#' @usage dfp_getBaseRatesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getBaseRatesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getBaseRatesByStatementResponse 
 #' @export
-dfp_getBaseRatesByStatement <- function(request_data){
-
+dfp_getBaseRatesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='getBaseRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getBaseRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -789,26 +803,33 @@ dfp_getBaseRatesByStatement <- function(request_data){
 #' 
 #' Performs actions on BaseRate objects that satisfy the given Statement query. a set of base rates.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 #' 
-#' @usage dfp_performBaseRateAction(request_data)
+#' @usage dfp_performBaseRateAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performBaseRateActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performBaseRateActionResponse 
 #' @export
-dfp_performBaseRateAction <- function(request_data){
-
+dfp_performBaseRateAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performBaseRateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -819,26 +840,33 @@ dfp_performBaseRateAction <- function(request_data){
 #' 
 #' Updates the specified BaseRate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 #' 
-#' @usage dfp_updateBaseRates(request_data)
+#' @usage dfp_updateBaseRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateBaseRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateBaseRatesResponse 
 #' @export
-dfp_updateBaseRates <- function(request_data){
-
+dfp_updateBaseRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='updateBaseRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateBaseRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

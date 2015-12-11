@@ -736,26 +736,33 @@ dfp_ProductPackageItemService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProductPackageItem objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
-#' @usage dfp_createProductPackageItems(request_data)
+#' @usage dfp_createProductPackageItems(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProductPackageItemsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createProductPackageItemsResponse 
 #' @export
-dfp_createProductPackageItems <- function(request_data){
-
+dfp_createProductPackageItems <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='createProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -774,26 +781,33 @@ dfp_createProductPackageItems <- function(request_data){
 #'   \item{archived}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
-#' @usage dfp_getProductPackageItemsByStatement(request_data)
+#' @usage dfp_getProductPackageItemsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProductPackageItemsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getProductPackageItemsByStatementResponse 
 #' @export
-dfp_getProductPackageItemsByStatement <- function(request_data){
-
+dfp_getProductPackageItemsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='getProductPackageItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackageItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -804,26 +818,33 @@ dfp_getProductPackageItemsByStatement <- function(request_data){
 #' 
 #' Performs actions on ProductPackageItem objects that satisfy the given Statement query. a set of product package items
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
-#' @usage dfp_performProductPackageItemAction(request_data)
+#' @usage dfp_performProductPackageItemAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProductPackageItemActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performProductPackageItemActionResponse 
 #' @export
-dfp_performProductPackageItemAction <- function(request_data){
-
+dfp_performProductPackageItemAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='performProductPackageItemAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageItemActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -834,26 +855,33 @@ dfp_performProductPackageItemAction <- function(request_data){
 #' 
 #' Updates the specified ProductPackageItem objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
-#' @usage dfp_updateProductPackageItems(request_data)
+#' @usage dfp_updateProductPackageItems(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProductPackageItemsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateProductPackageItemsResponse 
 #' @export
-dfp_updateProductPackageItems <- function(request_data){
-
+dfp_updateProductPackageItems <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='updateProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

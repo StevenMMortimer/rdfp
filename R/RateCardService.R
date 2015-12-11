@@ -765,26 +765,33 @@ dfp_RateCardService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#createRateCards}{Google Documentation for createRateCards}
 #' 
-#' @usage dfp_createRateCards(request_data)
+#' @usage dfp_createRateCards(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createRateCardsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createRateCardsResponse 
 #' @export
-dfp_createRateCards <- function(request_data){
-
+dfp_createRateCards <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createRateCardsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -801,26 +808,33 @@ dfp_createRateCards <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 #' 
-#' @usage dfp_getRateCardsByStatement(request_data)
+#' @usage dfp_getRateCardsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getRateCardsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getRateCardsByStatementResponse 
 #' @export
-dfp_getRateCardsByStatement <- function(request_data){
-
+dfp_getRateCardsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getRateCardsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -831,26 +845,33 @@ dfp_getRateCardsByStatement <- function(request_data){
 #' 
 #' Performs action on RateCard objects that satisfy the given Statement query. a set of rate cards.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 #' 
-#' @usage dfp_performRateCardAction(request_data)
+#' @usage dfp_performRateCardAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performRateCardActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performRateCardActionResponse 
 #' @export
-dfp_performRateCardAction <- function(request_data){
-
+dfp_performRateCardAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performRateCardActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -861,26 +882,33 @@ dfp_performRateCardAction <- function(request_data){
 #' 
 #' Updates a list of RateCard objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
-#' @usage dfp_updateRateCards(request_data)
+#' @usage dfp_updateRateCards(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateRateCardsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateRateCardsResponse 
 #' @export
-dfp_updateRateCards <- function(request_data){
-
+dfp_updateRateCards <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateRateCardsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

@@ -755,26 +755,33 @@ dfp_UserService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new User objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#createUsers}{Google Documentation for createUsers}
 #' 
-#' @usage dfp_createUsers(request_data)
+#' @usage dfp_createUsers(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createUsersResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createUsersResponse 
 #' @export
-dfp_createUsers <- function(request_data){
-
+dfp_createUsers <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='createUsers', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUsersResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -785,24 +792,31 @@ dfp_createUsers <- function(request_data){
 #' 
 #' Returns the Role objects that are defined for the users of the network.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getAllRoles}{Google Documentation for getAllRoles}
 #' 
-#' @usage dfp_getAllRoles()
-#' @return a \code{list} containing all the elements of a getAllRolesResponse 
+#' @usage dfp_getAllRoles(as_df=FALSE)
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getAllRolesResponse 
 #' @export
-dfp_getAllRoles <- function(){
-
+dfp_getAllRoles <- function(as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getAllRoles', data=NULL)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllRolesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -813,24 +827,31 @@ dfp_getAllRoles <- function(){
 #' 
 #' Returns the current User.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
-#' @usage dfp_getCurrentUser()
-#' @return a \code{list} containing all the elements of a getCurrentUserResponse 
+#' @usage dfp_getCurrentUser(as_df=FALSE)
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getCurrentUserResponse 
 #' @export
-dfp_getCurrentUser <- function(){
-
+dfp_getCurrentUser <- function(as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentUserResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -849,26 +870,33 @@ dfp_getCurrentUser <- function(){
 #'   \item{status}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 #' 
-#' @usage dfp_getUsersByStatement(request_data)
+#' @usage dfp_getUsersByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getUsersByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getUsersByStatementResponse 
 #' @export
-dfp_getUsersByStatement <- function(request_data){
-
+dfp_getUsersByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUsersByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -879,26 +907,33 @@ dfp_getUsersByStatement <- function(request_data){
 #' 
 #' Performs actions on User objects that match the given Statement query. a set of users
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#performUserAction}{Google Documentation for performUserAction}
 #' 
-#' @usage dfp_performUserAction(request_data)
+#' @usage dfp_performUserAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performUserActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performUserActionResponse 
 #' @export
-dfp_performUserAction <- function(request_data){
-
+dfp_performUserAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='performUserAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -909,26 +944,33 @@ dfp_performUserAction <- function(request_data){
 #' 
 #' Updates the specified User objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#updateUsers}{Google Documentation for updateUsers}
 #' 
-#' @usage dfp_updateUsers(request_data)
+#' @usage dfp_updateUsers(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateUsersResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateUsersResponse 
 #' @export
-dfp_updateUsers <- function(request_data){
-
+dfp_updateUsers <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='UserService', root_name='updateUsers', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUsersResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

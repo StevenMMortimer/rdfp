@@ -2341,26 +2341,33 @@ dfp_ProductTemplateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ProductTemplate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 #' 
-#' @usage dfp_createProductTemplates(request_data)
+#' @usage dfp_createProductTemplates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createProductTemplatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createProductTemplatesResponse 
 #' @export
-dfp_createProductTemplates <- function(request_data){
-
+dfp_createProductTemplates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductTemplatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2382,26 +2389,33 @@ dfp_createProductTemplates <- function(request_data){
 #'   \item{rateType}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
 #' 
-#' @usage dfp_getProductTemplatesByStatement(request_data)
+#' @usage dfp_getProductTemplatesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getProductTemplatesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getProductTemplatesByStatementResponse 
 #' @export
-dfp_getProductTemplatesByStatement <- function(request_data){
-
+dfp_getProductTemplatesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductTemplatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2412,26 +2426,33 @@ dfp_getProductTemplatesByStatement <- function(request_data){
 #' 
 #' Performs action on ProductTemplate objects that satisfy the given Statement query. a set of product templates
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
 #' 
-#' @usage dfp_performProductTemplateAction(request_data)
+#' @usage dfp_performProductTemplateAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performProductTemplateActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performProductTemplateActionResponse 
 #' @export
-dfp_performProductTemplateAction <- function(request_data){
-
+dfp_performProductTemplateAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductTemplateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2442,26 +2463,33 @@ dfp_performProductTemplateAction <- function(request_data){
 #' 
 #' Updates the specified ProductTemplate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 #' 
-#' @usage dfp_updateProductTemplates(request_data)
+#' @usage dfp_updateProductTemplates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateProductTemplatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateProductTemplatesResponse 
 #' @export
-dfp_updateProductTemplates <- function(request_data){
-
+dfp_updateProductTemplates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductTemplatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

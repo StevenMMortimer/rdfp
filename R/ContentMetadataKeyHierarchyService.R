@@ -642,26 +642,33 @@ dfp_ContentMetadataKeyHierarchyService_object_factory <- function(obj_type, obj_
 #' 
 #' Creates new ContentMetadataKeyHierarchy objects. The following fields are required: <ul> <li>ContentMetadataKeyHierarchy id</li> <li>ContentMetadataKeyHierarchy name</li> <li>ContentMetadataKeyHierarchy hierarchyLevels</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 #' 
-#' @usage dfp_createContentMetadataKeyHierarchies(request_data)
+#' @usage dfp_createContentMetadataKeyHierarchies(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createContentMetadataKeyHierarchiesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createContentMetadataKeyHierarchiesResponse 
 #' @export
-dfp_createContentMetadataKeyHierarchies <- function(request_data){
-
+dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='createContentMetadataKeyHierarchies', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentMetadataKeyHierarchiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -677,26 +684,33 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
 #' 
-#' @usage dfp_getContentMetadataKeyHierarchiesByStatement(request_data)
+#' @usage dfp_getContentMetadataKeyHierarchiesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getContentMetadataKeyHierarchiesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getContentMetadataKeyHierarchiesByStatementResponse 
 #' @export
-dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
-
+dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='getContentMetadataKeyHierarchiesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentMetadataKeyHierarchiesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -707,26 +721,33 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
 #' 
 #' Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query. a set of hierarchies
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
 #' 
-#' @usage dfp_performContentMetadataKeyHierarchyAction(request_data)
+#' @usage dfp_performContentMetadataKeyHierarchyAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performContentMetadataKeyHierarchyActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performContentMetadataKeyHierarchyActionResponse 
 #' @export
-dfp_performContentMetadataKeyHierarchyAction <- function(request_data){
-
+dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentMetadataKeyHierarchyActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -737,26 +758,33 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data){
 #' 
 #' Updates the specified ContentMetadataKeyHierarchy objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
 #' 
-#' @usage dfp_updateContentMetadataKeyHierarchies(request_data)
+#' @usage dfp_updateContentMetadataKeyHierarchies(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateContentMetadataKeyHierarchiesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateContentMetadataKeyHierarchiesResponse 
 #' @export
-dfp_updateContentMetadataKeyHierarchies <- function(request_data){
-
+dfp_updateContentMetadataKeyHierarchies <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='updateContentMetadataKeyHierarchies', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentMetadataKeyHierarchiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

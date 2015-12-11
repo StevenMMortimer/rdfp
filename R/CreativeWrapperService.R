@@ -661,26 +661,33 @@ dfp_CreativeWrapperService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new CreativeWrapper objects. The following fields are required: <ul> <li>CreativeWrapper labelId</li> <li>CreativeWrapper ordering</li> <li>CreativeWrapper header or CreativeWrapper footer</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 #' 
-#' @usage dfp_createCreativeWrappers(request_data)
+#' @usage dfp_createCreativeWrappers(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCreativeWrappersResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createCreativeWrappersResponse 
 #' @export
-dfp_createCreativeWrappers <- function(request_data){
-
+dfp_createCreativeWrappers <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCreativeWrappersResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -697,26 +704,33 @@ dfp_createCreativeWrappers <- function(request_data){
 #'   \item{ordering}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 #' 
-#' @usage dfp_getCreativeWrappersByStatement(request_data)
+#' @usage dfp_getCreativeWrappersByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCreativeWrappersByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getCreativeWrappersByStatementResponse 
 #' @export
-dfp_getCreativeWrappersByStatement <- function(request_data){
-
+dfp_getCreativeWrappersByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativeWrappersByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -727,26 +741,33 @@ dfp_getCreativeWrappersByStatement <- function(request_data){
 #' 
 #' Performs actions on CreativeWrapper objects that match the given Statement query. a set of labels
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
 #' 
-#' @usage dfp_performCreativeWrapperAction(request_data)
+#' @usage dfp_performCreativeWrapperAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performCreativeWrapperActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performCreativeWrapperActionResponse 
 #' @export
-dfp_performCreativeWrapperAction <- function(request_data){
-
+dfp_performCreativeWrapperAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCreativeWrapperActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -757,26 +778,33 @@ dfp_performCreativeWrapperAction <- function(request_data){
 #' 
 #' Updates the specified CreativeWrapper objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 #' 
-#' @usage dfp_updateCreativeWrappers(request_data)
+#' @usage dfp_updateCreativeWrappers(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCreativeWrappersResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateCreativeWrappersResponse 
 #' @export
-dfp_updateCreativeWrappers <- function(request_data){
-
+dfp_updateCreativeWrappers <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCreativeWrappersResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

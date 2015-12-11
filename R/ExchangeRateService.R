@@ -601,26 +601,33 @@ dfp_ExchangeRateService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 #' 
-#' @usage dfp_createExchangeRates(request_data)
+#' @usage dfp_createExchangeRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createExchangeRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createExchangeRatesResponse 
 #' @export
-dfp_createExchangeRates <- function(request_data){
-
+dfp_createExchangeRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ExchangeRateService', root_name='createExchangeRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createExchangeRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -638,26 +645,33 @@ dfp_createExchangeRates <- function(request_data){
 #'   \item{exchangeRate}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 #' 
-#' @usage dfp_getExchangeRatesByStatement(request_data)
+#' @usage dfp_getExchangeRatesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getExchangeRatesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getExchangeRatesByStatementResponse 
 #' @export
-dfp_getExchangeRatesByStatement <- function(request_data){
-
+dfp_getExchangeRatesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ExchangeRateService', root_name='getExchangeRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getExchangeRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -675,26 +689,33 @@ dfp_getExchangeRatesByStatement <- function(request_data){
 #'   \item{exchangeRate}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 #' 
-#' @usage dfp_performExchangeRateAction(request_data)
+#' @usage dfp_performExchangeRateAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performExchangeRateActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performExchangeRateActionResponse 
 #' @export
-dfp_performExchangeRateAction <- function(request_data){
-
+dfp_performExchangeRateAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performExchangeRateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -705,26 +726,33 @@ dfp_performExchangeRateAction <- function(request_data){
 #' 
 #' Updates the specified ExchangeRate objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 #' 
-#' @usage dfp_updateExchangeRates(request_data)
+#' @usage dfp_updateExchangeRates(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateExchangeRatesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateExchangeRatesResponse 
 #' @export
-dfp_updateExchangeRates <- function(request_data){
-
+dfp_updateExchangeRates <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ExchangeRateService', root_name='updateExchangeRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateExchangeRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

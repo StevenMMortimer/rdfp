@@ -2175,26 +2175,33 @@ dfp_ReportService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Returns the URL at which the report file can be downloaded. <p> The report will be generated as a gzip archive, containing the report file itself.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
-#' @usage dfp_getReportDownloadURL(request_data)
+#' @usage dfp_getReportDownloadURL(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getReportDownloadURLResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getReportDownloadURLResponse 
 #' @export
-dfp_getReportDownloadURL <- function(request_data){
-
+dfp_getReportDownloadURL <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadURLResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2205,26 +2212,33 @@ dfp_getReportDownloadURL <- function(request_data){
 #' 
 #' Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report. <p> By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
-#' @usage dfp_getReportDownloadUrlWithOptions(request_data)
+#' @usage dfp_getReportDownloadUrlWithOptions(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getReportDownloadUrlWithOptionsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getReportDownloadUrlWithOptionsResponse 
 #' @export
-dfp_getReportDownloadUrlWithOptions <- function(request_data){
-
+dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadUrlWithOptionsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2235,26 +2249,33 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data){
 #' 
 #' Returns the ReportJobStatus of the report job with the specified ID.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
-#' @usage dfp_getReportJobStatus(request_data)
+#' @usage dfp_getReportJobStatus(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getReportJobStatusResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getReportJobStatusResponse 
 #' @export
-dfp_getReportJobStatus <- function(request_data){
-
+dfp_getReportJobStatus <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportJobStatusResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -2265,26 +2286,33 @@ dfp_getReportJobStatus <- function(request_data){
 #' 
 #' Initiates the execution of a ReportQuery on the server. <p>The following fields are required: <ul> <li>ReportJob reportQuery</li> </ul>
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
-#' @usage dfp_runReportJob(request_data)
+#' @usage dfp_runReportJob(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a runReportJobResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a runReportJobResponse 
 #' @export
-dfp_runReportJob <- function(request_data){
-
+dfp_runReportJob <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='runReportJob', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['runReportJobResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

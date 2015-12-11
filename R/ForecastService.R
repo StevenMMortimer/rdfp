@@ -3752,26 +3752,33 @@ dfp_ForecastService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Gets the availability forecast for a ProspectiveLineItem. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. <p>Note: Beginning in v201502, this replaces the previous getForecast method.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 #' 
-#' @usage dfp_getAvailabilityForecast(request_data)
+#' @usage dfp_getAvailabilityForecast(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getAvailabilityForecastResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getAvailabilityForecastResponse 
 #' @export
-dfp_getAvailabilityForecast <- function(request_data){
-
+dfp_getAvailabilityForecast <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3782,26 +3789,33 @@ dfp_getAvailabilityForecast <- function(request_data){
 #' 
 #' Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. <p>Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. <p>Note: Beginning in v201502, this replaces the previous getForecastById method.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
-#' @usage dfp_getAvailabilityForecastById(request_data)
+#' @usage dfp_getAvailabilityForecastById(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getAvailabilityForecastByIdResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getAvailabilityForecastByIdResponse 
 #' @export
-dfp_getAvailabilityForecastById <- function(request_data){
-
+dfp_getAvailabilityForecastById <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastByIdResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3812,26 +3826,33 @@ dfp_getAvailabilityForecastById <- function(request_data){
 #' 
 #' Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 #' 
-#' @usage dfp_getDeliveryForecast(request_data)
+#' @usage dfp_getDeliveryForecast(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getDeliveryForecastResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getDeliveryForecastResponse 
 #' @export
-dfp_getDeliveryForecast <- function(request_data){
-
+dfp_getDeliveryForecast <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -3842,26 +3863,33 @@ dfp_getDeliveryForecast <- function(request_data){
 #' 
 #' Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
-#' @usage dfp_getDeliveryForecastByIds(request_data)
+#' @usage dfp_getDeliveryForecastByIds(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getDeliveryForecastByIdsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getDeliveryForecastByIdsResponse 
 #' @export
-dfp_getDeliveryForecastByIds <- function(request_data){
-
+dfp_getDeliveryForecastByIds <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastByIdsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

@@ -588,26 +588,33 @@ dfp_ActivityGroupService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new ActivityGroup objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 #' 
-#' @usage dfp_createActivityGroups(request_data)
+#' @usage dfp_createActivityGroups(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createActivityGroupsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createActivityGroupsResponse 
 #' @export
-dfp_createActivityGroups <- function(request_data){
-
+dfp_createActivityGroups <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivityGroupsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -625,26 +632,33 @@ dfp_createActivityGroups <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 #' 
-#' @usage dfp_getActivityGroupsByStatement(request_data)
+#' @usage dfp_getActivityGroupsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getActivityGroupsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getActivityGroupsByStatementResponse 
 #' @export
-dfp_getActivityGroupsByStatement <- function(request_data){
-
+dfp_getActivityGroupsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivityGroupsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -655,26 +669,33 @@ dfp_getActivityGroupsByStatement <- function(request_data){
 #' 
 #' Updates the specified ActivityGroup objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 #' 
-#' @usage dfp_updateActivityGroups(request_data)
+#' @usage dfp_updateActivityGroups(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateActivityGroupsResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateActivityGroupsResponse 
 #' @export
-dfp_updateActivityGroups <- function(request_data){
-
+dfp_updateActivityGroups <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivityGroupsResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

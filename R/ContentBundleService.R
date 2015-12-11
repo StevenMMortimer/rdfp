@@ -617,26 +617,33 @@ dfp_ContentBundleService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates new ContentBundle objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 #' 
-#' @usage dfp_createContentBundles(request_data)
+#' @usage dfp_createContentBundles(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createContentBundlesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createContentBundlesResponse 
 #' @export
-dfp_createContentBundles <- function(request_data){
-
+dfp_createContentBundles <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentBundlesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -652,26 +659,33 @@ dfp_createContentBundles <- function(request_data){
 #'   \item{status}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 #' 
-#' @usage dfp_getContentBundlesByStatement(request_data)
+#' @usage dfp_getContentBundlesByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getContentBundlesByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getContentBundlesByStatementResponse 
 #' @export
-dfp_getContentBundlesByStatement <- function(request_data){
-
+dfp_getContentBundlesByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentBundlesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -682,26 +696,33 @@ dfp_getContentBundlesByStatement <- function(request_data){
 #' 
 #' Performs actions on ContentBundle objects that match the given Statement query. a set of content bundles
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 #' 
-#' @usage dfp_performContentBundleAction(request_data)
+#' @usage dfp_performContentBundleAction(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a performContentBundleActionResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a performContentBundleActionResponse 
 #' @export
-dfp_performContentBundleAction <- function(request_data){
-
+dfp_performContentBundleAction <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentBundleActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -712,26 +733,33 @@ dfp_performContentBundleAction <- function(request_data){
 #' 
 #' Updates the specified ContentBundle objects.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
-#' @usage dfp_updateContentBundles(request_data)
+#' @usage dfp_updateContentBundles(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateContentBundlesResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateContentBundlesResponse 
 #' @export
-dfp_updateContentBundles <- function(request_data){
-
+dfp_updateContentBundles <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentBundlesResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }

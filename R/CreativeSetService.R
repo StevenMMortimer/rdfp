@@ -1004,26 +1004,33 @@ dfp_CreativeSetService_object_factory <- function(obj_type, obj_data){
 #' 
 #' Creates a new CreativeSet.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 #' 
-#' @usage dfp_createCreativeSet(request_data)
+#' @usage dfp_createCreativeSet(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a createCreativeSetResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a createCreativeSetResponse 
 #' @export
-dfp_createCreativeSet <- function(request_data){
-
+dfp_createCreativeSet <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeSetService', root_name='createCreativeSet', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCreativeSetResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -1040,26 +1047,33 @@ dfp_createCreativeSet <- function(request_data){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 #' 
-#' @usage dfp_getCreativeSetsByStatement(request_data)
+#' @usage dfp_getCreativeSetsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a getCreativeSetsByStatementResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a getCreativeSetsByStatementResponse 
 #' @export
-dfp_getCreativeSetsByStatement <- function(request_data){
-
+dfp_getCreativeSetsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeSetService', root_name='getCreativeSetsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativeSetsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
@@ -1070,26 +1084,33 @@ dfp_getCreativeSetsByStatement <- function(request_data){
 #' 
 #' Updates the specified CreativeSet.
 #' 
+#' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 #' 
-#' @usage dfp_updateCreativeSet(request_data)
+#' @usage dfp_updateCreativeSet(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @return a \code{list} containing all the elements of a updateCreativeSetResponse 
+#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @return a \code{list} or \code{data.frame} containing all the elements of a updateCreativeSetResponse 
 #' @export
-dfp_updateCreativeSet <- function(request_data){
-
+dfp_updateCreativeSet <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='CreativeSetService', root_name='updateCreativeSet', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCreativeSetResponse']])
   result <- if(is.null(response$rval)){
     NULL
+  } else if (!as_df){
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
   } else {
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
-               x <- xmlToList(x)
-               new_x <- as.data.frame(t(x), stringsAsFactors = F)
+               x <- xmlToList(x$rval)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
   }
