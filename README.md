@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank"> <img border="0" alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master" width="100" height="100"> </a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank"> <img border="0" alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=masterr" width="100" height="100"> </a>
+<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank"> <img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"> </a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank"> <img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=masterr"> </a>
 
 ------------------------------------------------------------------------
 
