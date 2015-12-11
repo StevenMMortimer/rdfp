@@ -9,7 +9,7 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 options(rdfp.network_code = rdfp_options$test_network_code)
-request_data <- list(keys=list(name='Testsdsdfsddddsdf', 
+request_data <- list(keys=list(name='Test1', 
                                displayName='TestKey1', 
                                type='FREEFORM'))
 dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
