@@ -14,14 +14,11 @@ request_data <- list(keys=list(name='Testsdsdfsddddsdf',
                                type='FREEFORM'))
 dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
 
-request_data <- list(values=list(customTargetingKeyId=dfp_createCustomTargetingKeys_result$id,
-                                 name='TestValue1', 
-                                 displayName='TestValue1', 
-                                 matchType='EXACT'), 
-                     values=list(customTargetingKeyId=dfp_createCustomTargetingKeys_result$id, 
-                                 name='TestValue2', 
-                                 displayName='TestValue2', 
-                                 matchType='EXACT'))
+request_data <- data.frame(customTargetingKeyId=rep(dfp_createCustomTargetingKeys_result$id,2),
+                           name=c('TestValue1','TestValue2'), 
+                           displayName=c('TestValue1','TestValue2'), 
+                           matchType=rep('EXACT', 2))
+
 dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data)
 options(rdfp.network_code = rdfp_options$network_code)
 
