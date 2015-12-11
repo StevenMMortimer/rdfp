@@ -70,17 +70,17 @@ request_data <- list(teams=list(name="TestTeam1",
 dfp_createTeams_result <- dfp_createTeams(request_data)
 
 # second create the user
-request_data <- list(users=list(name="TestUser1",
-                                email='testuser1@gmail.com', 
-                                roleId=-1))
+request_data <- data.frame(name=paste0("TestUser", 1:3),
+                           email=paste0('testuser', 1:3, '@gmail.com'), 
+                           roleId=rep(-1,3))
 dfp_createUsers_result <- dfp_createUsers(request_data)
 
 # third associate the user to that team
-request_data <- list(userTeamAssociations=list(teamId=dfp_createTeams_result$id,
-                                               userId=dfp_createUsers_result$id))
+request_data <- data.frame(teamid=rep(dfp_createTeams_result$id, 3),
+                           userid=dfp_createUsers_result$id)
 dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations(request_data)
 
-# Note: user roleId = -1 is the Administrative role
+# Note: User roleId = -1 is the Administrative role
 # use dfp_getAllRoles() to view other options
 
 # Creating custom roles is a premium feature, which
@@ -114,6 +114,26 @@ dfp_createContacts_result <- dfp_createContacts(request_data)
 Ad Trafficking Setup
 --------------------
 
+### Setup Custom Targeting Keys and Values
+
+DFP allows traffickers to create custom tags to better target line items on their site. Below is an example creating a Key and populating with a data.frame of Values.
+
+``` r
+
+# create the key
+request_data <- list(keys=list(name='Test1', 
+                               displayName='TestKey1', 
+                               type='FREEFORM'))
+dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
+
+# create the values
+request_data <- data.frame(customTargetingKeyId=rep(dfp_createCustomTargetingKeys_result$id,2),
+                           name=c('TestValue1','TestValue2'), 
+                           displayName=c('TestValue1','TestValue2'), 
+                           matchType=rep('EXACT', 2))
+dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data)
+```
+
 ### Find All Levels of Geotargeting and their Ids
 
 Having a complete list of locations is useful for filtering and/or adding geotargeting on line items. Locations are ordered as a hierarchy and have unique ids.
@@ -129,6 +149,10 @@ dfp_select_result <- dfp_select(request_data)$rval
 final_result <- dfp_select_parse(dfp_select_result)
 head(final_result)
 ```
+
+### Create an Order
+
+### Create a Line Item
 
 ### Get Line Items By A Filter
 
