@@ -1517,7 +1517,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getLineItemCreativeAssociationsByStatement
@@ -1555,7 +1555,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getPreviewUrl
@@ -1583,7 +1583,7 @@ dfp_getPreviewUrl <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performLineItemCreativeAssociationAction
@@ -1613,7 +1613,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateLineItemCreativeAssociations
@@ -1643,6 +1643,6 @@ dfp_updateLineItemCreativeAssociations <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -624,7 +624,7 @@ dfp_createExchangeRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getExchangeRatesByStatement
@@ -661,7 +661,7 @@ dfp_getExchangeRatesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performExchangeRateAction
@@ -698,7 +698,7 @@ dfp_performExchangeRateAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateExchangeRates
@@ -728,6 +728,6 @@ dfp_updateExchangeRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -2198,7 +2198,7 @@ dfp_getReportDownloadURL <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getReportDownloadUrlWithOptions
@@ -2228,7 +2228,7 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getReportJobStatus
@@ -2258,7 +2258,7 @@ dfp_getReportJobStatus <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' runReportJob
@@ -2288,6 +2288,6 @@ dfp_runReportJob <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

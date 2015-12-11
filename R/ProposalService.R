@@ -1658,7 +1658,7 @@ dfp_createProposals <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getProposalsByStatement
@@ -1699,7 +1699,7 @@ dfp_getProposalsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performProposalAction
@@ -1729,7 +1729,7 @@ dfp_performProposalAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateProposals
@@ -1759,6 +1759,6 @@ dfp_updateProposals <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

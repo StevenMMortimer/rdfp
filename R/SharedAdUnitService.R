@@ -647,7 +647,7 @@ dfp_getSharedAdUnitsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performSharedAdUnitAction
@@ -677,6 +677,6 @@ dfp_performSharedAdUnitAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

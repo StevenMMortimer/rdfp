@@ -849,7 +849,7 @@ dfp_createPremiumRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getPremiumRatesByStatement
@@ -884,7 +884,7 @@ dfp_getPremiumRatesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updatePremiumRates
@@ -914,6 +914,6 @@ dfp_updatePremiumRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

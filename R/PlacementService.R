@@ -801,7 +801,7 @@ dfp_createPlacements <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getPlacementsByStatement
@@ -840,7 +840,7 @@ dfp_getPlacementsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performPlacementAction
@@ -870,7 +870,7 @@ dfp_performPlacementAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updatePlacements
@@ -900,6 +900,6 @@ dfp_updatePlacements <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

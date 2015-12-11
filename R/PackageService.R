@@ -1186,7 +1186,7 @@ dfp_createPackages <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getPackagesByStatement
@@ -1224,7 +1224,7 @@ dfp_getPackagesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performPackageAction
@@ -1254,7 +1254,7 @@ dfp_performPackageAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updatePackages
@@ -1284,6 +1284,6 @@ dfp_updatePackages <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

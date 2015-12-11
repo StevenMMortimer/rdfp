@@ -640,7 +640,7 @@ dfp_createContentBundles <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getContentBundlesByStatement
@@ -675,7 +675,7 @@ dfp_getContentBundlesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performContentBundleAction
@@ -705,7 +705,7 @@ dfp_performContentBundleAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateContentBundles
@@ -735,6 +735,6 @@ dfp_updateContentBundles <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -2171,7 +2171,7 @@ dfp_getProductsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performProductAction
@@ -2201,7 +2201,7 @@ dfp_performProductAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateProducts
@@ -2231,6 +2231,6 @@ dfp_updateProducts <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

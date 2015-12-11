@@ -941,7 +941,7 @@ dfp_createCompanies <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCompaniesByStatement
@@ -977,7 +977,7 @@ dfp_getCompaniesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCompanies
@@ -1007,6 +1007,6 @@ dfp_updateCompanies <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

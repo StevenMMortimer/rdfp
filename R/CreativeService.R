@@ -2952,7 +2952,7 @@ dfp_createCreatives <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCreativesByStatement
@@ -2990,7 +2990,7 @@ dfp_getCreativesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCreatives
@@ -3020,6 +3020,6 @@ dfp_updateCreatives <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

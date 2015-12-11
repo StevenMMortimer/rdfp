@@ -759,7 +759,7 @@ dfp_createProductPackageItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getProductPackageItemsByStatement
@@ -797,7 +797,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performProductPackageItemAction
@@ -827,7 +827,7 @@ dfp_performProductPackageItemAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateProductPackageItems
@@ -857,6 +857,6 @@ dfp_updateProductPackageItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

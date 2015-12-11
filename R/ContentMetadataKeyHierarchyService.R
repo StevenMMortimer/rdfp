@@ -665,7 +665,7 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getContentMetadataKeyHierarchiesByStatement
@@ -700,7 +700,7 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performContentMetadataKeyHierarchyAction
@@ -730,7 +730,7 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateContentMetadataKeyHierarchies
@@ -760,6 +760,6 @@ dfp_updateContentMetadataKeyHierarchies <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

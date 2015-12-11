@@ -788,7 +788,7 @@ dfp_createRateCards <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getRateCardsByStatement
@@ -824,7 +824,7 @@ dfp_getRateCardsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performRateCardAction
@@ -854,7 +854,7 @@ dfp_performRateCardAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateRateCards
@@ -884,6 +884,6 @@ dfp_updateRateCards <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

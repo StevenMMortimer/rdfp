@@ -3563,7 +3563,7 @@ dfp_createLineItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getLineItemsByStatement
@@ -3611,7 +3611,7 @@ dfp_getLineItemsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performLineItemAction
@@ -3641,7 +3641,7 @@ dfp_performLineItemAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateLineItems
@@ -3671,6 +3671,6 @@ dfp_updateLineItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

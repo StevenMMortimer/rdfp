@@ -752,7 +752,7 @@ dfp_createAdExclusionRules <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAdExclusionRulesByStatement
@@ -787,7 +787,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performAdExclusionRuleAction
@@ -817,7 +817,7 @@ dfp_performAdExclusionRuleAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateAdExclusionRules
@@ -847,6 +847,6 @@ dfp_updateAdExclusionRules <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

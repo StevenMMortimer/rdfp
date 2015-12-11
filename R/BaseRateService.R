@@ -752,7 +752,7 @@ dfp_createBaseRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getBaseRatesByStatement
@@ -782,7 +782,7 @@ dfp_getBaseRatesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performBaseRateAction
@@ -812,7 +812,7 @@ dfp_performBaseRateAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateBaseRates
@@ -842,6 +842,6 @@ dfp_updateBaseRates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

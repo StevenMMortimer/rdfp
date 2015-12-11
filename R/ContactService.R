@@ -622,7 +622,7 @@ dfp_createContacts <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getContactsByStatement
@@ -664,7 +664,7 @@ dfp_getContactsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateContacts
@@ -694,6 +694,6 @@ dfp_updateContacts <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

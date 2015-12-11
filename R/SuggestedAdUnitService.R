@@ -725,7 +725,7 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performSuggestedAdUnitAction
@@ -759,6 +759,6 @@ dfp_performSuggestedAdUnitAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

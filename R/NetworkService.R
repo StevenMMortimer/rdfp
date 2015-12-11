@@ -558,7 +558,7 @@ dfp_getAllNetworks <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCurrentNetwork
@@ -586,7 +586,7 @@ dfp_getCurrentNetwork <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' makeTestNetwork
@@ -614,7 +614,7 @@ dfp_makeTestNetwork <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateNetwork
@@ -644,6 +644,6 @@ dfp_updateNetwork <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

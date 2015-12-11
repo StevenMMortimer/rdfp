@@ -1027,7 +1027,7 @@ dfp_createCreativeSet <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCreativeSetsByStatement
@@ -1063,7 +1063,7 @@ dfp_getCreativeSetsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCreativeSet
@@ -1093,6 +1093,6 @@ dfp_updateCreativeSet <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -2212,7 +2212,7 @@ dfp_createOrders <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getOrdersByStatement
@@ -2253,7 +2253,7 @@ dfp_getOrdersByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performOrderAction
@@ -2283,7 +2283,7 @@ dfp_performOrderAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateOrders
@@ -2313,6 +2313,6 @@ dfp_updateOrders <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

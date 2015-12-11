@@ -2364,7 +2364,7 @@ dfp_createProductTemplates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getProductTemplatesByStatement
@@ -2405,7 +2405,7 @@ dfp_getProductTemplatesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performProductTemplateAction
@@ -2435,7 +2435,7 @@ dfp_performProductTemplateAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateProductTemplates
@@ -2465,6 +2465,6 @@ dfp_updateProductTemplates <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

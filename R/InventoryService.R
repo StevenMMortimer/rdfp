@@ -1396,7 +1396,7 @@ dfp_createAdUnits <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAdUnitSizesByStatement
@@ -1429,7 +1429,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAdUnitsByStatement
@@ -1467,7 +1467,7 @@ dfp_getAdUnitsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performAdUnitAction
@@ -1497,7 +1497,7 @@ dfp_performAdUnitAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateAdUnits
@@ -1527,6 +1527,6 @@ dfp_updateAdUnits <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

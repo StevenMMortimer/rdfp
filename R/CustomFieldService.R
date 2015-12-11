@@ -705,7 +705,7 @@ dfp_createCustomFieldOptions <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' createCustomFields
@@ -735,7 +735,7 @@ dfp_createCustomFields <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCustomFieldOption
@@ -763,7 +763,7 @@ dfp_getCustomFieldOption <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCustomFieldsByStatement
@@ -800,7 +800,7 @@ dfp_getCustomFieldsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performCustomFieldAction
@@ -830,7 +830,7 @@ dfp_performCustomFieldAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCustomFieldOptions
@@ -860,7 +860,7 @@ dfp_updateCustomFieldOptions <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCustomFields
@@ -890,6 +890,6 @@ dfp_updateCustomFields <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

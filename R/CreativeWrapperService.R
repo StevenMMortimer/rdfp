@@ -684,7 +684,7 @@ dfp_createCreativeWrappers <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCreativeWrappersByStatement
@@ -720,7 +720,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performCreativeWrapperAction
@@ -750,7 +750,7 @@ dfp_performCreativeWrapperAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCreativeWrappers
@@ -780,6 +780,6 @@ dfp_updateCreativeWrappers <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

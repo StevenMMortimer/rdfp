@@ -855,7 +855,7 @@ dfp_createCustomTargetingKeys <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' createCustomTargetingValues
@@ -885,7 +885,7 @@ dfp_createCustomTargetingValues <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCustomTargetingKeysByStatement
@@ -922,7 +922,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCustomTargetingValuesByStatement
@@ -959,7 +959,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performCustomTargetingKeyAction
@@ -989,7 +989,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performCustomTargetingValueAction
@@ -1019,7 +1019,7 @@ dfp_performCustomTargetingValueAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCustomTargetingKeys
@@ -1049,7 +1049,7 @@ dfp_updateCustomTargetingKeys <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateCustomTargetingValues
@@ -1079,6 +1079,6 @@ dfp_updateCustomTargetingValues <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

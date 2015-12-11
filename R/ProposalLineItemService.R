@@ -3044,7 +3044,7 @@ dfp_createProposalLineItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getProposalLineItemsByStatement
@@ -3084,7 +3084,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performProposalLineItemAction
@@ -3114,7 +3114,7 @@ dfp_performProposalLineItemAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateProposalLineItems
@@ -3144,6 +3144,6 @@ dfp_updateProposalLineItems <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

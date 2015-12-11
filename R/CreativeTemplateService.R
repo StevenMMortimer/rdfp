@@ -850,6 +850,6 @@ dfp_getCreativeTemplatesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -28,7 +28,7 @@ library("rdfp")
 
 ### Authenticate
 
-First, you will need to specify a list of options in order to connect to the API. The client\_id and client\_secret must be created in via the [Google Developers Console] (<https://console.developers.google.com>), which allows R to access the API as an "application" on your behalf, whether or not you are running your R script interactively. After specifying your options simply run `dfp_auth()` to authenticate.
+First, you will need to specify a list of options in order to connect to the API. The client\_id and client\_secret must be created via the [Google Developers Console] (<https://console.developers.google.com>), which allows R to access the API as an "application" on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run `dfp_auth()` to authenticate.
 
 ``` r
 
@@ -38,7 +38,7 @@ options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.co
 options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
 
 # this function will use the options set above and 
-# cache an oauth token in the working directory
+# cache an OAuth token in the working directory
 # the token will be refreshed when necessary
 dfp_auth()
 ```
@@ -60,6 +60,8 @@ network_info
 
 ``` r
 # create a team and user and add the user to that team
+
+#first create the team
 request_data <- list(teams=list(name="TestTeam1", 
                                 description='API Test Team 1', 
                                 hasAllCompanies='true', 
@@ -67,25 +69,31 @@ request_data <- list(teams=list(name="TestTeam1",
                                 teamAccessType='READ_WRITE'))
 dfp_createTeams_result <- dfp_createTeams(request_data)
 
-# user roleId = -1 is the Administrative role
-# use dfp_getAllRoles() to view other options
-# Note: Creating custom roles is a premium feature, which
-# small business accounts won't have and creating the roles 
-# can only be done from the user interface, not the API.
+# second create the user
 request_data <- list(users=list(name="TestUser1",
                                 email='testuser1@gmail.com', 
                                 roleId=-1))
 dfp_createUsers_result <- dfp_createUsers(request_data)
 
+# third associate the user to that team
 request_data <- list(userTeamAssociations=list(teamId=dfp_createTeams_result$id,
                                                userId=dfp_createUsers_result$id))
 dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations(request_data)
+
+# Note: user roleId = -1 is the Administrative role
+# use dfp_getAllRoles() to view other options
+
+# Creating custom roles is a premium feature, which
+# small business accounts won't have and creating the roles 
+# can only be done from the user interface, not the API.
 ```
 
 ### Create Companies and Contacts
 
 ``` r
 # create a company and add a contact to it
+
+# first create the company
 request_data <- list(companies=list(name="TestCompany1", 
                                     type='HOUSE_ADVERTISER', 
                                     address='123 Main St Hometown, FL USA', 
@@ -93,6 +101,7 @@ request_data <- list(companies=list(name="TestCompany1",
                                     comment='API Test'))
 dfp_createCompanies_result <- dfp_createCompanies(request_data)
 
+# second create the contact and specify the companyId
 request_data <- list(contacts=list(name="TestContact1", 
                                     companyId=dfp_createCompanies_result$id, 
                                     status='UNINVITED', 

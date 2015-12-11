@@ -1895,7 +1895,7 @@ dfp_createAdRules <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAdRulesByStatement
@@ -1931,7 +1931,7 @@ dfp_getAdRulesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performAdRuleAction
@@ -1961,7 +1961,7 @@ dfp_performAdRuleAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateAdRules
@@ -1991,6 +1991,6 @@ dfp_updateAdRules <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

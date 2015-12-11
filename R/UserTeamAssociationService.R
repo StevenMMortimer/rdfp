@@ -609,7 +609,7 @@ dfp_createUserTeamAssociations <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getUserTeamAssociationsByStatement
@@ -643,7 +643,7 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performUserTeamAssociationAction
@@ -673,7 +673,7 @@ dfp_performUserTeamAssociationAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateUserTeamAssociations
@@ -703,6 +703,6 @@ dfp_updateUserTeamAssociations <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

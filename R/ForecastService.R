@@ -3775,7 +3775,7 @@ dfp_getAvailabilityForecast <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAvailabilityForecastById
@@ -3805,7 +3805,7 @@ dfp_getAvailabilityForecastById <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getDeliveryForecast
@@ -3835,7 +3835,7 @@ dfp_getDeliveryForecast <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getDeliveryForecastByIds
@@ -3865,6 +3865,6 @@ dfp_getDeliveryForecastByIds <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

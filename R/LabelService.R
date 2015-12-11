@@ -664,7 +664,7 @@ dfp_createLabels <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getLabelsByStatement
@@ -701,7 +701,7 @@ dfp_getLabelsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performLabelAction
@@ -731,7 +731,7 @@ dfp_performLabelAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateLabels
@@ -761,6 +761,6 @@ dfp_updateLabels <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -611,7 +611,7 @@ dfp_createActivityGroups <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getActivityGroupsByStatement
@@ -648,7 +648,7 @@ dfp_getActivityGroupsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateActivityGroups
@@ -678,6 +678,6 @@ dfp_updateActivityGroups <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

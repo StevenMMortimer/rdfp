@@ -778,7 +778,7 @@ dfp_createUsers <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAllRoles
@@ -806,7 +806,7 @@ dfp_getAllRoles <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getCurrentUser
@@ -834,7 +834,7 @@ dfp_getCurrentUser <- function(){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getUsersByStatement
@@ -872,7 +872,7 @@ dfp_getUsersByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performUserAction
@@ -902,7 +902,7 @@ dfp_performUserAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateUsers
@@ -932,6 +932,6 @@ dfp_updateUsers <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

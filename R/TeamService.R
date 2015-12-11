@@ -624,7 +624,7 @@ dfp_createTeams <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getTeamsByStatement
@@ -659,7 +659,7 @@ dfp_getTeamsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateTeams
@@ -689,6 +689,6 @@ dfp_updateTeams <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

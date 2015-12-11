@@ -1091,7 +1091,7 @@ dfp_createAudienceSegments <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getAudienceSegmentsByStatement
@@ -1133,7 +1133,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performAudienceSegmentAction
@@ -1163,7 +1163,7 @@ dfp_performAudienceSegmentAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateAudienceSegments
@@ -1193,6 +1193,6 @@ dfp_updateAudienceSegments <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

@@ -626,7 +626,7 @@ dfp_createActivities <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getActivitiesByStatement
@@ -663,7 +663,7 @@ dfp_getActivitiesByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateActivities
@@ -693,6 +693,6 @@ dfp_updateActivities <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

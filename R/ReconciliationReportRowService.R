@@ -724,7 +724,7 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateReconciliationReportRows
@@ -754,6 +754,6 @@ dfp_updateReconciliationReportRows <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

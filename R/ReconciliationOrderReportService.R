@@ -680,7 +680,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performReconciliationOrderReportAction
@@ -715,7 +715,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateReconciliationOrderReports
@@ -745,6 +745,6 @@ dfp_updateReconciliationOrderReports <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 

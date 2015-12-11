@@ -717,7 +717,7 @@ dfp_createLiveStreamEvents <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' getLiveStreamEventsByStatement
@@ -750,7 +750,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' performLiveStreamEventAction
@@ -780,7 +780,7 @@ dfp_performLiveStreamEventAction <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
 #' updateLiveStreamEvents
@@ -810,6 +810,6 @@ dfp_updateLiveStreamEvents <- function(request_data){
                return(new_x)
              }, .id=NULL)
   }
-  return(response)
+  return(result)
 }
 #' 
