@@ -4,10 +4,13 @@
 \alias{dfp_getAllRoles}
 \title{getAllRoles}
 \usage{
-dfp_getAllRoles()
+dfp_getAllRoles(as_df=FALSE)
+}
+\arguments{
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getAllRolesResponse
+a \code{list} or \code{data.frame} containing all the elements of a getAllRolesResponse
 }
 \description{
 Returns the Role objects that are defined for the users of the network.

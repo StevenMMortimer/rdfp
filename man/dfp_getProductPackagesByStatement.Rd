@@ -4,14 +4,16 @@
 \alias{dfp_getProductPackagesByStatement}
 \title{getProductPackagesByStatement}
 \usage{
-dfp_getProductPackagesByStatement(request_data)
+dfp_getProductPackagesByStatement(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getProductPackagesByStatementResponse
+a \code{list} or \code{data.frame} containing all the elements of a getProductPackagesByStatementResponse
 }
 \description{
 Gets a ProductPackagePage of ProductPackage objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering:  filtering criteria over product packages 

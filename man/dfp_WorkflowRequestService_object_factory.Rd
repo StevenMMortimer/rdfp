@@ -7,7 +7,7 @@
 dfp_WorkflowRequestService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods to retrieve and perform actions on WorkflowRequest objects
@@ -41,9 +41,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -51,8 +51,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -61,7 +61,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -76,7 +76,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{ApproveWorkflowApprovalRequests}
@@ -86,7 +86,7 @@ requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ApproveWorkflowApprovalRequests}{Google Documentation for ApproveWorkflowApprovalRequests}
 \describe{
  \item{extends WorkflowRequestAction}{see documentation for WorkflowRequestAction}
- \item{comment}{a string -  The comment of the ApproveWorkflowApprovalRequests action. This field is
+ \item{comment}{a character - The comment of the ApproveWorkflowApprovalRequests action. This field is
 optional.}
 }
 
@@ -96,7 +96,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -131,7 +131,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -140,7 +140,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -155,7 +155,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -175,9 +175,9 @@ version.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -189,7 +189,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -198,7 +198,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -207,7 +207,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{FeatureError}
@@ -218,7 +218,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -233,7 +233,7 @@ Errors that can result from a forecast request.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ForecastError}{Google Documentation for ForecastError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values:
+ \item{reason}{a ForecastError.Reason - The reason for the forecast error. This can take one of the following values: 
    \itemize{
      \item{SERVER_NOT_AVAILABLE - The forecast could not be retrieved due to a server side connection problem.
 Please try again soon.}
@@ -265,7 +265,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -281,7 +281,7 @@ Lists all errors for executing operations on line items
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.LineItemOperationError}{Google Documentation for LineItemOperationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a LineItemOperationError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NOT_ALLOWED - The operation is not allowed due to lack of permissions.}
      \item{NOT_APPLICABLE - The operation is not applicable for the current state of the LineItem.}
@@ -308,7 +308,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -327,7 +327,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -348,7 +348,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -363,7 +363,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -378,7 +378,7 @@ Lists all errors associated with performing actions on Proposal objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ProposalActionError}{Google Documentation for ProposalActionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ProposalActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ProposalActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NOT_APPLICABLE - The operation is not applicable to the current state.}
      \item{IS_ARCHIVED - The operation cannot be applied because the proposal is archived.}
@@ -395,7 +395,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -411,7 +411,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -427,7 +427,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -450,7 +450,7 @@ requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.RejectWorkflowApprovalRequests}{Google Documentation for RejectWorkflowApprovalRequests}
 \describe{
  \item{extends WorkflowRequestAction}{see documentation for WorkflowRequestAction}
- \item{comment}{a string -  The comment of the RejectWorkflowApprovalRequests action. This field is
+ \item{comment}{a character - The comment of the RejectWorkflowApprovalRequests action. This field is
 optional.}
 }
 
@@ -460,7 +460,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -477,7 +477,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -495,8 +495,8 @@ condition requests. Doing so means that the rule did not trigger.
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -504,30 +504,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -542,7 +529,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -557,7 +544,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -567,7 +554,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{TriggerWorkflowExternalConditionRequests}
@@ -584,7 +571,7 @@ condition requests.
 Represents the result of performing an action on objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.UpdateResult}{Google Documentation for UpdateResult}
 \describe{
- \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+ \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 action.}
 }
 
@@ -601,7 +588,7 @@ Lists all errors associated with performing actions within WorkflowAction.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowActionError}{Google Documentation for WorkflowActionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a WorkflowActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a WorkflowActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NOT_APPLICABLE - The action does not exist or is not applicable to the current state.}
      \item{WORKFLOW_DEFINITION_NOT_FOUND - Means there's no workflow definition found for the entity.}
@@ -627,15 +614,15 @@ A WorkflowApprovalRequest represents a workflow action unit that requires
 user approval.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowApprovalRequest}{Google Documentation for WorkflowApprovalRequest}
 \describe{
- \item{id}{a integer (inherited from WorkflowRequest) -  The unique ID of the workflow request. This attribute is readonly and is
+ \item{id}{a integer (inherited from WorkflowRequest) - The unique ID of the workflow request. This attribute is readonly and is
 assigned by Google.}
- \item{workflowRuleName}{a string (inherited from WorkflowRequest) -  The name of the workflow rule that generated the request. This attribute is
+ \item{workflowRuleName}{a character (inherited from WorkflowRequest) - The name of the workflow rule that generated the request. This attribute is
 readonly and is assigned by Google.}
- \item{entityId}{a integer (inherited from WorkflowRequest) -  The ID of entity associated to this workflow request.}
- \item{entityType}{a WorkflowEntityType (inherited from WorkflowRequest) -  The WorkflowEntityType associated to this workflow request.}
- \item{type}{a WorkflowRequestType (inherited from WorkflowRequest) -  The WorkflowRequestType of this workflow request. This attribute is readonly
+ \item{entityId}{a integer (inherited from WorkflowRequest) - The ID of entity associated to this workflow request.}
+ \item{entityType}{a WorkflowEntityType (inherited from WorkflowRequest) - The WorkflowEntityType associated to this workflow request.}
+ \item{type}{a WorkflowRequestType (inherited from WorkflowRequest) - The WorkflowRequestType of this workflow request. This attribute is readonly
 and is assigned by Google.}
- \item{status}{a WorkflowApprovalRequestStatus - The status of the WorkflowApprovalRequest. This attribute is readonly. This can take one of the following values:
+ \item{status}{a WorkflowApprovalRequestStatus - The status of the WorkflowApprovalRequest. This attribute is readonly. This can take one of the following values: 
    \itemize{
      \item{PENDING_APPROVAL - The request is pending approval.}
      \item{APPROVED - The workflow approval request has been approved.}
@@ -653,16 +640,16 @@ A WorkflowExternalConditionRequest represents a workflow condition that
 requires external system to determine the result.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowExternalConditionRequest}{Google Documentation for WorkflowExternalConditionRequest}
 \describe{
- \item{id}{a integer (inherited from WorkflowRequest) -  The unique ID of the workflow request. This attribute is readonly and is
+ \item{id}{a integer (inherited from WorkflowRequest) - The unique ID of the workflow request. This attribute is readonly and is
 assigned by Google.}
- \item{workflowRuleName}{a string (inherited from WorkflowRequest) -  The name of the workflow rule that generated the request. This attribute is
+ \item{workflowRuleName}{a character (inherited from WorkflowRequest) - The name of the workflow rule that generated the request. This attribute is
 readonly and is assigned by Google.}
- \item{entityId}{a integer (inherited from WorkflowRequest) -  The ID of entity associated to this workflow request.}
- \item{entityType}{a WorkflowEntityType (inherited from WorkflowRequest) -  The WorkflowEntityType associated to this workflow request.}
- \item{type}{a WorkflowRequestType (inherited from WorkflowRequest) -  The WorkflowRequestType of this workflow request. This attribute is readonly
+ \item{entityId}{a integer (inherited from WorkflowRequest) - The ID of entity associated to this workflow request.}
+ \item{entityType}{a WorkflowEntityType (inherited from WorkflowRequest) - The WorkflowEntityType associated to this workflow request.}
+ \item{type}{a WorkflowRequestType (inherited from WorkflowRequest) - The WorkflowRequestType of this workflow request. This attribute is readonly
 and is assigned by Google.}
  \item{status}{a WorkflowExternalConditionStatus - The status of the WorkflowExternalConditionRequest. This attribute is
-readonly. This can take one of the following values:
+readonly. This can take one of the following values: 
    \itemize{
      \item{PENDING - The workflow external condition is pending evaluation.}
      \item{TRIGGERED - The workflow external condition has been triggered.}
@@ -680,12 +667,12 @@ A WorkflowRequest represents a workflow action unit that requires external
 or manual interference.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowRequest}{Google Documentation for WorkflowRequest}
 \describe{
- \item{id}{a integer -  The unique ID of the workflow request. This attribute is readonly and is
+ \item{id}{a integer - The unique ID of the workflow request. This attribute is readonly and is
 assigned by Google.}
- \item{workflowRuleName}{a string -  The name of the workflow rule that generated the request. This attribute is
+ \item{workflowRuleName}{a character - The name of the workflow rule that generated the request. This attribute is
 readonly and is assigned by Google.}
- \item{entityId}{a integer -  The ID of entity associated to this workflow request.}
- \item{entityType}{a WorkflowEntityType - The WorkflowEntityType associated to this workflow request. This can take one of the following values:
+ \item{entityId}{a integer - The ID of entity associated to this workflow request.}
+ \item{entityType}{a WorkflowEntityType - The WorkflowEntityType associated to this workflow request. This can take one of the following values: 
    \itemize{
      \item{PROPOSAL - Represents a Proposal.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -693,7 +680,7 @@ version.}
    }
   }
  \item{type}{a WorkflowRequestType - The WorkflowRequestType of this workflow request. This attribute is readonly
-and is assigned by Google. This can take one of the following values:
+and is assigned by Google. This can take one of the following values: 
    \itemize{
      \item{WORKFLOW_APPROVAL_REQUEST - This is a request for an approval action. Either by a frontend user or an
 API request.}
@@ -725,7 +712,7 @@ Lists errors associated with WorkflowRequest workflow requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowRequestError}{Google Documentation for WorkflowRequestError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a WorkflowRequestError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a WorkflowRequestError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUEST_ALREADY_PROCESSED - The request has already been processed.}
      \item{WORKFLOW_NOT_IN_PROGRESS - The workflow is not in progress.}
@@ -743,9 +730,9 @@ version.}
 Captures a page of WorkflowRequest objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService.WorkflowRequestPage}{Google Documentation for WorkflowRequestPage}
 \describe{
- \item{results}{a WorkflowRequest -  The collection of workflow requests contained within this page.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
+ \item{results}{a WorkflowRequest - The collection of workflow requests contained within this page.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
 }
 }
 

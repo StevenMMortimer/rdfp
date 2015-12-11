@@ -4,10 +4,13 @@
 \alias{dfp_getCurrentUser}
 \title{getCurrentUser}
 \usage{
-dfp_getCurrentUser()
+dfp_getCurrentUser(as_df=FALSE)
+}
+\arguments{
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getCurrentUserResponse
+a \code{list} or \code{data.frame} containing all the elements of a getCurrentUserResponse
 }
 \description{
 Returns the current User.

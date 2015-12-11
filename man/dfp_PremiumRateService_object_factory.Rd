@@ -7,7 +7,7 @@
 dfp_PremiumRateService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods for managing PremiumRate objects.
@@ -49,9 +49,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -59,8 +59,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -69,7 +69,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -84,7 +84,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AudienceSegmentPremiumFeature}
@@ -93,7 +93,7 @@ A premium feature applied to audience segment targeting.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.AudienceSegmentPremiumFeature}{Google Documentation for AudienceSegmentPremiumFeature}
 \describe{
  \item{extends PremiumFeature}{see documentation for PremiumFeature}
- \item{audienceSegmentId}{a integer -  The ID of the AudienceSegment id. This attribute is required and cannot be
+ \item{audienceSegmentId}{a integer - The ID of the AudienceSegment id. This attribute is required and cannot be
 changed after creation.}
 }
 
@@ -103,7 +103,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -146,7 +146,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{BrowserLanguagePremiumFeature}
@@ -171,7 +171,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -186,7 +186,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -215,9 +215,9 @@ A premium feature applied to custom criteria targeting.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.CustomTargetingPremiumFeature}{Google Documentation for CustomTargetingPremiumFeature}
 \describe{
  \item{extends PremiumFeature}{see documentation for PremiumFeature}
- \item{customTargetingKeyId}{a integer -  The ID of the CustomTargetingKey. This attribute is required and cannot be
+ \item{customTargetingKeyId}{a integer - The ID of the CustomTargetingKey. This attribute is required and cannot be
 changed after creation.}
- \item{customTargetingValueId}{a integer -  The ID of the CustomTargetingValue. null if all custom targeting values of
+ \item{customTargetingValueId}{a integer - The ID of the CustomTargetingValue. null if all custom targeting values of
 the customTargetingKeyId should be matched. This attribute cannot be changed
 after creation.}
 }
@@ -227,9 +227,9 @@ after creation.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -241,7 +241,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -250,7 +250,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -259,7 +259,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{DaypartPremiumFeature}
@@ -300,7 +300,7 @@ Lists errors relating to having too many children on an entity.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 allowed per order in the network.}
@@ -344,7 +344,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -377,7 +377,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -401,7 +401,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -420,7 +420,7 @@ Errors associated with violation of a NOT NULL check.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.NullError}{Google Documentation for NullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
    }
@@ -433,7 +433,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -462,7 +462,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -477,7 +477,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -508,12 +508,12 @@ A premium rate holding a set of PremiumRateValue objects with the same
 PremiumFeature.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PremiumRate}{Google Documentation for PremiumRate}
 \describe{
- \item{id}{a integer -  Uniquely identifies the PremiumRate object. This attribute is read-only and
+ \item{id}{a integer - Uniquely identifies the PremiumRate object. This attribute is read-only and
 is assigned by Google when a premium rate is created.}
- \item{rateCardId}{a integer -  The ID of the RateCard object to which this premium rate belongs. This
+ \item{rateCardId}{a integer - The ID of the RateCard object to which this premium rate belongs. This
 attribute is required and cannot be changed after creation.}
  \item{pricingMethod}{a PricingMethod - The method of deciding which PremiumRateValue objects from this PremiumRate
-to apply to a ProposalLineItem. This attribute is required. This can take one of the following values:
+to apply to a ProposalLineItem. This attribute is required. This can take one of the following values: 
    \itemize{
      \item{SUM - Applies sum of all matched PremiumRateValue objects in the PremiumRate.}
      \item{HIGHEST - Applies the matched PremiumRateValue with highest adjustment size.}
@@ -523,9 +523,9 @@ added to this PremiumRate.}
 version.}
    }
   }
- \item{premiumFeature}{a PremiumFeature -  The feature type of this premium rate. This attribute is required and cannot
+ \item{premiumFeature}{a PremiumFeature - The feature type of this premium rate. This attribute is required and cannot
 be changed after creation.}
- \item{premiumRateValues}{a PremiumRateValue -  The premiums rate values in this rate.}
+ \item{premiumRateValues}{a PremiumRateValue - The premiums rate values in this rate.}
 }
 
 \strong{PremiumRateError}
@@ -534,7 +534,7 @@ An error having to do with PremiumRate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PremiumRateError}{Google Documentation for PremiumRateError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PremiumRateError.Reason - This can take one of the following values:
+ \item{reason}{a PremiumRateError.Reason - This can take one of the following values: 
    \itemize{
      \item{INVALID_RATE_TYPE - The rate type of the PremiumRateValue is invalid.}
      \item{INVALID_PRICING_METHOD - The pricing method of the PremiumRate is invalid.}
@@ -550,9 +550,9 @@ version.}
 Captures a page of PremiumRate objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PremiumRatePage}{Google Documentation for PremiumRatePage}
 \describe{
- \item{results}{a PremiumRate -  The collection of premium rates contained within this page.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
+ \item{results}{a PremiumRate - The collection of premium rates contained within this page.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
 }
 
 \strong{PremiumRateValue}
@@ -561,12 +561,12 @@ A premium of a RateCard which could be applied to the line item and charges
 extra.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PremiumRateValue}{Google Documentation for PremiumRateValue}
 \describe{
- \item{premiumRateId}{a integer -  The ID of the PremiumRate object to which this premium rate value belongs.
+ \item{premiumRateId}{a integer - The ID of the PremiumRate object to which this premium rate value belongs.
 This attribute is readonly.}
- \item{premiumFeature}{a PremiumFeature -  The feature type of this premium rate value. This attribute is required and
+ \item{premiumFeature}{a PremiumFeature - The feature type of this premium rate value. This attribute is required and
 cannot be changed after creation.}
  \item{rateType}{a RateType - The rate type this premium rate value would be applied to. This attribute is
-required. This can take one of the following values:
+required. This can take one of the following values: 
    \itemize{
      \item{CPM - The rate applies to cost per mille (CPM) revenue.}
      \item{CPC - The rate applies to cost per click (CPC) revenue.}
@@ -578,7 +578,7 @@ version.}
    }
   }
  \item{adjustmentType}{a PremiumAdjustmentType - Whether the premium rate value is a percentage or absolute value to the
-product rate. This attribute is required. This can take one of the following values:
+product rate. This attribute is required. This can take one of the following values: 
    \itemize{
      \item{PERCENTAGE - The adjustment size to the base rate is a percentage.}
      \item{ABSOLUTE_VALUE - The adjustment size to the base rate is an absolute value.}
@@ -586,7 +586,7 @@ product rate. This attribute is required. This can take one of the following val
 version.}
    }
   }
- \item{adjustmentSize}{a integer -  If adjustmentType is PremiumAdjustmentType ABSOLUTE_VALUE, this value is in
+ \item{adjustmentSize}{a integer - If adjustmentType is PremiumAdjustmentType ABSOLUTE_VALUE, this value is in
 micros. If adjustmentType is PremiumAdjustmentType PERCENTAGE, this value is
 in millipercent. This attribute is required.}
 }
@@ -598,7 +598,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -614,7 +614,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -630,7 +630,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -652,7 +652,7 @@ A list of all errors associated with the Range constraint.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.RangeError}{Google Documentation for RangeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RangeError.Reason - This can take one of the following values:
+ \item{reason}{a RangeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_HIGH}
      \item{TOO_LOW}
@@ -668,7 +668,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -681,7 +681,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -698,7 +698,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -707,8 +707,8 @@ duplicates.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -716,30 +716,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -754,7 +741,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -769,7 +756,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -779,7 +766,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{UnknownPremiumFeature}

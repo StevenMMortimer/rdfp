@@ -7,7 +7,7 @@
 dfp_ReportService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods for executing a ReportJob and retrieving performance and
@@ -50,9 +50,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -60,8 +60,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -70,7 +70,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -85,7 +85,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AuthenticationError}
@@ -94,7 +94,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -129,7 +129,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -138,7 +138,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -153,7 +153,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -173,9 +173,9 @@ version.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -187,7 +187,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -196,7 +196,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -205,7 +205,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{FeatureError}
@@ -216,7 +216,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -233,7 +233,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -249,7 +249,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -268,7 +268,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -289,7 +289,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -304,7 +304,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -320,7 +320,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -336,7 +336,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -352,7 +352,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -375,7 +375,7 @@ getReportDownloadUrlWithOptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportDownloadOptions}{Google Documentation for ReportDownloadOptions}
 \describe{
  \item{exportFormat}{a ExportFormat - The ExportFormat used to generate the report. Default value is ExportFormat
-CSV_DUMP. This can take one of the following values:
+CSV_DUMP. This can take one of the following values: 
    \itemize{
      \item{TSV - The report file is generated as a list of Tab Separated Values.}
      \item{CSV_EXCEL - The report file is generated as a list of Comma Separated Values for Excel.}
@@ -391,11 +391,11 @@ ISO 8601 standard YYYY-MM-DDThh:mm:ss[+-]hh:mm}
 Excel 2007+.}
    }
   }
- \item{includeReportProperties}{a boolean -  Whether or not to include the report properties (e.g. network, user, date
+ \item{includeReportProperties}{a boolean - Whether or not to include the report properties (e.g. network, user, date
 generated...) in the generated report. Default is false.}
- \item{includeTotalsRow}{a boolean -  Whether or not to include the totals row. Default is true for all formats
+ \item{includeTotalsRow}{a boolean - Whether or not to include the totals row. Default is true for all formats
 except ExportFormat CSV_DUMP.}
- \item{useGzipCompression}{a boolean -  Whether or not to compress the report file to a gzip file. Default is true.
+ \item{useGzipCompression}{a boolean - Whether or not to compress the report file to a gzip file. Default is true.
 Regardless of value, gzip http compression is available from the URL by
 normal means.}
 }
@@ -406,7 +406,7 @@ An error for an exception that occurred while running the report.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportError}{Google Documentation for ReportError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ReportError.Reason - This can take one of the following values:
+ \item{reason}{a ReportError.Reason - This can take one of the following values: 
    \itemize{
      \item{DEFAULT - Default ReportError when the reason is not among any already defined.}
      \item{REPORT_ACCESS_NOT_ALLOWED - User does not have permission to access the report.}
@@ -458,11 +458,11 @@ Represents a report job that will be run to retrieve performance and
 statistics information about ad campaigns, networks, inventory and sales.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportJob}{Google Documentation for ReportJob}
 \describe{
- \item{id}{a integer -  The unique ID of the ReportJob. This value is read-only and is assigned by
+ \item{id}{a integer - The unique ID of the ReportJob. This value is read-only and is assigned by
 Google.}
- \item{reportQuery}{a ReportQuery -  Holds the filtering criteria.}
+ \item{reportQuery}{a ReportQuery - Holds the filtering criteria.}
  \item{reportJobStatus}{a ReportJobStatus - The status of the ReportJob. This attribute is read-only and is assigned by
-Google. This can take one of the following values:
+Google. This can take one of the following values: 
    \itemize{
      \item{COMPLETED - The ReportJob has completed successfully and is ready to download.}
      \item{IN_PROGRESS - The ReportJob is still being executed.}
@@ -478,7 +478,7 @@ generating a report.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportQuery}{Google Documentation for ReportQuery}
 \describe{
  \item{dimensions}{a Dimension - The list of break-down types being requested in the report. The generated
-report will contain the dimensions in the same order as requested. This can take one of the following values:
+report will contain the dimensions in the same order as requested. This can take one of the following values: 
    \itemize{
      \item{MONTH_AND_YEAR - Breaks down reporting data by month and year in the network time zone. Can
 be used to filter on month using ISO 4601 format 'YYYY-MM'.}
@@ -875,7 +875,7 @@ FEMALE_65_PLUS, and OTHER.}
      \item{NIELSEN_RESTATEMENT_DATE - Data restatement date of Nielsen Digital Ad Ratings data.}
    }
   }
- \item{adUnitView}{a ReportQuery.AdUnitView - The ad unit view for the report. Defaults to AdUnitView TOP_LEVEL. This can take one of the following values:
+ \item{adUnitView}{a ReportQuery.AdUnitView - The ad unit view for the report. Defaults to AdUnitView TOP_LEVEL. This can take one of the following values: 
    \itemize{
      \item{TOP_LEVEL - Only the top level ad units. Metrics include events for their descendants
 that are not filtered out.}
@@ -891,7 +891,7 @@ returned as the value.  Metrics do not include events for the descendants.}
   }
  \item{columns}{a Column - The list of trafficking statistics and revenue information being requested
 in the report. The generated report will contain the columns in the same
-order as requested. This can take one of the following values:
+order as requested. This can take one of the following values: 
    \itemize{
      \item{AD_SERVER_IMPRESSIONS - The number of impressions delivered by the ad server.}
      \item{AD_SERVER_TARGETED_IMPRESSIONS - The number of impressions delivered by the ad server by explicit custom
@@ -1724,7 +1724,7 @@ impressions per person for the overall population.}
  \item{dimensionAttributes}{a DimensionAttribute - The list of break-down attributes being requested in this report. Some
 DimensionAttribute values can only be used with certain Dimension values
 that must be included in the dimensions attribute. The generated report will
-contain the attributes in the same order as requested. This can take one of the following values:
+contain the attributes in the same order as requested. This can take one of the following values: 
    \itemize{
      \item{LINE_ITEM_LABELS - Represents LineItem effectiveAppliedLabels as a comma separated list of
 Label name for Dimension LINE_ITEM_NAME.}
@@ -1949,10 +1949,10 @@ cmsContent for Dimension CONTENT_NAME.}
      \item{AD_UNIT_CODE - Represents AdUnit adUnitCode for Dimension AD_UNIT_NAME.}
    }
   }
- \item{customFieldIds}{a integer -  The list of CustomField id being requested in this report. To add a
+ \item{customFieldIds}{a integer - The list of CustomField id being requested in this report. To add a
 CustomField to the report, you must include its corresponding Dimension,
 determined by the CustomField entityType, as a dimensions dimension.}
- \item{contentMetadataKeyHierarchyCustomTargetingKeyIds}{a integer -  The list of content metadata hierarchy custom targeting key
+ \item{contentMetadataKeyHierarchyCustomTargetingKeyIds}{a integer - The list of content metadata hierarchy custom targeting key
 CustomTargetingKey id IDs being requested in this report. Each of these IDs
 must have been defined in the ContentMetadataKeyHierarchy content metadata
 key hierarchy. This will include dimensions in the form of
@@ -1974,16 +1974,16 @@ Dimension.COUNTRY_NAME, Dimension.ADVERTISER_ID,
 Dimension.CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[1001]_ID,
 Dimension.CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[1002]_ID,
 Dimension.COUNTRY_CRITERIA_ID}
- \item{startDate}{a Date -  The start date from which the reporting information is gathered. The
+ \item{startDate}{a Date - The start date from which the reporting information is gathered. The
 ReportQuery dateRangeType field must be set to DateRangeType CUSTOM_DATE in
 order to use this.}
- \item{endDate}{a Date -  The end date upto which the reporting information is gathered. The
+ \item{endDate}{a Date - The end date upto which the reporting information is gathered. The
 ReportQuery dateRangeType field must be set to DateRangeType CUSTOM_DATE in
 order to use this.}
  \item{dateRangeType}{a DateRangeType - The period of time for which the reporting data is being generated. In order
 to define custom time periods, set this to DateRangeType CUSTOM_DATE. If set
 to DateRangeType CUSTOM_DATE, then ReportQuery startDate and ReportQuery
-endDate will be used. This can take one of the following values:
+endDate will be used. This can take one of the following values: 
    \itemize{
      \item{TODAY - The current day.}
      \item{YESTERDAY - The previous day.}
@@ -2004,7 +2004,7 @@ and ReportQuery endDate.}
      \item{NEXT_12_MONTHS - The next twelve months.}
    }
   }
- \item{statement}{a Statement -  Specifies a filter to use for reporting on data. This filter will be used in
+ \item{statement}{a Statement - Specifies a filter to use for reporting on data. This filter will be used in
 conjunction (joined with an AND statement) with the date range selected
 through dateRangeType, startDate, and endDate and the dimension filters
 selected through dimensionFilters. The syntax currently allowed for
@@ -2017,7 +2017,7 @@ example, the statement "WHERE LINE_ITEM_ID IN (34344, 23235)" can be used to
 generate a report for a specific set of line items Filtering on IDs is
 highly recommended over filtering on names, especially for geographical
 entities. When filtering on names, matching is case sensitive.}
- \item{timeZone}{a string -  The time zone in the form of America/New_York which the startDate and
+ \item{timeZone}{a character - The time zone in the form of America/New_York which the startDate and
 endDate are in, and the reporting information is gathered in. Defaults to
 Network timeZone if it is null. All supported time zones can be found in the
 Time_Zone PQL table with SupportedInReports being true. Only time zones that
@@ -2030,7 +2030,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -2043,7 +2043,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -2060,7 +2060,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -2069,8 +2069,8 @@ duplicates.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -2078,30 +2078,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -2116,7 +2103,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -2131,7 +2118,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -2141,7 +2128,7 @@ Errors for Strings which do not meet given length constraints.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.StringLengthError}{Google Documentation for StringLengthError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+ \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LONG}
      \item{TOO_SHORT}
@@ -2157,7 +2144,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{Value}

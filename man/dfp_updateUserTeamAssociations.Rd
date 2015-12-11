@@ -4,14 +4,16 @@
 \alias{dfp_updateUserTeamAssociations}
 \title{updateUserTeamAssociations}
 \usage{
-dfp_updateUserTeamAssociations(request_data)
+dfp_updateUserTeamAssociations(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a updateUserTeamAssociationsResponse
+a \code{list} or \code{data.frame} containing all the elements of a updateUserTeamAssociationsResponse
 }
 \description{
 Updates the specified UserTeamAssociation objects.

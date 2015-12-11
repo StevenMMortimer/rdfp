@@ -4,10 +4,13 @@
 \alias{dfp_getContentByStatementAndCustomTargetingValue}
 \title{getContentByStatementAndCustomTargetingValue}
 \usage{
-dfp_getContentByStatementAndCustomTargetingValue()
+dfp_getContentByStatementAndCustomTargetingValue(as_df=FALSE)
+}
+\arguments{
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse
+a \code{list} or \code{data.frame} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse
 }
 \description{
 Gets a ContentPage of Content objects that satisfy the given Statement query. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  filter a set of content 

@@ -4,14 +4,16 @@
 \alias{dfp_createCustomTargetingValues}
 \title{createCustomTargetingValues}
 \usage{
-dfp_createCustomTargetingValues(request_data)
+dfp_createCustomTargetingValues(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a createCustomTargetingValuesResponse
+a \code{list} or \code{data.frame} containing all the elements of a createCustomTargetingValuesResponse
 }
 \description{
 Creates new CustomTargetingValue objects. The following fields are required: <ul> <li>CustomTargetingValue customTargetingKeyId</li> <li>CustomTargetingValue name</li> </ul>

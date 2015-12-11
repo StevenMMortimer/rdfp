@@ -7,7 +7,7 @@
 dfp_LineItemCreativeAssociationService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides operations for creating, updating and retrieving
@@ -51,7 +51,7 @@ Error for AdSense related API calls.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.AdSenseAccountError}{Google Documentation for AdSenseAccountError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AdSenseAccountError.Reason - This can take one of the following values:
+ \item{reason}{a AdSenseAccountError.Reason - This can take one of the following values: 
    \itemize{
      \item{ASSOCIATE_ACCOUNT_API_ERROR - An error occured while trying to associate an AdSense account with GFP.
 Unable to create an association with AdSense or Ad Exchange account.}
@@ -78,9 +78,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -88,8 +88,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -98,7 +98,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -113,7 +113,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AssetError}
@@ -122,7 +122,7 @@ Lists all errors associated with assets.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.AssetError}{Google Documentation for AssetError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AssetError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a AssetError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NON_UNIQUE_NAME - An asset name must be unique across advertiser.}
      \item{FILE_NAME_TOO_LONG - The file name is too long.}
@@ -145,7 +145,7 @@ Errors associated with audience extension enabled line items
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.AudienceExtensionError}{Google Documentation for AudienceExtensionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a AudienceExtensionError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{FREQUENCY_CAPS_NOT_SUPPORTED - Frequency caps are not supported by audience extension line items}
      \item{INVALID_TARGETING - Audience extension line items can only target geography}
@@ -187,7 +187,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -222,7 +222,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -231,7 +231,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -246,7 +246,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -267,7 +267,7 @@ Lists all errors associated with creative asset macros.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CreativeAssetMacroError}{Google Documentation for CreativeAssetMacroError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativeAssetMacroError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CreativeAssetMacroError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{INVALID_MACRO_NAME - Invalid macro name specified. Macro names must start with an alpha character
 and consist only of alpha-numeric characters and underscores and be between
@@ -284,7 +284,7 @@ Lists all errors associated with creatives.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CreativeError}{Google Documentation for CreativeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{FLASH_AND_FALLBACK_URL_ARE_SAME - FlashRedirectCreative flashUrl and FlashRedirectCreative fallbackUrl are the
 same. The fallback URL is used when the flash URL does not work and must be
@@ -317,7 +317,7 @@ Errors associated with generation of creative preview URIs.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CreativePreviewError}{Google Documentation for CreativePreviewError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativePreviewError.Reason - This can take one of the following values:
+ \item{reason}{a CreativePreviewError.Reason - This can take one of the following values: 
    \itemize{
      \item{CANNOT_GENERATE_PREVIEW_URL - The creative cannot be previewed on this page.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -332,7 +332,7 @@ Errors relating to creative sets & subclasses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CreativeSetError}{Google Documentation for CreativeSetError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativeSetError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CreativeSetError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VIDEO_FEATURE_REQUIRED - The 'video' feature is required but not enabled.}
      \item{CANNOT_CREATE_OR_UPDATE_VIDEO_CREATIVES - Video creatives (including overlays, VAST redirects, etc..) cannot be
@@ -354,7 +354,7 @@ CreativeTemplate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CreativeTemplateError}{Google Documentation for CreativeTemplateError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativeTemplateError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CreativeTemplateError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CANNOT_PARSE_CREATIVE_TEMPLATE - The XML of the creative template definition is malformed and cannot be
 parsed.}
@@ -385,7 +385,7 @@ Lists all errors associated with custom creatives.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CustomCreativeError}{Google Documentation for CustomCreativeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CustomCreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CustomCreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{DUPLICATE_MACRO_NAME_FOR_CREATIVE - Macros associated with a single custom creative must have unique names.}
      \item{SNIPPET_REFERENCES_MISSING_MACRO - The file macro referenced in the snippet does not exist.}
@@ -406,7 +406,7 @@ Errors specific to editing custom field values
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.CustomFieldValueError}{Google Documentation for CustomFieldValueError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CustomFieldValueError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CUSTOM_FIELD_NOT_FOUND - An attempt was made to modify or create a CustomFieldValue for a CustomField
 that does not exist.}
@@ -425,9 +425,9 @@ version.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -439,7 +439,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -448,7 +448,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -457,7 +457,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{DeactivateLineItemCreativeAssociations}
@@ -482,7 +482,7 @@ Lists errors relating to having too many children on an entity.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 allowed per order in the network.}
@@ -525,7 +525,7 @@ allowed entities for a network has already been reached.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 network.}
@@ -550,7 +550,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -565,7 +565,7 @@ A list of all errors to be used for problems related to files.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.FileError}{Google Documentation for FileError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FileError.Reason - This can take one of the following values:
+ \item{reason}{a FileError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_CONTENTS - The provided byte array is empty.}
      \item{SIZE_TOO_LARGE - The provided file is larger than the maximum size defined for the network.}
@@ -581,7 +581,7 @@ Lists all errors associated with images.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ImageError}{Google Documentation for ImageError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ImageError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{INVALID_IMAGE - The file's format is invalid.}
      \item{INVALID_SIZE - Size width and Size height cannot be negative.}
@@ -625,7 +625,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -641,7 +641,7 @@ Lists all errors associated with phone numbers.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.InvalidPhoneNumberError}{Google Documentation for InvalidPhoneNumberError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InvalidPhoneNumberError.Reason - This can take one of the following values:
+ \item{reason}{a InvalidPhoneNumberError.Reason - This can take one of the following values: 
    \itemize{
      \item{INVALID_FORMAT - The phone number is invalid.}
      \item{TOO_SHORT - The phone number is too short.}
@@ -657,7 +657,7 @@ Lists all errors associated with URLs.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.InvalidUrlError}{Google Documentation for InvalidUrlError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InvalidUrlError.Reason - This can take one of the following values:
+ \item{reason}{a InvalidUrlError.Reason - This can take one of the following values: 
    \itemize{
      \item{ILLEGAL_CHARACTERS - The URL contains invalid characters.}
      \item{INVALID_FORMAT - The format of the URL is not allowed. This could occur for a number of
@@ -678,7 +678,7 @@ Errors specific to creating label entity associations.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LabelEntityAssociationError}{Google Documentation for LabelEntityAssociationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a LabelEntityAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{DUPLICATE_ASSOCIATION - The label has already been attached to the entity.}
      \item{INVALID_ASSOCIATION - A label is being applied to an entity that does not support that entity
@@ -697,9 +697,9 @@ LineItem so that the creative can be served in ad units targeted by the line
 item.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemCreativeAssociation}{Google Documentation for LineItemCreativeAssociation}
 \describe{
- \item{lineItemId}{a integer -  The ID of the LineItem to which the Creative should be associated. This
+ \item{lineItemId}{a integer - The ID of the LineItem to which the Creative should be associated. This
 attribute is required.}
- \item{creativeId}{a integer -  The ID of the Creative being associated with a LineItem.  This attribute is
+ \item{creativeId}{a integer - The ID of the Creative being associated with a LineItem.  This attribute is
 required if this is an association between a line item and a creative. <br>
 This attribute is ignored if this is an association between a line item and
 a creative set.  If this is an association between a line item and a
@@ -708,22 +708,22 @@ creativeId] will be the creative's ID. <br> If this is an association
 between a line item and a creative set, when retrieving the line item
 creative association, the \{@link creativeId will be the ID of the
 CreativeSet masterCreativeId master creative.}
- \item{creativeSetId}{a integer -  The ID of the CreativeSet being associated with a LineItem. This attribute
+ \item{creativeSetId}{a integer - The ID of the CreativeSet being associated with a LineItem. This attribute
 is required if this is an association between a line item and a creative
 set.  This field will be null when retrieving associations between line
 items and creatives not belonging to a set.}
- \item{manualCreativeRotationWeight}{a double -  The weight of the Creative. This value is only used if the line item's
+ \item{manualCreativeRotationWeight}{a double - The weight of the Creative. This value is only used if the line item's
 creativeRotationType is set to CreativeRotationType MANUAL. This attribute
 is optional and defaults to 10.}
- \item{sequentialCreativeRotationIndex}{a integer -  The sequential rotation index of the Creative. This value is used only if
+ \item{sequentialCreativeRotationIndex}{a integer - The sequential rotation index of the Creative. This value is used only if
 the associated line item's LineItem creativeRotationType is set to
 CreativeRotationType SEQUENTIAL. This attribute is optional and defaults to
 1.}
- \item{startDateTime}{a DateTime -  Overrides the value set for LineItem startDateTime. This value is optional
+ \item{startDateTime}{a DateTime - Overrides the value set for LineItem startDateTime. This value is optional
 and is only valid for DFP premium networks.}
  \item{startDateTimeType}{a StartDateTimeType - Specifies whether to start serving to the LineItemCreativeAssociation right
 away, in an hour, etc. This attribute is optional and defaults to
-StartDateTimeType USE_START_DATE_TIME. This can take one of the following values:
+StartDateTimeType USE_START_DATE_TIME. This can take one of the following values: 
    \itemize{
      \item{USE_START_DATE_TIME - Use the value in startDateTime.}
      \item{IMMEDIATELY - The entity will start serving immediately.  startDateTime in the request is
@@ -735,14 +735,14 @@ Additionally, startDateTimeType will be set to StartDateTimeType
 USE_START_DATE_TIME.}
    }
   }
- \item{endDateTime}{a DateTime -  Overrides LineItem endDateTime. This value is optional and is only valid for
+ \item{endDateTime}{a DateTime - Overrides LineItem endDateTime. This value is optional and is only valid for
 DFP premium networks.}
- \item{destinationUrl}{a string -  Overrides the value set for HasDestinationUrlCreative destinationUrl. This
+ \item{destinationUrl}{a character - Overrides the value set for HasDestinationUrlCreative destinationUrl. This
 value is optional and is only valid for DFP premium networks.}
- \item{sizes}{a Size -  Overrides the value set for Creative size, which allows the creative to be
+ \item{sizes}{a Size - Overrides the value set for Creative size, which allows the creative to be
 served to ad units that would otherwise not be compatible for its actual
 size. This value is optional.}
- \item{status}{a LineItemCreativeAssociation.Status - The status of the association. This attribute is read-only. This can take one of the following values:
+ \item{status}{a LineItemCreativeAssociation.Status - The status of the association. This attribute is read-only. This can take one of the following values: 
    \itemize{
      \item{ACTIVE - The association is active and the associated Creative can be served.}
      \item{NOT_SERVING - The association is active but the associated Creative may not be served,
@@ -755,11 +755,11 @@ being served.}
 version.}
    }
   }
- \item{stats}{a LineItemCreativeAssociationStats -  Contains trafficking statistics for the association. This attribute is
+ \item{stats}{a LineItemCreativeAssociationStats - Contains trafficking statistics for the association. This attribute is
 readonly and is populated by Google. This will be null in case there are no
 statistics for the association yet.}
- \item{lastModifiedDateTime}{a DateTime -  The date and time this association was last modified.}
- \item{targetingName}{a string -  Specifies CreativeTargeting for this line item creative association. This
+ \item{lastModifiedDateTime}{a DateTime - The date and time this association was last modified.}
+ \item{targetingName}{a character - Specifies CreativeTargeting for this line item creative association. This
 attribute is optional. It should match the creative targeting specified on
 the corresponding CreativePlaceholder in the LineItem that is being
 associated with the Creative.}
@@ -782,7 +782,7 @@ Lists all errors associated with line item-to-creative association dates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemCreativeAssociationError}{Google Documentation for LineItemCreativeAssociationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a LineItemCreativeAssociationError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CREATIVE_IN_WRONG_ADVERTISERS_LIBRARY - Cannot associate a creative to the wrong advertiser}
      \item{INVALID_LINEITEM_CREATIVE_PAIRING - The creative type being associated is a invalid for the line item type.}
@@ -817,7 +817,7 @@ associations
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemCreativeAssociationOperationError}{Google Documentation for LineItemCreativeAssociationOperationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a LineItemCreativeAssociationOperationError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a LineItemCreativeAssociationOperationError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NOT_ALLOWED - The operation is not allowed due to permissions}
      \item{NOT_APPLICABLE - The operation is not applicable to the current state}
@@ -833,9 +833,9 @@ version.}
 Captures a page of LineItemCreativeAssociation objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemCreativeAssociationPage}{Google Documentation for LineItemCreativeAssociationPage}
 \describe{
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{results}{a LineItemCreativeAssociation -  The collection of line item creative associations contained within this
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{results}{a LineItemCreativeAssociation - The collection of line item creative associations contained within this
 page.}
 }
 
@@ -845,10 +845,10 @@ Contains statistics such as impressions, clicks delivered and cost for
 LineItemCreativeAssociation objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemCreativeAssociationStats}{Google Documentation for LineItemCreativeAssociationStats}
 \describe{
- \item{stats}{a Stats -  A Stats object that holds delivered impressions and clicks statistics.}
- \item{creativeSetStats}{a Long_StatsMapEntry -  A map containing Stats objects for each creative belonging to a creative
+ \item{stats}{a Stats - A Stats object that holds delivered impressions and clicks statistics.}
+ \item{creativeSetStats}{a Long_StatsMapEntry - A map containing Stats objects for each creative belonging to a creative
 set, null for non creative set associations.}
- \item{costInOrderCurrency}{a Money -  The revenue generated thus far by the creative from its association with the
+ \item{costInOrderCurrency}{a Money - The revenue generated thus far by the creative from its association with the
 particular line item in the publisher's currency.}
 }
 
@@ -858,7 +858,7 @@ A catch-all error that lists all generic errors associated with LineItem.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.LineItemError}{Google Documentation for LineItemError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a LineItemError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ALREADY_STARTED - Some changes may not be allowed because a line item has already started.}
      \item{UPDATE_RESERVATION_NOT_ALLOWED - Update reservation is not allowed because a line item has already started,
@@ -965,8 +965,8 @@ Stats.
 Represents a money amount.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.Money}{Google Documentation for Money}
 \describe{
- \item{currencyCode}{a string -  Three letter currency code in string format.}
- \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+ \item{currencyCode}{a character - Three letter currency code in string format.}
+ \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 }
 
@@ -976,7 +976,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -995,7 +995,7 @@ Errors associated with violation of a NOT NULL check.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.NullError}{Google Documentation for NullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
    }
@@ -1008,7 +1008,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -1029,7 +1029,7 @@ Lists all errors associated with orders.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.OrderError}{Google Documentation for OrderError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a OrderError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UPDATE_CANCELED_ORDER_NOT_ALLOWED - Updating a canceled order is not allowed.}
      \item{UPDATE_PENDING_APPROVAL_ORDER_NOT_ALLOWED - Updating an order that has its approval pending is not allowed.}
@@ -1056,7 +1056,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1071,7 +1071,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1087,7 +1087,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1103,7 +1103,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1119,7 +1119,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -1141,7 +1141,7 @@ A list of all errors associated with the Range constraint.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RangeError}{Google Documentation for RangeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RangeError.Reason - This can take one of the following values:
+ \item{reason}{a RangeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_HIGH}
      \item{TOO_LOW}
@@ -1157,7 +1157,7 @@ A list of all errors to be used for validating sizes of collections.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RequiredCollectionError}{Google Documentation for RequiredCollectionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values:
+ \item{reason}{a RequiredCollectionError.Reason - This can take one of the following values: 
    \itemize{
      \item{REQUIRED - A required collection is missing.}
      \item{TOO_LARGE - Collection size is too large.}
@@ -1174,7 +1174,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -1188,7 +1188,7 @@ validators.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+ \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
    \itemize{
      \item{REQUIRED}
      \item{TOO_LARGE}
@@ -1207,7 +1207,7 @@ A list of all errors to be used for validating Size.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RequiredSizeError}{Google Documentation for RequiredSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredSizeError.Reason - This can take one of the following values:
+ \item{reason}{a RequiredSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Creative size or LineItem creativeSizes is missing.}
      \item{NOT_ALLOWED - LineItemCreativeAssociation sizes must be a subset of LineItem
@@ -1224,7 +1224,7 @@ Lists all errors associated with Rich Media Studio creatives.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.RichMediaStudioCreativeError}{Google Documentation for RichMediaStudioCreativeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RichMediaStudioCreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RichMediaStudioCreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CREATION_NOT_ALLOWED - Only DoubleClick Rich Media Studio can create a RichMediaStudioCreative.}
      \item{UKNOWN_ERROR - Unknown error}
@@ -1248,7 +1248,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -1265,7 +1265,7 @@ Errors associated with SetTopBoxCreative set-top box creatives.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.SetTopBoxCreativeError}{Google Documentation for SetTopBoxCreativeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a SetTopBoxCreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a SetTopBoxCreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{DURATION_IMMUTABLE - Set-top box creative durations are immutable after creation.}
      \item{EXTERNAL_ASSET_ID_IMMUTABLE - Set-top box creative external asset IDs are immutable after creation.}
@@ -1283,7 +1283,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -1294,9 +1294,9 @@ interstitial size (out-of-page), native, ignored and fluid size, Size must
 be 1x1.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.Size}{Google Documentation for Size}
 \describe{
- \item{width}{a integer -  The width of the AdUnit, LineItem or Creative.}
- \item{height}{a integer -  The height of the AdUnit, LineItem or Creative.}
- \item{isAspectRatio}{a boolean -  True if this size represents an aspect ratio, false otherwise.}
+ \item{width}{a integer - The width of the AdUnit, LineItem or Creative.}
+ \item{height}{a integer - The height of the AdUnit, LineItem or Creative.}
+ \item{isAspectRatio}{a boolean - True if this size represents an aspect ratio, false otherwise.}
 }
 
 \strong{SoapRequestHeader}
@@ -1304,8 +1304,8 @@ be 1x1.
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -1313,30 +1313,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -1351,7 +1338,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -1366,10 +1353,10 @@ Stats contains trafficking statistics for LineItem and
 LineItemCreativeAssociation objects
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.Stats}{Google Documentation for Stats}
 \describe{
- \item{impressionsDelivered}{a integer -  The number of impressions delivered.}
- \item{clicksDelivered}{a integer -  The number of clicks delivered.}
- \item{videoCompletionsDelivered}{a integer -  The number of video completions delivered.}
- \item{videoStartsDelivered}{a integer -  The number of video starts delivered.}
+ \item{impressionsDelivered}{a integer - The number of impressions delivered.}
+ \item{clicksDelivered}{a integer - The number of clicks delivered.}
+ \item{videoCompletionsDelivered}{a integer - The number of video completions delivered.}
+ \item{videoStartsDelivered}{a integer - The number of video starts delivered.}
 }
 
 \strong{String_ValueMapEntry}
@@ -1378,7 +1365,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -1388,7 +1375,7 @@ Errors for Strings which do not meet given length constraints.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.StringLengthError}{Google Documentation for StringLengthError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+ \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LONG}
      \item{TOO_SHORT}
@@ -1404,7 +1391,7 @@ Error for converting flash to swiffy asset.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.SwiffyConversionError}{Google Documentation for SwiffyConversionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a SwiffyConversionError.Reason - This can take one of the following values:
+ \item{reason}{a SwiffyConversionError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates the Swiffy service has an internal error that prevents the flash
 asset being converted.}
@@ -1423,7 +1410,7 @@ Lists all errors associated with template instantiated creatives.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.TemplateInstantiatedCreativeError}{Google Documentation for TemplateInstantiatedCreativeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a TemplateInstantiatedCreativeError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a TemplateInstantiatedCreativeError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{INACTIVE_CREATIVE_TEMPLATE - A new creative cannot be created from an inactive creative template.}
      \item{FILE_TYPE_NOT_ALLOWED - An uploaded file type is not allowed}
@@ -1439,7 +1426,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{TypeError}
@@ -1463,7 +1450,7 @@ An error for a field which must satisfy a uniqueness constraint
 Represents the result of performing an action on objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService.UpdateResult}{Google Documentation for UpdateResult}
 \describe{
- \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+ \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 action.}
 }
 

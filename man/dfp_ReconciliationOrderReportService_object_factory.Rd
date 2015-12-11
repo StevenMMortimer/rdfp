@@ -7,7 +7,7 @@
 dfp_ReconciliationOrderReportService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods for retrieving, reconciling, and reverting
@@ -37,9 +37,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -47,8 +47,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -57,7 +57,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -72,7 +72,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AuthenticationError}
@@ -81,7 +81,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -116,7 +116,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -125,7 +125,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -140,7 +140,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -160,9 +160,9 @@ version.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -174,7 +174,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -183,7 +183,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -192,7 +192,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{FeatureError}
@@ -203,7 +203,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -220,7 +220,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -235,8 +235,8 @@ client.
 Represents a money amount.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.Money}{Google Documentation for Money}
 \describe{
- \item{currencyCode}{a string -  Three letter currency code in string format.}
- \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+ \item{currencyCode}{a character - Three letter currency code in string format.}
+ \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 }
 
@@ -246,7 +246,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -265,7 +265,7 @@ Errors associated with violation of a NOT NULL check.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.NullError}{Google Documentation for NullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
    }
@@ -278,7 +278,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -299,7 +299,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -314,7 +314,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -330,7 +330,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -346,7 +346,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -362,7 +362,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -384,7 +384,7 @@ A list of all errors associated with the Range constraint.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.RangeError}{Google Documentation for RangeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RangeError.Reason - This can take one of the following values:
+ \item{reason}{a RangeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_HIGH}
      \item{TOO_LOW}
@@ -400,7 +400,7 @@ Lists all errors associated with reconciliation.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ReconciliationError}{Google Documentation for ReconciliationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ReconciliationError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ReconciliationError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CANNOT_CREATE_RECONCILIATION_REPORT_VERSION - Reconciliation report is reconciled, and need to revert. Or reconciliation
 report is Deleted, and not possible.}
@@ -434,16 +434,16 @@ version.}
 Contains reconciliation data of an Order and/or Proposal.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ReconciliationOrderReport}{Google Documentation for ReconciliationOrderReport}
 \describe{
- \item{id}{a integer -  Uniquely identifies the ReconciliationOrderReport. This value is read-only
+ \item{id}{a integer - Uniquely identifies the ReconciliationOrderReport. This value is read-only
 and assigned by Google.}
- \item{reconciliationReportId}{a integer -  The ID of the ReconciliationReport this ReconciliationOrderReport belongs
+ \item{reconciliationReportId}{a integer - The ID of the ReconciliationReport this ReconciliationOrderReport belongs
 to. This value is read-only.}
- \item{orderId}{a integer -  If this reconciliation data is for an Order, then this contains that order's
+ \item{orderId}{a integer - If this reconciliation data is for an Order, then this contains that order's
 ID. Otherwise, this field will have a value of 0. This value is read-only.}
- \item{proposalId}{a integer -  If this reconciliation data is for a Proposal, then this contains that
+ \item{proposalId}{a integer - If this reconciliation data is for a Proposal, then this contains that
 proposal's ID. Otherwise, this field will have a value of 0. This value is
 read-only.}
- \item{status}{a ReconciliationOrderReportStatus - The status of this ReconciliationOrderReport. This value is read-only. This can take one of the following values:
+ \item{status}{a ReconciliationOrderReportStatus - The status of this ReconciliationOrderReport. This value is read-only. This can take one of the following values: 
    \itemize{
      \item{DRAFT - The starting status of a reconciliation order report. Rows are updatable in
 the DRAFT state. Reconciliation order reports can be submitted with the
@@ -458,12 +458,12 @@ SubmitReconciliationOrderReports action to change the status to RECONCILED.}
 version.}
    }
   }
- \item{submissionDateTime}{a DateTime -  The time when this order report is submitted. This value is read-only.}
- \item{submitterId}{a integer -  The ID of the User who submitted this order report. This value is read-only.}
- \item{proposalNetBillableRevenueManualAdjustment}{a Money -  If this reconciliation data is for a Proposal, then this contains the net
+ \item{submissionDateTime}{a DateTime - The time when this order report is submitted. This value is read-only.}
+ \item{submitterId}{a integer - The ID of the User who submitted this order report. This value is read-only.}
+ \item{proposalNetBillableRevenueManualAdjustment}{a Money - If this reconciliation data is for a Proposal, then this contains the net
 revenue manual adjustment for that proposal. Otherwise, this is null. This
 value is read-only.}
- \item{proposalGrossBillableRevenueManualAdjustment}{a Money -  If this reconciliation data is for a Proposal, then this contains the gross
+ \item{proposalGrossBillableRevenueManualAdjustment}{a Money - If this reconciliation data is for a Proposal, then this contains the gross
 revenue manual adjustment for that proposal. Otherwise, this is null. This
 value is editable.}
 }
@@ -485,9 +485,9 @@ ReconciliationOrderReport.}
 Captures a page of ReconciliationOrderReport objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ReconciliationOrderReportPage}{Google Documentation for ReconciliationOrderReportPage}
 \describe{
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{results}{a ReconciliationOrderReport -  The collection of reconciliation order reports contained within this page.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{results}{a ReconciliationOrderReport - The collection of reconciliation order reports contained within this page.}
 }
 
 \strong{RequiredError}
@@ -496,7 +496,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -518,7 +518,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -535,7 +535,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -544,8 +544,8 @@ duplicates.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -553,30 +553,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -591,7 +578,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -606,7 +593,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -625,7 +612,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{UpdateResult}
@@ -633,7 +620,7 @@ Contains a string value.
 Represents the result of performing an action on objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService.UpdateResult}{Google Documentation for UpdateResult}
 \describe{
- \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+ \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 action.}
 }
 

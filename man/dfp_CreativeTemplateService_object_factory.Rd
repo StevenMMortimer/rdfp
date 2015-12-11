@@ -7,7 +7,7 @@
 dfp_CreativeTemplateService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods for retrieving CreativeTemplate objects.
@@ -36,9 +36,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -46,8 +46,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -56,7 +56,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -71,7 +71,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AssetCreativeTemplateVariable}
@@ -81,18 +81,18 @@ AssetCreativeTemplateVariableValue to specify the value for this variable
 when creating TemplateCreative from the TemplateCreative.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.AssetCreativeTemplateVariable}{Google Documentation for AssetCreativeTemplateVariable}
 \describe{
- \item{label}{a string (inherited from CreativeTemplateVariable) -  Label that is displayed to users when creating TemplateCreative from the
+ \item{label}{a character (inherited from CreativeTemplateVariable) - Label that is displayed to users when creating TemplateCreative from the
 CreativeTemplate. This attribute is required and has a maximum length of 127
 characters.}
- \item{uniqueName}{a string (inherited from CreativeTemplateVariable) -  Unique name used to identify the variable. This attribute is read-only and
+ \item{uniqueName}{a character (inherited from CreativeTemplateVariable) - Unique name used to identify the variable. This attribute is read-only and
 is assigned by Google, by deriving from label, when a creative template
 variable is created.}
- \item{description}{a string (inherited from CreativeTemplateVariable) -  A descriptive help text that is displayed to users along with the label.
+ \item{description}{a character (inherited from CreativeTemplateVariable) - A descriptive help text that is displayed to users along with the label.
 This attribute is required and has a maximum length of 255 characters.}
- \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) -  true if this variable is required to be filled in by users when creating
+ \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) - true if this variable is required to be filled in by users when creating
 TemplateCreative from the CreativeTemplate.}
  \item{mimeTypes}{a AssetCreativeTemplateVariable.MimeType - A set of supported mime types. This set can be empty or null if there's no
-constraint, meaning files of any mime types are allowed. This can take one of the following values:
+constraint, meaning files of any mime types are allowed. This can take one of the following values: 
    \itemize{
      \item{JPG}
      \item{PNG}
@@ -108,7 +108,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -143,7 +143,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -152,7 +152,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -167,7 +167,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -187,16 +187,16 @@ version.}
 A template upon which a creative can be created.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CreativeTemplate}{Google Documentation for CreativeTemplate}
 \describe{
- \item{id}{a integer -  Uniquely identifies the CreativeTemplate. This attribute is read-only and is
+ \item{id}{a integer - Uniquely identifies the CreativeTemplate. This attribute is read-only and is
 assigned by Google when a creative template is created.}
- \item{name}{a string -  The name of the creative template. This attribute is required and has a
+ \item{name}{a character - The name of the creative template. This attribute is required and has a
 maximum length of 255 characters.}
- \item{description}{a string -  The description of the creative template. This attribute is optional.}
- \item{variables}{a CreativeTemplateVariable -  The list of creative template variables. This attribute is required.}
- \item{snippet}{a string -  The snippet of the creative template, with placeholders for the associated
+ \item{description}{a character - The description of the creative template. This attribute is optional.}
+ \item{variables}{a CreativeTemplateVariable - The list of creative template variables. This attribute is required.}
+ \item{snippet}{a character - The snippet of the creative template, with placeholders for the associated
 variables. This attribute is required.}
  \item{status}{a CreativeTemplateStatus - The status of the CreativeTemplate. This attribute is read-only and is
-assigned by Google. This can take one of the following values:
+assigned by Google. This can take one of the following values: 
    \itemize{
      \item{ACTIVE - The CreativeTemplate is active}
      \item{INACTIVE - The CreativeTemplate is inactive. Users cannot create new creatives from
@@ -206,7 +206,7 @@ CreativeTemplate can no longer serve.}
    }
   }
  \item{type}{a CreativeTemplateType - The type of the CreativeTemplate. Publisher can only create user-defined
-template This can take one of the following values:
+template This can take one of the following values: 
    \itemize{
      \item{SYSTEM_DEFINED - Creative templates that Google defines for users to use.}
      \item{USER_DEFINED - Arbitrary creative templates that users can define as they see fit. Such
@@ -214,8 +214,8 @@ templates are bound to a specific network and can only be used with
 creatives being created under the network.}
    }
   }
- \item{isInterstitial}{a boolean -  true if this creative template produces interstitial creatives.}
- \item{isNativeEligible}{a boolean -  true if this creative template produces native-eligible creatives.}
+ \item{isInterstitial}{a boolean - true if this creative template produces interstitial creatives.}
+ \item{isNativeEligible}{a boolean - true if this creative template produces native-eligible creatives.}
 }
 
 \strong{CreativeTemplateError}
@@ -225,7 +225,7 @@ CreativeTemplate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CreativeTemplateError}{Google Documentation for CreativeTemplateError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CreativeTemplateError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a CreativeTemplateError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{CANNOT_PARSE_CREATIVE_TEMPLATE - The XML of the creative template definition is malformed and cannot be
 parsed.}
@@ -255,9 +255,9 @@ version.}
 Captures a page of CreativeTemplate objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CreativeTemplatePage}{Google Documentation for CreativeTemplatePage}
 \describe{
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{results}{a CreativeTemplate -  The collection of creative templates contained within this page.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{results}{a CreativeTemplate - The collection of creative templates contained within this page.}
 }
 
 \strong{CreativeTemplateVariable}
@@ -265,15 +265,15 @@ Captures a page of CreativeTemplate objects.
 Represents a variable defined in a creative template.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.CreativeTemplateVariable}{Google Documentation for CreativeTemplateVariable}
 \describe{
- \item{label}{a string -  Label that is displayed to users when creating TemplateCreative from the
+ \item{label}{a character - Label that is displayed to users when creating TemplateCreative from the
 CreativeTemplate. This attribute is required and has a maximum length of 127
 characters.}
- \item{uniqueName}{a string -  Unique name used to identify the variable. This attribute is read-only and
+ \item{uniqueName}{a character - Unique name used to identify the variable. This attribute is read-only and
 is assigned by Google, by deriving from label, when a creative template
 variable is created.}
- \item{description}{a string -  A descriptive help text that is displayed to users along with the label.
+ \item{description}{a character - A descriptive help text that is displayed to users along with the label.
 This attribute is required and has a maximum length of 255 characters.}
- \item{isRequired}{a boolean -  true if this variable is required to be filled in by users when creating
+ \item{isRequired}{a boolean - true if this variable is required to be filled in by users when creating
 TemplateCreative from the CreativeTemplate.}
 }
 
@@ -282,9 +282,9 @@ TemplateCreative from the CreativeTemplate.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -296,7 +296,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -305,7 +305,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -314,7 +314,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{FeatureError}
@@ -325,7 +325,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -342,7 +342,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -358,7 +358,7 @@ Lists all errors associated with URLs.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.InvalidUrlError}{Google Documentation for InvalidUrlError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InvalidUrlError.Reason - This can take one of the following values:
+ \item{reason}{a InvalidUrlError.Reason - This can take one of the following values: 
    \itemize{
      \item{ILLEGAL_CHARACTERS - The URL contains invalid characters.}
      \item{INVALID_FORMAT - The format of the URL is not allowed. This could occur for a number of
@@ -381,10 +381,10 @@ choose from. Use StringCreativeTemplateVariableValue to specify the value
 for this variable when creating a TemplateCreative from a CreativeTemplate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ListStringCreativeTemplateVariable}{Google Documentation for ListStringCreativeTemplateVariable}
 \describe{
- \item{defaultValue}{a string (inherited from StringCreativeTemplateVariable) -  Default value to be filled in when creating creatives from the creative
+ \item{defaultValue}{a character (inherited from StringCreativeTemplateVariable) - Default value to be filled in when creating creatives from the creative
 template.}
- \item{choices}{a ListStringCreativeTemplateVariable.VariableChoice -  The values within the list users need to select from.}
- \item{allowOtherChoice}{a boolean -  true if a user can specifiy an 'other' value. For example, if a variable
+ \item{choices}{a ListStringCreativeTemplateVariable.VariableChoice - The values within the list users need to select from.}
+ \item{allowOtherChoice}{a boolean - true if a user can specifiy an 'other' value. For example, if a variable
 called backgroundColor is defined as a list with values: red, green, blue,
 this boolean can be set to allow a user to enter a value not on the list
 such as purple.}
@@ -395,11 +395,11 @@ such as purple.}
 Stores variable choices that users can select from
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ListStringCreativeTemplateVariable.VariableChoice}{Google Documentation for ListStringCreativeTemplateVariable.VariableChoice}
 \describe{
- \item{label}{a string -  Label that users can select from. This is displayed to users when creating a
+ \item{label}{a character - Label that users can select from. This is displayed to users when creating a
 TemplateCreative. This attribute is intended to be more descriptive than
 value. This attribute is required and has a maximum length of 255
 characters.}
- \item{value}{a string -  Value that users can select from. When creating a TemplateCreative, the
+ \item{value}{a character - Value that users can select from. When creating a TemplateCreative, the
 value in StringCreativeTemplateVariableValue should match this value, if you
 intend to select this value. This attribute is required and has a maximum
 length of 255 characters.}
@@ -410,17 +410,17 @@ length of 255 characters.}
 Represents a long variable defined in a creative template.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.LongCreativeTemplateVariable}{Google Documentation for LongCreativeTemplateVariable}
 \describe{
- \item{label}{a string (inherited from CreativeTemplateVariable) -  Label that is displayed to users when creating TemplateCreative from the
+ \item{label}{a character (inherited from CreativeTemplateVariable) - Label that is displayed to users when creating TemplateCreative from the
 CreativeTemplate. This attribute is required and has a maximum length of 127
 characters.}
- \item{uniqueName}{a string (inherited from CreativeTemplateVariable) -  Unique name used to identify the variable. This attribute is read-only and
+ \item{uniqueName}{a character (inherited from CreativeTemplateVariable) - Unique name used to identify the variable. This attribute is read-only and
 is assigned by Google, by deriving from label, when a creative template
 variable is created.}
- \item{description}{a string (inherited from CreativeTemplateVariable) -  A descriptive help text that is displayed to users along with the label.
+ \item{description}{a character (inherited from CreativeTemplateVariable) - A descriptive help text that is displayed to users along with the label.
 This attribute is required and has a maximum length of 255 characters.}
- \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) -  true if this variable is required to be filled in by users when creating
+ \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) - true if this variable is required to be filled in by users when creating
 TemplateCreative from the CreativeTemplate.}
- \item{defaultValue}{a integer -  Default value to be filled in when creating creatives from the creative
+ \item{defaultValue}{a integer - Default value to be filled in when creating creatives from the creative
 template.}
 }
 
@@ -430,7 +430,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -449,7 +449,7 @@ Errors associated with violation of a NOT NULL check.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.NullError}{Google Documentation for NullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
    }
@@ -462,7 +462,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -483,7 +483,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -498,7 +498,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -514,7 +514,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -530,7 +530,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -546,7 +546,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -568,7 +568,7 @@ A list of all errors associated with the Range constraint.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.RangeError}{Google Documentation for RangeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RangeError.Reason - This can take one of the following values:
+ \item{reason}{a RangeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_HIGH}
      \item{TOO_LOW}
@@ -584,7 +584,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -598,7 +598,7 @@ validators.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.RequiredNumberError}{Google Documentation for RequiredNumberError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredNumberError.Reason - This can take one of the following values:
+ \item{reason}{a RequiredNumberError.Reason - This can take one of the following values: 
    \itemize{
      \item{REQUIRED}
      \item{TOO_LARGE}
@@ -617,7 +617,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -634,7 +634,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -643,8 +643,8 @@ duplicates.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -652,30 +652,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -690,7 +677,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -705,7 +692,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -716,17 +703,17 @@ StringCreativeTemplateVariableValue to specify the value for this variable
 when creating TemplateCreative from the TemplateCreative.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.StringCreativeTemplateVariable}{Google Documentation for StringCreativeTemplateVariable}
 \describe{
- \item{label}{a string (inherited from CreativeTemplateVariable) -  Label that is displayed to users when creating TemplateCreative from the
+ \item{label}{a character (inherited from CreativeTemplateVariable) - Label that is displayed to users when creating TemplateCreative from the
 CreativeTemplate. This attribute is required and has a maximum length of 127
 characters.}
- \item{uniqueName}{a string (inherited from CreativeTemplateVariable) -  Unique name used to identify the variable. This attribute is read-only and
+ \item{uniqueName}{a character (inherited from CreativeTemplateVariable) - Unique name used to identify the variable. This attribute is read-only and
 is assigned by Google, by deriving from label, when a creative template
 variable is created.}
- \item{description}{a string (inherited from CreativeTemplateVariable) -  A descriptive help text that is displayed to users along with the label.
+ \item{description}{a character (inherited from CreativeTemplateVariable) - A descriptive help text that is displayed to users along with the label.
 This attribute is required and has a maximum length of 255 characters.}
- \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) -  true if this variable is required to be filled in by users when creating
+ \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) - true if this variable is required to be filled in by users when creating
 TemplateCreative from the CreativeTemplate.}
- \item{defaultValue}{a string -  Default value to be filled in when creating creatives from the creative
+ \item{defaultValue}{a character - Default value to be filled in when creating creatives from the creative
 template.}
 }
 
@@ -736,7 +723,7 @@ Errors for Strings which do not meet given length constraints.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.StringLengthError}{Google Documentation for StringLengthError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StringLengthError.Reason - This can take one of the following values:
+ \item{reason}{a StringLengthError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LONG}
      \item{TOO_SHORT}
@@ -752,7 +739,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{UniqueError}
@@ -770,19 +757,19 @@ UrlCreativeTemplateVariableValue to specify the value for this variable when
 creating TemplateCreative from the TemplateCreative
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService.UrlCreativeTemplateVariable}{Google Documentation for UrlCreativeTemplateVariable}
 \describe{
- \item{label}{a string (inherited from CreativeTemplateVariable) -  Label that is displayed to users when creating TemplateCreative from the
+ \item{label}{a character (inherited from CreativeTemplateVariable) - Label that is displayed to users when creating TemplateCreative from the
 CreativeTemplate. This attribute is required and has a maximum length of 127
 characters.}
- \item{uniqueName}{a string (inherited from CreativeTemplateVariable) -  Unique name used to identify the variable. This attribute is read-only and
+ \item{uniqueName}{a character (inherited from CreativeTemplateVariable) - Unique name used to identify the variable. This attribute is read-only and
 is assigned by Google, by deriving from label, when a creative template
 variable is created.}
- \item{description}{a string (inherited from CreativeTemplateVariable) -  A descriptive help text that is displayed to users along with the label.
+ \item{description}{a character (inherited from CreativeTemplateVariable) - A descriptive help text that is displayed to users along with the label.
 This attribute is required and has a maximum length of 255 characters.}
- \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) -  true if this variable is required to be filled in by users when creating
+ \item{isRequired}{a boolean (inherited from CreativeTemplateVariable) - true if this variable is required to be filled in by users when creating
 TemplateCreative from the CreativeTemplate.}
- \item{defaultValue}{a string -  Default value to be filled in when creating creatives from the creative
+ \item{defaultValue}{a character - Default value to be filled in when creating creatives from the creative
 template.}
- \item{isTrackingUrl}{a boolean -  When true, if the URL is identified as from a known vendor, cache-busting
+ \item{isTrackingUrl}{a boolean - When true, if the URL is identified as from a known vendor, cache-busting
 macros will automatically be inserted upon save.}
 }
 

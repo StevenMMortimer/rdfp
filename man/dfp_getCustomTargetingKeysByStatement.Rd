@@ -4,14 +4,16 @@
 \alias{dfp_getCustomTargetingKeysByStatement}
 \title{getCustomTargetingKeysByStatement}
 \usage{
-dfp_getCustomTargetingKeysByStatement(request_data)
+dfp_getCustomTargetingKeysByStatement(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getCustomTargetingKeysByStatementResponse
+a \code{list} or \code{data.frame} containing all the elements of a getCustomTargetingKeysByStatementResponse
 }
 \description{
 Gets a CustomTargetingKeyPage of CustomTargetingKey objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of custom targeting keys 

@@ -4,14 +4,16 @@
 \alias{dfp_performLiveStreamEventAction}
 \title{performLiveStreamEventAction}
 \usage{
-dfp_performLiveStreamEventAction(request_data)
+dfp_performLiveStreamEventAction(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a performLiveStreamEventActionResponse
+a \code{list} or \code{data.frame} containing all the elements of a performLiveStreamEventActionResponse
 }
 \description{
 Performs actions on LiveStreamEvent objects that match the given Statement query. a set of live stream events

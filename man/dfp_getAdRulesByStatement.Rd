@@ -4,14 +4,16 @@
 \alias{dfp_getAdRulesByStatement}
 \title{getAdRulesByStatement}
 \usage{
-dfp_getAdRulesByStatement(request_data)
+dfp_getAdRulesByStatement(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getAdRulesByStatementResponse
+a \code{list} or \code{data.frame} containing all the elements of a getAdRulesByStatementResponse
 }
 \description{
 Gets an AdRulePage of AdRule objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of ad rules there is a backend error 

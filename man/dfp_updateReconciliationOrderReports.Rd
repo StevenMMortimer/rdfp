@@ -4,14 +4,16 @@
 \alias{dfp_updateReconciliationOrderReports}
 \title{updateReconciliationOrderReports}
 \usage{
-dfp_updateReconciliationOrderReports(request_data)
+dfp_updateReconciliationOrderReports(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a updateReconciliationOrderReportsResponse
+a \code{list} or \code{data.frame} containing all the elements of a updateReconciliationOrderReportsResponse
 }
 \description{
 Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport. ReconciliationOrderReport reconciliation order reports to update

@@ -4,14 +4,16 @@
 \alias{dfp_updateCustomFields}
 \title{updateCustomFields}
 \usage{
-dfp_updateCustomFields(request_data)
+dfp_updateCustomFields(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a updateCustomFieldsResponse
+a \code{list} or \code{data.frame} containing all the elements of a updateCustomFieldsResponse
 }
 \description{
 Updates the specified CustomField objects.

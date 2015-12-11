@@ -4,14 +4,16 @@
 \alias{dfp_createLiveStreamEvents}
 \title{createLiveStreamEvents}
 \usage{
-dfp_createLiveStreamEvents(request_data)
+dfp_createLiveStreamEvents(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a createLiveStreamEventsResponse
+a \code{list} or \code{data.frame} containing all the elements of a createLiveStreamEventsResponse
 }
 \description{
 Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>

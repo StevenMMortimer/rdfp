@@ -4,14 +4,16 @@
 \alias{dfp_getReportDownloadUrlWithOptions}
 \title{getReportDownloadUrlWithOptions}
 \usage{
-dfp_getReportDownloadUrlWithOptions(request_data)
+dfp_getReportDownloadUrlWithOptions(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getReportDownloadUrlWithOptionsResponse
+a \code{list} or \code{data.frame} containing all the elements of a getReportDownloadUrlWithOptionsResponse
 }
 \description{
 Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report. <p> By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.

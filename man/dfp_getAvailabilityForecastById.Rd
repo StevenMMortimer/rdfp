@@ -4,14 +4,16 @@
 \alias{dfp_getAvailabilityForecastById}
 \title{getAvailabilityForecastById}
 \usage{
-dfp_getAvailabilityForecastById(request_data)
+dfp_getAvailabilityForecastById(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getAvailabilityForecastByIdResponse
+a \code{list} or \code{data.frame} containing all the elements of a getAvailabilityForecastByIdResponse
 }
 \description{
 Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. <p>Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. <p>Note: Beginning in v201502, this replaces the previous getForecastById method.

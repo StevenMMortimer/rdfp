@@ -7,7 +7,7 @@
 dfp_AudienceSegmentService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides operations for creating, updating and retrieving AudienceSegment
@@ -44,8 +44,8 @@ activate them.
 Represents targeted or excluded ad units.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AdUnitTargeting}{Google Documentation for AdUnitTargeting}
 \describe{
- \item{adUnitId}{a string -  Included or excluded ad unit id.}
- \item{includeDescendants}{a boolean -  Whether or not all descendants are included (or excluded) as part of
+ \item{adUnitId}{a character - Included or excluded ad unit id.}
+ \item{includeDescendants}{a boolean - Whether or not all descendants are included (or excluded) as part of
 including (or excluding) this ad unit. By default, the value is true which
 means targeting this ad unit will target all of its descendants.}
 }
@@ -57,9 +57,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -67,8 +67,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -77,7 +77,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -92,7 +92,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{ApproveAudienceSegments}
@@ -109,27 +109,27 @@ them.
 An AudienceSegment represents audience segment object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AudienceSegment}{Google Documentation for AudienceSegment}
 \describe{
- \item{id}{a integer -  Id of the AudienceSegment. This attribute is readonly and is populated by
+ \item{id}{a integer - Id of the AudienceSegment. This attribute is readonly and is populated by
 Google.}
- \item{name}{a string -  Name of the AudienceSegment. This attribute is required and has a maximum
+ \item{name}{a character - Name of the AudienceSegment. This attribute is required and has a maximum
 length of 255 characters.}
- \item{categoryIds}{a integer -  The ids of the categories this segment belongs to. This field is optional,
+ \item{categoryIds}{a integer - The ids of the categories this segment belongs to. This field is optional,
 it may be empty.}
- \item{description}{a string -  Description of the AudienceSegment. This attribute is optional and has a
+ \item{description}{a character - Description of the AudienceSegment. This attribute is optional and has a
 maximum length of 8192 characters.}
  \item{status}{a AudienceSegment.Status - Status of the AudienceSegment. This controls whether the given segment is
 available for targeting or not. During creation this attribute is optional
-and defaults to ACTIVE. This attribute is readonly for updates. This can take one of the following values:
+and defaults to ACTIVE. This attribute is readonly for updates. This can take one of the following values: 
    \itemize{
      \item{ACTIVE - Active status means this audience segment is available for targeting.}
      \item{INACTIVE - Inactive status means this audience segment is not available for targeting.}
    }
   }
- \item{size}{a integer -  Number of unique cookies in the AudienceSegment. This attribute is readonly
+ \item{size}{a integer - Number of unique cookies in the AudienceSegment. This attribute is readonly
 and is populated by Google.}
- \item{dataProvider}{a AudienceSegmentDataProvider -  Owner data provider of this segment. This attribute is readonly and is
+ \item{dataProvider}{a AudienceSegmentDataProvider - Owner data provider of this segment. This attribute is readonly and is
 assigned by Google.}
- \item{type}{a AudienceSegment.AudienceSegmentType - Type of the segment. This attribute is readonly and is assigned by Google. This can take one of the following values:
+ \item{type}{a AudienceSegment.AudienceSegmentType - Type of the segment. This attribute is readonly and is assigned by Google. This can take one of the following values: 
    \itemize{
      \item{FIRST_PARTY - First party segments created and owned by the publisher.}
      \item{SHARED - First party segments shared by other clients.}
@@ -164,13 +164,13 @@ An AudienceSegmentCriteria object is used to target AudienceSegment objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AudienceSegmentCriteria}{Google Documentation for AudienceSegmentCriteria}
 \describe{
  \item{extends CustomCriteriaLeaf}{see documentation for CustomCriteriaLeaf}
- \item{operator}{a AudienceSegmentCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values:
+ \item{operator}{a AudienceSegmentCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values: 
    \itemize{
      \item{IS}
      \item{IS_NOT}
    }
   }
- \item{audienceSegmentIds}{a integer -  The ids of AudienceSegment objects used to target audience segments. This
+ \item{audienceSegmentIds}{a integer - The ids of AudienceSegment objects used to target audience segments. This
 attribute is required.}
 }
 
@@ -182,7 +182,7 @@ ThirdPartyAudienceSegment, it would be the entity that provides that
 AudienceSegment.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AudienceSegmentDataProvider}{Google Documentation for AudienceSegmentDataProvider}
 \describe{
- \item{name}{a string -  Name of the data provider. This attribute is readonly and is assigned by
+ \item{name}{a character - Name of the data provider. This attribute is readonly and is assigned by
 Google.}
 }
 
@@ -192,7 +192,7 @@ Errors that could occur on audience segment related requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AudienceSegmentError}{Google Documentation for AudienceSegmentError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values:
+ \item{reason}{a AudienceSegmentError.Reason - This can take one of the following values: 
    \itemize{
      \item{FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED - First party audience segment is not supported.}
      \item{ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED - Only rule-based first-party audience segments can be created.}
@@ -227,9 +227,9 @@ version.}
 Represents a page of AudienceSegment objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AudienceSegmentPage}{Google Documentation for AudienceSegmentPage}
 \describe{
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{results}{a AudienceSegment -  The collection of audience segments contained within this page.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{results}{a AudienceSegment - The collection of audience segments contained within this page.}
 }
 
 \strong{AuthenticationError}
@@ -238,7 +238,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -273,7 +273,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -282,7 +282,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -297,7 +297,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -320,11 +320,11 @@ CustomTargetingKey.Type FREEFORM.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.CustomCriteria}{Google Documentation for CustomCriteria}
 \describe{
  \item{extends CustomCriteriaLeaf}{see documentation for CustomCriteriaLeaf}
- \item{keyId}{a integer -  The CustomTargetingKey id of the CustomTargetingKey object that was created
+ \item{keyId}{a integer - The CustomTargetingKey id of the CustomTargetingKey object that was created
 using CustomTargetingService. This attribute is required.}
- \item{valueIds}{a integer -  The ids of CustomTargetingValue objects to target the custom targeting key
+ \item{valueIds}{a integer - The ids of CustomTargetingValue objects to target the custom targeting key
 with id CustomCriteria keyId. This attribute is required.}
- \item{operator}{a CustomCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values:
+ \item{operator}{a CustomCriteria.ComparisonOperator - The comparison operator. This attribute is required. This can take one of the following values: 
    \itemize{
      \item{IS}
      \item{IS_NOT}
@@ -361,13 +361,13 @@ customTargeting.
 \describe{
  \item{extends CustomCriteriaNode}{see documentation for CustomCriteriaNode}
  \item{logicalOperator}{a CustomCriteriaSet.LogicalOperator - The logical operator to be applied to CustomCriteriaSet children. This
-attribute is required. This can take one of the following values:
+attribute is required. This can take one of the following values: 
    \itemize{
      \item{AND}
      \item{OR}
    }
   }
- \item{children}{a CustomCriteriaNode -  The custom criteria. This attribute is required.}
+ \item{children}{a CustomCriteriaNode - The custom criteria. This attribute is required.}
 }
 
 \strong{Date}
@@ -375,9 +375,9 @@ attribute is required. This can take one of the following values:
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -389,7 +389,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -398,7 +398,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -407,7 +407,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{DeactivateAudienceSegments}
@@ -425,7 +425,7 @@ Lists errors relating to having too many children on an entity.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 allowed per order in the network.}
@@ -468,7 +468,7 @@ allowed entities for a network has already been reached.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.EntityLimitReachedError}{Google Documentation for EntityLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{CUSTOM_TARGETING_VALUES_LIMIT_REACHED - The number of custom targeting values exceeds the max number allowed in the
 network.}
@@ -493,7 +493,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -508,22 +508,22 @@ A FirstPartyAudienceSegment is an AudienceSegment owned by the publisher
 network.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.FirstPartyAudienceSegment}{Google Documentation for FirstPartyAudienceSegment}
 \describe{
- \item{id}{a integer (inherited from AudienceSegment) -  Id of the AudienceSegment. This attribute is readonly and is populated by
+ \item{id}{a integer (inherited from AudienceSegment) - Id of the AudienceSegment. This attribute is readonly and is populated by
 Google.}
- \item{name}{a string (inherited from AudienceSegment) -  Name of the AudienceSegment. This attribute is required and has a maximum
+ \item{name}{a character (inherited from AudienceSegment) - Name of the AudienceSegment. This attribute is required and has a maximum
 length of 255 characters.}
- \item{categoryIds}{a integer (inherited from AudienceSegment) -  The ids of the categories this segment belongs to. This field is optional,
+ \item{categoryIds}{a integer (inherited from AudienceSegment) - The ids of the categories this segment belongs to. This field is optional,
 it may be empty.}
- \item{description}{a string (inherited from AudienceSegment) -  Description of the AudienceSegment. This attribute is optional and has a
+ \item{description}{a character (inherited from AudienceSegment) - Description of the AudienceSegment. This attribute is optional and has a
 maximum length of 8192 characters.}
- \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) -  Status of the AudienceSegment. This controls whether the given segment is
+ \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) - Status of the AudienceSegment. This controls whether the given segment is
 available for targeting or not. During creation this attribute is optional
 and defaults to ACTIVE. This attribute is readonly for updates.}
- \item{size}{a integer (inherited from AudienceSegment) -  Number of unique cookies in the AudienceSegment. This attribute is readonly
+ \item{size}{a integer (inherited from AudienceSegment) - Number of unique cookies in the AudienceSegment. This attribute is readonly
 and is populated by Google.}
- \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) -  Owner data provider of this segment. This attribute is readonly and is
+ \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) - Owner data provider of this segment. This attribute is readonly and is
 assigned by Google.}
- \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) -  Type of the segment. This attribute is readonly and is assigned by Google.}
+ \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) - Type of the segment. This attribute is readonly and is assigned by Google.}
 }
 
 \strong{FirstPartyAudienceSegmentRule}
@@ -532,9 +532,9 @@ Rule of a FirstPartyAudienceSegment that defines user's eligibility criteria
 to be part of a segment.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.FirstPartyAudienceSegmentRule}{Google Documentation for FirstPartyAudienceSegmentRule}
 \describe{
- \item{inventoryRule}{a InventoryTargeting -  Specifies the inventory (i.e. ad units and placements) that are part of the
+ \item{inventoryRule}{a InventoryTargeting - Specifies the inventory (i.e. ad units and placements) that are part of the
 rule of a FirstPartyAudienceSegment. This attribute is required.}
- \item{customCriteriaRule}{a CustomCriteriaSet -  Specifies the collection of custom criteria that are part of the rule of a
+ \item{customCriteriaRule}{a CustomCriteriaSet - Specifies the collection of custom criteria that are part of the rule of a
 FirstPartyAudienceSegment.  Once the FirstPartyAudienceSegment is updated or
 modified with custom criteria, the server may return a normalized, but
 equivalent representation of the custom criteria rule.  customCriteriaRule
@@ -556,7 +556,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -571,9 +571,9 @@ client.
 A collection of targeted and excluded ad units and placements.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.InventoryTargeting}{Google Documentation for InventoryTargeting}
 \describe{
- \item{targetedAdUnits}{a AdUnitTargeting -  A list of targeted AdUnitTargeting.}
- \item{excludedAdUnits}{a AdUnitTargeting -  A list of excluded AdUnitTargeting.}
- \item{targetedPlacementIds}{a integer -  A list of targeted Placement ids.}
+ \item{targetedAdUnits}{a AdUnitTargeting - A list of targeted AdUnitTargeting.}
+ \item{excludedAdUnits}{a AdUnitTargeting - A list of excluded AdUnitTargeting.}
+ \item{targetedPlacementIds}{a integer - A list of targeted Placement ids.}
 }
 
 \strong{Money}
@@ -581,8 +581,8 @@ A collection of targeted and excluded ad units and placements.
 Represents a money amount.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.Money}{Google Documentation for Money}
 \describe{
- \item{currencyCode}{a string -  Three letter currency code in string format.}
- \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+ \item{currencyCode}{a character - Three letter currency code in string format.}
+ \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 }
 
@@ -596,7 +596,7 @@ DFP API.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.NonRuleBasedFirstPartyAudienceSegment}{Google Documentation for NonRuleBasedFirstPartyAudienceSegment}
 \describe{
  \item{extends FirstPartyAudienceSegment}{see documentation for FirstPartyAudienceSegment}
- \item{membershipExpirationDays}{a integer -  Specifies the number of days after which a user's cookie will be removed
+ \item{membershipExpirationDays}{a integer - Specifies the number of days after which a user's cookie will be removed
 from the audience segment due to inactivity. This attribute is required and
 can be between 1 and 540.}
 }
@@ -607,7 +607,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -626,7 +626,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -647,7 +647,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -662,7 +662,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -687,7 +687,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -703,7 +703,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -719,7 +719,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -750,7 +750,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -763,21 +763,21 @@ A RuleBasedFirstPartyAudienceSegment is a FirstPartyAudienceSegment owned by
 the publisher network. It contains a rule.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.RuleBasedFirstPartyAudienceSegment}{Google Documentation for RuleBasedFirstPartyAudienceSegment}
 \describe{
- \item{pageViews}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) -  Specifies the number of times a user's cookie must match the segment rule
+ \item{pageViews}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) - Specifies the number of times a user's cookie must match the segment rule
 before it's associated with the audience segment. This is used in
 combination with FirstPartyAudienceSegment recencyDays to determine
 eligibility of the association. This attribute is required and can be
 between 1 and 12.}
- \item{recencyDays}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) -  Specifies the number of days within which a user's cookie must match the
+ \item{recencyDays}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) - Specifies the number of days within which a user's cookie must match the
 segment rule before it's associated with the audience segment. This is used
 in combination with FirstPartyAudienceSegment pageViews to determine
 eligibility of the association. This attribute is required only if
 FirstPartyAudienceSegment pageViews is greater than 1. When required, it can
 be between 1 and 90.}
- \item{membershipExpirationDays}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) -  Specifies the number of days after which a user's cookie will be removed
+ \item{membershipExpirationDays}{a integer (inherited from RuleBasedFirstPartyAudienceSegmentSummary) - Specifies the number of days after which a user's cookie will be removed
 from the audience segment due to inactivity. This attribute is required and
 can be between 1 and 540.}
- \item{rule}{a FirstPartyAudienceSegmentRule -  Specifies the rule of the segment which determines user's eligibility
+ \item{rule}{a FirstPartyAudienceSegmentRule - Specifies the rule of the segment which determines user's eligibility
 criteria to be part of the segment. This attribute is required.}
 }
 
@@ -788,18 +788,18 @@ owned by the publisher network.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.RuleBasedFirstPartyAudienceSegmentSummary}{Google Documentation for RuleBasedFirstPartyAudienceSegmentSummary}
 \describe{
  \item{extends FirstPartyAudienceSegment}{see documentation for FirstPartyAudienceSegment}
- \item{pageViews}{a integer -  Specifies the number of times a user's cookie must match the segment rule
+ \item{pageViews}{a integer - Specifies the number of times a user's cookie must match the segment rule
 before it's associated with the audience segment. This is used in
 combination with FirstPartyAudienceSegment recencyDays to determine
 eligibility of the association. This attribute is required and can be
 between 1 and 12.}
- \item{recencyDays}{a integer -  Specifies the number of days within which a user's cookie must match the
+ \item{recencyDays}{a integer - Specifies the number of days within which a user's cookie must match the
 segment rule before it's associated with the audience segment. This is used
 in combination with FirstPartyAudienceSegment pageViews to determine
 eligibility of the association. This attribute is required only if
 FirstPartyAudienceSegment pageViews is greater than 1. When required, it can
 be between 1 and 90.}
- \item{membershipExpirationDays}{a integer -  Specifies the number of days after which a user's cookie will be removed
+ \item{membershipExpirationDays}{a integer - Specifies the number of days after which a user's cookie will be removed
 from the audience segment due to inactivity. This attribute is required and
 can be between 1 and 540.}
 }
@@ -810,7 +810,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -827,7 +827,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -837,22 +837,22 @@ A SharedAudienceSegment is an AudienceSegment owned by another entity and
 shared with the publisher network.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.SharedAudienceSegment}{Google Documentation for SharedAudienceSegment}
 \describe{
- \item{id}{a integer (inherited from AudienceSegment) -  Id of the AudienceSegment. This attribute is readonly and is populated by
+ \item{id}{a integer (inherited from AudienceSegment) - Id of the AudienceSegment. This attribute is readonly and is populated by
 Google.}
- \item{name}{a string (inherited from AudienceSegment) -  Name of the AudienceSegment. This attribute is required and has a maximum
+ \item{name}{a character (inherited from AudienceSegment) - Name of the AudienceSegment. This attribute is required and has a maximum
 length of 255 characters.}
- \item{categoryIds}{a integer (inherited from AudienceSegment) -  The ids of the categories this segment belongs to. This field is optional,
+ \item{categoryIds}{a integer (inherited from AudienceSegment) - The ids of the categories this segment belongs to. This field is optional,
 it may be empty.}
- \item{description}{a string (inherited from AudienceSegment) -  Description of the AudienceSegment. This attribute is optional and has a
+ \item{description}{a character (inherited from AudienceSegment) - Description of the AudienceSegment. This attribute is optional and has a
 maximum length of 8192 characters.}
- \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) -  Status of the AudienceSegment. This controls whether the given segment is
+ \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) - Status of the AudienceSegment. This controls whether the given segment is
 available for targeting or not. During creation this attribute is optional
 and defaults to ACTIVE. This attribute is readonly for updates.}
- \item{size}{a integer (inherited from AudienceSegment) -  Number of unique cookies in the AudienceSegment. This attribute is readonly
+ \item{size}{a integer (inherited from AudienceSegment) - Number of unique cookies in the AudienceSegment. This attribute is readonly
 and is populated by Google.}
- \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) -  Owner data provider of this segment. This attribute is readonly and is
+ \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) - Owner data provider of this segment. This attribute is readonly and is
 assigned by Google.}
- \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) -  Type of the segment. This attribute is readonly and is assigned by Google.}
+ \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) - Type of the segment. This attribute is readonly and is assigned by Google.}
 }
 
 \strong{SoapRequestHeader}
@@ -860,8 +860,8 @@ assigned by Google.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -869,30 +869,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -907,7 +894,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -922,7 +909,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -932,7 +919,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{ThirdPartyAudienceSegment}
@@ -941,23 +928,23 @@ A ThirdPartyAudienceSegment is an AudienceSegment owned by a data provider
 and licensed to the DFP publisher.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.ThirdPartyAudienceSegment}{Google Documentation for ThirdPartyAudienceSegment}
 \describe{
- \item{id}{a integer (inherited from AudienceSegment) -  Id of the AudienceSegment. This attribute is readonly and is populated by
+ \item{id}{a integer (inherited from AudienceSegment) - Id of the AudienceSegment. This attribute is readonly and is populated by
 Google.}
- \item{name}{a string (inherited from AudienceSegment) -  Name of the AudienceSegment. This attribute is required and has a maximum
+ \item{name}{a character (inherited from AudienceSegment) - Name of the AudienceSegment. This attribute is required and has a maximum
 length of 255 characters.}
- \item{categoryIds}{a integer (inherited from AudienceSegment) -  The ids of the categories this segment belongs to. This field is optional,
+ \item{categoryIds}{a integer (inherited from AudienceSegment) - The ids of the categories this segment belongs to. This field is optional,
 it may be empty.}
- \item{description}{a string (inherited from AudienceSegment) -  Description of the AudienceSegment. This attribute is optional and has a
+ \item{description}{a character (inherited from AudienceSegment) - Description of the AudienceSegment. This attribute is optional and has a
 maximum length of 8192 characters.}
- \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) -  Status of the AudienceSegment. This controls whether the given segment is
+ \item{status}{a AudienceSegment.Status (inherited from AudienceSegment) - Status of the AudienceSegment. This controls whether the given segment is
 available for targeting or not. During creation this attribute is optional
 and defaults to ACTIVE. This attribute is readonly for updates.}
- \item{size}{a integer (inherited from AudienceSegment) -  Number of unique cookies in the AudienceSegment. This attribute is readonly
+ \item{size}{a integer (inherited from AudienceSegment) - Number of unique cookies in the AudienceSegment. This attribute is readonly
 and is populated by Google.}
- \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) -  Owner data provider of this segment. This attribute is readonly and is
+ \item{dataProvider}{a AudienceSegmentDataProvider (inherited from AudienceSegment) - Owner data provider of this segment. This attribute is readonly and is
 assigned by Google.}
- \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) -  Type of the segment. This attribute is readonly and is assigned by Google.}
- \item{approvalStatus}{a ThirdPartyAudienceSegment.AudienceSegmentApprovalStatus - Specifies if the publisher has approved or rejected the segment. This can take one of the following values:
+ \item{type}{a AudienceSegment.AudienceSegmentType (inherited from AudienceSegment) - Type of the segment. This attribute is readonly and is assigned by Google.}
+ \item{approvalStatus}{a ThirdPartyAudienceSegment.AudienceSegmentApprovalStatus - Specifies if the publisher has approved or rejected the segment. This can take one of the following values: 
    \itemize{
      \item{UNAPPROVED - Specifies that this segment is waiting to be approved or rejected. It cannot
 be targeted.}
@@ -967,11 +954,11 @@ be targeted.}
 version.}
    }
   }
- \item{cost}{a Money -  Specifies CPM cost for the given segment. This attribute is readonly and is
+ \item{cost}{a Money - Specifies CPM cost for the given segment. This attribute is readonly and is
 assigned by the data provider.  The CPM cost comes from the active pricing,
 if there is one; otherwise it comes from the latest pricing.}
  \item{licenseType}{a ThirdPartyAudienceSegment.LicenseType - Specifies the license type of the external segment. This attribute is
-read-only. This can take one of the following values:
+read-only. This can take one of the following values: 
    \itemize{
      \item{DIRECT_LICENSE - A direct license is the result of a direct contract between the data
 provider and the publisher.}
@@ -982,9 +969,9 @@ publishers and/or advertisers of the Doubleclick ecosystem.}
 version.}
    }
   }
- \item{startDateTime}{a DateTime -  Specifies the date and time at which this segment becomes available for use.
+ \item{startDateTime}{a DateTime - Specifies the date and time at which this segment becomes available for use.
 This attribute is readonly and is assigned by the data provider.}
- \item{endDateTime}{a DateTime -  Specifies the date and time at which this segment ceases to be available for
+ \item{endDateTime}{a DateTime - Specifies the date and time at which this segment ceases to be available for
 use. This attribute is readonly and is assigned by the data provider.}
 }
 
@@ -1001,7 +988,7 @@ An error for a field which is an invalid type.
 Represents the result of performing an action on objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService.UpdateResult}{Google Documentation for UpdateResult}
 \describe{
- \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+ \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 action.}
 }
 

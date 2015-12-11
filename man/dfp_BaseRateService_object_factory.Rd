@@ -7,7 +7,7 @@
 dfp_BaseRateService_object_factory(obj_type, obj_data)
 }
 \arguments{
-\item{obj_type}{a string from one of the object types described below}
+\item{obj_type}{a string from one of the object types described above}
 
 \item{obj_data}{a \code{list} of \code{lists} or a \code{data.frame} with the required components to create
 the obj_type specified. All input names must match the expected attributes for the object.
@@ -15,7 +15,7 @@ If submitting a list of attributes to create 1 object make sure to nest it insid
 it is a list of length 1 with 1 list of attributes to create the object.}
 }
 \value{
-a string of formatted XML that can be inserted into a SOAP request body to the API
+a string of formatted XML that can be inserted into a SOAP request body to the APT
 }
 \description{
 Provides methods for managing BaseRate objects.
@@ -41,9 +41,9 @@ while processing a service request. The OGNL field path is provided for
 parsers to identify the request data element that may have caused the error.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ApiError}{Google Documentation for ApiError}
 \describe{
- \item{fieldPath}{a string -  The OGNL field path to identify cause of error.}
- \item{trigger}{a string -  The data that caused the error.}
- \item{errorString}{a string -  A simple string representation of the error and reason.}
+ \item{fieldPath}{a character - The OGNL field path to identify cause of error.}
+ \item{trigger}{a character - The data that caused the error.}
+ \item{errorString}{a character - A simple string representation of the error and reason.}
 }
 
 \strong{ApiException}
@@ -51,8 +51,8 @@ parsers to identify the request data element that may have caused the error.
 Exception class for holding a list of service errors.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ApiException}{Google Documentation for ApiException}
 \describe{
- \item{message}{a string (inherited from ApplicationException) -  Error message.}
- \item{errors}{a ApiError -  List of errors.}
+ \item{message}{a character (inherited from ApplicationException) - Error message.}
+ \item{errors}{a ApiError - List of errors.}
 }
 
 \strong{ApiVersionError}
@@ -61,7 +61,7 @@ Errors related to the usage of API versions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ApiVersionError}{Google Documentation for ApiVersionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ApiVersionError.Reason - This can take one of the following values:
+ \item{reason}{a ApiVersionError.Reason - This can take one of the following values: 
    \itemize{
      \item{UPDATE_TO_NEWER_VERSION - Indicates that the operation is not allowed in the version the request was
 made in.}
@@ -76,7 +76,7 @@ version.}
 Base class for exceptions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ApplicationException}{Google Documentation for ApplicationException}
 \describe{
- \item{message}{a string -  Error message.}
+ \item{message}{a character - Error message.}
 }
 
 \strong{AuthenticationError}
@@ -85,7 +85,7 @@ An error for an exception that occurred when authenticating.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.AuthenticationError}{Google Documentation for AuthenticationError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a AuthenticationError.Reason - This can take one of the following values:
+ \item{reason}{a AuthenticationError.Reason - This can take one of the following values: 
    \itemize{
      \item{AMBIGUOUS_SOAP_REQUEST_HEADER - The SOAP message contains a request header with an ambiguous definition of
 the authentication header fields. This means either the authToken and
@@ -120,9 +120,9 @@ A base rate that applies to a product template, product or product package
 item belonging to rate card.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.BaseRate}{Google Documentation for BaseRate}
 \describe{
- \item{rateCardId}{a integer -  The ID of the RateCard object to which this base rate belongs. This
+ \item{rateCardId}{a integer - The ID of the RateCard object to which this base rate belongs. This
 attribute is required and cannot be changed after creation.}
- \item{id}{a integer -  Uniquely identifies the BaseRate object. This attribute is read-only and is
+ \item{id}{a integer - Uniquely identifies the BaseRate object. This attribute is read-only and is
 assigned by Google when a base rate is created.}
 }
 
@@ -140,7 +140,7 @@ An error having to do with BaseRate when performing actions.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.BaseRateActionError}{Google Documentation for BaseRateActionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a BaseRateActionError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a BaseRateActionError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{PRODUCT_BASE_RATE_EXISTS - Cannot delete a base rate on a product template if its products still have
 base rates on this rate card.}
@@ -156,7 +156,7 @@ An error having to do with BaseRate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.BaseRateError}{Google Documentation for BaseRateError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a BaseRateError.Reason - This can take one of the following values:
+ \item{reason}{a BaseRateError.Reason - This can take one of the following values: 
    \itemize{
      \item{CANNOT_QUERY_BOTH_PRODUCT_TEMPLATE_ID_AND_PRODUCT_ID - The PQL statement contains both productTemplateId and productId fields.}
      \item{INVALID_CURRENCY_CODE - The currency code is invalid.}
@@ -177,9 +177,9 @@ version.}
 Captures a page of BaseRate objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.BaseRatePage}{Google Documentation for BaseRatePage}
 \describe{
- \item{results}{a BaseRate -  The collection of base rates contained within this page.}
- \item{startIndex}{a integer -  The absolute index in the total result set on which this page begins.}
- \item{totalResultSetSize}{a integer -  The size of the total result set to which this page belongs.}
+ \item{results}{a BaseRate - The collection of base rates contained within this page.}
+ \item{startIndex}{a integer - The absolute index in the total result set on which this page begins.}
+ \item{totalResultSetSize}{a integer - The size of the total result set to which this page belongs.}
 }
 
 \strong{BooleanValue}
@@ -188,7 +188,7 @@ Contains a boolean value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.BooleanValue}{Google Documentation for BooleanValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a boolean -  The boolean value.}
+ \item{value}{a boolean - The boolean value.}
 }
 
 \strong{CollectionSizeError}
@@ -197,7 +197,7 @@ Error for the size of the collection being too large
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.CollectionSizeError}{Google Documentation for CollectionSizeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CollectionSizeError.Reason - This can take one of the following values:
+ \item{reason}{a CollectionSizeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_LARGE}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -212,7 +212,7 @@ A place for common errors that can be used across services.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.CommonError}{Google Documentation for CommonError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a CommonError.Reason - This can take one of the following values:
+ \item{reason}{a CommonError.Reason - This can take one of the following values: 
    \itemize{
      \item{NOT_FOUND - Indicates that an attempt was made to retrieve an entity that does not
 exist.}
@@ -232,9 +232,9 @@ version.}
 Represents a date.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.Date}{Google Documentation for Date}
 \describe{
- \item{year}{a integer -  Year (e.g., 2009)}
- \item{month}{a integer -  Month (1..12)}
- \item{day}{a integer -  Day (1..31)}
+ \item{year}{a integer - Year (e.g., 2009)}
+ \item{month}{a integer - Month (1..12)}
+ \item{day}{a integer - Day (1..31)}
 }
 
 \strong{DateTime}
@@ -246,7 +246,7 @@ Represents a date combined with the time of day.
  \item{hour}{a integer}
  \item{minute}{a integer}
  \item{second}{a integer}
- \item{timeZoneID}{a string}
+ \item{timeZoneID}{a character}
 }
 
 \strong{DateTimeValue}
@@ -255,7 +255,7 @@ Contains a date-time value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.DateTimeValue}{Google Documentation for DateTimeValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a DateTime -  The DateTime value.}
+ \item{value}{a DateTime - The DateTime value.}
 }
 
 \strong{DateValue}
@@ -264,7 +264,7 @@ Contains a date value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.DateValue}{Google Documentation for DateValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a Date -  The Date value.}
+ \item{value}{a Date - The Date value.}
 }
 
 \strong{DeleteBaseRates}
@@ -281,7 +281,7 @@ Lists errors relating to having too many children on an entity.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.EntityChildrenLimitReachedError}{Google Documentation for EntityChildrenLimitReachedError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values:
+ \item{reason}{a EntityChildrenLimitReachedError.Reason - This can take one of the following values: 
    \itemize{
      \item{LINE_ITEM_LIMIT_FOR_ORDER_REACHED - The number of line items on the order exceeds the max number of line items
 allowed per order in the network.}
@@ -325,7 +325,7 @@ missing feature as the trigger.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.FeatureError}{Google Documentation for FeatureError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a FeatureError.Reason - This can take one of the following values:
+ \item{reason}{a FeatureError.Reason - This can take one of the following values: 
    \itemize{
      \item{MISSING_FEATURE - A feature is being used that is not enabled on the current network.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -342,7 +342,7 @@ client.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.InternalApiError}{Google Documentation for InternalApiError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a InternalApiError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXPECTED_INTERNAL_API_ERROR - API encountered an unexpected internal error.}
      \item{TRANSIENT_ERROR - A temporary error occurred during the request. Please retry.}
@@ -357,8 +357,8 @@ client.
 Represents a money amount.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.Money}{Google Documentation for Money}
 \describe{
- \item{currencyCode}{a string -  Three letter currency code in string format.}
- \item{microAmount}{a integer -  Money values are always specified in terms of micros which are a millionth
+ \item{currencyCode}{a character - Three letter currency code in string format.}
+ \item{microAmount}{a integer - Money values are always specified in terms of micros which are a millionth
 of the fundamental currency unit. For US dollars, $1 is 1,000,000 micros.}
 }
 
@@ -368,7 +368,7 @@ Caused by supplying a null value for an attribute that cannot be null.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.NotNullError}{Google Documentation for NotNullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NotNullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{ARG1_NULL - Assuming that a method will not have more than 3 arguments, if it does,
 return NULL}
@@ -387,7 +387,7 @@ Errors associated with violation of a NOT NULL check.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.NullError}{Google Documentation for NullError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a NullError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{NULL_CONTENT - Specified list/container must not contain any null elements}
    }
@@ -400,7 +400,7 @@ Contains a numeric value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.NumberValue}{Google Documentation for NumberValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The numeric value represented as a string.}
+ \item{value}{a character - The numeric value represented as a string.}
 }
 
 \strong{ObjectValue}
@@ -421,7 +421,7 @@ Lists errors related to parsing.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ParseError}{Google Documentation for ParseError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a ParseError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates an error in parsing an attribute.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -436,7 +436,7 @@ Errors related to incorrect permission.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.PermissionError}{Google Documentation for PermissionError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PermissionError.Reason - This can take one of the following values:
+ \item{reason}{a PermissionError.Reason - This can take one of the following values: 
    \itemize{
      \item{PERMISSION_DENIED - User does not have the required permission for the request.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -450,13 +450,13 @@ version.}
 A base rate applied to a Product.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ProductBaseRate}{Google Documentation for ProductBaseRate}
 \describe{
- \item{rateCardId}{a integer (inherited from BaseRate) -  The ID of the RateCard object to which this base rate belongs. This
+ \item{rateCardId}{a integer (inherited from BaseRate) - The ID of the RateCard object to which this base rate belongs. This
 attribute is required and cannot be changed after creation.}
- \item{id}{a integer (inherited from BaseRate) -  Uniquely identifies the BaseRate object. This attribute is read-only and is
+ \item{id}{a integer (inherited from BaseRate) - Uniquely identifies the BaseRate object. This attribute is read-only and is
 assigned by Google when a base rate is created.}
- \item{productId}{a integer -  The ID of the Product this base rate is applied to. This attribute is
+ \item{productId}{a integer - The ID of the Product this base rate is applied to. This attribute is
 required and cannot be changed after creation.}
- \item{rate}{a Money -  The rate value to override the rate on the product template. This attribute
+ \item{rate}{a Money - The rate value to override the rate on the product template. This attribute
 is required. If null, the product is not associated with this rate card. The
 currency code is read-only.}
 }
@@ -466,13 +466,13 @@ currency code is read-only.}
 A base rate applied to a ProductPackageItem.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ProductPackageItemBaseRate}{Google Documentation for ProductPackageItemBaseRate}
 \describe{
- \item{rateCardId}{a integer (inherited from BaseRate) -  The ID of the RateCard object to which this base rate belongs. This
+ \item{rateCardId}{a integer (inherited from BaseRate) - The ID of the RateCard object to which this base rate belongs. This
 attribute is required and cannot be changed after creation.}
- \item{id}{a integer (inherited from BaseRate) -  Uniquely identifies the BaseRate object. This attribute is read-only and is
+ \item{id}{a integer (inherited from BaseRate) - Uniquely identifies the BaseRate object. This attribute is read-only and is
 assigned by Google when a base rate is created.}
- \item{productPackageItemId}{a integer -  The ID of ProductPackageItem this base rate is applied to. This attribute is
+ \item{productPackageItemId}{a integer - The ID of ProductPackageItem this base rate is applied to. This attribute is
 required and cannot be changed after creation.}
- \item{rate}{a Money -  The rate value of ProductPackageItem. This attribute is required and the
+ \item{rate}{a Money - The rate value of ProductPackageItem. This attribute is required and the
 currency code is read-only.}
 }
 
@@ -481,13 +481,13 @@ currency code is read-only.}
 A base rate applied to a ProductTemplate.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ProductTemplateBaseRate}{Google Documentation for ProductTemplateBaseRate}
 \describe{
- \item{rateCardId}{a integer (inherited from BaseRate) -  The ID of the RateCard object to which this base rate belongs. This
+ \item{rateCardId}{a integer (inherited from BaseRate) - The ID of the RateCard object to which this base rate belongs. This
 attribute is required and cannot be changed after creation.}
- \item{id}{a integer (inherited from BaseRate) -  Uniquely identifies the BaseRate object. This attribute is read-only and is
+ \item{id}{a integer (inherited from BaseRate) - Uniquely identifies the BaseRate object. This attribute is read-only and is
 assigned by Google when a base rate is created.}
- \item{productTemplateId}{a integer -  The ID of ProductTemplate this base rate is applied to. This attribute is
+ \item{productTemplateId}{a integer - The ID of ProductTemplate this base rate is applied to. This attribute is
 required and cannot be changed after creation.}
- \item{rate}{a Money -  The rate value. This attribute is required. The currency code is read-only.}
+ \item{rate}{a Money - The rate value. This attribute is required. The currency code is read-only.}
 }
 
 \strong{PublisherQueryLanguageContextError}
@@ -497,7 +497,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.PublisherQueryLanguageContextError}{Google Documentation for PublisherQueryLanguageContextError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageContextError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNEXECUTABLE - Indicates that there was an error executing the PQL.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -513,7 +513,7 @@ object.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.PublisherQueryLanguageSyntaxError}{Google Documentation for PublisherQueryLanguageSyntaxError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a PublisherQueryLanguageSyntaxError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{UNPARSABLE - Indicates that there was a PQL syntax error.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -529,7 +529,7 @@ action to which they have no quota remaining.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.QuotaError}{Google Documentation for QuotaError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a QuotaError.Reason - This can take one of the following values:
+ \item{reason}{a QuotaError.Reason - This can take one of the following values: 
    \itemize{
      \item{EXCEEDED_QUOTA - The number of requests made per second is too high and has exceeded the
 allowable limit. The recommended approach to handle this error is to wait
@@ -551,7 +551,7 @@ A list of all errors associated with the Range constraint.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.RangeError}{Google Documentation for RangeError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RangeError.Reason - This can take one of the following values:
+ \item{reason}{a RangeError.Reason - This can take one of the following values: 
    \itemize{
      \item{TOO_HIGH}
      \item{TOO_LOW}
@@ -567,7 +567,7 @@ Errors due to missing required field.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.RequiredError}{Google Documentation for RequiredError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a RequiredError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{REQUIRED - Missing required field.}
    }
@@ -580,7 +580,7 @@ Errors related to the server.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.ServerError}{Google Documentation for ServerError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a ServerError.Reason - This can take one of the following values:
+ \item{reason}{a ServerError.Reason - This can take one of the following values: 
    \itemize{
      \item{SERVER_ERROR - Indicates that an unexpected error occured.}
      \item{SERVER_BUSY - Indicates that the server is currently experiencing a high load. Please wait
@@ -597,7 +597,7 @@ Contains a set of Value Values. May not contain duplicates.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.SetValue}{Google Documentation for SetValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{values}{a Value -  The values. They must all be the same type of Value and not contain
+ \item{values}{a Value - The values. They must all be the same type of Value and not contain
 duplicates.}
 }
 
@@ -606,8 +606,8 @@ duplicates.}
 Represents the SOAP request header used by API requests.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.SoapRequestHeader}{Google Documentation for SoapRequestHeader}
 \describe{
- \item{networkCode}{a string -  The network code to use in the context of a request.}
- \item{applicationName}{a string -  The name of client library application.}
+ \item{networkCode}{a character - The network code to use in the context of a request.}
+ \item{applicationName}{a character - The name of client library application.}
 }
 
 \strong{SoapResponseHeader}
@@ -615,30 +615,17 @@ Represents the SOAP request header used by API requests.
 Represents the SOAP request header used by API responses.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.SoapResponseHeader}{Google Documentation for SoapResponseHeader}
 \describe{
- \item{requestId}{a string}
+ \item{requestId}{a character}
  \item{responseTime}{a integer}
 }
 
 \strong{Statement}
 
-Captures the WHERE, ORDER BY and LIMIT clauses of a PQL query. Statements
-are typically used to retrieve objects of a predefined domain type, which
-makes SELECT clause unnecessary.  An example query text might be "WHERE
-status = 'ACTIVE' ORDER BY id LIMIT 30".  Statements support bind variables.
-These are substitutes for literals and can be thought of as input parameters
-to a PQL query.  An example of such a query might be "WHERE id = :idValue".
-Statements also support use of the LIKE keyword. This provides partial and
-wildcard string matching.  An example of such a query might be "WHERE name
-LIKE 'startswith\%'".  If using an API version newer than V201010, the value
-for the variable idValue must then be set with an object of type Value and
-is one of NumberValue, TextValue or BooleanValue.  If using an API version
-older than or equal to V201010, the value for the variable idValue must then
-be set with an object of type Param and is one of DoubleParam, LongParam or
-StringParam.
+Holds the query in PQL syntax. See link for how to form PQL.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.Statement}{Google Documentation for Statement}
 \describe{
- \item{query}{a string -  Holds the query in PQL syntax. See link for how to form PQL.}
- \item{values}{a String_ValueMapEntry -  Holds keys and values for bind variables and their values. The key is the
+ \item{query}{a character - Holds the query in PQL syntax. See link for how to form PQL.}
+ \item{values}{a String_ValueMapEntry - Holds keys and values for bind variables and their values. The key is the
 name of the bind variable. The value is the literal value of the variable.
 In the example "WHERE status = :bindStatus ORDER BY id LIMIT 30", the bind
 variable, represented by :bindStatus is named bindStatus, which would also
@@ -653,7 +640,7 @@ An error that occurs while parsing Statement objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.StatementError}{Google Documentation for StatementError}
 \describe{
  \item{extends ApiError}{see documentation for ApiError}
- \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values:
+ \item{reason}{a StatementError.Reason - The error reason represented by an enum. This can take one of the following values: 
    \itemize{
      \item{VARIABLE_NOT_BOUND_TO_VALUE - A bind variable has not been bound to a value.}
      \item{UNKNOWN - The value returned if the actual value is not exposed by the requested API
@@ -668,7 +655,7 @@ This represents an entry in a map with a key of type String and value of
 type Value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.String_ValueMapEntry}{Google Documentation for String_ValueMapEntry}
 \describe{
- \item{key}{a string}
+ \item{key}{a character}
  \item{value}{a Value}
 }
 
@@ -678,7 +665,7 @@ Contains a string value.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.TextValue}{Google Documentation for TextValue}
 \describe{
  \item{extends Value}{see documentation for Value}
- \item{value}{a string -  The string value.}
+ \item{value}{a character - The string value.}
 }
 
 \strong{UnknownBaseRate}
@@ -687,9 +674,9 @@ The BaseRate returned if the actual base rate type is not exposed by the
 requested API version.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.UnknownBaseRate}{Google Documentation for UnknownBaseRate}
 \describe{
- \item{rateCardId}{a integer (inherited from BaseRate) -  The ID of the RateCard object to which this base rate belongs. This
+ \item{rateCardId}{a integer (inherited from BaseRate) - The ID of the RateCard object to which this base rate belongs. This
 attribute is required and cannot be changed after creation.}
- \item{id}{a integer (inherited from BaseRate) -  Uniquely identifies the BaseRate object. This attribute is read-only and is
+ \item{id}{a integer (inherited from BaseRate) - Uniquely identifies the BaseRate object. This attribute is read-only and is
 assigned by Google when a base rate is created.}
 }
 
@@ -698,7 +685,7 @@ assigned by Google when a base rate is created.}
 Represents the result of performing an action on objects.
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService.UpdateResult}{Google Documentation for UpdateResult}
 \describe{
- \item{numChanges}{a integer -  The number of objects that were changed as a result of performing the
+ \item{numChanges}{a integer - The number of objects that were changed as a result of performing the
 action.}
 }
 

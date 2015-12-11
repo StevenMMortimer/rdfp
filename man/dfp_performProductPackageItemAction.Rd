@@ -4,14 +4,16 @@
 \alias{dfp_performProductPackageItemAction}
 \title{performProductPackageItemAction}
 \usage{
-dfp_performProductPackageItemAction(request_data)
+dfp_performProductPackageItemAction(request_data, as_df=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
+
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a performProductPackageItemActionResponse
+a \code{list} or \code{data.frame} containing all the elements of a performProductPackageItemActionResponse
 }
 \description{
 Performs actions on ProductPackageItem objects that satisfy the given Statement query. a set of product package items

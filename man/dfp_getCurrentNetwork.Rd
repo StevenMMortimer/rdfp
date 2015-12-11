@@ -4,10 +4,13 @@
 \alias{dfp_getCurrentNetwork}
 \title{getCurrentNetwork}
 \usage{
-dfp_getCurrentNetwork()
+dfp_getCurrentNetwork(as_df=FALSE)
+}
+\arguments{
+\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} containing all the elements of a getCurrentNetworkResponse
+a \code{list} or \code{data.frame} containing all the elements of a getCurrentNetworkResponse
 }
 \description{
 Returns the current network for which requests are being made.
