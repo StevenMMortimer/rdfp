@@ -1426,13 +1426,13 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 #' 
-#' @usage dfp_getAdUnitSizesByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getAdUnitSizesByStatement(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitSizesByStatementResponse 
 #' @export
-dfp_getAdUnitSizesByStatement <- function(request_data, as_df=FALSE){
+dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
@@ -1481,13 +1481,13 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 #' 
-#' @usage dfp_getAdUnitsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getAdUnitsByStatement(request_data, as_df=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitsByStatementResponse 
 #' @export
-dfp_getAdUnitsByStatement <- function(request_data, as_df=TRUE){
+dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE){
  request_body <- make_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 

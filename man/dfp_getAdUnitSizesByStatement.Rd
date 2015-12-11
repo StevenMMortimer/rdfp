@@ -4,7 +4,7 @@
 \alias{dfp_getAdUnitSizesByStatement}
 \title{getAdUnitSizesByStatement}
 \usage{
-dfp_getAdUnitSizesByStatement(request_data, as_df=FALSE)
+dfp_getAdUnitSizesByStatement(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
