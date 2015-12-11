@@ -790,7 +790,7 @@ dfp_createPlacements <- function(request_data){
  request_body <- make_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createPlacementsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPlacementsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -829,7 +829,7 @@ dfp_getPlacementsByStatement <- function(request_data){
  request_body <- make_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getPlacementsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPlacementsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -859,7 +859,7 @@ dfp_performPlacementAction <- function(request_data){
  request_body <- make_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performPlacementActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPlacementActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -889,7 +889,7 @@ dfp_updatePlacements <- function(request_data){
  request_body <- make_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updatePlacementsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePlacementsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

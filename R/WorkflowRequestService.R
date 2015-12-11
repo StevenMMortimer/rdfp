@@ -785,7 +785,7 @@ dfp_getWorkflowRequestsByStatement <- function(request_data){
  request_body <- make_request_body(service='WorkflowRequestService', root_name='getWorkflowRequestsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getWorkflowRequestsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getWorkflowRequestsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -815,7 +815,7 @@ dfp_performWorkflowRequestAction <- function(request_data){
  request_body <- make_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performWorkflowRequestActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performWorkflowRequestActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

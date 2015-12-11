@@ -714,7 +714,7 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data){
  request_body <- make_request_body(service='SuggestedAdUnitService', root_name='getSuggestedAdUnitsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getSuggestedAdUnitsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getSuggestedAdUnitsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -748,7 +748,7 @@ dfp_performSuggestedAdUnitAction <- function(request_data){
  request_body <- make_request_body(service='SuggestedAdUnitService', root_name='performSuggestedAdUnitAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performSuggestedAdUnitActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performSuggestedAdUnitActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

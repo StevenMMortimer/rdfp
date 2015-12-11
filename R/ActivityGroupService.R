@@ -600,7 +600,7 @@ dfp_createActivityGroups <- function(request_data){
  request_body <- make_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createActivityGroupsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivityGroupsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -637,7 +637,7 @@ dfp_getActivityGroupsByStatement <- function(request_data){
  request_body <- make_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getActivityGroupsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivityGroupsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -667,7 +667,7 @@ dfp_updateActivityGroups <- function(request_data){
  request_body <- make_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateActivityGroupsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivityGroupsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

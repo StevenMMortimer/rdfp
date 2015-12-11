@@ -611,7 +611,7 @@ dfp_createContacts <- function(request_data){
  request_body <- make_request_body(service='ContactService', root_name='createContacts', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createContactsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContactsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -653,7 +653,7 @@ dfp_getContactsByStatement <- function(request_data){
  request_body <- make_request_body(service='ContactService', root_name='getContactsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getContactsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContactsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -683,7 +683,7 @@ dfp_updateContacts <- function(request_data){
  request_body <- make_request_body(service='ContactService', root_name='updateContacts', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateContactsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContactsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

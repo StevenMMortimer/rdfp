@@ -654,7 +654,7 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='createContentMetadataKeyHierarchies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createContentMetadataKeyHierarchiesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentMetadataKeyHierarchiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -689,7 +689,7 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='getContentMetadataKeyHierarchiesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getContentMetadataKeyHierarchiesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentMetadataKeyHierarchiesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -719,7 +719,7 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performContentMetadataKeyHierarchyActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentMetadataKeyHierarchyActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -749,7 +749,7 @@ dfp_updateContentMetadataKeyHierarchies <- function(request_data){
  request_body <- make_request_body(service='ContentMetadataKeyHierarchyService', root_name='updateContentMetadataKeyHierarchies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateContentMetadataKeyHierarchiesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentMetadataKeyHierarchiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

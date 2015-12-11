@@ -767,7 +767,7 @@ dfp_createUsers <- function(request_data){
  request_body <- make_request_body(service='UserService', root_name='createUsers', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createUsersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUsersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -795,7 +795,7 @@ dfp_getAllRoles <- function(){
  request_body <- make_request_body(service='UserService', root_name='getAllRoles', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAllRolesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllRolesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -823,7 +823,7 @@ dfp_getCurrentUser <- function(){
  request_body <- make_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCurrentUserResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentUserResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -861,7 +861,7 @@ dfp_getUsersByStatement <- function(request_data){
  request_body <- make_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getUsersByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUsersByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -891,7 +891,7 @@ dfp_performUserAction <- function(request_data){
  request_body <- make_request_body(service='UserService', root_name='performUserAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performUserActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -921,7 +921,7 @@ dfp_updateUsers <- function(request_data){
  request_body <- make_request_body(service='UserService', root_name='updateUsers', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateUsersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUsersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

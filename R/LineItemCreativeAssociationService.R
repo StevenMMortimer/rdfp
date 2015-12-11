@@ -1506,7 +1506,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createLineItemCreativeAssociationsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemCreativeAssociationsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1544,7 +1544,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLineItemCreativeAssociationsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemCreativeAssociationsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1572,7 +1572,7 @@ dfp_getPreviewUrl <- function(){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getPreviewUrlResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPreviewUrlResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1602,7 +1602,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performLineItemCreativeAssociationActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemCreativeAssociationActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1632,7 +1632,7 @@ dfp_updateLineItemCreativeAssociations <- function(request_data){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateLineItemCreativeAssociationsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemCreativeAssociationsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

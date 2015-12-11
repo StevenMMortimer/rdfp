@@ -1080,7 +1080,7 @@ dfp_createAudienceSegments <- function(request_data){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='createAudienceSegments', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createAudienceSegmentsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAudienceSegmentsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1122,7 +1122,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='getAudienceSegmentsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAudienceSegmentsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAudienceSegmentsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1152,7 +1152,7 @@ dfp_performAudienceSegmentAction <- function(request_data){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performAudienceSegmentActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAudienceSegmentActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1182,7 +1182,7 @@ dfp_updateAudienceSegments <- function(request_data){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='updateAudienceSegments', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateAudienceSegmentsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAudienceSegmentsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

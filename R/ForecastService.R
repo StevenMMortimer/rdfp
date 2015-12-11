@@ -3764,7 +3764,7 @@ dfp_getAvailabilityForecast <- function(request_data){
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAvailabilityForecastResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3794,7 +3794,7 @@ dfp_getAvailabilityForecastById <- function(request_data){
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAvailabilityForecastByIdResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastByIdResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3824,7 +3824,7 @@ dfp_getDeliveryForecast <- function(request_data){
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getDeliveryForecastResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3854,7 +3854,7 @@ dfp_getDeliveryForecastByIds <- function(request_data){
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getDeliveryForecastByIdsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastByIdsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

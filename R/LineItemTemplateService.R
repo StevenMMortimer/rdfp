@@ -1836,7 +1836,7 @@ dfp_getLineItemTemplatesByStatement <- function(request_data){
  request_body <- make_request_body(service='LineItemTemplateService', root_name='getLineItemTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLineItemTemplatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemTemplatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

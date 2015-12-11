@@ -598,7 +598,7 @@ dfp_createUserTeamAssociations <- function(request_data){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='createUserTeamAssociations', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createUserTeamAssociationsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUserTeamAssociationsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -632,7 +632,7 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='getUserTeamAssociationsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getUserTeamAssociationsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUserTeamAssociationsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -662,7 +662,7 @@ dfp_performUserTeamAssociationAction <- function(request_data){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='performUserTeamAssociationAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performUserTeamAssociationActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserTeamAssociationActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -692,7 +692,7 @@ dfp_updateUserTeamAssociations <- function(request_data){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='updateUserTeamAssociations', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateUserTeamAssociationsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUserTeamAssociationsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

@@ -666,7 +666,7 @@ dfp_getContentByStatement <- function(request_data){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getContentByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -700,7 +700,7 @@ dfp_getContentByStatementAndCustomTargetingValue <- function(){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getContentByStatementAndCustomTargetingValueResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementAndCustomTargetingValueResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

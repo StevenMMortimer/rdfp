@@ -547,7 +547,7 @@ dfp_getAllNetworks <- function(){
  request_body <- make_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAllNetworksResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllNetworksResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -575,7 +575,7 @@ dfp_getCurrentNetwork <- function(){
  request_body <- make_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCurrentNetworkResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentNetworkResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -603,7 +603,7 @@ dfp_makeTestNetwork <- function(){
  request_body <- make_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[makeTestNetworkResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['makeTestNetworkResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -633,7 +633,7 @@ dfp_updateNetwork <- function(request_data){
  request_body <- make_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateNetworkResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNetworkResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

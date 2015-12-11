@@ -1884,7 +1884,7 @@ dfp_createAdRules <- function(request_data){
  request_body <- make_request_body(service='AdRuleService', root_name='createAdRules', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createAdRulesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAdRulesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1920,7 +1920,7 @@ dfp_getAdRulesByStatement <- function(request_data){
  request_body <- make_request_body(service='AdRuleService', root_name='getAdRulesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAdRulesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdRulesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1950,7 +1950,7 @@ dfp_performAdRuleAction <- function(request_data){
  request_body <- make_request_body(service='AdRuleService', root_name='performAdRuleAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performAdRuleActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdRuleActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1980,7 +1980,7 @@ dfp_updateAdRules <- function(request_data){
  request_body <- make_request_body(service='AdRuleService', root_name='updateAdRules', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateAdRulesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAdRulesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

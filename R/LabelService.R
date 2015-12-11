@@ -653,7 +653,7 @@ dfp_createLabels <- function(request_data){
  request_body <- make_request_body(service='LabelService', root_name='createLabels', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createLabelsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLabelsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -690,7 +690,7 @@ dfp_getLabelsByStatement <- function(request_data){
  request_body <- make_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLabelsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLabelsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -720,7 +720,7 @@ dfp_performLabelAction <- function(request_data){
  request_body <- make_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performLabelActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLabelActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -750,7 +750,7 @@ dfp_updateLabels <- function(request_data){
  request_body <- make_request_body(service='LabelService', root_name='updateLabels', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateLabelsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLabelsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

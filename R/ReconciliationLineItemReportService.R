@@ -731,7 +731,7 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data){
  request_body <- make_request_body(service='ReconciliationLineItemReportService', root_name='getReconciliationLineItemReportsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getReconciliationLineItemReportsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationLineItemReportsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -761,7 +761,7 @@ dfp_updateReconciliationLineItemReports <- function(request_data){
  request_body <- make_request_body(service='ReconciliationLineItemReportService', root_name='updateReconciliationLineItemReports', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateReconciliationLineItemReportsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationLineItemReportsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

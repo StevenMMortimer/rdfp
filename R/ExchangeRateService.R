@@ -613,7 +613,7 @@ dfp_createExchangeRates <- function(request_data){
  request_body <- make_request_body(service='ExchangeRateService', root_name='createExchangeRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createExchangeRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createExchangeRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -650,7 +650,7 @@ dfp_getExchangeRatesByStatement <- function(request_data){
  request_body <- make_request_body(service='ExchangeRateService', root_name='getExchangeRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getExchangeRatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getExchangeRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -687,7 +687,7 @@ dfp_performExchangeRateAction <- function(request_data){
  request_body <- make_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performExchangeRateActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performExchangeRateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -717,7 +717,7 @@ dfp_updateExchangeRates <- function(request_data){
  request_body <- make_request_body(service='ExchangeRateService', root_name='updateExchangeRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateExchangeRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateExchangeRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

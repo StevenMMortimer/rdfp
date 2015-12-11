@@ -2941,7 +2941,7 @@ dfp_createCreatives <- function(request_data){
  request_body <- make_request_body(service='CreativeService', root_name='createCreatives', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCreativesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCreativesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2979,7 +2979,7 @@ dfp_getCreativesByStatement <- function(request_data){
  request_body <- make_request_body(service='CreativeService', root_name='getCreativesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCreativesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3009,7 +3009,7 @@ dfp_updateCreatives <- function(request_data){
  request_body <- make_request_body(service='CreativeService', root_name='updateCreatives', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCreativesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCreativesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

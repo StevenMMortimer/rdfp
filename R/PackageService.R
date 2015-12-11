@@ -1175,7 +1175,7 @@ dfp_createPackages <- function(request_data){
  request_body <- make_request_body(service='PackageService', root_name='createPackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createPackagesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPackagesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1213,7 +1213,7 @@ dfp_getPackagesByStatement <- function(request_data){
  request_body <- make_request_body(service='PackageService', root_name='getPackagesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getPackagesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPackagesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1243,7 +1243,7 @@ dfp_performPackageAction <- function(request_data){
  request_body <- make_request_body(service='PackageService', root_name='performPackageAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performPackageActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPackageActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1273,7 +1273,7 @@ dfp_updatePackages <- function(request_data){
  request_body <- make_request_body(service='PackageService', root_name='updatePackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updatePackagesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePackagesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

@@ -2187,7 +2187,7 @@ dfp_getReportDownloadURL <- function(request_data){
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getReportDownloadURLResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadURLResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2217,7 +2217,7 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data){
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getReportDownloadUrlWithOptionsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadUrlWithOptionsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2247,7 +2247,7 @@ dfp_getReportJobStatus <- function(request_data){
  request_body <- make_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getReportJobStatusResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportJobStatusResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2277,7 +2277,7 @@ dfp_runReportJob <- function(request_data){
  request_body <- make_request_body(service='ReportService', root_name='runReportJob', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[runReportJobResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['runReportJobResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

@@ -613,7 +613,7 @@ dfp_createTeams <- function(request_data){
  request_body <- make_request_body(service='TeamService', root_name='createTeams', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createTeamsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createTeamsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -648,7 +648,7 @@ dfp_getTeamsByStatement <- function(request_data){
  request_body <- make_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getTeamsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getTeamsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -678,7 +678,7 @@ dfp_updateTeams <- function(request_data){
  request_body <- make_request_body(service='TeamService', root_name='updateTeams', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateTeamsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateTeamsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

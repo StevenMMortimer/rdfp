@@ -673,7 +673,7 @@ dfp_createCreativeWrappers <- function(request_data){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCreativeWrappersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCreativeWrappersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -709,7 +709,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCreativeWrappersByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativeWrappersByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -739,7 +739,7 @@ dfp_performCreativeWrapperAction <- function(request_data){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCreativeWrapperActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCreativeWrapperActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -769,7 +769,7 @@ dfp_updateCreativeWrappers <- function(request_data){
  request_body <- make_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCreativeWrappersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCreativeWrappersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

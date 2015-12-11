@@ -706,7 +706,7 @@ dfp_createLiveStreamEvents <- function(request_data){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='createLiveStreamEvents', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createLiveStreamEventsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLiveStreamEventsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -739,7 +739,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='getLiveStreamEventsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLiveStreamEventsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLiveStreamEventsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -769,7 +769,7 @@ dfp_performLiveStreamEventAction <- function(request_data){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='performLiveStreamEventAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performLiveStreamEventActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLiveStreamEventActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -799,7 +799,7 @@ dfp_updateLiveStreamEvents <- function(request_data){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='updateLiveStreamEvents', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateLiveStreamEventsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLiveStreamEventsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

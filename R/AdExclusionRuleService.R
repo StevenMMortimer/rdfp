@@ -741,7 +741,7 @@ dfp_createAdExclusionRules <- function(request_data){
  request_body <- make_request_body(service='AdExclusionRuleService', root_name='createAdExclusionRules', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createAdExclusionRulesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAdExclusionRulesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -776,7 +776,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data){
  request_body <- make_request_body(service='AdExclusionRuleService', root_name='getAdExclusionRulesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getAdExclusionRulesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdExclusionRulesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -806,7 +806,7 @@ dfp_performAdExclusionRuleAction <- function(request_data){
  request_body <- make_request_body(service='AdExclusionRuleService', root_name='performAdExclusionRuleAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performAdExclusionRuleActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdExclusionRuleActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -836,7 +836,7 @@ dfp_updateAdExclusionRules <- function(request_data){
  request_body <- make_request_body(service='AdExclusionRuleService', root_name='updateAdExclusionRules', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateAdExclusionRulesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAdExclusionRulesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

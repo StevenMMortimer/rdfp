@@ -844,7 +844,7 @@ dfp_createCustomTargetingKeys <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomTargetingKeysResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingKeysResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -874,7 +874,7 @@ dfp_createCustomTargetingValues <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomTargetingValuesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingValuesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -911,7 +911,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomTargetingKeysByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingKeysByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -948,7 +948,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomTargetingValuesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingValuesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -978,7 +978,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomTargetingKeyActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingKeyActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1008,7 +1008,7 @@ dfp_performCustomTargetingValueAction <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomTargetingValueActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingValueActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1038,7 +1038,7 @@ dfp_updateCustomTargetingKeys <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomTargetingKeysResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingKeysResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -1068,7 +1068,7 @@ dfp_updateCustomTargetingValues <- function(request_data){
  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomTargetingValuesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingValuesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

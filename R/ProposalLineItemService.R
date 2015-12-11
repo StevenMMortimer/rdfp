@@ -3033,7 +3033,7 @@ dfp_createProposalLineItems <- function(request_data){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='createProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProposalLineItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3073,7 +3073,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='getProposalLineItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProposalLineItemsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalLineItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3103,7 +3103,7 @@ dfp_performProposalLineItemAction <- function(request_data){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='performProposalLineItemAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProposalLineItemActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalLineItemActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3133,7 +3133,7 @@ dfp_updateProposalLineItems <- function(request_data){
  request_body <- make_request_body(service='ProposalLineItemService', root_name='updateProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProposalLineItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

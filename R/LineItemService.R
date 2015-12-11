@@ -3552,7 +3552,7 @@ dfp_createLineItems <- function(request_data){
  request_body <- make_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createLineItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3600,7 +3600,7 @@ dfp_getLineItemsByStatement <- function(request_data){
  request_body <- make_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getLineItemsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3630,7 +3630,7 @@ dfp_performLineItemAction <- function(request_data){
  request_body <- make_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performLineItemActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -3660,7 +3660,7 @@ dfp_updateLineItems <- function(request_data){
  request_body <- make_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateLineItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

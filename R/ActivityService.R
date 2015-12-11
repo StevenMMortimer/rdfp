@@ -615,7 +615,7 @@ dfp_createActivities <- function(request_data){
  request_body <- make_request_body(service='ActivityService', root_name='createActivities', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createActivitiesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivitiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -652,7 +652,7 @@ dfp_getActivitiesByStatement <- function(request_data){
  request_body <- make_request_body(service='ActivityService', root_name='getActivitiesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getActivitiesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivitiesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -682,7 +682,7 @@ dfp_updateActivities <- function(request_data){
  request_body <- make_request_body(service='ActivityService', root_name='updateActivities', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateActivitiesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivitiesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

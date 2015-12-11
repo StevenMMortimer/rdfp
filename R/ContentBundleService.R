@@ -629,7 +629,7 @@ dfp_createContentBundles <- function(request_data){
  request_body <- make_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createContentBundlesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentBundlesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -664,7 +664,7 @@ dfp_getContentBundlesByStatement <- function(request_data){
  request_body <- make_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getContentBundlesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentBundlesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -694,7 +694,7 @@ dfp_performContentBundleAction <- function(request_data){
  request_body <- make_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performContentBundleActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentBundleActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -724,7 +724,7 @@ dfp_updateContentBundles <- function(request_data){
  request_body <- make_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateContentBundlesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentBundlesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

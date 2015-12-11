@@ -839,7 +839,7 @@ dfp_getCreativeTemplatesByStatement <- function(request_data){
  request_body <- make_request_body(service='CreativeTemplateService', root_name='getCreativeTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCreativeTemplatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativeTemplatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

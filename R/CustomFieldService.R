@@ -694,7 +694,7 @@ dfp_createCustomFieldOptions <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomFieldOptionsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomFieldOptionsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -724,7 +724,7 @@ dfp_createCustomFields <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCustomFieldsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomFieldsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -752,7 +752,7 @@ dfp_getCustomFieldOption <- function(){
  request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=NULL)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomFieldOptionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomFieldOptionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -789,7 +789,7 @@ dfp_getCustomFieldsByStatement <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCustomFieldsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomFieldsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -819,7 +819,7 @@ dfp_performCustomFieldAction <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performCustomFieldActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomFieldActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -849,7 +849,7 @@ dfp_updateCustomFieldOptions <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomFieldOptionsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomFieldOptionsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -879,7 +879,7 @@ dfp_updateCustomFields <- function(request_data){
  request_body <- make_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCustomFieldsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomFieldsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

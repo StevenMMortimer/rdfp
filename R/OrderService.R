@@ -2201,7 +2201,7 @@ dfp_createOrders <- function(request_data){
  request_body <- make_request_body(service='OrderService', root_name='createOrders', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createOrdersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createOrdersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2242,7 +2242,7 @@ dfp_getOrdersByStatement <- function(request_data){
  request_body <- make_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getOrdersByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getOrdersByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2272,7 +2272,7 @@ dfp_performOrderAction <- function(request_data){
  request_body <- make_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performOrderActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performOrderActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2302,7 +2302,7 @@ dfp_updateOrders <- function(request_data){
  request_body <- make_request_body(service='OrderService', root_name='updateOrders', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateOrdersResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateOrdersResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

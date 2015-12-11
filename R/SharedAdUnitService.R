@@ -636,7 +636,7 @@ dfp_getSharedAdUnitsByStatement <- function(request_data){
  request_body <- make_request_body(service='SharedAdUnitService', root_name='getSharedAdUnitsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getSharedAdUnitsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getSharedAdUnitsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -666,7 +666,7 @@ dfp_performSharedAdUnitAction <- function(request_data){
  request_body <- make_request_body(service='SharedAdUnitService', root_name='performSharedAdUnitAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performSharedAdUnitActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performSharedAdUnitActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

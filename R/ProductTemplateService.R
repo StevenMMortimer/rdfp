@@ -2353,7 +2353,7 @@ dfp_createProductTemplates <- function(request_data){
  request_body <- make_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProductTemplatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductTemplatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2394,7 +2394,7 @@ dfp_getProductTemplatesByStatement <- function(request_data){
  request_body <- make_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProductTemplatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductTemplatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2424,7 +2424,7 @@ dfp_performProductTemplateAction <- function(request_data){
  request_body <- make_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProductTemplateActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductTemplateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2454,7 +2454,7 @@ dfp_updateProductTemplates <- function(request_data){
  request_body <- make_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProductTemplatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductTemplatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

@@ -930,7 +930,7 @@ dfp_createCompanies <- function(request_data){
  request_body <- make_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createCompaniesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCompaniesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -966,7 +966,7 @@ dfp_getCompaniesByStatement <- function(request_data){
  request_body <- make_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getCompaniesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCompaniesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -996,7 +996,7 @@ dfp_updateCompanies <- function(request_data){
  request_body <- make_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateCompaniesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCompaniesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

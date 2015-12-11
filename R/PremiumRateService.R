@@ -838,7 +838,7 @@ dfp_createPremiumRates <- function(request_data){
  request_body <- make_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createPremiumRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPremiumRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -873,7 +873,7 @@ dfp_getPremiumRatesByStatement <- function(request_data){
  request_body <- make_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getPremiumRatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPremiumRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -903,7 +903,7 @@ dfp_updatePremiumRates <- function(request_data){
  request_body <- make_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updatePremiumRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePremiumRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

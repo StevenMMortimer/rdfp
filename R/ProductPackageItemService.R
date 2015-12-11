@@ -748,7 +748,7 @@ dfp_createProductPackageItems <- function(request_data){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='createProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createProductPackageItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -786,7 +786,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='getProductPackageItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProductPackageItemsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackageItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -816,7 +816,7 @@ dfp_performProductPackageItemAction <- function(request_data){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='performProductPackageItemAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProductPackageItemActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageItemActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -846,7 +846,7 @@ dfp_updateProductPackageItems <- function(request_data){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='updateProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProductPackageItemsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

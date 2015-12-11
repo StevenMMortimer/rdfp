@@ -2160,7 +2160,7 @@ dfp_getProductsByStatement <- function(request_data){
  request_body <- make_request_body(service='ProductService', root_name='getProductsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getProductsByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2190,7 +2190,7 @@ dfp_performProductAction <- function(request_data){
  request_body <- make_request_body(service='ProductService', root_name='performProductAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performProductActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -2220,7 +2220,7 @@ dfp_updateProducts <- function(request_data){
  request_body <- make_request_body(service='ProductService', root_name='updateProducts', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateProductsResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductsResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {

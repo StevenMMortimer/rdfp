@@ -741,7 +741,7 @@ dfp_createBaseRates <- function(request_data){
  request_body <- make_request_body(service='BaseRateService', root_name='createBaseRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[createBaseRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createBaseRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -771,7 +771,7 @@ dfp_getBaseRatesByStatement <- function(request_data){
  request_body <- make_request_body(service='BaseRateService', root_name='getBaseRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[getBaseRatesByStatementResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getBaseRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -801,7 +801,7 @@ dfp_performBaseRateAction <- function(request_data){
  request_body <- make_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[performBaseRateActionResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performBaseRateActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
@@ -831,7 +831,7 @@ dfp_updateBaseRates <- function(request_data){
  request_body <- make_request_body(service='BaseRateService', root_name='updateBaseRates', data=request_data)
   request <- build_soap_request(body = request_body)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[[updateBaseRatesResponse']])
+  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateBaseRatesResponse']])
   result <- if(is.null(response$rval)){
     NULL
   } else {
