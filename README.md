@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Build Status](https://travis-ci.org/ReportMort/rdfp.svg?branch=master)](https://travis-ci.org/ReportMort/rdfp) [![codecov.io](https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master)](https://codecov.io/github/ReportMort/rdfp?branch=master)
+[![Build Status](https://travis-ci.org/ReportMort/rdfp.svg?branch=master)](https://travis-ci.org/ReportMort/rdfp){:target="\_blank"} [![codecov.io](https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master)](https://codecov.io/github/ReportMort/rdfp?branch=master){:target="\_blank"}
 
 ------------------------------------------------------------------------
 
