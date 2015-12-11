@@ -12,27 +12,37 @@ options(rdfp.network_code = rdfp_options$test_network_code)
 request_data <- list(keys=list(name='TestKey1', 
                                displayName='TestKey1', 
                                type='FREEFORM'))
-dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
+dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data, as_df=T)
+
+request_data <- list(values=list(customTargetingKeyId=dfp_createCustomTargetingKeys_result$id,
+                                 name='TestValue1', 
+                                 displayName='TestValue1', 
+                                 matchType='EXACT'), 
+                     values=list(customTargetingKeyId=dfp_createCustomTargetingKeys_result$id, 
+                                 name='TestValue2', 
+                                 displayName='TestValue2', 
+                                 matchType='EXACT'))
+dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data, as_df=T)
 options(rdfp.network_code = rdfp_options$network_code)
 
 test_that("dfp_createCustomTargetingKeys", {
 
-  expect_is(dfp_createCustomTargetingKeys_result, "list")
-  expect_true(all(c('id', 'name', 'displayName', 'type', 'status') %in% names(dfp_createCustomTargetingKeys_result)))
+  expect_is(dfp_createCustomTargetingKeys_result, "data.frame")
+  expect_true(all(c('id', 'name', 'displayName', 'type', 'status') %in% names(dfp_createCustomTargetingKeys_result[[1]])))
   
 })
 
 test_that("dfp_createCustomTargetingValues", {
   
-  #dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues()
-  #expect_is(dfp_createCustomTargetingValues_result, "list")
+  expect_is(dfp_createCustomTargetingValues_result, "data.frame")
+  expect_true(all(c('id', 'customTargetingKeyId', 'name', 'displayName', 'matchType') %in% names(dfp_createCustomTargetingValues_result[[1]])))
   expect_true(TRUE)
 
 })
 
 test_that("dfp_getCustomTargetingKeysByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE name like 'Test%'"))
 
    dfp_getCustomTargetingKeysByStatement_result <- dfp_getCustomTargetingKeysByStatement(request_data)
 
@@ -42,7 +52,7 @@ test_that("dfp_getCustomTargetingKeysByStatement", {
 
 test_that("dfp_getCustomTargetingValuesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+   request_data <- list('filterStatement'=list('query'="WHERE name like 'Test%'"))
 
    dfp_getCustomTargetingValuesByStatement_result <- dfp_getCustomTargetingValuesByStatement(request_data)
 
@@ -51,21 +61,29 @@ test_that("dfp_getCustomTargetingValuesByStatement", {
 })
 
 test_that("dfp_performCustomTargetingKeyAction", {
-
-#  dfp_performCustomTargetingKeyAction_result <- dfp_performCustomTargetingKeyAction()
-
-#  expect_is(dfp_performCustomTargetingKeyAction_result, "list")
-  expect_true(TRUE)
-
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
+    request_data <- list(customTargetingKeyAction='DeleteCustomTargetingKeys',
+                          filterStatement=list('query'=paste0("WHERE name like 'Test%'")))
+    dfp_performCustomTargetingKeyAction_result <- dfp_performCustomTargetingKeyAction(request_data)
+    
+    expect_is(dfp_performCustomTargetingKeyAction_result, "list")
+    expect_true(all(c('numChanges') %in% names(dfp_performCustomTargetingKeyAction_result)))
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_performCustomTargetingValueAction", {
 
-#  dfp_performCustomTargetingValueAction_result <- dfp_performCustomTargetingValueAction()
-
-#  expect_is(dfp_performCustomTargetingValueAction_result, "list")
-  expect_true(TRUE)
-
+  options(rdfp.network_code = rdfp_options$test_network_code)
+    request_data <- list(customTargetingValueAction='DeleteCustomTargetingValues',
+                         filterStatement=list('query'=paste0("WHERE name like 'Test%'")))
+    dfp_performCustomTargetingValueAction_result <- dfp_performCustomTargetingValueAction(request_data)
+    
+    expect_is(dfp_performCustomTargetingValueAction_result, "list")
+    expect_true(all(c('numChanges') %in% names(dfp_performCustomTargetingValueAction_result)))
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_updateCustomTargetingKeys", {
