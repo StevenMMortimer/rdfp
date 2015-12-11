@@ -172,13 +172,14 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
     if(is.data.frame(data)){
       data <- alply(data, 1, function(x){as.list(data.frame(x))})
       attributes(data) <- NULL
-      if (grepl('^create', root_name)){
-        record_names <- gsub('CustomTargeting', '', tolower(gsub('create', '', root_name, ignore.case = T)), ignore.case = T)
-        names(data) <- rep(record_names, length(data))
-      }
     } else if(!is.list(data)){
       stop('data must be a list or data.frame')
     }
+  }
+  
+  if (grepl('^create', root_name)){
+    record_names <- gsub('CustomTargeting', '', tolower(gsub('create', '', root_name, ignore.case = T)), ignore.case = T)
+    names(data) <- rep(record_names, length(data))
   }
   
   if(verbose){
