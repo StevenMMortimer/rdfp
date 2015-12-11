@@ -23,7 +23,7 @@ test_that("dfp_getAdUnitSizesByStatement", {
 
    dfp_getAdUnitSizesByStatement_result <- dfp_getAdUnitSizesByStatement(request_data)
 
-   expect_is(dfp_getAdUnitSizesByStatement_result, "list")
+   expect_is(dfp_getAdUnitSizesByStatement_result, "data.frame")
 
 })
 
@@ -33,7 +33,7 @@ test_that("dfp_getAdUnitsByStatement", {
 
    dfp_getAdUnitsByStatement_result <- dfp_getAdUnitsByStatement(request_data)
 
-   expect_is(dfp_getAdUnitsByStatement_result, "data.frame")
+   expect_is(dfp_getAdUnitsByStatement_result, "list")
 
 })
 

@@ -20,7 +20,7 @@ test_that("dfp_select", {
   
   final_result <- dfp_select_parse(dfp_select_result)
   expect_is(final_result, "data.frame")
-  expect_true(all(c('Id', 'Name', 'CanonicalParentId', 'CountryCode', 'Type') %in% names(final_result)))
+  expect_true(all(c('id', 'name', 'canonicalparentid', 'countrycode', 'type') %in% names(final_result)))
 
 })
 

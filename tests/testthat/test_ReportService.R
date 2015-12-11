@@ -22,41 +22,41 @@ dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 
 # check status
 status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
-dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
 
 # continually check status until complete
 counter <- 0
-while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
+while(dfp_getReportJobStatus_result$x!='COMPLETED' & counter < 10){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
   Sys.sleep(3)
   counter <- counter + 1
 }
 
 # get report URL
 url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=F)$rval
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
 
 
 
 test_that("dfp_runReportJob", {
   
-  expect_is(dfp_runReportJob_result, "list")
-  expect_true(all(c('id', 'reportQuery', 'reportJobStatus') %in% names(dfp_runReportJob_result)))
+  expect_is(dfp_runReportJob_result, "data.frame")
+  expect_true(all(c('id', 'reportJobStatus') %in% names(dfp_runReportJob_result)))
   
 })
 
 test_that("dfp_getReportJobStatus", {
   
-  expect_is(dfp_getReportJobStatus_result, "character")
+  expect_is(dfp_getReportJobStatus_result$x, "character")
   
 })
 
 test_that("dfp_getReportDownloadURL", {
   
-  expect_is(dfp_getReportDownloadURL_result, "character")
+  expect_is(dfp_getReportDownloadURL_result$x, "character")
   expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadURL_result))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result)
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result$x)
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
@@ -69,12 +69,12 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='TSV', 
                                                   includeTotalsRow='true'))
-  dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data, as_df=F)$rval
+  dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
                                             exportFormat='TSV')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Month.and.year", 
@@ -88,10 +88,10 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
                                             exportFormat='CSV_EXCEL')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Month.and.year", 
@@ -104,10 +104,10 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
                                             exportFormat='CSV_DUMP')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 

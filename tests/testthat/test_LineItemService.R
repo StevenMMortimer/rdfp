@@ -8,10 +8,19 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+# more than 1 at a time
+# # reconstruct from existing id when needed
+# line_item_detail<- dfp_getLineItemsByStatement(list(filterStatement=
+#                                                       list(query="WHERE status='DELIVERING'")))$rval[c(3,4)]
+# # replace InventoryTargeting matrices to list
+# for (i in 1:length(line_item_detail)){
+# line_item_detail[[i]]$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail[[i]]$targeting$inventoryTargeting, 
+#                                                                        check.names=F))
+# }
+
 # reconstruct from existing id when needed
 line_item_detail<- dfp_getLineItemsByStatement(list(filterStatement=
-                                                      list(query="WHERE status='DELIVERING'")))$rval[[3]]
-
+                                                      list(query="WHERE status='DELIVERING'")))$rval[c(3)]
 # replace InventoryTargeting matrices to list
 line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
                                                                        check.names=F))

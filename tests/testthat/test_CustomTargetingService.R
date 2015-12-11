@@ -18,7 +18,6 @@ request_data <- data.frame(customTargetingKeyId=rep(dfp_createCustomTargetingKey
                            name=c('TestValue1','TestValue2'), 
                            displayName=c('TestValue1','TestValue2'), 
                            matchType=rep('EXACT', 2))
-
 dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data)
 options(rdfp.network_code = rdfp_options$network_code)
 

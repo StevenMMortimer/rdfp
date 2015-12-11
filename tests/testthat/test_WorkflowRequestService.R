@@ -23,8 +23,6 @@ test_that("dfp_performWorkflowRequestAction", {
   request_data <- list(action='ApproveWorkflowApprovalRequests',
                        filterStatement=list('query'=paste0("WHERE type='WORKFLOW_APPROVAL_REQUEST'")))
   
-  dfp_performWorkflowRequestAction_result <- dfp_performWorkflowRequestAction(request_data)
-  
   expect_message(try(dfp_performWorkflowRequestAction(request_data), silent=T), 'MISSING_FEATURE')
   expect_error(dfp_performWorkflowRequestAction(request_data))
 
