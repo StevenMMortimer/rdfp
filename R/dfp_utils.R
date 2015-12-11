@@ -178,8 +178,8 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
   }
   
   if (grepl('^create', root_name)){
-    record_names <- gsub('CustomTargeting', '', tolower(gsub('create', '', root_name, ignore.case = T)), ignore.case = T)
-    names(data) <- rep(record_names, length(data))
+    record_names <- gsub('CustomTargeting', '', gsub('create', '', root_name))
+    names(data) <- rep(gsub("(^[[:alpha:]])", "\\L\\1", record_names, perl=TRUE), length(data))
   }
   
   if(verbose){

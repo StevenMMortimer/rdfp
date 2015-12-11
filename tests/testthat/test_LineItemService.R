@@ -22,10 +22,10 @@ dfp_auth(token = "rdfp_token.rds")
 line_item_detail<- dfp_getLineItemsByStatement(list(filterStatement=
                                                       list(query="WHERE status='DELIVERING'")))$rval[c(3)]
 # replace InventoryTargeting matrices to list
-line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
+line_item_detail$results$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$results$targeting$inventoryTargeting, 
                                                                        check.names=F))
 
-hypothetical_line_item <- list(orderId=line_item_detail$orderId, 
+hypothetical_line_item <- list(orderId=line_item_detail$results$orderId, 
                                startDateTime=list(date=list(year=2017, month=1, day=1), 
                                                   hour=0,
                                                   minute=0,
@@ -36,10 +36,10 @@ hypothetical_line_item <- list(orderId=line_item_detail$orderId,
                                                 minute=0,
                                                 second=0,
                                                 timeZoneID='America/New_York'),
-                               lineItemType=line_item_detail$lineItemType,
-                               costType=line_item_detail$costType, 
-                               primaryGoal=line_item_detail$primaryGoal, 
-                               targeting=line_item_detail$targeting)
+                               lineItemType=line_item_detail$results$lineItemType,
+                               costType=line_item_detail$results$costType, 
+                               primaryGoal=line_item_detail$results$primaryGoal, 
+                               targeting=line_item_detail$results$targeting)
 
 test_that("dfp_createLineItems", {
 
@@ -63,7 +63,7 @@ test_that("dfp_getLineItemsByStatement", {
 test_that("dfp_performLineItemAction", {
   
   request_data <- list(lineItemAction='PauseLineItems',
-                       filterStatement=list('query'=paste0("WHERE id=", line_item_detail$id)))
+                       filterStatement=list('query'=paste0("WHERE id=", line_item_detail$results$id)))
   
   expect_message(try(dfp_performLineItemAction(request_data), silent=T), 'NOT_ALLOWED')
   expect_error(dfp_performLineItemAction(request_data))

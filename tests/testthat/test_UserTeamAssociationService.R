@@ -10,8 +10,8 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createUserTeamAssociations", {
   
-  request_data <- list(userTeamAssociations=list(teamId=239587,
-                                                userId=149461448))
+  request_data <- list(userteamassociations=list(teamId=239587,
+                                                 userId=149461448))
   options(rdfp.network_code = rdfp_options$test_network_code)
   expect_message(try(dfp_createUserTeamAssociations(request_data), silent=T), 'NOT_FOUND')
   expect_error(dfp_createUserTeamAssociations(request_data))
