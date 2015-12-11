@@ -15,11 +15,12 @@ test_that("dfp_select", {
                                           'CanonicalParentId, CountryCode,',
                                           "Type from Geo_Target where CountryCode='US'")))
   
-  dfp_select_result <- dfp_select(request_data)
+  dfp_select_result <- dfp_select(request_data)$rval
   expect_is(dfp_select_result, "list")
   
   final_result <- dfp_select_parse(dfp_select_result)
   expect_is(final_result, "data.frame")
+  expect_true(all(c('Id', 'Name', 'CanonicalParentId', 'CountryCode', 'Type') %in% names(final_result)))
 
 })
 

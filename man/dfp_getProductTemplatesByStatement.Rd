@@ -4,7 +4,7 @@
 \alias{dfp_getProductTemplatesByStatement}
 \title{getProductTemplatesByStatement}
 \usage{
-dfp_getProductTemplatesByStatement(request_data, as_df=FALSE)
+dfp_getProductTemplatesByStatement(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getProductTemplatesByStatementResponse
+a \code{data.frame} or \code{list} containing all the elements of a getProductTemplatesByStatementResponse
 }
 \description{
 Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering:  filtering criteria over productTemplates 

@@ -24,7 +24,7 @@ test_that("dfp_getAdExclusionRulesByStatement", {
   
   dfp_getAdExclusionRulesByStatement_result <- dfp_getAdExclusionRulesByStatement(request_data)
   
-  expect_is(dfp_getAdExclusionRulesByStatement_result, "list")
+  expect_is(dfp_getAdExclusionRulesByStatement_result, "data.frame")
   options(rdfp.network_code = rdfp_options$network_code)
 
 })

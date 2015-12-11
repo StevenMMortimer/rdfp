@@ -23,7 +23,7 @@ test_that("dfp_getPremiumRatesByStatement", {
 
    dfp_getPremiumRatesByStatement_result <- dfp_getPremiumRatesByStatement(request_data)
 
-   expect_is(dfp_getPremiumRatesByStatement_result, "list")
+   expect_is(dfp_getPremiumRatesByStatement_result, "data.frame")
 
 })
 

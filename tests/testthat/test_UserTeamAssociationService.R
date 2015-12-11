@@ -25,8 +25,8 @@ test_that("dfp_getUserTeamAssociationsByStatement", {
 
    dfp_getUserTeamAssociationsByStatement_result <- dfp_getUserTeamAssociationsByStatement(request_data)
 
-   expect_is(dfp_getUserTeamAssociationsByStatement_result, "list")
-   expect_true(all(c('teamId', 'defaultTeamAccessType', 'userId') %in% names(dfp_getUserTeamAssociationsByStatement_result[[3]])))
+   expect_is(dfp_getUserTeamAssociationsByStatement_result, "data.frame")
+   expect_true(all(c('teamId', 'defaultTeamAccessType', 'userId') %in% names(dfp_getUserTeamAssociationsByStatement_result)))
 
 })
 
@@ -34,7 +34,7 @@ test_that("dfp_performUserTeamAssociationAction", {
 
 #  dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction()
 
-#  expect_is(dfp_performUserTeamAssociationAction_result, "list")
+#  expect_is(dfp_performUserTeamAssociationAction_result, "data.frame")
   expect_true(TRUE)
 
 })

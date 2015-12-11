@@ -23,7 +23,7 @@ test_that("dfp_getPlacementsByStatement", {
 
    dfp_getPlacementsByStatement_result <- dfp_getPlacementsByStatement(request_data)
 
-   expect_is(dfp_getPlacementsByStatement_result, "list")
+   expect_is(dfp_getPlacementsByStatement_result, "data.frame")
 
 })
 

@@ -1166,32 +1166,42 @@ dfp_PackageService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#createPackages}{Google Documentation for createPackages}
 #' 
-#' @usage dfp_createPackages(request_data, as_df=FALSE)
+#' @usage dfp_createPackages(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a createPackagesResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a createPackagesResponse 
 #' @export
-dfp_createPackages <- function(request_data, as_df=FALSE){
+dfp_createPackages <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='PackageService', root_name='createPackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPackagesResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -1211,32 +1221,42 @@ dfp_createPackages <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
 #' 
-#' @usage dfp_getPackagesByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getPackagesByStatement(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a getPackagesByStatementResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getPackagesByStatementResponse 
 #' @export
-dfp_getPackagesByStatement <- function(request_data, as_df=FALSE){
+dfp_getPackagesByStatement <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='PackageService', root_name='getPackagesByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPackagesByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -1248,32 +1268,42 @@ dfp_getPackagesByStatement <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#performPackageAction}{Google Documentation for performPackageAction}
 #' 
-#' @usage dfp_performPackageAction(request_data, as_df=FALSE)
+#' @usage dfp_performPackageAction(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a performPackageActionResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a performPackageActionResponse 
 #' @export
-dfp_performPackageAction <- function(request_data, as_df=FALSE){
+dfp_performPackageAction <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='PackageService', root_name='performPackageAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPackageActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -1285,32 +1315,42 @@ dfp_performPackageAction <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#updatePackages}{Google Documentation for updatePackages}
 #' 
-#' @usage dfp_updatePackages(request_data, as_df=FALSE)
+#' @usage dfp_updatePackages(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a updatePackagesResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a updatePackagesResponse 
 #' @export
-dfp_updatePackages <- function(request_data, as_df=FALSE){
+dfp_updatePackages <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='PackageService', root_name='updatePackages', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePackagesResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }

@@ -4,13 +4,13 @@
 \alias{dfp_getCustomFieldOption}
 \title{getCustomFieldOption}
 \usage{
-dfp_getCustomFieldOption(as_df=FALSE)
+dfp_getCustomFieldOption(as_df=TRUE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getCustomFieldOptionResponse
+a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldOptionResponse
 }
 \description{
 Returns the CustomFieldOption uniquely identified by the given ID.

@@ -267,14 +267,14 @@ dfp_full_report_wrapper <- function(request_data,
                                     check_interval=3, 
                                     max_tries=10){
   
-  dfp_runReportJob_result <- dfp_runReportJob(request_data)
+  dfp_runReportJob_result <- dfp_runReportJob(request_data, as_df=F)$rval
   dfp_getReportJobStatus_result <- dfp_runReportJob_result$reportJobStatus
   
   status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
 
   counter <- 0
   while(dfp_getReportJobStatus_result!='COMPLETED' & counter < max_tries){
-    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
     Sys.sleep(check_interval)
     counter <- counter + 1
   }
@@ -282,7 +282,7 @@ dfp_full_report_wrapper <- function(request_data,
   stopifnot(dfp_getReportJobStatus_result=='COMPLETED')
   
   url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
+  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=F)$rval
   print(dfp_getReportDownloadURL_result)
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result)
   

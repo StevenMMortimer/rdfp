@@ -657,32 +657,42 @@ dfp_ContentService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
-#' @usage dfp_getContentByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getContentByStatement(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a getContentByStatementResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementResponse 
 #' @export
-dfp_getContentByStatement <- function(request_data, as_df=FALSE){
+dfp_getContentByStatement <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -700,30 +710,40 @@ dfp_getContentByStatement <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
-#' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=FALSE)
+#' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse 
 #' @export
-dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=FALSE){
+dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementAndCustomTargetingValueResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }

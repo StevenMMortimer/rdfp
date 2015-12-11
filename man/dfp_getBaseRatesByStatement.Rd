@@ -4,7 +4,7 @@
 \alias{dfp_getBaseRatesByStatement}
 \title{getBaseRatesByStatement}
 \usage{
-dfp_getBaseRatesByStatement(request_data, as_df=FALSE)
+dfp_getBaseRatesByStatement(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getBaseRatesByStatementResponse
+a \code{data.frame} or \code{list} containing all the elements of a getBaseRatesByStatementResponse
 }
 \description{
 Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr> <td>rateCardId</td> <td>BaseRate rateCardId</td> </tr> <tr> <td>id</td> <td>BaseRate id</td> </tr> <tr> <td>productTemplateId</td> <td>ProductTemplateBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productId. </tr> <td>productId</td> <td>ProductBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productTemplateId. </tr> a set of base rates.

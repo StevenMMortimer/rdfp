@@ -39,7 +39,7 @@ test_that("dfp_createCompanies", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
   
-  expect_is(dfp_createCompanies_result, "list")
+  expect_is(dfp_createCompanies_result, "data.frame")
   expect_true(all(c('id', 'name', 'address', 'email', 'type', 'comment') %in% names(dfp_createCompanies_result)))
   
   options(rdfp.network_code = rdfp_options$network_code)
@@ -52,7 +52,7 @@ test_that("dfp_getCompaniesByStatement", {
 
    dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data)
 
-   expect_is(dfp_getCompaniesByStatement_result, "list")
+   expect_is(dfp_getCompaniesByStatement_result, "data.frame")
 
 })
 
@@ -65,7 +65,7 @@ test_that("dfp_updateCompanies", {
   
   dfp_updateCompanies_result <- dfp_updateCompanies(request_data)
   
-  expect_is(dfp_updateCompanies_result, "list")
+  expect_is(dfp_updateCompanies_result, "data.frame")
   expect_true(all(c('id', 'name', 'type', 'creditStatus') %in% names(dfp_updateCompanies_result)))
   expect_equal(dfp_updateCompanies_result$name, paste0("TestCompany - ", myuuid, '2'))
   

@@ -705,32 +705,42 @@ dfp_SuggestedAdUnitService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
 #' 
-#' @usage dfp_getSuggestedAdUnitsByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getSuggestedAdUnitsByStatement(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a getSuggestedAdUnitsByStatementResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getSuggestedAdUnitsByStatementResponse 
 #' @export
-dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=FALSE){
+dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='SuggestedAdUnitService', root_name='getSuggestedAdUnitsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getSuggestedAdUnitsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -746,32 +756,42 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 #' 
-#' @usage dfp_performSuggestedAdUnitAction(request_data, as_df=FALSE)
+#' @usage dfp_performSuggestedAdUnitAction(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a performSuggestedAdUnitActionResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a performSuggestedAdUnitActionResponse 
 #' @export
-dfp_performSuggestedAdUnitAction <- function(request_data, as_df=FALSE){
+dfp_performSuggestedAdUnitAction <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='SuggestedAdUnitService', root_name='performSuggestedAdUnitAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performSuggestedAdUnitActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }

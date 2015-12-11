@@ -22,7 +22,7 @@ test_that("dfp_getRateCardsByStatement", {
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
    dfp_getRateCardsByStatement_result <- dfp_getRateCardsByStatement(request_data)
-   expect_is(dfp_getRateCardsByStatement_result, "list")
+   expect_is(dfp_getRateCardsByStatement_result, "data.frame")
 })
 
 test_that("dfp_performRateCardAction", {

@@ -38,7 +38,7 @@ test_that("dfp_createUsers", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
   
-  expect_is(dfp_createUsers_result, "list")
+  expect_is(dfp_createUsers_result, "data.frame")
   expect_true(all(c('id', 'name', 'email', 'roleId', 'roleName', 'isActive') %in% names(dfp_createUsers_result)))
   
   options(rdfp.network_code = rdfp_options$network_code)
@@ -51,7 +51,7 @@ test_that("dfp_getAllRoles", {
 
   dfp_getAllRoles_result <- dfp_getAllRoles()
   
-  expect_is(dfp_getAllRoles_result, "list")
+  expect_is(dfp_getAllRoles_result, "data.frame")
   expect_true(all(c('id', 'name', 'description') %in% names(dfp_getAllRoles_result)))
   
   options(rdfp.network_code = rdfp_options$network_code)
@@ -62,7 +62,7 @@ test_that("dfp_getCurrentUser", {
 
  dfp_getCurrentUser_result <- dfp_getCurrentUser()
 
- expect_is(dfp_getCurrentUser_result, "list")
+ expect_is(dfp_getCurrentUser_result, "data.frame")
  expect_true(all(c('id', 'name', 'email', 'roleId', 'isActive') %in% names(dfp_getCurrentUser_result)))
 
 })
@@ -73,7 +73,7 @@ test_that("dfp_getUsersByStatement", {
 
    dfp_getUsersByStatement_result <- dfp_getUsersByStatement(request_data)
 
-   expect_is(dfp_getUsersByStatement_result, "list")
+   expect_is(dfp_getUsersByStatement_result, "data.frame")
 
 })
 
@@ -85,7 +85,7 @@ test_that("dfp_performUserAction", {
   
   dfp_performUserAction_result <- dfp_performUserAction(request_data)
   
-  expect_is(dfp_performUserAction_result, "list")
+  expect_is(dfp_performUserAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performUserAction_result)))
   expect_equal(dfp_performUserAction_result$numChanges, '1')
   
@@ -95,7 +95,7 @@ test_that("dfp_performUserAction", {
                                              dfp_createUsers_result$id)))
   dfp_getUsersByStatement_result <- dfp_getUsersByStatement(request_data)
   
-  expect_equal(dfp_getUsersByStatement_result$results$isActive, 'false')
+  expect_equal(dfp_getUsersByStatement_result$isActive, 'false')
   
   options(rdfp.network_code = rdfp_options$network_code)
   
@@ -111,7 +111,7 @@ test_that("dfp_updateUsers", {
   
   dfp_updateUsers_result <- dfp_updateUsers(request_data)
   
-  expect_is(dfp_updateUsers_result, "list")
+  expect_is(dfp_updateUsers_result, "data.frame")
   expect_equal(dfp_updateUsers_result$name, paste0("TestUser - ", myuuid, "2"))
   
   options(rdfp.network_code = rdfp_options$network_code)

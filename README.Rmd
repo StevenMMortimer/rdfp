@@ -38,10 +38,8 @@ the DFP API version: `v201508`.
 ### Functions
 
 All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when
-using code completion in RStudio. By default most **rdfp** functions will return a list simply 
-parsed from the XML returned in the SOAP response. Some functions may take additional 
-steps to format the results as data.frame or vector and this will be noted in the 
-function documentation.
+using code completion in RStudio. By default most **rdfp** functions will return a data.frame or list 
+parsed from the XML returned in the SOAP response.
   
 ### Install and Load rdfp Library
 
@@ -160,7 +158,7 @@ request_data <- list(selectStatement=
                                         'CanonicalParentId, CountryCode,',
                                         "Type from Geo_Target where CountryCode='US'")))
 
-dfp_select_result <- dfp_select(request_data)
+dfp_select_result <- dfp_select(request_data)$rval
 final_result <- dfp_select_parse(dfp_select_result)
 head(final_result)
 

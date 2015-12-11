@@ -12,7 +12,7 @@ test_that("dfp_getAllNetworks", {
 
  dfp_getAllNetworks_result <- dfp_getAllNetworks()
 
- expect_is(dfp_getAllNetworks_result, "list")
+ expect_is(dfp_getAllNetworks_result, "data.frame")
  expect_true(all(c('id', 'displayName', 'networkCode') %in% names(dfp_getAllNetworks_result)))
  
 })
@@ -21,7 +21,7 @@ test_that("dfp_getCurrentNetwork", {
 
  dfp_getCurrentNetwork_result <- dfp_getCurrentNetwork()
 
- expect_is(dfp_getCurrentNetwork_result, "list")
+ expect_is(dfp_getCurrentNetwork_result, "data.frame")
  expect_true(all(c('id', 'displayName', 'networkCode') %in% names(dfp_getCurrentNetwork_result)))
  
 })
@@ -41,7 +41,7 @@ test_that("dfp_updateNetwork", {
 
   dfp_updateNetwork_result <- dfp_updateNetwork(request_data)
 
-  expect_is(dfp_updateNetwork_result, "list")
+  expect_is(dfp_updateNetwork_result, "data.frame")
   expect_equal(dfp_updateNetwork_result$displayName, new_network_name)
   
   options(rdfp.network_code = rdfp_options$network_code)

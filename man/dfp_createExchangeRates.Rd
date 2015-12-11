@@ -4,7 +4,7 @@
 \alias{dfp_createExchangeRates}
 \title{createExchangeRates}
 \usage{
-dfp_createExchangeRates(request_data, as_df=FALSE)
+dfp_createExchangeRates(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a createExchangeRatesResponse
+a \code{data.frame} or \code{list} containing all the elements of a createExchangeRatesResponse
 }
 \description{
 Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>

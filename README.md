@@ -16,7 +16,7 @@ Features:
 
 ### Functions
 
-All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a list simply parsed from the XML returned in the SOAP response. Some functions may take additional steps to format the results as data.frame or vector and this will be noted in the function documentation.
+All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a data.frame or list parsed from the XML returned in the SOAP response.
 
 ### Install and Load rdfp Library
 
@@ -120,14 +120,14 @@ Having a complete list of locations is useful for filtering and/or adding geotar
 
 ``` r
 
-  request_data <- list(selectStatement=
-                         list(query=paste('select Id, Name,', 
-                                          'CanonicalParentId, CountryCode,',
-                                          "Type from Geo_Target where CountryCode='US'")))
-  
-  dfp_select_result <- dfp_select(request_data)
-  final_result <- dfp_select_parse(dfp_select_result)
-  head(final_result)
+request_data <- list(selectStatement=
+                       list(query=paste('select Id, Name,', 
+                                        'CanonicalParentId, CountryCode,',
+                                        "Type from Geo_Target where CountryCode='US'")))
+
+dfp_select_result <- dfp_select(request_data)$rval
+final_result <- dfp_select_parse(dfp_select_result)
+head(final_result)
 ```
 
 ### Get Line Items By A Filter
@@ -177,7 +177,7 @@ report_data <- dfp_full_report_wrapper(request_data)
 head(report_data)
 ```
 
-### More Detailed Explanation of the Report Process
+### A More Detailed Explanation of the Report Process
 
 Reports actually require 3 steps from the [ReportService] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
 

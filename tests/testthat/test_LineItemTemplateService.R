@@ -15,7 +15,7 @@ test_that("dfp_getLineItemTemplatesByStatement", {
 
    dfp_getLineItemTemplatesByStatement_result <- dfp_getLineItemTemplatesByStatement(request_data)
 
-   expect_is(dfp_getLineItemTemplatesByStatement_result, "list")
+   expect_is(dfp_getLineItemTemplatesByStatement_result, "data.frame")
   options(rdfp.network_code = rdfp_options$network_code)
 
 })

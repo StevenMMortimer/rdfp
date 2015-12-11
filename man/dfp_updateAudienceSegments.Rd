@@ -4,7 +4,7 @@
 \alias{dfp_updateAudienceSegments}
 \title{updateAudienceSegments}
 \usage{
-dfp_updateAudienceSegments(request_data, as_df=FALSE)
+dfp_updateAudienceSegments(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a updateAudienceSegmentsResponse
+a \code{data.frame} or \code{list} containing all the elements of a updateAudienceSegmentsResponse
 }
 \description{
 Updates the given RuleBasedFirstPartyAudienceSegment objects.

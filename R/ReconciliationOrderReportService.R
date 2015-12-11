@@ -660,32 +660,42 @@ dfp_ReconciliationOrderReportService_object_factory <- function(obj_type, obj_da
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 #' 
-#' @usage dfp_getReconciliationOrderReportsByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getReconciliationOrderReportsByStatement(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a getReconciliationOrderReportsByStatementResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationOrderReportsByStatementResponse 
 #' @export
-dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=FALSE){
+dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationOrderReportsByStatementResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -702,32 +712,42 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=FAL
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 #' 
-#' @usage dfp_performReconciliationOrderReportAction(request_data, as_df=FALSE)
+#' @usage dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a performReconciliationOrderReportActionResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a performReconciliationOrderReportActionResponse 
 #' @export
-dfp_performReconciliationOrderReportAction <- function(request_data, as_df=FALSE){
+dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performReconciliationOrderReportActionResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }
@@ -739,32 +759,42 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=FALSE
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 #' 
-#' @usage dfp_updateReconciliationOrderReports(request_data, as_df=FALSE)
+#' @usage dfp_updateReconciliationOrderReports(request_data, as_df=TRUE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
-#' @return a \code{list} or \code{data.frame} containing all the elements of a updateReconciliationOrderReportsResponse 
+#' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationOrderReportsResponse 
 #' @export
-dfp_updateReconciliationOrderReports <- function(request_data, as_df=FALSE){
+dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationOrderReportsResponse']])
   result <- if(is.null(response$rval)){
     NULL
-  } else if (!as_df){
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
+                 x <- xmlToList(x)
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
       llply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
                return(x)
              })
-  } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x$rval)
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
   }
   return(result)
 }

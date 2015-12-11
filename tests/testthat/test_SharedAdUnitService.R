@@ -14,7 +14,7 @@ test_that("dfp_getSharedAdUnitsByStatement", {
 
    dfp_getSharedAdUnitsByStatement_result <- dfp_getSharedAdUnitsByStatement(request_data)
 
-   expect_is(dfp_getSharedAdUnitsByStatement_result, "list")
+   expect_is(dfp_getSharedAdUnitsByStatement_result, "data.frame")
 
 })
 

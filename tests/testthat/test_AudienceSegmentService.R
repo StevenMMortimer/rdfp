@@ -23,7 +23,7 @@ test_that("dfp_getAudienceSegmentsByStatement", {
 
    dfp_getAudienceSegmentsByStatement_result <- dfp_getAudienceSegmentsByStatement(request_data)
 
-   expect_is(dfp_getAudienceSegmentsByStatement_result, "list")
+   expect_is(dfp_getAudienceSegmentsByStatement_result, "data.frame")
 
 })
 

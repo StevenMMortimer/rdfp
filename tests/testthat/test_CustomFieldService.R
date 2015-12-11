@@ -42,7 +42,7 @@ test_that("dfp_getCustomFieldsByStatement", {
 
    dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data)
 
-   expect_is(dfp_getCustomFieldsByStatement_result, "list")
+   expect_is(dfp_getCustomFieldsByStatement_result, "data.frame")
    options(rdfp.network_code = rdfp_options$network_code)
 
 })

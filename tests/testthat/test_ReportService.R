@@ -22,19 +22,19 @@ dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 
 # check status
 status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
-dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
 
 # continually check status until complete
 counter <- 0
 while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
   Sys.sleep(3)
   counter <- counter + 1
 }
 
 # get report URL
 url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=F)$rval
 
 
 
@@ -69,7 +69,7 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='TSV', 
                                                   includeTotalsRow='true'))
-  dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
+  dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data, as_df=F)$rval
   
   expect_is(dfp_getReportDownloadUrlWithOptions_result, "character")
   expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result))

@@ -15,7 +15,7 @@ test_that("dfp_getReconciliationLineItemReportsByStatement", {
 
    dfp_getReconciliationLineItemReportsByStatement_result <- dfp_getReconciliationLineItemReportsByStatement(request_data)
 
-   expect_is(dfp_getReconciliationLineItemReportsByStatement_result, "list")
+   expect_is(dfp_getReconciliationLineItemReportsByStatement_result, "data.frame")
   options(rdfp.network_code = rdfp_options$network_code)
 
 })

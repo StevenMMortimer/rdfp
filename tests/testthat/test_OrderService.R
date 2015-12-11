@@ -23,7 +23,7 @@ test_that("dfp_getOrdersByStatement", {
 
    dfp_getOrdersByStatement_result <- dfp_getOrdersByStatement(request_data)
 
-   expect_is(dfp_getOrdersByStatement_result, "list")
+   expect_is(dfp_getOrdersByStatement_result, "data.frame")
 
 })
 

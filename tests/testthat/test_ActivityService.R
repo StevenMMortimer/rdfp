@@ -23,7 +23,7 @@ test_that("dfp_getActivitiesByStatement", {
 
    dfp_getActivitiesByStatement_result <- dfp_getActivitiesByStatement(request_data)
 
-   expect_is(dfp_getActivitiesByStatement_result, "list")
+   expect_is(dfp_getActivitiesByStatement_result, "data.frame")
 
 })
 

@@ -38,7 +38,7 @@ options(rdfp.network_code = rdfp_options$network_code)
 
 test_that("dfp_createLabels", {
 
-    expect_is(dfp_createLabels_result, "list")
+    expect_is(dfp_createLabels_result, "data.frame")
     expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_createLabels_result)))
 
 })
@@ -50,7 +50,7 @@ test_that("dfp_getLabelsByStatement", {
     
     dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
     
-    expect_is(dfp_getLabelsByStatement_result, "list")
+    expect_is(dfp_getLabelsByStatement_result, "data.frame")
   options(rdfp.network_code = rdfp_options$network_code)
 
 })
@@ -63,7 +63,7 @@ test_that("dfp_performLabelAction", {
     
     dfp_performLabelAction_result <- dfp_performLabelAction(request_data)
     
-    expect_is(dfp_performLabelAction_result, "list")
+    expect_is(dfp_performLabelAction_result, "data.frame")
     expect_true(all(c('numChanges') %in% names(dfp_performLabelAction_result)))
     expect_equal(dfp_performLabelAction_result$numChanges, '1')
     
@@ -71,9 +71,9 @@ test_that("dfp_performLabelAction", {
     request_data <- list('filterStatement'=
                            list('query'=paste0("WHERE isActive=false and id=", 
                                                dfp_createLabels_result$id)))
-    dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+    dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data, as_df=F)
     
-    expect_equal(dfp_getLabelsByStatement_result$totalResultSetSize, '1')
+    expect_equal(dfp_getLabelsByStatement_result$rval$totalResultSetSize, '1')
     
   options(rdfp.network_code = rdfp_options$network_code)
 
@@ -91,7 +91,7 @@ test_that("dfp_updateLabels", {
     
     dfp_updateLabels_result <- dfp_updateLabels(request_data)
     
-    expect_is(dfp_updateLabels_result, "list")
+    expect_is(dfp_updateLabels_result, "data.frame")
     expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_updateLabels_result)))
     expect_equal(dfp_updateLabels_result$name, paste0(myuuid, '2'))
 

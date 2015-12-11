@@ -32,7 +32,7 @@ options(rdfp.network_code = rdfp_options$network_code)
 
 options(rdfp.network_code = rdfp_options$test_network_code)
 request_data <- list(contacts=list(name=paste0("TestContact - ", myuuid), 
-                                    companyId=dfp_getCompaniesByStatement_result$results$id, 
+                                    companyId=dfp_getCompaniesByStatement_result$id, 
                                     status='UNINVITED', 
                                     cellPhone='(888) 999-7777',
                                     comment='API Test', 
@@ -45,7 +45,7 @@ test_that("dfp_createContacts", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
   
-  expect_is(dfp_createContacts_result, "list")
+  expect_is(dfp_createContacts_result, "data.frame")
   expect_true(all(c('id', 'name', 'companyId', 'status', 'cellPhone', 'comment', 'email') %in% names(dfp_createContacts_result)))
   
   options(rdfp.network_code = rdfp_options$network_code)
@@ -60,7 +60,7 @@ test_that("dfp_getContactsByStatement", {
 
    dfp_getContactsByStatement_result <- dfp_getContactsByStatement(request_data)
 
-   expect_is(dfp_getContactsByStatement_result, "list")
+   expect_is(dfp_getContactsByStatement_result, "data.frame")
    
    options(rdfp.network_code = rdfp_options$network_code)
 
@@ -76,7 +76,7 @@ test_that("dfp_updateContacts", {
   
  dfp_updateContacts_result <- dfp_updateContacts(request_data)
 
- expect_is(dfp_updateContacts_result, "list")
+ expect_is(dfp_updateContacts_result, "data.frame")
  expect_equal(dfp_updateContacts_result$name, paste0("TestContact - ", myuuid, "2'"))
  
  options(rdfp.network_code = rdfp_options$network_code)

@@ -23,7 +23,7 @@ test_that("dfp_getLineItemCreativeAssociationsByStatement", {
 
    dfp_getLineItemCreativeAssociationsByStatement_result <- dfp_getLineItemCreativeAssociationsByStatement(request_data)
 
-   expect_is(dfp_getLineItemCreativeAssociationsByStatement_result, "list")
+   expect_is(dfp_getLineItemCreativeAssociationsByStatement_result, "data.frame")
 
 })
 

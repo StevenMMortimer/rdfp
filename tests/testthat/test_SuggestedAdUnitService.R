@@ -14,7 +14,7 @@ test_that("dfp_getSuggestedAdUnitsByStatement", {
 
    dfp_getSuggestedAdUnitsByStatement_result <- dfp_getSuggestedAdUnitsByStatement(request_data)
 
-   expect_is(dfp_getSuggestedAdUnitsByStatement_result, "list")
+   expect_is(dfp_getSuggestedAdUnitsByStatement_result, "data.frame")
 
 })
 

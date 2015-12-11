@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getLineItemsByStatementResponse
+a \code{data.frame} or \code{list} containing all the elements of a getLineItemsByStatementResponse
 }
 \description{
 Gets a LineItemPage of LineItem objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of line items. 

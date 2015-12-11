@@ -4,7 +4,7 @@
 \alias{dfp_getCustomTargetingValuesByStatement}
 \title{getCustomTargetingValuesByStatement}
 \usage{
-dfp_getCustomTargetingValuesByStatement(request_data, as_df=FALSE)
+dfp_getCustomTargetingValuesByStatement(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getCustomTargetingValuesByStatementResponse
+a \code{data.frame} or \code{list} containing all the elements of a getCustomTargetingValuesByStatementResponse
 }
 \description{
 Gets a CustomTargetingValuePage of CustomTargetingValue objects that satisfy the given Statement query.  The WHERE clause in the Statement query must always contain CustomTargetingValue customTargetingKeyId as one of its columns in a way that it is AND'ed with the rest of the query. So, if you want to retrieve values for a known set of key ids, valid Statement query would look like:    "WHERE customTargetingKeyId IN ('17','18','19')" retrieves all values that are associated with keys having ids 17, 18, 19.   "WHERE customTargetingKeyId = '17' AND name = 'red'" retrieves values that are associated with keys having id 17 and value name is 'red'.     The following fields are supported for filtering:   a set of custom targeting values 

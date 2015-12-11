@@ -40,7 +40,7 @@ test_that("dfp_getBaseRatesByStatement", {
 
    dfp_getBaseRatesByStatement_result <- dfp_getBaseRatesByStatement(request_data)
 
-   expect_is(dfp_getBaseRatesByStatement_result, "list")
+   expect_is(dfp_getBaseRatesByStatement_result, "data.frame")
 
 })
 

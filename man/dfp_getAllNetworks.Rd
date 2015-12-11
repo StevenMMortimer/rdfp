@@ -4,13 +4,13 @@
 \alias{dfp_getAllNetworks}
 \title{getAllNetworks}
 \usage{
-dfp_getAllNetworks(as_df=FALSE)
+dfp_getAllNetworks(as_df=TRUE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getAllNetworksResponse
+a \code{data.frame} or \code{list} containing all the elements of a getAllNetworksResponse
 }
 \description{
 Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>

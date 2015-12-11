@@ -23,7 +23,7 @@ test_that("dfp_getCreativeSetsByStatement", {
 
    dfp_getCreativeSetsByStatement_result <- dfp_getCreativeSetsByStatement(request_data)
 
-   expect_is(dfp_getCreativeSetsByStatement_result, "list")
+   expect_is(dfp_getCreativeSetsByStatement_result, "data.frame")
 
 })
 

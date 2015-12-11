@@ -4,7 +4,7 @@
 \alias{dfp_getDeliveryForecast}
 \title{getDeliveryForecast}
 \usage{
-dfp_getDeliveryForecast(request_data, as_df=FALSE)
+dfp_getDeliveryForecast(request_data, as_df=TRUE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -13,7 +13,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
 }
 \value{
-a \code{list} or \code{data.frame} containing all the elements of a getDeliveryForecastResponse
+a \code{data.frame} or \code{list} containing all the elements of a getDeliveryForecastResponse
 }
 \description{
 Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
