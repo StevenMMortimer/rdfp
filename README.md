@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank" style="text-decoration: none"> <img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"> </a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank" style="text-decoration: none"> <img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master"> </a>
+<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank" style="text-decoration: none"><img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"></a><a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank" style="text-decoration: none"><img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master"></a>
 
 ------------------------------------------------------------------------
 
@@ -113,6 +113,42 @@ dfp_createContacts_result <- dfp_createContacts(request_data)
 
 Ad Trafficking Setup
 --------------------
+
+### Setup Custom Labels for Items
+
+Custom labels are helpful for "tagging" DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/190565?hl=en&ref\_topic=30224](https://support.google.com/dfp\_premium/answer/190565?hl=en&ref_topic=30224))
+
+``` r
+
+# this creates a label called "Last Minute Change" that we can add
+# to any line item or order that we felt deserved this label.
+request_data <- data.frame(name="auto - competitive exclusion", 
+                           description=paste0("A label to prevent two different car ",
+                                              "companies from showing ads together"), 
+                           types='COMPETITIVE_EXCLUSION')
+dfp_createLabels_result <- dfp_createLabels(request_data)
+```
+
+### Setup Custom Fields for Items
+
+Custom fields are helpful for "tagging" DFP items with metadata that can later be used filtering or reporting. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/2694303?hl=en](https://support.google.com/dfp\_premium/answer/2694303?hl=en))
+
+``` r
+
+# this creates an extra field on the USER entity type that denotes what shift 
+# the user works during the day. First we create the field, then populate
+# with potential options since it is a dropdown field.
+request_data <- data.frame(name='Shift',
+                           description='The shift that this user usually works.', 
+                           entityType='USER',
+                           dataType='DROP_DOWN',
+                           visibility='FULL')
+dfp_createCustomFields_result <- dfp_createCustomFields(request_data)
+
+request_data <- data.frame(customFieldId=rep(dfp_createCustomFields_result$id, 3),
+                           displayName=c('Morning', 'Afternoon', 'Evening'))
+dfp_createCustomFieldOptions_result <- dfp_createCustomFieldOptions(request_data)
+```
 
 ### Setup Custom Targeting Keys and Values
 
