@@ -9,12 +9,15 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createExchangeRates", {
-
-#  dfp_createExchangeRates_result <- dfp_createExchangeRates()
-
-#  expect_is(dfp_createExchangeRates_result, "list")
-  expect_true(TRUE)
-
+  
+  request_data <- data.frame(currencyCode='GBP', 
+                             refreshRate='FIXED',
+                             direction='TO_NETWORK', 
+                             exchangeRate=1.52*10000000)
+  
+  expect_message(try(dfp_createExchangeRates(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_createExchangeRates(request_data))
+  
 })
 
 test_that("dfp_getExchangeRatesByStatement", {
@@ -26,20 +29,24 @@ test_that("dfp_getExchangeRatesByStatement", {
 })
 
 test_that("dfp_performExchangeRateAction", {
-
-#  dfp_performExchangeRateAction_result <- dfp_performExchangeRateAction()
-
-#  expect_is(dfp_performExchangeRateAction_result, "list")
-  expect_true(TRUE)
+  
+  request_data <- list(exchangeRateAction='DeleteExchangeRates',
+                       filterStatement=list('query'=paste0("WHERE currencyCode='USD'")))
+  expect_message(try(dfp_performExchangeRateAction(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_performExchangeRateAction(request_data))
 
 })
 
 test_that("dfp_updateExchangeRates", {
 
-#  dfp_updateExchangeRates_result <- dfp_updateExchangeRates()
-
-#  expect_is(dfp_updateExchangeRates_result, "list")
-  expect_true(TRUE)
+  request_data <- data.frame(id=999999, 
+                             currencyCode='GBP', 
+                             refreshRate='FIXED',
+                             direction='TO_NETWORK', 
+                             exchangeRate=1.62*10000000)
+  
+  expect_message(try(dfp_updateExchangeRates(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_updateExchangeRates(request_data))
 
 })
 

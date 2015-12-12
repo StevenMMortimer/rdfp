@@ -177,9 +177,13 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
     }
   }
   
-  if (grepl('^create', root_name)){
-    record_names <- gsub('CustomTargeting', '', gsub('create', '', root_name))
+  if (grepl('^create|^update', root_name)){
+    record_names <- gsub('CustomTargeting', '', gsub('create|update', '', root_name))
     names(data) <- rep(gsub("(^[[:alpha:]])", "\\L\\1", record_names, perl=TRUE), length(data))
+  }
+  if (root_name=='getCustomFieldOption'){
+    data <- as.list(data.frame(data))
+    names(data) <- rep('customFieldOptionId', length(data))
   }
   
   if(verbose){
@@ -192,24 +196,6 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
   attributes(request_body) <- list('service'=service)
   
   return(request_body)
-}
-
-
-#' Reformat parsed list to resubmit
-#' 
-#' Receive a list (usually from the API service that was parsed and 
-#' and contains .attr nodes) and push any .attr nodes to top
-#' of their respective list element so the SOAP request can 
-#' be formatted with the proper types
-#' 
-#' @param list a \code{list} with attributes to be placed 
-#' back appropriately in the hierarchy
-#' @return a \code{list} formatted with attributes at 
-#' the top of the respective list they came from
-#' 
-#' @keywords internal
-dfp_set_above_attributes <- function(list){
-  
 }
 
 #' Take report URL and convert to data.frame

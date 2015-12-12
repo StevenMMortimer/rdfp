@@ -779,12 +779,14 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
-#' @usage dfp_getCustomFieldOption(as_df=TRUE)
+#' @usage dfp_getCustomFieldOption(request_data, as_df=TRUE)
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldOptionResponse 
 #' @export
-dfp_getCustomFieldOption <- function(as_df=TRUE){
- request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=NULL)
+dfp_getCustomFieldOption <- function(request_data, as_df=TRUE){
+ request_body <- make_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=request_data)
   request <- build_soap_request(body = request_body)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomFieldOptionResponse']])

@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank"> <img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"> </a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank"> <img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master"> </a>
+<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank" style="text-decoration: none"> <img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"> </a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank" style="text-decoration: none"> <img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master"> </a>
 
 ------------------------------------------------------------------------
 
@@ -152,7 +152,30 @@ head(final_result)
 
 ### Create an Order
 
-### Create a Line Item
+This example uses a test company as an advertiser and yourself as the trafficker, to create an order.
+
+``` r
+
+request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
+dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
+
+request_data <- list(list(name=paste0('TestOrder'), 
+                          startDateTime=list(date=list(year=2017, month=12, day=1), 
+                                             hour=0,
+                                             minute=0,
+                                             second=0,
+                                             timeZoneID='America/New_York'),
+                          endDateTime=list(date=list(year=2017, month=12, day=31), 
+                                           hour=23,
+                                           minute=59,
+                                           second=59,
+                                           timeZoneID='America/New_York'), 
+                          notes='API Test Order', 
+                          externalOrderId=99999, 
+                          advertiserId=dfp_getCompaniesByStatement_result$id, 
+                          traffickerId=dfp_getCurrentUser()$id))
+dfp_createOrders_result <- dfp_createOrders(request_data)
+```
 
 ### Get Line Items By A Filter
 
