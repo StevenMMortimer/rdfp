@@ -8,8 +8,25 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
+baseuuid <- paste(sample(c(letters[1:6],0:9),30,replace=TRUE),collapse="")
+myuuid <- paste(
+  substr(baseuuid,1,8),
+  "-",
+  substr(baseuuid,9,12),
+  "-",
+  "4",
+  substr(baseuuid,13,15),
+  "-",
+  sample(c("8","9","a","b"),1),
+  substr(baseuuid,16,18),
+  "-",
+  substr(baseuuid,19,30),
+  sep="",
+  collapse=""
+)
+
 options(rdfp.network_code = rdfp_options$test_network_code)
-request_data <- data.frame(name='Shift',
+request_data <- data.frame(name=paste0('Shift - ', myuuid),
                            description='The shift that this user usually works.', 
                            entityType='USER',
                            dataType='DROP_DOWN',
@@ -44,7 +61,7 @@ test_that("dfp_getCustomFieldOption", {
 test_that("dfp_getCustomFieldsByStatement", {
 
    options(rdfp.network_code = rdfp_options$test_network_code)
-   request_data <- list('filterStatement'=list('query'="WHERE name='Shift'"))
+   request_data <- list('filterStatement'=list('query'=paste0("WHERE name='Shift - ", myuuid, "'")))
 
    dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data)
 
@@ -71,7 +88,7 @@ test_that("dfp_updateCustomFields", {
   
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- data.frame(id=dfp_createCustomFields_result$id,
-                             name='Shift1',
+                             name=paste0('Shift - ', myuuid, '2'),
                              description='The shift that this user usually works.', 
                              entityType='USER',
                              dataType='DROP_DOWN',
@@ -85,7 +102,7 @@ test_that("dfp_performCustomFieldAction", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(customFieldAction='DeactivateCustomFields',
-                       filterStatement=list('query'=paste0("WHERE name LIKE 'Shift%'")))
+                       filterStatement=list('query'=paste0("WHERE name = 'Shift - ", myuuid, "2'")))
   
   dfp_performCustomFieldAction_result <- dfp_performCustomFieldAction(request_data)
   
