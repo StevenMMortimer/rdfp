@@ -777,6 +777,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -784,6 +785,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -822,6 +824,7 @@ dfp_getAllRoles <- function(as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -829,6 +832,7 @@ dfp_getAllRoles <- function(as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -867,6 +871,7 @@ dfp_getCurrentUser <- function(as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -874,6 +879,7 @@ dfp_getCurrentUser <- function(as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -922,6 +928,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -929,6 +936,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -969,6 +977,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -976,6 +985,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1016,6 +1026,7 @@ dfp_updateUsers <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1023,6 +1034,7 @@ dfp_updateUsers <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)

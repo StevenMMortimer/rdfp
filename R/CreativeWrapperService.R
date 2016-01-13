@@ -683,6 +683,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -690,6 +691,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -736,6 +738,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -743,6 +746,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -783,6 +787,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -790,6 +795,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -830,6 +836,7 @@ dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -837,6 +844,7 @@ dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)

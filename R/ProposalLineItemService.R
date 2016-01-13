@@ -3043,6 +3043,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -3050,6 +3051,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -3100,6 +3102,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -3107,6 +3110,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -3147,6 +3151,7 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -3154,6 +3159,7 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -3194,6 +3200,7 @@ dfp_updateProposalLineItems <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -3201,6 +3208,7 @@ dfp_updateProposalLineItems <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)

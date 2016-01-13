@@ -152,7 +152,7 @@ dfp_createCustomFieldOptions_result <- dfp_createCustomFieldOptions(request_data
 
 ### Setup Custom Targeting Keys and Values
 
-DFP allows traffickers to create custom tags to better target line items on their site. Below is an example creating a Key and populating with a data.frame of Values.
+DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/188092?hl=en](https://support.google.com/dfp\_premium/answer/188092?hl=en))
 
 ``` r
 

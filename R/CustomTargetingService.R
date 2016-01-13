@@ -854,6 +854,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -861,6 +862,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -901,6 +903,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -908,6 +911,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -955,6 +959,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -962,6 +967,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1009,6 +1015,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1016,6 +1023,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1056,6 +1064,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1063,6 +1072,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1103,6 +1113,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1110,6 +1121,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1150,6 +1162,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1157,6 +1170,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
@@ -1197,6 +1211,7 @@ dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE){
            names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
             ldply(tail(response[grepl('rval', names(response))]$rval, -2),             .fun=function(x){
                  x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
                  new_x <- as.data.frame(x, stringsAsFactors = F)
                  return(new_x)
              }, .id=NULL)
@@ -1204,6 +1219,7 @@ dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE){
       ldply(response[grepl('rval', names(response))],
             .fun=function(x){
                x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
                new_x <- as.data.frame(x, stringsAsFactors = F)
                return(new_x)
              }, .id=NULL)
