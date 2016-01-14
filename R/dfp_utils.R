@@ -94,7 +94,7 @@ build_soap_request <- function(body, service = NULL,
         reason <- ''
       }
     }
-    stop(paste0('api fault: ', faultstring, errorString, reasons, collapse='\n'), call. = F)
+    stop(paste0('api fault: ', faultstring, errorString, reason, collapse='\n'), call. = F)
   }
   return(text_response)
 }
