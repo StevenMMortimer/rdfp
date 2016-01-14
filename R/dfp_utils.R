@@ -73,15 +73,29 @@ build_soap_request <- function(body, service = NULL,
 #    print(api_fault)
     more_detail <- xmlChildren(api_fault)
     if('faultcode' %in% names(more_detail)){
-      message(paste0('faultstring: ', xmlValue(xmlChildren(api_fault)$faultstring)))
+      faultstring <-  xmlValue(xmlChildren(api_fault)$faultstring)
+      if(!is.null(faultstring)){
+        message(paste0('faultstring: ', faultstring))
+      } else {
+        faultstring <- ''
+      }
     }
     if('detail' %in% names(more_detail)){
-      message(paste0('errorString: ', xmlValue(xmlChildren(xmlChildren(xmlChildren(xmlChildren(api_fault)$detail)[[1]])$errors)$errorString)))
-      message(paste0('reason: ', xmlValue(xmlChildren(xmlChildren(xmlChildren(xmlChildren(api_fault)$detail)[[1]])$errors)$reason)))
+      errorString <-  xmlValue(xmlChildren(api_fault)$errorString)
+      if(!is.null(errorString)){
+        message(paste0('errorString: ', errorString))
+      } else {
+        errorString <- ''
+      }
+      reason <-  xmlValue(xmlChildren(api_fault)$reason)
+      if(!is.null(reason)){
+        message(paste0('reason: ', reason))
+      } else {
+        reason <- ''
+      }
     }
-    stop('api fault', call. = F)
+    stop(paste0('api fault: ', faultstring, errorString, reasons, collapse='\n'), call. = F)
   }
-
   return(text_response)
 }
 
