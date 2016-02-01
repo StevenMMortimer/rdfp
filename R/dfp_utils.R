@@ -233,17 +233,21 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
   if (exportFormat=='CSV_DUMP'){
     this_encoding <- 'UTF-8'
     this_sep <- ','
+    this_quote <- '"'
   } else if (exportFormat=='TSV'){
     this_encoding <- 'UTF-8'
     this_sep <- '\t'
+    this_quote <- '"'
   } else {
     this_encoding <- 'UCS-2'
     this_sep <- '\t'
+    this_quote <- '"'
   }
   
   temp_destination <- tempfile()
   download.file(report_url, temp_destination, quiet = T, method="curl") # mode="wb" not used with method!="internal"
-  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, fileEncoding=this_encoding, sep=this_sep)
+  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, 
+                           fileEncoding=this_encoding, sep=this_sep, quote=this_quote)
   return(report_dat)
 }
 
