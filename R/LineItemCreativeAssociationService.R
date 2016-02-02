@@ -1497,15 +1497,16 @@ dfp_LineItemCreativeAssociationService_object_factory <- function(obj_type, obj_
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 #' 
-#' @usage dfp_createLineItemCreativeAssociations(request_data, as_df=TRUE)
+#' @usage dfp_createLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemCreativeAssociationsResponse 
 #' @export
-dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE){
+dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemCreativeAssociationsResponse']])
   result <- if(is.null(response$rval)){
@@ -1554,15 +1555,16 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 #' 
-#' @usage dfp_getLineItemCreativeAssociationsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getLineItemCreativeAssociationsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemCreativeAssociationsByStatementResponse 
 #' @export
-dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=TRUE){
+dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemCreativeAssociationsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -1603,13 +1605,14 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
-#' @usage dfp_getPreviewUrl(as_df=TRUE)
+#' @usage dfp_getPreviewUrl(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPreviewUrlResponse 
 #' @export
-dfp_getPreviewUrl <- function(as_df=TRUE){
+dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPreviewUrlResponse']])
   result <- if(is.null(response$rval)){
@@ -1650,15 +1653,16 @@ dfp_getPreviewUrl <- function(as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
-#' @usage dfp_performLineItemCreativeAssociationAction(request_data, as_df=TRUE)
+#' @usage dfp_performLineItemCreativeAssociationAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemCreativeAssociationActionResponse 
 #' @export
-dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRUE){
+dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemCreativeAssociationActionResponse']])
   result <- if(is.null(response$rval)){
@@ -1699,15 +1703,16 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
-#' @usage dfp_updateLineItemCreativeAssociations(request_data, as_df=TRUE)
+#' @usage dfp_updateLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemCreativeAssociationsResponse 
 #' @export
-dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE){
+dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemCreativeAssociationsResponse']])
   result <- if(is.null(response$rval)){

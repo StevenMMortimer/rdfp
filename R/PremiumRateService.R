@@ -829,15 +829,16 @@ dfp_PremiumRateService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
-#' @usage dfp_createPremiumRates(request_data, as_df=TRUE)
+#' @usage dfp_createPremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPremiumRatesResponse 
 #' @export
-dfp_createPremiumRates <- function(request_data, as_df=TRUE){
+dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPremiumRatesResponse']])
   result <- if(is.null(response$rval)){
@@ -883,15 +884,16 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
-#' @usage dfp_getPremiumRatesByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getPremiumRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPremiumRatesByStatementResponse 
 #' @export
-dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE){
+dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPremiumRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -932,15 +934,16 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
-#' @usage dfp_updatePremiumRates(request_data, as_df=TRUE)
+#' @usage dfp_updatePremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePremiumRatesResponse 
 #' @export
-dfp_updatePremiumRates <- function(request_data, as_df=TRUE){
+dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePremiumRatesResponse']])
   result <- if(is.null(response$rval)){

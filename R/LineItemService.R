@@ -3543,15 +3543,16 @@ dfp_LineItemService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#createLineItems}{Google Documentation for createLineItems}
 #' 
-#' @usage dfp_createLineItems(request_data, as_df=TRUE)
+#' @usage dfp_createLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse 
 #' @export
-dfp_createLineItems <- function(request_data, as_df=TRUE){
+dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemsResponse']])
   result <- if(is.null(response$rval)){
@@ -3610,15 +3611,16 @@ dfp_createLineItems <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 #' 
-#' @usage dfp_getLineItemsByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getLineItemsByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemsByStatementResponse 
 #' @export
-dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE){
+dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -3659,15 +3661,16 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 #' 
-#' @usage dfp_performLineItemAction(request_data, as_df=TRUE)
+#' @usage dfp_performLineItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemActionResponse 
 #' @export
-dfp_performLineItemAction <- function(request_data, as_df=TRUE){
+dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemActionResponse']])
   result <- if(is.null(response$rval)){
@@ -3708,15 +3711,16 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
-#' @usage dfp_updateLineItems(request_data, as_df=TRUE)
+#' @usage dfp_updateLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemsResponse 
 #' @export
-dfp_updateLineItems <- function(request_data, as_df=TRUE){
+dfp_updateLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemsResponse']])
   result <- if(is.null(response$rval)){

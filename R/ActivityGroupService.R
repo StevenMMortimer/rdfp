@@ -591,15 +591,16 @@ dfp_ActivityGroupService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 #' 
-#' @usage dfp_createActivityGroups(request_data, as_df=TRUE)
+#' @usage dfp_createActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createActivityGroupsResponse 
 #' @export
-dfp_createActivityGroups <- function(request_data, as_df=TRUE){
+dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivityGroupsResponse']])
   result <- if(is.null(response$rval)){
@@ -647,15 +648,16 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 #' 
-#' @usage dfp_getActivityGroupsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getActivityGroupsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getActivityGroupsByStatementResponse 
 #' @export
-dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE){
+dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivityGroupsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -696,15 +698,16 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 #' 
-#' @usage dfp_updateActivityGroups(request_data, as_df=TRUE)
+#' @usage dfp_updateActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateActivityGroupsResponse 
 #' @export
-dfp_updateActivityGroups <- function(request_data, as_df=TRUE){
+dfp_updateActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivityGroupsResponse']])
   result <- if(is.null(response$rval)){

@@ -602,15 +602,16 @@ dfp_ContactService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#createContacts}{Google Documentation for createContacts}
 #' 
-#' @usage dfp_createContacts(request_data, as_df=TRUE)
+#' @usage dfp_createContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContactsResponse 
 #' @export
-dfp_createContacts <- function(request_data, as_df=TRUE){
+dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='createContacts', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContactsResponse']])
   result <- if(is.null(response$rval)){
@@ -663,15 +664,16 @@ dfp_createContacts <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 #' 
-#' @usage dfp_getContactsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getContactsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContactsByStatementResponse 
 #' @export
-dfp_getContactsByStatement <- function(request_data, as_df=TRUE){
+dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='getContactsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContactsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -712,15 +714,16 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#updateContacts}{Google Documentation for updateContacts}
 #' 
-#' @usage dfp_updateContacts(request_data, as_df=TRUE)
+#' @usage dfp_updateContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContactsResponse 
 #' @export
-dfp_updateContacts <- function(request_data, as_df=TRUE){
+dfp_updateContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='updateContacts', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContactsResponse']])
   result <- if(is.null(response$rval)){

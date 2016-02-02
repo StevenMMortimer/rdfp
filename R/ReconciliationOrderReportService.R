@@ -660,15 +660,16 @@ dfp_ReconciliationOrderReportService_object_factory <- function(obj_type, obj_da
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 #' 
-#' @usage dfp_getReconciliationOrderReportsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getReconciliationOrderReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationOrderReportsByStatementResponse 
 #' @export
-dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE){
+dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationOrderReportsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -714,15 +715,16 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 #' 
-#' @usage dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE)
+#' @usage dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performReconciliationOrderReportActionResponse 
 #' @export
-dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE){
+dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performReconciliationOrderReportActionResponse']])
   result <- if(is.null(response$rval)){
@@ -763,15 +765,16 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE)
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 #' 
-#' @usage dfp_updateReconciliationOrderReports(request_data, as_df=TRUE)
+#' @usage dfp_updateReconciliationOrderReports(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationOrderReportsResponse 
 #' @export
-dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE){
+dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationOrderReportsResponse']])
   result <- if(is.null(response$rval)){

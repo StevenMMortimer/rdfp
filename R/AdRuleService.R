@@ -1875,15 +1875,16 @@ dfp_AdRuleService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 #' 
-#' @usage dfp_createAdRules(request_data, as_df=TRUE)
+#' @usage dfp_createAdRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAdRulesResponse 
 #' @export
-dfp_createAdRules <- function(request_data, as_df=TRUE){
+dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AdRuleService', root_name='createAdRules', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAdRulesResponse']])
   result <- if(is.null(response$rval)){
@@ -1930,15 +1931,16 @@ dfp_createAdRules <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 #' 
-#' @usage dfp_getAdRulesByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getAdRulesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdRulesByStatementResponse 
 #' @export
-dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE){
+dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AdRuleService', root_name='getAdRulesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdRulesByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -1979,15 +1981,16 @@ dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 #' 
-#' @usage dfp_performAdRuleAction(request_data, as_df=TRUE)
+#' @usage dfp_performAdRuleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAdRuleActionResponse 
 #' @export
-dfp_performAdRuleAction <- function(request_data, as_df=TRUE){
+dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AdRuleService', root_name='performAdRuleAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdRuleActionResponse']])
   result <- if(is.null(response$rval)){
@@ -2028,15 +2031,16 @@ dfp_performAdRuleAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 #' 
-#' @usage dfp_updateAdRules(request_data, as_df=TRUE)
+#' @usage dfp_updateAdRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAdRulesResponse 
 #' @export
-dfp_updateAdRules <- function(request_data, as_df=TRUE){
+dfp_updateAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AdRuleService', root_name='updateAdRules', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAdRulesResponse']])
   result <- if(is.null(response$rval)){

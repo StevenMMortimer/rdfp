@@ -732,15 +732,16 @@ dfp_BaseRateService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 #' 
-#' @usage dfp_createBaseRates(request_data, as_df=TRUE)
+#' @usage dfp_createBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createBaseRatesResponse 
 #' @export
-dfp_createBaseRates <- function(request_data, as_df=TRUE){
+dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='createBaseRates', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createBaseRatesResponse']])
   result <- if(is.null(response$rval)){
@@ -781,15 +782,16 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 #' 
-#' @usage dfp_getBaseRatesByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getBaseRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getBaseRatesByStatementResponse 
 #' @export
-dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE){
+dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='getBaseRatesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getBaseRatesByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -830,15 +832,16 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 #' 
-#' @usage dfp_performBaseRateAction(request_data, as_df=TRUE)
+#' @usage dfp_performBaseRateAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performBaseRateActionResponse 
 #' @export
-dfp_performBaseRateAction <- function(request_data, as_df=TRUE){
+dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performBaseRateActionResponse']])
   result <- if(is.null(response$rval)){
@@ -879,15 +882,16 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 #' 
-#' @usage dfp_updateBaseRates(request_data, as_df=TRUE)
+#' @usage dfp_updateBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateBaseRatesResponse 
 #' @export
-dfp_updateBaseRates <- function(request_data, as_df=TRUE){
+dfp_updateBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='BaseRateService', root_name='updateBaseRates', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateBaseRatesResponse']])
   result <- if(is.null(response$rval)){

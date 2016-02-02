@@ -540,13 +540,14 @@ dfp_NetworkService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
-#' @usage dfp_getAllNetworks(as_df=TRUE)
+#' @usage dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAllNetworksResponse 
 #' @export
-dfp_getAllNetworks <- function(as_df=TRUE){
+dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllNetworksResponse']])
   result <- if(is.null(response$rval)){
@@ -587,13 +588,14 @@ dfp_getAllNetworks <- function(as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
-#' @usage dfp_getCurrentNetwork(as_df=TRUE)
+#' @usage dfp_getCurrentNetwork(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCurrentNetworkResponse 
 #' @export
-dfp_getCurrentNetwork <- function(as_df=TRUE){
+dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentNetworkResponse']])
   result <- if(is.null(response$rval)){
@@ -634,13 +636,14 @@ dfp_getCurrentNetwork <- function(as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
-#' @usage dfp_makeTestNetwork(as_df=TRUE)
+#' @usage dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a makeTestNetworkResponse 
 #' @export
-dfp_makeTestNetwork <- function(as_df=TRUE){
+dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['makeTestNetworkResponse']])
   result <- if(is.null(response$rval)){
@@ -681,15 +684,16 @@ dfp_makeTestNetwork <- function(as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 #' 
-#' @usage dfp_updateNetwork(request_data, as_df=TRUE)
+#' @usage dfp_updateNetwork(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateNetworkResponse 
 #' @export
-dfp_updateNetwork <- function(request_data, as_df=TRUE){
+dfp_updateNetwork <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNetworkResponse']])
   result <- if(is.null(response$rval)){

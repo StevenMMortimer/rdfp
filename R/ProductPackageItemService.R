@@ -739,15 +739,16 @@ dfp_ProductPackageItemService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
-#' @usage dfp_createProductPackageItems(request_data, as_df=TRUE)
+#' @usage dfp_createProductPackageItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductPackageItemsResponse 
 #' @export
-dfp_createProductPackageItems <- function(request_data, as_df=TRUE){
+dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='createProductPackageItems', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){
@@ -796,15 +797,16 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
-#' @usage dfp_getProductPackageItemsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getProductPackageItemsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductPackageItemsByStatementResponse 
 #' @export
-dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE){
+dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='getProductPackageItemsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackageItemsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -845,15 +847,16 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
-#' @usage dfp_performProductPackageItemAction(request_data, as_df=TRUE)
+#' @usage dfp_performProductPackageItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductPackageItemActionResponse 
 #' @export
-dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE){
+dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='performProductPackageItemAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageItemActionResponse']])
   result <- if(is.null(response$rval)){
@@ -894,15 +897,16 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
-#' @usage dfp_updateProductPackageItems(request_data, as_df=TRUE)
+#' @usage dfp_updateProductPackageItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductPackageItemsResponse 
 #' @export
-dfp_updateProductPackageItems <- function(request_data, as_df=TRUE){
+dfp_updateProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProductPackageItemService', root_name='updateProductPackageItems', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackageItemsResponse']])
   result <- if(is.null(response$rval)){

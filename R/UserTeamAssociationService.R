@@ -589,15 +589,16 @@ dfp_UserTeamAssociationService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 #' 
-#' @usage dfp_createUserTeamAssociations(request_data, as_df=TRUE)
+#' @usage dfp_createUserTeamAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createUserTeamAssociationsResponse 
 #' @export
-dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE){
+dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='createUserTeamAssociations', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUserTeamAssociationsResponse']])
   result <- if(is.null(response$rval)){
@@ -642,15 +643,16 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 #' 
-#' @usage dfp_getUserTeamAssociationsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getUserTeamAssociationsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getUserTeamAssociationsByStatementResponse 
 #' @export
-dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE){
+dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='getUserTeamAssociationsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUserTeamAssociationsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -691,15 +693,16 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
 #' 
-#' @usage dfp_performUserTeamAssociationAction(request_data, as_df=TRUE)
+#' @usage dfp_performUserTeamAssociationAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performUserTeamAssociationActionResponse 
 #' @export
-dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE){
+dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='performUserTeamAssociationAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserTeamAssociationActionResponse']])
   result <- if(is.null(response$rval)){
@@ -740,15 +743,16 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 #' 
-#' @usage dfp_updateUserTeamAssociations(request_data, as_df=TRUE)
+#' @usage dfp_updateUserTeamAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateUserTeamAssociationsResponse 
 #' @export
-dfp_updateUserTeamAssociations <- function(request_data, as_df=TRUE){
+dfp_updateUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='updateUserTeamAssociations', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUserTeamAssociationsResponse']])
   result <- if(is.null(response$rval)){

@@ -9,7 +9,7 @@ dfp_full_report_wrapper(request_data,
                                max_tries=10)
 }
 \arguments{
-\item{request_data}{a \\code{list} or \\code{data.frame} of data elements
+\item{request_data}{a \code{list} or \code{data.frame} of data elements
 to be formatted for a SOAP request (XML format, but passed as character string)}
 
 \item{check_interval}{a numeric specifying seconds to wait between report 
@@ -26,10 +26,10 @@ Take a report request and manage all aspects for user
 until returning a data.frame or error
 }
 \seealso{
-dfp_runReportJob
+\link{dfp_runReportJob}
 
-dfp_getReportJobStatus
+\link{dfp_getReportJobStatus}
 
-dfp_getReportDownloadURL
+\link{dfp_getReportDownloadURL}
 }
 

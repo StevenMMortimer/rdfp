@@ -830,15 +830,16 @@ dfp_CreativeTemplateService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 #' 
-#' @usage dfp_getCreativeTemplatesByStatement(request_data, as_df=FALSE)
+#' @usage dfp_getCreativeTemplatesByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativeTemplatesByStatementResponse 
 #' @export
-dfp_getCreativeTemplatesByStatement <- function(request_data, as_df=FALSE){
+dfp_getCreativeTemplatesByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
  request_body <- make_request_body(service='CreativeTemplateService', root_name='getCreativeTemplatesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativeTemplatesByStatementResponse']])
   result <- if(is.null(response$rval)){

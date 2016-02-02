@@ -921,15 +921,16 @@ dfp_CompanyService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#createCompanies}{Google Documentation for createCompanies}
 #' 
-#' @usage dfp_createCompanies(request_data, as_df=TRUE)
+#' @usage dfp_createCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCompaniesResponse 
 #' @export
-dfp_createCompanies <- function(request_data, as_df=TRUE){
+dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCompaniesResponse']])
   result <- if(is.null(response$rval)){
@@ -976,15 +977,16 @@ dfp_createCompanies <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 #' 
-#' @usage dfp_getCompaniesByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getCompaniesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCompaniesByStatementResponse 
 #' @export
-dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE){
+dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCompaniesByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -1025,15 +1027,16 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 #' 
-#' @usage dfp_updateCompanies(request_data, as_df=TRUE)
+#' @usage dfp_updateCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCompaniesResponse 
 #' @export
-dfp_updateCompanies <- function(request_data, as_df=TRUE){
+dfp_updateCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCompaniesResponse']])
   result <- if(is.null(response$rval)){

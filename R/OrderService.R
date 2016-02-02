@@ -2192,15 +2192,16 @@ dfp_OrderService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#createOrders}{Google Documentation for createOrders}
 #' 
-#' @usage dfp_createOrders(request_data, as_df=TRUE)
+#' @usage dfp_createOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createOrdersResponse 
 #' @export
-dfp_createOrders <- function(request_data, as_df=TRUE){
+dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='OrderService', root_name='createOrders', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createOrdersResponse']])
   result <- if(is.null(response$rval)){
@@ -2252,15 +2253,16 @@ dfp_createOrders <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 #' 
-#' @usage dfp_getOrdersByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getOrdersByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getOrdersByStatementResponse 
 #' @export
-dfp_getOrdersByStatement <- function(request_data, as_df=TRUE){
+dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getOrdersByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -2301,15 +2303,16 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#performOrderAction}{Google Documentation for performOrderAction}
 #' 
-#' @usage dfp_performOrderAction(request_data, as_df=TRUE)
+#' @usage dfp_performOrderAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performOrderActionResponse 
 #' @export
-dfp_performOrderAction <- function(request_data, as_df=TRUE){
+dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performOrderActionResponse']])
   result <- if(is.null(response$rval)){
@@ -2350,15 +2353,16 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#updateOrders}{Google Documentation for updateOrders}
 #' 
-#' @usage dfp_updateOrders(request_data, as_df=TRUE)
+#' @usage dfp_updateOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateOrdersResponse 
 #' @export
-dfp_updateOrders <- function(request_data, as_df=TRUE){
+dfp_updateOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='OrderService', root_name='updateOrders', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateOrdersResponse']])
   result <- if(is.null(response$rval)){

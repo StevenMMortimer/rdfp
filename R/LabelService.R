@@ -644,15 +644,16 @@ dfp_LabelService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#createLabels}{Google Documentation for createLabels}
 #' 
-#' @usage dfp_createLabels(request_data, as_df=TRUE)
+#' @usage dfp_createLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLabelsResponse 
 #' @export
-dfp_createLabels <- function(request_data, as_df=TRUE){
+dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LabelService', root_name='createLabels', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLabelsResponse']])
   result <- if(is.null(response$rval)){
@@ -700,15 +701,16 @@ dfp_createLabels <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
 #' 
-#' @usage dfp_getLabelsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getLabelsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLabelsByStatementResponse 
 #' @export
-dfp_getLabelsByStatement <- function(request_data, as_df=TRUE){
+dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLabelsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -749,15 +751,16 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 #' 
-#' @usage dfp_performLabelAction(request_data, as_df=TRUE)
+#' @usage dfp_performLabelAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLabelActionResponse 
 #' @export
-dfp_performLabelAction <- function(request_data, as_df=TRUE){
+dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLabelActionResponse']])
   result <- if(is.null(response$rval)){
@@ -798,15 +801,16 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#updateLabels}{Google Documentation for updateLabels}
 #' 
-#' @usage dfp_updateLabels(request_data, as_df=TRUE)
+#' @usage dfp_updateLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLabelsResponse 
 #' @export
-dfp_updateLabels <- function(request_data, as_df=TRUE){
+dfp_updateLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LabelService', root_name='updateLabels', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLabelsResponse']])
   result <- if(is.null(response$rval)){

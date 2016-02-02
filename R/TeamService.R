@@ -604,15 +604,16 @@ dfp_TeamService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#createTeams}{Google Documentation for createTeams}
 #' 
-#' @usage dfp_createTeams(request_data, as_df=TRUE)
+#' @usage dfp_createTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createTeamsResponse 
 #' @export
-dfp_createTeams <- function(request_data, as_df=TRUE){
+dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='createTeams', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createTeamsResponse']])
   result <- if(is.null(response$rval)){
@@ -658,15 +659,16 @@ dfp_createTeams <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 #' 
-#' @usage dfp_getTeamsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getTeamsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getTeamsByStatementResponse 
 #' @export
-dfp_getTeamsByStatement <- function(request_data, as_df=TRUE){
+dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getTeamsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -707,15 +709,16 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
-#' @usage dfp_updateTeams(request_data, as_df=TRUE)
+#' @usage dfp_updateTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateTeamsResponse 
 #' @export
-dfp_updateTeams <- function(request_data, as_df=TRUE){
+dfp_updateTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='TeamService', root_name='updateTeams', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateTeamsResponse']])
   result <- if(is.null(response$rval)){

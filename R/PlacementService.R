@@ -781,15 +781,16 @@ dfp_PlacementService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#createPlacements}{Google Documentation for createPlacements}
 #' 
-#' @usage dfp_createPlacements(request_data, as_df=TRUE)
+#' @usage dfp_createPlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPlacementsResponse 
 #' @export
-dfp_createPlacements <- function(request_data, as_df=TRUE){
+dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPlacementsResponse']])
   result <- if(is.null(response$rval)){
@@ -839,15 +840,16 @@ dfp_createPlacements <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 #' 
-#' @usage dfp_getPlacementsByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getPlacementsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPlacementsByStatementResponse 
 #' @export
-dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE){
+dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPlacementsByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -888,15 +890,16 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 #' 
-#' @usage dfp_performPlacementAction(request_data, as_df=TRUE)
+#' @usage dfp_performPlacementAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performPlacementActionResponse 
 #' @export
-dfp_performPlacementAction <- function(request_data, as_df=TRUE){
+dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPlacementActionResponse']])
   result <- if(is.null(response$rval)){
@@ -937,15 +940,16 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 #' 
-#' @usage dfp_updatePlacements(request_data, as_df=TRUE)
+#' @usage dfp_updatePlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePlacementsResponse 
 #' @export
-dfp_updatePlacements <- function(request_data, as_df=TRUE){
+dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePlacementsResponse']])
   result <- if(is.null(response$rval)){

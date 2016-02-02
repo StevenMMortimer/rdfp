@@ -15,12 +15,14 @@
 #' associated with the ad serving network
 #' @param application_name a character string naming your
 #' application so that it can be identified in API calls
+#' @param verbose a logical indicating whether to print the POSTed XML
 #' @return a XML document if no error was returned
 #' 
 #' @keywords internal
 build_soap_request <- function(body, service = NULL,
                                network_code=getOption("rdfp.network_code"), 
-                               application_name=getOption("rdfp.application_name")){
+                               application_name=getOption("rdfp.application_name"), 
+                               verbose=FALSE){
   
   if (is.null(service)){
     service <- attributes(body)$service
@@ -51,10 +53,10 @@ build_soap_request <- function(body, service = NULL,
   
   url <- paste0('https://ads.google.com/apis/ads/publisher/v201508/', service)
 
-#   if(verbose){
-#     message(url)
-#     print(newXMLTextNode(this_body))
-#   }
+  if(verbose){
+    message(url)
+    print(newXMLTextNode(this_body))
+  }
   
   #use xml2 package ?
   req <- POST(url=url, config=get_google_token(), body=this_body)
@@ -168,19 +170,18 @@ build_xml_from_list <- function(list, root_name=NULL,
 #' to include in a SOAP request.
 #' 
 #' @importFrom plyr alply
+#' @importFrom methods as
 #' @param service a character string matching one of the API
 #' services
 #' @param root_name a character string to be put in the 
 #' topmost level of the created XML hierarchy
 #' @param data a \code{list} or \code{data.frame} to create
 #' XML in the request
-#' @param verbose a boolean indicating whether the xml body should be printed
-#' during the function call
 #' @return a character string of XML with service name
 #' as an attribute
 #' 
 #' @keywords internal
-make_request_body <- function(service, root_name, data=NULL, verbose=T){
+make_request_body <- function(service, root_name, data=NULL){
 
   if(!is.null(data)){
     if(is.data.frame(data)){
@@ -200,12 +201,7 @@ make_request_body <- function(service, root_name, data=NULL, verbose=T){
     names(data) <- rep('customFieldOptionId', length(data))
   }
   
-  if(verbose){
-    xml_body <- build_xml_from_list(data, 
-                                    root_name=root_name)
-    print(xml_body)
-  }
-  
+  xml_body <- build_xml_from_list(data, root_name=root_name)
   request_body <- as(xml_body, 'character')
   attributes(request_body) <- list('service'=service)
   
@@ -260,7 +256,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
 #' @usage dfp_full_report_wrapper(request_data, 
 #'                                check_interval=3, 
 #'                                max_tries=10)
-#' @param request_data a \\code{list} or \\code{data.frame} of data elements
+#' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param check_interval a numeric specifying seconds to wait between report 
 #' status requests to check if complete
@@ -268,9 +264,9 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
 #' whether the report is complete before the function essentially times out
 #' @return a \code{data.frame} of report results as specified by the request_data
 #' 
-#' @seealso dfp_runReportJob 
-#' @seealso dfp_getReportJobStatus 
-#' @seealso dfp_getReportDownloadURL
+#' @seealso \link{dfp_runReportJob} 
+#' @seealso \link{dfp_getReportJobStatus}
+#' @seealso \link{dfp_getReportDownloadURL}
 #' @export
 dfp_full_report_wrapper <- function(request_data, 
                                     check_interval=3, 

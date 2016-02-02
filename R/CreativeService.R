@@ -2932,15 +2932,16 @@ dfp_CreativeService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#createCreatives}{Google Documentation for createCreatives}
 #' 
-#' @usage dfp_createCreatives(request_data, as_df=TRUE)
+#' @usage dfp_createCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCreativesResponse 
 #' @export
-dfp_createCreatives <- function(request_data, as_df=TRUE){
+dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CreativeService', root_name='createCreatives', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCreativesResponse']])
   result <- if(is.null(response$rval)){
@@ -2989,15 +2990,16 @@ dfp_createCreatives <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
 #' 
-#' @usage dfp_getCreativesByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getCreativesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativesByStatementResponse 
 #' @export
-dfp_getCreativesByStatement <- function(request_data, as_df=TRUE){
+dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CreativeService', root_name='getCreativesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCreativesByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -3038,15 +3040,16 @@ dfp_getCreativesByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 #' 
-#' @usage dfp_updateCreatives(request_data, as_df=TRUE)
+#' @usage dfp_updateCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCreativesResponse 
 #' @export
-dfp_updateCreatives <- function(request_data, as_df=TRUE){
+dfp_updateCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CreativeService', root_name='updateCreatives', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCreativesResponse']])
   result <- if(is.null(response$rval)){

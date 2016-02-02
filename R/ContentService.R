@@ -657,15 +657,16 @@ dfp_ContentService_object_factory <- function(obj_type, obj_data){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
-#' @usage dfp_getContentByStatement(request_data, as_df=TRUE)
+#' @usage dfp_getContentByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementResponse 
 #' @export
-dfp_getContentByStatement <- function(request_data, as_df=TRUE){
+dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementResponse']])
   result <- if(is.null(response$rval)){
@@ -712,13 +713,14 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE){
 #' @importFrom plyr llply ldply
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
-#' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE)
+#' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse 
 #' @export
-dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE){
+dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)
-  request <- build_soap_request(body = request_body)
+  request <- build_soap_request(body = request_body, verbose=verbose)
 
   response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementAndCustomTargetingValueResponse']])
   result <- if(is.null(response$rval)){
