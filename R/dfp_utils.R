@@ -54,7 +54,7 @@ build_soap_request <- function(body, service = NULL,
   url <- paste0('https://ads.google.com/apis/ads/publisher/v201508/', service)
 
   if(verbose){
-    message(url)
+    print(url)
     print(newXMLTextNode(this_body))
   }
   
@@ -255,13 +255,15 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
 #' 
 #' @usage dfp_full_report_wrapper(request_data, 
 #'                                check_interval=3, 
-#'                                max_tries=10)
+#'                                max_tries=10, 
+#'                                verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP request (XML format, but passed as character string)
 #' @param check_interval a numeric specifying seconds to wait between report 
 #' status requests to check if complete
 #' @param max_tries a numeric specifying the maximum number of times to check 
 #' whether the report is complete before the function essentially times out
+#' @param verbose a logical indicating whether to print the report URL
 #' @return a \code{data.frame} of report results as specified by the request_data
 #' 
 #' @seealso \link{dfp_runReportJob} 
@@ -270,7 +272,8 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
 #' @export
 dfp_full_report_wrapper <- function(request_data, 
                                     check_interval=3, 
-                                    max_tries=10){
+                                    max_tries=10, 
+                                    verbose=FALSE){
   
   dfp_runReportJob_result <- dfp_runReportJob(request_data, as_df=F)$rval
   dfp_getReportJobStatus_result <- dfp_runReportJob_result$reportJobStatus
@@ -288,7 +291,9 @@ dfp_full_report_wrapper <- function(request_data,
   
   url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
   dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=F)$rval
-  print(dfp_getReportDownloadURL_result)
+  if(verbose){
+    print(dfp_getReportDownloadURL_result)
+  }
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result)
   
   return(report_dat)

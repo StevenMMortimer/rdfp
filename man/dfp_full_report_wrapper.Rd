@@ -6,7 +6,8 @@
 \usage{
 dfp_full_report_wrapper(request_data, 
                                check_interval=3, 
-                               max_tries=10)
+                               max_tries=10, 
+                               verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -17,6 +18,8 @@ status requests to check if complete}
 
 \item{max_tries}{a numeric specifying the maximum number of times to check 
 whether the report is complete before the function essentially times out}
+
+\item{verbose}{a logical indicating whether to print the report URL}
 }
 \value{
 a \code{data.frame} of report results as specified by the request_data
