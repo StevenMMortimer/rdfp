@@ -6,7 +6,7 @@
 \usage{
 build_soap_request(body, service = NULL,
   network_code = getOption("rdfp.network_code"),
-  application_name = getOption("rdfp.application_name"))
+  application_name = getOption("rdfp.application_name"), verbose = FALSE)
 }
 \arguments{
 \item{body}{a character string of XML with service name
@@ -20,6 +20,8 @@ associated with the ad serving network}
 
 \item{application_name}{a character string naming your
 application so that it can be identified in API calls}
+
+\item{verbose}{a logical indicating whether to print the POSTed XML}
 }
 \value{
 a XML document if no error was returned

@@ -4,10 +4,12 @@
 \alias{dfp_getCurrentUser}
 \title{getCurrentUser}
 \usage{
-dfp_getCurrentUser(as_df=TRUE)
+dfp_getCurrentUser(as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+
+\item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
 \value{
 a \code{data.frame} or \code{list} containing all the elements of a getCurrentUserResponse
