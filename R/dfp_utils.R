@@ -170,7 +170,6 @@ build_xml_from_list <- function(list, root_name=NULL,
 #' to include in a SOAP request.
 #' 
 #' @importFrom plyr alply
-#' @importFrom methods as
 #' @param service a character string matching one of the API
 #' services
 #' @param root_name a character string to be put in the 
