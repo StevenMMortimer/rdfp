@@ -5,7 +5,7 @@ output:
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank" style="text-decoration: none"><img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master"></a><a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank" style="text-decoration: none"><img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master"></a>
+<a href="https://travis-ci.org/ReportMort/rdfp" target="\_blank" style="text-decoration: none"><img alt="Build Status" src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master" style="margin-left: 5px;"></a><a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="\_blank" style="text-decoration: none"><img alt="Code Coverage" src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master" style="margin-left: 5px;"></a>
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
