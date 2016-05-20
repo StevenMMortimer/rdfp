@@ -214,6 +214,7 @@ make_request_body <- function(service, root_name, data=NULL){
 #' must have been set for CSV_DUMP
 #' 
 #' @usage dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
+#' @importFrom curl curl_download
 #' @param report_url a URL character string returned from the function \link{dfp_getReportDownloadURL}
 #' @param exportFormat a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
 #' This is used to determine how to parse the results.
@@ -240,7 +241,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
   }
   
   temp_destination <- tempfile()
-  download.file(report_url, temp_destination, quiet = T, method="curl") # mode="wb" not used with method!="internal"
+  curl_download(url=report_url, destfile=temp_destination)
   report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, 
                            fileEncoding=this_encoding, sep=this_sep, quote=this_quote)
   return(report_dat)

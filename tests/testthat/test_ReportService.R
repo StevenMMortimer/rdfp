@@ -14,9 +14,10 @@ report_request_data <- list(reportJob=
                                           dimensions='AD_UNIT_ID',
                                           adUnitView='FLAT',
                                           columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                          startDate=list(year=2015, month=10, day=1),
-                                          endDate=list(year=2015, month=10, day=31),
+                                          startDate=list(year=2016, month=1, day=1),
+                                          endDate=list(year=2016, month=1, day=31),
                                           dateRangeType='CUSTOM_DATE')))
+
 # run report
 dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 
@@ -26,7 +27,7 @@ dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
 
 # continually check status until complete
 counter <- 0
-while(dfp_getReportJobStatus_result$x!='COMPLETED' & counter < 10){
+while(dfp_getReportJobStatus_result$x!='COMPLETED' & counter < 20){
   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
   Sys.sleep(3)
   counter <- counter + 1
