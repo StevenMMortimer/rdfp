@@ -3,7 +3,7 @@
 
 ------------------------------------------------------------------------
 
-Double Click for Publishers API from R2
+Double Click for Publishers API from R3
 --------------------------------------
 
 Features:
