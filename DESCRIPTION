@@ -15,7 +15,9 @@ Imports:
     httr (>= 1.0.0),
     curl (>= 0.9.7),
     plyr (>= 1.8.3),
-    XML (>= 3.98-1.2)
+    XML (>= 3.98-1.2),
+    utils (>= 3.1.0),
+    methods (>= 3.1.0)
 Suggests:
     knitr,
     testthat

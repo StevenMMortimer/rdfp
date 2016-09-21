@@ -37,7 +37,7 @@ build_soap_request <- function(body, service = NULL,
    <ns1:RequestHeader
      soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
      soapenv:mustUnderstand="0"
-     xmlns:ns1="https://www.google.com/apis/ads/publisher/v201508">
+     xmlns:ns1="https://www.google.com/apis/ads/publisher/v201608">
        <ns1:networkCode>', network_code, '</ns1:networkCode>
        <ns1:applicationName>', application_name, '</ns1:applicationName>
    </ns1:RequestHeader>
@@ -51,7 +51,7 @@ build_soap_request <- function(body, service = NULL,
   
   this_body <- paste0(header, ' \n ', soap_body, ' \n', env_close)
   
-  url <- paste0('https://ads.google.com/apis/ads/publisher/v201508/', service)
+  url <- paste0('https://ads.google.com/apis/ads/publisher/v201608/', service)
 
   if(verbose){
     print(url)
@@ -118,7 +118,7 @@ build_soap_request <- function(body, service = NULL,
 #' 
 #' @keywords internal
 build_xml_from_list <- function(list, root_name=NULL, 
-                                root=NULL, version="v201508"){
+                                root=NULL, version="v201608"){
 
   if (is.null(root))
     root <- newXMLNode(root_name, 
@@ -170,6 +170,7 @@ build_xml_from_list <- function(list, root_name=NULL,
 #' to include in a SOAP request.
 #' 
 #' @importFrom plyr alply
+#' @importFrom methods as
 #' @param service a character string matching one of the API
 #' services
 #' @param root_name a character string to be put in the 
@@ -215,6 +216,7 @@ make_request_body <- function(service, root_name, data=NULL){
 #' 
 #' @usage dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 #' @importFrom curl curl_download
+#' @importFrom utils read.table
 #' @param report_url a URL character string returned from the function \link{dfp_getReportDownloadURL}
 #' @param exportFormat a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
 #' This is used to determine how to parse the results.
@@ -242,7 +244,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
   
   temp_destination <- tempfile()
   curl_download(url=report_url, destfile=temp_destination)
-  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, 
+  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, comment.char = "",
                            fileEncoding=this_encoding, sep=this_sep, quote=this_quote)
   return(report_dat)
 }
