@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getReportJob
 Returns the ReportJobStatus of the report job with the specified ID.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 }
 

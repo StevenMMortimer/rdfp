@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateRateCa
 Updates a list of RateCard objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 }
 

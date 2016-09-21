@@ -5,7 +5,7 @@
 \title{Build XML Request Body}
 \usage{
 build_xml_from_list(list, root_name = NULL, root = NULL,
-  version = "v201508")
+  version = "v201608")
 }
 \arguments{
 \item{list}{a \code{list} of data to fill the XML body}

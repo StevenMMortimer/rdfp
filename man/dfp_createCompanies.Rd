@@ -2,7 +2,7 @@
 % Please edit documentation in R/CompanyService.R
 \name{dfp_createCompanies}
 \alias{dfp_createCompanies}
-\title{createCompanies}
+\title{CompanyService}
 \usage{
 dfp_createCompanies(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCompaniesResponse
 }
 \description{
+Provides operations for creating, updating and retrieving Company objects.
+}
+\details{
+createCompanies
+
 Creates new Company objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#createCompanies}{Google Documentation for createCompanies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#createCompanies}{Google Documentation for createCompanies}
 }
 

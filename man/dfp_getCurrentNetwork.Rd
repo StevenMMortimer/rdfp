@@ -18,6 +18,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getCurrentNe
 Returns the current network for which requests are being made.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 }
 

@@ -28,6 +28,6 @@ Gets a CustomTargetingKeyPage of CustomTargetingKey objects that satisfy the giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 }
 

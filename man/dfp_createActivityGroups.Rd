@@ -2,7 +2,7 @@
 % Please edit documentation in R/ActivityGroupService.R
 \name{dfp_createActivityGroups}
 \alias{dfp_createActivityGroups}
-\title{createActivityGroups}
+\title{ActivityGroupService}
 \usage{
 dfp_createActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,21 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createActivityGroupsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving ActivityGroup
+objects.
+An activity group contains Activity objects. Activities have a
+one-to-one relationship with activity groups. Each activity can belong to
+only one activity group. Activity groups, however, have a one-to-many
+relationship with activities, meaning each activity group can have multiple
+activities. A activity group can be used to manage the activities it
+contains.
+}
+\details{
+createActivityGroups
+
 Creates a new ActivityGroup objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }
 

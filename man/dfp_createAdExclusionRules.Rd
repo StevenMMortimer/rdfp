@@ -2,7 +2,7 @@
 % Please edit documentation in R/AdExclusionRuleService.R
 \name{dfp_createAdExclusionRules}
 \alias{dfp_createAdExclusionRules}
-\title{createAdExclusionRules}
+\title{AdExclusionRuleService}
 \usage{
 dfp_createAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createAdExclusionRulesResponse
 }
 \description{
+Provides methods for creating, updating and retrieving AdExclusionRule
+objects.
+An AdExclusionRule provides a way to block specified ads from
+showing on portions of your site. Each rule specifies the inventory on
+which the rule is in effect, and the labels to block on that inventory.
+}
+\details{
+createAdExclusionRules
+
 Creates new AdExclusionRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 }
 

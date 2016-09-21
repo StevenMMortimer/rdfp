@@ -2,7 +2,7 @@
 % Please edit documentation in R/ProposalService.R
 \name{dfp_createProposals}
 \alias{dfp_createProposals}
-\title{createProposals}
+\title{ProposalService}
 \usage{
 dfp_createProposals(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createProposalsResponse
 }
 \description{
+Provides methods for adding, updating and retrieving Proposal objects.
+}
+\details{
+To use this service, you need to have the new sales management solution
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+
+createProposals
+
 Creates new Proposal objects. For each proposal, the following fields are required: <ul> <li>Proposal name</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#createProposals}{Google Documentation for createProposals}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#createProposals}{Google Documentation for createProposals}
 }
 

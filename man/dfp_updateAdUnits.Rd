@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAdUnit
 Updates the specified AdUnit objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
 }
 

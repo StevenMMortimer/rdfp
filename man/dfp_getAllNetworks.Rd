@@ -2,7 +2,7 @@
 % Please edit documentation in R/NetworkService.R
 \name{dfp_getAllNetworks}
 \alias{dfp_getAllNetworks}
-\title{getAllNetworks}
+\title{NetworkService}
 \usage{
 dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
 }
@@ -15,9 +15,17 @@ dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
 a \code{data.frame} or \code{list} containing all the elements of a getAllNetworksResponse
 }
 \description{
+Provides operations for retrieving information related to the publisher's
+networks. This service can be used to obtain the list of all networks that
+the current login has access to, or to obtain information about a specific
+network.
+}
+\details{
+getAllNetworks
+
 Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 }
 

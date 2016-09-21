@@ -29,6 +29,6 @@ Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 }
 

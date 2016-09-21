@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateNetwor
 Updates the specified network. Currently, only the network display name can be updated.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 }
 

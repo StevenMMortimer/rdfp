@@ -26,6 +26,6 @@ Gets a ContentBundlePage of ContentBundle objects that satisfy the given Stateme
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 }
 

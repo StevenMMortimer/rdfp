@@ -2,7 +2,7 @@
 % Please edit documentation in R/UserService.R
 \name{dfp_createUsers}
 \alias{dfp_createUsers}
-\title{createUsers}
+\title{UserService}
 \usage{
 dfp_createUsers(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createUsersResponse
 }
 \description{
+Provides operations for creating, updating and retrieving User objects.
+}
+\details{
+A user is assigned one of several different roles. Each Role type has a
+unique ID that is used to identify that role in an organization. Role types
+and their IDs can be retrieved by invoking #getAllRoles.
+
+createUsers
+
 Creates new User objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#createUsers}{Google Documentation for createUsers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#createUsers}{Google Documentation for createUsers}
 }
 

@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a runReportJob
 Initiates the execution of a ReportQuery on the server. <p>The following fields are required: <ul> <li>ReportJob reportQuery</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService#runReportJob}{Google Documentation for runReportJob}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#runReportJob}{Google Documentation for runReportJob}
 }
 

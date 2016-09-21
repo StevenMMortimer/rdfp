@@ -28,6 +28,6 @@ Performs an action on ExchangeRate objects that satisfy the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 }
 

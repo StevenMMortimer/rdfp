@@ -2,7 +2,7 @@
 % Please edit documentation in R/TeamService.R
 \name{dfp_createTeams}
 \alias{dfp_createTeams}
-\title{createTeams}
+\title{TeamService}
 \usage{
 dfp_createTeams(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,17 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createTeamsResponse
 }
 \description{
+Provides methods for creating, updating, and retrieving Team objects.
+}
+\details{
+Teams are used to group users in order to define access to entities such as
+companies, inventory and orders.
+
+createTeams
+
 Creates new Team objects. The following fields are required: <ul> <li>Team name</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/TeamService#createTeams}{Google Documentation for createTeams}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/TeamService#createTeams}{Google Documentation for createTeams}
 }
 

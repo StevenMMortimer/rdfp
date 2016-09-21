@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateBaseRa
 Updates the specified BaseRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 }
 

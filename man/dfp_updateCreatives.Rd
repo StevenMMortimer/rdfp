@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCreati
 Updates the specified Creative objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 }
 

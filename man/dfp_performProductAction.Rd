@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performProdu
 Performs action on Product objects that satisfy the given Statement.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#performProductAction}{Google Documentation for performProductAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductService#performProductAction}{Google Documentation for performProductAction}
 }
 

@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateReconc
 Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport. ReconciliationOrderReport reconciliation order reports to update
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 }
 

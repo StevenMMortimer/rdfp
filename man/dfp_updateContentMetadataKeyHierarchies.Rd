@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateConten
 Updates the specified ContentMetadataKeyHierarchy objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
 }
 

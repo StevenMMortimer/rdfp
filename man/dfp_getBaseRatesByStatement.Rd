@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getBaseRates
 Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr> <td>rateCardId</td> <td>BaseRate rateCardId</td> </tr> <tr> <td>id</td> <td>BaseRate id</td> </tr> <tr> <td>productTemplateId</td> <td>ProductTemplateBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productId. </tr> <td>productId</td> <td>ProductBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productTemplateId. </tr> a set of base rates.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 }
 

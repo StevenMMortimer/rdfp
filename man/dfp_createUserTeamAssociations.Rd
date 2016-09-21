@@ -2,7 +2,7 @@
 % Please edit documentation in R/UserTeamAssociationService.R
 \name{dfp_createUserTeamAssociations}
 \alias{dfp_createUserTeamAssociations}
-\title{createUserTeamAssociations}
+\title{UserTeamAssociationService}
 \usage{
 dfp_createUserTeamAssociations(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createUserTeamAssociationsResponse
 }
 \description{
+Provides methods for creating, updating, and retrieving UserTeamAssociation
+objects.
+UserTeamAssociation objects are used to add users to teams in
+order to define access to entities such as companies, inventory and orders
+and to override the team's access type to orders for a user.
+}
+\details{
+createUserTeamAssociations
+
 Creates new UserTeamAssociation objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 }
 

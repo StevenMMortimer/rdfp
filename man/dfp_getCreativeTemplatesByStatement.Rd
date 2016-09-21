@@ -2,7 +2,7 @@
 % Please edit documentation in R/CreativeTemplateService.R
 \name{dfp_getCreativeTemplatesByStatement}
 \alias{dfp_getCreativeTemplatesByStatement}
-\title{getCreativeTemplatesByStatement}
+\title{CreativeTemplateService}
 \usage{
 dfp_getCreativeTemplatesByStatement(request_data, as_df=FALSE, verbose=FALSE)
 }
@@ -18,6 +18,11 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getCreativeTemplatesByStatementResponse
 }
 \description{
+Provides methods for retrieving CreativeTemplate objects.
+}
+\details{
+getCreativeTemplatesByStatement
+
 Gets a CreativeTemplatePage of CreativeTemplate objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of creative templates. 
 \itemize{
   \item{id}
@@ -27,6 +32,6 @@ Gets a CreativeTemplatePage of CreativeTemplate objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 }
 

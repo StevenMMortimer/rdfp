@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCustom
 Updates the specified CustomTargetingValue objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 }
 

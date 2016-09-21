@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performAdExc
 Performs action on AdExclusionRule objects that satisfy the given Statement query. a set of ad exclusion rules
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 }
 

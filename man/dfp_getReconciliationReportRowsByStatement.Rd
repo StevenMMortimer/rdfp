@@ -2,7 +2,7 @@
 % Please edit documentation in R/ReconciliationReportRowService.R
 \name{dfp_getReconciliationReportRowsByStatement}
 \alias{dfp_getReconciliationReportRowsByStatement}
-\title{getReconciliationReportRowsByStatement}
+\title{ReconciliationReportRowService}
 \usage{
 dfp_getReconciliationReportRowsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,6 +18,12 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getReconciliationReportRowsByStatementResponse
 }
 \description{
+Provides methods for retrieving and updating the ReconciliationReportRow
+objects.
+}
+\details{
+getReconciliationReportRowsByStatement
+
 Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satisfy the given Statement query. The following fields are supported for filtering:  The reconciliationReportId field is required and can only be combined with an AND to other conditions. Furthermore, the results may only belong to one ReconciliationReport. filter a set of reconciliation report rows 
 \itemize{
   \item{reconciliationReportId}
@@ -42,6 +48,6 @@ Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satis
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
 }
 

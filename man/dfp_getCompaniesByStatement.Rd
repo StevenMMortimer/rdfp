@@ -27,6 +27,6 @@ Gets a CompanyPage of Company objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 }
 

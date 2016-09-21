@@ -2,7 +2,7 @@
 % Please edit documentation in R/PackageService.R
 \name{dfp_createPackages}
 \alias{dfp_createPackages}
-\title{createPackages}
+\title{PackageService}
 \usage{
 dfp_createPackages(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createPackagesResponse
 }
 \description{
+Provides methods for creating, updating and retrieving Package objects.
+}
+\details{
+To use this service, you need to have the new sales management solution
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+
+createPackages
+
 Creates new Package objects. For each package, the following fields are required: <ul> <li>Package proposalId</li> <li>Package productPackageId</li> <li>Package name</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PackageService#createPackages}{Google Documentation for createPackages}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PackageService#createPackages}{Google Documentation for createPackages}
 }
 

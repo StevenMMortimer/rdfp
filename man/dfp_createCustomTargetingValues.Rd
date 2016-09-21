@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a createCustom
 Creates new CustomTargetingValue objects. The following fields are required: <ul> <li>CustomTargetingValue customTargetingKeyId</li> <li>CustomTargetingValue name</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }
 

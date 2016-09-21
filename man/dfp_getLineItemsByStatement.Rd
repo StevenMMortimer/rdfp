@@ -39,6 +39,6 @@ Gets a LineItemPage of LineItem objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/CustomTargetingService.R
 \name{dfp_createCustomTargetingKeys}
 \alias{dfp_createCustomTargetingKeys}
-\title{createCustomTargetingKeys}
+\title{CustomTargetingService}
 \usage{
 dfp_createCustomTargetingKeys(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,15 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCustomTargetingKeysResponse
 }
 \description{
+Provides operations for creating, updating and retrieving
+CustomTargetingKey and CustomTargetingValue objects.
+}
+\details{
+createCustomTargetingKeys
+
 Creates new CustomTargetingKey objects. The following fields are required: <ul> <li>CustomTargetingKey name</li> <li>CustomTargetingKey type</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ReconciliationOrderReportService.R
 \name{dfp_getReconciliationOrderReportsByStatement}
 \alias{dfp_getReconciliationOrderReportsByStatement}
-\title{getReconciliationOrderReportsByStatement}
+\title{ReconciliationOrderReportService}
 \usage{
 dfp_getReconciliationOrderReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,6 +18,12 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getReconciliationOrderReportsByStatementResponse
 }
 \description{
+Provides methods for retrieving, reconciling, and reverting
+ReconciliationOrderReport objects.
+}
+\details{
+getReconciliationOrderReportsByStatement
+
 Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that satisfy the given Statement query. The following fields are supported for filtering:  The reconciliationReportId field is required and can only be combined with an AND to other conditions. Furthermore, the results may only belong to one ReconciliationReport. a set of reconciliation order reports. 
 \itemize{
   \item{reconciliationReportId}
@@ -30,6 +36,6 @@ Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 }
 

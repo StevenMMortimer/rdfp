@@ -26,6 +26,6 @@ Gets a AdExclusionRulePage of AdExclusionRule objects that satisfy the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
 }
 

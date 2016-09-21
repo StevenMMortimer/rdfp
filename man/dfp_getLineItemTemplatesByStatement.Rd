@@ -2,7 +2,7 @@
 % Please edit documentation in R/LineItemTemplateService.R
 \name{dfp_getLineItemTemplatesByStatement}
 \alias{dfp_getLineItemTemplatesByStatement}
-\title{getLineItemTemplatesByStatement}
+\title{LineItemTemplateService}
 \usage{
 dfp_getLineItemTemplatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,12 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getLineItemTemplatesByStatementResponse
 }
 \description{
+Provides methods for creating, updating and retrieving LineItemTemplate
+objects.
+}
+\details{
+getLineItemTemplatesByStatement
+
 Gets a LineItemTemplatePage of LineItemTemplate objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of line item templates 
 \itemize{
   \item{id}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
 }
 

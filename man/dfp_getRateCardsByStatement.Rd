@@ -20,13 +20,14 @@ a \code{data.frame} or \code{list} containing all the elements of a getRateCards
 \description{
 Gets a RateCardPage of RateCard objects that satisfy the given Statement query. The following fields are supported for filtering:  
 \itemize{
-  \item{id}
-  \item{name}
-  \item{status}
-  \item{lastModifiedDateTime}
+  \item{ForMarketplace}
+  \item{Id}
+  \item{LastModifiedDateTime}
+  \item{Name}
+  \item{Status}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 }
 

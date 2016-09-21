@@ -30,6 +30,6 @@ Gets a PlacementPage of Placement objects that satisfy the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 }
 

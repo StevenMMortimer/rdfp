@@ -18,11 +18,12 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getProductsByStatementResponse
 }
 \description{
-Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query. The following fields are supported for filtering and/or sorting:  criteria over products 
+Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query.  When using sales management, the following fields are supported for filtering and/or sorting.  criteria over products 
 \itemize{
   \item{rateCardId}
   \item{status}
   \item{lineItemType}
+  \item{productType}
   \item{rateType}
   \item{productTemplateId}
   \item{name}
@@ -32,6 +33,6 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }
 

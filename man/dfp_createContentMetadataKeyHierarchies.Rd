@@ -2,7 +2,7 @@
 % Please edit documentation in R/ContentMetadataKeyHierarchyService.R
 \name{dfp_createContentMetadataKeyHierarchies}
 \alias{dfp_createContentMetadataKeyHierarchies}
-\title{createContentMetadataKeyHierarchies}
+\title{ContentMetadataKeyHierarchyService}
 \usage{
 dfp_createContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,15 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createContentMetadataKeyHierarchiesResponse
 }
 \description{
+Provides methods for creating, updating, and retrieving
+ContentMetadataKeyHierarchy objects.
+}
+\details{
+createContentMetadataKeyHierarchies
+
 Creates new ContentMetadataKeyHierarchy objects. The following fields are required: <ul> <li>ContentMetadataKeyHierarchy id</li> <li>ContentMetadataKeyHierarchy name</li> <li>ContentMetadataKeyHierarchy hierarchyLevels</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 }
 

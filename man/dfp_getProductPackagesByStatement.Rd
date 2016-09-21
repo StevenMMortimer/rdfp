@@ -29,6 +29,6 @@ Gets a ProductPackagePage of ProductPackage objects that satisfy the filtering c
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
 }
 

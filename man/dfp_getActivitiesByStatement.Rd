@@ -28,6 +28,6 @@ Gets an ActivityPage of Activity objects that satisfy the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
 }
 

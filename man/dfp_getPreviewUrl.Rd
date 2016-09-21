@@ -18,6 +18,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getPreviewUr
 Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. creative served to it
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 }
 

@@ -33,6 +33,6 @@ Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given St
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/RateCardService.R
 \name{dfp_createRateCards}
 \alias{dfp_createRateCards}
-\title{createRateCards}
+\title{RateCardService}
 \usage{
 dfp_createRateCards(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createRateCardsResponse
 }
 \description{
+Provides methods for managing RateCard objects.
+To use this service,
+you need to have the new sales management solution enabled on your network.
+If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+}
+\details{
+createRateCards
+
 Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/RateCardService#createRateCards}{Google Documentation for createRateCards}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#createRateCards}{Google Documentation for createRateCards}
 }
 

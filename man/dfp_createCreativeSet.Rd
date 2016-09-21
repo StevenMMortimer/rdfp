@@ -2,7 +2,7 @@
 % Please edit documentation in R/CreativeSetService.R
 \name{dfp_createCreativeSet}
 \alias{dfp_createCreativeSet}
-\title{createCreativeSet}
+\title{CreativeSetService}
 \usage{
 dfp_createCreativeSet(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCreativeSetResponse
 }
 \description{
+Provides methods for adding, updating and retrieving CreativeSet objects.
+}
+\details{
+createCreativeSet
+
 Creates a new CreativeSet.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 }
 

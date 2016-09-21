@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePropos
 Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 }
 

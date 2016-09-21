@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateProduc
 Updates the specified Product objects. Note non-updatable fields will not be backfilled.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductService#updateProducts}{Google Documentation for updateProducts}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductService#updateProducts}{Google Documentation for updateProducts}
 }
 

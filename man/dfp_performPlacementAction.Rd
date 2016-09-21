@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performPlace
 Performs actions on Placement objects that match the given Statement query. a set of placements
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 }
 

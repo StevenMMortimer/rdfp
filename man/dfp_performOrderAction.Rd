@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performOrder
 Performs actions on Order objects that match the given Statement query. a set of orders
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/OrderService#performOrderAction}{Google Documentation for performOrderAction}
 }
 

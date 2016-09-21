@@ -2,7 +2,7 @@
 % Please edit documentation in R/InventoryService.R
 \name{dfp_createAdUnits}
 \alias{dfp_createAdUnits}
-\title{createAdUnits}
+\title{InventoryService}
 \usage{
 dfp_createAdUnits(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,21 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createAdUnitsResponse
 }
 \description{
+Provides operations for creating, updating and retrieving AdUnit objects.
+}
+\details{
+Line items connect a creative with its associated ad unit through
+targeting.
+An ad unit represents a piece of inventory within a
+publisher. It contains all the settings that need to be associated with the
+inventory in order to serve ads. For example, the ad unit contains creative
+size restrictions and AdSense settings.
+
+createAdUnits
+
 Creates new AdUnit objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 }
 

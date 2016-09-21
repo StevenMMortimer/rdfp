@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLiveSt
 Updates the specified LiveStreamEvent objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 }
 

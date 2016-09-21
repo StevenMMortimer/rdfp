@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateConten
 Updates the specified ContentBundle objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 }
 

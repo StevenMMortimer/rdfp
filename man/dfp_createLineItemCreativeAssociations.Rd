@@ -2,7 +2,7 @@
 % Please edit documentation in R/LineItemCreativeAssociationService.R
 \name{dfp_createLineItemCreativeAssociations}
 \alias{dfp_createLineItemCreativeAssociations}
-\title{createLineItemCreativeAssociations}
+\title{LineItemCreativeAssociationService}
 \usage{
 dfp_createLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,22 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createLineItemCreativeAssociationsResponse
 }
 \description{
+Provides operations for creating, updating and retrieving
+LineItemCreativeAssociation objects.
+A line item creative association
+(LICA) associates a Creative with a LineItem. When a line item is selected
+to serve, the LICAs specify which creatives can appear for the ad units
+that are targeted by the line item. In order to be associated with a line
+item, the creative must have a size that exists within the attribute
+LineItem#creativeSizes.#' Each LICA has a start and end date and
+time that defines when the creative should be displayed.
+}
+\details{
+createLineItemCreativeAssociations
+
 Creates new LineItemCreativeAssociation objects create in
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ContentBundleService.R
 \name{dfp_createContentBundles}
 \alias{dfp_createContentBundles}
-\title{createContentBundles}
+\title{ContentBundleService}
 \usage{
 dfp_createContentBundles(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createContentBundlesResponse
 }
 \description{
+Provides methods for creating, updating and retrieving ContentBundle
+objects.
+A ContentBundle is a grouping of Content that match filter
+rules as well as taking into account explicitly included or excluded
+Content.
+}
+\details{
+createContentBundles
+
 Creates new ContentBundle objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 }
 

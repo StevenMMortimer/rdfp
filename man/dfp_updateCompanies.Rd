@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCompan
 Updates the specified Company objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 }
 

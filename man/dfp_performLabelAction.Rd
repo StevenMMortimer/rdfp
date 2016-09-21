@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performLabel
 Performs actions on Label objects that match the given Statement query. a set of labels
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 }
 

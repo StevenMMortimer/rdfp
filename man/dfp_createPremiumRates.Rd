@@ -2,7 +2,7 @@
 % Please edit documentation in R/PremiumRateService.R
 \name{dfp_createPremiumRates}
 \alias{dfp_createPremiumRates}
-\title{createPremiumRates}
+\title{PremiumRateService}
 \usage{
 dfp_createPremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createPremiumRatesResponse
 }
 \description{
+Provides methods for managing PremiumRate objects.
+To use this service,
+you need to have the new sales management solution enabled on your network.
+If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+}
+\details{
+createPremiumRates
+
 Creates a list of new PremiumRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }
 

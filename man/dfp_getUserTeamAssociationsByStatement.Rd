@@ -25,6 +25,6 @@ Gets a UserTeamAssociationPage of UserTeamAssociation objects that satisfy the g
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 }
 

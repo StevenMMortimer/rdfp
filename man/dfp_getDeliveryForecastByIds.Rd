@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getDeliveryF
 Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 }
 

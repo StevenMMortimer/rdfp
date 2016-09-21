@@ -2,7 +2,7 @@
 % Please edit documentation in R/PlacementService.R
 \name{dfp_createPlacements}
 \alias{dfp_createPlacements}
-\title{createPlacements}
+\title{PlacementService}
 \usage{
 dfp_createPlacements(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,20 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createPlacementsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving Placement objects.
+}
+\details{
+You can use a placement to group ad units. For example, you might have a
+placement that focuses on sports sites, which may be spread across
+different branches of your inventory. You might also have a "fire sale"
+placement that includes ad units that have not been selling and are
+consequently priced very attractively.
+
+createPlacements
+
 Creates new Placement objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PlacementService#createPlacements}{Google Documentation for createPlacements}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#createPlacements}{Google Documentation for createPlacements}
 }
 

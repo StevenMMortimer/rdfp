@@ -2,7 +2,7 @@
 % Please edit documentation in R/LabelService.R
 \name{dfp_createLabels}
 \alias{dfp_createLabels}
-\title{createLabels}
+\title{LabelService}
 \usage{
 dfp_createLabels(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createLabelsResponse
 }
 \description{
+Provides methods for the creation and management of Labels.
+}
+\details{
+createLabels
+
 Creates new Label objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#createLabels}{Google Documentation for createLabels}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#createLabels}{Google Documentation for createLabels}
 }
 

@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLineIt
 Updates the specified LineItemCreativeAssociation objects update
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 }
 

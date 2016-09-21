@@ -2,7 +2,7 @@
 % Please edit documentation in R/CreativeWrapperService.R
 \name{dfp_createCreativeWrappers}
 \alias{dfp_createCreativeWrappers}
-\title{createCreativeWrappers}
+\title{CreativeWrapperService}
 \usage{
 dfp_createCreativeWrappers(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCreativeWrappersResponse
 }
 \description{
+Provides methods for the creation and management of creative wrappers.
+CreativeWrapper CreativeWrappers allow HTML snippets to be served along
+with creatives.
+Creative wrappers must be associated with a
+LabelType#CREATIVE_WRAPPER label and applied to ad units by
+AdUnit#appliedLabels.
+}
+\details{
+createCreativeWrappers
+
 Creates a new CreativeWrapper objects. The following fields are required: <ul> <li>CreativeWrapper labelId</li> <li>CreativeWrapper ordering</li> <li>CreativeWrapper header or CreativeWrapper footer</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 }
 

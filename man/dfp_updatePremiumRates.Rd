@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePremiu
 Updates the specified PremiumRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ProposalLineItemService.R
 \name{dfp_createProposalLineItems}
 \alias{dfp_createProposalLineItems}
-\title{createProposalLineItems}
+\title{ProposalLineItemService}
 \usage{
 dfp_createProposalLineItems(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,19 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createProposalLineItemsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving ProposalLineItem
+objects.
+To use this service, you need to have the new sales management
+solution enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+}
+\details{
+createProposalLineItems
+
 Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 }
 

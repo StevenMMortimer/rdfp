@@ -28,6 +28,6 @@ Gets a CustomTargetingValuePage of CustomTargetingValue objects that satisfy the
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 }
 

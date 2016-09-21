@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateExchan
 Updates the specified ExchangeRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/AudienceSegmentService.R
 \name{dfp_createAudienceSegments}
 \alias{dfp_createAudienceSegments}
-\title{createAudienceSegments}
+\title{AudienceSegmentService}
 \usage{
 dfp_createAudienceSegments(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,15 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createAudienceSegmentsResponse
 }
 \description{
+Provides operations for creating, updating and retrieving AudienceSegment
+objects.
+}
+\details{
+createAudienceSegments
+
 Creates new RuleBasedFirstPartyAudienceSegment objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 }
 

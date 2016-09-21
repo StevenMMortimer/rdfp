@@ -2,7 +2,7 @@
 % Please edit documentation in R/ReconciliationLineItemReportService.R
 \name{dfp_getReconciliationLineItemReportsByStatement}
 \alias{dfp_getReconciliationLineItemReportsByStatement}
-\title{getReconciliationLineItemReportsByStatement}
+\title{ReconciliationLineItemReportService}
 \usage{
 dfp_getReconciliationLineItemReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,6 +18,12 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getReconciliationLineItemReportsByStatementResponse
 }
 \description{
+Provides methods for retrieving and updating ReconciliationLineItemReport
+objects.
+}
+\details{
+getReconciliationLineItemReportsByStatement
+
 Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects that satisfy the given Statement query. The following fields are supported for filtering:  
 \itemize{
   \item{id}
@@ -29,6 +35,6 @@ Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
 }
 

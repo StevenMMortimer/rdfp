@@ -2,7 +2,7 @@
 % Please edit documentation in R/LineItemService.R
 \name{dfp_createLineItems}
 \alias{dfp_createLineItems}
-\title{createLineItems}
+\title{LineItemService}
 \usage{
 dfp_createLineItems(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,23 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving LineItem objects.
+}
+\details{
+Line items define the campaign. For example, line items define: <ul>
+<li>a budget <li>a span of time to run <li>ad unit targeting </ul>
+In
+short, line items connect all of the elements of an ad campaign.
+Line
+items and creatives can be associated with each other through
+LineItemCreativeAssociation objects. An ad unit will host a creative
+through both this association and the LineItem#targeting to it.
+
+createLineItems
+
 Creates new LineItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#createLineItems}{Google Documentation for createLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#createLineItems}{Google Documentation for createLineItems}
 }
 

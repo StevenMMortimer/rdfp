@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateUsersR
 Updates the specified User objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserService#updateUsers}{Google Documentation for updateUsers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#updateUsers}{Google Documentation for updateUsers}
 }
 

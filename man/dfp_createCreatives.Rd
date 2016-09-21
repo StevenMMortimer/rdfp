@@ -2,7 +2,7 @@
 % Please edit documentation in R/CreativeService.R
 \name{dfp_createCreatives}
 \alias{dfp_createCreatives}
-\title{createCreatives}
+\title{CreativeService}
 \usage{
 dfp_createCreatives(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,17 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCreativesResponse
 }
 \description{
+Provides methods for adding, updating and retrieving Creative objects.
+}
+\details{
+For a creative to run, it must be associated with a LineItem managed by
+the LineItemCreativeAssociationService.
+
+createCreatives
+
 Creates new Creative objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeService#createCreatives}{Google Documentation for createCreatives}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#createCreatives}{Google Documentation for createCreatives}
 }
 

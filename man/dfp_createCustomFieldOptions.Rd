@@ -2,7 +2,7 @@
 % Please edit documentation in R/CustomFieldService.R
 \name{dfp_createCustomFieldOptions}
 \alias{dfp_createCustomFieldOptions}
-\title{createCustomFieldOptions}
+\title{CustomFieldService}
 \usage{
 dfp_createCustomFieldOptions(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldOptionsResponse
 }
 \description{
+Provides methods for the creation and management of CustomField objects.
+}
+\details{
+createCustomFieldOptions
+
 Creates new CustomFieldOption objects. The following fields are required: <ul> <li>CustomFieldOption displayName</li> <li>CustomFieldOption customFieldId</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 }
 

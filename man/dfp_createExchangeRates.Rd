@@ -2,7 +2,7 @@
 % Please edit documentation in R/ExchangeRateService.R
 \name{dfp_createExchangeRates}
 \alias{dfp_createExchangeRates}
-\title{createExchangeRates}
+\title{ExchangeRateService}
 \usage{
 dfp_createExchangeRates(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createExchangeRatesResponse
 }
 \description{
+Provides methods for adding, updating and retrieving ExchangeRate objects.
+}
+\details{
+createExchangeRates
+
 Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 }
 

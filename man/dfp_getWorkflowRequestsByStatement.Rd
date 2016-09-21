@@ -2,7 +2,7 @@
 % Please edit documentation in R/WorkflowRequestService.R
 \name{dfp_getWorkflowRequestsByStatement}
 \alias{dfp_getWorkflowRequestsByStatement}
-\title{getWorkflowRequestsByStatement}
+\title{WorkflowRequestService}
 \usage{
 dfp_getWorkflowRequestsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,6 +18,16 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getWorkflowRequestsByStatementResponse
 }
 \description{
+Provides methods to retrieve and perform actions on WorkflowRequest objects
+}
+\details{
+To use this service, you need to have the new sales management solution
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+
+getWorkflowRequestsByStatement
+
 Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering:  Starting in V201405 a type filter must be used 
 \itemize{
   \item{id}
@@ -30,6 +40,6 @@ Gets a list of WorkflowRequest objects that satisfy the given Statement query. T
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 }
 

@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performLineI
 Performs actions on LineItem objects that match the given Statement query. a set of line items
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 }
 

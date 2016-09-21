@@ -2,7 +2,7 @@
 % Please edit documentation in R/AdRuleService.R
 \name{dfp_createAdRules}
 \alias{dfp_createAdRules}
-\title{createAdRules}
+\title{AdRuleService}
 \usage{
 dfp_createAdRules(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,17 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createAdRulesResponse
 }
 \description{
+Provides methods for creating, updating and retrieving AdRule objects.
+}
+\details{
+Ad rules contain data that the ad server uses to generate a playlist of
+video ads.
+
+createAdRules
+
 Creates new AdRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 }
 

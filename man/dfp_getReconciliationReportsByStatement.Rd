@@ -2,7 +2,7 @@
 % Please edit documentation in R/ReconciliationReportService.R
 \name{dfp_getReconciliationReportsByStatement}
 \alias{dfp_getReconciliationReportsByStatement}
-\title{getReconciliationReportsByStatement}
+\title{ReconciliationReportService}
 \usage{
 dfp_getReconciliationReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,6 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getReconciliationReportsByStatementResponse
 }
 \description{
+Provides methods for retrieving, submitting and reverting the
+ReconciliationReport objects.
+A ReconciliationReport is a group of
+ReconciliationReportRow objects.
+}
+\details{
+getReconciliationReportsByStatement
+
 Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy the given Statement query. The following fields are supported for filtering.  filter a set of reconciliation reports 
 \itemize{
   \item{id}
@@ -26,6 +34,6 @@ Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 }
 

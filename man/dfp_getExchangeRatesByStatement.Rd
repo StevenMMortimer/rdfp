@@ -28,6 +28,6 @@ Gets a ExchangeRatePage of ExchangeRate objects that satisfy the given Statement
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 }
 

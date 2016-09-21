@@ -2,7 +2,7 @@
 % Please edit documentation in R/ProductPackageItemService.R
 \name{dfp_createProductPackageItems}
 \alias{dfp_createProductPackageItems}
-\title{createProductPackageItems}
+\title{ProductPackageItemService}
 \usage{
 dfp_createProductPackageItems(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,21 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createProductPackageItemsResponse
 }
 \description{
+Provides methods for creating and retrieving ProductPackageItem objects.
+}
+\details{
+A ProductPackageItem represents a product which will be associated with
+a ProductPackage.
+To use this service, you need to have the new sales
+management solution enabled on your network. If you do not see a "Sales"
+tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
+(DFP)</a>, you will not be able to use this service.
+
+createProductPackageItems
+
 Creates new ProductPackageItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 }
 

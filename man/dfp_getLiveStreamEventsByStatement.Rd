@@ -24,6 +24,6 @@ Gets a LiveStreamEventPage of LiveStreamEvent objects that satisfy the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 }
 

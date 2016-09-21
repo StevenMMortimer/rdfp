@@ -23,14 +23,17 @@ Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given S
   \item{id}
   \item{name}
   \item{proposalId}
+  \item{startDateTime}
+  \item{endDateTime}
   \item{isArchived}
   \item{lastModifiedDateTime}
-  \item{useThirdPartyAdServerFromProposal}
-  \item{thirdPartyAdServerId}
-  \item{customThirdPartyAdServerName}
+  \item{useThirdPartyAdServerFromProposal  Only applicable for non-programmatic proposal line items using sales management}
+  \item{thirdPartyAdServerId  Only applicable for non-programmatic proposal line items using sales management}
+  \item{customThirdPartyAdServerName  Only applicable for non-programmatic proposal line items using sales management}
+  \item{isProgrammatic}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 }
 

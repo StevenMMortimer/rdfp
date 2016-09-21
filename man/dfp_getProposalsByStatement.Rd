@@ -25,13 +25,16 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
   \item{name}
   \item{status}
   \item{isArchived}
-  \item{approvalStatus}
+  \item{approvalStatus Only applicable for proposals using sales management}
   \item{lastModifiedDateTime}
-  \item{thirdPartyAdServerId}
-  \item{customThirdPartyAdServerName}
+  \item{thirdPartyAdServerId  Only applicable for non-programmatic proposals using sales management}
+  \item{customThirdPartyAdServerName  Only applicable for non-programmatic proposals using sales management}
+  \item{hasOfflineErrors}
+  \item{isProgrammatic}
+  \item{negotiationStatus Only applicable for programmatic proposals}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 }
 

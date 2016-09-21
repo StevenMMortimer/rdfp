@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCustom
 Updates the specified CustomField objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 }
 

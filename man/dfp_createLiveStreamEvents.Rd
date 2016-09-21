@@ -2,7 +2,7 @@
 % Please edit documentation in R/LiveStreamEventService.R
 \name{dfp_createLiveStreamEvents}
 \alias{dfp_createLiveStreamEvents}
-\title{createLiveStreamEvents}
+\title{LiveStreamEventService}
 \usage{
 dfp_createLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,18 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createLiveStreamEventsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving LiveStreamEvent
+objects.
+This feature is not yet openly available for DFP Video
+publishers. Publishers will need to apply for access for this feature
+through their account managers.
+}
+\details{
+createLiveStreamEvents
+
 Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 }
 

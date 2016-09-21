@@ -28,6 +28,6 @@ Gets a LabelPage of Label objects that satisfy the given Statement query. The fo
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
 }
 

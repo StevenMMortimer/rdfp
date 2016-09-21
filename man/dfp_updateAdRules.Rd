@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAdRule
 Updates the specified AdRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 }
 

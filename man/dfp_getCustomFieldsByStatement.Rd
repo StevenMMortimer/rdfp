@@ -28,6 +28,6 @@ Gets a CustomFieldPage of CustomField objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
 }
 

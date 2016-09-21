@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCreati
 Updates the specified CreativeWrapper objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 }
 

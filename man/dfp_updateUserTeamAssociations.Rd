@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateUserTe
 Updates the specified UserTeamAssociation objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 }
 

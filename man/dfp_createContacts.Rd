@@ -2,7 +2,7 @@
 % Please edit documentation in R/ContactService.R
 \name{dfp_createContacts}
 \alias{dfp_createContacts}
-\title{createContacts}
+\title{ContactService}
 \usage{
 dfp_createContacts(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,14 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createContactsResponse
 }
 \description{
+Provides methods for creating, updating and retrieving Contact objects.
+}
+\details{
+createContacts
+
 Creates new Contact objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ContactService#createContacts}{Google Documentation for createContacts}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContactService#createContacts}{Google Documentation for createContacts}
 }
 

@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performUserT
 Performs actions on UserTeamAssociation objects that match the given Statement query. a set of user team associations
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
 }
 

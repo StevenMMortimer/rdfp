@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performCusto
 Performs actions on CustomTargetingValue objects that match the given Statement query. a set of ad units
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 }
 

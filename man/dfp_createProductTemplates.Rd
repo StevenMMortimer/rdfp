@@ -2,7 +2,7 @@
 % Please edit documentation in R/ProductTemplateService.R
 \name{dfp_createProductTemplates}
 \alias{dfp_createProductTemplates}
-\title{createProductTemplates}
+\title{ProductTemplateService}
 \usage{
 dfp_createProductTemplates(request_data, as_df=TRUE, verbose=FALSE)
 }
@@ -18,9 +18,22 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createProductTemplatesResponse
 }
 \description{
+Provides methods for creating, updating and retrieving ProductTemplate
+objects.
+A product template is used to generate a set of products.
+Products allow inventory managers to control what salespeople can sell.
+}
+\details{
+To use this service, you need to have the new sales management solution
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+will not be able to use this service.
+
+createProductTemplates
+
 Creates new ProductTemplate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 }
 

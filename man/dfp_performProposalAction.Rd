@@ -21,6 +21,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performPropo
 Performs actions on Proposal objects that match the given Statement query. The following fields are also required when submitting proposals for approval: <ul> <li>Proposal advertiser</li> <li>Proposal primarySalesperson</li> <li>Proposal primaryTraffickerId</li> </ul>
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 }
 
