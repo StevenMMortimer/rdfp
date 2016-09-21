@@ -23,7 +23,7 @@ test_that("dfp_performProductAction", {
   request_data <- list(productAction='DeactivateProducts',
                        filterStatement=list('query'="WHERE status='ACTIVE'"))
   
-  expect_message(try(dfp_performProductAction(request_data), silent=T), 'MISSING_FEATURE')
+  expect_message(try(dfp_performProductAction(request_data), silent=T), 'NOT_APPLICABLE')
   expect_error(dfp_performProductAction(request_data))
   
 #   dfp_performProductAction_result <- dfp_performProductAction(request_data)

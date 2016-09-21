@@ -42,7 +42,7 @@ dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
 test_that("dfp_runReportJob", {
   
   expect_is(dfp_runReportJob_result, "data.frame")
-  expect_true(all(c('id', 'reportJobStatus') %in% names(dfp_runReportJob_result)))
+  expect_true(all(c('id') %in% names(dfp_runReportJob_result)))
   
 })
 
