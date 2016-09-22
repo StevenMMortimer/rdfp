@@ -237,8 +237,8 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
     this_sep <- '\t'
     this_quote <- '"'
   } else {
-    this_encoding <- 'UCS-2'
-    this_sep <- '\t'
+    this_encoding <- 'UTF-8'
+    this_sep <- ','
     this_quote <- '"'
   }
   
@@ -278,12 +278,12 @@ dfp_full_report_wrapper <- function(request_data,
                                     verbose=FALSE){
   
   dfp_runReportJob_result <- dfp_runReportJob(request_data, as_df=F)$rval
-  dfp_getReportJobStatus_result <- dfp_runReportJob_result$reportJobStatus
   
   status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
-
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
+  
   counter <- 0
-  while(dfp_getReportJobStatus_result!='COMPLETED' & counter < max_tries){
+  while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < max_tries){
     dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
     Sys.sleep(check_interval)
     counter <- counter + 1

@@ -37,8 +37,6 @@ while(dfp_getReportJobStatus_result$x!='COMPLETED' & counter < 20){
 url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
 dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
 
-
-
 test_that("dfp_runReportJob", {
   
   expect_is(dfp_runReportJob_result, "data.frame")
@@ -95,10 +93,11 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
                                             exportFormat='CSV_EXCEL')
   expect_is(report_dat, "data.frame")
-  expect_equal(names(report_dat), c("Month.and.year", 
-                                    "Ad.unit.ID", 
-                                    "Ad.unit", 
-                                    "Total.impressions"))
+  expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
+                                    "Dimension.AD_UNIT_ID", 
+                                    "Dimension.AD_UNIT_NAME", 
+                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
+  expect_equal(sum(report_dat$Dimension.MONTH_AND_YEAR=='Total'), 1)
   
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='CSV_DUMP', 
