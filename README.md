@@ -1,10 +1,10 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://travis-ci.org/ReportMort/rdfp" target="_blank"><img src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master" alt="Build Status" style="margin-left: 5px;"/></a> <a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="_blank"><img src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master" alt="codecov.io" style="margin-left: 5px;"/></a>
+rdfp
+====
 
-------------------------------------------------------------------------
+[![Build Status](https://travis-ci.org/ReportMort/rdfp.png?branch=master)](https://travis-ci.org/ReportMort/rdfp) [![Coverage Status](https://img.shields.io/codecov/c/github/ReportMort/rdfp/master.svg)](https://codecov.io/github/ReportMort/rdfp?branch=master)
 
-Double Click for Publishers API from R
---------------------------------------
+rdfp is an implementation of the Google Double Click for Publishers (DFP) API from R. Most all operations supported by the DFP API are available via this package.
 
 Features:
 
@@ -12,7 +12,7 @@ Features:
 -   Forecasting/Inventory Management/Reporting
 -   Simple Administrative Tools
 
-**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201508`.
+**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201608`.
 
 ### Functions
 

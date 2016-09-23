@@ -6,9 +6,6 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<a href="https://travis-ci.org/ReportMort/rdfp" target="_blank"><img src="https://travis-ci.org/ReportMort/rdfp.svg?branch=master" alt="Build Status" style="margin-left: 5px;"/></a>
-<a href="https://codecov.io/github/ReportMort/rdfp?branch=master" target="_blank"><img src="https://codecov.io/github/ReportMort/rdfp/coverage.svg?branch=master" alt="codecov.io" style="margin-left: 5px;"/></a>
-
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -17,10 +14,13 @@ knitr::opts_chunk$set(
 )
 ```
 
----
+# rdfp
 
-Double Click for Publishers API from R
----
+[![Build Status](https://travis-ci.org/ReportMort/rdfp.png?branch=master)](https://travis-ci.org/ReportMort/rdfp)
+[![Coverage Status](https://img.shields.io/codecov/c/github/ReportMort/rdfp/master.svg)](https://codecov.io/github/ReportMort/rdfp?branch=master)
+
+rdfp is an implementation of the Google Double Click for Publishers (DFP) API from R. Most all operations 
+supported by the DFP API are available via this package.
 
 Features:
 
