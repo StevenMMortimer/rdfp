@@ -16,8 +16,10 @@
 #' 
 #' @usage dfp_createUsers(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createUsersResponse 
 #' @export
@@ -60,14 +62,15 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getAllRoles
 #' 
-#' Returns the Role objects that are defined for the users of the network.
+#' Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#getAllRoles}{Google Documentation for getAllRoles}
 #' 
 #' @usage dfp_getAllRoles(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAllRolesResponse 
 #' @export
@@ -110,14 +113,15 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' getCurrentUser
 #' 
-#' Returns the current User.
+#' Returns the current User. Returns the current User. @@return the current user Returns the current User. @@return the current user
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
 #' @usage dfp_getCurrentUser(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCurrentUserResponse 
 #' @export
@@ -160,7 +164,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' getUsersByStatement
 #' 
-#' Gets a UserPage of User objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of users 
+#' Gets a UserPage of User objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{email}
 #'   \item{id}
@@ -176,8 +180,10 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getUsersByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getUsersByStatementResponse 
 #' @export
@@ -220,7 +226,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' performUserAction
 #' 
-#' Performs actions on User objects that match the given Statement query. a set of users
+#' Performs actions on User objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -228,8 +234,10 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performUserAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performUserActionResponse 
 #' @export
@@ -280,8 +288,10 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateUsers(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateUsersResponse 
 #' @export

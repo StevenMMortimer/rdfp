@@ -8,9 +8,11 @@ dfp_getAvailabilityForecastById(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -18,7 +20,13 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getAvailabilityForecastByIdResponse
 }
 \description{
-Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. <p>Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. <p>Note: Beginning in v201502, this replaces the previous getForecastById method.
+Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
+Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
+Note: Beginning in v201502, this replaces the previous getForecastById method. Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
+Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
+Note: Beginning in v201502, this replaces the previous getForecastById method. @param lineItemId the ID of a LineItem to run the forecast on. @param forecastOptions options controlling the forecast Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
+Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
+Note: Beginning in v201502, this replaces the previous getForecastById method. @param lineItemId the ID of a LineItem to run the forecast on. @param forecastOptions options controlling the forecast
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}

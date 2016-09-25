@@ -8,9 +8,11 @@ dfp_getReconciliationLineItemReportsByStatement(request_data, as_df=TRUE, verbos
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -24,7 +26,7 @@ objects.
 \details{
 getReconciliationLineItemReportsByStatement
 
-Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects that satisfy the given Statement query. The following fields are supported for filtering:  
+Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects that satisfy the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{reconciliationReportId}

@@ -8,9 +8,11 @@ dfp_getAvailabilityForecast(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -20,45 +22,21 @@ a \code{data.frame} or \code{list} containing all the elements of a getAvailabil
 \description{
 Provides methods for estimating traffic (clicks/impressions) for line
 items. Forecasts can be provided for LineItem objects that exist in the
-system or which have not had an ID set yet. <h4>Test network behavior</h4>
+system or which have not had an ID set yet.
 }
 \details{
-Test networks are unable to provide forecasts that would be comparable
-to the production environment because forecasts require traffic history.
-For test networks, a consistent behavior can be expected for forecast
-requests, according to the following rules: <table> <tr> <th
-colspan="2">Inputs<br/>(LineItem Fields)</th> <th
-colspan="4">Outputs<br/>(Forecast Fields)</th> </tr> <tr>
-<th>LineItem#lineItemType lineItemType</th> <th>LineItem#unitsBought
-unitsBought</th> <th>Forecast#availableUnits availableUnits</th>
-<th>Forecast#forecastUnits forecastUnits (matchedUnits)</th>
-<th>Forecast#deliveredUnits deliveredUnits</th> <th>Exception</td> </tr>
-<tr> <td>Sponsorship</td> <td>13</td> <td>&ndash;&ndash;</td>
-<td>&ndash;&ndash;</td> <td>&ndash;&ndash;</td> <td>
-ForecastError.Reason#NO_FORECAST_YET NO_FORECAST_YET </td> </tr> <tr>
-<td>Sponsorship</td> <td>20</td> <td>&ndash;&ndash;</td>
-<td>&ndash;&ndash;</td> <td>&ndash;&ndash;</td> <td>
-ForecastError.Reason#SERVER_NOT_AVAILABLE SERVER_NOT_AVAILABLE </td> </tr>
-<tr> <td>Sponsorship</td> <td>50</td> <td>1,200,000</td> <td>6,000,000</td>
-<td>600,000<br/>For prospective: 0</td> <td>&ndash;&ndash;</td> </tr> <tr>
-<td>Sponsorship</td> <td>!= 20 and <br/> != 50</td> <td>1,200,000</td>
-<td>1,200,000</td> <td>600,000<br/>For prospective: 0</td>
-<td>&ndash;&ndash;</td> </tr> <tr> <td>Not Sponsorship</td> <td>&lt;=
-500,000</td> <td>3 * unitsBought / 2</td> <td>unitsBought * 6</td>
-<td>600,000<br/>For prospective: 0</td> <td>&ndash;&ndash;</td> </tr> <tr>
-<td>Not Sponsorship</td> <td>&gt; 500,000 and &lt;= 1,000,000</td>
-<td>unitsBought / 2</td> <td>unitsBought * 6</td> <td>600,000<br/>For
-prospective: 0</td> <td>&ndash;&ndash;</td> </tr> <tr> <td>Not
-Sponsorship</td> <td>&gt; 1,000,000 and &lt;= 1,500,000</td>
-<td>unitsBought / 2</td> <td>3 * unitsBought / 2</td> <td>600,000<br/>For
-prospective: 0</td> <td>&ndash;&ndash;</td> </tr> <tr> <td>Not
-Sponsorship</td> <td>&gt; 1,500,000</td> <td>unitsBought / 4</td> <td>3 *
-unitsBought / 2</td> <td>600,000<br/>For prospective: 0</td>
-<td>&ndash;&ndash;</td> </tr> </table>
+Test Network Behavior
+
+Test networks are unable to provide forecasts that would be comparable 
+to the production environment because forecasts require traffic history. 
+Visit the See Also section below to proceed to Google and review the details.'
 
 getAvailabilityForecast
 
-Gets the availability forecast for a ProspectiveLineItem. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. <p>Note: Beginning in v201502, this replaces the previous getForecast method.
+Gets the availability forecast for a ProspectiveLineItem. 
+An availability forecast reports the maximum number of available 
+units that the line item can book, and the total number of units 
+matching the line item's targeting.
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}

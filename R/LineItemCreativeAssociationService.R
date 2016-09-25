@@ -12,7 +12,7 @@
 #' 
 #' createLineItemCreativeAssociations
 #' 
-#' Creates new LineItemCreativeAssociation objects create in
+#' Creates new LineItemCreativeAssociation objects
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -20,8 +20,10 @@
 #' 
 #' @usage dfp_createLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemCreativeAssociationsResponse 
 #' @export
@@ -64,7 +66,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' 
 #' getLineItemCreativeAssociationsByStatement
 #' 
-#' Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of line item creative associations 
+#' Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{creativeId}
 #'   \item{manualCreativeRotationWeight}
@@ -80,8 +82,10 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' 
 #' @usage dfp_getLineItemCreativeAssociationsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemCreativeAssociationsByStatementResponse 
 #' @export
@@ -124,14 +128,15 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' 
 #' getPreviewUrl
 #' 
-#' Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. creative served to it
+#' Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
 #' @usage dfp_getPreviewUrl(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPreviewUrlResponse 
 #' @export
@@ -174,7 +179,7 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' performLineItemCreativeAssociationAction
 #' 
-#' Performs actions on LineItemCreativeAssociation objects that match the given Statement query. a set of line item creative associations
+#' Performs actions on LineItemCreativeAssociation objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -182,8 +187,10 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performLineItemCreativeAssociationAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemCreativeAssociationActionResponse 
 #' @export
@@ -226,7 +233,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' updateLineItemCreativeAssociations
 #' 
-#' Updates the specified LineItemCreativeAssociation objects update
+#' Updates the specified LineItemCreativeAssociation objects
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -234,8 +241,10 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' @usage dfp_updateLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemCreativeAssociationsResponse 
 #' @export

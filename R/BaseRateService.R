@@ -3,8 +3,8 @@
 #' Provides methods for managing BaseRate objects.
 #' To use this service,
 #' you need to have the new sales management solution enabled on your network.
-#' If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createBaseRates
@@ -17,8 +17,10 @@
 #' 
 #' @usage dfp_createBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createBaseRatesResponse 
 #' @export
@@ -61,7 +63,12 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getBaseRatesByStatement
 #' 
-#' Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr> <td>rateCardId</td> <td>BaseRate rateCardId</td> </tr> <tr> <td>id</td> <td>BaseRate id</td> </tr> <tr> <td>productTemplateId</td> <td>ProductTemplateBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productId. </tr> <td>productId</td> <td>ProductBaseRate id<br><b>Note:</b>&nbsp;Cannot be combined with productTemplateId. </tr> a set of base rates.
+#' Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. The following fields are supported for filtering: 
+#' \itemize{
+#'   \item{rateCardId}
+#'   \item{id}
+#'   \item{productTemplateId}
+#' }
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -69,8 +76,10 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getBaseRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getBaseRatesByStatementResponse 
 #' @export
@@ -113,7 +122,7 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' performBaseRateAction
 #' 
-#' Performs actions on BaseRate objects that satisfy the given Statement query. a set of base rates.
+#' Performs actions on BaseRate objects that satisfy the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -121,8 +130,10 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @usage dfp_performBaseRateAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performBaseRateActionResponse 
 #' @export
@@ -173,8 +184,10 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateBaseRatesResponse 
 #' @export

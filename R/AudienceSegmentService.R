@@ -13,8 +13,10 @@
 #' 
 #' @usage dfp_createAudienceSegments(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAudienceSegmentsResponse 
 #' @export
@@ -57,7 +59,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getAudienceSegmentsByStatement
 #' 
-#' Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given Statement query. The following fields are supported for filtering:  segments 
+#' Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -77,8 +79,10 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getAudienceSegmentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAudienceSegmentsByStatementResponse 
 #' @export
@@ -121,7 +125,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performAudienceSegmentAction
 #' 
-#' Performs the given AudienceSegmentAction on the set of segments identified by the given statement. segments
+#' Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -129,8 +133,10 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performAudienceSegmentAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAudienceSegmentActionResponse 
 #' @export
@@ -181,8 +187,10 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @usage dfp_updateAudienceSegments(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAudienceSegmentsResponse 
 #' @export

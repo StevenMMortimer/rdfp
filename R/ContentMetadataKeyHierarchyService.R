@@ -5,7 +5,12 @@
 #' 
 #' createContentMetadataKeyHierarchies
 #' 
-#' Creates new ContentMetadataKeyHierarchy objects. The following fields are required: <ul> <li>ContentMetadataKeyHierarchy id</li> <li>ContentMetadataKeyHierarchy name</li> <li>ContentMetadataKeyHierarchy hierarchyLevels</li> </ul>
+#' Creates new ContentMetadataKeyHierarchy objects. The following fields are required:
+#' \itemize{
+#'   \item{ContentMetadataKeyHierarchy id}
+#'   \item{ContentMetadataKeyHierarchy name}
+#'   \item{ContentMetadataKeyHierarchy hierarchyLevels}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -13,8 +18,10 @@
 #' 
 #' @usage dfp_createContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContentMetadataKeyHierarchiesResponse 
 #' @export
@@ -57,7 +64,7 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, ve
 #' 
 #' getContentMetadataKeyHierarchiesByStatement
 #' 
-#' Gets a ContentMetadataKeyHierarchyPage of ContentMetadataKeyHierarchy objects that satisfy the given Statement query. The following fields are supported for filtering:  content metadata key hierarchies backend error 
+#' Gets a ContentMetadataKeyHierarchyPage of ContentMetadataKeyHierarchy objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -70,8 +77,10 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, ve
 #' 
 #' @usage dfp_getContentMetadataKeyHierarchiesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentMetadataKeyHierarchiesByStatementResponse 
 #' @export
@@ -114,7 +123,7 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=
 #' 
 #' performContentMetadataKeyHierarchyAction
 #' 
-#' Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query. a set of hierarchies
+#' Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -122,8 +131,10 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=
 #' 
 #' @usage dfp_performContentMetadataKeyHierarchyAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performContentMetadataKeyHierarchyActionResponse 
 #' @export
@@ -174,8 +185,10 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRU
 #' 
 #' @usage dfp_updateContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContentMetadataKeyHierarchiesResponse 
 #' @export

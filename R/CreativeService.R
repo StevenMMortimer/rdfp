@@ -15,8 +15,10 @@
 #' 
 #' @usage dfp_createCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCreativesResponse 
 #' @export
@@ -59,7 +61,7 @@ dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getCreativesByStatement
 #' 
-#' Gets a CreativePage of Creative objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of creatives 
+#' Gets a CreativePage of Creative objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -75,8 +77,10 @@ dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getCreativesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativesByStatementResponse 
 #' @export
@@ -127,8 +131,10 @@ dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @usage dfp_updateCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCreativesResponse 
 #' @export

@@ -18,8 +18,10 @@
 #' 
 #' @usage dfp_createPlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPlacementsResponse 
 #' @export
@@ -62,7 +64,7 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getPlacementsByStatement
 #' 
-#' Gets a PlacementPage of Placement objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of placements 
+#' Gets a PlacementPage of Placement objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{description}
 #'   \item{id}
@@ -79,8 +81,10 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getPlacementsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPlacementsByStatementResponse 
 #' @export
@@ -123,7 +127,7 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' performPlacementAction
 #' 
-#' Performs actions on Placement objects that match the given Statement query. a set of placements
+#' Performs actions on Placement objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -131,8 +135,10 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @usage dfp_performPlacementAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performPlacementActionResponse 
 #' @export
@@ -183,8 +189,10 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updatePlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePlacementsResponse 
 #' @export

@@ -7,7 +7,8 @@
 dfp_getAllRoles(as_df=TRUE, verbose=FALSE)
 }
 \arguments{
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -15,7 +16,7 @@ dfp_getAllRoles(as_df=TRUE, verbose=FALSE)
 a \code{data.frame} or \code{list} containing all the elements of a getAllRolesResponse
 }
 \description{
-Returns the Role objects that are defined for the users of the network.
+Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#getAllRoles}{Google Documentation for getAllRoles}

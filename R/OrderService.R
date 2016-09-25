@@ -18,8 +18,10 @@
 #' 
 #' @usage dfp_createOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createOrdersResponse 
 #' @export
@@ -62,7 +64,7 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getOrdersByStatement
 #' 
-#' Gets an OrderPage of Order objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of orders 
+#' Gets an OrderPage of Order objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{advertiserId}
 #'   \item{endDateTime}
@@ -81,8 +83,10 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getOrdersByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getOrdersByStatementResponse 
 #' @export
@@ -125,7 +129,7 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' performOrderAction
 #' 
-#' Performs actions on Order objects that match the given Statement query. a set of orders
+#' Performs actions on Order objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -133,8 +137,10 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performOrderAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performOrderActionResponse 
 #' @export
@@ -185,8 +191,10 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateOrdersResponse 
 #' @export

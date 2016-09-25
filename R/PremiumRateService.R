@@ -3,8 +3,8 @@
 #' Provides methods for managing PremiumRate objects.
 #' To use this service,
 #' you need to have the new sales management solution enabled on your network.
-#' If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createPremiumRates
@@ -17,8 +17,10 @@
 #' 
 #' @usage dfp_createPremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPremiumRatesResponse 
 #' @export
@@ -61,7 +63,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getPremiumRatesByStatement
 #' 
-#' Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement query. The following fields are supported for filtering:  list of premium rates. 
+#' Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{rateCardId}
@@ -74,8 +76,10 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getPremiumRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPremiumRatesByStatementResponse 
 #' @export
@@ -126,8 +130,10 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @usage dfp_updatePremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePremiumRatesResponse 
 #' @export

@@ -12,8 +12,10 @@
 #' 
 #' @usage dfp_createCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCompaniesResponse 
 #' @export
@@ -56,7 +58,7 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getCompaniesByStatement
 #' 
-#' Gets a CompanyPage of Company objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of companies 
+#' Gets a CompanyPage of Company objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -70,8 +72,10 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getCompaniesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCompaniesByStatementResponse 
 #' @export
@@ -122,8 +126,10 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @usage dfp_updateCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCompaniesResponse 
 #' @export

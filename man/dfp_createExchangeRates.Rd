@@ -8,9 +8,11 @@ dfp_createExchangeRates(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -23,7 +25,11 @@ Provides methods for adding, updating and retrieving ExchangeRate objects.
 \details{
 createExchangeRates
 
-Creates new ExchangeRate objects. For each exchange rate, the following fields are required: <ul> <li>ExchangeRate currencyCode</li> <li>ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED</li> </ul>
+Creates new ExchangeRate objects. For each exchange rate, the following fields are required:
+\itemize{
+  \item{ExchangeRate currencyCode}
+  \item{ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED}
+}
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}

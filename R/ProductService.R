@@ -8,8 +8,8 @@
 #' restrict what salespeople can sell.
 #' To use this service, you need to
 #' have the new sales management solution enabled on your network. If you do
-#' not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
-#' for Publishers (DFP)</a>, you will not be able to use this service.
+#' not see a "Sales" tab in \href{https://www.google.com/dfp}{DoubleClick for
+#' Publishers (DFP)}, you will not be able to use this service.
 #' 
 #' createProducts
 #' 
@@ -21,8 +21,10 @@
 #' 
 #' @usage dfp_createProducts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductsResponse 
 #' @export
@@ -65,7 +67,7 @@ dfp_createProducts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getProductsByStatement
 #' 
-#' Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query.  When using sales management, the following fields are supported for filtering and/or sorting.  criteria over products 
+#' Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query.  When using sales management, the following fields are supported for filtering and/or sorting.  
 #' \itemize{
 #'   \item{rateCardId}
 #'   \item{status}
@@ -85,8 +87,10 @@ dfp_createProducts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getProductsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductsByStatementResponse 
 #' @export
@@ -137,8 +141,10 @@ dfp_getProductsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performProductAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductActionResponse 
 #' @export
@@ -189,8 +195,10 @@ dfp_performProductAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateProducts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductsResponse 
 #' @export

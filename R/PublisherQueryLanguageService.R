@@ -35,11 +35,11 @@
 #'   \item{Proposal_Terms_And_Conditions}
 #' }
 #'
-#' Visit the seealso link below to proceed to Google and view columns in each of these tables.
+#' Visit the See Also section below to proceed to Google and view columns in each of these tables.
 #' 
 #' select
 #' 
-#' Retrieves rows of data that satisfy the given Statement query from the system. specify what data needs to returned
+#' Retrieves rows of data that satisfy the given Statement query from the system.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -47,8 +47,10 @@
 #' 
 #' @usage dfp_select(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a selectResponse 
 #' @export

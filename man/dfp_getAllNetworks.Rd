@@ -7,7 +7,8 @@
 dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
 }
 \arguments{
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -23,7 +24,10 @@ network.
 \details{
 getAllNetworks
 
-Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>
+Returns the list of Network objects to which the current login has access.
+Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.Returns the list of Network objects to which the current login has access.
+Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access Returns the list of Network objects to which the current login has access.
+Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}

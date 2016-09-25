@@ -8,9 +8,11 @@ dfp_getSuggestedAdUnitsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -40,7 +42,7 @@ return an empty page.
 \details{
 getSuggestedAdUnitsByStatement
 
-Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter query. There is a system-enforced limit of 1000 on the number of suggested ad units that are suggested at any one time.  <strong>Note:</strong> After API version 201311, the id field will only be numerical. a set of suggested ad units 
+Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter query. There is a system-enforced limit of 1000 on the number of suggested ad units that are suggested at any one time.  <strong>Note:</strong> After API version 201311, the id field will only be numerical. 
 \itemize{
   \item{id}
   \item{numRequests}

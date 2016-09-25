@@ -3,13 +3,13 @@
 #' Provides methods to retrieve and perform actions on WorkflowRequest objects
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' enabled on your network. If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' getWorkflowRequestsByStatement
 #' 
-#' Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering:  Starting in V201405 a type filter must be used 
+#' Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{workflowRuleName}
@@ -26,8 +26,10 @@
 #' 
 #' @usage dfp_getWorkflowRequestsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getWorkflowRequestsByStatementResponse 
 #' @export
@@ -70,7 +72,7 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performWorkflowRequestAction
 #' 
-#' Perform actions on WorkflowRequest objects that match the given Statement query. requests
+#' Perform actions on WorkflowRequest objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -78,8 +80,10 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performWorkflowRequestAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performWorkflowRequestActionResponse 
 #' @export

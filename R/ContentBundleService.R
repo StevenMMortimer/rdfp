@@ -16,8 +16,10 @@
 #' 
 #' @usage dfp_createContentBundles(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContentBundlesResponse 
 #' @export
@@ -60,7 +62,7 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getContentBundlesByStatement
 #' 
-#' Gets a ContentBundlePage of ContentBundle objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of content bundles 
+#' Gets a ContentBundlePage of ContentBundle objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -73,8 +75,10 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getContentBundlesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentBundlesByStatementResponse 
 #' @export
@@ -117,7 +121,7 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' performContentBundleAction
 #' 
-#' Performs actions on ContentBundle objects that match the given Statement query. a set of content bundles
+#' Performs actions on ContentBundle objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -125,8 +129,10 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @usage dfp_performContentBundleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performContentBundleActionResponse 
 #' @export
@@ -177,8 +183,10 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @usage dfp_updateContentBundles(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContentBundlesResponse 
 #' @export

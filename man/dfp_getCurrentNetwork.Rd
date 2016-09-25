@@ -7,7 +7,8 @@
 dfp_getCurrentNetwork(as_df=TRUE, verbose=FALSE)
 }
 \arguments{
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -15,7 +16,7 @@ dfp_getCurrentNetwork(as_df=TRUE, verbose=FALSE)
 a \code{data.frame} or \code{list} containing all the elements of a getCurrentNetworkResponse
 }
 \description{
-Returns the current network for which requests are being made.
+Returns the current network for which requests are being made. Returns the current network for which requests are being made. @return the network for which the user is currently making the request Returns the current network for which requests are being made. @return the network for which the user is currently making the request
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}

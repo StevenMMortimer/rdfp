@@ -6,8 +6,8 @@
 #' Products allow inventory managers to control what salespeople can sell.
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' enabled on your network. If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createProductTemplates
@@ -20,8 +20,10 @@
 #' 
 #' @usage dfp_createProductTemplates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductTemplatesResponse 
 #' @export
@@ -64,7 +66,7 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getProductTemplatesByStatement
 #' 
-#' Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering:  filtering criteria over productTemplates 
+#' Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -83,8 +85,10 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getProductTemplatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductTemplatesByStatementResponse 
 #' @export
@@ -127,7 +131,7 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performProductTemplateAction
 #' 
-#' Performs action on ProductTemplate objects that satisfy the given Statement query. a set of product templates
+#' Performs action on ProductTemplate objects that satisfy the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -135,8 +139,10 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performProductTemplateAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductTemplateActionResponse 
 #' @export
@@ -187,8 +193,10 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @usage dfp_updateProductTemplates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductTemplatesResponse 
 #' @export

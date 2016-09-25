@@ -3,13 +3,21 @@
 #' Provides methods for creating, updating and retrieving ProposalLineItem
 #' objects.
 #' To use this service, you need to have the new sales management
-#' solution enabled on your network. If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' solution enabled on your network. If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createProposalLineItems
 #' 
-#' Creates new ProposalLineItem objects. For each proposal line item, the following fields are required: <ul> <li>ProposalLineItem proposalId</li> <li>ProposalLineItem rateCardId</li> <li>ProposalLineItem productId</li> <li>ProposalLineItem name</li> <li>ProposalLineItem startDateTime</li> <li>ProposalLineItem endDateTime</li> </ul>
+#' Creates new ProposalLineItem objects. For each proposal line item, the following fields are required:
+#' \itemize{
+#'   \item{ProposalLineItem proposalId}
+#'   \item{ProposalLineItem rateCardId}
+#'   \item{ProposalLineItem productId}
+#'   \item{ProposalLineItem name}
+#'   \item{ProposalLineItem startDateTime}
+#'   \item{ProposalLineItem endDateTime}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -17,8 +25,10 @@
 #' 
 #' @usage dfp_createProposalLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProposalLineItemsResponse 
 #' @export
@@ -61,7 +71,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' getProposalLineItemsByStatement
 #' 
-#' Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of proposal line items 
+#' Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -82,8 +92,10 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @usage dfp_getProposalLineItemsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProposalLineItemsByStatementResponse 
 #' @export
@@ -126,7 +138,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' performProposalLineItemAction
 #' 
-#' Performs actions on ProposalLineItem objects that match the given Statement query. proposal line items
+#' Performs actions on ProposalLineItem objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -134,8 +146,10 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @usage dfp_performProposalLineItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProposalLineItemActionResponse 
 #' @export
@@ -186,8 +200,10 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' @usage dfp_updateProposalLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProposalLineItemsResponse 
 #' @export

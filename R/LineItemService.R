@@ -1,13 +1,15 @@
 #' LineItemService
 #' 
-#' Provides methods for creating, updating and retrieving LineItem objects.
+#' #' Provides methods for creating, updating and retrieving LineItem objects.
 #'
-#' Line items define the campaign. For example, line items define: <ul>
-#' <li>a budget <li>a span of time to run <li>ad unit targeting </ul>
-#' In
-#' short, line items connect all of the elements of an ad campaign.
-#' Line
-#' items and creatives can be associated with each other through
+#' Line items define the campaign. For example, line items define:
+#' \itemize{
+#'   \item{a budget}
+#'   \item{a span of time to run}
+#'   \item{ad unit targeting}
+#' }
+#' In short, line items connect all of the elements of an ad campaign.
+#' Line items and creatives can be associated with each other through
 #' LineItemCreativeAssociation objects. An ad unit will host a creative
 #' through both this association and the LineItem#targeting to it.
 #' 
@@ -21,8 +23,10 @@
 #' 
 #' @usage dfp_createLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse 
 #' @export
@@ -65,7 +69,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getLineItemsByStatement
 #' 
-#' Gets a LineItemPage of LineItem objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of line items. 
+#' Gets a LineItemPage of LineItem objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{CostType}
 #'   \item{CreationDateTime}
@@ -91,8 +95,10 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getLineItemsByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemsByStatementResponse 
 #' @export
@@ -135,7 +141,7 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' 
 #' performLineItemAction
 #' 
-#' Performs actions on LineItem objects that match the given Statement query. a set of line items
+#' Performs actions on LineItem objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -143,8 +149,10 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' 
 #' @usage dfp_performLineItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemActionResponse 
 #' @export
@@ -195,8 +203,10 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemsResponse 
 #' @export

@@ -12,8 +12,10 @@
 #' 
 #' @usage dfp_createLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLabelsResponse 
 #' @export
@@ -56,7 +58,7 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getLabelsByStatement
 #' 
-#' Gets a LabelPage of Label objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of labels. 
+#' Gets a LabelPage of Label objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{type}
@@ -71,8 +73,10 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getLabelsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLabelsByStatementResponse 
 #' @export
@@ -115,7 +119,7 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' performLabelAction
 #' 
-#' Performs actions on Label objects that match the given Statement query. a set of labels
+#' Performs actions on Label objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -123,8 +127,10 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performLabelAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLabelActionResponse 
 #' @export
@@ -175,8 +181,10 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLabelsResponse 
 #' @export

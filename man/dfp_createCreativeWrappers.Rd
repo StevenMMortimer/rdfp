@@ -8,9 +8,11 @@ dfp_createCreativeWrappers(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -28,7 +30,12 @@ AdUnit#appliedLabels.
 \details{
 createCreativeWrappers
 
-Creates a new CreativeWrapper objects. The following fields are required: <ul> <li>CreativeWrapper labelId</li> <li>CreativeWrapper ordering</li> <li>CreativeWrapper header or CreativeWrapper footer</li> </ul>
+Creates a new CreativeWrapper objects. The following fields are required:
+\itemize{
+  \item{CreativeWrapper labelId}
+  \item{CreativeWrapper ordering}
+  \item{CreativeWrapper header or CreativeWrapper footer}
+}
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}

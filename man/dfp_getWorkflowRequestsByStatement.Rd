@@ -8,9 +8,11 @@ dfp_getWorkflowRequestsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -22,13 +24,13 @@ Provides methods to retrieve and perform actions on WorkflowRequest objects
 }
 \details{
 To use this service, you need to have the new sales management solution
-enabled on your network. If you do not see a "Sales" tab in <a
-href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+enabled on your network. If you do not see a "Sales" tab in
+\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 will not be able to use this service.
 
 getWorkflowRequestsByStatement
 
-Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering:  Starting in V201405 a type filter must be used 
+Gets a list of WorkflowRequest objects that satisfy the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{workflowRuleName}

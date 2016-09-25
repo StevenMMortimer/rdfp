@@ -3,13 +3,18 @@
 #' Provides methods for creating, updating and retrieving Package objects.
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' enabled on your network. If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createPackages
 #' 
-#' Creates new Package objects. For each package, the following fields are required: <ul> <li>Package proposalId</li> <li>Package productPackageId</li> <li>Package name</li> </ul>
+#' Creates new Package objects. For each package, the following fields are required:
+#' \itemize{
+#'   \item{Package proposalId}
+#'   \item{Package productPackageId}
+#'   \item{Package name}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -17,8 +22,10 @@
 #' 
 #' @usage dfp_createPackages(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPackagesResponse 
 #' @export
@@ -61,7 +68,7 @@ dfp_createPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getPackagesByStatement
 #' 
-#' Gets a PackagePage of Package objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of packages 
+#' Gets a PackagePage of Package objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -77,8 +84,10 @@ dfp_createPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getPackagesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPackagesByStatementResponse 
 #' @export
@@ -129,8 +138,10 @@ dfp_getPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_performPackageAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performPackageActionResponse 
 #' @export
@@ -181,8 +192,10 @@ dfp_performPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updatePackages(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePackagesResponse 
 #' @export

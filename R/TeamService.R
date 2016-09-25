@@ -7,7 +7,10 @@
 #' 
 #' createTeams
 #' 
-#' Creates new Team objects. The following fields are required: <ul> <li>Team name</li> </ul>
+#' Creates new Team objects. The following fields are required:
+#' \itemize{
+#'   \item{Team name}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -15,8 +18,10 @@
 #' 
 #' @usage dfp_createTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createTeamsResponse 
 #' @export
@@ -59,7 +64,7 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getTeamsByStatement
 #' 
-#' Gets a TeamPage of Team objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of teams. 
+#' Gets a TeamPage of Team objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -72,8 +77,10 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getTeamsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getTeamsByStatementResponse 
 #' @export
@@ -124,8 +131,10 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateTeamsResponse 
 #' @export

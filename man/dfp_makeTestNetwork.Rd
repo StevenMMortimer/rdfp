@@ -7,7 +7,8 @@
 dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
 }
 \arguments{
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -15,7 +16,34 @@ dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
 a \code{data.frame} or \code{list} containing all the elements of a makeTestNetworkResponse
 }
 \description{
-Creates a new blank network for testing purposes using the current login. <p> Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI. <p> Test networks are limited in the following ways: <ul> <li>Test networks cannot serve ads.</li> <li>Because test networks cannot serve ads, reports will always come back without data.</li> <li>Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.</li> <li>Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager. </li> <li>Test networks are limited to 10,000 objects per entity type.</li> </ul> </p>
+Creates a new blank network for testing purposes using the current login.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Test networks are limited in the following ways:
+\itemize{
+  \item{Test networks cannot serve ads.}
+  \item{Because test networks cannot serve ads, reports will always come back without data.}
+  \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are limited to 10,000 objects per entity type.}
+} Creates a new blank network for testing purposes using the current login.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Test networks are limited in the following ways:
+\itemize{
+  \item{Test networks cannot serve ads.}
+  \item{Because test networks cannot serve ads, reports will always come back without data.}
+  \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are limited to 10,000 objects per entity type.}
+} Creates a new blank network for testing purposes using the current login.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Test networks are limited in the following ways:
+\itemize{
+  \item{Test networks cannot serve ads.}
+  \item{Because test networks cannot serve ads, reports will always come back without data.}
+  \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are limited to 10,000 objects per entity type.}
+}
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}

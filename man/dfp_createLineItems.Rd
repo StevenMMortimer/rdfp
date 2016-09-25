@@ -8,9 +8,11 @@ dfp_createLineItems(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -18,15 +20,17 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse
 }
 \description{
-Provides methods for creating, updating and retrieving LineItem objects.
+#' Provides methods for creating, updating and retrieving LineItem objects.
 }
 \details{
-Line items define the campaign. For example, line items define: <ul>
-<li>a budget <li>a span of time to run <li>ad unit targeting </ul>
-In
-short, line items connect all of the elements of an ad campaign.
-Line
-items and creatives can be associated with each other through
+Line items define the campaign. For example, line items define:
+\itemize{
+  \item{a budget}
+  \item{a span of time to run}
+  \item{ad unit targeting}
+}
+In short, line items connect all of the elements of an ad campaign.
+Line items and creatives can be associated with each other through
 LineItemCreativeAssociation objects. An ad unit will host a creative
 through both this association and the LineItem#targeting to it.
 

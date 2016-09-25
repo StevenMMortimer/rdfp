@@ -8,9 +8,11 @@ dfp_select(request_data, as_df=FALSE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -54,11 +56,11 @@ The following tables are supported:
   \item{Proposal_Terms_And_Conditions}
 }
 
-Visit the seealso link below to proceed to Google and view columns in each of these tables.
+Visit the See Also section below to proceed to Google and view columns in each of these tables.
 
 select
 
-Retrieves rows of data that satisfy the given Statement query from the system. specify what data needs to returned
+Retrieves rows of data that satisfy the given Statement query from the system.
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PublisherQueryLanguageService#select}{Google Documentation for select}

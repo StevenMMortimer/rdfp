@@ -8,9 +8,11 @@ dfp_getMarketplaceCommentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -18,7 +20,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getMarketplaceCommentsByStatementResponse
 }
 \description{
-Gets a MarketplaceCommentPage of MarketplaceComment objects that satisfy the given Statement query. This method only returns comments already sent to Marketplace, local draft ProposalMarketplaceInfo marketplaceComment are not included. The following fields are supported for filtering:  The query must specify the proposalId, and only supports a subset of PQL syntax:<br> [WHERE <condition> \{AND <condition> ...\}]<br>  <condition><br> &nbsp;&nbsp;&nbsp;&nbsp; := <property> = <value><br> <condition> := <property> IN <list><br>  a set of marketplace comments 
+Gets a MarketplaceCommentPage of MarketplaceComment objects that satisfy the given Statement query. This method only returns comments already sent to Marketplace, local draft ProposalMarketplaceInfo marketplaceComment are not included. The following fields are supported for filtering: 
 \itemize{
   \item{proposalId}
 }

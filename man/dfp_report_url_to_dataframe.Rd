@@ -7,10 +7,11 @@
 dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 }
 \arguments{
-\item{report_url}{a URL character string returned from the function \link{dfp_getReportDownloadURL}}
+\item{report_url}{a URL character string returned from the 
+function \link{dfp_getReportDownloadURL}}
 
-\item{exportFormat}{a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
-This is used to determine how to parse the results.}
+\item{exportFormat}{a character string naming what type of exportFormat was 
+provided to \link{dfp_getReportDownloadURL}. This is used to determine how to parse the results.}
 }
 \value{
 a \code{data.frame} of report results from the specified URL

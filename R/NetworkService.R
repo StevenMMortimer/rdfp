@@ -7,14 +7,18 @@
 #' 
 #' getAllNetworks
 #' 
-#' Returns the list of Network objects to which the current login has access. <p> Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it. </p>
+#' Returns the list of Network objects to which the current login has access.
+#' Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.Returns the list of Network objects to which the current login has access.
+#' Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@@return the networks to which the current login has access Returns the list of Network objects to which the current login has access.
+#' Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@@return the networks to which the current login has access
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
 #' @usage dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAllNetworksResponse 
 #' @export
@@ -57,14 +61,15 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' getCurrentNetwork
 #' 
-#' Returns the current network for which requests are being made.
+#' Returns the current network for which requests are being made. Returns the current network for which requests are being made. @@return the network for which the user is currently making the request Returns the current network for which requests are being made. @@return the network for which the user is currently making the request
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
 #' @usage dfp_getCurrentNetwork(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCurrentNetworkResponse 
 #' @export
@@ -107,14 +112,42 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' makeTestNetwork
 #' 
-#' Creates a new blank network for testing purposes using the current login. <p> Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI. <p> Test networks are limited in the following ways: <ul> <li>Test networks cannot serve ads.</li> <li>Because test networks cannot serve ads, reports will always come back without data.</li> <li>Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.</li> <li>Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager. </li> <li>Test networks are limited to 10,000 objects per entity type.</li> </ul> </p>
+#' Creates a new blank network for testing purposes using the current login.
+#' Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+#' Test networks are limited in the following ways:
+#' \itemize{
+#'   \item{Test networks cannot serve ads.}
+#'   \item{Because test networks cannot serve ads, reports will always come back without data.}
+#'   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+#'   \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+#'   \item{Test networks are limited to 10,000 objects per entity type.}
+#' } Creates a new blank network for testing purposes using the current login.
+#' Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+#' Test networks are limited in the following ways:
+#' \itemize{
+#'   \item{Test networks cannot serve ads.}
+#'   \item{Because test networks cannot serve ads, reports will always come back without data.}
+#'   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+#'   \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+#'   \item{Test networks are limited to 10,000 objects per entity type.}
+#' } Creates a new blank network for testing purposes using the current login.
+#' Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+#' Test networks are limited in the following ways:
+#' \itemize{
+#'   \item{Test networks cannot serve ads.}
+#'   \item{Because test networks cannot serve ads, reports will always come back without data.}
+#'   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
+#'   \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+#'   \item{Test networks are limited to 10,000 objects per entity type.}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
 #' @usage dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a makeTestNetworkResponse 
 #' @export
@@ -165,8 +198,10 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateNetwork(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateNetworkResponse 
 #' @export

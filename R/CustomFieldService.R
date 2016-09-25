@@ -4,7 +4,11 @@
 #' 
 #' createCustomFieldOptions
 #' 
-#' Creates new CustomFieldOption objects. The following fields are required: <ul> <li>CustomFieldOption displayName</li> <li>CustomFieldOption customFieldId</li> </ul>
+#' Creates new CustomFieldOption objects. The following fields are required:
+#' \itemize{
+#'   \item{CustomFieldOption displayName}
+#'   \item{CustomFieldOption customFieldId}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -12,8 +16,10 @@
 #' 
 #' @usage dfp_createCustomFieldOptions(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldOptionsResponse 
 #' @export
@@ -56,7 +62,13 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' createCustomFields
 #' 
-#' Creates new CustomField objects. The following fields are required: <ul> <li>CustomField name</li> <li>CustomField entityType</li> <li>CustomField dataType</li> <li>CustomField visibility</li> </ul>
+#' Creates new CustomField objects. The following fields are required:
+#' \itemize{
+#'   \item{CustomField name}
+#'   \item{CustomField entityType}
+#'   \item{CustomField dataType}
+#'   \item{CustomField visibility}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -64,8 +76,10 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @usage dfp_createCustomFields(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldsResponse 
 #' @export
@@ -116,8 +130,10 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getCustomFieldOption(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldOptionResponse 
 #' @export
@@ -160,7 +176,7 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getCustomFieldsByStatement
 #' 
-#' Gets a CustomFieldPage of CustomField objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of custom fields. 
+#' Gets a CustomFieldPage of CustomField objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{entityType}
@@ -175,8 +191,10 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getCustomFieldsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldsByStatementResponse 
 #' @export
@@ -219,7 +237,7 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' performCustomFieldAction
 #' 
-#' Performs actions on CustomField objects that match the given Statement query. a set of custom fields
+#' Performs actions on CustomField objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -227,8 +245,10 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @usage dfp_performCustomFieldAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performCustomFieldActionResponse 
 #' @export
@@ -279,8 +299,10 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @usage dfp_updateCustomFieldOptions(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomFieldOptionsResponse 
 #' @export
@@ -331,8 +353,10 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @usage dfp_updateCustomFields(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomFieldsResponse 
 #' @export

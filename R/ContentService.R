@@ -5,19 +5,24 @@
 #' or has assigned metadata. Categories and metadata for Content are stored in
 #' DFP as CustomCriteria.
 #' For example, to find all Content that is
-#' "genre=comedy", you would: <ul> <li>Retrieve the custom targeting key
+#' "genre=comedy", you would:
+#' \itemize{
+#'   \item{Retrieve the custom targeting key
 #' corresponding to "genre" using
-#' CustomTargetingService#getCustomTargetingKeysByStatement</li> <li>Using the
+#' CustomTargetingService#getCustomTargetingKeysByStatement}
+#'   \item{Using the
 #' CustomTargetingService#getCustomTargetingValuesByStatement method and a
 #' filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
-#' retrieve the ID for the "comedy" custom targeting value.</li> <li>Call
+#' retrieve the ID for the "comedy" custom targeting value.}
+#'   \item{Call
 #' #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
 #' status = 'ACTIVE'" and the ID of the custom targeting value from step
-#' 2.</li> </ul>
+#' 2.}
+#' } 
 #' 
 #' getContentByStatement
 #' 
-#' Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering:  filter a set of content 
+#' Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{status}
@@ -31,8 +36,10 @@
 #' 
 #' @usage dfp_getContentByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementResponse 
 #' @export
@@ -75,7 +82,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getContentByStatementAndCustomTargetingValue
 #' 
-#' Gets a ContentPage of Content objects that satisfy the given Statement query. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  filter a set of content 
+#' Gets a ContentPage of Content objects that satisfy the given Statement query. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{status}
@@ -88,7 +95,8 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
 #' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse 
 #' @export

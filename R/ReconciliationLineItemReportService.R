@@ -5,7 +5,7 @@
 #' 
 #' getReconciliationLineItemReportsByStatement
 #' 
-#' Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects that satisfy the given Statement query. The following fields are supported for filtering:  
+#' Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{reconciliationReportId}
@@ -21,8 +21,10 @@
 #' 
 #' @usage dfp_getReconciliationLineItemReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationLineItemReportsByStatementResponse 
 #' @export
@@ -65,7 +67,7 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' 
 #' updateReconciliationLineItemReports
 #' 
-#' Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport. ReconciliationLineItemReport reconciliation line item reports to update
+#' Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -73,8 +75,10 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' 
 #' @usage dfp_updateReconciliationLineItemReports(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationLineItemReportsResponse 
 #' @export

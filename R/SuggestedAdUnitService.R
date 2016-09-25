@@ -21,7 +21,7 @@
 #' 
 #' getSuggestedAdUnitsByStatement
 #' 
-#' Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter query. There is a system-enforced limit of 1000 on the number of suggested ad units that are suggested at any one time.  <strong>Note:</strong> After API version 201311, the id field will only be numerical. a set of suggested ad units 
+#' Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter query. There is a system-enforced limit of 1000 on the number of suggested ad units that are suggested at any one time.  <strong>Note:</strong> After API version 201311, the id field will only be numerical. 
 #' \itemize{
 #'   \item{id}
 #'   \item{numRequests}
@@ -33,8 +33,10 @@
 #' 
 #' @usage dfp_getSuggestedAdUnitsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getSuggestedAdUnitsByStatementResponse 
 #' @export
@@ -77,7 +79,7 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performSuggestedAdUnitAction
 #' 
-#' Performs actions on SuggestedAdUnit objects that match the given Statement query. The following fields are supported for filtering:  a set of suggested ad units 
+#' Performs actions on SuggestedAdUnit objects that match the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{numRequests}
@@ -89,8 +91,10 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performSuggestedAdUnitAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performSuggestedAdUnitActionResponse 
 #' @export

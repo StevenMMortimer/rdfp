@@ -6,8 +6,8 @@
 #' a ProductPackage.
 #' To use this service, you need to have the new sales
 #' management solution enabled on your network. If you do not see a "Sales"
-#' tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
-#' (DFP)</a>, you will not be able to use this service.
+#' tab in \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)},
+#' you will not be able to use this service.
 #' 
 #' createProductPackageItems
 #' 
@@ -19,8 +19,10 @@
 #' 
 #' @usage dfp_createProductPackageItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductPackageItemsResponse 
 #' @export
@@ -63,7 +65,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' getProductPackageItemsByStatement
 #' 
-#' Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering:  filtering criteria over product packages 
+#' Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the filtering criteria specified by given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{productPackageId}
@@ -79,8 +81,10 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @usage dfp_getProductPackageItemsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductPackageItemsByStatementResponse 
 #' @export
@@ -123,7 +127,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' performProductPackageItemAction
 #' 
-#' Performs actions on ProductPackageItem objects that satisfy the given Statement query. a set of product package items
+#' Performs actions on ProductPackageItem objects that satisfy the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -131,8 +135,10 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @usage dfp_performProductPackageItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductPackageItemActionResponse 
 #' @export
@@ -183,8 +189,10 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @usage dfp_updateProductPackageItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductPackageItemsResponse 
 #' @export

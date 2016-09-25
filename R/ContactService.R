@@ -12,8 +12,10 @@
 #' 
 #' @usage dfp_createContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContactsResponse 
 #' @export
@@ -56,7 +58,7 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getContactsByStatement
 #' 
-#' Gets a ContactPage of Contact objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of contacts 
+#' Gets a ContactPage of Contact objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{name}
 #'   \item{email}
@@ -76,8 +78,10 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getContactsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContactsByStatementResponse 
 #' @export
@@ -128,8 +132,10 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContactsResponse 
 #' @export

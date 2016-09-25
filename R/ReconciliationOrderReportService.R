@@ -5,7 +5,7 @@
 #' 
 #' getReconciliationOrderReportsByStatement
 #' 
-#' Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that satisfy the given Statement query. The following fields are supported for filtering:  The reconciliationReportId field is required and can only be combined with an AND to other conditions. Furthermore, the results may only belong to one ReconciliationReport. a set of reconciliation order reports. 
+#' Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{reconciliationReportId}
 #'   \item{id}
@@ -22,8 +22,10 @@
 #' 
 #' @usage dfp_getReconciliationOrderReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationOrderReportsByStatementResponse 
 #' @export
@@ -66,7 +68,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' 
 #' performReconciliationOrderReportAction
 #' 
-#' Performs actions on the ReconciliationOrderReport objects that match the given Statement query. The following fields are supported for filtering:  The following statement patterns are supported:  reconciliationReportId = :reconciliationReportId AND orderId = :orderId reconciliationReportId = :reconciliationReportId AND proposalId = :proposalId reconciliationReportId = :reconciliationReportId AND (orderId IN (...) OR proposalId IN (...))  The IN clause could be expanded to multiple OR expressions like (orderId = :orderId OR orderId = :orderId OR ...) Only orders to which the API user has access will be included. one reconciliation report. 
+#' Performs actions on the ReconciliationOrderReport objects that match the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{orderId}
 #'   \item{proposalId}
@@ -79,8 +81,10 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' 
 #' @usage dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performReconciliationOrderReportActionResponse 
 #' @export
@@ -123,7 +127,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' 
 #' updateReconciliationOrderReports
 #' 
-#' Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport. ReconciliationOrderReport reconciliation order reports to update
+#' Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -131,8 +135,10 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' 
 #' @usage dfp_updateReconciliationOrderReports(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationOrderReportsResponse 
 #' @export

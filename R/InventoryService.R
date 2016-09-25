@@ -19,8 +19,10 @@
 #' 
 #' @usage dfp_createAdUnits(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAdUnitsResponse 
 #' @export
@@ -63,7 +65,7 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getAdUnitSizesByStatement
 #' 
-#' Gets a set of AdUnitSize objects that satisfy the given Statement query. The following fields are supported for filtering:  An exception will be thrown for queries with unsupported fields. Paging is not supported, as aren't the LIMIT and OFFSET PQL keywords. Only "=" operator is supported. a set of ad unit sizes 
+#' Gets a set of AdUnitSize objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{targetPlatform}
 #' }
@@ -74,8 +76,10 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getAdUnitSizesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitSizesByStatementResponse 
 #' @export
@@ -118,7 +122,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' getAdUnitsByStatement
 #' 
-#' Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of ad units 
+#' Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{adUnitCode}
 #'   \item{id}
@@ -134,8 +138,10 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @usage dfp_getAdUnitsByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitsByStatementResponse 
 #' @export
@@ -178,7 +184,7 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' 
 #' performAdUnitAction
 #' 
-#' Performs actions on AdUnit objects that match the given Statement query. a set of ad units
+#' Performs actions on AdUnit objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -186,8 +192,10 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' 
 #' @usage dfp_performAdUnitAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAdUnitActionResponse 
 #' @export
@@ -238,8 +246,10 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateAdUnits(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAdUnitsResponse 
 #' @export

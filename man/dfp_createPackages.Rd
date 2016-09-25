@@ -8,9 +8,11 @@ dfp_createPackages(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -22,13 +24,18 @@ Provides methods for creating, updating and retrieving Package objects.
 }
 \details{
 To use this service, you need to have the new sales management solution
-enabled on your network. If you do not see a "Sales" tab in <a
-href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+enabled on your network. If you do not see a "Sales" tab in
+\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 will not be able to use this service.
 
 createPackages
 
-Creates new Package objects. For each package, the following fields are required: <ul> <li>Package proposalId</li> <li>Package productPackageId</li> <li>Package name</li> </ul>
+Creates new Package objects. For each package, the following fields are required:
+\itemize{
+  \item{Package proposalId}
+  \item{Package productPackageId}
+  \item{Package name}
+}
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PackageService#createPackages}{Google Documentation for createPackages}

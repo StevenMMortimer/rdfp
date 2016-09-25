@@ -3,13 +3,16 @@
 #' Provides methods for adding, updating and retrieving Proposal objects.
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in <a
-#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
+#' enabled on your network. If you do not see a "Sales" tab in
+#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
 #' createProposals
 #' 
-#' Creates new Proposal objects. For each proposal, the following fields are required: <ul> <li>Proposal name</li> </ul>
+#' Creates new Proposal objects. For each proposal, the following fields are required:
+#' \itemize{
+#'   \item{Proposal name}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -17,8 +20,10 @@
 #' 
 #' @usage dfp_createProposals(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProposalsResponse 
 #' @export
@@ -61,7 +66,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getMarketplaceCommentsByStatement
 #' 
-#' Gets a MarketplaceCommentPage of MarketplaceComment objects that satisfy the given Statement query. This method only returns comments already sent to Marketplace, local draft ProposalMarketplaceInfo marketplaceComment are not included. The following fields are supported for filtering:  The query must specify the proposalId, and only supports a subset of PQL syntax:<br> [WHERE <condition> \{AND <condition> ...\}]<br>  <condition><br> &nbsp;&nbsp;&nbsp;&nbsp; := <property> = <value><br> <condition> := <property> IN <list><br>  a set of marketplace comments 
+#' Gets a MarketplaceCommentPage of MarketplaceComment objects that satisfy the given Statement query. This method only returns comments already sent to Marketplace, local draft ProposalMarketplaceInfo marketplaceComment are not included. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{proposalId}
 #' }
@@ -72,8 +77,10 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getMarketplaceCommentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getMarketplaceCommentsByStatementResponse 
 #' @export
@@ -116,7 +123,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' getProposalsByStatement
 #' 
-#' Gets a ProposalPage of Proposal objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of proposals 
+#' Gets a ProposalPage of Proposal objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{dfpOrderId}
@@ -138,8 +145,10 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @usage dfp_getProposalsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProposalsByStatementResponse 
 #' @export
@@ -182,7 +191,12 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' performProposalAction
 #' 
-#' Performs actions on Proposal objects that match the given Statement query. The following fields are also required when submitting proposals for approval: <ul> <li>Proposal advertiser</li> <li>Proposal primarySalesperson</li> <li>Proposal primaryTraffickerId</li> </ul>
+#' Performs actions on Proposal objects that match the given Statement query. The following fields are also required when submitting proposals for approval:
+#' \itemize{
+#'   \item{Proposal advertiser}
+#'   \item{Proposal primarySalesperson}
+#'   \item{Proposal primaryTraffickerId}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -190,8 +204,10 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @usage dfp_performProposalAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProposalActionResponse 
 #' @export
@@ -242,8 +258,10 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateProposals(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProposalsResponse 
 #' @export

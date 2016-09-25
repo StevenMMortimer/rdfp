@@ -217,9 +217,10 @@ make_request_body <- function(service, root_name, data=NULL){
 #' @usage dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 #' @importFrom curl curl_download
 #' @importFrom utils read.table
-#' @param report_url a URL character string returned from the function \link{dfp_getReportDownloadURL}
-#' @param exportFormat a character string naming what type of exportFormat was provided to \link{dfp_getReportDownloadURL}. 
-#' This is used to determine how to parse the results.
+#' @param report_url a URL character string returned from the 
+#' function \link{dfp_getReportDownloadURL}
+#' @param exportFormat a character string naming what type of exportFormat was 
+#' provided to \link{dfp_getReportDownloadURL}. This is used to determine how to parse the results.
 #' @return a \code{data.frame} of report results from the specified URL
 #' 
 #' @export
@@ -260,7 +261,8 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
 #'                                max_tries=10, 
 #'                                verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
+#' to be formatted for a SOAP 
+#' request (XML format, but passed as character string)
 #' @param check_interval a numeric specifying seconds to wait between report 
 #' status requests to check if complete
 #' @param max_tries a numeric specifying the maximum number of times to check 

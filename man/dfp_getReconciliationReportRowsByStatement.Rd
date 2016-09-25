@@ -8,9 +8,11 @@ dfp_getReconciliationReportRowsByStatement(request_data, as_df=TRUE, verbose=FAL
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -24,7 +26,7 @@ objects.
 \details{
 getReconciliationReportRowsByStatement
 
-Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satisfy the given Statement query. The following fields are supported for filtering:  The reconciliationReportId field is required and can only be combined with an AND to other conditions. Furthermore, the results may only belong to one ReconciliationReport. filter a set of reconciliation report rows 
+Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satisfy the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{reconciliationReportId}
   \item{advertiserId}

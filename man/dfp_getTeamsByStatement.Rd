@@ -8,9 +8,11 @@ dfp_getTeamsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -18,7 +20,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a getTeamsByStatementResponse
 }
 \description{
-Gets a TeamPage of Team objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of teams. 
+Gets a TeamPage of Team objects that satisfy the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{name}

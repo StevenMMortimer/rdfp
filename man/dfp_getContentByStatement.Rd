@@ -8,9 +8,11 @@ dfp_getContentByStatement(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -23,20 +25,25 @@ LineItems. You can query for content that belongs to a particular category
 or has assigned metadata. Categories and metadata for Content are stored in
 DFP as CustomCriteria.
 For example, to find all Content that is
-"genre=comedy", you would: <ul> <li>Retrieve the custom targeting key
+"genre=comedy", you would:
+\itemize{
+  \item{Retrieve the custom targeting key
 corresponding to "genre" using
-CustomTargetingService#getCustomTargetingKeysByStatement</li> <li>Using the
+CustomTargetingService#getCustomTargetingKeysByStatement}
+  \item{Using the
 CustomTargetingService#getCustomTargetingValuesByStatement method and a
 filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
-retrieve the ID for the "comedy" custom targeting value.</li> <li>Call
+retrieve the ID for the "comedy" custom targeting value.}
+  \item{Call
 #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
 status = 'ACTIVE'" and the ID of the custom targeting value from step
-2.</li> </ul>
+2.}
+}
 }
 \details{
 getContentByStatement
 
-Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering:  filter a set of content 
+Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{status}

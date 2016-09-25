@@ -8,7 +8,14 @@
 #' 
 #' createLiveStreamEvents
 #' 
-#' Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>
+#' Creates new LiveStreamEvent objects. The following fields are required:
+#' \itemize{
+#'   \item{LiveStreamEvent name}
+#'   \item{LiveStreamEvent startDateTime}
+#'   \item{LiveStreamEvent endDateTime}
+#'   \item{LiveStreamEvent contentUrls}
+#'   \item{LiveStreamEvent adTags}
+#' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -16,8 +23,10 @@
 #' 
 #' @usage dfp_createLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLiveStreamEventsResponse 
 #' @export
@@ -60,7 +69,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getLiveStreamEventsByStatement
 #' 
-#' Gets a LiveStreamEventPage of LiveStreamEvent objects that satisfy the given Statement query. The following fields are supported for filtering:  list of live stream events 
+#' Gets a LiveStreamEventPage of LiveStreamEvent objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #' }
@@ -71,8 +80,10 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getLiveStreamEventsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLiveStreamEventsByStatementResponse 
 #' @export
@@ -115,7 +126,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performLiveStreamEventAction
 #' 
-#' Performs actions on LiveStreamEvent objects that match the given Statement query. a set of live stream events
+#' Performs actions on LiveStreamEvent objects that match the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -123,8 +134,10 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performLiveStreamEventAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLiveStreamEventActionResponse 
 #' @export
@@ -167,14 +180,16 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' registerSessionsForMonitoring
 #' 
-#' Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the DFP UI. <p>A session ID is a unique identifier of a single user watching a live stream event.
+#' Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the DFP UI.
+#' A session ID is a unique identifier of a single user watching a live stream event.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
 #' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 #' 
 #' @usage dfp_registerSessionsForMonitoring(as_df=TRUE, verbose=FALSE)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a registerSessionsForMonitoringResponse 
 #' @export
@@ -225,8 +240,10 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_updateLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLiveStreamEventsResponse 
 #' @export

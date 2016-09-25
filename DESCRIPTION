@@ -2,10 +2,8 @@ Package: rdfp
 Title: DoubleClick for Publishers API from R
 Version: 0.0.1
 Date: 2016-09-22
-Description: A tool to interact with DFP from R.
-Authors@R: c(
-    person("Steven", "Mortimer", , "ReportMort@gmail.com", c("aut", "cre"))
-    )
+Description: A tool to interact with the DFP API from R.
+Author:	Steven Mortimer [aut, cre], Jennifer Bryan [cph], Joanna Zhao [cph]
 Maintainer: Steven Mortimer <ReportMort@gmail.com>
 URL: https://github.com/ReportMort/rdfp
 BugReports: https://github.com/ReportMort/rdfp/issues

@@ -16,8 +16,10 @@
 #' 
 #' @usage dfp_createAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAdExclusionRulesResponse 
 #' @export
@@ -60,7 +62,7 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getAdExclusionRulesByStatement
 #' 
-#' Gets a AdExclusionRulePage of AdExclusionRule objects that satisfy the given Statement query. The following fields are supported for filtering:  a set of rules 
+#' Gets a AdExclusionRulePage of AdExclusionRule objects that satisfy the given Statement query. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -73,8 +75,10 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @usage dfp_getAdExclusionRulesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdExclusionRulesByStatementResponse 
 #' @export
@@ -117,7 +121,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' performAdExclusionRuleAction
 #' 
-#' Performs action on AdExclusionRule objects that satisfy the given Statement query. a set of ad exclusion rules
+#' Performs action on AdExclusionRule objects that satisfy the given Statement query.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
@@ -125,8 +129,10 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @usage dfp_performAdExclusionRuleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAdExclusionRuleActionResponse 
 #' @export
@@ -177,8 +183,10 @@ dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @usage dfp_updateAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into a \code{data.frame}
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAdExclusionRulesResponse 
 #' @export

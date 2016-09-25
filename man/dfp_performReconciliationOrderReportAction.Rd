@@ -8,9 +8,11 @@ dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE, verbose=FAL
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -18,7 +20,7 @@ to be formatted for a SOAP request (XML format, but passed as character string)}
 a \code{data.frame} or \code{list} containing all the elements of a performReconciliationOrderReportActionResponse
 }
 \description{
-Performs actions on the ReconciliationOrderReport objects that match the given Statement query. The following fields are supported for filtering:  The following statement patterns are supported:  reconciliationReportId = :reconciliationReportId AND orderId = :orderId reconciliationReportId = :reconciliationReportId AND proposalId = :proposalId reconciliationReportId = :reconciliationReportId AND (orderId IN (...) OR proposalId IN (...))  The IN clause could be expanded to multiple OR expressions like (orderId = :orderId OR orderId = :orderId OR ...) Only orders to which the API user has access will be included. one reconciliation report. 
+Performs actions on the ReconciliationOrderReport objects that match the given Statement query. The following fields are supported for filtering: 
 \itemize{
   \item{orderId}
   \item{proposalId}

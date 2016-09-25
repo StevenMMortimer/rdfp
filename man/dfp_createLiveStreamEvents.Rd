@@ -8,9 +8,11 @@ dfp_createLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -27,7 +29,14 @@ through their account managers.
 \details{
 createLiveStreamEvents
 
-Creates new LiveStreamEvent objects. The following fields are required: <ul> <li>LiveStreamEvent name</li> <li>LiveStreamEvent startDateTime</li> <li>LiveStreamEvent endDateTime</li> <li>LiveStreamEvent contentUrls</li> <li>LiveStreamEvent adTags</li> </ul>
+Creates new LiveStreamEvent objects. The following fields are required:
+\itemize{
+  \item{LiveStreamEvent name}
+  \item{LiveStreamEvent startDateTime}
+  \item{LiveStreamEvent endDateTime}
+  \item{LiveStreamEvent contentUrls}
+  \item{LiveStreamEvent adTags}
+}
 }
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}

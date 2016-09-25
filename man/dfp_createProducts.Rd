@@ -8,9 +8,11 @@ dfp_createProducts(request_data, as_df=TRUE, verbose=FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
-to be formatted for a SOAP request (XML format, but passed as character string)}
+to be formatted for a SOAP
+request (XML format, but passed as character string)}
 
-\item{as_df}{a boolean indicating whether to attempt to parse the result into a \code{data.frame}}
+\item{as_df}{a boolean indicating whether to attempt to parse the result into
+a \code{data.frame}}
 
 \item{verbose}{a boolean indicating whether to print the service URL and POSTed XML}
 }
@@ -26,8 +28,8 @@ template's attributes. Products are typically used by inventory managers to
 restrict what salespeople can sell.
 To use this service, you need to
 have the new sales management solution enabled on your network. If you do
-not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
-for Publishers (DFP)</a>, you will not be able to use this service.
+not see a "Sales" tab in \href{https://www.google.com/dfp}{DoubleClick for
+Publishers (DFP)}, you will not be able to use this service.
 }
 \details{
 createProducts
