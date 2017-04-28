@@ -20,11 +20,10 @@ test_that("dfp_createActivities", {
 
 test_that("dfp_getActivitiesByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
+  request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   dfp_getActivitiesByStatement_result <- dfp_getActivitiesByStatement(request_data)
-
-   expect_is(dfp_getActivitiesByStatement_result, "data.frame")
+  expect_message(try(dfp_getActivitiesByStatement(request_data), silent=T), 'ACTIVITIES_FEATURE_REQUIRED')
+  expect_error(suppressMessages(dfp_getActivitiesByStatement(request_data)))
 
 })
 
