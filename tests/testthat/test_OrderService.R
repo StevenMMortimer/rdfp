@@ -13,13 +13,13 @@ options(rdfp.network_code = rdfp_options$test_network_code)
 request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
 dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
 
-request_data <- list(list(name=paste0('TestOrder'), 
-                          startDateTime=list(date=list(year=2017, month=12, day=1), 
+request_data <- list(list(name='TestOrder', 
+                          startDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=12, day=1), 
                                              hour=0,
                                              minute=0,
                                              second=0,
                                              timeZoneID='America/New_York'),
-                          endDateTime=list(date=list(year=2017, month=12, day=31), 
+                          endDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=12, day=31), 
                                            hour=23,
                                            minute=59,
                                            second=59,
@@ -57,12 +57,12 @@ test_that("dfp_updateOrders", {
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(list(id=dfp_createOrders_result$id, 
                             name=paste0('TestOrder2'), 
-                            startDateTime=list(date=list(year=2017, month=12, day=1), 
+                            startDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=12, day=1), 
                                                hour=0,
                                                minute=0,
                                                second=0,
                                                timeZoneID='America/New_York'),
-                            endDateTime=list(date=list(year=2017, month=12, day=31), 
+                            endDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=12, day=31), 
                                              hour=23,
                                              minute=59,
                                              second=59,

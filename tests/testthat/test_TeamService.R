@@ -30,8 +30,8 @@ test_that("dfp_getTeamsByStatement", {
   expect_error(dfp_getTeamsByStatement(request_data))
 
   options(rdfp.network_code = rdfp_options$test_network_code)
-   expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'MISSING_FEATURE')
-   expect_error(dfp_getTeamsByStatement(request_data))
+  expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+  expect_error(dfp_getTeamsByStatement(request_data))
   options(rdfp.network_code = rdfp_options$network_code)
 
 })
