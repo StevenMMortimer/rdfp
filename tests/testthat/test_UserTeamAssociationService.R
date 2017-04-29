@@ -22,7 +22,7 @@ test_that("dfp_createUserTeamAssociations", {
 
 test_that("dfp_getUserTeamAssociationsByStatement", {
 
-   request_data <- list('filterStatement'=list('query'="WHERE userId='142014667'"))
+   request_data <- list('filterStatement'=list('query'=paste0("WHERE userId='", dfp_getCurrentUser()$id, "'")))
 
    dfp_getUserTeamAssociationsByStatement_result <- dfp_getUserTeamAssociationsByStatement(request_data)
 
