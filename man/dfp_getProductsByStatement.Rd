@@ -4,7 +4,7 @@
 \alias{dfp_getProductsByStatement}
 \title{getProductsByStatement}
 \usage{
-dfp_getProductsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getProductsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,6 +35,6 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_getLineItemsByStatement}
 \title{getLineItemsByStatement}
 \usage{
-dfp_getLineItemsByStatement(request_data, as_df=FALSE, verbose=FALSE)
+dfp_getLineItemsByStatement(request_data, as_df = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -41,6 +41,6 @@ Gets a LineItemPage of LineItem objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 }
 

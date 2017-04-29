@@ -27,7 +27,7 @@ myuuid <- paste(
 )
 
 options(rdfp.network_code = rdfp_options$test_network_code)
-request_data <- list(companies=list(name=paste0("TestCompany - ", myuuid), 
+request_data <- list(companies=list(name=paste0("Test Company - ", myuuid), 
                                     type='HOUSE_ADVERTISER', 
                                     address='123 Main St Hometown, FL USA', 
                                     email='test@gmail.com', 

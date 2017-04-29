@@ -4,7 +4,7 @@
 \alias{dfp_updateProposals}
 \title{updateProposals}
 \usage{
-dfp_updateProposals(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateProposals(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePropos
 Updates the specified Proposal objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#updateProposals}{Google Documentation for updateProposals}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#updateProposals}{Google Documentation for updateProposals}
 }
 

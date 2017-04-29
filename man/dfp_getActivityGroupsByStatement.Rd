@@ -4,7 +4,8 @@
 \alias{dfp_getActivityGroupsByStatement}
 \title{getActivityGroupsByStatement}
 \usage{
-dfp_getActivityGroupsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getActivityGroupsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -30,6 +31,6 @@ Gets an ActivityGroupPage of ActivityGroup objects that satisfy the given Statem
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 }
 

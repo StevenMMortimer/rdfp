@@ -14,9 +14,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
-#' @usage dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
@@ -65,9 +64,8 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
-#' @usage dfp_getCurrentNetwork(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
@@ -143,9 +141,8 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
-#' @usage dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
@@ -194,9 +191,8 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 #' 
-#' @usage dfp_updateNetwork(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

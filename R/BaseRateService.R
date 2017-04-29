@@ -1,9 +1,9 @@
 #' BaseRateService
 #' 
 #' Provides methods for managing BaseRate objects.
-#' To use this service,
-#' you need to have the new sales management solution enabled on your network.
-#' If you do not see a "Sales" tab in
+#' To use this service, you
+#' need to have the new sales management solution enabled on your network. If
+#' you do not see a "Sales" tab in
 #' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
@@ -13,9 +13,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 #' 
-#' @usage dfp_createBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -72,9 +71,8 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 #' 
-#' @usage dfp_getBaseRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -126,9 +124,8 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 #' 
-#' @usage dfp_performBaseRateAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -180,9 +177,8 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 #' 
-#' @usage dfp_updateBaseRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

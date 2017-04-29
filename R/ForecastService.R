@@ -19,9 +19,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 #' 
-#' @usage dfp_getAvailabilityForecast(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -70,18 +69,14 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' getAvailabilityForecastById
 #' 
 #' Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
-#' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
-#' Note: Beginning in v201502, this replaces the previous getForecastById method. Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
-#' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
-#' Note: Beginning in v201502, this replaces the previous getForecastById method. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
-#' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED.
-#' Note: Beginning in v201502, this replaces the previous getForecastById method. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast
+#' Only line items having type LineItemType SPONSORSHIP or \{@@link LineItemType STANDARD\} are valid. Other types will result in \{@@link ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED\}. Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
+#' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
+#' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
-#' @usage dfp_getAvailabilityForecastById(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -133,9 +128,8 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 #' 
-#' @usage dfp_getDeliveryForecast(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -183,13 +177,12 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getDeliveryForecastByIds
 #' 
-#' Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast
+#' Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
-#' @usage dfp_getDeliveryForecastByIds(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

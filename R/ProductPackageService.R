@@ -15,9 +15,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
 #' 
-#' @usage dfp_createProductPackages(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -77,9 +76,8 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
 #' 
-#' @usage dfp_getProductPackagesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -127,13 +125,12 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' performProductPackageAction
 #' 
-#' Performs actions on ProductPackage objects that match the given Statement query.
+#' Performs actions on ProductPackage objects that match the given \{@@link Statement query\}.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 #' 
-#' @usage dfp_performProductPackageAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -185,9 +182,8 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
 #' 
-#' @usage dfp_updateProductPackages(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

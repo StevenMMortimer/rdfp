@@ -22,9 +22,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 #' 
-#' @usage dfp_getWorkflowRequestsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -76,9 +75,8 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
-#' @usage dfp_performWorkflowRequestAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

@@ -4,7 +4,7 @@
 \alias{dfp_getContentByStatement}
 \title{ContentService}
 \usage{
-dfp_getContentByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getContentByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -20,12 +20,14 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementResponse
 }
 \description{
-Service for retrieving Content. Content entities can be targeted in video
-LineItems. You can query for content that belongs to a particular category
-or has assigned metadata. Categories and metadata for Content are stored in
-DFP as CustomCriteria.
-For example, to find all Content that is
-"genre=comedy", you would:
+Service for retrieving Content.
+Content entities can be targeted in
+video LineItems.
+You can query for content that belongs to a particular
+category or has assigned metadata. Categories and metadata for Content are
+stored in DFP as CustomCriteria.
+For example, to find all Content that
+is "genre=comedy", you would:
 \itemize{
   \item{Retrieve the custom targeting key
 corresponding to "genre" using
@@ -36,22 +38,23 @@ filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
 retrieve the ID for the "comedy" custom targeting value.}
   \item{Call
 #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
-status = 'ACTIVE'" and the ID of the custom targeting value from step
-2.}
+status = 'ACTIVE'" and the ID of the custom targeting value from step 2.}
 }
 }
 \details{
 getContentByStatement
 
-Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering: 
+Gets a ContentPage of Content objects that satisfy the given \{@link Statement query\}. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{status}
   \item{name}
   \item{lastModifiedDateTime}
+  \item{lastDaiIngestDateTime}
+  \item{daiIngestStatus}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 }
 

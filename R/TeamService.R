@@ -14,9 +14,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/TeamService#createTeams}{Google Documentation for createTeams}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/TeamService#createTeams}{Google Documentation for createTeams}
 #' 
-#' @usage dfp_createTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -73,9 +72,8 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 #' 
-#' @usage dfp_getTeamsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -127,9 +125,8 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/TeamService#updateTeams}{Google Documentation for updateTeams}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
-#' @usage dfp_updateTeams(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

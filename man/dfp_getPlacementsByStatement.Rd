@@ -4,7 +4,7 @@
 \alias{dfp_getPlacementsByStatement}
 \title{getPlacementsByStatement}
 \usage{
-dfp_getPlacementsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getPlacementsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -32,6 +32,6 @@ Gets a PlacementPage of Placement objects that satisfy the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 }
 

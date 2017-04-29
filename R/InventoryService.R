@@ -15,9 +15,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 #' 
-#' @usage dfp_createAdUnits(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -72,9 +71,8 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 #' 
-#' @usage dfp_getAdUnitSizesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -134,9 +132,8 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 #' 
-#' @usage dfp_getAdUnitsByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -188,9 +185,8 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
 #' 
-#' @usage dfp_performAdUnitAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -242,9 +238,8 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
 #' 
-#' @usage dfp_updateAdUnits(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

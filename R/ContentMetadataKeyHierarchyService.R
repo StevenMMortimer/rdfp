@@ -5,18 +5,18 @@
 #' 
 #' createContentMetadataKeyHierarchies
 #' 
-#' Creates new ContentMetadataKeyHierarchy objects. The following fields are required:
+#' Creates new ContentMetadataKeyHierarchy objects.
+#' The following fields are required:
 #' \itemize{
-#'   \item{ContentMetadataKeyHierarchy id}
-#'   \item{ContentMetadataKeyHierarchy name}
-#'   \item{ContentMetadataKeyHierarchy hierarchyLevels}
+#'   \item{id}
+#'   \item{name}
+#'   \item{hierarchyLevels}
 #' } 
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 #' 
-#' @usage dfp_createContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -73,9 +73,8 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, ve
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
 #' 
-#' @usage dfp_getContentMetadataKeyHierarchiesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -123,13 +122,12 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=
 #' 
 #' performContentMetadataKeyHierarchyAction
 #' 
-#' Performs actions on ContentMetadataKeyHierarchy objects that match the given Statement query.
+#' Performs actions on ContentMetadataKeyHierarchy objects that match the given \{@@link Statement query\}.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
 #' 
-#' @usage dfp_performContentMetadataKeyHierarchyAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -181,9 +179,8 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRU
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
 #' 
-#' @usage dfp_updateContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

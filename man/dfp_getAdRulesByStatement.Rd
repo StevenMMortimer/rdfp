@@ -4,7 +4,7 @@
 \alias{dfp_getAdRulesByStatement}
 \title{getAdRulesByStatement}
 \usage{
-dfp_getAdRulesByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getAdRulesByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -20,7 +20,7 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a getAdRulesByStatementResponse
 }
 \description{
-Gets an AdRulePage of AdRule objects that satisfy the given Statement query. The following fields are supported for filtering: 
+Gets an AdRulePage of AdRule objects that satisfy the given \{@link Statement query\}. The following fields are supported for filtering: 
 \itemize{
   \item{id}
   \item{name}
@@ -29,6 +29,6 @@ Gets an AdRulePage of AdRule objects that satisfy the given Statement query. The
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 }
 

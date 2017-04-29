@@ -4,7 +4,7 @@
 \alias{dfp_updateNetwork}
 \title{updateNetwork}
 \usage{
-dfp_updateNetwork(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateNetwork(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateNetwor
 Updates the specified network. Currently, only the network display name can be updated.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 }
 

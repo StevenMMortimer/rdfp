@@ -4,7 +4,8 @@
 \alias{dfp_getProposalLineItemsByStatement}
 \title{getProposalLineItemsByStatement}
 \usage{
-dfp_getProposalLineItemsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getProposalLineItemsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -36,6 +37,6 @@ Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 }
 

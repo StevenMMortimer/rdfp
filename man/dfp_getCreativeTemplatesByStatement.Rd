@@ -4,7 +4,8 @@
 \alias{dfp_getCreativeTemplatesByStatement}
 \title{CreativeTemplateService}
 \usage{
-dfp_getCreativeTemplatesByStatement(request_data, as_df=FALSE, verbose=FALSE)
+dfp_getCreativeTemplatesByStatement(request_data, as_df = FALSE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -34,6 +35,6 @@ Gets a CreativeTemplatePage of CreativeTemplate objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 }
 

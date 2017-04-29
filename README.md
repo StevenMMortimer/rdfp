@@ -4,7 +4,7 @@ rdfp
 
 [![Build Status](https://travis-ci.org/ReportMort/rdfp.png?branch=master)](https://travis-ci.org/ReportMort/rdfp) [![Coverage Status](https://img.shields.io/codecov/c/github/ReportMort/rdfp/master.svg)](https://codecov.io/github/ReportMort/rdfp?branch=master)
 
-rdfp is an implementation of the Google Double Click for Publishers (DFP) API from R. Most all operations supported by the DFP API are available via this package.
+**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201702`. Most all operations supported by the DFP API are available via this package.
 
 Features:
 
@@ -12,11 +12,9 @@ Features:
 -   Forecasting/Inventory Management/Reporting
 -   Simple Administrative Tools
 
-**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201608`.
-
 ### Functions
 
-All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a data.frame or list parsed from the XML returned in the SOAP response.
+All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a `data.frame` or `list` parsed from the XML returned in the SOAP response.
 
 ### Install and Load rdfp Library
 
@@ -28,7 +26,7 @@ library("rdfp")
 
 ### Authenticate
 
-First, you will need to specify a list of options in order to connect to the API. The client\_id and client\_secret must be created via the [Google Developers Console] (<https://console.developers.google.com>), which allows R to access the API as an "application" on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run `dfp_auth()` to authenticate.
+First, you will need to specify the `network_code` of the DFP instance you'd like to connect to. This is the only required option that the user must specify when using the **rdfp** package. There are also other options like a client\_id and client\_secret which must be created via the \[Google Developers Console\] (<https://console.developers.google.com>), which allows R to access the API as an "application" on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run `dfp_auth()` to authenticate.
 
 ``` r
 
@@ -215,7 +213,7 @@ dfp_createOrders_result <- dfp_createOrders(request_data)
 
 ### Get Line Items By A Filter
 
-Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement` function from the [LineItemService] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201508/LineItemService>)
+Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement` function from the \[LineItemService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService>)
 
 ``` r
 
@@ -243,7 +241,7 @@ Below is an example of how to make a simple report request.
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
 # Also online documentation is available that lists available child elements for reportQuery
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
@@ -262,7 +260,7 @@ head(report_data)
 
 ### A More Detailed Explanation of the Report Process
 
-Reports actually require 3 steps from the [ReportService] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
+Reports actually require 3 steps from the \[ReportService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
 
 ``` r
 
@@ -271,7 +269,7 @@ Reports actually require 3 steps from the [ReportService] (<https://developers.g
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
 # Also online documentation is available that lists available child elements for reportQuery
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201508/ReportService.ReportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',

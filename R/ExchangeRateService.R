@@ -12,9 +12,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 #' 
-#' @usage dfp_createExchangeRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -73,9 +72,8 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 #' 
-#' @usage dfp_getExchangeRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -134,9 +132,8 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 #' 
-#' @usage dfp_performExchangeRateAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -188,9 +185,8 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 #' 
-#' @usage dfp_updateExchangeRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

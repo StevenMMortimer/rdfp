@@ -4,7 +4,8 @@
 \alias{dfp_getContentByStatementAndCustomTargetingValue}
 \title{getContentByStatementAndCustomTargetingValue}
 \usage{
-dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE, verbose=FALSE)
+dfp_getContentByStatementAndCustomTargetingValue(as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into
@@ -25,6 +26,6 @@ Gets a ContentPage of Content objects that satisfy the given Statement query. Ad
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 }
 

@@ -8,9 +8,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#createCompanies}{Google Documentation for createCompanies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#createCompanies}{Google Documentation for createCompanies}
 #' 
-#' @usage dfp_createCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -68,9 +67,8 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 #' 
-#' @usage dfp_getCompaniesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -122,9 +120,8 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 #' 
-#' @usage dfp_updateCompanies(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

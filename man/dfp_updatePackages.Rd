@@ -4,7 +4,7 @@
 \alias{dfp_updatePackages}
 \title{updatePackages}
 \usage{
-dfp_updatePackages(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updatePackages(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePackag
 Updates the specified Package objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PackageService#updatePackages}{Google Documentation for updatePackages}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PackageService#updatePackages}{Google Documentation for updatePackages}
 }
 

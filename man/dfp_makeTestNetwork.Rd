@@ -4,7 +4,7 @@
 \alias{dfp_makeTestNetwork}
 \title{makeTestNetwork}
 \usage{
-dfp_makeTestNetwork(as_df=TRUE, verbose=FALSE)
+dfp_makeTestNetwork(as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into
@@ -46,6 +46,6 @@ Test networks are limited in the following ways:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 }
 

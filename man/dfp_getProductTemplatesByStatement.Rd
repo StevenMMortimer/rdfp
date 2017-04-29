@@ -4,7 +4,8 @@
 \alias{dfp_getProductTemplatesByStatement}
 \title{getProductTemplatesByStatement}
 \usage{
-dfp_getProductTemplatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getProductTemplatesByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -34,6 +35,6 @@ Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
 }
 

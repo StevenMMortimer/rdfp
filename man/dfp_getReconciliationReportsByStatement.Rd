@@ -4,7 +4,8 @@
 \alias{dfp_getReconciliationReportsByStatement}
 \title{ReconciliationReportService}
 \usage{
-dfp_getReconciliationReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getReconciliationReportsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -36,6 +37,6 @@ Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 }
 

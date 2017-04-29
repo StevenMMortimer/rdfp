@@ -8,9 +8,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 #' 
-#' @usage dfp_createCreativeSet(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -68,9 +67,8 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 #' 
-#' @usage dfp_getCreativeSetsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -122,9 +120,8 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 #' 
-#' @usage dfp_updateCreativeSet(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

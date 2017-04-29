@@ -4,7 +4,8 @@
 \alias{dfp_performCustomTargetingValueAction}
 \title{performCustomTargetingValueAction}
 \usage{
-dfp_performCustomTargetingValueAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performCustomTargetingValueAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +24,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performCusto
 Performs actions on CustomTargetingValue objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 }
 

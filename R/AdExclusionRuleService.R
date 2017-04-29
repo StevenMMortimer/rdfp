@@ -12,9 +12,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 #' 
-#' @usage dfp_createAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -71,9 +70,8 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
 #' 
-#' @usage dfp_getAdExclusionRulesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -125,9 +123,8 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 #' 
-#' @usage dfp_performAdExclusionRuleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -179,9 +176,8 @@ dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 #' 
-#' @usage dfp_updateAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

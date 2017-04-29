@@ -4,7 +4,8 @@
 \alias{dfp_getReconciliationLineItemReportsByStatement}
 \title{ReconciliationLineItemReportService}
 \usage{
-dfp_getReconciliationLineItemReportsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getReconciliationLineItemReportsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -37,6 +38,6 @@ Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
 }
 

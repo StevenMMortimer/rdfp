@@ -4,7 +4,7 @@
 \alias{dfp_performAdRuleAction}
 \title{performAdRuleAction}
 \usage{
-dfp_performAdRuleAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performAdRuleAction(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performAdRul
 Performs actions on AdRule objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 }
 

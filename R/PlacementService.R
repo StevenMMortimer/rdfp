@@ -14,9 +14,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#createPlacements}{Google Documentation for createPlacements}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#createPlacements}{Google Documentation for createPlacements}
 #' 
-#' @usage dfp_createPlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -77,9 +76,8 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 #' 
-#' @usage dfp_getPlacementsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -131,9 +129,8 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 #' 
-#' @usage dfp_performPlacementAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -185,9 +182,8 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 #' 
-#' @usage dfp_updatePlacements(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

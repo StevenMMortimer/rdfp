@@ -16,9 +16,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 #' 
-#' @usage dfp_createLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -78,9 +77,8 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 #' 
-#' @usage dfp_getLineItemCreativeAssociationsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -132,9 +130,8 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
-#' @usage dfp_getPreviewUrl(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
@@ -183,9 +180,8 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
-#' @usage dfp_performLineItemCreativeAssociationAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -237,9 +233,8 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
-#' @usage dfp_updateLineItemCreativeAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

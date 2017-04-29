@@ -4,7 +4,7 @@
 \alias{dfp_updateContentBundles}
 \title{updateContentBundles}
 \usage{
-dfp_updateContentBundles(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateContentBundles(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateConten
 Updates the specified ContentBundle objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 }
 

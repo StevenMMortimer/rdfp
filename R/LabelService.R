@@ -8,9 +8,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#createLabels}{Google Documentation for createLabels}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LabelService#createLabels}{Google Documentation for createLabels}
 #' 
-#' @usage dfp_createLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -69,9 +68,8 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
 #' 
-#' @usage dfp_getLabelsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -123,9 +121,8 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 #' 
-#' @usage dfp_performLabelAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -177,9 +174,8 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#updateLabels}{Google Documentation for updateLabels}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LabelService#updateLabels}{Google Documentation for updateLabels}
 #' 
-#' @usage dfp_updateLabels(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

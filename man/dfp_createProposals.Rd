@@ -4,7 +4,7 @@
 \alias{dfp_createProposals}
 \title{ProposalService}
 \usage{
-dfp_createProposals(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createProposals(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -36,6 +36,6 @@ Creates new Proposal objects. For each proposal, the following fields are requir
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#createProposals}{Google Documentation for createProposals}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#createProposals}{Google Documentation for createProposals}
 }
 

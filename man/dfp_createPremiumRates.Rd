@@ -4,7 +4,7 @@
 \alias{dfp_createPremiumRates}
 \title{PremiumRateService}
 \usage{
-dfp_createPremiumRates(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createPremiumRates(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -33,6 +33,6 @@ createPremiumRates
 Creates a list of new PremiumRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }
 

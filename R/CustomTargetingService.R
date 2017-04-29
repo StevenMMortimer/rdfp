@@ -13,9 +13,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 #' 
-#' @usage dfp_createCustomTargetingKeys(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -71,9 +70,8 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 #' 
-#' @usage dfp_createCustomTargetingValues(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -132,9 +130,8 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 #' 
-#' @usage dfp_getCustomTargetingKeysByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -193,9 +190,8 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 #' 
-#' @usage dfp_getCustomTargetingValuesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -247,9 +243,8 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 #' 
-#' @usage dfp_performCustomTargetingKeyAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -301,9 +296,8 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 #' 
-#' @usage dfp_performCustomTargetingValueAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -355,9 +349,8 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 #' 
-#' @usage dfp_updateCustomTargetingKeys(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -409,9 +402,8 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 #' 
-#' @usage dfp_updateCustomTargetingValues(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

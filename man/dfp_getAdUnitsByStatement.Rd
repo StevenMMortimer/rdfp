@@ -4,7 +4,7 @@
 \alias{dfp_getAdUnitsByStatement}
 \title{getAdUnitsByStatement}
 \usage{
-dfp_getAdUnitsByStatement(request_data, as_df=FALSE, verbose=FALSE)
+dfp_getAdUnitsByStatement(request_data, as_df = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -31,6 +31,6 @@ Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 }
 

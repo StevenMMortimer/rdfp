@@ -13,14 +13,16 @@ dfp_auth(token = "rdfp_token.rds")
 line_item_detail<- dfp_getLineItemsByStatement(list(filterStatement=
                                                       list(query="WHERE LineItemType='STANDARD' and Status='DELIVERING'")))$rval[c(3)]$results
 
-# replace InventoryTargeting matrices to list
+# replace targeting matrices to list
+line_item_detail$targeting$geoTargeting <- as.list(as.data.frame(line_item_detail$targeting$geoTargeting,
+                                                                 check.names=F, stringsAsFactors = F))
 line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
-                                                                       check.names=F))
+                                                                       check.names=F, stringsAsFactors = F))
 
 hypothetical_line_item <- list(lineItem=
                                 list(id=line_item_detail$id,
                                      startDateTime=line_item_detail$startDateTime,
-                                     endDateTime=list(date=list(year=2016, month=12, day=31), 
+                                     endDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=12, day=31), 
                                                       hour=0,
                                                       minute=0,
                                                       second=0,

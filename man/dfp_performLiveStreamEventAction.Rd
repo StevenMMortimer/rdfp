@@ -4,7 +4,8 @@
 \alias{dfp_performLiveStreamEventAction}
 \title{performLiveStreamEventAction}
 \usage{
-dfp_performLiveStreamEventAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performLiveStreamEventAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +24,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performLiveS
 Performs actions on LiveStreamEvent objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 }
 

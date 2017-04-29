@@ -12,9 +12,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 #' 
-#' @usage dfp_createUserTeamAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -70,9 +69,8 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 #' 
-#' @usage dfp_getUserTeamAssociationsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -124,9 +122,8 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
 #' 
-#' @usage dfp_performUserTeamAssociationAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -178,9 +175,8 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 #' 
-#' @usage dfp_updateUserTeamAssociations(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

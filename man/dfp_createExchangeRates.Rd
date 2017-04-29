@@ -4,7 +4,7 @@
 \alias{dfp_createExchangeRates}
 \title{ExchangeRateService}
 \usage{
-dfp_createExchangeRates(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createExchangeRates(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -32,6 +32,6 @@ Creates new ExchangeRate objects. For each exchange rate, the following fields a
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 }
 

@@ -19,9 +19,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 #' 
-#' @usage dfp_createLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -76,9 +75,8 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 #' 
-#' @usage dfp_getLiveStreamEventsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -130,9 +128,8 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 #' 
-#' @usage dfp_performLiveStreamEventAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -185,9 +182,8 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 #' 
-#' @usage dfp_registerSessionsForMonitoring(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
@@ -236,9 +232,8 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 #' 
-#' @usage dfp_updateLiveStreamEvents(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

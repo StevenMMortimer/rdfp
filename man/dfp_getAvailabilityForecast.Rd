@@ -4,7 +4,7 @@
 \alias{dfp_getAvailabilityForecast}
 \title{ForecastService}
 \usage{
-dfp_getAvailabilityForecast(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getAvailabilityForecast(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -39,6 +39,6 @@ units that the line item can book, and the total number of units
 matching the line item's targeting.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_updateLabels}
 \title{updateLabels}
 \usage{
-dfp_updateLabels(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateLabels(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLabels
 Updates the specified Label objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LabelService#updateLabels}{Google Documentation for updateLabels}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LabelService#updateLabels}{Google Documentation for updateLabels}
 }
 

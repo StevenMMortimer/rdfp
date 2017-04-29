@@ -4,7 +4,7 @@
 \alias{dfp_getContactsByStatement}
 \title{getContactsByStatement}
 \usage{
-dfp_getContactsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getContactsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,6 +35,6 @@ Gets a ContactPage of Contact objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 }
 

@@ -4,7 +4,8 @@
 \alias{dfp_performAudienceSegmentAction}
 \title{performAudienceSegmentAction}
 \usage{
-dfp_performAudienceSegmentAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performAudienceSegmentAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +24,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performAudie
 Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 }
 

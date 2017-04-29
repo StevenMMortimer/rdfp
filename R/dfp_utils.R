@@ -15,13 +15,16 @@
 #' associated with the ad serving network
 #' @param application_name a character string naming your
 #' application so that it can be identified in API calls
+#' @param version a character string indicating the version of the DFP API 
+#' that is to be used in the SOAP request
 #' @param verbose a logical indicating whether to print the POSTed XML
 #' @return a XML document if no error was returned
 #' 
 #' @keywords internal
 build_soap_request <- function(body, service = NULL,
                                network_code=getOption("rdfp.network_code"), 
-                               application_name=getOption("rdfp.application_name"), 
+                               application_name=getOption("rdfp.application_name"),
+                               version=getOption("rdfp.version"),
                                verbose=FALSE){
   
   if (is.null(service)){
@@ -37,7 +40,7 @@ build_soap_request <- function(body, service = NULL,
    <ns1:RequestHeader
      soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
      soapenv:mustUnderstand="0"
-     xmlns:ns1="https://www.google.com/apis/ads/publisher/v201608">
+     xmlns:ns1="https://www.google.com/apis/ads/publisher/', version, '">
        <ns1:networkCode>', network_code, '</ns1:networkCode>
        <ns1:applicationName>', application_name, '</ns1:applicationName>
    </ns1:RequestHeader>
@@ -51,7 +54,7 @@ build_soap_request <- function(body, service = NULL,
   
   this_body <- paste0(header, ' \n ', soap_body, ' \n', env_close)
   
-  url <- paste0('https://ads.google.com/apis/ads/publisher/v201608/', service)
+  url <- paste0('https://ads.google.com/apis/ads/publisher/', version, '/', service)
 
   if(verbose){
     print(url)
@@ -112,13 +115,13 @@ build_soap_request <- function(body, service = NULL,
 #' topmost level of the created XML hierarchy
 #' @param root a XML node to be placed as root 
 #' in the returned XML document
-#' @param version a character string matching a supported
-#' API version
+#' @param version a character string indicating the version of the DFP API 
+#' that is to be used in the SOAP request
 #' @return a XML document
 #' 
 #' @keywords internal
 build_xml_from_list <- function(list, root_name=NULL, 
-                                root=NULL, version="v201608"){
+                                root=NULL, version=getOption("rdfp.version")){
 
   if (is.null(root))
     root <- newXMLNode(root_name, 
@@ -160,6 +163,7 @@ build_xml_from_list <- function(list, root_name=NULL,
       }
     }
   }
+  
   return(root)
 }
 

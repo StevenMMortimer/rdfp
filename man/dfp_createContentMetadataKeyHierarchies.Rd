@@ -4,7 +4,8 @@
 \alias{dfp_createContentMetadataKeyHierarchies}
 \title{ContentMetadataKeyHierarchyService}
 \usage{
-dfp_createContentMetadataKeyHierarchies(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createContentMetadataKeyHierarchies(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -26,14 +27,15 @@ ContentMetadataKeyHierarchy objects.
 \details{
 createContentMetadataKeyHierarchies
 
-Creates new ContentMetadataKeyHierarchy objects. The following fields are required:
+Creates new ContentMetadataKeyHierarchy objects.
+The following fields are required:
 \itemize{
-  \item{ContentMetadataKeyHierarchy id}
-  \item{ContentMetadataKeyHierarchy name}
-  \item{ContentMetadataKeyHierarchy hierarchyLevels}
+  \item{id}
+  \item{name}
+  \item{hierarchyLevels}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 }
 

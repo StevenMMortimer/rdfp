@@ -4,7 +4,8 @@
 \alias{dfp_getLineItemTemplatesByStatement}
 \title{LineItemTemplateService}
 \usage{
-dfp_getLineItemTemplatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getLineItemTemplatesByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -32,6 +33,6 @@ Gets a LineItemTemplatePage of LineItemTemplate objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
 }
 

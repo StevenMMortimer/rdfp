@@ -11,9 +11,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#createCreatives}{Google Documentation for createCreatives}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#createCreatives}{Google Documentation for createCreatives}
 #' 
-#' @usage dfp_createCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -73,9 +72,8 @@ dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
 #' 
-#' @usage dfp_getCreativesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -127,9 +125,8 @@ dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 #' 
-#' @usage dfp_updateCreatives(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

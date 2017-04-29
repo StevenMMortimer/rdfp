@@ -16,9 +16,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#createProposals}{Google Documentation for createProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#createProposals}{Google Documentation for createProposals}
 #' 
-#' @usage dfp_createProposals(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -73,9 +72,8 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 #' 
-#' @usage dfp_getMarketplaceCommentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -141,9 +139,8 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 #' 
-#' @usage dfp_getProposalsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -200,9 +197,8 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 #' 
-#' @usage dfp_performProposalAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -254,9 +250,8 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProposalService#updateProposals}{Google Documentation for updateProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
-#' @usage dfp_updateProposals(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

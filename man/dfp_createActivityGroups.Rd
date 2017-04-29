@@ -4,7 +4,7 @@
 \alias{dfp_createActivityGroups}
 \title{ActivityGroupService}
 \usage{
-dfp_createActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createActivityGroups(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,6 +35,6 @@ createActivityGroups
 Creates a new ActivityGroup objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }
 

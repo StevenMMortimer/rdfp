@@ -4,7 +4,7 @@
 \alias{dfp_performProductPackageAction}
 \title{performProductPackageAction}
 \usage{
-dfp_performProductPackageAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performProductPackageAction(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -20,9 +20,9 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a performProductPackageActionResponse
 }
 \description{
-Performs actions on ProductPackage objects that match the given Statement query.
+Performs actions on ProductPackage objects that match the given \{@link Statement query\}.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 }
 

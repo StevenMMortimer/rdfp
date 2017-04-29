@@ -33,6 +33,7 @@
 #'   \item{Audience_Explorer}
 #'   \item{Time_Zone}
 #'   \item{Proposal_Terms_And_Conditions}
+#'   \item{Change_History}
 #' }
 #'
 #' Visit the See Also section below to proceed to Google and view columns in each of these tables.
@@ -43,9 +44,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PublisherQueryLanguageService#select}{Google Documentation for select}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PublisherQueryLanguageService#select}{Google Documentation for select}
 #' 
-#' @usage dfp_select(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

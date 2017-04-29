@@ -4,7 +4,7 @@
 \alias{dfp_createProducts}
 \title{ProductService}
 \usage{
-dfp_createProducts(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createProducts(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -37,6 +37,6 @@ createProducts
 Creates new Product objects. This method is only available when creating programmatic guaranteed products when not using sales management.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductService#createProducts}{Google Documentation for createProducts}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductService#createProducts}{Google Documentation for createProducts}
 }
 

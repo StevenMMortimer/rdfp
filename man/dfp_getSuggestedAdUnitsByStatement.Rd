@@ -4,7 +4,8 @@
 \alias{dfp_getSuggestedAdUnitsByStatement}
 \title{SuggestedAdUnitService}
 \usage{
-dfp_getSuggestedAdUnitsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getSuggestedAdUnitsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -49,6 +50,6 @@ Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter qu
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
 }
 

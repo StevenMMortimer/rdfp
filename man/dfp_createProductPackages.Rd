@@ -4,7 +4,7 @@
 \alias{dfp_createProductPackages}
 \title{ProductPackageService}
 \usage{
-dfp_createProductPackages(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createProductPackages(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,6 +35,6 @@ createProductPackages
 Creates new ProductPackage objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
 }
 

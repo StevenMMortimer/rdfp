@@ -12,9 +12,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 #' 
-#' @usage dfp_createContentBundles(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -71,9 +70,8 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 #' 
-#' @usage dfp_getContentBundlesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -125,9 +123,8 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 #' 
-#' @usage dfp_performContentBundleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -179,9 +176,8 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
-#' @usage dfp_updateContentBundles(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

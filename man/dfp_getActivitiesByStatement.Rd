@@ -4,7 +4,7 @@
 \alias{dfp_getActivitiesByStatement}
 \title{getActivitiesByStatement}
 \usage{
-dfp_getActivitiesByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getActivitiesByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -30,6 +30,6 @@ Gets an ActivityPage of Activity objects that satisfy the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
 }
 

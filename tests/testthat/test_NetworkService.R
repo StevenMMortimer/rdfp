@@ -37,7 +37,7 @@ test_that("dfp_makeTestNetwork", {
 test_that("dfp_updateNetwork", {
   
   options(rdfp.network_code = rdfp_options$test_network_code)
-  new_network_name <- paste0('StevesTestNetwork', sample(1:10, 1))
+  new_network_name <- paste0('TestNetwork', sample(1:10, 1))
   request_data <- list('network'=list('displayName'=new_network_name))
 
   dfp_updateNetwork_result <- dfp_updateNetwork(request_data)

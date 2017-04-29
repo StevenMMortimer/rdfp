@@ -11,9 +11,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 #' 
-#' @usage dfp_createAdRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -61,7 +60,7 @@ dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' getAdRulesByStatement
 #' 
-#' Gets an AdRulePage of AdRule objects that satisfy the given Statement query. The following fields are supported for filtering: 
+#' Gets an AdRulePage of AdRule objects that satisfy the given \{@@link Statement query\}. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{name}
@@ -71,9 +70,8 @@ dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 #' 
-#' @usage dfp_getAdRulesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -125,9 +123,8 @@ dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 #' 
-#' @usage dfp_performAdRuleAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -179,9 +176,8 @@ dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 #' 
-#' @usage dfp_updateAdRules(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

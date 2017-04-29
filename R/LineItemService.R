@@ -19,9 +19,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#createLineItems}{Google Documentation for createLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#createLineItems}{Google Documentation for createLineItems}
 #' 
-#' @usage dfp_createLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -91,9 +90,8 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 #' 
-#' @usage dfp_getLineItemsByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -145,9 +143,8 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 #' 
-#' @usage dfp_performLineItemAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -199,9 +196,8 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
-#' @usage dfp_updateLineItems(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

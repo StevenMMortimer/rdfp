@@ -31,9 +31,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
-#' @usage dfp_getReportDownloadURL(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -86,9 +85,8 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
-#' @usage dfp_getReportDownloadUrlWithOptions(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -140,9 +138,8 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
-#' @usage dfp_getReportJobStatus(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -198,9 +195,8 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 #' 
-#' @usage dfp_getSavedQueriesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -256,9 +252,8 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#runReportJob}{Google Documentation for runReportJob}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
-#' @usage dfp_runReportJob(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

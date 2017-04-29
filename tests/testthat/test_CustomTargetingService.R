@@ -49,7 +49,9 @@ test_that("dfp_getCustomTargetingKeysByStatement", {
 test_that("dfp_getCustomTargetingValuesByStatement", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
-   request_data <- list('filterStatement'=list('query'="WHERE name like 'Test%'"))
+   request_data <- list('filterStatement'=list('query'=paste0("WHERE customTargetingKeyId='", 
+                                                              dfp_createCustomTargetingKeys_result$id, 
+                                                              "' AND name like 'TestValue%'")))
 
    dfp_getCustomTargetingValuesByStatement_result <- dfp_getCustomTargetingValuesByStatement(request_data)
 

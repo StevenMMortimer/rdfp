@@ -4,7 +4,7 @@
 \alias{dfp_getUsersByStatement}
 \title{getUsersByStatement}
 \usage{
-dfp_getUsersByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getUsersByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -31,6 +31,6 @@ Gets a UserPage of User objects that satisfy the given Statement query. The foll
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 }
 

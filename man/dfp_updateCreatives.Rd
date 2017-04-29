@@ -4,7 +4,7 @@
 \alias{dfp_updateCreatives}
 \title{updateCreatives}
 \usage{
-dfp_updateCreatives(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateCreatives(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCreati
 Updates the specified Creative objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 }
 

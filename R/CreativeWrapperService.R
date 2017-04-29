@@ -18,9 +18,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 #' 
-#' @usage dfp_createCreativeWrappers(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -78,9 +77,8 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 #' 
-#' @usage dfp_getCreativeWrappersByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -132,9 +130,8 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
 #' 
-#' @usage dfp_performCreativeWrapperAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -186,9 +183,8 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 #' 
-#' @usage dfp_updateCreativeWrappers(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

@@ -4,7 +4,8 @@
 \alias{dfp_getCreativeWrappersByStatement}
 \title{getCreativeWrappersByStatement}
 \usage{
-dfp_getCreativeWrappersByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getCreativeWrappersByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -29,6 +30,6 @@ Gets a CreativeWrapperPage of CreativeWrapper objects that satisfy the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_select}
 \title{PublisherQueryLanguageService}
 \usage{
-dfp_select(request_data, as_df=FALSE, verbose=FALSE)
+dfp_select(request_data, as_df = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -54,6 +54,7 @@ The following tables are supported:
   \item{Audience_Explorer}
   \item{Time_Zone}
   \item{Proposal_Terms_And_Conditions}
+  \item{Change_History}
 }
 
 Visit the See Also section below to proceed to Google and view columns in each of these tables.
@@ -63,6 +64,6 @@ select
 Retrieves rows of data that satisfy the given Statement query from the system.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PublisherQueryLanguageService#select}{Google Documentation for select}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PublisherQueryLanguageService#select}{Google Documentation for select}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_updateBaseRates}
 \title{updateBaseRates}
 \usage{
-dfp_updateBaseRates(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateBaseRates(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateBaseRa
 Updates the specified BaseRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 }
 

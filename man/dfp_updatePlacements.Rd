@@ -4,7 +4,7 @@
 \alias{dfp_updatePlacements}
 \title{updatePlacements}
 \usage{
-dfp_updatePlacements(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updatePlacements(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePlacem
 Updates the specified Placement objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 }
 

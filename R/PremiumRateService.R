@@ -13,9 +13,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
-#' @usage dfp_createPremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -72,9 +71,8 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
-#' @usage dfp_getPremiumRatesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -126,9 +124,8 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
-#' @usage dfp_updatePremiumRates(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

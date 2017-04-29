@@ -4,7 +4,7 @@
 \alias{dfp_updateCustomTargetingKeys}
 \title{updateCustomTargetingKeys}
 \usage{
-dfp_updateCustomTargetingKeys(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateCustomTargetingKeys(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCustom
 Updates the specified CustomTargetingKey objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 }
 

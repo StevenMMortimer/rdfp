@@ -4,7 +4,8 @@
 \alias{dfp_getReportDownloadUrlWithOptions}
 \title{getReportDownloadUrlWithOptions}
 \usage{
-dfp_getReportDownloadUrlWithOptions(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getReportDownloadUrlWithOptions(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -24,6 +25,6 @@ Returns the URL at which the report file can be downloaded, and allows for custo
 By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 }
 

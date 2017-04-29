@@ -14,9 +14,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 #' 
-#' @usage dfp_getCreativeTemplatesByStatement(request_data, as_df=FALSE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

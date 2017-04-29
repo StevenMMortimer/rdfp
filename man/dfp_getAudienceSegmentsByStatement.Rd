@@ -4,7 +4,8 @@
 \alias{dfp_getAudienceSegmentsByStatement}
 \title{getAudienceSegmentsByStatement}
 \usage{
-dfp_getAudienceSegmentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getAudienceSegmentsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,6 +36,6 @@ Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given St
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 }
 

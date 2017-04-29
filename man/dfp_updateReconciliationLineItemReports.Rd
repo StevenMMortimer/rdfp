@@ -4,7 +4,8 @@
 \alias{dfp_updateReconciliationLineItemReports}
 \title{updateReconciliationLineItemReports}
 \usage{
-dfp_updateReconciliationLineItemReports(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateReconciliationLineItemReports(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +24,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateReconc
 Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
 }
 

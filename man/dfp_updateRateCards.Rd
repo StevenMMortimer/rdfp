@@ -4,7 +4,7 @@
 \alias{dfp_updateRateCards}
 \title{updateRateCards}
 \usage{
-dfp_updateRateCards(request_data, as_df=TRUE, verbose=FALSE)
+dfp_updateRateCards(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a updateRateCa
 Updates a list of RateCard objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_getCreativeSetsByStatement}
 \title{getCreativeSetsByStatement}
 \usage{
-dfp_getCreativeSetsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getCreativeSetsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -29,6 +29,6 @@ Gets a CreativeSetPage of CreativeSet objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 }
 

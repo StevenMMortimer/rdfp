@@ -1,9 +1,9 @@
 #' RateCardService
 #' 
 #' Provides methods for managing RateCard objects.
-#' To use this service,
-#' you need to have the new sales management solution enabled on your network.
-#' If you do not see a "Sales" tab in
+#' To use this service, you
+#' need to have the new sales management solution enabled on your network. If
+#' you do not see a "Sales" tab in
 #' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 #' will not be able to use this service.
 #' 
@@ -13,9 +13,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#createRateCards}{Google Documentation for createRateCards}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#createRateCards}{Google Documentation for createRateCards}
 #' 
-#' @usage dfp_createRateCards(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -74,9 +73,8 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 #' 
-#' @usage dfp_getRateCardsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -128,9 +126,8 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 #' 
-#' @usage dfp_performRateCardAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -182,9 +179,8 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
-#' @usage dfp_updateRateCards(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

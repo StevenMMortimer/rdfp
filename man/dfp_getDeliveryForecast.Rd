@@ -4,7 +4,7 @@
 \alias{dfp_getDeliveryForecast}
 \title{getDeliveryForecast}
 \usage{
-dfp_getDeliveryForecast(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getDeliveryForecast(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getDeliveryF
 Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItems line items to be forecasted for delivery @param forecastOptions options controlling the forecast Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItems line items to be forecasted for delivery @param forecastOptions options controlling the forecast
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 }
 

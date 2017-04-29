@@ -15,9 +15,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityService#createActivities}{Google Documentation for createActivities}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityService#createActivities}{Google Documentation for createActivities}
 #' 
-#' @usage dfp_createActivities(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -76,9 +75,8 @@ dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
 #' 
-#' @usage dfp_getActivitiesByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -130,9 +128,8 @@ dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityService#updateActivities}{Google Documentation for updateActivities}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityService#updateActivities}{Google Documentation for updateActivities}
 #' 
-#' @usage dfp_updateActivities(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

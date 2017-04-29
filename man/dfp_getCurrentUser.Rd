@@ -4,7 +4,7 @@
 \alias{dfp_getCurrentUser}
 \title{getCurrentUser}
 \usage{
-dfp_getCurrentUser(as_df=TRUE, verbose=FALSE)
+dfp_getCurrentUser(as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into
@@ -19,6 +19,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getCurrentUs
 Returns the current User. Returns the current User. @return the current user Returns the current User. @return the current user
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 }
 

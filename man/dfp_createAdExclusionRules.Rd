@@ -4,7 +4,7 @@
 \alias{dfp_createAdExclusionRules}
 \title{AdExclusionRuleService}
 \usage{
-dfp_createAdExclusionRules(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createAdExclusionRules(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -32,6 +32,6 @@ createAdExclusionRules
 Creates new AdExclusionRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 }
 

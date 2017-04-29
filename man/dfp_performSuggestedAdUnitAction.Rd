@@ -4,7 +4,8 @@
 \alias{dfp_performSuggestedAdUnitAction}
 \title{performSuggestedAdUnitAction}
 \usage{
-dfp_performSuggestedAdUnitAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performSuggestedAdUnitAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -27,6 +28,6 @@ Performs actions on SuggestedAdUnit objects that match the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 }
 

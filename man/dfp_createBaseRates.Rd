@@ -4,7 +4,7 @@
 \alias{dfp_createBaseRates}
 \title{BaseRateService}
 \usage{
-dfp_createBaseRates(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createBaseRates(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -21,9 +21,9 @@ a \code{data.frame} or \code{list} containing all the elements of a createBaseRa
 }
 \description{
 Provides methods for managing BaseRate objects.
-To use this service,
-you need to have the new sales management solution enabled on your network.
-If you do not see a "Sales" tab in
+To use this service, you
+need to have the new sales management solution enabled on your network. If
+you do not see a "Sales" tab in
 \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 will not be able to use this service.
 }
@@ -33,6 +33,6 @@ createBaseRates
 Creates a list of new BaseRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_getAllNetworks}
 \title{NetworkService}
 \usage{
-dfp_getAllNetworks(as_df=TRUE, verbose=FALSE)
+dfp_getAllNetworks(as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{as_df}{a boolean indicating whether to attempt to parse the result into
@@ -30,6 +30,6 @@ Intended to be used without a network code in the SOAP header when the login may
 Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 }
 

@@ -4,7 +4,7 @@
 \alias{dfp_createCustomTargetingKeys}
 \title{CustomTargetingService}
 \usage{
-dfp_createCustomTargetingKeys(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createCustomTargetingKeys(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -33,6 +33,6 @@ Creates new CustomTargetingKey objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 }
 

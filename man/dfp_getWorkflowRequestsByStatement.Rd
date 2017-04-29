@@ -4,7 +4,8 @@
 \alias{dfp_getWorkflowRequestsByStatement}
 \title{WorkflowRequestService}
 \usage{
-dfp_getWorkflowRequestsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getWorkflowRequestsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -42,6 +43,6 @@ Gets a list of WorkflowRequest objects that satisfy the given Statement query. T
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 }
 

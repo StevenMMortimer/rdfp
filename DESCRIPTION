@@ -3,7 +3,7 @@ Title: DoubleClick for Publishers API from R
 Version: 0.0.1
 Date: 2016-09-22
 Description: A tool to interact with the DFP API from R.
-Author:	Steven Mortimer [aut, cre], Jennifer Bryan [cph], Joanna Zhao [cph]
+Author: Steven Mortimer [aut, cre], Jennifer Bryan [cph], Joanna Zhao [cph]
 Maintainer: Steven Mortimer <ReportMort@gmail.com>
 URL: https://github.com/ReportMort/rdfp
 BugReports: https://github.com/ReportMort/rdfp/issues
@@ -21,7 +21,7 @@ Imports:
 Suggests:
     knitr,
     testthat
-RoxygenNote: 5.0.1
+RoxygenNote: 5.0.1.9000
 Collate:
     'ActivityGroupService.R'
     'ActivityService.R'
@@ -48,6 +48,8 @@ Collate:
     'LineItemService.R'
     'LineItemTemplateService.R'
     'LiveStreamEventService.R'
+    'MobileApplicationService.R'
+    'NativeStyleService.R'
     'NetworkService.R'
     'OrderService.R'
     'PackageService.R'

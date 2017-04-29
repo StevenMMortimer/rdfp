@@ -4,7 +4,7 @@
 \alias{dfp_createRateCards}
 \title{RateCardService}
 \usage{
-dfp_createRateCards(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createRateCards(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -21,9 +21,9 @@ a \code{data.frame} or \code{list} containing all the elements of a createRateCa
 }
 \description{
 Provides methods for managing RateCard objects.
-To use this service,
-you need to have the new sales management solution enabled on your network.
-If you do not see a "Sales" tab in
+To use this service, you
+need to have the new sales management solution enabled on your network. If
+you do not see a "Sales" tab in
 \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
 will not be able to use this service.
 }
@@ -33,6 +33,6 @@ createRateCards
 Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/RateCardService#createRateCards}{Google Documentation for createRateCards}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#createRateCards}{Google Documentation for createRateCards}
 }
 

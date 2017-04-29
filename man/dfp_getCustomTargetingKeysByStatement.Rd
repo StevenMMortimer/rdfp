@@ -4,7 +4,8 @@
 \alias{dfp_getCustomTargetingKeysByStatement}
 \title{getCustomTargetingKeysByStatement}
 \usage{
-dfp_getCustomTargetingKeysByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getCustomTargetingKeysByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -30,6 +31,6 @@ Gets a CustomTargetingKeyPage of CustomTargetingKey objects that satisfy the giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 }
 

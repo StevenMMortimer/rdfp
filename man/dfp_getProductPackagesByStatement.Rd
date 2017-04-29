@@ -4,7 +4,8 @@
 \alias{dfp_getProductPackagesByStatement}
 \title{getProductPackagesByStatement}
 \usage{
-dfp_getProductPackagesByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getProductPackagesByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -31,6 +32,6 @@ Gets a ProductPackagePage of ProductPackage objects that satisfy the filtering c
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
 }
 

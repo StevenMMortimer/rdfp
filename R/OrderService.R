@@ -14,9 +14,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/OrderService#createOrders}{Google Documentation for createOrders}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#createOrders}{Google Documentation for createOrders}
 #' 
-#' @usage dfp_createOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -79,9 +78,8 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 #' 
-#' @usage dfp_getOrdersByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -133,9 +131,8 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#performOrderAction}{Google Documentation for performOrderAction}
 #' 
-#' @usage dfp_performOrderAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -187,9 +184,8 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/OrderService#updateOrders}{Google Documentation for updateOrders}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#updateOrders}{Google Documentation for updateOrders}
 #' 
-#' @usage dfp_updateOrders(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

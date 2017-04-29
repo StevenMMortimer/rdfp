@@ -4,7 +4,8 @@
 \alias{dfp_getProductPackageItemsByStatement}
 \title{getProductPackageItemsByStatement}
 \usage{
-dfp_getProductPackageItemsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getProductPackageItemsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -31,6 +32,6 @@ Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the fil
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 }
 

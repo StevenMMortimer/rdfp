@@ -4,7 +4,7 @@
 \alias{dfp_getReportJobStatus}
 \title{getReportJobStatus}
 \usage{
-dfp_getReportJobStatus(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getReportJobStatus(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a getReportJob
 Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 }
 

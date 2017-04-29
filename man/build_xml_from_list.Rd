@@ -5,7 +5,7 @@
 \title{Build XML Request Body}
 \usage{
 build_xml_from_list(list, root_name = NULL, root = NULL,
-  version = "v201608")
+  version = getOption("rdfp.version"))
 }
 \arguments{
 \item{list}{a \code{list} of data to fill the XML body}
@@ -16,8 +16,8 @@ topmost level of the created XML hierarchy}
 \item{root}{a XML node to be placed as root 
 in the returned XML document}
 
-\item{version}{a character string matching a supported
-API version}
+\item{version}{a character string indicating the version of the DFP API 
+that is to be used in the SOAP request}
 }
 \value{
 a XML document

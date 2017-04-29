@@ -12,9 +12,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 #' 
-#' @usage dfp_createCustomFieldOptions(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -72,9 +71,8 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 #' 
-#' @usage dfp_createCustomFields(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -126,9 +124,8 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
-#' @usage dfp_getCustomFieldOption(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -187,9 +184,8 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
 #' 
-#' @usage dfp_getCustomFieldsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -241,9 +237,8 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
 #' 
-#' @usage dfp_performCustomFieldAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -295,9 +290,8 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 #' 
-#' @usage dfp_updateCustomFieldOptions(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -349,9 +343,8 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 #' 
-#' @usage dfp_updateCustomFields(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

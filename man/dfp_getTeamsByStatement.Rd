@@ -4,7 +4,7 @@
 \alias{dfp_getTeamsByStatement}
 \title{getTeamsByStatement}
 \usage{
-dfp_getTeamsByStatement(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getTeamsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,6 +28,6 @@ Gets a TeamPage of Team objects that satisfy the given Statement query. The foll
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 }
 

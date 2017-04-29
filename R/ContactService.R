@@ -8,9 +8,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContactService#createContacts}{Google Documentation for createContacts}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#createContacts}{Google Documentation for createContacts}
 #' 
-#' @usage dfp_createContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -74,9 +73,8 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 #' 
-#' @usage dfp_getContactsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -128,9 +126,8 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContactService#updateContacts}{Google Documentation for updateContacts}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#updateContacts}{Google Documentation for updateContacts}
 #' 
-#' @usage dfp_updateContacts(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

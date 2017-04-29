@@ -15,9 +15,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 #' 
-#' @usage dfp_createActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -76,9 +75,8 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 #' 
-#' @usage dfp_getActivityGroupsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -130,9 +128,8 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 #' 
-#' @usage dfp_updateActivityGroups(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)

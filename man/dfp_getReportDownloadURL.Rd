@@ -4,7 +4,7 @@
 \alias{dfp_getReportDownloadURL}
 \title{ReportService}
 \usage{
-dfp_getReportDownloadURL(request_data, as_df=TRUE, verbose=FALSE)
+dfp_getReportDownloadURL(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -51,6 +51,6 @@ Returns the URL at which the report file can be downloaded.
 The report will be generated as a gzip archive, containing the report file itself.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 }
 

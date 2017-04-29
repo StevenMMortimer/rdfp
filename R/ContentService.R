@@ -1,11 +1,13 @@
 #' ContentService
 #' 
-#' Service for retrieving Content. Content entities can be targeted in video
-#' LineItems. You can query for content that belongs to a particular category
-#' or has assigned metadata. Categories and metadata for Content are stored in
-#' DFP as CustomCriteria.
-#' For example, to find all Content that is
-#' "genre=comedy", you would:
+#' Service for retrieving Content.
+#' Content entities can be targeted in
+#' video LineItems.
+#' You can query for content that belongs to a particular
+#' category or has assigned metadata. Categories and metadata for Content are
+#' stored in DFP as CustomCriteria.
+#' For example, to find all Content that
+#' is "genre=comedy", you would:
 #' \itemize{
 #'   \item{Retrieve the custom targeting key
 #' corresponding to "genre" using
@@ -16,25 +18,25 @@
 #' retrieve the ID for the "comedy" custom targeting value.}
 #'   \item{Call
 #' #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
-#' status = 'ACTIVE'" and the ID of the custom targeting value from step
-#' 2.}
+#' status = 'ACTIVE'" and the ID of the custom targeting value from step 2.}
 #' } 
 #' 
 #' getContentByStatement
 #' 
-#' Gets a ContentPage of Content objects that satisfy the given Statement query. The following fields are supported for filtering: 
+#' Gets a ContentPage of Content objects that satisfy the given \{@@link Statement query\}. The following fields are supported for filtering: 
 #' \itemize{
 #'   \item{id}
 #'   \item{status}
 #'   \item{name}
 #'   \item{lastModifiedDateTime}
+#'   \item{lastDaiIngestDateTime}
+#'   \item{daiIngestStatus}
 #' }
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
-#' @usage dfp_getContentByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -92,9 +94,8 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
-#' @usage dfp_getContentByStatementAndCustomTargetingValue(as_df=TRUE, verbose=FALSE)
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML

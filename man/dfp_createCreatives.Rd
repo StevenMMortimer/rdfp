@@ -4,7 +4,7 @@
 \alias{dfp_createCreatives}
 \title{CreativeService}
 \usage{
-dfp_createCreatives(request_data, as_df=TRUE, verbose=FALSE)
+dfp_createCreatives(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -31,6 +31,6 @@ createCreatives
 Creates new Creative objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/CreativeService#createCreatives}{Google Documentation for createCreatives}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#createCreatives}{Google Documentation for createCreatives}
 }
 

@@ -4,7 +4,8 @@
 \alias{dfp_performReconciliationOrderReportAction}
 \title{performReconciliationOrderReportAction}
 \usage{
-dfp_performReconciliationOrderReportAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performReconciliationOrderReportAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,6 +29,6 @@ Performs actions on the ReconciliationOrderReport objects that match the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 }
 

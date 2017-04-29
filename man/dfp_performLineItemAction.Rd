@@ -4,7 +4,7 @@
 \alias{dfp_performLineItemAction}
 \title{performLineItemAction}
 \usage{
-dfp_performLineItemAction(request_data, as_df=TRUE, verbose=FALSE)
+dfp_performLineItemAction(request_data, as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -23,6 +23,6 @@ a \code{data.frame} or \code{list} containing all the elements of a performLineI
 Performs actions on LineItem objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 }
 

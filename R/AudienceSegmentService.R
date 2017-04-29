@@ -9,9 +9,8 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 #' 
-#' @usage dfp_createAudienceSegments(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -75,9 +74,8 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 #' 
-#' @usage dfp_getAudienceSegmentsByStatement(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -129,9 +127,8 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 #' 
-#' @usage dfp_performAudienceSegmentAction(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
@@ -183,9 +180,8 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201608/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 #' 
-#' @usage dfp_updateAudienceSegments(request_data, as_df=TRUE, verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
