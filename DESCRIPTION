@@ -21,7 +21,8 @@ Imports:
 Suggests:
     knitr,
     testthat,
-    rmarkdown
+    rmarkdown,
+    lubridate
 RoxygenNote: 5.0.1.9000
 Collate:
     'ActivityGroupService.R'
