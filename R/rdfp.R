@@ -2,9 +2,9 @@
 #'
 #' Double Click for Publishers API from R
 #'
-#' The Double Click for Publishers (DFP) API consists of 49 different services 
-#' as of v201508. Each service is written to handle a particular set of 
-#' operations within the API and grouped.
+#' The Double Click for Publishers (DFP) API consists of roughly 50 services. 
+#' Each service is written to handle a particular set of operations within the 
+#' API and grouped.
 #'
 #' The official documentation, provided by Google, is available at:
 #' \url{https://developers.google.com/doubleclick-publishers/docs/rel_notes}

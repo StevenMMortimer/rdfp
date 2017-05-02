@@ -4,8 +4,8 @@ Steven Mortimer
 
 
 
-First, we load `dplyr` and the `rdfp` package and specify the DFP network we 
-would like to connect to. 
+First, we load `dplyr` and `lubridate` to use in this vignette along with loading 
+the `rdfp` package and specifying the DFP network we would like to connect to. 
 
 
 ```r
@@ -160,12 +160,12 @@ for(i in 1:length(month_start_dates)){
 }
 head(all_forecasts)
 #>      unitType availableUnits reservedUnits forecast_month
-#> 1 IMPRESSIONS        6683060          1000        2017-06
-#> 2 IMPRESSIONS        7798096          1000        2017-07
-#> 3 IMPRESSIONS        8062555          1000        2017-08
-#> 4 IMPRESSIONS        9000926          1000        2017-09
-#> 5 IMPRESSIONS        9412609          1000        2017-10
-#> 6 IMPRESSIONS        9310232          1000        2017-11
+#> 1 IMPRESSIONS        6530284          1000        2017-06
+#> 2 IMPRESSIONS        7630054          1000        2017-07
+#> 3 IMPRESSIONS        7866620          1000        2017-08
+#> 4 IMPRESSIONS        8802948          1000        2017-09
+#> 5 IMPRESSIONS        9212361          1000        2017-10
+#> 6 IMPRESSIONS        9110461          1000        2017-11
 ```
 
 
@@ -322,7 +322,7 @@ totaling them up. The counties are exclusive, so it's okay to sum them.
 ```r
 # total availability across Texas counties
 sum(avails$ImpressionsAvailable) / sum(avails$ImpressionsTotal)
-#> [1] 0.49716
+#> [1] 0.4824948
 ```
 
 ### Availability for an Existing Line
@@ -348,7 +348,7 @@ forecast_request <- list(lineItemId=single_item$id,
 this_result <- dfp_getAvailabilityForecastById(forecast_request)
 this_result[,c('lineItemId', 'orderId', 'availableUnits', 'deliveredUnits', 'matchedUnits')]
 #>   lineItemId    orderId availableUnits deliveredUnits matchedUnits
-#> 1 1928467816 1254284896        1608723          86315      2057484
+#> 1 1928467816 1254284896        1558529          86394      2054665
 ```
 
 

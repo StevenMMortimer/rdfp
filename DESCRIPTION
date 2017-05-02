@@ -22,7 +22,8 @@ Suggests:
     knitr,
     testthat,
     rmarkdown,
-    lubridate
+    lubridate,
+    dplyr
 RoxygenNote: 5.0.1.9000
 Collate:
     'ActivityGroupService.R'

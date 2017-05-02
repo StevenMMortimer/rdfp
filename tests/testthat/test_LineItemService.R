@@ -11,10 +11,8 @@ dfp_auth(token = "rdfp_token.rds")
 
 # reconstruct from existing id when needed
 line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=
-                                                       list(query="WHERE Status='DELIVERING'")))$rval[c(4)]$results
+                                                       list(query="WHERE LineItemType='STANDARD' and Status='DELIVERING'")))$rval[3]$results
 # replace targeting matrices to list
-line_item_detail$targeting$geoTargeting <- as.list(as.data.frame(line_item_detail$targeting$geoTargeting, 
-                                                                       check.names=F, stringsAsFactors = F))
 line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
                                                                        check.names=F, stringsAsFactors = F))
 
