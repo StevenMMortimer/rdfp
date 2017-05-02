@@ -8,3 +8,4 @@ rdfp_token.rds
 rdfp_options.rds
 setup.tar
 misc/*
+inst/doc

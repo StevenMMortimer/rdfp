@@ -1,7 +1,7 @@
 Package: rdfp
 Title: DoubleClick for Publishers API from R
 Version: 0.0.1
-Date: 2016-09-22
+Date: 2017-05-02
 Description: A tool to interact with the DFP API from R.
 Author: Steven Mortimer [aut, cre], Jennifer Bryan [cph], Joanna Zhao [cph]
 Maintainer: Steven Mortimer <ReportMort@gmail.com>
@@ -20,7 +20,8 @@ Imports:
     methods (>= 3.1.0)
 Suggests:
     knitr,
-    testthat
+    testthat,
+    rmarkdown
 RoxygenNote: 5.0.1.9000
 Collate:
     'ActivityGroupService.R'
@@ -78,3 +79,4 @@ Collate:
     'dfp_service_endpoints.R'
     'dfp_utils.R'
     'rdfp.R'
+VignetteBuilder: knitr
