@@ -12,6 +12,12 @@ Features:
 -   Forecasting/Inventory Management/Reporting
 -   Simple Administrative Tools
 
+### Vignettes
+
+The README below outlines some basic functionality, for more practical scenarios, please refer to the vignettes:
+
+-   [Availability and Reporting](https://rawgit.com/ReportMort/rdfp/master/vignettes/availability-and-reporting.html)
+
 ### Functions
 
 All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a `data.frame` or `list` parsed from the XML returned in the SOAP response.
