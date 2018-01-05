@@ -22,9 +22,11 @@ test_that("dfp_getActivityGroupsByStatement", {
 
   request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
   
+  options(rdfp.network_code = rdfp_options$test_network_code)
   expect_message(try(dfp_getActivityGroupsByStatement(request_data), silent=T), 'ACTIVITIES_FEATURE_REQUIRED')
   expect_error(suppressMessages(dfp_getActivityGroupsByStatement(request_data)))
-
+  options(rdfp.network_code = rdfp_options$network_code)
+  
 })
 
 test_that("dfp_updateActivityGroups", {
