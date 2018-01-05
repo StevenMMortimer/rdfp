@@ -22,9 +22,11 @@ test_that("dfp_getAudienceSegmentsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
+   options(rdfp.network_code = rdfp_options$test_network_code)
    dfp_getAudienceSegmentsByStatement_result <- dfp_getAudienceSegmentsByStatement(request_data)
 
    expect_is(dfp_getAudienceSegmentsByStatement_result, "data.frame")
+   options(rdfp.network_code = rdfp_options$network_code)
 
 })
 

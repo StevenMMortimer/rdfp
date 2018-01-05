@@ -17,10 +17,14 @@ test_that("dfp_createNativeStyles", {
 })
 
 test_that("dfp_getNativeStylesByStatement", {
+  
   request_data <- list(filterStatement=list('query'="WHERE status='ACTIVE'"))
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
   dfp_getNativeStylesByStatement_result <- dfp_getNativeStylesByStatement(request_data)
 
   expect_is(dfp_getNativeStylesByStatement_result, "data.frame")
+  options(rdfp.network_code = rdfp_options$network_code)
 })
 
 test_that("dfp_performNativeStyleAction", {

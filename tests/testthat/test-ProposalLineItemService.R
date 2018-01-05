@@ -22,7 +22,7 @@ test_that("dfp_getProposalLineItemsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE status='ACTIVE'"))
 
-   expect_message(try(dfp_getProposalLineItemsByStatement(request_data), silent=T), 'MISSING_FEATURE')
+   expect_message(try(dfp_getProposalLineItemsByStatement(request_data), silent=T), 'PERMISSION_DENIED')
    expect_error(dfp_getProposalLineItemsByStatement(request_data))
 
 })

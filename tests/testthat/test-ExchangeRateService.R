@@ -16,7 +16,7 @@ test_that("dfp_createExchangeRates", {
                              direction='TO_NETWORK', 
                              exchangeRate=1.52*10000000)
   
-  expect_message(try(dfp_createExchangeRates(request_data), silent=T), 'MISSING_FEATURE')
+  expect_message(try(dfp_createExchangeRates(request_data), silent=T), 'PERMISSION_DENIED')
   expect_error(dfp_createExchangeRates(request_data))
   
 })
@@ -24,7 +24,7 @@ test_that("dfp_createExchangeRates", {
 test_that("dfp_getExchangeRatesByStatement", {
   
   request_data <- list('filterStatement'=list('query'="WHERE currencyCode='USD'"))
-  expect_message(try(dfp_getExchangeRatesByStatement(request_data), silent=T), 'MISSING_FEATURE')
+  expect_message(try(dfp_getExchangeRatesByStatement(request_data), silent=T), 'PERMISSION_DENIED')
   expect_error(dfp_getExchangeRatesByStatement(request_data))
 
 })
@@ -33,7 +33,7 @@ test_that("dfp_performExchangeRateAction", {
   
   request_data <- list(exchangeRateAction='DeleteExchangeRates',
                        filterStatement=list('query'=paste0("WHERE currencyCode='USD'")))
-  expect_message(try(dfp_performExchangeRateAction(request_data), silent=T), 'MISSING_FEATURE')
+  expect_message(try(dfp_performExchangeRateAction(request_data), silent=T), 'PERMISSION_DENIED')
   expect_error(dfp_performExchangeRateAction(request_data))
 
 })
@@ -46,7 +46,7 @@ test_that("dfp_updateExchangeRates", {
                              direction='TO_NETWORK', 
                              exchangeRate=1.62*10000000)
   
-  expect_message(try(dfp_updateExchangeRates(request_data), silent=T), 'MISSING_FEATURE')
+  expect_message(try(dfp_updateExchangeRates(request_data), silent=T), 'PERMISSION_DENIED')
   expect_error(dfp_updateExchangeRates(request_data))
 
 })

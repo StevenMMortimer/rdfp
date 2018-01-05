@@ -11,6 +11,9 @@ dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_select", {
 
+  # this is a long running test, so skip on CRAN
+  skip_on_cran()
+  
   request_data <- list(selectStatement=
                          list(query=paste('select Id, Name,', 
                                           'CanonicalParentId, CountryCode,',
