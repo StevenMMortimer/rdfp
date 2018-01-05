@@ -1,13 +1,12 @@
 #' ContentService
 #' 
 #' Service for retrieving Content.
-#' Content entities can be targeted in
-#' video LineItems.
-#' You can query for content that belongs to a particular
-#' category or has assigned metadata. Categories and metadata for Content are
-#' stored in DFP as CustomCriteria.
-#' For example, to find all Content that
-#' is "genre=comedy", you would:
+#' 
+#' Content entities can be targeted in video LineItems. You can query for content 
+#' that belongs to a particular category or has assigned metadata. Categories 
+#' and metadata for Content are stored in DFP as CustomCriteria.
+#' 
+#' For example, to find all Content that is "genre=comedy", you would:
 #' \itemize{
 #'   \item{Retrieve the custom targeting key
 #' corresponding to "genre" using
@@ -19,8 +18,8 @@
 #'   \item{Call
 #' #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
 #' status = 'ACTIVE'" and the ID of the custom targeting value from step 2.}
-#' } 
-#' 
+#' }
+
 #' getContentByStatement
 #' 
 #' Gets a ContentPage of Content objects that satisfy the given \{@@link Statement query\}. The following fields are supported for filtering: 
@@ -35,7 +34,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -49,8 +48,12 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -94,7 +97,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -105,8 +108,12 @@ dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose
  request_body <- make_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementAndCustomTargetingValueResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentByStatementAndCustomTargetingValueResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -138,3 +145,4 @@ dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose
   return(result)
 }
 #' 
+

@@ -28,6 +28,5 @@ Gets a TeamPage of Team objects that satisfy the given Statement query. The foll
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 }
-

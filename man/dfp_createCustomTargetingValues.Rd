@@ -27,6 +27,5 @@ Creates new CustomTargetingValue objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }
-

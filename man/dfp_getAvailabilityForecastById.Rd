@@ -26,6 +26,5 @@ Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD ar
 Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @param lineItemId the ID of a LineItem to run the forecast on. @param forecastOptions options controlling the forecast
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 }
-

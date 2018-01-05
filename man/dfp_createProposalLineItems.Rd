@@ -30,17 +30,8 @@ will not be able to use this service.
 \details{
 createProposalLineItems
 
-Creates new ProposalLineItem objects. For each proposal line item, the following fields are required:
-\itemize{
-  \item{ProposalLineItem proposalId}
-  \item{ProposalLineItem rateCardId}
-  \item{ProposalLineItem productId}
-  \item{ProposalLineItem name}
-  \item{ProposalLineItem startDateTime}
-  \item{ProposalLineItem endDateTime}
-}
+Creates new ProposalLineItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 }
-

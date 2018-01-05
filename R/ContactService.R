@@ -8,7 +8,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#createContacts}{Google Documentation for createContacts}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContactService#createContacts}{Google Documentation for createContacts}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,8 +22,12 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='createContacts', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContactsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContactsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -73,7 +77,7 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -87,8 +91,12 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='getContactsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContactsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContactsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -126,7 +134,7 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContactService#updateContacts}{Google Documentation for updateContacts}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContactService#updateContacts}{Google Documentation for updateContacts}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -140,8 +148,12 @@ dfp_updateContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContactService', root_name='updateContacts', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContactsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContactsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -173,3 +185,4 @@ dfp_updateContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
   return(result)
 }
 #' 
+

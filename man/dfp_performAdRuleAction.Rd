@@ -23,6 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performAdRul
 Performs actions on AdRule objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 }
-

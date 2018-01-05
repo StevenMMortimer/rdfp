@@ -31,6 +31,5 @@ Gets a CreativePage of Creative objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
 }
-

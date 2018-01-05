@@ -25,4 +25,3 @@ Receive data for a service and build the Body of text
 to include in a SOAP request.
 }
 \keyword{internal}
-

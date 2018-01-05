@@ -64,6 +64,5 @@ select
 Retrieves rows of data that satisfy the given Statement query from the system.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PublisherQueryLanguageService#select}{Google Documentation for select}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PublisherQueryLanguageService#select}{Google Documentation for select}
 }
-

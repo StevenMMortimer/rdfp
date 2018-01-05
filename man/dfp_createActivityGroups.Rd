@@ -23,10 +23,9 @@ a \code{data.frame} or \code{list} containing all the elements of a createActivi
 Provides methods for creating, updating and retrieving ActivityGroup
 objects.
 An activity group contains Activity objects. Activities have a
-one-to-one relationship with activity groups. Each activity can belong to
-only one activity group. Activity groups, however, have a one-to-many
-relationship with activities, meaning each activity group can have multiple
-activities. A activity group can be used to manage the activities it
+many-to-one relationship with activity groups, meaning each activity can
+belong to only one activity group, but activity groups can have multiple
+activities. An activity group can be used to manage the activities it
 contains.
 }
 \details{
@@ -35,6 +34,5 @@ createActivityGroups
 Creates a new ActivityGroup objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }
-

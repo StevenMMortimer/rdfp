@@ -16,7 +16,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,8 +30,12 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
  request_body <- make_request_body(service='ReconciliationReportService', root_name='getReconciliationReportsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationReportsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationReportsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -69,7 +73,7 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -83,8 +87,12 @@ dfp_updateReconciliationReports <- function(request_data, as_df=TRUE, verbose=FA
  request_body <- make_request_body(service='ReconciliationReportService', root_name='updateReconciliationReports', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationReportsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationReportsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

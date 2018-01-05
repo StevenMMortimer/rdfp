@@ -9,19 +9,11 @@
 #' 
 #' createProposalLineItems
 #' 
-#' Creates new ProposalLineItem objects. For each proposal line item, the following fields are required:
-#' \itemize{
-#'   \item{ProposalLineItem proposalId}
-#'   \item{ProposalLineItem rateCardId}
-#'   \item{ProposalLineItem productId}
-#'   \item{ProposalLineItem name}
-#'   \item{ProposalLineItem startDateTime}
-#'   \item{ProposalLineItem endDateTime}
-#' } 
+#' Creates new ProposalLineItem objects.
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -35,8 +27,12 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
  request_body <- make_request_body(service='ProposalLineItemService', root_name='createProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalLineItemsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalLineItemsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -87,7 +83,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -101,8 +97,12 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
  request_body <- make_request_body(service='ProposalLineItemService', root_name='getProposalLineItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalLineItemsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalLineItemsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -140,7 +140,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -154,8 +154,12 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
  request_body <- make_request_body(service='ProposalLineItemService', root_name='performProposalLineItemAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalLineItemActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalLineItemActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -193,7 +197,7 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -207,8 +211,12 @@ dfp_updateProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
  request_body <- make_request_body(service='ProposalLineItemService', root_name='updateProposalLineItems', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalLineItemsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalLineItemsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

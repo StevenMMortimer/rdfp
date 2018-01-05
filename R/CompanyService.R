@@ -8,7 +8,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#createCompanies}{Google Documentation for createCompanies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CompanyService#createCompanies}{Google Documentation for createCompanies}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,8 +22,12 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCompaniesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCompaniesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -67,7 +71,7 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -81,8 +85,12 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
  request_body <- make_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCompaniesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCompaniesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -120,7 +128,7 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -134,8 +142,12 @@ dfp_updateCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCompaniesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCompaniesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

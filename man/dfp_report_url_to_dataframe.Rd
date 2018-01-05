@@ -21,4 +21,3 @@ Receive a URL (usually from the ReportService) and
 download data from that URL. Currently, the exportFormat
 must have been set for CSV_DUMP
 }
-

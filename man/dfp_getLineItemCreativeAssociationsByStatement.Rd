@@ -32,6 +32,5 @@ Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 }
-

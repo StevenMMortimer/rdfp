@@ -3,10 +3,9 @@
 #' Provides methods for creating, updating and retrieving ActivityGroup
 #' objects.
 #' An activity group contains Activity objects. Activities have a
-#' one-to-one relationship with activity groups. Each activity can belong to
-#' only one activity group. Activity groups, however, have a one-to-many
-#' relationship with activities, meaning each activity group can have multiple
-#' activities. A activity group can be used to manage the activities it
+#' many-to-one relationship with activity groups, meaning each activity can
+#' belong to only one activity group, but activity groups can have multiple
+#' activities. An activity group can be used to manage the activities it
 #' contains.
 #' 
 #' createActivityGroups
@@ -15,7 +14,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,8 +28,12 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivityGroupsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createActivityGroupsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -75,7 +78,7 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,8 +92,12 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
  request_body <- make_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivityGroupsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getActivityGroupsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -128,7 +135,7 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -142,8 +149,12 @@ dfp_updateActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivityGroupsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateActivityGroupsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -174,4 +185,4 @@ dfp_updateActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
   }
   return(result)
 }
-#' 
+#'

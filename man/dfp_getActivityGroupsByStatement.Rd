@@ -31,6 +31,5 @@ Gets an ActivityGroupPage of ActivityGroup objects that satisfy the given Statem
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 }
-

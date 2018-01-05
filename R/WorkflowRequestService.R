@@ -22,7 +22,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -36,8 +36,12 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
  request_body <- make_request_body(service='WorkflowRequestService', root_name='getWorkflowRequestsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getWorkflowRequestsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getWorkflowRequestsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -75,7 +79,7 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,8 +93,12 @@ dfp_performWorkflowRequestAction <- function(request_data, as_df=TRUE, verbose=F
  request_body <- make_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performWorkflowRequestActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performWorkflowRequestActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

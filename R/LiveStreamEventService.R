@@ -19,7 +19,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -33,8 +33,12 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='createLiveStreamEvents', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLiveStreamEventsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLiveStreamEventsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -75,7 +79,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,8 +93,12 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
  request_body <- make_request_body(service='LiveStreamEventService', root_name='getLiveStreamEventsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLiveStreamEventsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLiveStreamEventsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -128,7 +136,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -142,8 +150,12 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
  request_body <- make_request_body(service='LiveStreamEventService', root_name='performLiveStreamEventAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLiveStreamEventActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLiveStreamEventActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -182,7 +194,7 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -193,8 +205,12 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='registerSessionsForMonitoring', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['registerSessionsForMonitoringResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['registerSessionsForMonitoringResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -232,7 +248,7 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -246,8 +262,12 @@ dfp_updateLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LiveStreamEventService', root_name='updateLiveStreamEvents', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLiveStreamEventsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLiveStreamEventsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -279,3 +299,4 @@ dfp_updateLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   return(result)
 }
 #' 
+

@@ -8,7 +8,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,8 +22,12 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
  request_body <- make_request_body(service='MobileApplicationService', root_name='createMobileApplications', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createMobileApplicationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createMobileApplicationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -69,7 +73,7 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -83,8 +87,12 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
  request_body <- make_request_body(service='MobileApplicationService', root_name='getMobileApplicationsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getMobileApplicationsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getMobileApplicationsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -122,7 +130,7 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -136,8 +144,12 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
  request_body <- make_request_body(service='MobileApplicationService', root_name='performMobileApplicationAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performMobileApplicationActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performMobileApplicationActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -175,7 +187,7 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -189,8 +201,12 @@ dfp_updateMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
  request_body <- make_request_body(service='MobileApplicationService', root_name='updateMobileApplications', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateMobileApplicationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateMobileApplicationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -222,3 +238,4 @@ dfp_updateMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
   return(result)
 }
 #' 
+

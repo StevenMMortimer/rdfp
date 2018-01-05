@@ -16,7 +16,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#createProposals}{Google Documentation for createProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#createProposals}{Google Documentation for createProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,8 +30,12 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProposalService', root_name='createProposals', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -72,7 +76,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,8 +90,12 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
  request_body <- make_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getMarketplaceCommentsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getMarketplaceCommentsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -139,7 +147,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -153,8 +161,12 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
  request_body <- make_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -197,7 +209,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -211,8 +223,12 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -250,7 +266,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#updateProposals}{Google Documentation for updateProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -264,8 +280,12 @@ dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

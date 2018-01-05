@@ -29,6 +29,5 @@ Gets a ContentMetadataKeyHierarchyPage of ContentMetadataKeyHierarchy objects th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentMetadataKeyHierarchyService#getContentMetadataKeyHierarchiesByStatement}{Google Documentation for getContentMetadataKeyHierarchiesByStatement}
 }
-

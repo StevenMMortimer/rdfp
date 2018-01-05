@@ -35,6 +35,5 @@ createProductPackageItems
 Creates new ProductPackageItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 }
-

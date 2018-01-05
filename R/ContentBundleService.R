@@ -12,7 +12,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,8 +26,12 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentBundlesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createContentBundlesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -70,7 +74,7 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -84,8 +88,12 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
  request_body <- make_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentBundlesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getContentBundlesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -123,7 +131,7 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -137,8 +145,12 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentBundleActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performContentBundleActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -176,7 +188,7 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -190,8 +202,12 @@ dfp_updateContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentBundlesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateContentBundlesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

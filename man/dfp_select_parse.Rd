@@ -19,4 +19,3 @@ PublishersQueryLanguage service and parse into a data.frame
 \seealso{
 dfp_select
 }
-

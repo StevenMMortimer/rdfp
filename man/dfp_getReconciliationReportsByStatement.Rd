@@ -37,6 +37,5 @@ Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 }
-

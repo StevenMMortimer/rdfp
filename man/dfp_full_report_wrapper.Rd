@@ -36,4 +36,3 @@ until returning a data.frame or error
 
 \link{dfp_getReportDownloadURL}
 }
-

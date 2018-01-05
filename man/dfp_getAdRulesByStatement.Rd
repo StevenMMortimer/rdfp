@@ -29,6 +29,5 @@ Gets an AdRulePage of AdRule objects that satisfy the given \{@link Statement qu
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 }
-

@@ -74,4 +74,3 @@ More detail is available from
 \href{https://developers.google.com/identity/protocols/OAuth2}{Using OAuth
 2.0 to Access Google APIs}.
 }
-

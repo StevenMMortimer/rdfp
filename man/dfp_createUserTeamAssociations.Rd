@@ -32,6 +32,5 @@ createUserTeamAssociations
 Creates new UserTeamAssociation objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 }
-

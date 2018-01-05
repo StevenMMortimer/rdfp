@@ -24,6 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performPropo
 Performs actions on ProposalLineItem objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 }
-

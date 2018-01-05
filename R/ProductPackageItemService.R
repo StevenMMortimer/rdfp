@@ -15,7 +15,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,8 +29,12 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
  request_body <- make_request_body(service='ProductPackageItemService', root_name='createProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackageItemsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackageItemsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -76,7 +80,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -90,8 +94,12 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
  request_body <- make_request_body(service='ProductPackageItemService', root_name='getProductPackageItemsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackageItemsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackageItemsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -129,7 +137,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -143,8 +151,12 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
  request_body <- make_request_body(service='ProductPackageItemService', root_name='performProductPackageItemAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageItemActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageItemActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -182,7 +194,7 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -196,8 +208,12 @@ dfp_updateProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
  request_body <- make_request_body(service='ProductPackageItemService', root_name='updateProductPackageItems', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackageItemsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackageItemsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -229,3 +245,4 @@ dfp_updateProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
   return(result)
 }
 #' 
+

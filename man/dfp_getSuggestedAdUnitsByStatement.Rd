@@ -50,6 +50,5 @@ Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter qu
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
 }
-

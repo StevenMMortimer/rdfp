@@ -37,6 +37,5 @@ Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 }
-

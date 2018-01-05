@@ -29,6 +29,5 @@ Creates new CustomField objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 }
-

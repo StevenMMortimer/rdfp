@@ -4,7 +4,7 @@ rdfp
 
 [![Build Status](https://travis-ci.org/ReportMort/rdfp.png?branch=master)](https://travis-ci.org/ReportMort/rdfp) [![Coverage Status](https://img.shields.io/codecov/c/github/ReportMort/rdfp/master.svg)](https://codecov.io/github/ReportMort/rdfp?branch=master)
 
-**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201702`. Most all operations supported by the DFP API are available via this package.
+**rdfp** is the R implementation of Double Click for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Currently, this package is leveraging the DFP API version: `v201711`. Most all operations supported by the DFP API are available via this package.
 
 Features:
 

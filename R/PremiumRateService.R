@@ -13,7 +13,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -27,8 +27,12 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPremiumRatesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPremiumRatesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -71,7 +75,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -85,8 +89,12 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPremiumRatesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPremiumRatesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -124,7 +132,7 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -138,8 +146,12 @@ dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePremiumRatesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePremiumRatesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -171,3 +183,4 @@ dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   return(result)
 }
 #' 
+

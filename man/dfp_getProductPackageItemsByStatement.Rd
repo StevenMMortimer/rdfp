@@ -32,6 +32,5 @@ Gets a ProductPackageItemPage of ProductPackageItem objects that satisfy the fil
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 }
-

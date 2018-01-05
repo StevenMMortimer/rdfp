@@ -12,7 +12,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,8 +26,12 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='createUserTeamAssociations', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUserTeamAssociationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUserTeamAssociationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -69,7 +73,7 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -83,8 +87,12 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='getUserTeamAssociationsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUserTeamAssociationsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUserTeamAssociationsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -122,7 +130,7 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -136,8 +144,12 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='performUserTeamAssociationAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserTeamAssociationActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserTeamAssociationActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -175,7 +187,7 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -189,8 +201,12 @@ dfp_updateUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='UserTeamAssociationService', root_name='updateUserTeamAssociations', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUserTeamAssociationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUserTeamAssociationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

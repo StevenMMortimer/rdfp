@@ -12,7 +12,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#createUsers}{Google Documentation for createUsers}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#createUsers}{Google Documentation for createUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,8 +26,12 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='createUsers', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUsersResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createUsersResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -65,7 +69,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#getAllRoles}{Google Documentation for getAllRoles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#getAllRoles}{Google Documentation for getAllRoles}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -76,8 +80,12 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getAllRoles', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllRolesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllRolesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -115,7 +123,7 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -126,8 +134,12 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentUserResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentUserResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -173,7 +185,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -187,8 +199,12 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUsersByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getUsersByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -226,7 +242,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#performUserAction}{Google Documentation for performUserAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#performUserAction}{Google Documentation for performUserAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -240,8 +256,12 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='performUserAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performUserActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -279,7 +299,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#updateUsers}{Google Documentation for updateUsers}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#updateUsers}{Google Documentation for updateUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -293,8 +313,12 @@ dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='UserService', root_name='updateUsers', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUsersResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateUsersResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -325,4 +349,4 @@ dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   }
   return(result)
 }
-#' 
+#'

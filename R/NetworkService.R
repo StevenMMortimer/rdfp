@@ -14,7 +14,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -25,8 +25,12 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllNetworksResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAllNetworksResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -64,7 +68,7 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -75,8 +79,12 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentNetworkResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCurrentNetworkResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -141,7 +149,7 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -152,8 +160,12 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['makeTestNetworkResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['makeTestNetworkResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -191,7 +203,7 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -205,8 +217,12 @@ dfp_updateNetwork <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNetworkResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNetworkResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

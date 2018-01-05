@@ -9,7 +9,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -23,8 +23,12 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='createAudienceSegments', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAudienceSegmentsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAudienceSegmentsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -74,7 +78,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -88,8 +92,12 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
  request_body <- make_request_body(service='AudienceSegmentService', root_name='getAudienceSegmentsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAudienceSegmentsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAudienceSegmentsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -127,7 +135,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -141,8 +149,12 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
  request_body <- make_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAudienceSegmentActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAudienceSegmentActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -180,7 +192,7 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -194,8 +206,12 @@ dfp_updateAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='AudienceSegmentService', root_name='updateAudienceSegments', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAudienceSegmentsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAudienceSegmentsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

@@ -33,6 +33,5 @@ createPremiumRates
 Creates a list of new PremiumRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }
-

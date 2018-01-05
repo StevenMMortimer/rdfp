@@ -24,14 +24,15 @@ Suggests:
     rmarkdown,
     lubridate,
     dplyr
-RoxygenNote: 5.0.1.9000
-Collate:
+RoxygenNote: 6.0.1
+Collate: 
     'ActivityGroupService.R'
     'ActivityService.R'
     'AdExclusionRuleService.R'
     'AdRuleService.R'
     'AudienceSegmentService.R'
     'BaseRateService.R'
+    'CdnConfigurationService.R'
     'CompanyService.R'
     'ContactService.R'
     'ContentBundleService.R'

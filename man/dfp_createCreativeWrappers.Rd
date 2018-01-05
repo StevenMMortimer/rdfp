@@ -38,6 +38,5 @@ Creates a new CreativeWrapper objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 }
-

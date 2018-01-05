@@ -14,7 +14,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#createPlacements}{Google Documentation for createPlacements}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PlacementService#createPlacements}{Google Documentation for createPlacements}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -28,8 +28,12 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPlacementsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createPlacementsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -76,7 +80,7 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -90,8 +94,12 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
  request_body <- make_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPlacementsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPlacementsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -129,7 +137,7 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -143,8 +151,12 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPlacementActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performPlacementActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -182,7 +194,7 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -196,8 +208,12 @@ dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePlacementsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updatePlacementsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -229,3 +245,4 @@ dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   return(result)
 }
 #' 
+

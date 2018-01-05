@@ -24,6 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performCusto
 Performs actions on CustomTargetingKey objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 }
-

@@ -32,6 +32,5 @@ Creates new ExchangeRate objects. For each exchange rate, the following fields a
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 }
-

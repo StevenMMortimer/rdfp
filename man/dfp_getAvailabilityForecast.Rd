@@ -29,8 +29,7 @@ Test Network Behavior
 
 Test networks are unable to provide forecasts that would be comparable 
 to the production environment because forecasts require traffic history. 
-Visit the See Also section below to proceed to Google and review the details.'
-
+Visit the See Also section below to proceed to Google and review the details.
 getAvailabilityForecast
 
 Gets the availability forecast for a ProspectiveLineItem. 
@@ -39,6 +38,5 @@ units that the line item can book, and the total number of units
 matching the line item's targeting.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 }
-

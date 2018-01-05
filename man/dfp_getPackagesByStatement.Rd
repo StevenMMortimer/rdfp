@@ -31,6 +31,5 @@ Gets a PackagePage of Package objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
 }
-

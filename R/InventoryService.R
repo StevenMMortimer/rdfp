@@ -15,7 +15,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,8 +29,12 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='InventoryService', root_name='createAdUnits', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAdUnitsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createAdUnitsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -71,7 +75,7 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -85,8 +89,12 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
  request_body <- make_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdUnitSizesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdUnitSizesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -132,7 +140,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -146,8 +154,12 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
  request_body <- make_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdUnitsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAdUnitsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -185,7 +197,7 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -199,8 +211,12 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdUnitActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performAdUnitActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -238,7 +254,7 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -252,8 +268,12 @@ dfp_updateAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='InventoryService', root_name='updateAdUnits', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAdUnitsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateAdUnitsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

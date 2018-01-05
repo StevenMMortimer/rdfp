@@ -34,6 +34,5 @@ Gets an OrderPage of Order objects that satisfy the given Statement query. The f
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 }
-

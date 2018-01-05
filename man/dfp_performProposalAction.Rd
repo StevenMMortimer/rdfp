@@ -28,6 +28,5 @@ Performs actions on Proposal objects that match the given Statement query. The f
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 }
-

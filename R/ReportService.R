@@ -2,8 +2,8 @@
 #' 
 #' Provides methods for executing a ReportJob and retrieving performance and
 #' statistics about ad campaigns, networks, inventory and sales.
-#' Follow the
-#' steps outlined below:
+#' 
+#' Follow the steps outlined below:
 #' \itemize{
 #'   \item{Create the ReportJob object by
 #' invoking ReportService#runReportJob.}
@@ -31,7 +31,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -45,8 +45,12 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadURLResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadURLResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -85,7 +89,7 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -99,8 +103,12 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
  request_body <- make_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadUrlWithOptionsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportDownloadUrlWithOptionsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -138,7 +146,7 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -152,8 +160,12 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportJobStatusResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReportJobStatusResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -195,7 +207,7 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -209,8 +221,12 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='ReportService', root_name='getSavedQueriesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getSavedQueriesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getSavedQueriesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -252,7 +268,7 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService#runReportJob}{Google Documentation for runReportJob}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -266,8 +282,12 @@ dfp_runReportJob <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ReportService', root_name='runReportJob', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['runReportJobResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['runReportJobResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -299,3 +319,4 @@ dfp_runReportJob <- function(request_data, as_df=TRUE, verbose=FALSE){
   return(result)
 }
 #' 
+

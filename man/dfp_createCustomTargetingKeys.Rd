@@ -33,6 +33,5 @@ Creates new CustomTargetingKey objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 }
-

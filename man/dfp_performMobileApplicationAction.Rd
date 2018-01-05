@@ -24,6 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performMobil
 Performs an action on MobileApplication mobile applications.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
 }
-

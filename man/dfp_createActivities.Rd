@@ -24,10 +24,9 @@ Provides methods for creating, updating and retrieving Activity objects.
 }
 \details{
 An activity group contains Activity objects. Activities have a
-one-to-one relationship with activity groups. Each activity can belong to
-only one activity group. Activity groups, however, have a one-to-many
-relationship with activities, meaning each activity group can have multiple
-activities. A activity group can be used to manage the activities it
+many-to-one relationship with activity groups, meaning each activity can
+belong to only one activity group, but activity groups can have multiple
+activities. An activity group can be used to manage the activities it
 contains.
 
 createActivities
@@ -35,6 +34,5 @@ createActivities
 Creates a new Activity objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ActivityService#createActivities}{Google Documentation for createActivities}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityService#createActivities}{Google Documentation for createActivities}
 }
-

@@ -46,6 +46,5 @@ Test networks are limited in the following ways:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 }
-

@@ -30,6 +30,5 @@ Gets a RateCardPage of RateCard objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 }
-

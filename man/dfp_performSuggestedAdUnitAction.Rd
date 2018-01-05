@@ -28,6 +28,5 @@ Performs actions on SuggestedAdUnit objects that match the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 }
-

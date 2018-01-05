@@ -8,8 +8,8 @@
 #' 
 #' Test networks are unable to provide forecasts that would be comparable 
 #' to the production environment because forecasts require traffic history. 
-#' Visit the See Also section below to proceed to Google and review the details.'
-#' 
+#' Visit the See Also section below to proceed to Google and review the details.
+
 #' getAvailabilityForecast
 #' 
 #' Gets the availability forecast for a ProspectiveLineItem. 
@@ -19,7 +19,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -33,8 +33,12 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -75,7 +79,7 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,8 +93,12 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
  request_body <- make_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastByIdResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getAvailabilityForecastByIdResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -128,7 +136,7 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -142,8 +150,12 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -181,7 +193,7 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -195,8 +207,12 @@ dfp_getDeliveryForecastByIds <- function(request_data, as_df=TRUE, verbose=FALSE
  request_body <- make_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastByIdsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getDeliveryForecastByIdsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

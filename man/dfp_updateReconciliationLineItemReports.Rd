@@ -24,6 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateReconc
 Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
 }
-

@@ -28,6 +28,5 @@ createCreativeSet
 Creates a new CreativeSet.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 }
-

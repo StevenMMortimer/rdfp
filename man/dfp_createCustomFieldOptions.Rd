@@ -32,6 +32,5 @@ Creates new CustomFieldOption objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 }
-

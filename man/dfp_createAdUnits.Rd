@@ -35,6 +35,5 @@ createAdUnits
 Creates new AdUnit objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 }
-

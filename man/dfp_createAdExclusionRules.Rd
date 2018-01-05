@@ -32,6 +32,5 @@ createAdExclusionRules
 Creates new AdExclusionRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 }
-

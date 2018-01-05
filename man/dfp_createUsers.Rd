@@ -32,6 +32,5 @@ createUsers
 Creates new User objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/UserService#createUsers}{Google Documentation for createUsers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#createUsers}{Google Documentation for createUsers}
 }
-

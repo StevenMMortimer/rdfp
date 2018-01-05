@@ -44,7 +44,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/PublisherQueryLanguageService#select}{Google Documentation for select}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PublisherQueryLanguageService#select}{Google Documentation for select}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -58,8 +58,12 @@ dfp_select <- function(request_data, as_df=FALSE, verbose=FALSE){
  request_body <- make_request_body(service='PublisherQueryLanguageService', root_name='select', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['selectResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['selectResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

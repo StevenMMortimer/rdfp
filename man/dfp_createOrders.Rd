@@ -34,6 +34,5 @@ createOrders
 Creates new Order objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/OrderService#createOrders}{Google Documentation for createOrders}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/OrderService#createOrders}{Google Documentation for createOrders}
 }
-

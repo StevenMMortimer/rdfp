@@ -23,6 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAudien
 Updates the given RuleBasedFirstPartyAudienceSegment objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 }
-

@@ -26,4 +26,3 @@ a XML document
 Parse data into XML format
 }
 \keyword{internal}
-

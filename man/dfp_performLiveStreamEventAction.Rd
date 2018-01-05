@@ -24,6 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performLiveS
 Performs actions on LiveStreamEvent objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 }
-

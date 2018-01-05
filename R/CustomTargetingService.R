@@ -13,7 +13,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -27,8 +27,12 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingKeysResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingKeysResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -70,7 +74,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -84,8 +88,12 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
  request_body <- make_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingValuesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createCustomTargetingValuesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -130,7 +138,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -144,8 +152,12 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingKeysByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingKeysByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -190,7 +202,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -204,8 +216,12 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
  request_body <- make_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingValuesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getCustomTargetingValuesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -243,7 +259,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -257,8 +273,12 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingKeyActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingKeyActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -296,7 +316,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -310,8 +330,12 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
  request_body <- make_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingValueActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performCustomTargetingValueActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -349,7 +373,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -363,8 +387,12 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingKeysResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingKeysResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -402,7 +430,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -416,8 +444,12 @@ dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
  request_body <- make_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingValuesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateCustomTargetingValuesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -449,3 +481,4 @@ dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
   return(result)
 }
 #' 
+

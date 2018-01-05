@@ -23,6 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAdExcl
 Updates the specified AdExclusionRule objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 }
-

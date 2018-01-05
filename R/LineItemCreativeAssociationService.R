@@ -16,7 +16,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,8 +30,12 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemCreativeAssociationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemCreativeAssociationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -77,7 +81,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,8 +95,12 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemCreativeAssociationsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemCreativeAssociationsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -130,7 +138,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -141,8 +149,66 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPreviewUrlResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPreviewUrlResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
+    NULL
+  } else if (as_df){
+      if(length(response[grepl('rval', names(response))])==1 &
+          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
+           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
+            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
+             .fun=function(x){
+                 x <- xmlToList(x)
+                 x[sapply(x, is.null)] <- NA
+                 new_x <- as.data.frame(x, stringsAsFactors = F)
+                 return(new_x)
+             }, .id=NULL)
+      } else {
+      ldply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               x[sapply(x, is.null)] <- NA
+               new_x <- as.data.frame(x, stringsAsFactors = F)
+               return(new_x)
+             }, .id=NULL)
+      }
+  } else {
+      llply(response[grepl('rval', names(response))],
+            .fun=function(x){
+               x <- xmlToList(x)
+               return(x)
+             })
+  }
+  return(result)
+}
+#' 
+#' getPreviewUrlsForNativeStyles
+#' 
+#' Returns a list of URLs that reference the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. Each URL corresponds to one available native style for previewing the specified creative. creative
+#' 
+#' @importFrom plyr llply ldply
+#' @importFrom utils tail
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
+#' 
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
+#' @return a \code{data.frame} or \code{list} containing all the elements of a getPreviewUrlsForNativeStylesResponse 
+#' @export
+dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
+ request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrlsForNativeStyles', data=NULL)
+  request <- build_soap_request(body = request_body, verbose=verbose)
+
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getPreviewUrlsForNativeStylesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -180,7 +246,7 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -194,8 +260,12 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemCreativeAssociationActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemCreativeAssociationActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -233,7 +303,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -247,8 +317,12 @@ dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
  request_body <- make_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemCreativeAssociationsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemCreativeAssociationsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

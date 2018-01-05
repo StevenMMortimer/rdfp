@@ -8,7 +8,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,8 +22,12 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NativeStyleService', root_name='createNativeStyles', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createNativeStylesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createNativeStylesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -65,7 +69,7 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,8 +83,12 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
  request_body <- make_request_body(service='NativeStyleService', root_name='getNativeStylesByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getNativeStylesByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getNativeStylesByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -118,7 +126,7 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -132,8 +140,12 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
  request_body <- make_request_body(service='NativeStyleService', root_name='performNativeStyleAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performNativeStyleActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performNativeStyleActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -171,7 +183,7 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -185,8 +197,12 @@ dfp_updateNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
  request_body <- make_request_body(service='NativeStyleService', root_name='updateNativeStyles', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNativeStylesResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateNativeStylesResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

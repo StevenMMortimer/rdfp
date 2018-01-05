@@ -32,6 +32,5 @@ Gets a MobileApplicationPage mobileApplicationPage of MobileApplication mobile a
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
 }
-

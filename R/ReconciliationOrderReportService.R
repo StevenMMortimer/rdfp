@@ -18,7 +18,7 @@
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -32,8 +32,12 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationOrderReportsByStatementResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationOrderReportsByStatementResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -76,7 +80,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -90,8 +94,12 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performReconciliationOrderReportActionResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performReconciliationOrderReportActionResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &
@@ -129,7 +137,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' 
 #' @importFrom plyr llply ldply
 #' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -143,8 +151,12 @@ dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE, verbo
  request_body <- make_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)
   request <- build_soap_request(body = request_body, verbose=verbose)
 
-  response <- xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationOrderReportsResponse']])
-  result <- if(is.null(response$rval)){
+  null_root <- is.null(request)
+  response <- NULL
+  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationOrderReportsResponse']]), silent=T)
+  result <- if(null_root | is.null(response)){
+    NULL
+  } else if(is.null(response$rval)){
     NULL
   } else if (as_df){
       if(length(response[grepl('rval', names(response))])==1 &

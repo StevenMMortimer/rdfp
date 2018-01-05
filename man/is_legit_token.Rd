@@ -12,4 +12,3 @@ i.e. `inherits(token, "Token2.0")` is TRUE, but that have dysfunctional
 credentials.
 }
 \keyword{internal}
-

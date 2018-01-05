@@ -30,6 +30,5 @@ Intended to be used without a network code in the SOAP header when the login may
 Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 }
-

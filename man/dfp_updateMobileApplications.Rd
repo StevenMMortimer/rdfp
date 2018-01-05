@@ -23,6 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateMobile
 Updates the specified MobileApplication mobile applications.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 }
-

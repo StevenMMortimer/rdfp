@@ -23,6 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performNativ
 Performs actions on NativeStyle native styles that match the given Statement.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 }
-

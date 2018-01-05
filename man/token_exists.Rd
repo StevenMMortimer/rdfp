@@ -13,4 +13,3 @@ logical
 Check if authorization currently in force
 }
 \keyword{internal}
-

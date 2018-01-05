@@ -36,4 +36,3 @@ make call to the appropriate API service, then
 parse the response.
 }
 \keyword{internal}
-

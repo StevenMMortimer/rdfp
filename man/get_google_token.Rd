@@ -10,4 +10,3 @@ get_google_token()
 Get token if it's previously stored, else prompt user to get one.
 }
 \keyword{internal}
-

@@ -28,6 +28,5 @@ createNativeStyles
 Creates new NativeStyle objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201702/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 }
-
