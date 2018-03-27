@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
 <br>
-<img src="man/figures/rdfp.png" width="200px" align="right" />
+<img src="man/figures/rdfp.png" width="120px" align="right" />
 
 **Compiled using DFP API version: `v201711`**
 

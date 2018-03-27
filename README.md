@@ -1,5 +1,5 @@
 
-rdfp <img src="man/figures/rdfp.png" width="200px" align="right" />
+rdfp <img src="man/figures/rdfp.png" width="120px" align="right" />
 ===================================================================
 
 [![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp) [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
