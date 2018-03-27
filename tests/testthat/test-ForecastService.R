@@ -16,6 +16,7 @@ line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=
 # replace targeting matrices to list
 line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
                                                                        check.names=F, stringsAsFactors = F))
+line_item_detail$targeting$technologyTargeting <- NULL
 
 hypothetical_line_item <- list(lineItem=
                                 list(id=line_item_detail$id,

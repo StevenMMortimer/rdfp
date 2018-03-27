@@ -15,6 +15,7 @@ line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=
 # replace targeting matrices to list
 line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
                                                                        check.names=F, stringsAsFactors = F))
+line_item_detail$targeting$technologyTargeting <- NULL
 
 hypothetical_line_item <- list(orderId=line_item_detail$orderId, 
                                startDateTime=list(date=list(year=as.integer(format(Sys.Date(), '%Y'))+1, month=1, day=1), 

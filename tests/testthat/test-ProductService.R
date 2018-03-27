@@ -13,7 +13,7 @@ test_that("dfp_getProductsByStatement", {
 
    request_data <- list('statement'=list('query'="WHERE status='ACTIVE'"))
    
-   expect_message(try(dfp_getProductsByStatement(request_data), silent=T), 'PERMISSION_DENIED')
+   expect_message(try(dfp_getProductsByStatement(request_data), silent=T), 'MISSING_FEATURE')
    expect_error(dfp_getProductsByStatement(request_data))
 
 })

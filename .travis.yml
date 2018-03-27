@@ -1,28 +1,38 @@
+before_install:
+- openssl aes-256-cbc -K $encrypted_9568539fc584_key -iv $encrypted_9568539fc584_iv
+  -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
+- tar xvf tests/testthat/setup.tar -C tests/testthat
+- R -q -e 'install.packages(c("remotes", "curl")); remotes::install_github("ropenscilabs/tic");
+  tic::prepare_all_stages(); tic::before_install()'
+install: R -q -e 'tic::install()'
+after_install: R -q -e 'tic::after_install()'
+before_script: R -q -e 'tic::before_script()'
+script: R -q -e 'tic::script()'
+after_success: R -q -e 'tic::after_success()'
+after_failure: R -q -e 'tic::after_failure()'
+before_deploy: R -q -e 'tic::before_deploy()'
+deploy:
+  provider: script
+  script: R -q -e 'tic::deploy()'
+  on:
+    all_branches: true
+after_deploy: R -q -e 'tic::after_deploy()'
+after_script: R -q -e 'tic::after_script()'
 language: r
-sudo: required
-warnings_are_errors: false
-r_check_args: "--no-build-vignettes --no-manual --timings"
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+sudo: false
+dist: trusty
+cache: packages
+latex: false
+matrix:
+  include:
+  - r: oldrel
+  - r: release
+    env:
+    - BUILD_PKGDOWN: true
+  - r: devel
 env:
   global:
-  - CRAN: http://cran.rstudio.com
-  - NOT_CRAN: true
-before_install:
-- openssl aes-256-cbc -K $encrypted_250e83c47055_key -iv $encrypted_250e83c47055_iv -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
-- tar xvf tests/testthat/setup.tar -C tests/testthat
-r_github_packages:
-- jimhester/covr
-r_binary_packages:
-- XML
-- plyr
-- dplyr
-- testthat
-- httr
-r_packages:
-- lubridate
-- rmarkdown
-after_success:
-- Rscript -e 'library(covr);codecov()'
+  - _R_CHECK_FORCE_SUGGESTS_=false
+  - MAKEFLAGS="-j 2"
+  - TRAVIS_CXXFLAGS="-Wall -Wextra -pedantic -Werror"
+services: 

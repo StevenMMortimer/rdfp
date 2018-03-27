@@ -1,0 +1,59 @@
+title: rdfp
+url: https://stevenmmortimer.github.io/rdfp/
+template:
+  params:
+    bootswatch: spacelab
+    ganalytics: UA-98603021-1
+
+home:
+  strip_header: true
+  
+navbar:
+  type: default
+  left:
+    - text: "Articles"
+      menu: 
+      -  text: Availability and Reporting
+         href: articles/availability-and-reporting.html
+    - text: Reference
+      href: reference/index.html
+    - text: News
+      href: news/index.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/StevenMMortimer/rdfp
+      
+reference:
+  - title: Authentication
+    desc: Functions used for authenticating.
+    contents:
+      - '`dfp_auth`'
+  - title: Administrative Tools
+    desc: Functions used for basic environment setup.
+    contents:
+      - '`dfp_getCurrentUser`'
+      - '`dfp_getCurrentNetwork`'
+      - '`dfp_createTeams`'
+      - '`dfp_createUsers`'
+      - '`dfp_createUserTeamAssociations`'
+      - '`dfp_createCompanies`'
+      - '`dfp_createContacts`'
+  - title: Ad Trafficking Setup
+    desc: Functions setup the environment for trafficking ads.
+    contents:
+      - '`dfp_createLabels`'
+      - '`dfp_createCustomFields`'
+      - '`dfp_createCustomFieldOptions`'
+      - '`dfp_createCustomTargetingKeys`'
+      - '`dfp_createCustomTargetingValues`'
+  - title: Manipulating Orders and LineItems
+    desc: Functions used working with Orders and LineItems.
+    contents:
+      - '`dfp_createOrders`'
+      - '`dfp_getLineItemsByStatement`'
+  - title: Forecasting and Reporting
+    desc: Functions used to determine availability and other metrics.
+    contents:
+      - '`dfp_full_report_wrapper`'
+      - '`dfp_getDeliveryForecast`'
+      - '`dfp_getAvailabilityForecast`'

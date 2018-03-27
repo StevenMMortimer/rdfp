@@ -1,7 +1,7 @@
 ---
 title: "Availability and Reporting with rdfp"
-author: "Steven Mortimer"
-date: "`r Sys.Date()`"
+author: "Steven M. Mortimer"
+date: "2018-03-26"
 output:
   rmarkdown::html_vignette:
     toc: true
@@ -53,7 +53,7 @@ dfp_auth()
 ## I grab the token from the testing directory because that's where it is to be
 ## found on Travis
 token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
-suppressMessages(rdfp::dfp_auth(token = token_path, verbose = FALSE))
+suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
 options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
