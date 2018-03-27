@@ -1,6 +1,5 @@
 before_install:
-- openssl aes-256-cbc -K $encrypted_9568539fc584_key -iv $encrypted_9568539fc584_iv
-  -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
+- openssl aes-256-cbc -K $encrypted_9568539fc584_key -iv $encrypted_9568539fc584_iv -in tests/testthat/setup.tar.enc -out tests/testthat/setup.tar -d
 - tar xvf tests/testthat/setup.tar -C tests/testthat
 - R -q -e 'install.packages(c("remotes", "curl")); remotes::install_github("ropenscilabs/tic");
   tic::prepare_all_stages(); tic::before_install()'

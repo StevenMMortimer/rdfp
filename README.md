@@ -229,12 +229,12 @@ request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'
 dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
 
 request_data <- list(list(name=paste0('TestOrder'), 
-                          startDateTime=list(date=list(year=2017, month=12, day=1), 
+                          startDateTime=list(date=list(year=2018, month=12, day=1), 
                                              hour=0,
                                              minute=0,
                                              second=0,
                                              timeZoneID='America/New_York'),
-                          endDateTime=list(date=list(year=2017, month=12, day=31), 
+                          endDateTime=list(date=list(year=2018, month=12, day=31), 
                                            hour=23,
                                            minute=59,
                                            second=59,
@@ -248,7 +248,7 @@ dfp_createOrders_result <- dfp_createOrders(request_data)
 
 #### Get Line Items By A Filter
 
-Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement` function from the \[LineItemService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201702/LineItemService>)
+Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement` function from the \[LineItemService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService>)
 
 ``` r
 
@@ -276,13 +276,13 @@ Below is an example of how to make a simple report request.
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
 # Also online documentation is available that lists available child elements for reportQuery
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService.ReportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
                                                      columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                     startDate=list(year=2015, month=10, day=1),
-                                                     endDate=list(year=2015, month=10, day=31),
+                                                     startDate=list(year=2018, month=10, day=1),
+                                                     endDate=list(year=2018, month=10, day=31),
                                                      dateRangeType='CUSTOM_DATE'
                                                      )))
 
@@ -295,7 +295,7 @@ head(report_data)
 
 #### A More Detailed Explanation of the Report Process
 
-Reports actually require 3 steps from the \[ReportService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
+Reports actually require 3 steps from the \[ReportService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
 
 ``` r
 
@@ -304,13 +304,13 @@ Reports actually require 3 steps from the \[ReportService\] (<https://developers
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
 # Also online documentation is available that lists available child elements for reportQuery
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201702/ReportService.ReportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
                                                      columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                     startDate=list(year=2015, month=10, day=1),
-                                                     endDate=list(year=2015, month=10, day=31),
+                                                     startDate=list(year=2018, month=10, day=1),
+                                                     endDate=list(year=2018, month=10, day=31),
                                                      dateRangeType='CUSTOM_DATE'
                                                      )))
 
