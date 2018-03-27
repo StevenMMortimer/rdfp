@@ -425,7 +425,7 @@ to these developers for their contributions to open source.
 More information can be found at https://StevenMMortimer.github.io/rdfp.  
 
 
-[Top](#rdfp-)
+[Top](#rdfp)
 
 ---
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).

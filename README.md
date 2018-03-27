@@ -364,7 +364,7 @@ More Information
 
 More information can be found at <https://StevenMMortimer.github.io/rdfp>.
 
-[Top](#rdfp-)
+[Top](#rdfp)
 
 ------------------------------------------------------------------------
 
