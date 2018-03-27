@@ -1,18 +1,12 @@
 
-rdfp
-====
+rdfp <img src="man/figures/rdfp.png" width="200px" align="right" />
+===================================================================
 
 [![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp) [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
 **Compiled using DFP API version: `v201711`**
 
-**rdfp** is the R implementation of DoubleClick for Publishers and similar in comparison to the existing client libraries supported by Google (<https://developers.google.com/doubleclick-publishers/docs/clients>). One main difference is that the client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Most all operations supported by the DFP API are available via this package.
-
-Features:
-
--   Basic CRUD operations on DFP objects (Create, Read, Update, Delete)
--   Forecasting/Inventory Management/Reporting
--   Simple Administrative Tools
+**rdfp** allows you to use the DoubleClick for Publishers API from R! Manage inventory, create orders, pull reports, and more.
 
 Table of Contents
 -----------------
@@ -362,9 +356,13 @@ This application uses other open source software components. The authentication 
 More Information
 ----------------
 
-More information can be found at <https://StevenMMortimer.github.io/rdfp>.
+Google provides support for client libraries [here](https://developers.google.com/doubleclick-publishers/docs/clients), but unfortunately, R is not a supported language. Google's client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.
 
-[Top](#rdfp)
+Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the [DFP API Reference](https://developers.google.com/doubleclick-publishers/docs/rel_notes) when using this package. Details on formatting, attributes, and methods are all better explained by Google's documentation.
+
+More information is also available on the `pkgdown` site at <https://StevenMMortimer.github.io/rdfp/>.
+
+[Top](#rdfp-)
 
 ------------------------------------------------------------------------
 

@@ -1,47 +1,33 @@
----
-output: 
-  github_document:
-    html_preview: false
----
 
-```{r, echo = FALSE, message = FALSE}
-knitr::opts_chunk$set(
-  fig.align = 'center',
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-")
-```
+[![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp) [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
-# rdfp <img src="man/figures/rdfp.png" width="200px" align="right" />
-
-[![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp)
-[![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
+<br> <img src="man/figures/rdfp.png" width="200px" align="right" />
 
 **Compiled using DFP API version: `v201711`**
 
-**rdfp** allows you to use the DoubleClick for Publishers API from R! Manage 
-inventory, create orders, pull reports, and more. 
-  
-## Table of Contents  
-  * [Installation](#installation)
-  * [Usage](#usage)
-    * [Functions](#functions)
-    * [Set API Version](#set-api-version)
-    * [Authenticate](#authenticate)
-    * [Simple Administrative Tasks](#simple-administrative-tasks)
-    * [Ad Trafficking Setup](#ad-trafficking-setup)
-    * [Manipulating Orders and LineItems](#manipulating-orders-and-lineitems)
-    * [Run a Report](#run-a-Report)
-  * [Vignettes](#vignettes)
-    * [Availability and Reporting](#availability-and-reporting)
-  * [Credits](#credits)
-  * [More Information](#more-information)
+**rdfp** allows you to use the DoubleClick for Publishers API from R! Manage inventory, create orders, pull reports, and more.
 
-## Installation
+Table of Contents
+-----------------
 
-```{r, eval = FALSE}
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [Functions](#functions)
+    -   [Set API Version](#set-api-version)
+    -   [Authenticate](#authenticate)
+    -   [Simple Administrative Tasks](#simple-administrative-tasks)
+    -   [Ad Trafficking Setup](#ad-trafficking-setup)
+    -   [Manipulating Orders and LineItems](#manipulating-orders-and-lineitems)
+    -   [Run a Report](#run-a-Report)
+-   [Vignettes](#vignettes)
+    -   [Availability and Reporting](#availability-and-reporting)
+-   [Credits](#credits)
+-   [More Information](#more-information)
+
+Installation
+------------
+
+``` r
 # this package is currently not on CRAN, so it should be installed from GitHub
 # install.packages("devtools")
 devtools::install_github("StevenMMortimer/rdfp")
@@ -49,39 +35,27 @@ devtools::install_github("StevenMMortimer/rdfp")
 
 If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/StevenMMortimer/rdfp/issues).
 
-## Usage  
+Usage
+-----
 
 ### Functions
 
-All functions start with `dfp_` to aid the user's ability to find DFP-specific 
-operations when using code completion in RStudio. By default most **rdfp** 
-functions will return a `data.frame` or `list` parsed from the XML returned in 
-the SOAP response.
+All functions start with `dfp_` to aid the user's ability to find DFP-specific operations when using code completion in RStudio. By default most **rdfp** functions will return a `data.frame` or `list` parsed from the XML returned in the SOAP response.
 
 ### Set API Version
 
-Google has a very quick policy of depricating and not supporting versions since 
-they are releasing multiple versions of the API each calendar year. **rdfp** is 
-periodically compiled against a version of the API. If you would like to use an 
-older or newer API version, just specify it in the options.
+Google has a very quick policy of depricating and not supporting versions since they are releasing multiple versions of the API each calendar year. **rdfp** is periodically compiled against a version of the API. If you would like to use an older or newer API version, just specify it in the options.
 
-```{r eval = FALSE}
+``` r
 # this will force all calls to be against the version "v201711"
 options(rdfp.version = "v201711")
 ```
 
 ### Authenticate
 
-First, you will need to specify the `network_code` of the DFP instance you'd like 
-to connect to. This is the only required option that the user must specify when 
-using the **rdfp** package. There are also other options like a client\_id and 
-client\_secret which must be created via the [Google Developers Console] 
-(https://console.developers.google.com), which allows R to access the API as 
-an "application" on your behalf, whether or not you are running your R script 
-interactively. After specifying the 4 options listed below, simply run 
-`dfp_auth()` to authenticate.
+First, you will need to specify the `network_code` of the DFP instance you'd like to connect to. This is the only required option that the user must specify when using the **rdfp** package. There are also other options like a client\_id and client\_secret which must be created via the \[Google Developers Console\] (<https://console.developers.google.com>), which allows R to access the API as an "application" on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run `dfp_auth()` to authenticate.
 
-```{r eval = FALSE}
+``` r
 
 options(rdfp.network_code = "12345678")
 options(rdfp.application_name = "MyApp")
@@ -92,26 +66,24 @@ options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
 # cache an OAuth token in the working directory
 # the token will be refreshed when necessary
 dfp_auth()
-
 ```
 
 ### Simple Administrative Tasks
 
 #### Check Current User Info
 
-```{r eval = FALSE}
+``` r
 
 # Check current user or network
 user_info <- dfp_getCurrentUser()
 user_info
 network_info <- dfp_getCurrentNetwork()
 network_info
-
 ```
 
 #### Create Team and Users
 
-```{r eval = FALSE}
+``` r
 # create a team and user and add the user to that team
 
 #first create the team
@@ -143,7 +115,7 @@ dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations(request_
 
 #### Create Companies and Contacts
 
-```{r eval = FALSE}
+``` r
 # create a company and add a contact to it
 
 # first create the company
@@ -162,19 +134,15 @@ request_data <- list(contacts=list(name="TestContact1",
                                     comment='API Test', 
                                     email='testcontact1@gmail.com'))
 dfp_createContacts_result <- dfp_createContacts(request_data)
-
 ```
 
 ### Ad Trafficking Setup
 
 #### Setup Custom Labels for Items
 
-Custom labels are helpful for "tagging" DFP items with metadata
-that can later be used frequency capping, doing competitive exclusion or 
-other specific actions. See the following link for Google's explanation on their uses: 
-(https://support.google.com/dfp\_premium/answer/190565?hl=en&ref_topic=30224)
+Custom labels are helpful for "tagging" DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/190565?hl=en&ref\_topic=30224](https://support.google.com/dfp\_premium/answer/190565?hl=en&ref_topic=30224))
 
-```{r eval=FALSE}
+``` r
 
 # this creates a label called "Last Minute Change" that we can add
 # to any line item or order that we felt deserved this label.
@@ -183,16 +151,13 @@ request_data <- data.frame(name="auto - competitive exclusion",
                                               "companies from showing ads together"), 
                            types='COMPETITIVE_EXCLUSION')
 dfp_createLabels_result <- dfp_createLabels(request_data)
-
 ```
 
 #### Setup Custom Fields for Items
 
-Custom fields are helpful for "tagging" DFP items with metadata
-that can later be used filtering or reporting. See the following link for 
-Google's explanation on their uses: (https://support.google.com/dfp\_premium/answer/2694303?hl=en)
+Custom fields are helpful for "tagging" DFP items with metadata that can later be used filtering or reporting. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/2694303?hl=en](https://support.google.com/dfp\_premium/answer/2694303?hl=en))
 
-```{r eval=FALSE}
+``` r
 
 # this creates an extra field on the USER entity type that denotes what shift 
 # the user works during the day. First we create the field, then populate
@@ -207,18 +172,13 @@ dfp_createCustomFields_result <- dfp_createCustomFields(request_data)
 request_data <- data.frame(customFieldId=rep(dfp_createCustomFields_result$id, 3),
                            displayName=c('Morning', 'Afternoon', 'Evening'))
 dfp_createCustomFieldOptions_result <- dfp_createCustomFieldOptions(request_data)
-
 ```
 
 #### Setup Custom Targeting Keys and Values
 
-DFP allows traffickers to create custom tags to better target line items on their site.
-For example, a certain section of the site or search term used by a visitor can be 
-encoded as custom targeting keys and values that can later be used when creating 
-orders and line items, and evaluating potential inventory. See the following link for 
-Google's explanation on their uses: (https://support.google.com/dfp\_premium/answer/188092?hl=en)
+DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google's explanation on their uses: ([https://support.google.com/dfp\\\_premium/answer/188092?hl=en](https://support.google.com/dfp\_premium/answer/188092?hl=en))
 
-```{r eval=FALSE}
+``` r
 
 # create the key
 request_data <- list(keys=list(name='Test1', 
@@ -232,18 +192,15 @@ request_data <- data.frame(customTargetingKeyId=rep(dfp_createCustomTargetingKey
                            displayName=c('TestValue1','TestValue2'), 
                            matchType=rep('EXACT', 2))
 dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data)
-
 ```
 
 ### Manipulating Orders and LineItems
 
 #### Find All Levels of Geotargeting and their Ids
 
-Having a complete list of locations is useful for filtering 
-and/or adding geotargeting on line items. Locations 
-are ordered as a hierarchy and have unique ids.
+Having a complete list of locations is useful for filtering and/or adding geotargeting on line items. Locations are ordered as a hierarchy and have unique ids.
 
-```{r eval=FALSE}
+``` r
 
 request_data <- list(selectStatement=
                        list(query=paste('select Id, Name,', 
@@ -253,15 +210,13 @@ request_data <- list(selectStatement=
 dfp_select_result <- dfp_select(request_data)$rval
 final_result <- dfp_select_parse(dfp_select_result)
 head(final_result)
-
 ```
 
 #### Create an Order
 
-This example uses a test company as an advertiser and yourself as the trafficker, 
-to create an order.
+This example uses a test company as an advertiser and yourself as the trafficker, to create an order.
 
-```{r eval=FALSE}
+``` r
 
 request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
 dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
@@ -282,17 +237,13 @@ request_data <- list(list(name=paste0('TestOrder'),
                           advertiserId=dfp_getCompaniesByStatement_result$id, 
                           traffickerId=dfp_getCurrentUser()$id))
 dfp_createOrders_result <- dfp_createOrders(request_data)
-
 ```
 
 #### Get Line Items By A Filter
 
-Below is an example of how to get objects by Publishers Query Language (PQL) statement.
-The statement is constructed as a list of lists that are nested to emulate
-the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement`
-function from the [LineItemService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService)
+Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement` function from the \[LineItemService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService>)
 
-```{r eval = FALSE}
+``` r
 
 # Retrieve all Line Items that have a status of "DELIVERING"
 dat <- list('filterStatement'=list('query'="WHERE status='DELIVERING'"))
@@ -305,14 +256,13 @@ head(resultset, 2)
 
 # the rest should be parsed as needed
 tail(resultset, -2)
-
 ```
 
 ### Run a Report
 
 Below is an example of how to make a simple report request.
 
-```{r eval = FALSE}
+``` r
 
 # create a reportJob object
 # reportJobs consist of a reportQuery
@@ -338,13 +288,9 @@ head(report_data)
 
 #### A More Detailed Explanation of the Report Process
 
-Reports actually require 3 steps from the [ReportService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService): 
-1) to request the report, 2) check on its status, and 3) download. This basic process flow 
-is required for all reports requested via this service. The wrapper function used above
-named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of
-detail is not needed unless the wrapper service does not quite fit your needs.
+Reports actually require 3 steps from the \[ReportService\] (<https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.
 
-```{r eval = FALSE}
+``` r
 
 # create a reportJob object
 # reportJobs consist of a reportQuery
@@ -390,45 +336,25 @@ dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
 report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
                                           exportFormat='CSV_DUMP')
 head(report_dat)
-
 ```
 
-## Vignettes
+Vignettes
+---------
 
-The README below outlines some basic functionality, for more practical scenarios, 
-please refer to the vignettes:
+The README below outlines some basic functionality, for more practical scenarios, please refer to the vignettes:
 
 ### Availability and Reporting
 
-https://rawgit.com/StevenMMortimer/rdfp/master/vignettes/availability-and-reporting.html
+<https://rawgit.com/StevenMMortimer/rdfp/master/vignettes/availability-and-reporting.html>
 
-## Credits
+Credits
+-------
 
-This application uses other open source software components. The authentication 
-components are mostly verbatim copies of the routines established in the **googlesheets** 
-package (https://github.com/jennybc/googlesheets). We acknowledge and are grateful 
-to these developers for their contributions to open source.
+This application uses other open source software components. The authentication components are mostly verbatim copies of the routines established in the **googlesheets** package (<https://github.com/jennybc/googlesheets>). We acknowledge and are grateful to these developers for their contributions to open source.
 
-## More Information
+More Information
+----------------
 
-Google provides support for client libraries [here](https://developers.google.com/doubleclick-publishers/docs/clients), 
-but unfortunately, R is not a supported language. Google's client libraries directly 
-reference the production WSDLs to interact with the API, but this package makes 
-SOAP requests best formatted to match the WSDL standards. This articulation is not 
-perfect and continued progress will be made to bring functionality up to par with 
-the client libraries. 
+Google provides support for client libraries [here](https://developers.google.com/doubleclick-publishers/docs/clients), but unfortunately, R is not a supported language. Google's client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries. Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the [DFP API Reference](https://developers.google.com/doubleclick-publishers/docs/rel_notes) when using this package. Details on formatting, attributes, and methods are all better explained by Google's documentation.
 
-Most all operations supported by the DFP API are available 
-via this package. It is strongly recommended that you use the 
-[DFP API Reference](https://developers.google.com/doubleclick-publishers/docs/rel_notes) 
-when using this package. Details on formatting, attributes, and methods are all 
-better explained by Google's documentation.
-
-More information is also available on the `pkgdown` site at https://StevenMMortimer.github.io/rdfp/.  
-
-[Top](#rdfp-)
-
----
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
-By participating in this project you agree to abide by its terms.
-  
+[Top](#)
