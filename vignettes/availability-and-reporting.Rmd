@@ -121,6 +121,7 @@ single_item$targeting$inventoryTargeting <- as.list(as.data.frame(single_item$ta
                                                                   check.names=F, 
                                                                   stringsAsFactors = F)
                                                     )
+single_item$targeting$technologyTargeting <- NULL
 ```
 
 #### Creating Datetimes in DFP

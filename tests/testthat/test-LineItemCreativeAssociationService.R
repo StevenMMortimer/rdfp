@@ -1,5 +1,7 @@
 context("LineItemCreativeAssociationService")
 
+skip("Reduce Total Test Runtime")
+
 rdfp_options <- readRDS("rdfp_options.rds")
 options(rdfp.network_code = rdfp_options$network_code)
 options(rdfp.httr_oauth_cache = FALSE)

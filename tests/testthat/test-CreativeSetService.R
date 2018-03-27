@@ -1,5 +1,7 @@
 context("CreativeSetService")
 
+skip("Reduce Total Test Runtime")
+
 rdfp_options <- readRDS("rdfp_options.rds")
 options(rdfp.network_code = rdfp_options$network_code)
 options(rdfp.application_name = rdfp_options$application_name)
