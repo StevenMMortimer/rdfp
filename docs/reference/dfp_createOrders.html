@@ -77,7 +77,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/availability-and-reporting.html">Availability and Reporting</a>
+      <a href="../articles/administrative-tasks.html">Administrative Tasks</a>
+    </li>
+    <li>
+      <a href="../articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
+    </li>
+    <li>
+      <a href="../articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
+    </li>
+    <li>
+      <a href="../articles/checking-availability.html">Checking Availability</a>
+    </li>
+    <li>
+      <a href="../articles/pulling-reports.html">Pulling Reports</a>
     </li>
   </ul>
 </li>
@@ -142,17 +154,16 @@ a <code>data.frame</code></p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>An order is a grouping of LineItem objects. Line items have a one-to-one
-relationship with orders. Each line item can belong to only one order.
-Orders, however, have a one-to-many relationship with line items, meaning
-each order can have multiple line items. An order can be used to manage the
-line items it contains.</p>
+    <p>An order is a grouping of LineItem objects. Line items have a many-to-one
+relationship with orders, meaning each line item can belong to only one
+order, but orders can have multiple line items. An order can be used to
+manage the line items it contains.</p>
 <p>createOrders</p>
 <p>Creates new Order objects.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201711/OrderService#createOrders'>Google Documentation for createOrders</a></p>
+    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#createOrders'>Google Documentation for createOrders</a></p>
     
 
   </div>

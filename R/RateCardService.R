@@ -11,9 +11,7 @@
 #' 
 #' Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#createRateCards}{Google Documentation for createRateCards}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#createRateCards}{Google Documentation for createRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -24,43 +22,9 @@
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createRateCardsResponse 
 #' @export
 dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createRateCardsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='createRateCardsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -75,9 +39,7 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{Status}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -88,43 +50,9 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getRateCardsByStatementResponse 
 #' @export
 dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getRateCardsByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getRateCardsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -132,9 +60,7 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Performs action on RateCard objects that satisfy the given Statement query.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -145,43 +71,9 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performRateCardActionResponse 
 #' @export
 dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performRateCardActionResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='performRateCardActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -189,9 +81,7 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates a list of RateCard objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -202,43 +92,9 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateRateCardsResponse 
 #' @export
 dfp_updateRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateRateCardsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='updateRateCardsResponse', as_df=as_df)
   return(result)
 }
 #' 

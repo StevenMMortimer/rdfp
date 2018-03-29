@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePropos
 Updates the specified Proposal objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#updateProposals}{Google Documentation for updateProposals}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#updateProposals}{Google Documentation for updateProposals}
 }

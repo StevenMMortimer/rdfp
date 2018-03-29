@@ -74,7 +74,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/availability-and-reporting.html">Availability and Reporting</a>
+      <a href="articles/administrative-tasks.html">Administrative Tasks</a>
+    </li>
+    <li>
+      <a href="articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
+    </li>
+    <li>
+      <a href="articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
+    </li>
+    <li>
+      <a href="articles/checking-availability.html">Checking Availability</a>
+    </li>
+    <li>
+      <a href="articles/pulling-reports.html">Pulling Reports</a>
     </li>
   </ul>
 </li>
@@ -112,8 +124,8 @@
 <a href="#rdfp" class="anchor"></a>rdfp <img src="man/figures/rdfp.png" width="120px" align="right">
 </h1>
 <p><a href="https://travis-ci.org/StevenMMortimer/rdfp"><img src="https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master" alt="Build Status"></a> <a href="https://ci.appveyor.com/project/StevenMMortimer/rdfp"><img src="https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="http://cran.r-project.org/package=rdfp"><img src="http://www.r-pkg.org/badges/version/rdfp" alt="CRAN_Status_Badge"></a> <a href="https://codecov.io/gh/StevenMMortimer/rdfp?branch=master"><img src="https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg" alt="Coverage Status"></a></p>
-<p><strong>Compiled using DFP API version: <code>v201711</code></strong></p>
-<p><strong>rdfp</strong> allows you to use the DoubleClick for Publishers API from R! Manage inventory, create orders, pull reports, and more.</p>
+<p><strong>Compiled using DFP API version: <code>v201802</code></strong></p>
+<p><strong>rdfp</strong> allows you to use the DoubleClick for Publishers API from R. Manage inventory, create orders, pull reports, and more!</p>
 <div id="table-of-contents" class="section level2">
 <h2 class="hasAnchor">
 <a href="#table-of-contents" class="anchor"></a>Table of Contents</h2>
@@ -125,18 +137,12 @@
 <li><a href="#functions">Functions</a></li>
 <li><a href="#set-api-version">Set API Version</a></li>
 <li><a href="#authenticate">Authenticate</a></li>
-<li><a href="#simple-administrative-tasks">Simple Administrative Tasks</a></li>
-<li><a href="#ad-trafficking-setup">Ad Trafficking Setup</a></li>
-<li><a href="#manipulating-orders-and-lineitems">Manipulating Orders and LineItems</a></li>
-<li><a href="#run-a-Report">Run a Report</a></li>
+<li><a href="#get-current-user-info">Get Current User Info</a></li>
+<li><a href="#pull-a-lineitem">Pull a LineItem</a></li>
+<li><a href="#run-a-report">Run a Report</a></li>
 </ul>
 </li>
-<li>
-<a href="#vignettes">Vignettes</a>
-<ul>
-<li><a href="#availability-and-reporting">Availability and Reporting</a></li>
-</ul>
-</li>
+<li><a href="#vignettes">Vignettes</a></li>
 <li><a href="#credits">Credits</a></li>
 <li><a href="#more-information">More Information</a></li>
 </ul>
@@ -157,19 +163,21 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#functions" class="anchor"></a>Functions</h3>
 <p>All functions start with <code>dfp_</code> to aid the user’s ability to find DFP-specific operations when using code completion in RStudio. By default most <strong>rdfp</strong> functions will return a <code>data.frame</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
 </div>
-<div id="set-api-version" class="section level3">
+<div id="load-package-and-set-api-version" class="section level3">
 <h3 class="hasAnchor">
-<a href="#set-api-version" class="anchor"></a>Set API Version</h3>
+<a href="#load-package-and-set-api-version" class="anchor"></a>Load Package and Set API Version</h3>
 <p>Google has a very quick policy of depricating and not supporting versions since they are releasing multiple versions of the API each calendar year. <strong>rdfp</strong> is periodically compiled against a version of the API. If you would like to use an older or newer API version, just specify it in the options.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this will force all calls to be against the version "v201711"</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
+<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
+<span class="kw">library</span>(rdfp)
+<span class="co"># this will force all calls to be against the version "v201711"</span>
 <span class="kw">options</span>(<span class="dt">rdfp.version =</span> <span class="st">"v201711"</span>)</code></pre></div>
 </div>
 <div id="authenticate" class="section level3">
 <h3 class="hasAnchor">
 <a href="#authenticate" class="anchor"></a>Authenticate</h3>
 <p>First, you will need to specify the <code>network_code</code> of the DFP instance you’d like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. There are also other options like a client_id and client_secret which must be created via the [Google Developers Console] (<a href="https://console.developers.google.com" class="uri">https://console.developers.google.com</a>), which allows R to access the API as an “application” on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code> to authenticate.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="st">"12345678"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="st">"12345678"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)
@@ -179,273 +187,67 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co"># the token will be refreshed when necessary</span>
 <span class="kw"><a href="reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
 </div>
-<div id="simple-administrative-tasks" class="section level3">
+<div id="get-current-user-info" class="section level3">
 <h3 class="hasAnchor">
-<a href="#simple-administrative-tasks" class="anchor"></a>Simple Administrative Tasks</h3>
-<div id="check-current-user-info" class="section level4">
-<h4 class="hasAnchor">
-<a href="#check-current-user-info" class="anchor"></a>Check Current User Info</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># Check current user or network</span>
+<a href="#get-current-user-info" class="anchor"></a>Get Current User Info</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check current user or network</span>
 user_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()
-user_info
-network_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()
-network_info</code></pre></div>
-</div>
-<div id="create-team-and-users" class="section level4">
+network_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()</code></pre></div>
+<div id="pull-a-lineitem" class="section level4">
 <h4 class="hasAnchor">
-<a href="#create-team-and-users" class="anchor"></a>Create Team and Users</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a team and user and add the user to that team</span>
-
-<span class="co">#first create the team</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">teams=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestTeam1"</span>, 
-                                <span class="dt">description=</span><span class="st">'API Test Team 1'</span>, 
-                                <span class="dt">hasAllCompanies=</span><span class="st">'true'</span>, 
-                                <span class="dt">hasAllInventory=</span><span class="st">'true'</span>,
-                                <span class="dt">teamAccessType=</span><span class="st">'READ_WRITE'</span>))
-dfp_createTeams_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createTeams.html">dfp_createTeams</a></span>(request_data)
-
-<span class="co"># second create the user</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">"TestUser"</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>),
-                           <span class="dt">email=</span><span class="kw">paste0</span>(<span class="st">'testuser'</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">'@gmail.com'</span>), 
-                           <span class="dt">roleId=</span><span class="kw">rep</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>))
-dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createUsers.html">dfp_createUsers</a></span>(request_data)
-
-<span class="co"># third associate the user to that team</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">teamid=</span><span class="kw">rep</span>(dfp_createTeams_result<span class="op">$</span>id, <span class="dv">3</span>),
-                           <span class="dt">userid=</span>dfp_createUsers_result<span class="op">$</span>id)
-dfp_createUserTeamAssociations_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createUserTeamAssociations.html">dfp_createUserTeamAssociations</a></span>(request_data)
-
-<span class="co"># Note: User roleId = -1 is the Administrative role</span>
-<span class="co"># use dfp_getAllRoles() to view other options</span>
-
-<span class="co"># Creating custom roles is a premium feature, which</span>
-<span class="co"># small business accounts won't have and creating the roles </span>
-<span class="co"># can only be done from the user interface, not the API.</span></code></pre></div>
-</div>
-<div id="create-companies-and-contacts" class="section level4">
-<h4 class="hasAnchor">
-<a href="#create-companies-and-contacts" class="anchor"></a>Create Companies and Contacts</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a company and add a contact to it</span>
-
-<span class="co"># first create the company</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">companies=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestCompany1"</span>, 
-                                    <span class="dt">type=</span><span class="st">'HOUSE_ADVERTISER'</span>, 
-                                    <span class="dt">address=</span><span class="st">'123 Main St Hometown, FL USA'</span>, 
-                                    <span class="dt">email=</span><span class="st">'testcompany1@gmail.com'</span>, 
-                                    <span class="dt">comment=</span><span class="st">'API Test'</span>))
-dfp_createCompanies_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createCompanies.html">dfp_createCompanies</a></span>(request_data)
-
-<span class="co"># second create the contact and specify the companyId</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">contacts=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestContact1"</span>, 
-                                    <span class="dt">companyId=</span>dfp_createCompanies_result<span class="op">$</span>id, 
-                                    <span class="dt">status=</span><span class="st">'UNINVITED'</span>, 
-                                    <span class="dt">cellPhone=</span><span class="st">'(888) 999-7777'</span>,
-                                    <span class="dt">comment=</span><span class="st">'API Test'</span>, 
-                                    <span class="dt">email=</span><span class="st">'testcontact1@gmail.com'</span>))
-dfp_createContacts_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createContacts.html">dfp_createContacts</a></span>(request_data)</code></pre></div>
-</div>
-</div>
-<div id="ad-trafficking-setup" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ad-trafficking-setup" class="anchor"></a>Ad Trafficking Setup</h3>
-<div id="setup-custom-labels-for-items" class="section level4">
-<h4 class="hasAnchor">
-<a href="#setup-custom-labels-for-items" class="anchor"></a>Setup Custom Labels for Items</h4>
-<p>Custom labels are helpful for “tagging” DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp_premium/answer/190565?hl=en&amp;ref_topic=30224">https://support.google.com/dfp\_premium/answer/190565?hl=en&amp;ref_topic=30224</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># this creates a label called "Last Minute Change" that we can add</span>
-<span class="co"># to any line item or order that we felt deserved this label.</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">"auto - competitive exclusion"</span>, 
-                           <span class="dt">description=</span><span class="kw">paste0</span>(<span class="st">"A label to prevent two different car "</span>,
-                                              <span class="st">"companies from showing ads together"</span>), 
-                           <span class="dt">types=</span><span class="st">'COMPETITIVE_EXCLUSION'</span>)
-dfp_createLabels_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createLabels.html">dfp_createLabels</a></span>(request_data)</code></pre></div>
-</div>
-<div id="setup-custom-fields-for-items" class="section level4">
-<h4 class="hasAnchor">
-<a href="#setup-custom-fields-for-items" class="anchor"></a>Setup Custom Fields for Items</h4>
-<p>Custom fields are helpful for “tagging” DFP items with metadata that can later be used filtering or reporting. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp_premium/answer/2694303?hl=en">https://support.google.com/dfp\_premium/answer/2694303?hl=en</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># this creates an extra field on the USER entity type that denotes what shift </span>
-<span class="co"># the user works during the day. First we create the field, then populate</span>
-<span class="co"># with potential options since it is a dropdown field.</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">'Shift'</span>,
-                           <span class="dt">description=</span><span class="st">'The shift that this user usually works.'</span>, 
-                           <span class="dt">entityType=</span><span class="st">'USER'</span>,
-                           <span class="dt">dataType=</span><span class="st">'DROP_DOWN'</span>,
-                           <span class="dt">visibility=</span><span class="st">'FULL'</span>)
-dfp_createCustomFields_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createCustomFields.html">dfp_createCustomFields</a></span>(request_data)
-
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customFieldId=</span><span class="kw">rep</span>(dfp_createCustomFields_result<span class="op">$</span>id, <span class="dv">3</span>),
-                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'Morning'</span>, <span class="st">'Afternoon'</span>, <span class="st">'Evening'</span>))
-dfp_createCustomFieldOptions_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createCustomFieldOptions.html">dfp_createCustomFieldOptions</a></span>(request_data)</code></pre></div>
-</div>
-<div id="setup-custom-targeting-keys-and-values" class="section level4">
-<h4 class="hasAnchor">
-<a href="#setup-custom-targeting-keys-and-values" class="anchor"></a>Setup Custom Targeting Keys and Values</h4>
-<p>DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp_premium/answer/188092?hl=en">https://support.google.com/dfp\_premium/answer/188092?hl=en</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># create the key</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">'Test1'</span>, 
-                               <span class="dt">displayName=</span><span class="st">'TestKey1'</span>, 
-                               <span class="dt">type=</span><span class="st">'FREEFORM'</span>))
-dfp_createCustomTargetingKeys_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys</a></span>(request_data)
-
-<span class="co"># create the values</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),
-                           <span class="dt">name=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), 
-                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), 
-                           <span class="dt">matchType=</span><span class="kw">rep</span>(<span class="st">'EXACT'</span>, <span class="dv">2</span>))
-dfp_createCustomTargetingValues_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createCustomTargetingValues.html">dfp_createCustomTargetingValues</a></span>(request_data)</code></pre></div>
-</div>
-</div>
-<div id="manipulating-orders-and-lineitems" class="section level3">
-<h3 class="hasAnchor">
-<a href="#manipulating-orders-and-lineitems" class="anchor"></a>Manipulating Orders and LineItems</h3>
-<div id="find-all-levels-of-geotargeting-and-their-ids" class="section level4">
-<h4 class="hasAnchor">
-<a href="#find-all-levels-of-geotargeting-and-their-ids" class="anchor"></a>Find All Levels of Geotargeting and their Ids</h4>
-<p>Having a complete list of locations is useful for filtering and/or adding geotargeting on line items. Locations are ordered as a hierarchy and have unique ids.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">selectStatement=</span>
-                       <span class="kw">list</span>(<span class="dt">query=</span><span class="kw">paste</span>(<span class="st">'select Id, Name,'</span>, 
-                                        <span class="st">'CanonicalParentId, CountryCode,'</span>,
-                                        <span class="st">"Type from Geo_Target where CountryCode='US'"</span>)))
-
-dfp_select_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_select.html">dfp_select</a></span>(request_data)<span class="op">$</span>rval
-final_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_select_parse.html">dfp_select_parse</a></span>(dfp_select_result)
-<span class="kw">head</span>(final_result)</code></pre></div>
-</div>
-<div id="create-an-order" class="section level4">
-<h4 class="hasAnchor">
-<a href="#create-an-order" class="anchor"></a>Create an Order</h4>
-<p>This example uses a test company as an advertiser and yourself as the trafficker, to create an order.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE name = 'TestCompany1'"</span>))
-dfp_getCompaniesByStatement_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCompaniesByStatement.html">dfp_getCompaniesByStatement</a></span>(request_data) 
-
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">'TestOrder'</span>), 
-                          <span class="dt">startDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">1</span>), 
-                                             <span class="dt">hour=</span><span class="dv">0</span>,
-                                             <span class="dt">minute=</span><span class="dv">0</span>,
-                                             <span class="dt">second=</span><span class="dv">0</span>,
-                                             <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>),
-                          <span class="dt">endDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">31</span>), 
-                                           <span class="dt">hour=</span><span class="dv">23</span>,
-                                           <span class="dt">minute=</span><span class="dv">59</span>,
-                                           <span class="dt">second=</span><span class="dv">59</span>,
-                                           <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>), 
-                          <span class="dt">notes=</span><span class="st">'API Test Order'</span>, 
-                          <span class="dt">externalOrderId=</span><span class="dv">99999</span>, 
-                          <span class="dt">advertiserId=</span>dfp_getCompaniesByStatement_result<span class="op">$</span>id, 
-                          <span class="dt">traffickerId=</span><span class="kw"><a href="reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()<span class="op">$</span>id))
-dfp_createOrders_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_createOrders.html">dfp_createOrders</a></span>(request_data)</code></pre></div>
-</div>
-<div id="get-line-items-by-a-filter" class="section level4">
-<h4 class="hasAnchor">
-<a href="#get-line-items-by-a-filter" class="anchor"></a>Get Line Items By A Filter</h4>
+<a href="#pull-a-lineitem" class="anchor"></a>Pull a LineItem</h4>
 <p>Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the <code>dfp_getLineItemsByStatement</code> function from the [LineItemService] (<a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># Retrieve all Line Items that have a status of "DELIVERING"</span>
-dat &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING'"</span>))
-
-resultset &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(dat)
-
-<span class="co"># the result is a list</span>
-<span class="co"># Google uses the first two elements for metadata</span>
-<span class="kw">head</span>(resultset, <span class="dv">2</span>)
-
-<span class="co"># the rest should be parsed as needed</span>
-<span class="kw">tail</span>(resultset, <span class="op">-</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Retrieve all Line Items that have a status of "DELIVERING"</span>
+dat &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))
+resultset &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(dat, <span class="dt">as_df=</span><span class="ot">TRUE</span>) 
+resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span class="st">'id'</span>, <span class="st">'priority'</span>, <span class="st">'deliveryRateType'</span>)]
+<span class="co">#&gt; # A tibble: 3 x 4</span>
+<span class="co">#&gt;       orderId          id priority deliveryRateType</span>
+<span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           </span>
+<span class="co">#&gt; 1 1254227776. 1928427256.      12. EVENLY          </span>
+<span class="co">#&gt; 2 1393728736. 2038280896.      12. EVENLY          </span>
+<span class="co">#&gt; 3 1265251936. 2060032216.      16. EVENLY</span></code></pre></div>
 </div>
 </div>
 <div id="run-a-report" class="section level3">
 <h3 class="hasAnchor">
 <a href="#run-a-report" class="anchor"></a>Run a Report</h3>
 <p>Below is an example of how to make a simple report request.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># create a reportJob object</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a reportJob object</span>
 <span class="co"># reportJobs consist of a reportQuery</span>
 <span class="co"># Documentation for the reportQuery object can be found in R using </span>
 <span class="co"># ?dfp_ReportService_object_factory and searching for ReportQuery</span>
 <span class="co"># Also online documentation is available that lists available child elements for reportQuery</span>
 <span class="co"># https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery=</span><span class="kw">list</span>(<span class="dt">dimensions=</span><span class="st">'MONTH_AND_YEAR'</span>, 
-                                                     <span class="dt">dimensions=</span><span class="st">'AD_UNIT_ID'</span>,
-                                                     <span class="dt">adUnitView=</span><span class="st">'FLAT'</span>,
-                                                     <span class="dt">columns=</span><span class="st">'TOTAL_INVENTORY_LEVEL_IMPRESSIONS'</span>, 
-                                                     <span class="dt">startDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">1</span>),
-                                                     <span class="dt">endDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">31</span>),
-                                                     <span class="dt">dateRangeType=</span><span class="st">'CUSTOM_DATE'</span>
-                                                     )))
+report_request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob =</span>
+                              <span class="kw">list</span>(<span class="dt">reportQuery =</span>
+                                     <span class="kw">list</span>(<span class="dt">dimensions =</span> <span class="st">'AD_UNIT_NAME'</span>,
+                                          <span class="dt">dimensions =</span> <span class="st">'ADVERTISER_NAME'</span>,
+                                          <span class="dt">dimensions =</span> <span class="st">'ORDER_NAME'</span>,
+                                          <span class="dt">dimensions =</span> <span class="st">'LINE_ITEM_NAME'</span>,
+                                          <span class="dt">adUnitView =</span> <span class="st">'FLAT'</span>,
+                                          <span class="dt">columns =</span> <span class="st">'AD_SERVER_IMPRESSIONS'</span>, 
+                                          <span class="dt">columns =</span> <span class="st">'AD_SERVER_CLICKS'</span>,
+                                          <span class="dt">dateRangeType =</span> <span class="st">'LAST_WEEK'</span>)
+                                   )
+                            )
 
 <span class="co"># a convenience function has been provided to you to manage the report process workflow</span>
 <span class="co"># if you would like more control, see the example below which moves through each step in the process</span>
-report_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)
-
-<span class="kw">head</span>(report_data)</code></pre></div>
-<div id="a-more-detailed-explanation-of-the-report-process" class="section level4">
-<h4 class="hasAnchor">
-<a href="#a-more-detailed-explanation-of-the-report-process" class="anchor"></a>A More Detailed Explanation of the Report Process</h4>
-<p>Reports actually require 3 steps from the [ReportService] (<a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService</a>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named <code>dfp_full_report_wrapper</code> manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># create a reportJob object</span>
-<span class="co"># reportJobs consist of a reportQuery</span>
-<span class="co"># Documentation for the reportQuery object can be found in R using </span>
-<span class="co"># ?dfp_ReportService_object_factory and searching for ReportQuery</span>
-<span class="co"># Also online documentation is available that lists available child elements for reportQuery</span>
-<span class="co"># https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery=</span><span class="kw">list</span>(<span class="dt">dimensions=</span><span class="st">'MONTH_AND_YEAR'</span>, 
-                                                     <span class="dt">dimensions=</span><span class="st">'AD_UNIT_ID'</span>,
-                                                     <span class="dt">adUnitView=</span><span class="st">'FLAT'</span>,
-                                                     <span class="dt">columns=</span><span class="st">'TOTAL_INVENTORY_LEVEL_IMPRESSIONS'</span>, 
-                                                     <span class="dt">startDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">1</span>),
-                                                     <span class="dt">endDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">31</span>),
-                                                     <span class="dt">dateRangeType=</span><span class="st">'CUSTOM_DATE'</span>
-                                                     )))
-
-<span class="co"># the result is a list and most importantly the ID is included for checking its status</span>
-dfp_runReportJob_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_runReportJob.html">dfp_runReportJob</a></span>(request_data)
-dfp_runReportJob_result<span class="op">$</span>id
-dfp_runReportJob_result<span class="op">$</span>reportJobStatus
-
-<span class="co"># to check the status repeatedly you just need to provide the id</span>
-<span class="co"># dfp_getReportJobStatus_result returns a character string of the reportJob status</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id)
-dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data)
-dfp_getReportJobStatus_result
-
-<span class="co"># a simple while loop can keep checking a long running request until ready</span>
-counter &lt;-<span class="st"> </span><span class="dv">0</span>
-<span class="cf">while</span>(dfp_getReportJobStatus_result<span class="op">!=</span><span class="st">'COMPLETED'</span> <span class="op">&amp;</span><span class="st"> </span>counter <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>){
-  dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data)
-  <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)
-  counter &lt;-<span class="st"> </span>counter <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
-}
-
-<span class="co"># once the status is "COMPLETED" the data download URL can be retrieved</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id, <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)
-dfp_getReportDownloadURL_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getReportDownloadURL.html">dfp_getReportDownloadURL</a></span>(request_data)
-
-<span class="co"># convenience function has been provided to download the data from URL</span>
-<span class="co"># and convert to a data.frame</span>
-<span class="co"># supported exportFormats are currently c('CSV_DUMP', 'TSV', 'CSV_EXCEL')</span>
-report_dat &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe</a></span>(<span class="dt">report_url=</span>dfp_getReportDownloadURL_result, 
-                                          <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)
-<span class="kw">head</span>(report_dat)</code></pre></div>
-</div>
+report_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(report_request_data)</code></pre></div>
 </div>
 </div>
 <div id="vignettes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#vignettes" class="anchor"></a>Vignettes</h2>
-<p>The README below outlines some basic functionality, for more practical scenarios, please refer to the vignettes:</p>
-<div id="availability-and-reporting" class="section level3">
-<h3 class="hasAnchor">
-<a href="#availability-and-reporting" class="anchor"></a>Availability and Reporting</h3>
-<p><a href="https://rawgit.com/StevenMMortimer/rdfp/master/vignettes/availability-and-reporting.html" class="uri">https://rawgit.com/StevenMMortimer/rdfp/master/vignettes/availability-and-reporting.html</a></p>
-</div>
+<p>The README below outlines the package functionality, but review the vignettes for more detailed examples on usage.</p>
+<ul>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/administrative-tasks.html">Administrative Tasks</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/ad-trafficking-setup.html">Ad Trafficking Setup</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/checking-availability.html">Checking Availability</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/pulling-reports.html">Pulling Reports</a></li>
+</ul>
 </div>
 <div id="credits" class="section level2">
 <h2 class="hasAnchor">

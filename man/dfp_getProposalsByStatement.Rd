@@ -37,5 +37,5 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 }

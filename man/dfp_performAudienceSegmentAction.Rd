@@ -24,5 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performAudie
 Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 }

@@ -27,5 +27,5 @@ Retrieves a page of the saved queries either created by or shared with the curre
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 }

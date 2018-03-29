@@ -94,12 +94,12 @@ test_that("dfp_performCustomTargetingValueAction", {
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(customTargetingValueAction='DeleteCustomTargetingValues',
                        filterStatement=list('query'=paste0("WHERE name like 'Test%'")))
-  dfp_performCustomTargetingValueAction_result <- dfp_performCustomTargetingValueAction(request_data, as_df=F)
-  
+  dfp_performCustomTargetingValueAction_result <- dfp_performCustomTargetingValueAction(request_data, as_df=FALSE)
+
   expect_is(dfp_performCustomTargetingValueAction_result, "list")
-  expect_true(all(c('numChanges') %in% names(dfp_performCustomTargetingValueAction_result$rval)))
+  expect_length(dfp_performCustomTargetingValueAction_result, 1)
+  expect_named(dfp_performCustomTargetingValueAction_result[[1]], c("numChanges"))  
   options(rdfp.network_code = rdfp_options$network_code)
-  
 })
 
 test_that("dfp_performCustomTargetingKeyAction", {
@@ -107,11 +107,10 @@ test_that("dfp_performCustomTargetingKeyAction", {
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(customTargetingKeyAction='DeleteCustomTargetingKeys',
                        filterStatement=list('query'=paste0("WHERE name like 'Test%'")))
-  dfp_performCustomTargetingKeyAction_result <- dfp_performCustomTargetingKeyAction(request_data, as_df=F)
+  dfp_performCustomTargetingKeyAction_result <- dfp_performCustomTargetingKeyAction(request_data, as_df=FALSE)
   
   expect_is(dfp_performCustomTargetingKeyAction_result, "list")
-  expect_true(all(c('numChanges') %in% names(dfp_performCustomTargetingKeyAction_result$rval)))
+  expect_length(dfp_performCustomTargetingKeyAction_result, 1)
+  expect_named(dfp_performCustomTargetingKeyAction_result[[1]], c("numChanges"))
   options(rdfp.network_code = rdfp_options$network_code)
-  
 })
-

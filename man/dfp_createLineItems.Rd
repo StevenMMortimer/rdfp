@@ -20,7 +20,7 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse
 }
 \description{
-Provides methods for creating, updating and retrieving LineItem objects.
+#' Provides methods for creating, updating and retrieving LineItem objects.
 }
 \details{
 Line items define the campaign. For example, line items define:
@@ -33,10 +33,11 @@ In short, line items connect all of the elements of an ad campaign.
 Line items and creatives can be associated with each other through
 LineItemCreativeAssociation objects. An ad unit will host a creative
 through both this association and the LineItem#targeting to it.
+
 createLineItems
 
 Creates new LineItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#createLineItems}{Google Documentation for createLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#createLineItems}{Google Documentation for createLineItems}
 }

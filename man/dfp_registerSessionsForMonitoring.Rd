@@ -20,5 +20,5 @@ Registers the specified list of sessionIds for monitoring. Once the session IDs 
 A session ID is a unique identifier of a single user watching a live stream event.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 }

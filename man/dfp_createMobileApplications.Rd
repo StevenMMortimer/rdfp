@@ -28,5 +28,5 @@ createMobileApplications
 Creates and claims MobileApplication mobile applications to be used for targeting in the network.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
 }

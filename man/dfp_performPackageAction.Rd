@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performPacka
 Performs actions on Package objects that match the given Statement.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PackageService#performPackageAction}{Google Documentation for performPackageAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#performPackageAction}{Google Documentation for performPackageAction}
 }

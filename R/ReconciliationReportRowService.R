@@ -28,9 +28,7 @@
 #'   \item{reconciledLineItemDays}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,43 +39,9 @@
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationReportRowsByStatementResponse 
 #' @export
 dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ReconciliationReportRowService', root_name='getReconciliationReportRowsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getReconciliationReportRowsByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ReconciliationReportRowService', root_name='getReconciliationReportRowsByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getReconciliationReportRowsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -85,9 +49,7 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' 
 #' Updates a list of ReconciliationReportRow which belong to same ReconciliationReport.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -98,43 +60,9 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationReportRowsResponse 
 #' @export
 dfp_updateReconciliationReportRows <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ReconciliationReportRowService', root_name='updateReconciliationReportRows', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateReconciliationReportRowsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ReconciliationReportRowService', root_name='updateReconciliationReportRows', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='updateReconciliationReportRowsResponse', as_df=as_df)
   return(result)
 }
 #' 

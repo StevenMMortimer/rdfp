@@ -24,12 +24,14 @@ Provides methods for adding, updating and retrieving Creative objects.
 }
 \details{
 For a creative to run, it must be associated with a LineItem managed by
-the LineItemCreativeAssociationService.
+the LineItemCreativeAssociationService.#' Read more about creatives on
+the <a href="https://support.google.com/dfp_premium/answer/3185155">DFP
+Help Center</a>.
 
 createCreatives
 
 Creates new Creative objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeService#createCreatives}{Google Documentation for createCreatives}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeService#createCreatives}{Google Documentation for createCreatives}
 }

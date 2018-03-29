@@ -35,5 +35,5 @@ Gets a CreativeTemplatePage of CreativeTemplate objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 }

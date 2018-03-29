@@ -34,5 +34,5 @@ createActivityGroups
 Creates a new ActivityGroup objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }

@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performBaseR
 Performs actions on BaseRate objects that satisfy the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 }

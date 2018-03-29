@@ -25,5 +25,5 @@ Returns the URL at which the report file can be downloaded, and allows for custo
 By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 }

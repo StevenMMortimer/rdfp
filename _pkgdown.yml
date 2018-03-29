@@ -13,8 +13,16 @@ navbar:
   left:
     - text: "Articles"
       menu: 
-      -  text: Availability and Reporting
-         href: articles/availability-and-reporting.html
+      -  text: Administrative Tasks
+         href: articles/administrative-tasks.html
+      -  text: Ad Trafficking Setup
+         href: articles/ad-trafficking-setup.html
+      -  text: Manipulating Orders and LineItems
+         href: articles/manipulating-orders-and-lineitems.html
+      -  text: Checking Availability
+         href: articles/checking-availability.html
+      -  text: Pulling Reports
+         href: articles/pulling-reports.html
     - text: Reference
       href: reference/index.html
     - text: News

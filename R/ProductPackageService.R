@@ -13,9 +13,7 @@
 #' 
 #' Creates new ProductPackage objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,43 +24,9 @@
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductPackagesResponse 
 #' @export
 dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProductPackagesResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='createProductPackagesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -78,9 +42,7 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,43 +53,9 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductPackagesByStatementResponse 
 #' @export
 dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProductPackagesByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getProductPackagesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -135,9 +63,7 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' Performs actions on ProductPackage objects that match the given \{@@link Statement query\}.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -148,43 +74,9 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductPackageActionResponse 
 #' @export
 dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProductPackageActionResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='performProductPackageActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -192,9 +84,7 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' Updates the specified ProductPackage objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -205,44 +95,9 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductPackagesResponse 
 #' @export
 dfp_updateProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProductPackagesResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='updateProductPackagesResponse', as_df=as_df)
   return(result)
 }
 #' 
-

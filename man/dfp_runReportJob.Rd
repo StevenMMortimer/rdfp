@@ -21,11 +21,11 @@ a \code{data.frame} or \code{list} containing all the elements of a runReportJob
 }
 \description{
 Initiates the execution of a ReportQuery on the server.
-The following fields are required:
+The following fields are required: 
 \itemize{
   \item{ReportJob reportQuery}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#runReportJob}{Google Documentation for runReportJob}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#runReportJob}{Google Documentation for runReportJob}
 }

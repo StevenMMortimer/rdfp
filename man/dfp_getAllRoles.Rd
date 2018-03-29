@@ -19,5 +19,5 @@ a \code{data.frame} or \code{list} containing all the elements of a getAllRolesR
 Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#getAllRoles}{Google Documentation for getAllRoles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getAllRoles}{Google Documentation for getAllRoles}
 }

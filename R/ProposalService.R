@@ -14,9 +14,7 @@
 #'   \item{Proposal name}
 #' } 
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#createProposals}{Google Documentation for createProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#createProposals}{Google Documentation for createProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -27,43 +25,9 @@
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProposalsResponse 
 #' @export
 dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProposalService', root_name='createProposals', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createProposalsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProposalService', root_name='createProposals', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='createProposalsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -74,9 +38,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{proposalId}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -87,43 +49,9 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getMarketplaceCommentsByStatementResponse 
 #' @export
 dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getMarketplaceCommentsByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getMarketplaceCommentsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -145,9 +73,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #'   \item{negotiationStatus Only applicable for programmatic proposals}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -158,43 +84,9 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProposalsByStatementResponse 
 #' @export
 dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getProposalsByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getProposalsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -207,9 +99,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{Proposal primaryTraffickerId}
 #' } 
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -220,43 +110,9 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProposalActionResponse 
 #' @export
 dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performProposalActionResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='performProposalActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -264,9 +120,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Proposal objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#updateProposals}{Google Documentation for updateProposals}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -277,43 +131,9 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProposalsResponse 
 #' @export
 dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateProposalsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='updateProposalsResponse', as_df=as_df)
   return(result)
 }
 #' 

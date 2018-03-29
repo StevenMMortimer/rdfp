@@ -26,12 +26,12 @@ CustomTargetingKey and CustomTargetingValue objects.
 \details{
 createCustomTargetingKeys
 
-Creates new CustomTargetingKey objects. The following fields are required:
+Creates new CustomTargetingKey objects. The following fields are required: 
 \itemize{
   \item{CustomTargetingKey name}
   \item{CustomTargetingKey type}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 }

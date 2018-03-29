@@ -19,13 +19,14 @@
 #' that is to be used in the SOAP request
 #' @param verbose a logical indicating whether to print the POSTed XML
 #' @return a XML document if no error was returned
-#' 
+#' @note This function is meant to be used internally. Only use when debugging.
 #' @keywords internal
-build_soap_request <- function(body, service = NULL,
-                               network_code=getOption("rdfp.network_code"), 
-                               application_name=getOption("rdfp.application_name"),
-                               version=getOption("rdfp.version"),
-                               verbose=FALSE){
+#' @export
+execute_soap_request <- function(body, service = NULL,
+                                 network_code=getOption("rdfp.network_code"), 
+                                 application_name=getOption("rdfp.application_name"),
+                                 version=getOption("rdfp.version"),
+                                 verbose=FALSE){
   
   if (is.null(service)){
     service <- attributes(body)$service
@@ -61,161 +62,49 @@ build_soap_request <- function(body, service = NULL,
     print(newXMLTextNode(this_body))
   }
   
-  #use xml2 package ?
-  req <- POST(url=url, config=get_google_token(), body=this_body)
-  text_response <- xmlTreeParse(content(req, as = "text", encoding = "UTF-8"))
-  
-  # check for curl errors
-  doc_error <- text_response$doc$children$Error
-  if(!is.null(doc_error)){
-    print(doc_error)
-    stop("curl error", call. = FALSE)
-  }
-
-  if(is.null(xmlChildren(xmlRoot(text_response))$Body)){
-    return(NULL)
-  }
-  
-  # check for api fault errors
-  api_fault <- xmlChildren(xmlChildren(xmlRoot(text_response))$Body)$Fault
-  
-  if(!is.null(api_fault)){
-#    print(api_fault)
-    more_detail <- xmlChildren(api_fault)
-    if('faultcode' %in% names(more_detail)){
-      faultstring <-  xmlValue(xmlChildren(api_fault)$faultstring)
-      if(!is.null(faultstring)){
-        message(paste0('faultstring: ', faultstring))
-      } else {
-        faultstring <- ''
-      }
-    }
-    if('detail' %in% names(more_detail)){
-      errorString <-  xmlValue(xmlChildren(api_fault)$errorString)
-      if(!is.null(errorString)){
-        message(paste0('errorString: ', errorString))
-      } else {
-        errorString <- ''
-      }
-      reason <-  xmlValue(xmlChildren(api_fault)$reason)
-      if(!is.null(reason)){
-        message(paste0('reason: ', reason))
-      } else {
-        reason <- ''
-      }
-    }
-    stop(paste0('api fault: ', faultstring, errorString, reason, collapse='\n'), call. = F)
-  }
-  return(text_response)
+  httr_response <- POST(url=url, config=get_google_token(), body=this_body)
+  catch_errors(httr_response)
+  return(httr_response)
 }
 
 
-#' Build XML Request Body
-#' 
-#' Parse data into XML format
-#' 
-#' @importFrom XML newXMLNode xmlValue<-
-#' @param list a \code{list} of data to fill the XML body
-#' @param root_name a character string to be put in the 
-#' topmost level of the created XML hierarchy
-#' @param root a XML node to be placed as root 
-#' in the returned XML document
-#' @param version a character string indicating the version of the DFP API 
-#' that is to be used in the SOAP request
-#' @return a XML document
-#' 
+#' Function to catch and print HTTP errors
+#'
+#' @importFrom httr content http_error status_code
+#' @importFrom xml2 xml_find_first xml_text xml_ns_strip
+#' @note This function is meant to be used internally. Only use when debugging.
 #' @keywords internal
-build_xml_from_list <- function(list, root_name=NULL, 
-                                root=NULL, version=getOption("rdfp.version")){
+#' @export
+catch_errors <- function(x){
+  if(http_error(x)){
+    response_parsed <- content(x, as='parsed', encoding='UTF-8')
+    error_message <- NA
+    
+    error_message <- try({
+      response_parsed %>%
+        xml_ns_strip() %>%
+        xml_find_first(".//soap:Fault") %>%
+        xml_find_first(".//errorString") %>%
+        xml_text()      
+      }, silent=TRUE)
 
-  if (is.null(root))
-    root <- newXMLNode(root_name, 
-                       namespaceDefinitions = 
-                         c(paste0("https://www.google.com/apis/ads/publisher/", 
-                                  version)))
-  
-  if(length(list)>0){
-
-    for (i in 1:length(list)){
-      
-      if('.attrs' %in% names(list[[i]])){
-        incl_type <- list[[i]][['.attrs']]
-        names(incl_type) <- 'xsi:type'
-        list[[i]][['.attrs']] <- NULL
-      } else if (grepl('[a-zA-Z]+Action$|^action$', names(list)[i])) {
-        incl_type <- list[[i]]
-        names(incl_type) <- 'xsi:type'
-        list[[i]] <- ''
-      } else {
-        incl_type <- NULL
-      }
-      
-      if (typeof(list[[i]]) == "list") {
-        this <- newXMLNode(names(list)[i], 
-                           attrs=incl_type, 
-                           parent=root,
-                           suppressNamespaceWarning=T)
-        build_xml_from_list(list=list[[i]], root=this)
-      }
-      else {
-        if (!is.null(list[[i]])){
-          this <- newXMLNode(names(list)[i], 
-                             attrs=incl_type, 
-                             parent=root,
-                             suppressNamespaceWarning=T)
-          xmlValue(this) <- list[[i]]
-        }
-      }
+    if(is.na(error_message)){
+      error_message <- try({
+        response_parsed %>%
+          xml_ns_strip() %>%
+          xml_find_first(".//soap:Fault") %>%
+          xml_find_first(".//faultstring") %>%
+          xml_text()      
+      }, silent=TRUE)
+    } 
+    if(is.na(error_message)){  
+      error_message <- sprintf("API Error. Status Code: %s", status_code(x))
     }
+    stop(error_message, call. = FALSE)
   }
-  
-  return(root)
+  invisible(FALSE)
 }
 
-
-#' Format SOAP Request Body
-#' 
-#' Receive data for a service and build the Body of text 
-#' to include in a SOAP request.
-#' 
-#' @importFrom plyr alply
-#' @importFrom methods as
-#' @param service a character string matching one of the API
-#' services
-#' @param root_name a character string to be put in the 
-#' topmost level of the created XML hierarchy
-#' @param data a \code{list} or \code{data.frame} to create
-#' XML in the request
-#' @return a character string of XML with service name
-#' as an attribute
-#' 
-#' @keywords internal
-make_request_body <- function(service, root_name, data=NULL){
-
-  if(!is.null(data)){
-    if(is.data.frame(data)){
-      data <- alply(data, 1, function(x){as.list(data.frame(x))})
-      attributes(data) <- NULL
-    } else if(!is.list(data)){
-      stop('data must be a list or data.frame')
-    }
-  }
-  
-  if (grepl('^create|^update', root_name)){
-    record_names <- gsub('CustomTargeting', '', gsub('create|update', '', root_name))
-    names(data) <- rep(gsub("(^[[:alpha:]])", "\\L\\1", record_names, perl=TRUE), length(data))
-  }
-  if (root_name=='getCustomFieldOption'){
-    data <- as.list(data.frame(data))
-    names(data) <- rep('customFieldOptionId', length(data))
-  }
-  
-  xml_body <- build_xml_from_list(data, root_name=root_name)
-  request_body <- as(xml_body, 'character')
-  attributes(request_body) <- list('service'=service)
-  
-  return(request_body)
-}
 
 #' Take report URL and convert to data.frame
 #' 
@@ -288,29 +177,29 @@ dfp_full_report_wrapper <- function(request_data,
                                     max_tries=10, 
                                     verbose=FALSE){
   
-  dfp_runReportJob_result <- dfp_runReportJob(request_data, as_df=F)$rval
+  dfp_runReportJob_result <- dfp_runReportJob(request_data)
+  report_job_id <- dfp_runReportJob_result$id
+  status_request_data <- list(reportJobId=report_job_id)
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=FALSE)
   
-  status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
-  
+  # continually check status until complete
   counter <- 0
-  while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < max_tries){
-    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=F)$rval
-    Sys.sleep(check_interval)
+  while(dfp_getReportJobStatus_result[[1]] != 'COMPLETED' & counter < max_tries){
+    dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=FALSE)
+    Sys.sleep(3)
     counter <- counter + 1
-  }
+  }  
   
-  stopifnot(dfp_getReportJobStatus_result=='COMPLETED')
+  stopifnot(dfp_getReportJobStatus_result[[1]] == 'COMPLETED')
   
-  url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=F)$rval
+  url_request_data <- list(reportJobId=report_job_id, exportFormat='CSV_DUMP')
+  dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=FALSE)
   if(verbose){
     print(dfp_getReportDownloadURL_result)
   }
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result)
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result[[1]])
   
   return(report_dat)
-  
 }
 
 
@@ -320,7 +209,9 @@ dfp_full_report_wrapper <- function(request_data,
 #' PublishersQueryLanguage service and parse into a data.frame
 #' 
 #' @usage dfp_select_parse(result_data)
-#' @importFrom plyr ldply
+#' @importFrom purrr map_df
+#' @importFrom dplyr as_data_frame
+#' @importFrom readr type_convert
 #' @param result_data a \code{list} returned from \link{dfp_select}
 #' @return a \code{data.frame} of report results as specified by the result_data
 #' 
@@ -328,19 +219,18 @@ dfp_full_report_wrapper <- function(request_data,
 #' @export
 dfp_select_parse <- function(result_data){
   
+  result_data <- result_data[[1]]
   these_names <- unlist(result_data[grepl('columnTypes', names(result_data))], 
                         use.names = F)
-  these_types <- unlist(result_data[['rows']]['.attrs',], use.names = F)
-  these_rows <- ldply(result_data[grepl('rows', names(result_data))], 
-                      .fun=function(x){
-                        x <- x['value',]
+  these_types <- unlist(lapply(result_data[['rows']], FUN=function(x){x$.attrs}), 
+                               use.names = F)
+  result_set <- map_df(result_data[grepl('rows', names(result_data))], 
+                      .f=function(x){
+                        x <- sapply(x, FUN=function(x){x$value})
                         names(x) <- these_names
-                        new_x <- as.data.frame(t(x), stringsAsFactors = F)
+                        new_x <- as_data_frame(t(x))
                         return(new_x)
-                      }, .id=NULL)
-  these_rows <- sapply(these_rows, as.character, simplify = F)
-  result_set <- data.frame(these_rows)
-  suppressWarnings(result_set[,c(which(these_types=='NumberValue'))] <- sapply(result_set[,c(which(these_types=='NumberValue'))], as.numeric))
-  
+                      })
+  suppressMessages(suppressWarnings(result_set <- type_convert(result_set)))
   return(result_set)
 }

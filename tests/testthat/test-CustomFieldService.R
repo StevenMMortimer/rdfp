@@ -109,16 +109,14 @@ test_that("dfp_performCustomFieldAction", {
   
   expect_is(dfp_performCustomFieldAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performCustomFieldAction_result)))
-  expect_equal(dfp_performCustomFieldAction_result$numChanges, '1')
+  expect_equal(dfp_performCustomFieldAction_result$numChanges, 1)
   
   # check that action worked
   request_data <- list('filterStatement'=
                          list('query'=paste0("WHERE isActive=false and id=", 
                                              dfp_createCustomFields_result$id)))
-  dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data, as_df=F)
-  expect_equal(dfp_getCustomFieldsByStatement_result$rval$totalResultSetSize, '1')
+  dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data, as_df=FALSE)
+  expect_equal(length(dfp_getCustomFieldsByStatement_result), 1)
   
   options(rdfp.network_code = rdfp_options$network_code)
 })
-
-

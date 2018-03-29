@@ -33,5 +33,5 @@ Gets a LineItemTemplatePage of LineItemTemplate objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
 }

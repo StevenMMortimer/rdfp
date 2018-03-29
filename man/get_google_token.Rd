@@ -9,4 +9,7 @@ get_google_token()
 \description{
 Get token if it's previously stored, else prompt user to get one.
 }
+\note{
+This function is meant to be used internally. Only use when debugging.
+}
 \keyword{internal}

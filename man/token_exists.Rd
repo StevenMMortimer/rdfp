@@ -12,4 +12,7 @@ logical
 \description{
 Check if authorization currently in force
 }
+\note{
+This function is meant to be used internally. Only use when debugging.
+}
 \keyword{internal}

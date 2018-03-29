@@ -43,5 +43,5 @@ Gets a list of WorkflowRequest objects that satisfy the given Statement query. T
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 }

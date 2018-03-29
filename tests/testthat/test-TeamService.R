@@ -17,23 +17,18 @@ test_that("dfp_createTeams", {
                                   hasAllInventory='true',
                                   teamAccessType='READ_WRITE'))
   options(rdfp.network_code = rdfp_options$test_network_code)
-  expect_message(try(dfp_createTeams(request_data), silent=T), 'MISSING_FEATURE')
-  expect_error(dfp_createTeams(request_data))
+  expect_error(dfp_createTeams(request_data), 'FeatureError.MISSING_FEATURE') 
   options(rdfp.network_code = rdfp_options$network_code)
-  
 })
 
 test_that("dfp_getTeamsByStatement", {
   
   request_data <- list('filterStatement'=list('query'="WHERE id='239587'"))
-  expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'PERMISSION_DENIED')
-  expect_error(dfp_getTeamsByStatement(request_data))
+  expect_error(dfp_getTeamsByStatement(request_data), 'PermissionError.PERMISSION_DENIED')  
 
   options(rdfp.network_code = rdfp_options$test_network_code)
-  expect_message(try(dfp_getTeamsByStatement(request_data), silent=T), 'MISSING_FEATURE')
-  expect_error(dfp_getTeamsByStatement(request_data))
+  expect_error(dfp_getTeamsByStatement(request_data), 'FeatureError.MISSING_FEATURE')  
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 
 test_that("dfp_updateTeams", {
@@ -45,9 +40,6 @@ test_that("dfp_updateTeams", {
                                   hasAllInventory='true',
                                   teamAccessType='READ_WRITE'))
   options(rdfp.network_code = rdfp_options$test_network_code)
-  expect_message(try(dfp_updateTeams(request_data), silent=T), 'NOT_FOUND')
-  expect_error(dfp_updateTeams(request_data))
+  expect_error(dfp_updateTeams(request_data), 'CommonError.NOT_FOUND') 
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
-

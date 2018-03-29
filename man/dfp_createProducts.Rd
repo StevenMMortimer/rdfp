@@ -37,5 +37,5 @@ createProducts
 Creates new Product objects. This method is only available when creating programmatic guaranteed products when not using sales management.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductService#createProducts}{Google Documentation for createProducts}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#createProducts}{Google Documentation for createProducts}
 }

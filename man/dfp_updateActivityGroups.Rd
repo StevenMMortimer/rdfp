@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateActivi
 Updates the specified ActivityGroup objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 }

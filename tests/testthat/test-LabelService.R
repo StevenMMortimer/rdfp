@@ -36,67 +36,62 @@ dfp_createLabels_result <- dfp_createLabels(request_data)
 
 options(rdfp.network_code = rdfp_options$network_code)
 
-
 test_that("dfp_createLabels", {
 
     expect_is(dfp_createLabels_result, "data.frame")
     expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_createLabels_result)))
-
 })
 
 test_that("dfp_getLabelsByStatement", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
-    request_data <- list('filterStatement'=list('query'="WHERE name='Test'"))
-    
-    dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
-    
-    expect_is(dfp_getLabelsByStatement_result, "data.frame")
+  request_data <- list('filterStatement'=list('query'="WHERE name='Test'"))
+  
+  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+  expect_is(dfp_getLabelsByStatement_result, "data.frame")
+  
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 
 test_that("dfp_performLabelAction", {
   
   options(rdfp.network_code = rdfp_options$test_network_code)
-    request_data <- list(labelAction='DeactivateLabels',
-                         filterStatement=list('query'=paste0("WHERE id=", dfp_createLabels_result$id)))
-    
-    dfp_performLabelAction_result <- dfp_performLabelAction(request_data)
-    
-    expect_is(dfp_performLabelAction_result, "data.frame")
-    expect_true(all(c('numChanges') %in% names(dfp_performLabelAction_result)))
-    expect_equal(dfp_performLabelAction_result$numChanges, '1')
-    
-    # check that action worked
-    request_data <- list('filterStatement'=
-                           list('query'=paste0("WHERE isActive=false and id=", 
-                                               dfp_createLabels_result$id)))
-    dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data, as_df=F)
-    
-    expect_equal(dfp_getLabelsByStatement_result$rval$totalResultSetSize, '1')
-    
-  options(rdfp.network_code = rdfp_options$network_code)
+  request_data <- list(labelAction='DeactivateLabels',
+                       filterStatement=list('query'=paste0("WHERE id=", dfp_createLabels_result$id)))
+  
+  dfp_performLabelAction_result <- dfp_performLabelAction(request_data, as_df=FALSE)
+  expect_is(dfp_performLabelAction_result, "list")
+  expect_length(dfp_performLabelAction_result, 1)
+  expect_named(dfp_performLabelAction_result[[1]], c("numChanges"))    
+  
+  # check that action worked
+  request_data <- list('filterStatement'=
+                         list('query'=paste0("WHERE isActive=false and id=", 
+                                             dfp_createLabels_result$id)))
+  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+  expect_is(dfp_getLabelsByStatement_result, "data.frame")
+  expect_equal(nrow(dfp_getLabelsByStatement_result), 1)
 
+  options(rdfp.network_code = rdfp_options$network_code)
 })
 
 test_that("dfp_updateLabels", {
   
   options(rdfp.network_code = rdfp_options$test_network_code)
   
-    hypothetical_label_w_id <- list(id=dfp_createLabels_result$id, 
-                                    name=paste0(myuuid, '2'), 
-                                    description="Test2", 
-                                    types='COMPETITIVE_EXCLUSION')
-    request_data <- list('labels'=hypothetical_label_w_id)
-    
-    dfp_updateLabels_result <- dfp_updateLabels(request_data)
-    
-    expect_is(dfp_updateLabels_result, "data.frame")
-    expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% names(dfp_updateLabels_result)))
-    expect_equal(dfp_updateLabels_result$name, paste0(myuuid, '2'))
+  hypothetical_label_w_id <- list(id=dfp_createLabels_result$id, 
+                                  name=paste0(myuuid, '2'), 
+                                  description="Test2", 
+                                  types='COMPETITIVE_EXCLUSION')
+  request_data <- list('labels'=hypothetical_label_w_id)
+  
+  dfp_updateLabels_result <- dfp_updateLabels(request_data)
+  
+  expect_is(dfp_updateLabels_result, "data.frame")
+  expect_true(all(c('id', 'name', 'description', 'types', 'isActive') %in% 
+                    names(dfp_updateLabels_result)))
+  expect_equal(dfp_updateLabels_result$name, paste0(myuuid, '2'))
 
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 

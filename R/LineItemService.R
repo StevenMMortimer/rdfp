@@ -1,25 +1,23 @@
 #' LineItemService
 #' 
-#' Provides methods for creating, updating and retrieving LineItem objects.
-#'
-#' Line items define the campaign. For example, line items define:
-#' \itemize{
-#'   \item{a budget}
-#'   \item{a span of time to run}
-#'   \item{ad unit targeting}
-#' }
-#' In short, line items connect all of the elements of an ad campaign.
-#' Line items and creatives can be associated with each other through
-#' LineItemCreativeAssociation objects. An ad unit will host a creative
-#' through both this association and the LineItem#targeting to it.
-
+#' #' Provides methods for creating, updating and retrieving LineItem objects.
+    #'
+    #' Line items define the campaign. For example, line items define:
+    #' \itemize{
+    #'   \item{a budget}
+    #'   \item{a span of time to run}
+    #'   \item{ad unit targeting}
+    #' }
+    #' In short, line items connect all of the elements of an ad campaign.
+    #' Line items and creatives can be associated with each other through
+    #' LineItemCreativeAssociation objects. An ad unit will host a creative
+    #' through both this association and the LineItem#targeting to it.
+#' 
 #' createLineItems
 #' 
 #' Creates new LineItem objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#createLineItems}{Google Documentation for createLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#createLineItems}{Google Documentation for createLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,43 +28,9 @@
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemsResponse 
 #' @export
 dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['createLineItemsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='createLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -92,9 +56,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{UnitsBought}
 #' }
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -105,43 +67,9 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemsByStatementResponse 
 #' @export
 dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
- request_body <- make_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['getLineItemsByStatementResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='getLineItemsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -149,9 +77,7 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' 
 #' Performs actions on LineItem objects that match the given Statement query.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -162,43 +88,9 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemActionResponse 
 #' @export
 dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['performLineItemActionResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='performLineItemActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -206,9 +98,7 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified LineItem objects.
 #' 
-#' @importFrom plyr llply ldply
-#' @importFrom utils tail
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -219,44 +109,9 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemsResponse 
 #' @export
 dfp_updateLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
- request_body <- make_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)
-  request <- build_soap_request(body = request_body, verbose=verbose)
-
-  null_root <- is.null(request)
-  response <- NULL
-  response <- try(xmlChildren(xmlChildren(xmlChildren(xmlRoot(request))$Body)[['updateLineItemsResponse']]), silent=T)
-  result <- if(null_root | is.null(response)){
-    NULL
-  } else if(is.null(response$rval)){
-    NULL
-  } else if (as_df){
-      if(length(response[grepl('rval', names(response))])==1 &
-          names(response[grepl('rval', names(response))][[1]])[1]=='totalResultSetSize' &
-           names(response[grepl('rval', names(response))][[1]])[2]=='startIndex'){
-            ldply(tail(response[grepl('rval', names(response))]$rval, -2),
-             .fun=function(x){
-                 x <- xmlToList(x)
-                 x[sapply(x, is.null)] <- NA
-                 new_x <- as.data.frame(x, stringsAsFactors = F)
-                 return(new_x)
-             }, .id=NULL)
-      } else {
-      ldply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               x[sapply(x, is.null)] <- NA
-               new_x <- as.data.frame(x, stringsAsFactors = F)
-               return(new_x)
-             }, .id=NULL)
-      }
-  } else {
-      llply(response[grepl('rval', names(response))],
-            .fun=function(x){
-               x <- xmlToList(x)
-               return(x)
-             })
-  }
+  request_body <- form_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)
+  response <- execute_soap_request(body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=response, resp_element='updateLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 
-

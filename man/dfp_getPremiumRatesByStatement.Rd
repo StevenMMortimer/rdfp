@@ -28,5 +28,5 @@ Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 }

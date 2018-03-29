@@ -35,5 +35,5 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }

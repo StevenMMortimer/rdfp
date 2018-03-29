@@ -29,7 +29,7 @@ through their account managers.
 \details{
 createLiveStreamEvents
 
-Creates new LiveStreamEvent objects. The following fields are required:
+Creates new LiveStreamEvent objects. The following fields are required: 
 \itemize{
   \item{LiveStreamEvent name}
   \item{LiveStreamEvent startDateTime}
@@ -39,5 +39,5 @@ Creates new LiveStreamEvent objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 }

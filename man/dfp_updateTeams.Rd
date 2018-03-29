@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateTeamsR
 Updates the specified Team objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/TeamService#updateTeams}{Google Documentation for updateTeams}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#updateTeams}{Google Documentation for updateTeams}
 }

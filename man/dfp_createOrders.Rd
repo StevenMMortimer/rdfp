@@ -23,16 +23,15 @@ a \code{data.frame} or \code{list} containing all the elements of a createOrders
 Provides methods for creating, updating and retrieving Order objects.
 }
 \details{
-An order is a grouping of LineItem objects. Line items have a one-to-one
-relationship with orders. Each line item can belong to only one order.
-Orders, however, have a one-to-many relationship with line items, meaning
-each order can have multiple line items. An order can be used to manage the
-line items it contains.
+An order is a grouping of LineItem objects. Line items have a many-to-one
+relationship with orders, meaning each line item can belong to only one
+order, but orders can have multiple line items. An order can be used to
+manage the line items it contains.
 
 createOrders
 
 Creates new Order objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/OrderService#createOrders}{Google Documentation for createOrders}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#createOrders}{Google Documentation for createOrders}
 }

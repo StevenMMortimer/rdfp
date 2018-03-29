@@ -16,4 +16,5 @@
 #'
 #' @docType package
 #' @name rdfp
+#' @importFrom dplyr %>%
 NULL

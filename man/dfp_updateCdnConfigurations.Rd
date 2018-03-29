@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCdnCon
 Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 }

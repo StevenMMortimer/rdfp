@@ -33,5 +33,5 @@ createBaseRates
 Creates a list of new BaseRate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 }

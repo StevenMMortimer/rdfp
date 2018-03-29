@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performTeamA
 Performs actions on Team objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/TeamService#performTeamAction}{Google Documentation for performTeamAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#performTeamAction}{Google Documentation for performTeamAction}
 }

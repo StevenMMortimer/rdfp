@@ -36,5 +36,5 @@ Creates new Proposal objects. For each proposal, the following fields are requir
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProposalService#createProposals}{Google Documentation for createProposals}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#createProposals}{Google Documentation for createProposals}
 }

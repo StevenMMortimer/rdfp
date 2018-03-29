@@ -28,5 +28,5 @@ createLabels
 Creates new Label objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LabelService#createLabels}{Google Documentation for createLabels}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#createLabels}{Google Documentation for createLabels}
 }

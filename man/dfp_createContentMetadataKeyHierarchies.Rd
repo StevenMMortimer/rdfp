@@ -28,7 +28,7 @@ ContentMetadataKeyHierarchy objects.
 createContentMetadataKeyHierarchies
 
 Creates new ContentMetadataKeyHierarchy objects.
-The following fields are required:
+The following fields are required: 
 \itemize{
   \item{id}
   \item{name}
@@ -36,5 +36,5 @@ The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 }

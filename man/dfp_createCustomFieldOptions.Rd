@@ -25,12 +25,12 @@ Provides methods for the creation and management of CustomField objects.
 \details{
 createCustomFieldOptions
 
-Creates new CustomFieldOption objects. The following fields are required:
+Creates new CustomFieldOption objects. The following fields are required: 
 \itemize{
   \item{CustomFieldOption displayName}
   \item{CustomFieldOption customFieldId}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 }

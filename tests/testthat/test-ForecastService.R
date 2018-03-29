@@ -9,15 +9,9 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 
 dfp_auth(token = "rdfp_token.rds")
 
-# reconstruct from existing id when needed
-line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=
-                                                       list(query="WHERE LineItemType='STANDARD' and Status='DELIVERING'")))$rval[3]$results
-
-# replace targeting matrices to list
-line_item_detail$targeting$inventoryTargeting <- as.list(as.data.frame(line_item_detail$targeting$inventoryTargeting, 
-                                                                       check.names=F, stringsAsFactors = F))
-line_item_detail$targeting$technologyTargeting <- NULL
-
+# reconstruct hypothetical from an existing lineitem
+filter_statement <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 1"
+line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter_statement)))[[1]]
 hypothetical_line_item <- list(lineItem=
                                 list(id=line_item_detail$id,
                                      startDateTime=line_item_detail$startDateTime,
@@ -43,7 +37,6 @@ test_that("dfp_getAvailabilityForecast", {
   expect_is(dfp_getAvailabilityForecast_result, "data.frame")
   expect_true(all(c('lineItemId', 'orderId', 'unitType', 'availableUnits', 'deliveredUnits') %in% 
                     names(dfp_getAvailabilityForecast_result)))
-  
 })
 
 test_that("dfp_getAvailabilityForecastById", {
@@ -56,20 +49,20 @@ test_that("dfp_getAvailabilityForecastById", {
   expect_is(dfp_getAvailabilityForecastById_result, "data.frame")
   expect_true(all(c('lineItemId', 'orderId', 'unitType', 'availableUnits', 'deliveredUnits') %in% 
                     names(dfp_getAvailabilityForecastById_result)))
-
 })
 
 test_that("dfp_getDeliveryForecast", {
   
   request_data <- list(lineItems=hypothetical_line_item,
                        forecastOptions=list(ignoredLineItemIds=NULL))
-  dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data, as_df=F)$rval
-  
-  expect_is(dfp_getDeliveryForecast_result, "matrix")
-  expect_true(all(c("lineItemId", "orderId", "unitType", 
-                    "predictedDeliveryUnits", "deliveredUnits", "matchedUnits") %in% 
-                    rownames(dfp_getDeliveryForecast_result)))
+  dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
 
+  expect_is(dfp_getDeliveryForecast_result, "data.frame")
+  expect_true(all(paste0("lineItemDeliveryForecasts.",
+                         c("lineItemId", "orderId", "unitType", 
+                           "predictedDeliveryUnits", "deliveredUnits",
+                           "matchedUnits")) %in% 
+                    names(dfp_getDeliveryForecast_result)))
 })
 
 test_that("dfp_getDeliveryForecastByIds", {
@@ -77,12 +70,12 @@ test_that("dfp_getDeliveryForecastByIds", {
   # not specifying forecastOptions brings up NotNullError.ARG2_NULL, so send, but keep null
   request_data <- list(lineItemIds=line_item_detail$id,
                        forecastOptions=list(ignoredLineItemIds=NULL))
-  dfp_getDeliveryForecastByIds_result <- dfp_getDeliveryForecastByIds(request_data, as_df=F)$rval
+  dfp_getDeliveryForecastByIds_result <- dfp_getDeliveryForecastByIds(request_data)
   
-  expect_is(dfp_getDeliveryForecastByIds_result, "matrix")
-  expect_true(all(c("lineItemId", "orderId", "unitType", 
-                    "predictedDeliveryUnits", "deliveredUnits", "matchedUnits") %in% 
-                    rownames(dfp_getDeliveryForecastByIds_result)))
-
+  expect_is(dfp_getDeliveryForecastByIds_result, "data.frame")
+  expect_true(all(paste0("lineItemDeliveryForecasts.",
+                         c("lineItemId", "orderId", "unitType", 
+                           "predictedDeliveryUnits", "deliveredUnits",
+                           "matchedUnits")) %in% 
+                    names(dfp_getDeliveryForecastByIds_result)))
 })
-

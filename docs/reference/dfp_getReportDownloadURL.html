@@ -30,7 +30,25 @@
 <meta property="og:title" content="ReportService — dfp_getReportDownloadURL" />
 
 <meta property="og:description" content="Provides methods for executing a ReportJob and retrieving performance and
-statistics about ad campaigns, networks, inventory and sales." />
+statistics about ad campaigns, networks, inventory and sales.
+Follow the
+steps outlined below:
+Create the ReportJob object by
+invoking ReportService#runReportJob.
+Poll the ReportJob object
+using ReportService#getReportJob.
+Continue to poll the ReportJob
+object until the ReportJob#reportJobStatus field is equal to
+ReportJobStatus#COMPLETED or ReportJobStatus#FAILED.
+If
+successful, fetch the URL for downloading the report by invoking
+ReportService#getReportDownloadURL.
+&lt;h4&gt;Test network
+behavior&lt;/h4&gt;
+The networks created using NetworkService#makeTestNetwork
+are unable to provide reports that would be comparable to the production
+environment because reports require traffic history. In the test networks,
+reports will consistently return no data for all reports." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -78,7 +96,19 @@ statistics about ad campaigns, networks, inventory and sales." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/availability-and-reporting.html">Availability and Reporting</a>
+      <a href="../articles/administrative-tasks.html">Administrative Tasks</a>
+    </li>
+    <li>
+      <a href="../articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
+    </li>
+    <li>
+      <a href="../articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
+    </li>
+    <li>
+      <a href="../articles/checking-availability.html">Checking Availability</a>
+    </li>
+    <li>
+      <a href="../articles/pulling-reports.html">Pulling Reports</a>
     </li>
   </ul>
 </li>
@@ -113,7 +143,25 @@ statistics about ad campaigns, networks, inventory and sales." />
 
     
     <p>Provides methods for executing a ReportJob and retrieving performance and
-statistics about ad campaigns, networks, inventory and sales.</p>
+statistics about ad campaigns, networks, inventory and sales.
+Follow the
+steps outlined below:</p><ul>
+<li><p>Create the ReportJob object by
+invoking ReportService#runReportJob.</p></li>
+<li><p>Poll the ReportJob object
+using ReportService#getReportJob.</p></li>
+<li><p>Continue to poll the ReportJob
+object until the ReportJob#reportJobStatus field is equal to
+ReportJobStatus#COMPLETED or ReportJobStatus#FAILED.</p></li>
+<li><p>If
+successful, fetch the URL for downloading the report by invoking
+ReportService#getReportDownloadURL.</p></li>
+</ul><p>&lt;h4&gt;Test network
+behavior&lt;/h4&gt;
+The networks created using NetworkService#makeTestNetwork
+are unable to provide reports that would be comparable to the production
+environment because reports require traffic history. In the test networks,
+reports will consistently return no data for all reports.</p>
     
 
     <pre class="usage"><span class='fu'>dfp_getReportDownloadURL</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -144,30 +192,13 @@ a <code>data.frame</code></p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Follow the steps outlined below:</p><ul>
-<li><p>Create the ReportJob object by
-invoking ReportService#runReportJob.</p></li>
-<li><p>Poll the ReportJob object
-using ReportService#getReportJob.</p></li>
-<li><p>Continue to poll the ReportJob
-object until the ReportJob#reportJobStatus field is equal to
-ReportJobStatus#COMPLETED or ReportJobStatus#FAILED.</p></li>
-<li><p>If
-successful, fetch the URL for downloading the report by invoking
-ReportService#getReportDownloadURL.</p></li>
-</ul>
-    <p>Test Network Behavior</p>
-<p>The networks created using NetworkService#makeTestNetwork
-are unable to provide reports that would be comparable to the production
-environment because reports require traffic history. In the test networks,
-reports will consistently return no data for all reports.</p>
-<p>getReportDownloadURL</p>
+    <p>getReportDownloadURL</p>
 <p>Returns the URL at which the report file can be downloaded.
 The report will be generated as a gzip archive, containing the report file itself.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportDownloadURL'>Google Documentation for getReportDownloadURL</a></p>
+    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadURL'>Google Documentation for getReportDownloadURL</a></p>
     
 
   </div>

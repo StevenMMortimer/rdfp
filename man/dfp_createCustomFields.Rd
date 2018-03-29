@@ -20,7 +20,7 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldsResponse
 }
 \description{
-Creates new CustomField objects. The following fields are required:
+Creates new CustomField objects. The following fields are required: 
 \itemize{
   \item{CustomField name}
   \item{CustomField entityType}
@@ -29,5 +29,5 @@ Creates new CustomField objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 }

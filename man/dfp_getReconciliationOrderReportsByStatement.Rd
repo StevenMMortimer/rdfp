@@ -39,5 +39,5 @@ Gets an ReconciliationOrderReportPage of ReconciliationOrderReport objects that 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 }

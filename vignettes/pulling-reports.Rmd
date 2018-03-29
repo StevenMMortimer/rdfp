@@ -1,0 +1,164 @@
+---
+title: "Pulling Reports with rdfp"
+author: "Steven M. Mortimer"
+date: "2018-03-29"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 4
+    keep_md: true
+vignette: >
+  %\VignetteIndexEntry{Availability and Reporting with rdfp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE}
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  purl = NOT_CRAN,
+  eval = NOT_CRAN
+)
+```
+
+First, we load `dplyr` and `lubridate` to use in this vignette along with loading 
+the `rdfp` package and specifying the DFP network we would like to connect to. 
+
+```{r load-package}
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(lubridate)))
+library(rdfp)
+options(stringsAsFactors = FALSE)
+options(rdfp.network_code = 123456789)
+```
+
+Just a note, that it's not necessary to setup your own application client_id and 
+client_secret through the Google Developer's Console. The only difference is that 
+the authentication will be run through the client created and associated with the 
+`rdfp` package. By using the package client, you will *NOT* be giving access to 
+your DFP to anyone, the package is just the medium for you to connect to 
+your own data. If you wanted more control you would specify those options like so: 
+
+```{r other-params, eval=FALSE}
+options(rdfp.application_name = "MyApp")
+options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
+options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
+
+dfp_auth()
+```
+
+```{r auth, include = FALSE}
+## I grab the token from the testing directory because that's where it is to be
+## found on Travis
+token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
+options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+rdfp_options <- readRDS(options_path)
+options(rdfp.network_code = rdfp_options$network_code)
+```
+
+#### Delivery by Advertiser
+
+A common request is to check how each line item is delivering for an advertiser. 
+This type of request can be run through a DFP report job. Report jobs have a 
+special flow, but there is a single function (`dfp_full_report_wrapper`) in 
+the **rdfp** package that will manage that flow and run a requested job for you. 
+
+In this example, we specify dimensions including the line, order, advertiser, 
+and ad unit. The `'FLAT'` ad unit view just ensures that we get tabular data 
+with one row per ad unit in case we'd like to total them up. If you'd like to 
+run multiple reports with slight variations in date or dimensions, it is encouraged 
+that you keep you criteria and use a loop or vectorized function to generate 
+each report since the request data must be formatted as a list in each call.
+
+```{r advertiser-report}
+report_request_data <- list(reportJob =
+                              list(reportQuery =
+                                     list(dimensions = 'AD_UNIT_NAME',
+                                          dimensions = 'ADVERTISER_NAME',
+                                          dimensions = 'ORDER_NAME',
+                                          dimensions = 'LINE_ITEM_NAME',
+                                          adUnitView = 'FLAT',
+                                          columns = 'AD_SERVER_IMPRESSIONS', 
+                                          columns = 'AD_SERVER_CLICKS',
+                                          dateRangeType = 'LAST_WEEK')
+                                   )
+                            )
+delivery_dat <- dfp_full_report_wrapper(report_request_data)
+```
+
+#### Working with Saved Queries
+
+DFP has a feature that allows for saving query criteria. These queries can be 
+pulled back via the API and the criteria submitted back so that you always 
+run the same report each time, or can easily replicate a query that another person 
+has created in the UI.
+
+```{r reusing-saved-queries}
+# look for a particular saved query
+this_result <- dfp_getSavedQueriesByStatement(list(filterStatement=list(query="WHERE id = 936165016")), as_df=FALSE)
+this_report_query <- this_result[[1]]$reportQuery
+
+# resubmit the report job with the saved query
+report_request_data2 <- list(reportJob=list(reportQuery = this_report_query))
+delivery_dat2 <- dfp_full_report_wrapper(report_request_data2)
+```
+
+#### A More Detailed Explanation of the Report Process
+
+Reports actually require 3 steps from the [ReportService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService): 
+1) to request the report, 2) check on its status, and 3) download. This basic process flow 
+is required for all reports requested via this service. The wrapper function used above
+named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of
+detail is not needed unless the wrapper service does not quite fit your needs.
+
+```{r eval = FALSE}
+
+# create a reportJob object
+# reportJobs consist of a reportQuery
+# Documentation for the reportQuery object can be found in R using 
+# ?dfp_ReportService_object_factory and searching for ReportQuery
+# Also online documentation is available that lists available child elements for reportQuery
+# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
+request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
+                                                     dimensions='AD_UNIT_ID',
+                                                     adUnitView='FLAT',
+                                                     columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
+                                                     startDate=list(year=2018, month=10, day=1),
+                                                     endDate=list(year=2018, month=10, day=31),
+                                                     dateRangeType='CUSTOM_DATE'
+                                                     )))
+
+# the result is a list and most importantly the ID is included for checking its status
+dfp_runReportJob_result <- dfp_runReportJob(request_data)
+dfp_runReportJob_result$id
+dfp_runReportJob_result$reportJobStatus
+
+# to check the status repeatedly you just need to provide the id
+# dfp_getReportJobStatus_result returns a character string of the reportJob status
+request_data <- list(reportJobId=dfp_runReportJob_result$id)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+dfp_getReportJobStatus_result
+
+# a simple while loop can keep checking a long running request until ready
+counter <- 0
+while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+  Sys.sleep(3)
+  counter <- counter + 1
+}
+
+# once the status is "COMPLETED" the data download URL can be retrieved
+request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
+
+# convenience function has been provided to download the data from URL
+# and convert to a data.frame
+# supported exportFormats are currently c('CSV_DUMP', 'TSV', 'CSV_EXCEL')
+report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
+                                          exportFormat='CSV_DUMP')
+head(report_dat)
+
+```

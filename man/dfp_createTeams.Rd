@@ -28,11 +28,11 @@ companies, inventory and orders.
 
 createTeams
 
-Creates new Team objects. The following fields are required:
+Creates new Team objects. The following fields are required: 
 \itemize{
   \item{Team name}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/TeamService#createTeams}{Google Documentation for createTeams}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#createTeams}{Google Documentation for createTeams}
 }

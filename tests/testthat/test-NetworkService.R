@@ -28,10 +28,7 @@ test_that("dfp_getCurrentNetwork", {
 })
 
 test_that("dfp_makeTestNetwork", {
-
- expect_message(try(dfp_makeTestNetwork(), silent=T), 'GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK')
- expect_error(dfp_makeTestNetwork())
-
+ expect_error(dfp_makeTestNetwork(), 'AuthenticationError.GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK')
 })
 
 test_that("dfp_updateNetwork", {

@@ -24,5 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performConte
 Performs actions on ContentMetadataKeyHierarchy objects that match the given \{@link Statement query\}.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
 }

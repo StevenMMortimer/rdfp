@@ -30,7 +30,7 @@ AdUnit#appliedLabels.
 \details{
 createCreativeWrappers
 
-Creates a new CreativeWrapper objects. The following fields are required:
+Creates a new CreativeWrapper objects. The following fields are required: 
 \itemize{
   \item{CreativeWrapper labelId}
   \item{CreativeWrapper ordering}
@@ -38,5 +38,5 @@ Creates a new CreativeWrapper objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 }

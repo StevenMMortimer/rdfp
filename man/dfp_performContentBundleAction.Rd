@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performConte
 Performs actions on ContentBundle objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 }

@@ -2,11 +2,14 @@
 
 ### Features
 
-  * Nothing Yet!
+  * Upgraded to API version `v201802`
+  * Created more efficient parsers `parse_soap_response()`
 
 ### Bug Fixes
 
-  * Nothing Yet!
+  * Line item targeting does not come back as a matrix. It is preserved as a list 
+  so it can be directly passed back into the ForecastService functions or LineItemService 
+  to get detailed availability
 
 ---
 

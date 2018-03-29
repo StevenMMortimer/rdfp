@@ -29,5 +29,5 @@ createCdnConfigurations
 Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Creates new CdnConfiguration objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 }

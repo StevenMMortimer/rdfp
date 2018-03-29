@@ -31,5 +31,5 @@ Gets a CustomTargetingValuePage of CustomTargetingValue objects that satisfy the
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 }

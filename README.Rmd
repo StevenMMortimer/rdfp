@@ -19,10 +19,10 @@ knitr::opts_chunk$set(
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp)
 [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
-**Compiled using DFP API version: `v201711`**
+**Compiled using DFP API version: `v201802`**
 
-**rdfp** allows you to use the DoubleClick for Publishers API from R! Manage 
-inventory, create orders, pull reports, and more. 
+**rdfp** allows you to use the DoubleClick for Publishers API from R. Manage 
+inventory, create orders, pull reports, and more!
   
 ## Table of Contents  
   * [Installation](#installation)
@@ -30,12 +30,10 @@ inventory, create orders, pull reports, and more.
     * [Functions](#functions)
     * [Set API Version](#set-api-version)
     * [Authenticate](#authenticate)
-    * [Simple Administrative Tasks](#simple-administrative-tasks)
-    * [Ad Trafficking Setup](#ad-trafficking-setup)
-    * [Manipulating Orders and LineItems](#manipulating-orders-and-lineitems)
-    * [Run a Report](#run-a-Report)
+    * [Get Current User Info](#get-current-user-info)
+    * [Pull a LineItem](#pull-a-lineitem)
+    * [Run a Report](#run-a-report)
   * [Vignettes](#vignettes)
-    * [Availability and Reporting](#availability-and-reporting)
   * [Credits](#credits)
   * [More Information](#more-information)
 
@@ -58,14 +56,17 @@ operations when using code completion in RStudio. By default most **rdfp**
 functions will return a `data.frame` or `list` parsed from the XML returned in 
 the SOAP response.
 
-### Set API Version
+### Load Package and Set API Version
 
 Google has a very quick policy of depricating and not supporting versions since 
 they are releasing multiple versions of the API each calendar year. **rdfp** is 
 periodically compiled against a version of the API. If you would like to use an 
 older or newer API version, just specify it in the options.
 
-```{r eval = FALSE}
+```{r load-package}
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(lubridate)))
+library(rdfp)
 # this will force all calls to be against the version "v201711"
 options(rdfp.version = "v201711")
 ```
@@ -82,7 +83,6 @@ interactively. After specifying the 4 options listed below, simply run
 `dfp_auth()` to authenticate.
 
 ```{r eval = FALSE}
-
 options(rdfp.network_code = "12345678")
 options(rdfp.application_name = "MyApp")
 options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
@@ -92,315 +92,79 @@ options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
 # cache an OAuth token in the working directory
 # the token will be refreshed when necessary
 dfp_auth()
-
 ```
 
-### Simple Administrative Tasks
+```{r auth, include = FALSE}
+## I grab the token from the testing directory because that's where it is to be
+## found on Travis
+token_path <- file.path(".", "tests", "testthat", "rdfp_token.rds")
+suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
+options_path <- file.path(".", "tests", "testthat", "rdfp_options.rds")
+rdfp_options <- readRDS(options_path)
+options(rdfp.network_code = rdfp_options$network_code)
+```
 
-#### Check Current User Info
+### Get Current User Info
 
 ```{r eval = FALSE}
-
 # Check current user or network
 user_info <- dfp_getCurrentUser()
-user_info
 network_info <- dfp_getCurrentNetwork()
-network_info
-
 ```
 
-#### Create Team and Users
-
-```{r eval = FALSE}
-# create a team and user and add the user to that team
-
-#first create the team
-request_data <- list(teams=list(name="TestTeam1", 
-                                description='API Test Team 1', 
-                                hasAllCompanies='true', 
-                                hasAllInventory='true',
-                                teamAccessType='READ_WRITE'))
-dfp_createTeams_result <- dfp_createTeams(request_data)
-
-# second create the user
-request_data <- data.frame(name=paste0("TestUser", 1:3),
-                           email=paste0('testuser', 1:3, '@gmail.com'), 
-                           roleId=rep(-1,3))
-dfp_createUsers_result <- dfp_createUsers(request_data)
-
-# third associate the user to that team
-request_data <- data.frame(teamid=rep(dfp_createTeams_result$id, 3),
-                           userid=dfp_createUsers_result$id)
-dfp_createUserTeamAssociations_result <- dfp_createUserTeamAssociations(request_data)
-
-# Note: User roleId = -1 is the Administrative role
-# use dfp_getAllRoles() to view other options
-
-# Creating custom roles is a premium feature, which
-# small business accounts won't have and creating the roles 
-# can only be done from the user interface, not the API.
-```
-
-#### Create Companies and Contacts
-
-```{r eval = FALSE}
-# create a company and add a contact to it
-
-# first create the company
-request_data <- list(companies=list(name="TestCompany1", 
-                                    type='HOUSE_ADVERTISER', 
-                                    address='123 Main St Hometown, FL USA', 
-                                    email='testcompany1@gmail.com', 
-                                    comment='API Test'))
-dfp_createCompanies_result <- dfp_createCompanies(request_data)
-
-# second create the contact and specify the companyId
-request_data <- list(contacts=list(name="TestContact1", 
-                                    companyId=dfp_createCompanies_result$id, 
-                                    status='UNINVITED', 
-                                    cellPhone='(888) 999-7777',
-                                    comment='API Test', 
-                                    email='testcontact1@gmail.com'))
-dfp_createContacts_result <- dfp_createContacts(request_data)
-
-```
-
-### Ad Trafficking Setup
-
-#### Setup Custom Labels for Items
-
-Custom labels are helpful for "tagging" DFP items with metadata
-that can later be used frequency capping, doing competitive exclusion or 
-other specific actions. See the following link for Google's explanation on their uses: 
-(https://support.google.com/dfp\_premium/answer/190565?hl=en&ref_topic=30224)
-
-```{r eval=FALSE}
-
-# this creates a label called "Last Minute Change" that we can add
-# to any line item or order that we felt deserved this label.
-request_data <- data.frame(name="auto - competitive exclusion", 
-                           description=paste0("A label to prevent two different car ",
-                                              "companies from showing ads together"), 
-                           types='COMPETITIVE_EXCLUSION')
-dfp_createLabels_result <- dfp_createLabels(request_data)
-
-```
-
-#### Setup Custom Fields for Items
-
-Custom fields are helpful for "tagging" DFP items with metadata
-that can later be used filtering or reporting. See the following link for 
-Google's explanation on their uses: (https://support.google.com/dfp\_premium/answer/2694303?hl=en)
-
-```{r eval=FALSE}
-
-# this creates an extra field on the USER entity type that denotes what shift 
-# the user works during the day. First we create the field, then populate
-# with potential options since it is a dropdown field.
-request_data <- data.frame(name='Shift',
-                           description='The shift that this user usually works.', 
-                           entityType='USER',
-                           dataType='DROP_DOWN',
-                           visibility='FULL')
-dfp_createCustomFields_result <- dfp_createCustomFields(request_data)
-
-request_data <- data.frame(customFieldId=rep(dfp_createCustomFields_result$id, 3),
-                           displayName=c('Morning', 'Afternoon', 'Evening'))
-dfp_createCustomFieldOptions_result <- dfp_createCustomFieldOptions(request_data)
-
-```
-
-#### Setup Custom Targeting Keys and Values
-
-DFP allows traffickers to create custom tags to better target line items on their site.
-For example, a certain section of the site or search term used by a visitor can be 
-encoded as custom targeting keys and values that can later be used when creating 
-orders and line items, and evaluating potential inventory. See the following link for 
-Google's explanation on their uses: (https://support.google.com/dfp\_premium/answer/188092?hl=en)
-
-```{r eval=FALSE}
-
-# create the key
-request_data <- list(keys=list(name='Test1', 
-                               displayName='TestKey1', 
-                               type='FREEFORM'))
-dfp_createCustomTargetingKeys_result <- dfp_createCustomTargetingKeys(request_data)
-
-# create the values
-request_data <- data.frame(customTargetingKeyId=rep(dfp_createCustomTargetingKeys_result$id,2),
-                           name=c('TestValue1','TestValue2'), 
-                           displayName=c('TestValue1','TestValue2'), 
-                           matchType=rep('EXACT', 2))
-dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(request_data)
-
-```
-
-### Manipulating Orders and LineItems
-
-#### Find All Levels of Geotargeting and their Ids
-
-Having a complete list of locations is useful for filtering 
-and/or adding geotargeting on line items. Locations 
-are ordered as a hierarchy and have unique ids.
-
-```{r eval=FALSE}
-
-request_data <- list(selectStatement=
-                       list(query=paste('select Id, Name,', 
-                                        'CanonicalParentId, CountryCode,',
-                                        "Type from Geo_Target where CountryCode='US'")))
-
-dfp_select_result <- dfp_select(request_data)$rval
-final_result <- dfp_select_parse(dfp_select_result)
-head(final_result)
-
-```
-
-#### Create an Order
-
-This example uses a test company as an advertiser and yourself as the trafficker, 
-to create an order.
-
-```{r eval=FALSE}
-
-request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
-dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
-
-request_data <- list(list(name=paste0('TestOrder'), 
-                          startDateTime=list(date=list(year=2018, month=12, day=1), 
-                                             hour=0,
-                                             minute=0,
-                                             second=0,
-                                             timeZoneID='America/New_York'),
-                          endDateTime=list(date=list(year=2018, month=12, day=31), 
-                                           hour=23,
-                                           minute=59,
-                                           second=59,
-                                           timeZoneID='America/New_York'), 
-                          notes='API Test Order', 
-                          externalOrderId=99999, 
-                          advertiserId=dfp_getCompaniesByStatement_result$id, 
-                          traffickerId=dfp_getCurrentUser()$id))
-dfp_createOrders_result <- dfp_createOrders(request_data)
-
-```
-
-#### Get Line Items By A Filter
+#### Pull a LineItem
 
 Below is an example of how to get objects by Publishers Query Language (PQL) statement.
 The statement is constructed as a list of lists that are nested to emulate
 the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement`
 function from the [LineItemService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService)
 
-```{r eval = FALSE}
-
+```{r}
 # Retrieve all Line Items that have a status of "DELIVERING"
-dat <- list('filterStatement'=list('query'="WHERE status='DELIVERING'"))
-
-resultset <- dfp_getLineItemsByStatement(dat)
-
-# the result is a list
-# Google uses the first two elements for metadata
-head(resultset, 2)
-
-# the rest should be parsed as needed
-tail(resultset, -2)
-
+dat <- list('filterStatement'=list('query'="WHERE status='DELIVERING' LIMIT 3"))
+resultset <- dfp_getLineItemsByStatement(dat, as_df=TRUE) 
+resultset[,c('orderId', 'id', 'priority', 'deliveryRateType')]
 ```
 
 ### Run a Report
 
 Below is an example of how to make a simple report request.
 
-```{r eval = FALSE}
-
+```{r}
 # create a reportJob object
 # reportJobs consist of a reportQuery
 # Documentation for the reportQuery object can be found in R using 
 # ?dfp_ReportService_object_factory and searching for ReportQuery
 # Also online documentation is available that lists available child elements for reportQuery
 # https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
-request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
-                                                     dimensions='AD_UNIT_ID',
-                                                     adUnitView='FLAT',
-                                                     columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                     startDate=list(year=2018, month=10, day=1),
-                                                     endDate=list(year=2018, month=10, day=31),
-                                                     dateRangeType='CUSTOM_DATE'
-                                                     )))
+report_request_data <- list(reportJob =
+                              list(reportQuery =
+                                     list(dimensions = 'AD_UNIT_NAME',
+                                          dimensions = 'ADVERTISER_NAME',
+                                          dimensions = 'ORDER_NAME',
+                                          dimensions = 'LINE_ITEM_NAME',
+                                          adUnitView = 'FLAT',
+                                          columns = 'AD_SERVER_IMPRESSIONS', 
+                                          columns = 'AD_SERVER_CLICKS',
+                                          dateRangeType = 'LAST_WEEK')
+                                   )
+                            )
 
 # a convenience function has been provided to you to manage the report process workflow
 # if you would like more control, see the example below which moves through each step in the process
-report_data <- dfp_full_report_wrapper(request_data)
-
-head(report_data)
-```
-
-#### A More Detailed Explanation of the Report Process
-
-Reports actually require 3 steps from the [ReportService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService): 
-1) to request the report, 2) check on its status, and 3) download. This basic process flow 
-is required for all reports requested via this service. The wrapper function used above
-named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of
-detail is not needed unless the wrapper service does not quite fit your needs.
-
-```{r eval = FALSE}
-
-# create a reportJob object
-# reportJobs consist of a reportQuery
-# Documentation for the reportQuery object can be found in R using 
-# ?dfp_ReportService_object_factory and searching for ReportQuery
-# Also online documentation is available that lists available child elements for reportQuery
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
-request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
-                                                     dimensions='AD_UNIT_ID',
-                                                     adUnitView='FLAT',
-                                                     columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                     startDate=list(year=2018, month=10, day=1),
-                                                     endDate=list(year=2018, month=10, day=31),
-                                                     dateRangeType='CUSTOM_DATE'
-                                                     )))
-
-# the result is a list and most importantly the ID is included for checking its status
-dfp_runReportJob_result <- dfp_runReportJob(request_data)
-dfp_runReportJob_result$id
-dfp_runReportJob_result$reportJobStatus
-
-# to check the status repeatedly you just need to provide the id
-# dfp_getReportJobStatus_result returns a character string of the reportJob status
-request_data <- list(reportJobId=dfp_runReportJob_result$id)
-dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
-dfp_getReportJobStatus_result
-
-# a simple while loop can keep checking a long running request until ready
-counter <- 0
-while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
-  Sys.sleep(3)
-  counter <- counter + 1
-}
-
-# once the status is "COMPLETED" the data download URL can be retrieved
-request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
-
-# convenience function has been provided to download the data from URL
-# and convert to a data.frame
-# supported exportFormats are currently c('CSV_DUMP', 'TSV', 'CSV_EXCEL')
-report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
-                                          exportFormat='CSV_DUMP')
-head(report_dat)
-
+report_data <- dfp_full_report_wrapper(report_request_data)
 ```
 
 ## Vignettes
 
-The README below outlines some basic functionality, for more practical scenarios, 
-please refer to the vignettes:
+The README below outlines the package functionality, but review the vignettes for 
+more detailed examples on usage.
 
-### Availability and Reporting
-
-https://rawgit.com/StevenMMortimer/rdfp/master/vignettes/availability-and-reporting.html
+  * [Administrative Tasks](https://StevenMMortimer.github.io/rdfp/articles/administrative-tasks.html)
+  * [Ad Trafficking Setup](https://StevenMMortimer.github.io/rdfp/articles/ad-trafficking-setup.html)
+  * [Manipulating Orders and LineItems](https://StevenMMortimer.github.io/rdfp/articles/manipulating-orders-and-lineitems.html)
+  * [Checking Availability](https://StevenMMortimer.github.io/rdfp/articles/checking-availability.html)
+  * [Pulling Reports](https://StevenMMortimer.github.io/rdfp/articles/pulling-reports.html)
 
 ## Credits
 
@@ -431,4 +195,3 @@ More information is also available on the `pkgdown` site at https://StevenMMorti
 ---
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
 By participating in this project you agree to abide by its terms.
-  

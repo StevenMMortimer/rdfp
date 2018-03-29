@@ -10,21 +10,15 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_select", {
-
-  # this is a long running test, so skip on CRAN
-  skip_on_cran()
   
   request_data <- list(selectStatement=
-                         list(query=paste('select Id, Name,', 
-                                          'CanonicalParentId, CountryCode,',
-                                          "Type from Geo_Target where CountryCode='US'")))
+                         list(query='SELECT Id, LineItemType, Status FROM LineItem LIMIT 3'))  
   
-  dfp_select_result <- dfp_select(request_data)$rval
+  dfp_select_result <- dfp_select(request_data, as_df=FALSE)
   expect_is(dfp_select_result, "list")
   
-  final_result <- dfp_select_parse(dfp_select_result)
-  expect_is(final_result, "data.frame")
-  expect_true(all(c('id', 'name', 'canonicalparentid', 'countrycode', 'type') %in% names(final_result)))
-
+  final_result <- dfp_select_parse(dfp_select_result[[1]])
+  expect_is(final_result, "tbl_df")
+  expect_named(final_result, c('id', 'lineitemtype', 'status'))
 })
 

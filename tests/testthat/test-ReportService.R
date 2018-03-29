@@ -15,28 +15,26 @@ report_request_data <- list(reportJob=
                                           dimensions='AD_UNIT_ID',
                                           adUnitView='FLAT',
                                           columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                          startDate=list(year=2018, month=1, day=1),
-                                          endDate=list(year=2018, month=1, day=31),
-                                          dateRangeType='CUSTOM_DATE')))
+                                          dateRangeType='LAST_MONTH')))
 
 # run report
 dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
 
 # check status
 status_request_data <- list(reportJobId=dfp_runReportJob_result$id)
-dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=FALSE)
 
 # continually check status until complete
 counter <- 0
-while(dfp_getReportJobStatus_result$x!='COMPLETED' & counter < 20){
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data)
+while(dfp_getReportJobStatus_result[[1]] != 'COMPLETED' & counter < 20){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=FALSE)
   Sys.sleep(3)
   counter <- counter + 1
 }
 
 # get report URL
 url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data)
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=FALSE)
 
 test_that("dfp_runReportJob", {
   
@@ -46,17 +44,15 @@ test_that("dfp_runReportJob", {
 })
 
 test_that("dfp_getReportJobStatus", {
-  
-  expect_is(dfp_getReportJobStatus_result$x, "character")
-  
+  expect_equal(dfp_getReportJobStatus_result[[1]], "COMPLETED")
 })
 
 test_that("dfp_getReportDownloadURL", {
   
-  expect_is(dfp_getReportDownloadURL_result$x, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadURL_result))
+  expect_is(dfp_getReportDownloadURL_result[[1]], "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadURL_result[[1]]))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result$x)
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result[[1]])
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
@@ -71,10 +67,10 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result[[1]], "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result[[1]]))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='TSV')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Month.and.year", 
@@ -82,16 +78,15 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                     "Ad.unit", 
                                     "Total.impressions"))
   
-  
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='CSV_EXCEL', 
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result[[1]], "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result[[1]]))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='CSV_EXCEL')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
@@ -105,10 +100,10 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
   
-  expect_is(dfp_getReportDownloadUrlWithOptions_result$x, "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result$x))
+  expect_is(dfp_getReportDownloadUrlWithOptions_result[[1]], "character")
+  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result[[1]]))
   
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result$x, 
+  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='CSV_DUMP')
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
@@ -116,7 +111,6 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                     "Dimension.AD_UNIT_NAME", 
                                     "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
   expect_equal(sum(report_dat$Dimension.MONTH_AND_YEAR=='Total'), 1)
-  
 })
 
 test_that("dfp_full_report_wrapper", {

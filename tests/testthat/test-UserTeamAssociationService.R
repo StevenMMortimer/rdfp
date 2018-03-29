@@ -14,10 +14,8 @@ test_that("dfp_createUserTeamAssociations", {
   request_data <- list(userteamassociations=list(teamId=239587,
                                                  userId=149461448))
   options(rdfp.network_code = rdfp_options$test_network_code)
-  expect_message(try(dfp_createUserTeamAssociations(request_data), silent=T), 'NOT_FOUND')
-  expect_error(dfp_createUserTeamAssociations(request_data))
+  expect_error(dfp_createUserTeamAssociations(request_data), 'CommonError.NOT_FOUND') 
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 
 test_that("dfp_getUserTeamAssociationsByStatement", {
@@ -32,12 +30,16 @@ test_that("dfp_getUserTeamAssociationsByStatement", {
 })
 
 test_that("dfp_performUserTeamAssociationAction", {
-
-#  dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction()
-
-#  expect_is(dfp_performUserTeamAssociationAction_result, "data.frame")
-  expect_true(TRUE)
-
+  
+  options(rdfp.network_code = rdfp_options$test_network_code)
+  request_data <- list(userTeamAssociationAction='DeleteUserTeamAssociations',
+                       statement=list('query'=paste0("WHERE name like 'Test%'")))
+  
+  dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction(request_data, as_df=FALSE)
+  expect_is(dfp_performUserTeamAssociationAction_result, "list")
+  expect_length(dfp_performUserTeamAssociationAction_result, 1)
+  expect_named(dfp_performUserTeamAssociationAction_result[[1]], c("numChanges")) 
+  options(rdfp.network_code = rdfp_options$network_code)
 })
 
 test_that("dfp_updateUserTeamAssociations", {
@@ -45,9 +47,7 @@ test_that("dfp_updateUserTeamAssociations", {
   request_data <- list(userTeamAssociations=list(teamId=239587,
                                                  userId=149461448))
   options(rdfp.network_code = rdfp_options$test_network_code)
-  expect_message(try(dfp_updateUserTeamAssociations(request_data), silent=T), 'NOT_FOUND')
-  expect_error(dfp_updateUserTeamAssociations(request_data))
+  expect_error(dfp_updateUserTeamAssociations(request_data), 'CommonError.NOT_FOUND') 
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 

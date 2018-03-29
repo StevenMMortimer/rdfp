@@ -21,13 +21,13 @@ a \code{data.frame} or \code{list} containing all the elements of a getContentBy
 }
 \description{
 Service for retrieving Content.
-}
-\details{
-Content entities can be targeted in video LineItems. You can query for content 
-that belongs to a particular category or has assigned metadata. Categories 
-and metadata for Content are stored in DFP as CustomCriteria.
-
-For example, to find all Content that is "genre=comedy", you would:
+Content entities can be targeted in
+video LineItems.
+You can query for content that belongs to a particular
+category or has assigned metadata. Categories and metadata for Content are
+stored in DFP as CustomCriteria.
+For example, to find all Content that
+is "genre=comedy", you would:
 \itemize{
   \item{Retrieve the custom targeting key
 corresponding to "genre" using
@@ -40,6 +40,8 @@ retrieve the ID for the "comedy" custom targeting value.}
 #getContentByStatementAndCustomTargetingValue with a filter like "WHERE
 status = 'ACTIVE'" and the ID of the custom targeting value from step 2.}
 }
+}
+\details{
 getContentByStatement
 
 Gets a ContentPage of Content objects that satisfy the given \{@link Statement query\}. The following fields are supported for filtering: 
@@ -53,5 +55,5 @@ Gets a ContentPage of Content objects that satisfy the given \{@link Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 }

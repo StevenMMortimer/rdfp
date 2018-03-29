@@ -26,5 +26,5 @@ Gets a set of AdUnitSize objects that satisfy the given Statement query. The fol
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 }

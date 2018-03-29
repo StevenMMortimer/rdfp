@@ -19,5 +19,5 @@ a \code{data.frame} or \code{list} containing all the elements of a getCurrentUs
 Returns the current User. Returns the current User. @return the current user Returns the current User. @return the current user
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 }

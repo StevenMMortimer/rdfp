@@ -28,5 +28,5 @@ createContacts
 Creates new Contact objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContactService#createContacts}{Google Documentation for createContacts}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#createContacts}{Google Documentation for createContacts}
 }

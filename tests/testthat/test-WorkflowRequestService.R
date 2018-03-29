@@ -1,7 +1,5 @@
 context("WorkflowRequestService")
 
-skip("Reduce Total Test Runtime")
-
 rdfp_options <- readRDS("rdfp_options.rds")
 options(rdfp.network_code = rdfp_options$network_code)
 options(rdfp.httr_oauth_cache = FALSE)
@@ -14,10 +12,7 @@ dfp_auth(token = "rdfp_token.rds")
 test_that("dfp_getWorkflowRequestsByStatement", {
 
    request_data <- list('filterStatement'=list('query'="WHERE type='WORKFLOW_APPROVAL_REQUEST'"))
-
-   expect_message(try(dfp_getWorkflowRequestsByStatement(request_data), silent=T), 'MISSING_FEATURE')
-   expect_error(dfp_getWorkflowRequestsByStatement(request_data))
-
+   expect_error(dfp_getWorkflowRequestsByStatement(request_data), 'FeatureError.MISSING_FEATURE')
 })
 
 test_that("dfp_performWorkflowRequestAction", {
@@ -26,10 +21,7 @@ test_that("dfp_performWorkflowRequestAction", {
   request_data <- list(action='ApproveWorkflowApprovalRequests',
                        filterStatement=list('query'=paste0("WHERE type='WORKFLOW_APPROVAL_REQUEST'")))
   
-  expect_message(try(dfp_performWorkflowRequestAction(request_data), silent=T), 'MISSING_FEATURE')
-  expect_error(dfp_performWorkflowRequestAction(request_data))
-
+  expect_error(dfp_performWorkflowRequestAction(request_data), 'FeatureError.MISSING_FEATURE')
   options(rdfp.network_code = rdfp_options$network_code)
-  
 })
 

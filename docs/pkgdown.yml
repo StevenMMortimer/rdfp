@@ -2,9 +2,11 @@ pandoc: 1.19.2.1
 pkgdown: 0.1.0.9000
 pkgdown_sha: 17f683717d0a1547f13a08a259b34c58927452d6
 articles:
-  availability-and-reporting: availability-and-reporting.html
-  availability-and-reporting.html: availability-and-reporting.html
-  availability-and-reporting.md: availability-and-reporting.md
+  ad-trafficking-setup: ad-trafficking-setup.html
+  administrative-tasks: administrative-tasks.html
+  checking-availability: checking-availability.html
+  manipulating-orders-and-lineitems: manipulating-orders-and-lineitems.html
+  pulling-reports: pulling-reports.html
 urls:
   reference: https://stevenmmortimer.github.io/rdfp//reference
   article: https://stevenmmortimer.github.io/rdfp//articles

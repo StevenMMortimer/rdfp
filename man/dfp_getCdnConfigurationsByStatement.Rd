@@ -28,5 +28,5 @@ Gets a CdnConfigurationPage of CdnConfiguration objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
 }

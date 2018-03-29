@@ -6,10 +6,10 @@
 \alias{rdfp-package}
 \title{\code{rdfp} package}
 \description{
-Double Click for Publishers API from R
+DoubleClick for Publishers API from R
 }
 \details{
-The Double Click for Publishers (DFP) API consists of roughly 50 services. 
+The DoubleClick for Publishers (DFP) API consists of roughly 50 services. 
 Each service is written to handle a particular set of operations within the 
 API and grouped.
 

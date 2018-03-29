@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performCusto
 Performs actions on CustomField objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
 }

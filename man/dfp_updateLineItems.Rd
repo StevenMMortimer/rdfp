@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLineIt
 Updates the specified LineItem objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 }

@@ -24,5 +24,5 @@ a \code{data.frame} or \code{list} containing all the elements of a performLineI
 Performs actions on LineItemCreativeAssociation objects that match the given Statement query.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 }

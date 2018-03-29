@@ -29,5 +29,5 @@ createAudienceSegments
 Creates new RuleBasedFirstPartyAudienceSegment objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 }

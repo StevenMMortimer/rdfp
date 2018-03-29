@@ -88,21 +88,19 @@ test_that("dfp_performOrderAction", {
   request_data <- list(orderAction='DeleteOrders',
                        filterStatement=list('query'=paste0("WHERE name like 'Test%'")))
   
-  dfp_performOrderAction_result <- dfp_performOrderAction(request_data)
-  
-  expect_is(dfp_performOrderAction_result, "data.frame")
-  expect_true(all(c('numChanges') %in% names(dfp_performOrderAction_result)))
-  expect_equal(dfp_performOrderAction_result$numChanges, '1')
+  dfp_performOrderAction_result <- dfp_performOrderAction(request_data, as_df=FALSE)
+  expect_is(dfp_performOrderAction_result, "list")
+  expect_length(dfp_performOrderAction_result, 1)
+  expect_named(dfp_performOrderAction_result[[1]], c("numChanges"))  
   
   # check that action worked
   request_data <- list('filterStatement'=
                          list('query'=paste0("WHERE isActive=false and id=", 
                                              dfp_createOrders_result$id)))
-  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data, as_df=F)
-  
-  expect_equal(dfp_getLabelsByStatement_result$rval$totalResultSetSize, '0')
+  dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
+  expect_is(dfp_getLabelsByStatement_result, "data.frame")
+  expect_equal(nrow(dfp_getLabelsByStatement_result), 0)
   
   options(rdfp.network_code = rdfp_options$network_code)
-
 })
 

@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateNative
 Updates the specified NativeStyle objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 }

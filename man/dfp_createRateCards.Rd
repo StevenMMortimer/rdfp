@@ -33,5 +33,5 @@ createRateCards
 Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/RateCardService#createRateCards}{Google Documentation for createRateCards}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#createRateCards}{Google Documentation for createRateCards}
 }

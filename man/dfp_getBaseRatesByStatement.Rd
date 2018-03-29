@@ -28,5 +28,5 @@ Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 }

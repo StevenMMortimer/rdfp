@@ -25,13 +25,16 @@ Imports:
     plyr (>= 1.8.3),
     XML (>= 3.98-1.2),
     utils (>= 3.1.0),
-    methods (>= 3.1.0)
+    methods (>= 3.1.0), 
+    xml2,
+    dplyr, 
+    purrr, 
+    readr
 Suggests:
     knitr,
     testthat,
     rmarkdown,
-    lubridate,
-    dplyr
+    lubridate
 RoxygenNote: 6.0.1
 Collate: 
     'ActivityGroupService.R'
@@ -89,5 +92,6 @@ Collate:
     'dfp_options_settings.R'
     'dfp_service_endpoints.R'
     'dfp_utils.R'
+    'dfp_utils_xml.R'
     'rdfp.R'
 VignetteBuilder: knitr

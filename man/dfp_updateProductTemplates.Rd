@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updateProduc
 Updates the specified ProductTemplate objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 }

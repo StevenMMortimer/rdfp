@@ -20,12 +20,12 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a createCustomTargetingValuesResponse
 }
 \description{
-Creates new CustomTargetingValue objects. The following fields are required:
+Creates new CustomTargetingValue objects. The following fields are required: 
 \itemize{
   \item{CustomTargetingValue customTargetingKeyId}
   \item{CustomTargetingValue name}
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }

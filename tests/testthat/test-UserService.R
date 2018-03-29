@@ -84,11 +84,10 @@ test_that("dfp_performUserAction", {
   request_data <- list(userAction='DeactivateUsers',
                        filterStatement=list('query'=paste0("WHERE id=", dfp_createUsers_result$id)))
   
-  dfp_performUserAction_result <- dfp_performUserAction(request_data)
-  
-  expect_is(dfp_performUserAction_result, "data.frame")
-  expect_true(all(c('numChanges') %in% names(dfp_performUserAction_result)))
-  expect_equal(dfp_performUserAction_result$numChanges, '1')
+  dfp_performUserAction_result <- dfp_performUserAction(request_data, as_df=FALSE)
+  expect_is(dfp_performUserAction_result, "list")
+  expect_length(dfp_performUserAction_result, 1)
+  expect_named(dfp_performUserAction_result[[1]], c("numChanges")) 
   
   # check that action worked
   request_data <- list('filterStatement'=

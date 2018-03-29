@@ -28,5 +28,5 @@ createCompanies
 Creates new Company objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/CompanyService#createCompanies}{Google Documentation for createCompanies}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#createCompanies}{Google Documentation for createCompanies}
 }

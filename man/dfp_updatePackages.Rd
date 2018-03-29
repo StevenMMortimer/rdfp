@@ -23,5 +23,5 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePackag
 Updates the specified Package objects.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/PackageService#updatePackages}{Google Documentation for updatePackages}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#updatePackages}{Google Documentation for updatePackages}
 }

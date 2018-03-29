@@ -22,9 +22,8 @@ a \code{data.frame} or \code{list} containing all the elements of a getReportDow
 \description{
 Provides methods for executing a ReportJob and retrieving performance and
 statistics about ad campaigns, networks, inventory and sales.
-}
-\details{
-Follow the steps outlined below:
+Follow the
+steps outlined below:
 \itemize{
   \item{Create the ReportJob object by
 invoking ReportService#runReportJob.}
@@ -36,20 +35,19 @@ ReportJobStatus#COMPLETED or ReportJobStatus#FAILED.}
   \item{If
 successful, fetch the URL for downloading the report by invoking
 ReportService#getReportDownloadURL.}
-}
-
-Test Network Behavior
-
+} <h4>Test network
+behavior</h4>
 The networks created using NetworkService#makeTestNetwork
 are unable to provide reports that would be comparable to the production
 environment because reports require traffic history. In the test networks,
 reports will consistently return no data for all reports.
-
+}
+\details{
 getReportDownloadURL
 
 Returns the URL at which the report file can be downloaded.
 The report will be generated as a gzip archive, containing the report file itself.
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 }

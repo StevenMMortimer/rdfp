@@ -29,7 +29,10 @@ to serve, the LICAs specify which creatives can appear for the ad units
 that are targeted by the line item. In order to be associated with a line
 item, the creative must have a size that exists within the attribute
 LineItem#creativeSizes.#' Each LICA has a start and end date and
-time that defines when the creative should be displayed.
+time that defines when the creative should be displayed.#' To read
+more about associating creatives with line items, see this <a
+href="https://support.google.com/dfp_premium/answer/3187916">DFP Help
+Center</a> article.
 }
 \details{
 createLineItemCreativeAssociations
@@ -37,5 +40,5 @@ createLineItemCreativeAssociations
 Creates new LineItemCreativeAssociation objects
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201711/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 }

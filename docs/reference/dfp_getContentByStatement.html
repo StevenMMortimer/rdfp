@@ -29,7 +29,25 @@
   
 <meta property="og:title" content="ContentService — dfp_getContentByStatement" />
 
-<meta property="og:description" content="Service for retrieving Content." />
+<meta property="og:description" content="Service for retrieving Content.
+Content entities can be targeted in
+video LineItems.
+You can query for content that belongs to a particular
+category or has assigned metadata. Categories and metadata for Content are
+stored in DFP as CustomCriteria.
+For example, to find all Content that
+is "genre=comedy", you would:
+Retrieve the custom targeting key
+corresponding to "genre" using
+CustomTargetingService#getCustomTargetingKeysByStatement
+Using the
+CustomTargetingService#getCustomTargetingValuesByStatement method and a
+filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
+retrieve the ID for the "comedy" custom targeting value.
+Call
+#getContentByStatementAndCustomTargetingValue with a filter like "WHERE
+status = 'ACTIVE'" and the ID of the custom targeting value from step 2.
+" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -77,7 +95,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/availability-and-reporting.html">Availability and Reporting</a>
+      <a href="../articles/administrative-tasks.html">Administrative Tasks</a>
+    </li>
+    <li>
+      <a href="../articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
+    </li>
+    <li>
+      <a href="../articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
+    </li>
+    <li>
+      <a href="../articles/checking-availability.html">Checking Availability</a>
+    </li>
+    <li>
+      <a href="../articles/pulling-reports.html">Pulling Reports</a>
     </li>
   </ul>
 </li>
@@ -111,7 +141,25 @@
     </div>
 
     
-    <p>Service for retrieving Content.</p>
+    <p>Service for retrieving Content.
+Content entities can be targeted in
+video LineItems.
+You can query for content that belongs to a particular
+category or has assigned metadata. Categories and metadata for Content are
+stored in DFP as CustomCriteria.
+For example, to find all Content that
+is "genre=comedy", you would:</p><ul>
+<li><p>Retrieve the custom targeting key
+corresponding to "genre" using
+CustomTargetingService#getCustomTargetingKeysByStatement</p></li>
+<li><p>Using the
+CustomTargetingService#getCustomTargetingValuesByStatement method and a
+filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
+retrieve the ID for the "comedy" custom targeting value.</p></li>
+<li><p>Call
+#getContentByStatementAndCustomTargetingValue with a filter like "WHERE
+status = 'ACTIVE'" and the ID of the custom targeting value from step 2.</p></li>
+</ul>
     
 
     <pre class="usage"><span class='fu'>dfp_getContentByStatement</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -142,21 +190,7 @@ a <code>data.frame</code></p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Content entities can be targeted in video LineItems. You can query for content 
-that belongs to a particular category or has assigned metadata. Categories 
-and metadata for Content are stored in DFP as CustomCriteria.</p>
-<p>For example, to find all Content that is "genre=comedy", you would:</p><ul>
-<li><p>Retrieve the custom targeting key
-corresponding to "genre" using
-CustomTargetingService#getCustomTargetingKeysByStatement</p></li>
-<li><p>Using the
-CustomTargetingService#getCustomTargetingValuesByStatement method and a
-filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
-retrieve the ID for the "comedy" custom targeting value.</p></li>
-<li><p>Call
-#getContentByStatementAndCustomTargetingValue with a filter like "WHERE
-status = 'ACTIVE'" and the ID of the custom targeting value from step 2.</p></li>
-</ul><p>getContentByStatement</p>
+    <p>getContentByStatement</p>
 <p>Gets a ContentPage of Content objects that satisfy the given {@link Statement query}. The following fields are supported for filtering:</p><ul>
 <li><p>id</p></li>
 <li><p>status</p></li>
@@ -168,7 +202,7 @@ status = 'ACTIVE'" and the ID of the custom targeting value from step 2.</p></li
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201711/ContentService#getContentByStatement'>Google Documentation for getContentByStatement</a></p>
+    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement'>Google Documentation for getContentByStatement</a></p>
     
 
   </div>
