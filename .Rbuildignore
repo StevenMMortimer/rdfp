@@ -20,5 +20,5 @@
 man-roxygen
 tests/testthat/setup.tar.enc
 tests/testthat/.httr-oauth
-^misc$
+^examples$
 ^services$
