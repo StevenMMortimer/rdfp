@@ -27,8 +27,8 @@
 #' @export
 dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationLineItemReportService', root_name='getReconciliationLineItemReportsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getReconciliationLineItemReportsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getReconciliationLineItemReportsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -48,8 +48,8 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' @export
 dfp_updateReconciliationLineItemReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationLineItemReportService', root_name='updateReconciliationLineItemReports', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateReconciliationLineItemReportsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateReconciliationLineItemReportsResponse', as_df=as_df)
   return(result)
 }
 #' 

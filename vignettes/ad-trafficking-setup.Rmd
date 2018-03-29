@@ -23,35 +23,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-First, we load `dplyr` and `lubridate` to use in this vignette along with loading 
-the `rdfp` package and specifying the DFP network we would like to connect to. 
+First, we load **rdfp** and specify the DFP network we would like to connect to. 
+Then we authenticate by using `dfp_auth()`. Any existing cached token would be used 
+or we will be prompted to authenticate via the browser.
 
-```{r load-package}
-suppressWarnings(suppressMessages(library(dplyr)))
-suppressWarnings(suppressMessages(library(lubridate)))
+```{r load-package, eval=FALSE}
 library(rdfp)
-options(stringsAsFactors = FALSE)
 options(rdfp.network_code = 123456789)
-```
-
-Just a note, that it's not necessary to setup your own application client_id and 
-client_secret through the Google Developer's Console. The only difference is that 
-the authentication will be run through the client created and associated with the 
-`rdfp` package. By using the package client, you will *NOT* be giving access to 
-your DFP to anyone, the package is just the medium for you to connect to 
-your own data. If you wanted more control you would specify those options like so: 
-
-```{r other-params, eval=FALSE}
-options(rdfp.application_name = "MyApp")
-options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
-options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
-
-dfp_auth()
+df_auth()
 ```
 
 ```{r auth, include = FALSE}
-## I grab the token from the testing directory because that's where it is to be
-## found on Travis
+library(rdfp)
 token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
 options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
@@ -67,9 +50,10 @@ other specific actions. See the following link for Google's explanation on their
 (https://support.google.com/dfp\_premium/answer/190565?hl=en&ref_topic=30224)
 
 ```{r, eval=FALSE}
-# this creates a label called "Last Minute Change" that we can add
-# to any line item or order that we felt deserved this label.
-request_data <- data.frame(name="auto - competitive exclusion", 
+# this creates a label called "Auto - Competitive Exclusion" that we can add
+# to any line item or order that we might want to use to prevent from clashing 
+# where two different car advertisers ads should not be shown at once.
+request_data <- data.frame(name="Auto - Competitive Exclusion", 
                            description=paste0("A label to prevent two different car ",
                                               "companies from showing ads together"), 
                            types='COMPETITIVE_EXCLUSION')
@@ -83,12 +67,12 @@ that can later be used filtering or reporting. See the following link for
 Google's explanation on their uses: (https://support.google.com/dfp\_premium/answer/2694303?hl=en)
 
 ```{r, eval=FALSE}
-# this creates an extra field on the USER entity type that denotes what shift 
-# the user works during the day. First we create the field, then populate
+# this creates an extra field on the CREATIVE entity type that denotes the time of 
+# day that the creative typically runs. First we create the field, then populate
 # with potential options since it is a dropdown field.
-request_data <- data.frame(name='Shift',
-                           description='The shift that this user usually works.', 
-                           entityType='USER',
+request_data <- data.frame(name='Timing',
+                           description='The time of day that this creative usually runs.', 
+                           entityType='CREATIVE',
                            dataType='DROP_DOWN',
                            visibility='FULL')
 dfp_createCustomFields_result <- dfp_createCustomFields(request_data)
@@ -123,7 +107,7 @@ dfp_createCustomTargetingValues_result <- dfp_createCustomTargetingValues(reques
 dfp_createCustomTargetingValues_result
 ```
 
-```{r cleanup, include = FALSE}
+```{r cleanup2, include = FALSE}
   request_data <- list(customTargetingValueAction='DeleteCustomTargetingValues',
                        filterStatement=list('query'="WHERE name like 'Test%'"))
   res <- dfp_performCustomTargetingValueAction(request_data, as_df=FALSE)

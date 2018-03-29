@@ -19,8 +19,8 @@
 #' @export
 dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='createAudienceSegments', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createAudienceSegmentsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createAudienceSegmentsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -52,8 +52,8 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='getAudienceSegmentsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAudienceSegmentsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAudienceSegmentsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -73,8 +73,8 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' @export
 dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performAudienceSegmentActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performAudienceSegmentActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -94,8 +94,8 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' @export
 dfp_updateAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='updateAudienceSegments', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateAudienceSegmentsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateAudienceSegmentsResponse', as_df=as_df)
   return(result)
 }
 #' 

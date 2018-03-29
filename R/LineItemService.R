@@ -29,8 +29,8 @@
 #' @export
 dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createLineItemsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -68,8 +68,8 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getLineItemsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getLineItemsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -89,8 +89,8 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' @export
 dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performLineItemActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performLineItemActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -110,8 +110,8 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateLineItemsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 

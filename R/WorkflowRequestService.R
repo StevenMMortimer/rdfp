@@ -32,8 +32,8 @@
 #' @export
 dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='WorkflowRequestService', root_name='getWorkflowRequestsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getWorkflowRequestsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getWorkflowRequestsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -53,8 +53,8 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' @export
 dfp_performWorkflowRequestAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performWorkflowRequestActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performWorkflowRequestActionResponse', as_df=as_df)
   return(result)
 }
 #' 

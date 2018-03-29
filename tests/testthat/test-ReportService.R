@@ -72,11 +72,11 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='TSV')
-  expect_is(report_dat, "data.frame")
-  expect_equal(names(report_dat), c("Month.and.year", 
-                                    "Ad.unit.ID", 
-                                    "Ad.unit", 
-                                    "Total.impressions"))
+  expect_is(report_dat, "tbl_df")
+  expect_equal(names(report_dat), c("Month and year", 
+                                    "Ad unit ID", 
+                                    "Ad unit", 
+                                    "Total impressions"))
   
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='CSV_EXCEL', 
@@ -88,7 +88,7 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='CSV_EXCEL')
-  expect_is(report_dat, "data.frame")
+  expect_is(report_dat, "tbl_df")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
                                     "Dimension.AD_UNIT_NAME", 
@@ -105,7 +105,7 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   
   report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
                                             exportFormat='CSV_DUMP')
-  expect_is(report_dat, "data.frame")
+  expect_is(report_dat, "tbl_df")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
                                     "Dimension.AD_UNIT_NAME", 
@@ -117,7 +117,7 @@ test_that("dfp_full_report_wrapper", {
   
   report_dat <- dfp_full_report_wrapper(report_request_data)
   
-  expect_is(report_dat, "data.frame")
+  expect_is(report_dat, "tbl_df")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
                                     "Dimension.AD_UNIT_NAME", 

@@ -4,13 +4,13 @@
 \alias{execute_soap_request}
 \title{Transmit and Receive API SOAP Calls}
 \usage{
-execute_soap_request(body, service = NULL,
+execute_soap_request(request_body, service = NULL,
   network_code = getOption("rdfp.network_code"),
   application_name = getOption("rdfp.application_name"),
   version = getOption("rdfp.version"), verbose = FALSE)
 }
 \arguments{
-\item{body}{a character string of XML with service name
+\item{request_body}{a character string of XML with service name
 as an attribute}
 
 \item{service}{a character string matching one of the API

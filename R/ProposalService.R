@@ -26,8 +26,8 @@
 #' @export
 dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='createProposals', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createProposalsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createProposalsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -50,8 +50,8 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getMarketplaceCommentsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getMarketplaceCommentsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -85,8 +85,8 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' @export
 dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getProposalsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getProposalsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -111,8 +111,8 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @export
 dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performProposalActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performProposalActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -132,8 +132,8 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='updateProposals', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateProposalsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateProposalsResponse', as_df=as_df)
   return(result)
 }
 #' 

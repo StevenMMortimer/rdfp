@@ -22,8 +22,8 @@
 #' @export
 dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createContentBundlesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createContentBundlesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -48,8 +48,8 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getContentBundlesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getContentBundlesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -69,8 +69,8 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' @export
 dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performContentBundleActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performContentBundleActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -90,8 +90,8 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_updateContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateContentBundlesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateContentBundlesResponse', as_df=as_df)
   return(result)
 }
 #' 

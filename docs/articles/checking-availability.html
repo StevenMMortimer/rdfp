@@ -99,18 +99,10 @@
     
     
 <div class="contents">
-<p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette along with loading the <code>rdfp</code> package and specifying the DFP network we would like to connect to.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
-<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
-<span class="kw">library</span>(rdfp)
-<span class="kw">options</span>(<span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</code></pre></div>
-<p>Just a note, that it’s not necessary to setup your own application client_id and client_secret through the Google Developer’s Console. The only difference is that the authentication will be run through the client created and associated with the <code>rdfp</code> package. By using the package client, you will <em>NOT</em> be giving access to your DFP to anyone, the package is just the medium for you to connect to your own data. If you wanted more control you would specify those options like so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)
-
-<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
+<p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
+<span class="kw">df_auth</span>()</code></pre></div>
 <div id="availability-by-month" class="section level3">
 <h3 class="hasAnchor">
 <a href="#availability-by-month" class="anchor"></a>Availability by Month</h3>
@@ -164,9 +156,9 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
   x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%Y'</span>)), 
                       <span class="dt">month=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%m'</span>)), 
                       <span class="dt">day=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%d'</span>))), 
-            <span class="dt">hour=</span><span class="cf">if</span>(this_hour <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/hour.html">hour</a></span>(<span class="kw">Sys.time</span>()<span class="op">+</span><span class="kw"><a href="http://lubridate.tidyverse.org/reference/period.html">hours</a></span>(<span class="dv">2</span>)), <span class="dv">23</span>) <span class="cf">else</span> this_hour, 
-            <span class="dt">minute=</span><span class="cf">if</span>(this_minute <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/minute.html">minute</a></span>(<span class="kw">Sys.time</span>()), <span class="dv">59</span>) <span class="cf">else</span> this_minute,
-            <span class="dt">second=</span><span class="cf">if</span>(this_second <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">as.integer</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/second.html">second</a></span>(<span class="kw">Sys.time</span>())), <span class="dv">59</span>) <span class="cf">else</span> this_second,
+            <span class="dt">hour=</span><span class="cf">if</span>(this_hour <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">hour</span>(<span class="kw">Sys.time</span>()<span class="op">+</span><span class="kw">hours</span>(<span class="dv">2</span>)), <span class="dv">23</span>) <span class="cf">else</span> this_hour, 
+            <span class="dt">minute=</span><span class="cf">if</span>(this_minute <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">minute</span>(<span class="kw">Sys.time</span>()), <span class="dv">59</span>) <span class="cf">else</span> this_minute,
+            <span class="dt">second=</span><span class="cf">if</span>(this_second <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">as.integer</span>(<span class="kw">second</span>(<span class="kw">Sys.time</span>())), <span class="dv">59</span>) <span class="cf">else</span> this_second,
             <span class="dt">timeZoneID=</span>timeZoneID)
   <span class="kw">return</span>(x)
 }</code></pre></div>
@@ -177,7 +169,7 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <p>Here is an example of how to loop through individual months and determine availability 6 months out for the sample line item created previously. It is fairly straightforward to take the month start and end dates and substitute them into the hypothetical line item. The one quirk is that, in order to follow the API, we must create lists of lists that are redundant at times. For example, the forecast request has a <code>lineItem</code> field that takes a <code>ProspectiveLineItem</code> that contains its own <code>lineItem</code> field: <code>list(lineItem=list(lineItem=this_sample_line) ...</code>. As long as you follow the object fields according to the Google reference documentation, then everything should work. Most everything needs to be formed as a list of lists with field names.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_forecasts &lt;-<span class="st"> </span><span class="ot">NULL</span>
 month_start_dates &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">format</span>(<span class="kw">Sys.Date</span>() <span class="op">%m+%</span><span class="st"> </span><span class="kw">months</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="st">'%Y-%m-01'</span>))
-month_end_dates &lt;-<span class="st"> </span><span class="kw"><a href="http://lubridate.tidyverse.org/reference/round_date.html">ceiling_date</a></span>(month_start_dates, <span class="st">'months'</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+month_end_dates &lt;-<span class="st"> </span><span class="kw">ceiling_date</span>(month_start_dates, <span class="st">'months'</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(month_start_dates)){
   this_sample_line &lt;-<span class="st"> </span>sample_line
   this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw">date2DFPDateTimeObj</span>(month_start_dates[i], <span class="dt">daytime=</span><span class="st">'beginning'</span>)
@@ -215,14 +207,14 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 dfp_select_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select.html">dfp_select</a></span>(request_data)
 us_geos &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select_parse.html">dfp_select_parse</a></span>(dfp_select_result)
 texas_id &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, <span class="dt">state=</span>name)
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(id, <span class="dt">state=</span>name)
 
 us_counties &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'COUNTY'</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, canonicalparentid, <span class="dt">county=</span>name)
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> 'COUNTY'</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(id, canonicalparentid, <span class="dt">county=</span>name)
 
-texas_counties &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(us_counties, texas_id, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">'canonicalparentid'</span>=<span class="st">'id'</span>))</code></pre></div>
+texas_counties &lt;-<span class="st"> </span><span class="kw">inner_join</span>(us_counties, texas_id, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">'canonicalparentid'</span>=<span class="st">'id'</span>))</code></pre></div>
 <p>Next, we need to format the geographies into objects of type <code>Location</code> that at least contain an id denoting the area.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># format the county ids into a list so they can be passed </span>
 <span class="co"># over to the geoTargeting field of the ProspectiveLineItem</span>
@@ -283,11 +275,11 @@ avails &lt;-<span class="st"> </span>plyr<span class="op">::</span><span class="
                       }, <span class="dt">.id=</span><span class="ot">NULL</span>)
 
 avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">ImpressionsTotal=</span><span class="kw">as.integer</span>(matchedUnits),
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ImpressionsTotal=</span><span class="kw">as.integer</span>(matchedUnits),
          <span class="dt">ImpressionsAvailable=</span><span class="kw">as.integer</span>(availableUnits), 
          <span class="dt">ImpressionsBooked=</span><span class="kw">as.integer</span>(ImpressionsTotal<span class="op">-</span>ImpressionsAvailable), 
          <span class="dt">PctAvail=</span>ImpressionsAvailable<span class="op">/</span>ImpressionsTotal) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(targetingCriteriaName, ImpressionsTotal, ImpressionsBooked, ImpressionsAvailable, PctAvail)</code></pre></div>
+<span class="st">  </span><span class="kw">select</span>(targetingCriteriaName, ImpressionsTotal, ImpressionsBooked, ImpressionsAvailable, PctAvail)</code></pre></div>
 <p>The breakdowns are not necessarily mutually exclusive, so be careful when totaling them up. The counties are exclusive, so it’s okay to sum them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total availability across Texas counties</span>
 <span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)</code></pre></div>

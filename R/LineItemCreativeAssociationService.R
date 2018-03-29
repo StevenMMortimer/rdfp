@@ -29,8 +29,8 @@
 #' @export
 dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createLineItemCreativeAssociationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createLineItemCreativeAssociationsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -58,8 +58,8 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' @export
 dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getLineItemCreativeAssociationsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getLineItemCreativeAssociationsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -76,8 +76,8 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' @export
 dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getPreviewUrlResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getPreviewUrlResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -94,8 +94,8 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrlsForNativeStyles', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getPreviewUrlsForNativeStylesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getPreviewUrlsForNativeStylesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -115,8 +115,8 @@ dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performLineItemCreativeAssociationActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performLineItemCreativeAssociationActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -136,8 +136,8 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' @export
 dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateLineItemCreativeAssociationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateLineItemCreativeAssociationsResponse', as_df=as_df)
   return(result)
 }
 #' 

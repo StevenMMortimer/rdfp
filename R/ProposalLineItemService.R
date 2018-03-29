@@ -23,8 +23,8 @@
 #' @export
 dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='createProposalLineItems', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createProposalLineItemsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createProposalLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -57,8 +57,8 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @export
 dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='getProposalLineItemsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getProposalLineItemsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getProposalLineItemsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -78,8 +78,8 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' @export
 dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='performProposalLineItemAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performProposalLineItemActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performProposalLineItemActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -99,8 +99,8 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' @export
 dfp_updateProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='updateProposalLineItems', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateProposalLineItemsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateProposalLineItemsResponse', as_df=as_df)
   return(result)
 }
 #' 

@@ -23,8 +23,8 @@
 #' @export
 dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createRateCardsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createRateCardsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -51,8 +51,8 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getRateCardsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getRateCardsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -72,8 +72,8 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @export
 dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performRateCardActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performRateCardActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -93,8 +93,8 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateRateCardsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateRateCardsResponse', as_df=as_df)
   return(result)
 }
 #' 

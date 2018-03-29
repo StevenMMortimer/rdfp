@@ -25,8 +25,8 @@
 #' @export
 dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createProductPackagesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createProductPackagesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -54,8 +54,8 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getProductPackagesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getProductPackagesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -75,8 +75,8 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' @export
 dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performProductPackageActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performProductPackageActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -96,8 +96,8 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' @export
 dfp_updateProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateProductPackagesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateProductPackagesResponse', as_df=as_df)
   return(result)
 }
 #' 

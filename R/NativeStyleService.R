@@ -18,8 +18,8 @@
 #' @export
 dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='createNativeStyles', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createNativeStylesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createNativeStylesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -43,8 +43,8 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='getNativeStylesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getNativeStylesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getNativeStylesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -64,8 +64,8 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='performNativeStyleAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performNativeStyleActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performNativeStyleActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -85,8 +85,8 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_updateNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='updateNativeStyles', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateNativeStylesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateNativeStylesResponse', as_df=as_df)
   return(result)
 }
 #' 

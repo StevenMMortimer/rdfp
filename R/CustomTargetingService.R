@@ -23,8 +23,8 @@
 #' @export
 dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCustomTargetingKeysResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCustomTargetingKeysResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -48,8 +48,8 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' @export
 dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCustomTargetingValuesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCustomTargetingValuesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -76,8 +76,8 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #' @export
 dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCustomTargetingKeysByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCustomTargetingKeysByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -104,8 +104,8 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #' @export
 dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCustomTargetingValuesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCustomTargetingValuesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -125,8 +125,8 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' @export
 dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performCustomTargetingKeyActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performCustomTargetingKeyActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -146,8 +146,8 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' @export
 dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performCustomTargetingValueActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performCustomTargetingValueActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -167,8 +167,8 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' @export
 dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCustomTargetingKeysResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCustomTargetingKeysResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -188,8 +188,8 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' @export
 dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCustomTargetingValuesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCustomTargetingValuesResponse', as_df=as_df)
   return(result)
 }
 #' 

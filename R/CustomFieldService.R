@@ -22,8 +22,8 @@
 #' @export
 dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCustomFieldOptionsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCustomFieldOptionsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -49,8 +49,8 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCustomFieldsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCustomFieldsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -70,8 +70,8 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCustomFieldOptionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCustomFieldOptionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -98,8 +98,8 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCustomFieldsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCustomFieldsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -119,8 +119,8 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performCustomFieldActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performCustomFieldActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -140,8 +140,8 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCustomFieldOptionsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCustomFieldOptionsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -161,8 +161,8 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_updateCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCustomFieldsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCustomFieldsResponse', as_df=as_df)
   return(result)
 }
 #' 

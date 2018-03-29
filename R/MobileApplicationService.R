@@ -18,8 +18,8 @@
 #' @export
 dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='createMobileApplications', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createMobileApplicationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createMobileApplicationsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -47,8 +47,8 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='getMobileApplicationsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getMobileApplicationsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getMobileApplicationsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -68,8 +68,8 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
 #' @export
 dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='performMobileApplicationAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performMobileApplicationActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performMobileApplicationActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -89,8 +89,8 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
 #' @export
 dfp_updateMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='updateMobileApplications', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateMobileApplicationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateMobileApplicationsResponse', as_df=as_df)
   return(result)
 }
 #' 

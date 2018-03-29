@@ -131,6 +131,7 @@
 <a href="#table-of-contents" class="anchor"></a>Table of Contents</h2>
 <ul>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#vignettes">Vignettes</a></li>
 <li>
 <a href="#usage">Usage</a>
 <ul>
@@ -142,7 +143,6 @@
 <li><a href="#run-a-report">Run a Report</a></li>
 </ul>
 </li>
-<li><a href="#vignettes">Vignettes</a></li>
 <li><a href="#credits">Credits</a></li>
 <li><a href="#more-information">More Information</a></li>
 </ul>
@@ -153,7 +153,19 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this package is currently not on CRAN, so it should be installed from GitHub</span>
 <span class="co"># install.packages("devtools")</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"StevenMMortimer/rdfp"</span>)</code></pre></div>
-<p>If you encounter a clear bug, please file a minimal reproducible example on <a href="https://github.com/StevenMMortimer/rdfp/issues">github</a>.</p>
+<p>If you encounter a clear bug, please file a minimal reproducible example on <a href="https://github.com/StevenMMortimer/rdfp/issues">GitHub</a>.</p>
+</div>
+<div id="vignettes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignettes" class="anchor"></a>Vignettes</h2>
+<p>The README below outlines the package functionality, but review the vignettes for more detailed examples on usage.</p>
+<ul>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/administrative-tasks.html">Administrative Tasks</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/ad-trafficking-setup.html">Ad Trafficking Setup</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/checking-availability.html">Checking Availability</a></li>
+<li><a href="https://StevenMMortimer.github.io/rdfp/articles/pulling-reports.html">Pulling Reports</a></li>
+</ul>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -161,22 +173,24 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h3>
-<p>All functions start with <code>dfp_</code> to aid the user’s ability to find DFP-specific operations when using code completion in RStudio. By default most <strong>rdfp</strong> functions will return a <code>data.frame</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
+<p>All functions start with <code>dfp_</code> so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most <strong>rdfp</strong> functions will return a <code>data.frame</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
 </div>
 <div id="load-package-and-set-api-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#load-package-and-set-api-version" class="anchor"></a>Load Package and Set API Version</h3>
-<p>Google has a very quick policy of depricating and not supporting versions since they are releasing multiple versions of the API each calendar year. <strong>rdfp</strong> is periodically compiled against a version of the API. If you would like to use an older or newer API version, just specify it in the options.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
-<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
-<span class="kw">library</span>(rdfp)
+<p>Google releases 4 versions of the DFP API each year and deprecates versions older than one year, so there is a lot that’s regularly changing in this package. <strong>rdfp</strong> is periodically compiled against a recent version of the API. If you would like to use an older or newer API version that what is the package default, then just specify it as an option.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<span class="co"># see the package default version</span>
+<span class="kw">getOption</span>(<span class="st">"rdfp.version"</span>)
+<span class="co">#&gt; [1] "v201802"</span>
 <span class="co"># this will force all calls to be against the version "v201711"</span>
 <span class="kw">options</span>(<span class="dt">rdfp.version =</span> <span class="st">"v201711"</span>)</code></pre></div>
 </div>
 <div id="authenticate" class="section level3">
 <h3 class="hasAnchor">
 <a href="#authenticate" class="anchor"></a>Authenticate</h3>
-<p>First, you will need to specify the <code>network_code</code> of the DFP instance you’d like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. There are also other options like a client_id and client_secret which must be created via the [Google Developers Console] (<a href="https://console.developers.google.com" class="uri">https://console.developers.google.com</a>), which allows R to access the API as an “application” on your behalf, whether or not you are running your R script interactively. After specifying the 4 options listed below, simply run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code> to authenticate.</p>
+<p>To authenticate you will first need to specify the <code>network_code</code> of the DFP instance you’d like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. After setting the <code>network_code</code> all you need to do is run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code>. If you already have a cached <code>.httr-oauth</code> file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.</p>
+<p>The package has other options like a client_id and client_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the [Google Developers Console] (<a href="https://console.developers.google.com" class="uri">https://console.developers.google.com</a>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="st">"12345678"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
@@ -192,14 +206,24 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#get-current-user-info" class="anchor"></a>Get Current User Info</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check current user or network</span>
 user_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()
-network_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()</code></pre></div>
+user_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'isActive'</span>)]
+<span class="co">#&gt; # A tibble: 1 x 2</span>
+<span class="co">#&gt;           id isActive</span>
+<span class="co">#&gt;        &lt;dbl&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt; 1 185549536. true</span>
+network_info &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()
+network_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'networkCode'</span>)]
+<span class="co">#&gt; # A tibble: 1 x 2</span>
+<span class="co">#&gt;        id networkCode</span>
+<span class="co">#&gt;     &lt;dbl&gt;       &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 109096.    1019096.</span></code></pre></div>
 <div id="pull-a-lineitem" class="section level4">
 <h4 class="hasAnchor">
 <a href="#pull-a-lineitem" class="anchor"></a>Pull a LineItem</h4>
-<p>Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the <code>dfp_getLineItemsByStatement</code> function from the [LineItemService] (<a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Retrieve all Line Items that have a status of "DELIVERING"</span>
-dat &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))
-resultset &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(dat, <span class="dt">as_df=</span><span class="ot">TRUE</span>) 
+<p>The function <code><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement()</a></code> function from the <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService">LineItemService</a> allows you to retrieve Line Items by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML that needs to be created in the request.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Retrieve up to 3 Line Items that have a status of "DELIVERING"</span>
+request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))
+resultset &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(request_data, <span class="dt">as_df=</span><span class="ot">TRUE</span>) 
 resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span class="st">'id'</span>, <span class="st">'priority'</span>, <span class="st">'deliveryRateType'</span>)]
 <span class="co">#&gt; # A tibble: 3 x 4</span>
 <span class="co">#&gt;       orderId          id priority deliveryRateType</span>
@@ -213,41 +237,37 @@ resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span cl
 <h3 class="hasAnchor">
 <a href="#run-a-report" class="anchor"></a>Run a Report</h3>
 <p>Below is an example of how to make a simple report request.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a reportJob object</span>
-<span class="co"># reportJobs consist of a reportQuery</span>
-<span class="co"># Documentation for the reportQuery object can be found in R using </span>
-<span class="co"># ?dfp_ReportService_object_factory and searching for ReportQuery</span>
-<span class="co"># Also online documentation is available that lists available child elements for reportQuery</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># In order to run a report you must specify how the report should be structured </span>
+<span class="co"># by specifying a reportQuery inside a reportJob. All of the dimensions, columns, </span>
+<span class="co"># date range options, etc. are documented at:</span>
 <span class="co"># https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery</span>
-report_request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob =</span>
-                              <span class="kw">list</span>(<span class="dt">reportQuery =</span>
-                                     <span class="kw">list</span>(<span class="dt">dimensions =</span> <span class="st">'AD_UNIT_NAME'</span>,
-                                          <span class="dt">dimensions =</span> <span class="st">'ADVERTISER_NAME'</span>,
-                                          <span class="dt">dimensions =</span> <span class="st">'ORDER_NAME'</span>,
-                                          <span class="dt">dimensions =</span> <span class="st">'LINE_ITEM_NAME'</span>,
-                                          <span class="dt">adUnitView =</span> <span class="st">'FLAT'</span>,
-                                          <span class="dt">columns =</span> <span class="st">'AD_SERVER_IMPRESSIONS'</span>, 
-                                          <span class="dt">columns =</span> <span class="st">'AD_SERVER_CLICKS'</span>,
-                                          <span class="dt">dateRangeType =</span> <span class="st">'LAST_WEEK'</span>)
-                                   )
-                            )
+request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery=</span><span class="kw">list</span>(<span class="dt">dimensions=</span><span class="st">'MONTH_AND_YEAR'</span>, 
+                                                     <span class="dt">dimensions=</span><span class="st">'AD_UNIT_ID'</span>,
+                                                     <span class="dt">adUnitView=</span><span class="st">'FLAT'</span>,
+                                                     <span class="dt">columns =</span> <span class="st">'AD_SERVER_IMPRESSIONS'</span>, 
+                                                     <span class="dt">columns =</span> <span class="st">'AD_SERVER_CLICKS'</span>,
+                                                     <span class="dt">dateRangeType=</span><span class="st">'LAST_WEEK'</span>
+                                                     )))
 
 <span class="co"># a convenience function has been provided to you to manage the report process workflow</span>
 <span class="co"># if you would like more control, see the example below which moves through each step in the process</span>
-report_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(report_request_data)</code></pre></div>
+report_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)
+report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
+<span class="co">#&gt; # A tibble: 25 x 3</span>
+<span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
+<span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2018-03                            133765096.                   1778.</span>
+<span class="co">#&gt;  2 2018-03                            133765216.                    422.</span>
+<span class="co">#&gt;  3 2018-03                            133765336.                    642.</span>
+<span class="co">#&gt;  4 2018-03                            133765456.                   2176.</span>
+<span class="co">#&gt;  5 2018-03                            142461136.                     91.</span>
+<span class="co">#&gt;  6 2018-03                            133765576.                  17581.</span>
+<span class="co">#&gt;  7 2018-03                            133765696.                    945.</span>
+<span class="co">#&gt;  8 2018-03                            133765936.                  18171.</span>
+<span class="co">#&gt;  9 2018-03                            142461016.                    312.</span>
+<span class="co">#&gt; 10 2018-03                            143543776.                   1496.</span>
+<span class="co">#&gt; # ... with 15 more rows</span></code></pre></div>
 </div>
-</div>
-<div id="vignettes" class="section level2">
-<h2 class="hasAnchor">
-<a href="#vignettes" class="anchor"></a>Vignettes</h2>
-<p>The README below outlines the package functionality, but review the vignettes for more detailed examples on usage.</p>
-<ul>
-<li><a href="https://StevenMMortimer.github.io/rdfp/articles/administrative-tasks.html">Administrative Tasks</a></li>
-<li><a href="https://StevenMMortimer.github.io/rdfp/articles/ad-trafficking-setup.html">Ad Trafficking Setup</a></li>
-<li><a href="https://StevenMMortimer.github.io/rdfp/articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a></li>
-<li><a href="https://StevenMMortimer.github.io/rdfp/articles/checking-availability.html">Checking Availability</a></li>
-<li><a href="https://StevenMMortimer.github.io/rdfp/articles/pulling-reports.html">Pulling Reports</a></li>
-</ul>
 </div>
 <div id="credits" class="section level2">
 <h2 class="hasAnchor">

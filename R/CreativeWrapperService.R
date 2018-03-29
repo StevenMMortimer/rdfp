@@ -28,8 +28,8 @@
 #' @export
 dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCreativeWrappersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCreativeWrappersResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -55,8 +55,8 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCreativeWrappersByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCreativeWrappersByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -76,8 +76,8 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' @export
 dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performCreativeWrapperActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performCreativeWrapperActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -97,8 +97,8 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' @export
 dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCreativeWrappersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCreativeWrappersResponse', as_df=as_df)
   return(result)
 }
 #' 

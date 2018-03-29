@@ -134,9 +134,9 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 dfp_createTeams_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createTeams.html">dfp_createTeams</a></span>(request_data)
 
 <span class="co"># second create the user</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">"TestUser"</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>),
-                           <span class="dt">email=</span><span class="kw">paste0</span>(<span class="st">'testuser'</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">'@gmail.com'</span>), 
-                           <span class="dt">roleId=</span><span class="kw">rep</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>))
+request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">paste0</span>(<span class="st">"TestUser"</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>),
+                           <span class="dt">email =</span> <span class="kw">paste0</span>(<span class="st">'testuser'</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">'@gmail.com'</span>), 
+                           <span class="dt">roleId =</span> <span class="kw">rep</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>))
 dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUsers.html">dfp_createUsers</a></span>(request_data)
 
 <span class="co"># third associate the user to that team</span>

@@ -19,8 +19,8 @@
 #' @export
 dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='createCdnConfigurations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCdnConfigurationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCdnConfigurationsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -44,8 +44,8 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @export
 dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='getCdnConfigurationsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCdnConfigurationsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCdnConfigurationsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -65,8 +65,8 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' @export
 dfp_updateCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='updateCdnConfigurations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCdnConfigurationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCdnConfigurationsResponse', as_df=as_df)
   return(result)
 }
 #' 

@@ -25,8 +25,8 @@
 #' @export
 dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='createAdUnits', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createAdUnitsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createAdUnitsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -49,8 +49,8 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAdUnitSizesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAdUnitSizesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -78,8 +78,8 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' @export
 dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAdUnitsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAdUnitsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -99,8 +99,8 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' @export
 dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performAdUnitActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performAdUnitActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -120,8 +120,8 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='updateAdUnits', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateAdUnitsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateAdUnitsResponse', as_df=as_df)
   return(result)
 }
 #' 

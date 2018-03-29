@@ -23,8 +23,8 @@
 #' @export
 dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createPremiumRatesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createPremiumRatesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -49,8 +49,8 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getPremiumRatesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getPremiumRatesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -70,8 +70,8 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updatePremiumRatesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updatePremiumRatesResponse', as_df=as_df)
   return(result)
 }
 #' 

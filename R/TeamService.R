@@ -24,8 +24,8 @@
 #' @export
 dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='createTeams', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createTeamsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createTeamsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -50,8 +50,8 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getTeamsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getTeamsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -71,8 +71,8 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='performTeamAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performTeamActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performTeamActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -92,8 +92,8 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='updateTeams', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateTeamsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateTeamsResponse', as_df=as_df)
   return(result)
 }
 #' 

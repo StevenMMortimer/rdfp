@@ -111,7 +111,7 @@ form_request_body <- function(service, root_name, data=NULL){
 #' 
 #' Parse the returned XML in the SOAP Response Body.
 #' 
-#' @importFrom readr type_convert
+#' @importFrom readr type_convert cols
 #' @importFrom httr content
 #' @importFrom purrr map map_df
 #' @importFrom XML xmlToList
@@ -142,11 +142,9 @@ parse_soap_response <- function(httr_response, resp_element, as_df){
   }
 
   if (as_df){
-    suppressMessages(suppressWarnings(
-      result <- xml_parsed %>%
-        map_df(xml_nodeset_to_df) %>%
-        type_convert()
-    ))
+    result <- xml_parsed %>%
+      map_df(xml_nodeset_to_df) %>%
+      type_convert(col_types = cols())
   } else {
     # we must use XML because character elements are not automatically unboxed
     # see https://github.com/r-lib/xml2/issues/215

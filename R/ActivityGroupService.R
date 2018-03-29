@@ -24,8 +24,8 @@
 #' @export
 dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createActivityGroupsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createActivityGroupsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -52,8 +52,8 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getActivityGroupsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getActivityGroupsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -73,8 +73,8 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' @export
 dfp_updateActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateActivityGroupsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateActivityGroupsResponse', as_df=as_df)
   return(result)
 }
 #' 

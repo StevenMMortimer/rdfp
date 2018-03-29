@@ -21,8 +21,8 @@
 #' @export
 dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='createAdRules', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createAdRulesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createAdRulesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -48,8 +48,8 @@ dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='getAdRulesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAdRulesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAdRulesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -69,8 +69,8 @@ dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='performAdRuleAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performAdRuleActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performAdRuleActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -90,8 +90,8 @@ dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='updateAdRules', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateAdRulesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateAdRulesResponse', as_df=as_df)
   return(result)
 }
 #' 

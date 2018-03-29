@@ -45,8 +45,8 @@
 #' @export
 dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getContentByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getContentByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -69,8 +69,8 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getContentByStatementAndCustomTargetingValueResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getContentByStatementAndCustomTargetingValueResponse', as_df=as_df)
   return(result)
 }
 #' 

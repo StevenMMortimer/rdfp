@@ -18,8 +18,8 @@
 #' @export
 dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='createContacts', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createContactsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createContactsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -51,8 +51,8 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='getContactsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getContactsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getContactsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -72,8 +72,8 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='updateContacts', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateContactsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateContactsResponse', as_df=as_df)
   return(result)
 }
 #' 

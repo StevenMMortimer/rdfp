@@ -99,18 +99,10 @@
     
     
 <div class="contents">
-<p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette along with loading the <code>rdfp</code> package and specifying the DFP network we would like to connect to.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
-<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
-<span class="kw">library</span>(rdfp)
-<span class="kw">options</span>(<span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</code></pre></div>
-<p>Just a note, that it’s not necessary to setup your own application client_id and client_secret through the Google Developer’s Console. The only difference is that the authentication will be run through the client created and associated with the <code>rdfp</code> package. By using the package client, you will <em>NOT</em> be giving access to your DFP to anyone, the package is just the medium for you to connect to your own data. If you wanted more control you would specify those options like so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)
-
-<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
+<p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
+<span class="kw">df_auth</span>()</code></pre></div>
 <div id="create-an-order" class="section level4">
 <h4 class="hasAnchor">
 <a href="#create-an-order" class="anchor"></a>Create an Order</h4>

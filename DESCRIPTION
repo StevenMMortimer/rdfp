@@ -1,6 +1,6 @@
 Package: rdfp
 Title: DoubleClick for Publishers API from R
-Version: 0.1.1
+Version: 0.1.1.9000
 Date: 2018-03-29
 Description: An implementation of Google's DoubleClick for Publishers API in R. 
     This package is automatically compiled from the API WSDLs (Web Service Description 

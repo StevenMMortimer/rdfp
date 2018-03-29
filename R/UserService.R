@@ -22,8 +22,8 @@
 #' @export
 dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='createUsers', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createUsersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createUsersResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -40,8 +40,8 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getAllRoles', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAllRolesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAllRolesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -58,8 +58,8 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCurrentUserResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCurrentUserResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -87,8 +87,8 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getUsersByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getUsersByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -108,8 +108,8 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='performUserAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performUserActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performUserActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -129,8 +129,8 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='updateUsers', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateUsersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateUsersResponse', as_df=as_df)
   return(result)
 }
 #' 

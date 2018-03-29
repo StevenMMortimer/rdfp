@@ -29,8 +29,8 @@
 #' @export
 dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='createLiveStreamEvents', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createLiveStreamEventsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createLiveStreamEventsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -53,8 +53,8 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='getLiveStreamEventsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getLiveStreamEventsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getLiveStreamEventsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -74,8 +74,8 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' @export
 dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='performLiveStreamEventAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performLiveStreamEventActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performLiveStreamEventActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -93,8 +93,8 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' @export
 dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='registerSessionsForMonitoring', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='registerSessionsForMonitoringResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='registerSessionsForMonitoringResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -114,8 +114,8 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='updateLiveStreamEvents', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateLiveStreamEventsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateLiveStreamEventsResponse', as_df=as_df)
   return(result)
 }
 #' 

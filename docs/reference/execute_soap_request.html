@@ -130,7 +130,7 @@ make call to the appropriate API service, then
 parse the response.</p>
     
 
-    <pre class="usage"><span class='fu'>execute_soap_request</span>(<span class='no'>body</span>, <span class='kw'>service</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>execute_soap_request</span>(<span class='no'>request_body</span>, <span class='kw'>service</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>network_code</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.network_code"</span>),
   <span class='kw'>application_name</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.application_name"</span>),
   <span class='kw'>version</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.version"</span>), <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -139,7 +139,7 @@ parse the response.</p>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>body</th>
+      <th>request_body</th>
       <td><p>a character string of XML with service name
 as an attribute</p></td>
     </tr>

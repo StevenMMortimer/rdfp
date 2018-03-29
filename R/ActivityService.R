@@ -24,8 +24,8 @@
 #' @export
 dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='createActivities', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createActivitiesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createActivitiesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -52,8 +52,8 @@ dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='getActivitiesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getActivitiesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getActivitiesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -73,8 +73,8 @@ dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_updateActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='updateActivities', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateActivitiesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateActivitiesResponse', as_df=as_df)
   return(result)
 }
 #' 

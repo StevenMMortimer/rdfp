@@ -7,7 +7,7 @@
 #' @importFrom XML xmlTreeParse xmlToList xmlChildren xmlRoot xmlValue newXMLTextNode
 #' @importFrom httr POST content
 #' @include dfp_auth.R
-#' @param body a character string of XML with service name
+#' @param request_body a character string of XML with service name
 #' as an attribute
 #' @param service a character string matching one of the API
 #' services
@@ -22,14 +22,14 @@
 #' @note This function is meant to be used internally. Only use when debugging.
 #' @keywords internal
 #' @export
-execute_soap_request <- function(body, service = NULL,
+execute_soap_request <- function(request_body, service = NULL,
                                  network_code=getOption("rdfp.network_code"), 
                                  application_name=getOption("rdfp.application_name"),
                                  version=getOption("rdfp.version"),
                                  verbose=FALSE){
   
   if (is.null(service)){
-    service <- attributes(body)$service
+    service <- attributes(request_body)$service
   }
 
   header <- paste0('<?xml version="1.0" encoding="UTF-8"?> 
@@ -48,7 +48,7 @@ execute_soap_request <- function(body, service = NULL,
  </soapenv:Header>')
   
   soap_body <- paste0("<soapenv:Body>\n  ", 
-                        body,
+                      request_body,
                      "  \n</soapenv:Body>\n ")
   
   env_close <- '</soapenv:Envelope>' 
@@ -114,7 +114,7 @@ catch_errors <- function(x){
 #' 
 #' @usage dfp_report_url_to_dataframe(report_url, exportFormat='CSV_DUMP')
 #' @importFrom curl curl_download
-#' @importFrom utils read.table
+#' @importFrom readr read_tsv read_csv cols
 #' @param report_url a URL character string returned from the 
 #' function \link{dfp_getReportDownloadURL}
 #' @param exportFormat a character string naming what type of exportFormat was 
@@ -122,29 +122,23 @@ catch_errors <- function(x){
 #' @return a \code{data.frame} of report results from the specified URL
 #' 
 #' @export
-dfp_report_url_to_dataframe <- function(report_url, exportFormat='CSV_DUMP'){
+dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
   
-  stopifnot(exportFormat %in% c('CSV_DUMP', 'TSV', 'CSV_EXCEL'))
-  
-  # setup encoding and sep, very limited at this point
-  if (exportFormat=='CSV_DUMP'){
-    this_encoding <- 'UTF-8'
-    this_sep <- ','
-    this_quote <- '"'
-  } else if (exportFormat=='TSV'){
-    this_encoding <- 'UTF-8'
-    this_sep <- '\t'
-    this_quote <- '"'
-  } else {
-    this_encoding <- 'UTF-8'
-    this_sep <- ','
-    this_quote <- '"'
-  }
+  stopifnot(exportFormat %in% c("CSV_DUMP", "TSV", "TSV_EXCEL"))
   
   temp_destination <- tempfile()
   curl_download(url=report_url, destfile=temp_destination)
-  report_dat <- read.table(gzfile(temp_destination, encoding=this_encoding), header = T, comment.char = "",
-                           fileEncoding=this_encoding, sep=this_sep, quote=this_quote)
+  this_encoding <- "UTF-8"
+  
+  if (exportFormat == "CSV_DUMP"){
+    report_dat <- read_csv(gzfile(temp_destination, encoding=this_encoding), 
+                           col_types = cols())
+  } else if (exportFormat == "TSV" | exportFormat == "TSV_EXCEL"){
+    report_dat <- read_tsv(gzfile(temp_destination, encoding=this_encoding), 
+                           col_types = cols())
+  } else {
+    stop(sprintf("exportFormat not recognized: %s", exportFormat), call. = FALSE)
+  }
   return(report_dat)
 }
 

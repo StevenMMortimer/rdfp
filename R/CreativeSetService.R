@@ -18,8 +18,8 @@
 #' @export
 dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='createCreativeSet', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCreativeSetResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCreativeSetResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -45,8 +45,8 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='getCreativeSetsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCreativeSetsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCreativeSetsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -66,8 +66,8 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_updateCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='updateCreativeSet', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCreativeSetResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCreativeSetResponse', as_df=as_df)
   return(result)
 }
 #' 

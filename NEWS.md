@@ -1,9 +1,8 @@
 ## rdfp 0.1.1.9000
 
-
 ### Features
 
-  * Nothing yet!
+  * `dfp_report_url_to_dataframe()` now returns a `tbl_df` object for better printing and casted data types
 
 ### Bug Fixes
 
@@ -12,7 +11,6 @@
 ---
 
 ## rdfp 0.1.1 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.1)
-
 
 ### Features
 

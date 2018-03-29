@@ -23,8 +23,8 @@
 #' @export
 dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='createOrders', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createOrdersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createOrdersResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -55,8 +55,8 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getOrdersByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getOrdersByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -76,8 +76,8 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performOrderActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performOrderActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -97,8 +97,8 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='updateOrders', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateOrdersResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateOrdersResponse', as_df=as_df)
   return(result)
 }
 #' 

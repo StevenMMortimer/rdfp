@@ -18,8 +18,8 @@
 #' @export
 dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createCompaniesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createCompaniesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -45,8 +45,8 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCompaniesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCompaniesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -66,8 +66,8 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' @export
 dfp_updateCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateCompaniesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateCompaniesResponse', as_df=as_df)
   return(result)
 }
 #' 

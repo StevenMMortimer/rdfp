@@ -22,8 +22,8 @@
 #' @export
 dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='createUserTeamAssociations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createUserTeamAssociationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createUserTeamAssociationsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -47,8 +47,8 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='getUserTeamAssociationsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getUserTeamAssociationsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getUserTeamAssociationsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -68,8 +68,8 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
 #' @export
 dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='performUserTeamAssociationAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performUserTeamAssociationActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performUserTeamAssociationActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -89,8 +89,8 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
 #' @export
 dfp_updateUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='updateUserTeamAssociations', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateUserTeamAssociationsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateUserTeamAssociationsResponse', as_df=as_df)
   return(result)
 }
 #' 

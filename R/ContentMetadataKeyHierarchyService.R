@@ -25,8 +25,8 @@
 #' @export
 dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='createContentMetadataKeyHierarchies', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createContentMetadataKeyHierarchiesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createContentMetadataKeyHierarchiesResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -51,8 +51,8 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, ve
 #' @export
 dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='getContentMetadataKeyHierarchiesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getContentMetadataKeyHierarchiesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getContentMetadataKeyHierarchiesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -72,8 +72,8 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=
 #' @export
 dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performContentMetadataKeyHierarchyActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performContentMetadataKeyHierarchyActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -93,8 +93,8 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRU
 #' @export
 dfp_updateContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='updateContentMetadataKeyHierarchies', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateContentMetadataKeyHierarchiesResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateContentMetadataKeyHierarchiesResponse', as_df=as_df)
   return(result)
 }
 #' 

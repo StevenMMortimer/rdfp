@@ -21,8 +21,8 @@
 #' @export
 dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getAllNetworksResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getAllNetworksResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -39,8 +39,8 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getCurrentNetworkResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getCurrentNetworkResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -84,8 +84,8 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='makeTestNetworkResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='makeTestNetworkResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -105,8 +105,8 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateNetwork <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateNetworkResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateNetworkResponse', as_df=as_df)
   return(result)
 }
 #' 

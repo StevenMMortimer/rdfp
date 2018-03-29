@@ -18,8 +18,8 @@
 #' @export
 dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='createLabels', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createLabelsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createLabelsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -46,8 +46,8 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getLabelsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getLabelsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -67,8 +67,8 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performLabelActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performLabelActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -88,8 +88,8 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updateLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='updateLabels', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updateLabelsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updateLabelsResponse', as_df=as_df)
   return(result)
 }
 #' 

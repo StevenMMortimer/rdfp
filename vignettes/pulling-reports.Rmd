@@ -23,35 +23,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-First, we load `dplyr` and `lubridate` to use in this vignette along with loading 
-the `rdfp` package and specifying the DFP network we would like to connect to. 
+First, we load **rdfp** and specify the DFP network we would like to connect to. 
+Then we authenticate by using `dfp_auth()`. Any existing cached token would be used 
+or we will be prompted to authenticate via the browser.
 
-```{r load-package}
-suppressWarnings(suppressMessages(library(dplyr)))
-suppressWarnings(suppressMessages(library(lubridate)))
+```{r load-package, eval=FALSE}
 library(rdfp)
-options(stringsAsFactors = FALSE)
 options(rdfp.network_code = 123456789)
-```
-
-Just a note, that it's not necessary to setup your own application client_id and 
-client_secret through the Google Developer's Console. The only difference is that 
-the authentication will be run through the client created and associated with the 
-`rdfp` package. By using the package client, you will *NOT* be giving access to 
-your DFP to anyone, the package is just the medium for you to connect to 
-your own data. If you wanted more control you would specify those options like so: 
-
-```{r other-params, eval=FALSE}
-options(rdfp.application_name = "MyApp")
-options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
-options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
-
-dfp_auth()
+df_auth()
 ```
 
 ```{r auth, include = FALSE}
-## I grab the token from the testing directory because that's where it is to be
-## found on Travis
+library(rdfp)
 token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
 options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
@@ -61,10 +44,10 @@ options(rdfp.network_code = rdfp_options$network_code)
 
 #### Delivery by Advertiser
 
-A common request is to check how each line item is delivering for an advertiser. 
+A common report request is to check how each line item is delivering for an advertiser. 
 This type of request can be run through a DFP report job. Report jobs have a 
-special flow, but there is a single function (`dfp_full_report_wrapper`) in 
-the **rdfp** package that will manage that flow and run a requested job for you. 
+special flow, but there is a single function, `dfp_full_report_wrapper()`, in 
+the **rdfp** package that will manage that entire flow and run a requested job for you. 
 
 In this example, we specify dimensions including the line, order, advertiser, 
 and ad unit. The `'FLAT'` ad unit view just ensures that we get tabular data 
@@ -74,19 +57,22 @@ that you keep you criteria and use a loop or vectorized function to generate
 each report since the request data must be formatted as a list in each call.
 
 ```{r advertiser-report}
-report_request_data <- list(reportJob =
-                              list(reportQuery =
-                                     list(dimensions = 'AD_UNIT_NAME',
-                                          dimensions = 'ADVERTISER_NAME',
-                                          dimensions = 'ORDER_NAME',
-                                          dimensions = 'LINE_ITEM_NAME',
-                                          adUnitView = 'FLAT',
-                                          columns = 'AD_SERVER_IMPRESSIONS', 
-                                          columns = 'AD_SERVER_CLICKS',
-                                          dateRangeType = 'LAST_WEEK')
-                                   )
-                            )
-delivery_dat <- dfp_full_report_wrapper(report_request_data)
+request_data <- list(reportJob =
+                        list(reportQuery =
+                               list(dimensions = 'MONTH_AND_YEAR',
+                                    dimensions = 'AD_UNIT_ID',
+                                    dimensions = 'AD_UNIT_NAME',
+                                    dimensions = 'ADVERTISER_NAME',
+                                    dimensions = 'ORDER_NAME',
+                                    dimensions = 'LINE_ITEM_NAME',
+                                    adUnitView = 'FLAT',
+                                    columns = 'AD_SERVER_IMPRESSIONS', 
+                                    columns = 'AD_SERVER_CLICKS',
+                                    dateRangeType = 'LAST_WEEK')
+                             )
+                      )
+report_data <- dfp_full_report_wrapper(request_data)
+report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 ```
 
 #### Working with Saved Queries
@@ -98,12 +84,14 @@ has created in the UI.
 
 ```{r reusing-saved-queries}
 # look for a particular saved query
-this_result <- dfp_getSavedQueriesByStatement(list(filterStatement=list(query="WHERE id = 936165016")), as_df=FALSE)
+request_data <- list(filterStatement=list(query="WHERE id = 936165016"))
+this_result <- dfp_getSavedQueriesByStatement(request_data, as_df=FALSE)
 this_report_query <- this_result[[1]]$reportQuery
 
 # resubmit the report job with the saved query
-report_request_data2 <- list(reportJob=list(reportQuery = this_report_query))
-delivery_dat2 <- dfp_full_report_wrapper(report_request_data2)
+report_data <- list(reportJob=list(reportQuery = this_report_query))
+report_data <- dfp_full_report_wrapper(report_data)
+report_data[,c('Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 ```
 
 #### A More Detailed Explanation of the Report Process
@@ -114,24 +102,21 @@ is required for all reports requested via this service. The wrapper function use
 named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of
 detail is not needed unless the wrapper service does not quite fit your needs.
 
-```{r eval = FALSE}
-# create a reportJob object
-# reportJobs consist of a reportQuery
-# Documentation for the reportQuery object can be found in R using 
-# ?dfp_ReportService_object_factory and searching for ReportQuery
-# Also online documentation is available that lists available child elements for reportQuery
+```{r pulling-report-long}
+# In order to run a report you must specify how the report should be structured 
+# by specifying a reportQuery inside a reportJob. All of the dimensions, columns, 
+# date range options, etc. are documented at:
 # https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
-                                                     columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
+                                                     columns='AD_SERVER_CLICKS', 
                                                      dateRangeType='LAST_WEEK'
                                                      )))
 
 # the result is a list and most importantly the ID is included for checking its status
 dfp_runReportJob_result <- dfp_runReportJob(request_data)
 dfp_runReportJob_result$id
-dfp_runReportJob_result$reportJobStatus
 
 # to check the status repeatedly you just need to provide the id
 # dfp_getReportJobStatus_result returns a character string of the reportJob status
@@ -141,7 +126,7 @@ dfp_getReportJobStatus_result
 
 # a simple while loop can keep checking a long running request until ready
 counter <- 0
-while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
+while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
   Sys.sleep(3)
   counter <- counter + 1
@@ -151,10 +136,9 @@ while(dfp_getReportJobStatus_result!='COMPLETED' & counter < 10){
 request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
 dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
 
-# convenience function has been provided to download the data from URL
-# and convert to a data.frame
-# supported exportFormats are currently c('CSV_DUMP', 'TSV', 'CSV_EXCEL')
-report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
-                                          exportFormat='CSV_DUMP')
-head(report_dat)
+# this function has been provided to download the data from URL and convert to a tbl_df
+# supported exportFormats are currently c('CSV_DUMP', 'TSV', 'TSV_EXCEL')
+report_data <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result$V1, 
+                                           exportFormat='CSV_DUMP')
+report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 ```

@@ -39,8 +39,8 @@
 #' @export
 dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getReportDownloadURLResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getReportDownloadURLResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -61,8 +61,8 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getReportDownloadUrlWithOptionsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getReportDownloadUrlWithOptionsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -82,8 +82,8 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' @export
 dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getReportJobStatusResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getReportJobStatusResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -107,8 +107,8 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getSavedQueriesByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getSavedQueriesByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getSavedQueriesByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -132,8 +132,8 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' @export
 dfp_runReportJob <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='runReportJob', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='runReportJobResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='runReportJobResponse', as_df=as_df)
   return(result)
 }
 #' 

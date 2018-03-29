@@ -24,8 +24,8 @@
 #' @export
 dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='createPlacementsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='createPlacementsResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -54,8 +54,8 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='getPlacementsByStatementResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='getPlacementsByStatementResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -75,8 +75,8 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' @export
 dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='performPlacementActionResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performPlacementActionResponse', as_df=as_df)
   return(result)
 }
 #' 
@@ -96,8 +96,8 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @export
 dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)
-  response <- execute_soap_request(body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=response, resp_element='updatePlacementsResponse', as_df=as_df)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='updatePlacementsResponse', as_df=as_df)
   return(result)
 }
 #' 
