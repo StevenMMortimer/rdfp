@@ -115,7 +115,6 @@ named `dfp_full_report_wrapper` manages all aspects of reporting, so this level 
 detail is not needed unless the wrapper service does not quite fit your needs.
 
 ```{r eval = FALSE}
-
 # create a reportJob object
 # reportJobs consist of a reportQuery
 # Documentation for the reportQuery object can be found in R using 
@@ -126,9 +125,7 @@ request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR'
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
                                                      columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                                     startDate=list(year=2018, month=10, day=1),
-                                                     endDate=list(year=2018, month=10, day=31),
-                                                     dateRangeType='CUSTOM_DATE'
+                                                     dateRangeType='LAST_WEEK'
                                                      )))
 
 # the result is a list and most importantly the ID is included for checking its status
@@ -160,5 +157,4 @@ dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
 report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result, 
                                           exportFormat='CSV_DUMP')
 head(report_dat)
-
 ```

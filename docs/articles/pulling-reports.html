@@ -146,8 +146,7 @@ delivery_dat2 &lt;-<span class="st"> </span><span class="kw"><a href="../referen
 <h4 class="hasAnchor">
 <a href="#a-more-detailed-explanation-of-the-report-process" class="anchor"></a>A More Detailed Explanation of the Report Process</h4>
 <p>Reports actually require 3 steps from the [ReportService] (<a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService</a>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named <code>dfp_full_report_wrapper</code> manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># create a reportJob object</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a reportJob object</span>
 <span class="co"># reportJobs consist of a reportQuery</span>
 <span class="co"># Documentation for the reportQuery object can be found in R using </span>
 <span class="co"># ?dfp_ReportService_object_factory and searching for ReportQuery</span>
@@ -157,9 +156,7 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
                                                      <span class="dt">dimensions=</span><span class="st">'AD_UNIT_ID'</span>,
                                                      <span class="dt">adUnitView=</span><span class="st">'FLAT'</span>,
                                                      <span class="dt">columns=</span><span class="st">'TOTAL_INVENTORY_LEVEL_IMPRESSIONS'</span>, 
-                                                     <span class="dt">startDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">1</span>),
-                                                     <span class="dt">endDate=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">10</span>, <span class="dt">day=</span><span class="dv">31</span>),
-                                                     <span class="dt">dateRangeType=</span><span class="st">'CUSTOM_DATE'</span>
+                                                     <span class="dt">dateRangeType=</span><span class="st">'LAST_WEEK'</span>
                                                      )))
 
 <span class="co"># the result is a list and most importantly the ID is included for checking its status</span>

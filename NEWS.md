@@ -1,9 +1,24 @@
-## rdfp 0.1.0.9000
+## rdfp 0.1.1.9000
+
+
+### Features
+
+  * Nothing yet!
+
+### Bug Fixes
+
+  * Nothing yet! 
+
+---
+
+## rdfp 0.1.1 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.1)
+
 
 ### Features
 
   * Upgraded to API version `v201802`
-  * Created more efficient parsers `parse_soap_response()`
+  * Created more efficient parsers `parse_soap_response()`. Warning: This will cause 
+  some breaking changes because how certain results are returned may be different.
 
 ### Bug Fixes
 
