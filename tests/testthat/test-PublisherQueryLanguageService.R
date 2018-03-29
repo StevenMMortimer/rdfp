@@ -17,7 +17,7 @@ test_that("dfp_select", {
   dfp_select_result <- dfp_select(request_data, as_df=FALSE)
   expect_is(dfp_select_result, "list")
   
-  final_result <- dfp_select_parse(dfp_select_result[[1]])
+  final_result <- dfp_select_parse(dfp_select_result)
   expect_is(final_result, "tbl_df")
   expect_named(final_result, c('id', 'lineitemtype', 'status'))
 })

@@ -27,9 +27,9 @@ myuuid <- paste(
 )
 
 options(rdfp.network_code = rdfp_options$test_network_code)
-request_data <- data.frame(name=paste0('Shift - ', myuuid),
-                           description='The shift that this user usually works.', 
-                           entityType='USER',
+request_data <- data.frame(name=paste0('Timing - ', myuuid),
+                           description='The time of that this creative usually runs.', 
+                           entityType='CREATIVE',
                            dataType='DROP_DOWN',
                            visibility='FULL')
 dfp_createCustomFields_result <- dfp_createCustomFields(request_data)
@@ -62,7 +62,7 @@ test_that("dfp_getCustomFieldOption", {
 test_that("dfp_getCustomFieldsByStatement", {
 
    options(rdfp.network_code = rdfp_options$test_network_code)
-   request_data <- list('filterStatement'=list('query'=paste0("WHERE name='Shift - ", myuuid, "'")))
+   request_data <- list('filterStatement'=list('query'=paste0("WHERE name='Timing - ", myuuid, "'")))
 
    dfp_getCustomFieldsByStatement_result <- dfp_getCustomFieldsByStatement(request_data)
 
@@ -89,9 +89,9 @@ test_that("dfp_updateCustomFields", {
   
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- data.frame(id=dfp_createCustomFields_result$id,
-                             name=paste0('Shift - ', myuuid, '2'),
-                             description='The shift that this user usually works.', 
-                             entityType='USER',
+                             name=paste0('Timing - ', myuuid, '2'),
+                             description='The time of that this creative usually runs.', 
+                             entityType='CREATIVE',
                              dataType='DROP_DOWN',
                              visibility='FULL')
   dfp_updateCustomFields_result <- dfp_updateCustomFields(request_data)
@@ -103,10 +103,9 @@ test_that("dfp_performCustomFieldAction", {
 
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(customFieldAction='DeactivateCustomFields',
-                       filterStatement=list('query'=paste0("WHERE name = 'Shift - ", myuuid, "2'")))
+                       filterStatement=list('query'=paste0("WHERE name = 'Timing - ", myuuid, "2'")))
   
   dfp_performCustomFieldAction_result <- dfp_performCustomFieldAction(request_data)
-  
   expect_is(dfp_performCustomFieldAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performCustomFieldAction_result)))
   expect_equal(dfp_performCustomFieldAction_result$numChanges, 1)
