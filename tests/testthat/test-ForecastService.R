@@ -37,7 +37,7 @@ test_that("dfp_getAvailabilityForecast", {
 
   request_data <- list(lineItem=hypothetical_line_item,
                        forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
-                                              includeContendingLineItems='true'))
+                                            includeContendingLineItems='true'))
   dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
   
   expect_is(dfp_getAvailabilityForecast_result, "data.frame")
