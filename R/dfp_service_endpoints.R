@@ -308,5 +308,27 @@ service_map <- list(
      'ReconciliationLineItemReportService',
      'ReconciliationReportService', 'ReportService',
      'SuggestedAdUnitService', 'TeamService', 'UserService',
-     'UserTeamAssociationService', 'WorkflowRequestService')
+     'UserTeamAssociationService', 'WorkflowRequestService'),
+  'v201802'=
+    c('ActivityGroupService', 'ActivityService', 'AdExclusionRuleService',
+      'AdRuleService', 'AudienceSegmentService', 'BaseRateService',
+      'CdnConfigurationService', 'CompanyService', 'ContactService',
+      'ContentBundleService', 'ContentMetadataKeyHierarchyService',
+      'ContentService', 'CreativeService', 'CreativeSetService',
+      'CreativeTemplateService', 'CreativeWrapperService',
+      'CustomFieldService', 'CustomTargetingService', 'ExchangeRateService',
+      'ForecastService', 'InventoryService', 'LabelService',
+      'LineItemCreativeAssociationService', 'LineItemService',
+      'LineItemTemplateService', 'LiveStreamEventService',
+      'MobileApplicationService', 'NativeStyleService', 'NetworkService',
+      'OrderService', 'PackageService', 'PlacementService',
+      'PremiumRateService', 'ProductService', 'ProductPackageService',
+      'ProductPackageItemService', 'ProductTemplateService',
+      'ProposalLineItemService', 'ProposalService',
+      'PublisherQueryLanguageService', 'RateCardService',
+      'ReconciliationOrderReportService', 'ReconciliationReportRowService',
+      'ReconciliationLineItemReportService',
+      'ReconciliationReportService', 'ReportService',
+      'SuggestedAdUnitService', 'TeamService', 'UserService',
+      'UserTeamAssociationService', 'WorkflowRequestService')
 )
