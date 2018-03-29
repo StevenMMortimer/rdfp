@@ -165,8 +165,10 @@ dfp_auth <- function(token = NULL,
 #' Retrieve Google token from environment
 #'
 #' Get token if it's previously stored, else prompt user to get one.
-#'
+#' 
+#' @note This function is meant to be used internally. Only use when debugging.
 #' @keywords internal
+#' @export
 get_google_token <- function() {
   
   if(!is.null(.state$token) && !.state$token$validate()){
@@ -184,7 +186,9 @@ get_google_token <- function() {
 #'
 #' @return logical
 #'
+#' @note This function is meant to be used internally. Only use when debugging.
 #' @keywords internal
+#' @export
 token_exists <- function(verbose = TRUE) {
   
   if(is.null(.state$token)) {
