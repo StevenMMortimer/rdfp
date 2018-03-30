@@ -10,15 +10,17 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_select", {
-  
   request_data <- list(selectStatement=
-                         list(query='SELECT Id, LineItemType, Status FROM LineItem LIMIT 3'))  
+                         list(query='SELECT Id, LineItemType, Status FROM LineItem LIMIT 3'))
+  dfp_select_result <- dfp_select(request_data)
+  expect_is(dfp_select_result, "tbl_df")
+  expect_named(dfp_select_result, c('id', 'lineitemtype', 'status'))
   
-  dfp_select_result <- dfp_select(request_data, as_df=FALSE)
-  expect_is(dfp_select_result, "list")
-  
-  final_result <- dfp_select_parse(dfp_select_result)
-  expect_is(final_result, "tbl_df")
-  expect_named(final_result, c('id', 'lineitemtype', 'status'))
+  # see if we can handle a nested list 
+  request_data <- list(selectStatement=
+                         list(query='SELECT Id, Name, Targeting FROM LineItem LIMIT 3'))
+  dfp_select_result <- dfp_select(request_data)
+  expect_is(dfp_select_result, "tbl_df")
+  expect_named(dfp_select_result, c('id', 'name', 'targeting'))  
 })
 

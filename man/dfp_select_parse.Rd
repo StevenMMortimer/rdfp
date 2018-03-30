@@ -7,15 +7,19 @@
 dfp_select_parse(result_data)
 }
 \arguments{
-\item{result_data}{a \code{list} returned from \link{dfp_select}}
+\item{result}{a \code{list} returned from \link{dfp_select}}
 }
 \value{
-a \code{data.frame} of report results as specified by the result_data
+a \code{data.frame} of report results as specified by the result
 }
 \description{
 Take a select request result from the 
 PublishersQueryLanguage service and parse into a data.frame
 }
+\note{
+This function is meant to be used internally. Only use when debugging.
+}
 \seealso{
 dfp_select
 }
+\keyword{internal}

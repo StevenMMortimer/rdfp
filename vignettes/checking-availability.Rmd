@@ -189,8 +189,7 @@ request_data <- list(selectStatement=
                                   FROM Geo_Target 
                                   WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
 
-dfp_select_result <- dfp_select(request_data)
-us_geos <- dfp_select_parse(dfp_select_result)
+us_geos <- dfp_select(request_data)
 texas_id <- us_geos %>%
   filter(type == 'STATE', name == 'Texas') %>%
   select(id, state=name)
@@ -311,6 +310,9 @@ Sometimes you just want to check the availability on an existing line, say,
 to see if you can renew an existing contract. DFP makes this very easy, by providing 
 the function `dfp_getAvailabilityForecastById()`. You'll need to first determine 
 the Id of the line item you would like to check, then plug it into the function.
+Note the empty `list()` provided to the `forecastOptions` argument. The API will 
+error out if you do not provide it, but an empty list will quell those error messages 
+and utilize the default forecast options.
 
 ```{r availability-by-id}
 # request for this id with no special forecastOptions

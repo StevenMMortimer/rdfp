@@ -47,15 +47,14 @@
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
 #' request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into
-#' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a selectResponse 
 #' @export
-dfp_select <- function(request_data, as_df=FALSE, verbose=FALSE){
+dfp_select <- function(request_data, verbose=FALSE){
   request_body <- form_request_body(service='PublisherQueryLanguageService', root_name='select', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=httr_response, resp_element='selectResponse', as_df=as_df)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='selectResponse', as_df=FALSE)
+  result <- dfp_select_parse(result[[1]])
   return(result)
 }
 #' 

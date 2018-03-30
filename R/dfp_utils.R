@@ -202,29 +202,25 @@ dfp_full_report_wrapper <- function(request_data,
 #' Take a select request result from the 
 #' PublishersQueryLanguage service and parse into a data.frame
 #' 
-#' @usage dfp_select_parse(result_data)
-#' @importFrom purrr map_df
-#' @importFrom dplyr as_data_frame
-#' @importFrom readr type_convert
-#' @param result_data a \code{list} returned from \link{dfp_select}
-#' @return a \code{data.frame} of report results as specified by the result_data
-#' 
+#' @importFrom purrr map_df modify_if
+#' @importFrom dplyr as_tibble
+#' @importFrom readr type_convert cols
+#' @param result a \code{list} returned from \link{dfp_select}
+#' @return a \code{data.frame} of report results as specified by the result
 #' @seealso dfp_select 
+#' @note This function is meant to be used internally. Only use when debugging.
+#' @keywords internal
 #' @export
-dfp_select_parse <- function(result_data){
-  
-  result_data <- result_data[[1]]
-  these_names <- unlist(result_data[grepl('columnTypes', names(result_data))], 
+dfp_select_parse <- function(result){
+  these_names <- unlist(result[grepl('columnTypes', names(result))], 
                         use.names = F)
-  these_types <- unlist(lapply(result_data[['rows']], FUN=function(x){x$.attrs}), 
-                               use.names = F)
-  result_set <- map_df(result_data[grepl('rows', names(result_data))], 
+  result_parsed <- map_df(result[grepl('rows', names(result))], 
                       .f=function(x){
-                        x <- sapply(x, FUN=function(x){x$value})
+                        x <- lapply(x, FUN=function(x){x$value})
                         names(x) <- these_names
-                        new_x <- as_data_frame(t(x))
+                        new_x <- as_tibble(modify_if(x, ~length(.x) > 1, list))
                         return(new_x)
                       })
-  suppressMessages(suppressWarnings(result_set <- type_convert(result_set)))
-  return(result_set)
+  result_parsed <- type_convert(result_parsed, col_types = cols())
+  return(result_parsed)
 }

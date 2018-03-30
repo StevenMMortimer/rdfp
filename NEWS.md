@@ -3,6 +3,7 @@
 ### Features
 
   * `dfp_report_url_to_dataframe()` now returns a `tbl_df` object for better printing and casted data types
+  * Simplified `dfp_select()` so that it automatically uses `dfp_select_parse()` to format the result into a `tbl_df`
 
 ### Bug Fixes
 
