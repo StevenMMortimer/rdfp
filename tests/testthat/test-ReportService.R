@@ -79,23 +79,6 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
                                     "Total impressions"))
   
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
-                       reportDownloadOptions=list(exportFormat='TSV_EXCEL', 
-                                                  includeTotalsRow='true'))
-  dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)
-  
-  expect_is(dfp_getReportDownloadUrlWithOptions_result[[1]], "character")
-  expect_true(grepl('^https://storage.googleapis.com/dfp-report-export/', dfp_getReportDownloadUrlWithOptions_result[[1]]))
-  
-  report_dat <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadUrlWithOptions_result[[1]], 
-                                            exportFormat='TSV_EXCEL')
-  expect_is(report_dat, "tbl_df")
-  expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
-                                    "Dimension.AD_UNIT_ID", 
-                                    "Dimension.AD_UNIT_NAME", 
-                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
-  expect_equal(sum(report_dat$Dimension.MONTH_AND_YEAR=='Total'), 1)
-  
-  request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='CSV_DUMP', 
                                                   includeTotalsRow='true'))
   dfp_getReportDownloadUrlWithOptions_result <- dfp_getReportDownloadUrlWithOptions(request_data)

@@ -124,7 +124,7 @@ catch_errors <- function(x){
 #' @export
 dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
   
-  stopifnot(exportFormat %in% c("CSV_DUMP", "TSV", "TSV_EXCEL"))
+  stopifnot(exportFormat %in% c("CSV_DUMP", "TSV"))
   
   temp_destination <- tempfile()
   curl_download(url=report_url, destfile=temp_destination)
@@ -133,7 +133,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
   if (exportFormat == "CSV_DUMP"){
     report_dat <- read_csv(gzfile(temp_destination, encoding=this_encoding), 
                            col_types = cols())
-  } else if (exportFormat == "TSV" | exportFormat == "TSV_EXCEL"){
+  } else if (exportFormat == "TSV"){
     report_dat <- read_tsv(gzfile(temp_destination, encoding=this_encoding), 
                            col_types = cols())
   } else {
