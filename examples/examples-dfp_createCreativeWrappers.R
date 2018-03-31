@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createCreativeWrappers()
+#'  res <- dfp_createCreativeWrappers(request_data)
 #' }

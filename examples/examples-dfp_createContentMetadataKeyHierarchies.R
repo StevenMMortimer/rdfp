@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createContentMetadataKeyHierarchies()
+#'  res <- dfp_createContentMetadataKeyHierarchies(request_data)
 #' }

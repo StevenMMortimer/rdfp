@@ -26,6 +26,12 @@ Gets a NativeStylePage NativeStylePage of NativeStyle objects that satisfy the g
   \item{name}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getNativeStylesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 }

@@ -27,6 +27,12 @@ Gets a UserTeamAssociationPage of UserTeamAssociation objects that satisfy the g
   \item{teamId}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getUserTeamAssociationsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 }

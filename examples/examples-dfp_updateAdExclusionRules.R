@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateAdExclusionRules()
+#'  res <- dfp_updateAdExclusionRules(request_data)
 #' }

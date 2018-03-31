@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateUserTeamAssociations()
+#'  res <- dfp_updateUserTeamAssociations(request_data)
 #' }

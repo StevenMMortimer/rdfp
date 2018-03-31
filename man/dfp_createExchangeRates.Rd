@@ -31,6 +31,11 @@ Creates new ExchangeRate objects. For each exchange rate, the following fields a
   \item{ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createExchangeRates(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 }

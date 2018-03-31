@@ -27,6 +27,11 @@ Performs actions on SuggestedAdUnit objects that match the given Statement query
   \item{numRequests}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_performSuggestedAdUnitAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 }

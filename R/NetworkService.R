@@ -18,6 +18,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAllNetworksResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getAllNetworks()
+#' }
 #' @export
 dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='getAllNetworks', data=NULL)
@@ -36,6 +40,10 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCurrentNetworkResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getCurrentNetwork()
+#' }
 #' @export
 dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='getCurrentNetwork', data=NULL)
@@ -81,6 +89,10 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a makeTestNetworkResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_makeTestNetwork()
+#' }
 #' @export
 dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='makeTestNetwork', data=NULL)
@@ -102,6 +114,10 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateNetworkResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateNetwork(request_data)
+#' }
 #' @export
 dfp_updateNetwork <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NetworkService', root_name='updateNetwork', data=request_data)

@@ -49,6 +49,12 @@ Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter qu
   \item{numRequests}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getSuggestedAdUnitsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
 }

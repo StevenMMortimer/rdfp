@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAdRule
 \description{
 Updates the specified AdRule objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateAdRules(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 }

@@ -35,6 +35,11 @@ The following fields are required:
   \item{hierarchyLevels}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createContentMetadataKeyHierarchies(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentMetadataKeyHierarchyService#createContentMetadataKeyHierarchies}{Google Documentation for createContentMetadataKeyHierarchies}
 }

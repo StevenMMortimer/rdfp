@@ -37,6 +37,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationReportRowsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getReconciliationReportRowsByStatement(dat)
+#' }
 #' @export
 dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportRowService', root_name='getReconciliationReportRowsByStatement', data=request_data)
@@ -58,6 +63,10 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationReportRowsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateReconciliationReportRows(request_data)
+#' }
 #' @export
 dfp_updateReconciliationReportRows <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportRowService', root_name='updateReconciliationReportRows', data=request_data)

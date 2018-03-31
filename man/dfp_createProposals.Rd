@@ -35,6 +35,11 @@ Creates new Proposal objects. For each proposal, the following fields are requir
   \item{Proposal name}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createProposals(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#createProposals}{Google Documentation for createProposals}
 }

@@ -1,4 +1,5 @@
+#' @examples
 #' \dontrun{
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
-#'  res <- dfp_getCdnConfigurationsByStatement(request_data)
+#'  res <- dfp_getCdnConfigurationsByStatement(dat)
 #' }

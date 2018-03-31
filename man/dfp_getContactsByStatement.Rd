@@ -34,6 +34,12 @@ Gets a ContactPage of Contact objects that satisfy the given Statement query. Th
   \item{status}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getContactsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 }

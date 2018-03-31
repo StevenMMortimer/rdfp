@@ -36,6 +36,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getSuggestedAdUnitsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getSuggestedAdUnitsByStatement(dat)
+#' }
 #' @export
 dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='SuggestedAdUnitService', root_name='getSuggestedAdUnitsByStatement', data=request_data)
@@ -61,6 +66,10 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performSuggestedAdUnitActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performSuggestedAdUnitAction(request_data)
+#' }
 #' @export
 dfp_performSuggestedAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='SuggestedAdUnitService', root_name='performSuggestedAdUnitAction', data=request_data)

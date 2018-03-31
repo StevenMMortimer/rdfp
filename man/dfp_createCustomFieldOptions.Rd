@@ -31,6 +31,13 @@ Creates new CustomFieldOption objects. The following fields are required:
   \item{CustomFieldOption customFieldId}
 }
 }
+\examples{
+\dontrun{
+request_data <- data.frame(customFieldId=rep(dfp_createCustomFields_result$id, 3),
+                           displayName=c('Morning', 'Afternoon', 'Evening'))
+result <- dfp_createCustomFieldOptions(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 }

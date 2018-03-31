@@ -26,6 +26,15 @@ Creates new CustomTargetingValue objects. The following fields are required:
   \item{CustomTargetingValue name}
 }
 }
+\examples{
+\dontrun{
+request_data <- data.frame(customTargetingKeyId=rep(created_targeting_key$id,2),
+                           name=c('TestValue1','TestValue2'), 
+                           displayName=c('TestValue1','TestValue2'), 
+                           matchType=rep('EXACT', 2))
+result <- dfp_createCustomTargetingValues(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }

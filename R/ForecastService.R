@@ -26,6 +26,23 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAvailabilityForecastResponse 
+#' @examples
+#' \dontrun{
+#' filter <- "WHERE Status='DELIVERING' LIMIT 1"
+#' one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+#' hypothetical_line_item <- list(lineItem=
+#'                                list(id=one_li$id,
+#'                                     startDateTime=one_li$startDateTime,
+#'                                     endDateTime=dfp_date_to_list(Sys.Date()+100),
+#'                                     lineItemType=one_li$lineItemType,
+#'                                     costType=one_li$costType, 
+#'                                     primaryGoal=one_li$primaryGoal, 
+#'                                     targeting=one_li$targeting))
+#' request_data <- list(lineItem=hypothetical_line_item,
+#'                      forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
+#'                                           includeContendingLineItems='true'))
+#' dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
+#' }
 #' @export
 dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
@@ -50,6 +67,15 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAvailabilityForecastByIdResponse 
+#' @examples
+#' \dontrun{
+#' filter <- "WHERE Status='DELIVERING' LIMIT 1"
+#' one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+#' request_data <- list(lineItemId=one_li$id,
+#'                      forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
+#'                                           includeContendingLineItems='true'))
+#' result <- dfp_getAvailabilityForecastById(request_data)
+#' }
 #' @export
 dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
@@ -71,6 +97,22 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getDeliveryForecastResponse 
+#' @examples
+#' \dontrun{
+#' filter <- "WHERE Status='DELIVERING' LIMIT 1"
+#' one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+#' hypothetical_line_item <- list(lineItem=
+#'                                list(id=one_li$id,
+#'                                     startDateTime=one_li$startDateTime,
+#'                                     endDateTime=dfp_date_to_list(Sys.Date()+100),
+#'                                     lineItemType=one_li$lineItemType,
+#'                                     costType=one_li$costType, 
+#'                                     primaryGoal=one_li$primaryGoal, 
+#'                                     targeting=one_li$targeting))
+#' request_data <- list(lineItems=hypothetical_line_item,
+#'                      forecastOptions=list(ignoredLineItemIds=NULL))
+#' dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
+#' }
 #' @export
 dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
@@ -92,6 +134,16 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getDeliveryForecastByIdsResponse 
+#' @examples
+#' \dontrun{
+#' filter <- "WHERE Status='DELIVERING' LIMIT 1"
+#' one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+#' 
+#' # not specifying forecastOptions brings up NotNullError.ARG2_NULL, so send, but keep null
+#' request_data <- list(lineItemIds=one_li$id,
+#'                      forecastOptions=list(ignoredLineItemIds=NULL))
+#' result <- dfp_getDeliveryForecastByIds(request_data)
+#' }
 #' @export
 dfp_getDeliveryForecastByIds <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)

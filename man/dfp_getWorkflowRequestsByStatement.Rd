@@ -42,6 +42,12 @@ Gets a list of WorkflowRequest objects that satisfy the given Statement query. T
   \item{type}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getWorkflowRequestsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 }

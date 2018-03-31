@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performBaseR
 \description{
 Performs actions on BaseRate objects that satisfy the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performBaseRateAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 }

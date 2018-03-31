@@ -30,6 +30,11 @@ createAdRules
 
 Creates new AdRule objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createAdRules(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 }

@@ -32,6 +32,11 @@ createBaseRates
 
 Creates a list of new BaseRate objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createBaseRates(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 }

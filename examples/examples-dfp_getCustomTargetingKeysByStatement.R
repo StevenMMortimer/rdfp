@@ -1,4 +1,5 @@
+#' @examples
 #' \dontrun{
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
-#'  res <- dfp_getCustomTargetingKeysByStatement(request_data)
+#'  res <- dfp_getCustomTargetingKeysByStatement(dat)
 #' }

@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateRateCa
 \description{
 Updates a list of RateCard objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateRateCards(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 }

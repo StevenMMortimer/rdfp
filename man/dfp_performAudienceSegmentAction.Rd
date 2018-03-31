@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performAudie
 \description{
 Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 }
+\examples{
+\dontrun{
+ res <- dfp_performAudienceSegmentAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 }

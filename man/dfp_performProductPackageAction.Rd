@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performProdu
 \description{
 Performs actions on ProductPackage objects that match the given \{@link Statement query\}.
 }
+\examples{
+\dontrun{
+ res <- dfp_performProductPackageAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 }

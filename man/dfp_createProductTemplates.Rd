@@ -35,6 +35,11 @@ createProductTemplates
 
 Creates new ProductTemplate objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createProductTemplates(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 }

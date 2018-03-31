@@ -18,6 +18,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAdRulesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createAdRules(request_data)
+#' }
 #' @export
 dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='createAdRules', data=request_data)
@@ -45,6 +49,11 @@ dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdRulesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getAdRulesByStatement(dat)
+#' }
 #' @export
 dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='getAdRulesByStatement', data=request_data)
@@ -66,6 +75,10 @@ dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAdRuleActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performAdRuleAction(request_data)
+#' }
 #' @export
 dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='performAdRuleAction', data=request_data)
@@ -87,6 +100,10 @@ dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAdRulesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateAdRules(request_data)
+#' }
 #' @export
 dfp_updateAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdRuleService', root_name='updateAdRules', data=request_data)

@@ -37,6 +37,11 @@ Creates new Package objects. For each package, the following fields are required
   \item{Package name}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createPackages(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#createPackages}{Google Documentation for createPackages}
 }

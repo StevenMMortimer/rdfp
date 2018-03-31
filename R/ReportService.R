@@ -36,6 +36,23 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReportDownloadURLResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(reportJob=
+#'                        list(reportQuery=
+#'                               list(dimensions='MONTH_AND_YEAR', 
+#'                                    dimensions='AD_UNIT_ID',
+#'                                    adUnitView='FLAT',
+#'                                    columns='AD_SERVER_CLICKS', 
+#'                                    dateRangeType='LAST_WEEK')))
+#' 
+#' # the result is a list and most importantly the ID is included for checking its status
+#' dfp_runReportJob_result <- dfp_runReportJob(request_data)
+#'
+#' # only run after the status is "COMPLETED"
+#' request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
+#' dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
+#' }
 #' @export
 dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
@@ -58,6 +75,10 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReportDownloadUrlWithOptionsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getReportDownloadUrlWithOptions(request_data)
+#' }
 #' @export
 dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
@@ -79,6 +100,31 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReportJobStatusResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(reportJob=
+#'                        list(reportQuery=
+#'                               list(dimensions='MONTH_AND_YEAR', 
+#'                                    dimensions='AD_UNIT_ID',
+#'                                    adUnitView='FLAT',
+#'                                    columns='AD_SERVER_CLICKS', 
+#'                                    dateRangeType='LAST_WEEK')))
+#' 
+#' # the result is a list and most importantly the ID is included for checking its status
+#' dfp_runReportJob_result <- dfp_runReportJob(request_data)
+#' 
+#' request_data <- list(reportJobId=dfp_runReportJob_result$id)
+#' dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+#' dfp_getReportJobStatus_result
+#' 
+#' # a simple while loop can keep checking a long running request until ready
+#' counter <- 0
+#' while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
+#'   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+#'   Sys.sleep(3)
+#'   counter <- counter + 1
+#' }
+#' }
 #' @export
 dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
@@ -104,6 +150,16 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getSavedQueriesByStatementResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(filterStatement=list(query="WHERE id = 936165016"))
+#' this_result <- dfp_getSavedQueriesByStatement(request_data, as_df=FALSE)
+#' this_report_query <- this_result[[1]]$reportQuery
+#' 
+#' # resubmit the report job with the saved query
+#' report_data <- list(reportJob=list(reportQuery = this_report_query))
+#' report_data <- dfp_full_report_wrapper(report_data)
+#' }
 #' @export
 dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getSavedQueriesByStatement', data=request_data)
@@ -129,6 +185,20 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a runReportJobResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(reportJob=
+#'                        list(reportQuery=
+#'                               list(dimensions='MONTH_AND_YEAR', 
+#'                                    dimensions='AD_UNIT_ID',
+#'                                    adUnitView='FLAT',
+#'                                    columns='AD_SERVER_CLICKS', 
+#'                                    dateRangeType='LAST_WEEK')))
+#' 
+#' # the result is a list and most importantly the ID is included for checking its status
+#' dfp_runReportJob_result <- dfp_runReportJob(request_data)
+#' dfp_runReportJob_result$id
+#' }
 #' @export
 dfp_runReportJob <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='runReportJob', data=request_data)

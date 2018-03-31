@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_performLabelAction()
+#'  res <- dfp_performLabelAction(request_data)
 #' }

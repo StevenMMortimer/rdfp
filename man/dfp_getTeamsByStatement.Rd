@@ -27,6 +27,12 @@ Gets a TeamPage of Team objects that satisfy the given Statement query. The foll
   \item{description}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getTeamsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 }

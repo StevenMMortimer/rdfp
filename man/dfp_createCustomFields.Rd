@@ -28,6 +28,16 @@ Creates new CustomField objects. The following fields are required:
   \item{CustomField visibility}
 }
 }
+\examples{
+\dontrun{
+request_data <- data.frame(name='Timing',
+                           description='The time that this creative runs.', 
+                           entityType='CREATIVE',
+                           dataType='DROP_DOWN',
+                           visibility='FULL')
+result <- dfp_createCustomFields(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 }

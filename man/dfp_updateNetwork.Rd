@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateNetwor
 \description{
 Updates the specified network. Currently, only the network display name can be updated.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateNetwork(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 }

@@ -38,6 +38,11 @@ createLineItems
 
 Creates new LineItem objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createLineItems(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#createLineItems}{Google Documentation for createLineItems}
 }

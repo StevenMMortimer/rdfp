@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateProduc
 \description{
 Updates the specified Product objects. Note non-updatable fields will not be backfilled.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateProducts(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#updateProducts}{Google Documentation for updateProducts}
 }

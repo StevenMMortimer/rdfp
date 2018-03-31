@@ -29,6 +29,12 @@ Gets a CustomFieldPage of CustomField objects that satisfy the given Statement q
   \item{visibility}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getCustomFieldsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
 }

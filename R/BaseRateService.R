@@ -20,6 +20,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createBaseRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createBaseRates(request_data)
+#' }
 #' @export
 dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='createBaseRates', data=request_data)
@@ -46,6 +50,11 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getBaseRatesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getBaseRatesByStatement(dat)
+#' }
 #' @export
 dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='getBaseRatesByStatement', data=request_data)
@@ -67,6 +76,10 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performBaseRateActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performBaseRateAction(request_data)
+#' }
 #' @export
 dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
@@ -88,6 +101,10 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateBaseRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateBaseRates(request_data)
+#' }
 #' @export
 dfp_updateBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='updateBaseRates', data=request_data)

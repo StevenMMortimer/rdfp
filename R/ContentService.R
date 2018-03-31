@@ -42,6 +42,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getContentByStatement(dat)
+#' }
 #' @export
 dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
@@ -66,6 +71,10 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentByStatementAndCustomTargetingValueResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getContentByStatementAndCustomTargetingValue()
+#' }
 #' @export
 dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)

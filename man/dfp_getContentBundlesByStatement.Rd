@@ -28,6 +28,12 @@ Gets a ContentBundlePage of ContentBundle objects that satisfy the given Stateme
   \item{status}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getContentBundlesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 }

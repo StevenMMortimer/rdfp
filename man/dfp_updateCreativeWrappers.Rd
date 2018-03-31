@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCreati
 \description{
 Updates the specified CreativeWrapper objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateCreativeWrappers(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 }

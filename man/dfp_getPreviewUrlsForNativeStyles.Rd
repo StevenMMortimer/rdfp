@@ -18,6 +18,11 @@ a \code{data.frame} or \code{list} containing all the elements of a getPreviewUr
 \description{
 Returns a list of URLs that reference the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. Each URL corresponds to one available native style for previewing the specified creative. creative
 }
+\examples{
+\dontrun{
+ res <- dfp_getPreviewUrlsForNativeStyles()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
 }

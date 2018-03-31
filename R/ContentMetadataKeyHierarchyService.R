@@ -22,6 +22,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContentMetadataKeyHierarchiesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createContentMetadataKeyHierarchies(request_data)
+#' }
 #' @export
 dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='createContentMetadataKeyHierarchies', data=request_data)
@@ -48,6 +52,11 @@ dfp_createContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, ve
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentMetadataKeyHierarchiesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getContentMetadataKeyHierarchiesByStatement(dat)
+#' }
 #' @export
 dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='getContentMetadataKeyHierarchiesByStatement', data=request_data)
@@ -69,6 +78,10 @@ dfp_getContentMetadataKeyHierarchiesByStatement <- function(request_data, as_df=
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performContentMetadataKeyHierarchyActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performContentMetadataKeyHierarchyAction(request_data)
+#' }
 #' @export
 dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='performContentMetadataKeyHierarchyAction', data=request_data)
@@ -90,6 +103,10 @@ dfp_performContentMetadataKeyHierarchyAction <- function(request_data, as_df=TRU
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContentMetadataKeyHierarchiesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateContentMetadataKeyHierarchies(request_data)
+#' }
 #' @export
 dfp_updateContentMetadataKeyHierarchies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentMetadataKeyHierarchyService', root_name='updateContentMetadataKeyHierarchies', data=request_data)

@@ -15,6 +15,15 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCompaniesResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(companies=list(name="TestCompany1", 
+#'                                     type='HOUSE_ADVERTISER', 
+#'                                     address='123 Main St Hometown, FL USA', 
+#'                                     email='testcompany1@@gmail.com', 
+#'                                     comment='API Test'))
+#' result <- dfp_createCompanies(request_data)
+#' }
 #' @export
 dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
@@ -42,6 +51,11 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCompaniesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCompaniesByStatement(dat)
+#' }
 #' @export
 dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
@@ -63,6 +77,10 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCompaniesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCompanies(request_data)
+#' }
 #' @export
 dfp_updateCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)

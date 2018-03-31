@@ -29,6 +29,12 @@ Gets a RateCardPage of RateCard objects that satisfy the given Statement query. 
   \item{Status}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getRateCardsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 }

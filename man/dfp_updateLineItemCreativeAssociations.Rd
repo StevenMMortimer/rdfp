@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLineIt
 \description{
 Updates the specified LineItemCreativeAssociation objects
 }
+\examples{
+\dontrun{
+ res <- dfp_updateLineItemCreativeAssociations(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 }

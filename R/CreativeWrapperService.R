@@ -25,6 +25,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCreativeWrappersResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createCreativeWrappers(request_data)
+#' }
 #' @export
 dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
@@ -52,6 +56,11 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativeWrappersByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCreativeWrappersByStatement(dat)
+#' }
 #' @export
 dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
@@ -73,6 +82,10 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performCreativeWrapperActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performCreativeWrapperAction(request_data)
+#' }
 #' @export
 dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
@@ -94,6 +107,10 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCreativeWrappersResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCreativeWrappers(request_data)
+#' }
 #' @export
 dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)

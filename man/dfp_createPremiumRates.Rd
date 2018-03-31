@@ -32,6 +32,11 @@ createPremiumRates
 
 Creates a list of new PremiumRate objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createPremiumRates(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }

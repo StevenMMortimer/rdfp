@@ -21,6 +21,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPlacementsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createPlacements(request_data)
+#' }
 #' @export
 dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
@@ -51,6 +55,11 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPlacementsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getPlacementsByStatement(dat)
+#' }
 #' @export
 dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
@@ -72,6 +81,10 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performPlacementActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performPlacementAction(request_data)
+#' }
 #' @export
 dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
@@ -93,6 +106,10 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePlacementsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updatePlacements(request_data)
+#' }
 #' @export
 dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)

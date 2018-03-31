@@ -24,6 +24,11 @@ a \code{data.frame} or \code{list} containing all the elements of a getReportDow
 Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report.
 By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 }
+\examples{
+\dontrun{
+ res <- dfp_getReportDownloadUrlWithOptions(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 }

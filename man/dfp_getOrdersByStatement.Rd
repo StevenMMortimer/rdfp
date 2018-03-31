@@ -33,6 +33,12 @@ Gets an OrderPage of Order objects that satisfy the given Statement query. The f
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getOrdersByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 }

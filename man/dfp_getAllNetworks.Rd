@@ -29,6 +29,11 @@ Intended to be used without a network code in the SOAP header when the login may
 Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access Returns the list of Network objects to which the current login has access.
 Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@return the networks to which the current login has access
 }
+\examples{
+\dontrun{
+ res <- dfp_getAllNetworks()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 }

@@ -37,6 +37,11 @@ Creates a new CreativeWrapper objects. The following fields are required:
   \item{CreativeWrapper header or CreativeWrapper footer}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createCreativeWrappers(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 }

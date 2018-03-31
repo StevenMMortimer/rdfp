@@ -18,6 +18,11 @@ a \code{data.frame} or \code{list} containing all the elements of a getAllRolesR
 \description{
 Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @return the roles defined for the user's network
 }
+\examples{
+\dontrun{
+ res <- dfp_getAllRoles()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getAllRoles}{Google Documentation for getAllRoles}
 }

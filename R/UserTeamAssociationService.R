@@ -19,6 +19,12 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createUserTeamAssociationsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(teamid=rep(dfp_createTeams_result$id, 3),
+#'                            userid=dfp_createUsers_result$id)
+#' result <- dfp_createUserTeamAssociations(request_data)
+#' }
 #' @export
 dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='createUserTeamAssociations', data=request_data)
@@ -44,6 +50,11 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getUserTeamAssociationsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getUserTeamAssociationsByStatement(dat)
+#' }
 #' @export
 dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='getUserTeamAssociationsByStatement', data=request_data)
@@ -65,6 +76,10 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performUserTeamAssociationActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performUserTeamAssociationAction(request_data)
+#' }
 #' @export
 dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='performUserTeamAssociationAction', data=request_data)
@@ -86,6 +101,10 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateUserTeamAssociationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateUserTeamAssociations(request_data)
+#' }
 #' @export
 dfp_updateUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserTeamAssociationService', root_name='updateUserTeamAssociations', data=request_data)

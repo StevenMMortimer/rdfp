@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLabels
 \description{
 Updates the specified Label objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateLabels(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#updateLabels}{Google Documentation for updateLabels}
 }

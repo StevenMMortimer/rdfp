@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performConte
 \description{
 Performs actions on ContentBundle objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performContentBundleAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 }

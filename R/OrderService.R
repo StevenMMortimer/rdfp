@@ -20,6 +20,28 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createOrdersResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
+#' dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
+#' 
+#' request_data <- list(list(name='TestOrder', 
+#'                           startDateTime=list(date=list(year=2018, month=12, day=1), 
+#'                                              hour=0,
+#'                                              minute=0,
+#'                                              second=0,
+#'                                              timeZoneID='America/New_York'),
+#'                           endDateTime=list(date=list(year=2018, month=12, day=31), 
+#'                                            hour=23,
+#'                                            minute=59,
+#'                                            second=59,
+#'                                            timeZoneID='America/New_York'), 
+#'                           notes='API Test Order', 
+#'                           externalOrderId=99999, 
+#'                           advertiserId=dfp_getCompaniesByStatement_result$id, 
+#'                           traffickerId=dfp_getCurrentUser()$id))
+#' dfp_createOrders_result <- dfp_createOrders(request_data)
+#' }
 #' @export
 dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='createOrders', data=request_data)
@@ -52,6 +74,11 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getOrdersByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getOrdersByStatement(dat)
+#' }
 #' @export
 dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
@@ -73,6 +100,10 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performOrderActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performOrderAction(request_data)
+#' }
 #' @export
 dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
@@ -94,6 +125,10 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateOrdersResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateOrders(request_data)
+#' }
 #' @export
 dfp_updateOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='updateOrders', data=request_data)

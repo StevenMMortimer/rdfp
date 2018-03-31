@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateActivi
 \description{
 Updates the specified ActivityGroup objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateActivityGroups(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 }

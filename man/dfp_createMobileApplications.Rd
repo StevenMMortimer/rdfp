@@ -27,6 +27,11 @@ createMobileApplications
 
 Creates and claims MobileApplication mobile applications to be used for targeting in the network.
 }
+\examples{
+\dontrun{
+ res <- dfp_createMobileApplications(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
 }

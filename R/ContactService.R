@@ -15,6 +15,16 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContactsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(contacts=list(name="TestContact1", 
+#'                                    companyId=dfp_createCompanies_result$id, 
+#'                                    status='UNINVITED', 
+#'                                    cellPhone='(888) 999-7777',
+#'                                    comment='API Test', 
+#'                                    email='testcontact1@@gmail.com'))
+#' result <- dfp_createContacts(request_data)
+#' }
 #' @export
 dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='createContacts', data=request_data)
@@ -48,6 +58,11 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContactsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getContactsByStatement(dat)
+#' }
 #' @export
 dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='getContactsByStatement', data=request_data)
@@ -69,6 +84,10 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContactsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateContacts(request_data)
+#' }
 #' @export
 dfp_updateContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContactService', root_name='updateContacts', data=request_data)

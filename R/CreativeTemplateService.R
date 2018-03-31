@@ -21,6 +21,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativeTemplatesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCreativeTemplatesByStatement(dat)
+#' }
 #' @export
 dfp_getCreativeTemplatesByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeTemplateService', root_name='getCreativeTemplatesByStatement', data=request_data)

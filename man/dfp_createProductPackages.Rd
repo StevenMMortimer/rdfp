@@ -34,6 +34,11 @@ createProductPackages
 
 Creates new ProductPackage objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createProductPackages(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
 }

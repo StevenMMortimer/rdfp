@@ -19,6 +19,13 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createUsersResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(name = paste0("TestUser", 1:3),
+#'                            email = paste0('testuser', 1:3, '@gmail.com'), 
+#'                            roleId = rep(-1, 3))
+#' result <- dfp_createUsers(request_data)
+#' }
 #' @export
 dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='createUsers', data=request_data)
@@ -37,6 +44,10 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAllRolesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getAllRoles()
+#' }
 #' @export
 dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getAllRoles', data=NULL)
@@ -55,6 +66,10 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCurrentUserResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getCurrentUser()
+#' }
 #' @export
 dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
@@ -84,6 +99,11 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getUsersByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getUsersByStatement(dat)
+#' }
 #' @export
 dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
@@ -105,6 +125,10 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performUserActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performUserAction(request_data)
+#' }
 #' @export
 dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='performUserAction', data=request_data)
@@ -126,6 +150,10 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateUsersResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateUsers(request_data)
+#' }
 #' @export
 dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='updateUsers', data=request_data)

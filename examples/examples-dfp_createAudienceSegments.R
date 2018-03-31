@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createAudienceSegments()
+#'  res <- dfp_createAudienceSegments(request_data)
 #' }

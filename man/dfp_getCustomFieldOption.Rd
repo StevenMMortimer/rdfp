@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a getCustomFie
 \description{
 Returns the CustomFieldOption uniquely identified by the given ID.
 }
+\examples{
+\dontrun{
+ res <- dfp_getCustomFieldOption(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 }

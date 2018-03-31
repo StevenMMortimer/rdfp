@@ -38,6 +38,11 @@ Creates new LiveStreamEvent objects. The following fields are required:
   \item{LiveStreamEvent adTags}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_createLiveStreamEvents(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 }

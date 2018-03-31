@@ -1,4 +1,5 @@
+#' @examples
 #' \dontrun{
-#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
-#'  res <- dfp_getLineItemsByStatement(request_data)
+#' filter <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 10"
+#' result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
 #' }

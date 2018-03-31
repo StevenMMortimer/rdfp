@@ -19,6 +19,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createExchangeRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createExchangeRates(request_data)
+#' }
 #' @export
 dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='createExchangeRates', data=request_data)
@@ -47,6 +51,11 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getExchangeRatesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getExchangeRatesByStatement(dat)
+#' }
 #' @export
 dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='getExchangeRatesByStatement', data=request_data)
@@ -75,6 +84,10 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performExchangeRateActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performExchangeRateAction(request_data)
+#' }
 #' @export
 dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
@@ -96,6 +109,10 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateExchangeRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateExchangeRates(request_data)
+#' }
 #' @export
 dfp_updateExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='updateExchangeRates', data=request_data)

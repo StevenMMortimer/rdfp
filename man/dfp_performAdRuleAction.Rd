@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performAdRul
 \description{
 Performs actions on AdRule objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performAdRuleAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 }

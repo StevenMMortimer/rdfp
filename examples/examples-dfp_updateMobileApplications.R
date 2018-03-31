@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateMobileApplications()
+#'  res <- dfp_updateMobileApplications(request_data)
 #' }

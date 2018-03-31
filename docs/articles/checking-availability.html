@@ -145,23 +145,10 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <h4 class="hasAnchor">
 <a href="#creating-datetimes-in-dfp" class="anchor"></a>Creating Datetimes in DFP</h4>
 <p>DFP keeps track of dates and times by separating things like the year, month, and day into 3 separate integers. The special DFP format requires a function to convert <code>Date</code> objects in R into the corresponding DFP list. The following function is helpful in doing just that.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">date2DFPDateTimeObj &lt;-<span class="st"> </span><span class="cf">function</span>(this_date,
-                                <span class="dt">daytime =</span> <span class="kw">c</span>(<span class="st">'beginning'</span>,<span class="st">'end'</span>), 
-                                <span class="dt">timeZoneID =</span> <span class="st">'America/New_York'</span>){
-  
-  this_hour &lt;-<span class="st"> </span><span class="cf">if</span>(daytime<span class="op">==</span><span class="st">'beginning'</span>) <span class="dv">0</span> <span class="cf">else</span> <span class="dv">23</span>
-  this_minute &lt;-<span class="st"> </span><span class="cf">if</span>(daytime<span class="op">==</span><span class="st">'beginning'</span>) <span class="dv">0</span> <span class="cf">else</span> <span class="dv">59</span>
-  this_second &lt;-<span class="st"> </span><span class="cf">if</span>(daytime<span class="op">==</span><span class="st">'beginning'</span>) <span class="dv">0</span> <span class="cf">else</span> <span class="dv">59</span>
-  
-  x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%Y'</span>)), 
-                      <span class="dt">month=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%m'</span>)), 
-                      <span class="dt">day=</span><span class="kw">as.integer</span>(<span class="kw">format</span>(this_date, <span class="st">'%d'</span>))), 
-            <span class="dt">hour=</span><span class="cf">if</span>(this_hour <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">hour</span>(<span class="kw">Sys.time</span>()<span class="op">+</span><span class="kw">hours</span>(<span class="dv">2</span>)), <span class="dv">23</span>) <span class="cf">else</span> this_hour, 
-            <span class="dt">minute=</span><span class="cf">if</span>(this_minute <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">minute</span>(<span class="kw">Sys.time</span>()), <span class="dv">59</span>) <span class="cf">else</span> this_minute,
-            <span class="dt">second=</span><span class="cf">if</span>(this_second <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>this_date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Date</span>()) <span class="kw">pmin</span>(<span class="kw">as.integer</span>(<span class="kw">second</span>(<span class="kw">Sys.time</span>())), <span class="dv">59</span>) <span class="cf">else</span> this_second,
-            <span class="dt">timeZoneID=</span>timeZoneID)
-  <span class="kw">return</span>(x)
-}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># supply a datetime</span>
+<span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.time</span>())
+<span class="co"># supply a date and assume the beginning of the day for hours, mins, secs</span>
+<span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>()<span class="op">+</span><span class="dv">1</span>, <span class="st">"beginning"</span>)</code></pre></div>
 </div>
 <div id="generating-forecasts" class="section level4">
 <h4 class="hasAnchor">
@@ -172,8 +159,8 @@ month_start_dates &lt;-<span class="st"> </span><span class="kw">as.Date</span>(
 month_end_dates &lt;-<span class="st"> </span><span class="kw">ceiling_date</span>(month_start_dates, <span class="st">'months'</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(month_start_dates)){
   this_sample_line &lt;-<span class="st"> </span>sample_line
-  this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw">date2DFPDateTimeObj</span>(month_start_dates[i], <span class="dt">daytime=</span><span class="st">'beginning'</span>)
-  this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw">date2DFPDateTimeObj</span>(month_end_dates[i], <span class="dt">daytime=</span><span class="st">'end'</span>)
+  this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(month_start_dates[i], <span class="dt">daytime=</span><span class="st">'beginning'</span>)
+  this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(month_end_dates[i], <span class="dt">daytime=</span><span class="st">'end'</span>)
   forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lineItem=</span><span class="kw">list</span>(<span class="dt">lineItem=</span>this_sample_line),
                            <span class="dt">forecastOptions=</span><span class="kw">list</span>(<span class="dt">includeTargetingCriteriaBreakdown=</span><span class="st">'false'</span>, 
                                                 <span class="dt">includeContendingLineItems=</span><span class="st">'false'</span>))
@@ -204,8 +191,7 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 <span class="st">                                  FROM Geo_Target </span>
 <span class="st">                                  WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"</span>))
 
-dfp_select_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select.html">dfp_select</a></span>(request_data)
-us_geos &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select_parse.html">dfp_select_parse</a></span>(dfp_select_result)
+us_geos &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select.html">dfp_select</a></span>(request_data)
 texas_id &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">select</span>(id, <span class="dt">state=</span>name)
@@ -225,8 +211,8 @@ geo_targets &lt;-<span class="st"> </span><span class="kw">lapply</span>(geo_tar
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">this_sample_line &lt;-<span class="st"> </span>sample_line
 
 <span class="co"># look at availability for the next 90 days</span>
-this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw">date2DFPDateTimeObj</span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">daytime=</span><span class="st">'beginning'</span>)
-this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw">date2DFPDateTimeObj</span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">91</span>, <span class="dt">daytime=</span><span class="st">'end'</span>)</code></pre></div>
+this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">daytime=</span><span class="st">'beginning'</span>)
+this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">91</span>, <span class="dt">daytime=</span><span class="st">'end'</span>)</code></pre></div>
 </div>
 <div id="setting-up-the-targeting" class="section level4">
 <h4 class="hasAnchor">
@@ -288,7 +274,7 @@ avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span 
 <div id="availability-for-an-existing-line" class="section level3">
 <h3 class="hasAnchor">
 <a href="#availability-for-an-existing-line" class="anchor"></a>Availability for an Existing Line</h3>
-<p>Sometimes you just want to check the availability on an existing line, say, to see if you can renew an existing contract. DFP makes this very easy, by providing the function <code><a href="../reference/dfp_getAvailabilityForecastById.html">dfp_getAvailabilityForecastById()</a></code>. You’ll need to first determine the Id of the line item you would like to check, then plug it into the function.</p>
+<p>Sometimes you just want to check the availability on an existing line, say, to see if you can renew an existing contract. DFP makes this very easy, by providing the function <code><a href="../reference/dfp_getAvailabilityForecastById.html">dfp_getAvailabilityForecastById()</a></code>. You’ll need to first determine the Id of the line item you would like to check, then plug it into the function. Note the empty <code>list()</code> provided to the <code>forecastOptions</code> argument. The API will error out if you do not provide it, but an empty list will quell those error messages and utilize the default forecast options.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># request for this id with no special forecastOptions</span>
 forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lineItemId=</span>single_item<span class="op">$</span>id,
                          <span class="dt">forecastOptions =</span> <span class="kw">list</span>())

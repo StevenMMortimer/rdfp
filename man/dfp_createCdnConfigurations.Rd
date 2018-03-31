@@ -28,6 +28,11 @@ createCdnConfigurations
 
 Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Creates new CdnConfiguration objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createCdnConfigurations(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 }

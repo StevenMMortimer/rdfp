@@ -29,6 +29,12 @@ Gets an ActivityPage of Activity objects that satisfy the given Statement query.
   \item{activityGroupId}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getActivitiesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
 }

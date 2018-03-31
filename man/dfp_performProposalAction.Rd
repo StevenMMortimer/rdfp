@@ -27,6 +27,11 @@ Performs actions on Proposal objects that match the given Statement query. The f
   \item{Proposal primaryTraffickerId}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_performProposalAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 }

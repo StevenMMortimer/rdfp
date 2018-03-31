@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_getCustomFieldOption()
+#'  res <- dfp_getCustomFieldOption(request_data)
 #' }

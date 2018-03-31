@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePropos
 \description{
 Updates the specified Proposal objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateProposals(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#updateProposals}{Google Documentation for updateProposals}
 }

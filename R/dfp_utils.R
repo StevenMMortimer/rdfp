@@ -68,6 +68,57 @@ execute_soap_request <- function(request_body, service = NULL,
 }
 
 
+#' Format a datetime for DFP
+#' 
+#' Take a datetime representation in R and convert it to the list required by 
+#' DFP to indicate a datetime
+#' 
+#' @importFrom lubridate year month day hour minute second hours is.Date
+#' @param this_date Date; formatted as Date, POSIXct, or POSIXlt
+#' @param daytime character; either "beginning" or "end" so that the function 
+#' knows which hours to set if needed
+#' @param timeZoneID character; a string indicating the timezone that should be used. 
+#' The timezone ID must be in Time_Zone database
+#' @param ensure_today_works logical; an indicator that will automatically offset 
+#' the current time by 1 hour so that forecasts will actually work. If you try to 
+#' forecast from a timestamp of now, then by the time you submit it to the ForecastService 
+#' it will already be too late to be in the future.
+#' @return a \code{list} formatted to the spec required for StartDateTime or EndDateTime
+#' @examples 
+#' dfp_date_to_list(Sys.Date()+1)
+#' @export
+dfp_date_to_list <- function(this_date,
+                             daytime = c('beginning','end'), 
+                             timeZoneID = 'America/New_York', 
+                             ensure_today_works=TRUE){
+  
+  which_daytime <- match.arg(daytime)
+  
+  if(ensure_today_works & (difftime(this_date, (Sys.time()+hours(1))) < 0)){
+    warning("The date provided is not at least 1 hour into the future. Setting to one hour after now.")
+    this_date <- Sys.time() + hours(1)
+  }  
+  
+  if(is.Date(this_date)){
+    this_hour <- if(which_daytime == 'beginning') 0 else 23
+    this_minute <- if(which_daytime == 'beginning') 0 else 59
+    this_second <- if(which_daytime == 'beginning') 0 else 59
+  } else {
+    this_hour <- hour(this_date)
+    this_minute <- minute(this_date)
+    this_second <- second(this_date)
+  }
+  
+  x <- list(date=list(year = year(this_date),
+                      month = month(this_date), 
+                      day = day(this_date)), 
+            hour = this_hour, 
+            minute = this_minute,
+            second = this_second,
+            timeZoneID = timeZoneID)
+  return(x)
+}
+
 #' Function to catch and print HTTP errors
 #'
 #' @importFrom httr content http_error status_code
@@ -161,7 +212,22 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
 #' whether the report is complete before the function essentially times out
 #' @param verbose a logical indicating whether to print the report URL
 #' @return a \code{data.frame} of report results as specified by the request_data
-#' 
+#' @examples 
+#' \dontrun{
+#' request_data <- list(reportJob =
+#'                        list(reportQuery =
+#'                               list(dimensions = 'MONTH_AND_YEAR',
+#'                                    dimensions = 'AD_UNIT_ID',
+#'                                    dimensions = 'AD_UNIT_NAME',
+#'                                    dimensions = 'ADVERTISER_NAME',
+#'                                    dimensions = 'ORDER_NAME',
+#'                                    dimensions = 'LINE_ITEM_NAME',
+#'                                    adUnitView = 'FLAT',
+#'                                    columns = 'AD_SERVER_IMPRESSIONS', 
+#'                                    columns = 'AD_SERVER_CLICKS',
+#'                                    dateRangeType = 'LAST_WEEK')))
+#' report_data <- dfp_full_report_wrapper(request_data)
+#' }
 #' @seealso \link{dfp_runReportJob} 
 #' @seealso \link{dfp_getReportJobStatus}
 #' @seealso \link{dfp_getReportDownloadURL}

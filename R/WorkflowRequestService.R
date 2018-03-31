@@ -29,6 +29,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getWorkflowRequestsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getWorkflowRequestsByStatement(dat)
+#' }
 #' @export
 dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='WorkflowRequestService', root_name='getWorkflowRequestsByStatement', data=request_data)
@@ -50,6 +55,10 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performWorkflowRequestActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performWorkflowRequestAction(request_data)
+#' }
 #' @export
 dfp_performWorkflowRequestAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='WorkflowRequestService', root_name='performWorkflowRequestAction', data=request_data)

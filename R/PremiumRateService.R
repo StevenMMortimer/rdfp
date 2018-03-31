@@ -20,6 +20,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createPremiumRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createPremiumRates(request_data)
+#' }
 #' @export
 dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
@@ -46,6 +50,11 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPremiumRatesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getPremiumRatesByStatement(dat)
+#' }
 #' @export
 dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
@@ -67,6 +76,10 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updatePremiumRatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updatePremiumRates(request_data)
+#' }
 #' @export
 dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)

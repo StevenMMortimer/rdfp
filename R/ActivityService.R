@@ -21,6 +21,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createActivitiesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createActivities(request_data)
+#' }
 #' @export
 dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='createActivities', data=request_data)
@@ -49,6 +53,11 @@ dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getActivitiesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getActivitiesByStatement(dat)
+#' }
 #' @export
 dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='getActivitiesByStatement', data=request_data)
@@ -70,6 +79,10 @@ dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateActivitiesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateActivities(request_data)
+#' }
 #' @export
 dfp_updateActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='updateActivities', data=request_data)

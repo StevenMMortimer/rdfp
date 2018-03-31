@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performConte
 \description{
 Performs actions on ContentMetadataKeyHierarchy objects that match the given \{@link Statement query\}.
 }
+\examples{
+\dontrun{
+ res <- dfp_performContentMetadataKeyHierarchyAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentMetadataKeyHierarchyService#performContentMetadataKeyHierarchyAction}{Google Documentation for performContentMetadataKeyHierarchyAction}
 }

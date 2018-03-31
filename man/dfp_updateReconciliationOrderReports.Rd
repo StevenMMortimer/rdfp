@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateReconc
 \description{
 Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateReconciliationOrderReports(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 }

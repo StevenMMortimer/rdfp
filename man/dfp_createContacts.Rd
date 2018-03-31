@@ -27,6 +27,17 @@ createContacts
 
 Creates new Contact objects.
 }
+\examples{
+\dontrun{
+request_data <- list(contacts=list(name="TestContact1", 
+                                   companyId=dfp_createCompanies_result$id, 
+                                   status='UNINVITED', 
+                                   cellPhone='(888) 999-7777',
+                                   comment='API Test', 
+                                   email='testcontact1@gmail.com'))
+result <- dfp_createContacts(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#createContacts}{Google Documentation for createContacts}
 }

@@ -30,6 +30,12 @@ Gets a PackagePage of Package objects that satisfy the given Statement query. Th
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getPackagesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
 }

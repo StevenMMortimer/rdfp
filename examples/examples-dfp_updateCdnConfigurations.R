@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateCdnConfigurations()
+#'  res <- dfp_updateCdnConfigurations(request_data)
 #' }

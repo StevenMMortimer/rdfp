@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createContentBundles()
+#'  res <- dfp_createContentBundles(request_data)
 #' }

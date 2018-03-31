@@ -163,6 +163,15 @@ a <code>data.frame</code></p></td>
     <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService#getAvailabilityForecastById'>Google Documentation for getAvailabilityForecastById</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>filter</span> <span class='kw'>&lt;-</span> <span class='st'>"WHERE Status='DELIVERING' LIMIT 1"</span>
+<span class='no'>one_li</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='dfp_getLineItemsByStatement.html'>dfp_getLineItemsByStatement</a></span>(<span class='fu'>list</span>(<span class='kw'>filterStatement</span><span class='kw'>=</span><span class='fu'>list</span>(<span class='kw'>query</span><span class='kw'>=</span><span class='no'>filter</span>)))<span class='kw'>[[</span><span class='fl'>1</span>]]
+<span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>lineItemId</span><span class='kw'>=</span><span class='no'>one_li</span>$<span class='no'>id</span>,
+                     <span class='kw'>forecastOptions</span><span class='kw'>=</span><span class='fu'>list</span>(<span class='kw'>includeTargetingCriteriaBreakdown</span><span class='kw'>=</span><span class='st'>'true'</span>,
+                                          <span class='kw'>includeContendingLineItems</span><span class='kw'>=</span><span class='st'>'true'</span>))
+<span class='no'>result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_getAvailabilityForecastById</span>(<span class='no'>request_data</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -172,7 +181,9 @@ a <code>data.frame</code></p></td>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

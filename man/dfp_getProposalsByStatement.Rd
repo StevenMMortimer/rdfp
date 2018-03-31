@@ -36,6 +36,12 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
   \item{negotiationStatus Only applicable for programmatic proposals}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getProposalsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 }

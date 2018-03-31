@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_getReportDownloadUrlWithOptions()
+#'  res <- dfp_getReportDownloadUrlWithOptions(request_data)
 #' }

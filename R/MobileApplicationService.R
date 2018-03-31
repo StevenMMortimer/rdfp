@@ -15,6 +15,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createMobileApplicationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createMobileApplications(request_data)
+#' }
 #' @export
 dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='createMobileApplications', data=request_data)
@@ -44,6 +48,11 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getMobileApplicationsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getMobileApplicationsByStatement(dat)
+#' }
 #' @export
 dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='getMobileApplicationsByStatement', data=request_data)
@@ -65,6 +74,10 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performMobileApplicationActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performMobileApplicationAction(request_data)
+#' }
 #' @export
 dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='performMobileApplicationAction', data=request_data)
@@ -86,6 +99,10 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateMobileApplicationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateMobileApplications(request_data)
+#' }
 #' @export
 dfp_updateMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='updateMobileApplications', data=request_data)

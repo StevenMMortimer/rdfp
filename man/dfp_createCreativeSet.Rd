@@ -27,6 +27,11 @@ createCreativeSet
 
 Creates a new CreativeSet.
 }
+\examples{
+\dontrun{
+ res <- dfp_createCreativeSet(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 }

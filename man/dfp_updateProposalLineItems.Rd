@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePropos
 \description{
 Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateProposalLineItems(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 }

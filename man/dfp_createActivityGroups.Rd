@@ -33,6 +33,11 @@ createActivityGroups
 
 Creates a new ActivityGroup objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createActivityGroups(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }

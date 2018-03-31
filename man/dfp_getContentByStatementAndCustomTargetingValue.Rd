@@ -25,6 +25,11 @@ Gets a ContentPage of Content objects that satisfy the given Statement query. Ad
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_getContentByStatementAndCustomTargetingValue()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 }

@@ -30,6 +30,12 @@ Gets a AdUnitPage of AdUnit objects that satisfy the given Statement query. The 
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getAdUnitsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 }

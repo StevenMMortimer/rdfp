@@ -40,6 +40,12 @@ Gets a LineItemPage of LineItem objects that satisfy the given Statement query. 
   \item{UnitsBought}
 }
 }
+\examples{
+\dontrun{
+filter <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 10"
+result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 }

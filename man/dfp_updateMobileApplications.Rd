@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateMobile
 \description{
 Updates the specified MobileApplication mobile applications.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateMobileApplications(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 }

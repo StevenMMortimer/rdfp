@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createActivityGroups()
+#'  res <- dfp_createActivityGroups(request_data)
 #' }

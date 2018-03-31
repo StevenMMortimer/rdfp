@@ -20,6 +20,13 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomTargetingKeysResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(keys=list(name="Test1", 
+#'                                displayName="TestKey1", 
+#'                                type='FREEFORM'))
+#' result <- dfp_createCustomTargetingKeys(request_data)
+#' }
 #' @export
 dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
@@ -45,6 +52,14 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomTargetingValuesResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(customTargetingKeyId=rep(created_targeting_key$id,2),
+#'                            name=c('TestValue1','TestValue2'), 
+#'                            displayName=c('TestValue1','TestValue2'), 
+#'                            matchType=rep('EXACT', 2))
+#' result <- dfp_createCustomTargetingValues(request_data)
+#' }
 #' @export
 dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
@@ -73,6 +88,11 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomTargetingKeysByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCustomTargetingKeysByStatement(dat)
+#' }
 #' @export
 dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
@@ -101,6 +121,11 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomTargetingValuesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCustomTargetingValuesByStatement(dat)
+#' }
 #' @export
 dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
@@ -122,6 +147,10 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performCustomTargetingKeyActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performCustomTargetingKeyAction(request_data)
+#' }
 #' @export
 dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
@@ -143,6 +172,10 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performCustomTargetingValueActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performCustomTargetingValueAction(request_data)
+#' }
 #' @export
 dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
@@ -164,6 +197,10 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomTargetingKeysResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCustomTargetingKeys(request_data)
+#' }
 #' @export
 dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
@@ -185,6 +222,10 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomTargetingValuesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCustomTargetingValues(request_data)
+#' }
 #' @export
 dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)

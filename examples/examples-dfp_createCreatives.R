@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createCreatives()
+#'  res <- dfp_createCreatives(request_data)
 #' }

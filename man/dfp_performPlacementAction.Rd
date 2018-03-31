@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performPlace
 \description{
 Performs actions on Placement objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performPlacementAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 }

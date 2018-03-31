@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateAdExcl
 \description{
 Updates the specified AdExclusionRule objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateAdExclusionRules(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 }

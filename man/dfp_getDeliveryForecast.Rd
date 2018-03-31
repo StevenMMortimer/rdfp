@@ -22,6 +22,23 @@ a \code{data.frame} or \code{list} containing all the elements of a getDeliveryF
 \description{
 Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItems line items to be forecasted for delivery @param forecastOptions options controlling the forecast Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItems line items to be forecasted for delivery @param forecastOptions options controlling the forecast
 }
+\examples{
+\dontrun{
+filter <- "WHERE Status='DELIVERING' LIMIT 1"
+one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+hypothetical_line_item <- list(lineItem=
+                               list(id=one_li$id,
+                                    startDateTime=one_li$startDateTime,
+                                    endDateTime=dfp_date_to_list(Sys.Date()+100),
+                                    lineItemType=one_li$lineItemType,
+                                    costType=one_li$costType, 
+                                    primaryGoal=one_li$primaryGoal, 
+                                    targeting=one_li$targeting))
+request_data <- list(lineItems=hypothetical_line_item,
+                     forecastOptions=list(ignoredLineItemIds=NULL))
+dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 }

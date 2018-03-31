@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateConten
 \description{
 Updates the specified ContentMetadataKeyHierarchy objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateContentMetadataKeyHierarchies(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentMetadataKeyHierarchyService#updateContentMetadataKeyHierarchies}{Google Documentation for updateContentMetadataKeyHierarchies}
 }

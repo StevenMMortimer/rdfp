@@ -4,7 +4,7 @@
 \alias{dfp_select_parse}
 \title{Take select request and return data.frame}
 \usage{
-dfp_select_parse(result_data)
+dfp_select_parse(result)
 }
 \arguments{
 \item{result}{a \code{list} returned from \link{dfp_select}}

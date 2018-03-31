@@ -27,6 +27,11 @@ createNativeStyles
 
 Creates new NativeStyle objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createNativeStyles(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 }

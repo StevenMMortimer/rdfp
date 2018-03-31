@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performLineI
 \description{
 Performs actions on LineItemCreativeAssociation objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performLineItemCreativeAssociationAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 }

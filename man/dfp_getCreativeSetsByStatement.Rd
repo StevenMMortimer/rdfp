@@ -28,6 +28,12 @@ Gets a CreativeSetPage of CreativeSet objects that satisfy the given Statement q
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getCreativeSetsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 }

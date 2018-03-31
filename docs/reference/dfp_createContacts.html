@@ -162,6 +162,16 @@ a <code>data.frame</code></p></td>
     <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#createContacts'>Google Documentation for createContacts</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>contacts</span><span class='kw'>=</span><span class='fu'>list</span>(<span class='kw'>name</span><span class='kw'>=</span><span class='st'>"TestContact1"</span>,
+                                   <span class='kw'>companyId</span><span class='kw'>=</span><span class='no'>dfp_createCompanies_result</span>$<span class='no'>id</span>,
+                                   <span class='kw'>status</span><span class='kw'>=</span><span class='st'>'UNINVITED'</span>,
+                                   <span class='kw'>cellPhone</span><span class='kw'>=</span><span class='st'>'(888) 999-7777'</span>,
+                                   <span class='kw'>comment</span><span class='kw'>=</span><span class='st'>'API Test'</span>,
+                                   <span class='kw'>email</span><span class='kw'>=</span><span class='st'>'testcontact1@gmail.com'</span>))
+<span class='no'>result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_createContacts</span>(<span class='no'>request_data</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -173,7 +183,9 @@ a <code>data.frame</code></p></td>
       <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

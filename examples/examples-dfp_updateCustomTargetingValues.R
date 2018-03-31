@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateCustomTargetingValues()
+#'  res <- dfp_updateCustomTargetingValues(request_data)
 #' }

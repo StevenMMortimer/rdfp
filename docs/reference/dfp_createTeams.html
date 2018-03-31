@@ -166,6 +166,15 @@ companies, inventory and orders.</p>
     <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#createTeams'>Google Documentation for createTeams</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>teams</span><span class='kw'>=</span><span class='fu'>list</span>(<span class='kw'>name</span><span class='kw'>=</span><span class='st'>"TestTeam1"</span>,
+                                <span class='kw'>description</span><span class='kw'>=</span><span class='st'>'API Test Team 1'</span>,
+                                <span class='kw'>hasAllCompanies</span><span class='kw'>=</span><span class='st'>'true'</span>,
+                                <span class='kw'>hasAllInventory</span><span class='kw'>=</span><span class='st'>'true'</span>,
+                                <span class='kw'>teamAccessType</span><span class='kw'>=</span><span class='st'>'READ_WRITE'</span>))
+<span class='no'>result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_createTeams</span>(<span class='no'>request_data</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -177,7 +186,9 @@ companies, inventory and orders.</p>
       <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performProdu
 \description{
 Performs action on Product objects that satisfy the given Statement.
 }
+\examples{
+\dontrun{
+ res <- dfp_performProductAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#performProductAction}{Google Documentation for performProductAction}
 }

@@ -60,6 +60,23 @@ select
 
 Retrieves rows of data that satisfy the given Statement query from the system.
 }
+\examples{
+\dontrun{
+ request_data <- list(selectStatement=
+ list(query='SELECT Id, Name, Targeting FROM LineItem LIMIT 3')) 
+ dfp_select_result <- dfp_select(request_data)
+ 
+ request_data <- list(selectStatement=
+ list(query="SELECT Id
+                  , Name
+                  , CanonicalParentId
+                  , CountryCode
+                  , Type 
+             FROM Geo_Target 
+             WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
+ us_geos <- dfp_select(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#select}{Google Documentation for select}
 }

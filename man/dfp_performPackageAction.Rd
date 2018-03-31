@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performPacka
 \description{
 Performs actions on Package objects that match the given Statement.
 }
+\examples{
+\dontrun{
+ res <- dfp_performPackageAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#performPackageAction}{Google Documentation for performPackageAction}
 }

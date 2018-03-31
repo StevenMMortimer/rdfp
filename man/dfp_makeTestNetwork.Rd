@@ -45,6 +45,11 @@ Test networks are limited in the following ways:
   \item{Test networks are limited to 10,000 objects per entity type.}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_makeTestNetwork()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 }

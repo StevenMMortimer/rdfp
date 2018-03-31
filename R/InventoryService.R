@@ -22,6 +22,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createAdUnitsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createAdUnits(request_data)
+#' }
 #' @export
 dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='createAdUnits', data=request_data)
@@ -46,6 +50,11 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitSizesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getAdUnitSizesByStatement(dat)
+#' }
 #' @export
 dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
@@ -75,6 +84,11 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getAdUnitsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getAdUnitsByStatement(dat)
+#' }
 #' @export
 dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
@@ -96,6 +110,10 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performAdUnitActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performAdUnitAction(request_data)
+#' }
 #' @export
 dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
@@ -117,6 +135,10 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateAdUnitsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateAdUnits(request_data)
+#' }
 #' @export
 dfp_updateAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='updateAdUnits', data=request_data)

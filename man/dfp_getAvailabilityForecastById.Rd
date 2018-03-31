@@ -25,6 +25,16 @@ Only line items having type LineItemType SPONSORSHIP or \{@link LineItemType STA
 Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @param lineItemId the ID of a LineItem to run the forecast on. @param forecastOptions options controlling the forecast Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
 Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @param lineItemId the ID of a LineItem to run the forecast on. @param forecastOptions options controlling the forecast
 }
+\examples{
+\dontrun{
+filter <- "WHERE Status='DELIVERING' LIMIT 1"
+one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+request_data <- list(lineItemId=one_li$id,
+                     forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
+                                          includeContendingLineItems='true'))
+result <- dfp_getAvailabilityForecastById(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 }

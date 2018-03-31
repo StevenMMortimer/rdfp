@@ -22,6 +22,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductPackagesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createProductPackages(request_data)
+#' }
 #' @export
 dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
@@ -51,6 +55,11 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductPackagesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getProductPackagesByStatement(dat)
+#' }
 #' @export
 dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
@@ -72,6 +81,10 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductPackageActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performProductPackageAction(request_data)
+#' }
 #' @export
 dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
@@ -93,6 +106,10 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductPackagesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateProductPackages(request_data)
+#' }
 #' @export
 dfp_updateProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)

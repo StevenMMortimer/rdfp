@@ -29,6 +29,23 @@ a \code{data.frame} of report results as specified by the request_data
 Take a report request and manage all aspects for user
 until returning a data.frame or error
 }
+\examples{
+\dontrun{
+request_data <- list(reportJob =
+                       list(reportQuery =
+                              list(dimensions = 'MONTH_AND_YEAR',
+                                   dimensions = 'AD_UNIT_ID',
+                                   dimensions = 'AD_UNIT_NAME',
+                                   dimensions = 'ADVERTISER_NAME',
+                                   dimensions = 'ORDER_NAME',
+                                   dimensions = 'LINE_ITEM_NAME',
+                                   adUnitView = 'FLAT',
+                                   columns = 'AD_SERVER_IMPRESSIONS', 
+                                   columns = 'AD_SERVER_CLICKS',
+                                   dateRangeType = 'LAST_WEEK')))
+report_data <- dfp_full_report_wrapper(request_data)
+}
+}
 \seealso{
 \link{dfp_runReportJob}
 

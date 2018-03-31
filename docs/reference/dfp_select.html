@@ -136,7 +136,7 @@ query text might be "select CountryCode, Name from Geo_Target", where
 CountryCode and Name are columns of interest and Geo_Target is the table.</p>
     
 
-    <pre class="usage"><span class='fu'>dfp_select</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>dfp_select</span>(<span class='no'>request_data</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -146,11 +146,6 @@ CountryCode and Name are columns of interest and Geo_Target is the table.</p>
       <td><p>a <code>list</code> or <code>data.frame</code> of data elements
 to be formatted for a SOAP
 request (XML format, but passed as character string)</p></td>
-    </tr>
-    <tr>
-      <th>as_df</th>
-      <td><p>a boolean indicating whether to attempt to parse the result into
-a <code>data.frame</code></p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -200,6 +195,22 @@ a <code>data.frame</code></p></td>
     <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#select'>Google Documentation for select</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+ <span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>selectStatement</span><span class='kw'>=</span>
+ <span class='fu'>list</span>(<span class='kw'>query</span><span class='kw'>=</span><span class='st'>'SELECT Id, Name, Targeting FROM LineItem LIMIT 3'</span>))
+ <span class='no'>dfp_select_result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_select</span>(<span class='no'>request_data</span>)
+
+ <span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>selectStatement</span><span class='kw'>=</span>
+ <span class='fu'>list</span>(<span class='kw'>query</span><span class='kw'>=</span><span class='st'>"SELECT Id
+                  , Name
+                  , CanonicalParentId
+                  , CountryCode
+                  , Type 
+             FROM Geo_Target 
+             WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"</span>))
+ <span class='no'>us_geos</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_select</span>(<span class='no'>request_data</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -211,7 +222,9 @@ a <code>data.frame</code></p></td>
       <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

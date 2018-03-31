@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createAdRules()
+#'  res <- dfp_createAdRules(request_data)
 #' }

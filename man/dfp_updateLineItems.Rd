@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateLineIt
 \description{
 Updates the specified LineItem objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateLineItems(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 }

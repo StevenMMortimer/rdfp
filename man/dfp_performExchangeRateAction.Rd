@@ -29,6 +29,11 @@ Performs an action on ExchangeRate objects that satisfy the given Statement quer
   \item{exchangeRate}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_performExchangeRateAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 }

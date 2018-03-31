@@ -15,6 +15,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCreativeSetResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createCreativeSet(request_data)
+#' }
 #' @export
 dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='createCreativeSet', data=request_data)
@@ -42,6 +46,11 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCreativeSetsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCreativeSetsByStatement(dat)
+#' }
 #' @export
 dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='getCreativeSetsByStatement', data=request_data)
@@ -63,6 +72,10 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCreativeSetResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCreativeSet(request_data)
+#' }
 #' @export
 dfp_updateCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='updateCreativeSet', data=request_data)

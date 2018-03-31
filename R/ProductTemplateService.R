@@ -23,6 +23,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProductTemplatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createProductTemplates(request_data)
+#' }
 #' @export
 dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
@@ -55,6 +59,11 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProductTemplatesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getProductTemplatesByStatement(dat)
+#' }
 #' @export
 dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
@@ -76,6 +85,10 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProductTemplateActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performProductTemplateAction(request_data)
+#' }
 #' @export
 dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
@@ -97,6 +110,10 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProductTemplatesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateProductTemplates(request_data)
+#' }
 #' @export
 dfp_updateProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)

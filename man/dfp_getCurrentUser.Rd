@@ -18,6 +18,11 @@ a \code{data.frame} or \code{list} containing all the elements of a getCurrentUs
 \description{
 Returns the current User. Returns the current User. @return the current user Returns the current User. @return the current user
 }
+\examples{
+\dontrun{
+ res <- dfp_getCurrentUser()
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 }

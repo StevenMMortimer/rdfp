@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateCustomFields()
+#'  res <- dfp_updateCustomFields(request_data)
 #' }

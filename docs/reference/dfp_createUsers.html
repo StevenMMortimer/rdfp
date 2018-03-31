@@ -165,6 +165,13 @@ and their IDs can be retrieved by invoking #getAllRoles.</p>
     <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#createUsers'>Google Documentation for createUsers</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>request_data</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='st'>"TestUser"</span>, <span class='fl'>1</span>:<span class='fl'>3</span>),
+                           <span class='kw'>email</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='st'>'testuser'</span>, <span class='fl'>1</span>:<span class='fl'>3</span>, <span class='st'>'@gmail.com'</span>),
+                           <span class='kw'>roleId</span> <span class='kw'>=</span> <span class='fu'>rep</span>(-<span class='fl'>1</span>, <span class='fl'>3</span>))
+<span class='no'>result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_createUsers</span>(<span class='no'>request_data</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -176,7 +183,9 @@ and their IDs can be retrieved by invoking #getAllRoles.</p>
       <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createPlacements()
+#'  res <- dfp_createPlacements(request_data)
 #' }

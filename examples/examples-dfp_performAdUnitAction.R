@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_performAdUnitAction()
+#'  res <- dfp_performAdUnitAction(request_data)
 #' }

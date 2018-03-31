@@ -28,6 +28,12 @@ Gets a CompanyPage of Company objects that satisfy the given Statement query. Th
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getCompaniesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 }

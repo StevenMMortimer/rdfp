@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCustom
 \description{
 Updates the specified CustomTargetingValue objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateCustomTargetingValues(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 }

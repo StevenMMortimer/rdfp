@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_performWorkflowRequestAction()
+#'  res <- dfp_performWorkflowRequestAction(request_data)
 #' }

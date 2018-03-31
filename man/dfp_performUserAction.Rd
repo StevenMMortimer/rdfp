@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performUserA
 \description{
 Performs actions on User objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performUserAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#performUserAction}{Google Documentation for performUserAction}
 }

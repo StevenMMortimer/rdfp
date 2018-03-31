@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_performProposalAction()
+#'  res <- dfp_performProposalAction(request_data)
 #' }

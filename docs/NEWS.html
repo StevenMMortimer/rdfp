@@ -129,6 +129,11 @@
 <ul>
 <li>
 <code><a href="reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe()</a></code> now returns a <code>tbl_df</code> object for better printing and casted data types</li>
+<li>Simplified <code><a href="reference/dfp_select.html">dfp_select()</a></code> so that it automatically uses <code><a href="reference/dfp_select_parse.html">dfp_select_parse()</a></code> to format the result into a <code>tbl_df</code>
+</li>
+<li>Added <code>dfp_date_as_list()</code> that will convert a date or datetime representation in R to the required list format for submission to DFP<br>
+</li>
+<li>Started to add some examples to functions so that the inline documentation gives a better idea of how to make it work in R</li>
 </ul>
 </div>
 <div id="bug-fixes" class="section level3">

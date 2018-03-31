@@ -23,6 +23,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createProposalsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createProposals(request_data)
+#' }
 #' @export
 dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='createProposals', data=request_data)
@@ -47,6 +51,11 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getMarketplaceCommentsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getMarketplaceCommentsByStatement(dat)
+#' }
 #' @export
 dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
@@ -82,6 +91,11 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getProposalsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getProposalsByStatement(dat)
+#' }
 #' @export
 dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
@@ -108,6 +122,10 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performProposalActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performProposalAction(request_data)
+#' }
 #' @export
 dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
@@ -129,6 +147,10 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateProposalsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateProposals(request_data)
+#' }
 #' @export
 dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='updateProposals', data=request_data)

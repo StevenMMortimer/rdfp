@@ -54,6 +54,12 @@ Gets a ContentPage of Content objects that satisfy the given \{@link Statement q
   \item{daiIngestStatus}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getContentByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 }

@@ -34,6 +34,12 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
   \item{lastModifiedDateTime}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getProductsByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }

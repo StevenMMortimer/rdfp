@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateNative
 \description{
 Updates the specified NativeStyle objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateNativeStyles(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 }

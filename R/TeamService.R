@@ -21,6 +21,15 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createTeamsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- list(teams=list(name="TestTeam1", 
+#'                                 description='API Test Team 1', 
+#'                                 hasAllCompanies='true', 
+#'                                 hasAllInventory='true',
+#'                                 teamAccessType='READ_WRITE'))
+#' result <- dfp_createTeams(request_data)
+#' }
 #' @export
 dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='createTeams', data=request_data)
@@ -47,6 +56,11 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getTeamsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getTeamsByStatement(dat)
+#' }
 #' @export
 dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
@@ -68,6 +82,10 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performTeamActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performTeamAction(request_data)
+#' }
 #' @export
 dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='performTeamAction', data=request_data)
@@ -89,6 +107,10 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateTeamsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateTeams(request_data)
+#' }
 #' @export
 dfp_updateTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='updateTeams', data=request_data)

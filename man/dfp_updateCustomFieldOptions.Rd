@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updateCustom
 \description{
 Updates the specified CustomFieldOption objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updateCustomFieldOptions(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 }

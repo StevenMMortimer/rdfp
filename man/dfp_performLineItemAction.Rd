@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performLineI
 \description{
 Performs actions on LineItem objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performLineItemAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 }

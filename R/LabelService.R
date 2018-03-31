@@ -15,6 +15,15 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLabelsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(name="Auto - Competitive Exclusion",
+#'                            description=paste0("A label to prevent two different car ",
+#'                                               "companies from showing ads together"),
+#'                            types='COMPETITIVE_EXCLUSION')
+#' request_data <- list('labels'=hypothetical_label)
+#' result <- dfp_createLabels(request_data)
+#' }
 #' @export
 dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='createLabels', data=request_data)
@@ -43,6 +52,11 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLabelsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getLabelsByStatement(dat)
+#' }
 #' @export
 dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
@@ -64,6 +78,10 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLabelActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performLabelAction(request_data)
+#' }
 #' @export
 dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
@@ -85,6 +103,10 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLabelsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateLabels(request_data)
+#' }
 #' @export
 dfp_updateLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='updateLabels', data=request_data)

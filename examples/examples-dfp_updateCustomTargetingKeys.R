@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateCustomTargetingKeys()
+#'  res <- dfp_updateCustomTargetingKeys(request_data)
 #' }

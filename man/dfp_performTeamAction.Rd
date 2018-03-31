@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performTeamA
 \description{
 Performs actions on Team objects that match the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performTeamAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#performTeamAction}{Google Documentation for performTeamAction}
 }

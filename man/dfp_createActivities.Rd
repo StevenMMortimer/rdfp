@@ -33,6 +33,11 @@ createActivities
 
 Creates a new Activity objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createActivities(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityService#createActivities}{Google Documentation for createActivities}
 }

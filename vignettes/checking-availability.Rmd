@@ -106,23 +106,10 @@ convert `Date` objects in R into the corresponding DFP list. The following
 function is helpful in doing just that.
 
 ```{r date-converter-func}
-date2DFPDateTimeObj <- function(this_date,
-                                daytime = c('beginning','end'), 
-                                timeZoneID = 'America/New_York'){
-  
-  this_hour <- if(daytime=='beginning') 0 else 23
-  this_minute <- if(daytime=='beginning') 0 else 59
-  this_second <- if(daytime=='beginning') 0 else 59
-  
-  x <- list(date=list(year=as.integer(format(this_date, '%Y')), 
-                      month=as.integer(format(this_date, '%m')), 
-                      day=as.integer(format(this_date, '%d'))), 
-            hour=if(this_hour == 0 & this_date == Sys.Date()) pmin(hour(Sys.time()+hours(2)), 23) else this_hour, 
-            minute=if(this_minute == 0 & this_date == Sys.Date()) pmin(minute(Sys.time()), 59) else this_minute,
-            second=if(this_second == 0 & this_date == Sys.Date()) pmin(as.integer(second(Sys.time())), 59) else this_second,
-            timeZoneID=timeZoneID)
-  return(x)
-}
+# supply a datetime
+dfp_date_to_list(Sys.time())
+# supply a date and assume the beginning of the day for hours, mins, secs
+dfp_date_to_list(Sys.Date()+1, "beginning")
 ```
 
 #### Generating Forecasts
@@ -144,8 +131,8 @@ month_start_dates <- as.Date(format(Sys.Date() %m+% months(1:6), '%Y-%m-01'))
 month_end_dates <- ceiling_date(month_start_dates, 'months') - 1
 for(i in 1:length(month_start_dates)){
   this_sample_line <- sample_line
-  this_sample_line$startDateTime <- date2DFPDateTimeObj(month_start_dates[i], daytime='beginning')
-  this_sample_line$endDateTime <- date2DFPDateTimeObj(month_end_dates[i], daytime='end')
+  this_sample_line$startDateTime <- dfp_date_to_list(month_start_dates[i], daytime='beginning')
+  this_sample_line$endDateTime <- dfp_date_to_list(month_end_dates[i], daytime='end')
   forecast_request <- list(lineItem=list(lineItem=this_sample_line),
                            forecastOptions=list(includeTargetingCriteriaBreakdown='false', 
                                                 includeContendingLineItems='false'))
@@ -219,8 +206,8 @@ so we'll consider a 90-day period in the future.
 this_sample_line <- sample_line
 
 # look at availability for the next 90 days
-this_sample_line$startDateTime <- date2DFPDateTimeObj(Sys.Date() + 1, daytime='beginning')
-this_sample_line$endDateTime <- date2DFPDateTimeObj(Sys.Date() + 91, daytime='end')
+this_sample_line$startDateTime <- dfp_date_to_list(Sys.Date() + 1, daytime='beginning')
+this_sample_line$endDateTime <- dfp_date_to_list(Sys.Date() + 91, daytime='end')
 ```
 
 #### Setting up The Targeting

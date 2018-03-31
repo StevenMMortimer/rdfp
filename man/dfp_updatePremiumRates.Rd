@@ -22,6 +22,11 @@ a \code{data.frame} or \code{list} containing all the elements of a updatePremiu
 \description{
 Updates the specified PremiumRate objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_updatePremiumRates(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 }

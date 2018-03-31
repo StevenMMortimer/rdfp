@@ -27,6 +27,12 @@ Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. 
   \item{productTemplateId}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getBaseRatesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 }

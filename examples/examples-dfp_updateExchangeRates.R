@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_updateExchangeRates()
+#'  res <- dfp_updateExchangeRates(request_data)
 #' }

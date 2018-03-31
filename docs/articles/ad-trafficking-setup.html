@@ -110,11 +110,12 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this creates a label called "Auto - Competitive Exclusion" that we can add</span>
 <span class="co"># to any line item or order that we might want to use to prevent from clashing </span>
 <span class="co"># where two different car advertisers ads should not be shown at once.</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">"Auto - Competitive Exclusion"</span>, 
+request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">"Auto - Competitive Exclusion"</span>,
                            <span class="dt">description=</span><span class="kw">paste0</span>(<span class="st">"A label to prevent two different car "</span>,
-                                              <span class="st">"companies from showing ads together"</span>), 
+                                              <span class="st">"companies from showing ads together"</span>),
                            <span class="dt">types=</span><span class="st">'COMPETITIVE_EXCLUSION'</span>)
-dfp_createLabels_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createLabels.html">dfp_createLabels</a></span>(request_data)</code></pre></div>
+request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'labels'</span>=hypothetical_label)
+result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createLabels.html">dfp_createLabels</a></span>(request_data)</code></pre></div>
 </div>
 <div id="setup-custom-fields-for-items" class="section level4">
 <h4 class="hasAnchor">
@@ -124,7 +125,7 @@ dfp_createLabels_result &lt;-<span class="st"> </span><span class="kw"><a href="
 <span class="co"># day that the creative typically runs. First we create the field, then populate</span>
 <span class="co"># with potential options since it is a dropdown field.</span>
 request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">'Timing'</span>,
-                           <span class="dt">description=</span><span class="st">'The time of that this creative usually runs.'</span>, 
+                           <span class="dt">description=</span><span class="st">'The time of day that this creative usually runs.'</span>, 
                            <span class="dt">entityType=</span><span class="st">'CREATIVE'</span>,
                            <span class="dt">dataType=</span><span class="st">'DROP_DOWN'</span>,
                            <span class="dt">visibility=</span><span class="st">'FULL'</span>)
@@ -139,8 +140,9 @@ dfp_createCustomFieldOptions_result &lt;-<span class="st"> </span><span class="k
 <a href="#setup-custom-targeting-keys-and-values" class="anchor"></a>Setup Custom Targeting Keys and Values</h4>
 <p>DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/188092?hl=en" class="uri">https://support.google.com/dfp\_premium/answer/188092?hl=en</a>)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create the key</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">'Test1'</span>, 
-                               <span class="dt">displayName=</span><span class="st">'TestKey1'</span>, 
+unique_numb &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">100000</span>))
+request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">'Test'</span>, unique_numb), 
+                               <span class="dt">displayName=</span><span class="kw">paste0</span>(<span class="st">'TestKey'</span>, unique_numb), 
                                <span class="dt">type=</span><span class="st">'FREEFORM'</span>))
 dfp_createCustomTargetingKeys_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys</a></span>(request_data)
 dfp_createCustomTargetingKeys_result

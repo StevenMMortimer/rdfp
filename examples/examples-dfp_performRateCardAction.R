@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_performRateCardAction()
+#'  res <- dfp_performRateCardAction(request_data)
 #' }

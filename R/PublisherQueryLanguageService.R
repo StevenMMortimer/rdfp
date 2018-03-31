@@ -49,6 +49,22 @@
 #' request (XML format, but passed as character string)
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a selectResponse 
+#' @examples
+#' \dontrun{
+#'  request_data <- list(selectStatement=
+#'  list(query='SELECT Id, Name, Targeting FROM LineItem LIMIT 3')) 
+#'  dfp_select_result <- dfp_select(request_data)
+#'  
+#'  request_data <- list(selectStatement=
+#'  list(query="SELECT Id
+#'                   , Name
+#'                   , CanonicalParentId
+#'                   , CountryCode
+#'                   , Type 
+#'              FROM Geo_Target 
+#'              WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
+#'  us_geos <- dfp_select(request_data)
+#' }
 #' @export
 dfp_select <- function(request_data, verbose=FALSE){
   request_body <- form_request_body(service='PublisherQueryLanguageService', root_name='select', data=request_data)

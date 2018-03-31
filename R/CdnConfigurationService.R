@@ -16,6 +16,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCdnConfigurationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createCdnConfigurations(request_data)
+#' }
 #' @export
 dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='createCdnConfigurations', data=request_data)
@@ -41,6 +45,11 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCdnConfigurationsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCdnConfigurationsByStatement(dat)
+#' }
 #' @export
 dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='getCdnConfigurationsByStatement', data=request_data)
@@ -62,6 +71,10 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCdnConfigurationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCdnConfigurations(request_data)
+#' }
 #' @export
 dfp_updateCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='updateCdnConfigurations', data=request_data)

@@ -28,6 +28,12 @@ Gets an AdRulePage of AdRule objects that satisfy the given \{@link Statement qu
   \item{status}
 }
 }
+\examples{
+\dontrun{
+ dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+ res <- dfp_getAdRulesByStatement(dat)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 }

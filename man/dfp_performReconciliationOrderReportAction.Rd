@@ -28,6 +28,11 @@ Performs actions on the ReconciliationOrderReport objects that match the given S
   \item{reconciliationReportId}
 }
 }
+\examples{
+\dontrun{
+ res <- dfp_performReconciliationOrderReportAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 }

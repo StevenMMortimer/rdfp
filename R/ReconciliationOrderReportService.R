@@ -25,6 +25,11 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getReconciliationOrderReportsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getReconciliationOrderReportsByStatement(dat)
+#' }
 #' @export
 dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
@@ -51,6 +56,10 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performReconciliationOrderReportActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performReconciliationOrderReportAction(request_data)
+#' }
 #' @export
 dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
@@ -72,6 +81,10 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateReconciliationOrderReportsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateReconciliationOrderReports(request_data)
+#' }
 #' @export
 dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)

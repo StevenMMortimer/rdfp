@@ -31,6 +31,11 @@ createAdExclusionRules
 
 Creates new AdExclusionRule objects.
 }
+\examples{
+\dontrun{
+ res <- dfp_createAdExclusionRules(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 }

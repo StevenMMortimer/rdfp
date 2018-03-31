@@ -26,6 +26,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createLineItemCreativeAssociationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createLineItemCreativeAssociations(request_data)
+#' }
 #' @export
 dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
@@ -55,6 +59,11 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getLineItemCreativeAssociationsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getLineItemCreativeAssociationsByStatement(dat)
+#' }
 #' @export
 dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
@@ -73,6 +82,10 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPreviewUrlResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getPreviewUrl()
+#' }
 #' @export
 dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
@@ -91,6 +104,10 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getPreviewUrlsForNativeStylesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getPreviewUrlsForNativeStyles()
+#' }
 #' @export
 dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrlsForNativeStyles', data=NULL)
@@ -112,6 +129,10 @@ dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performLineItemCreativeAssociationActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performLineItemCreativeAssociationAction(request_data)
+#' }
 #' @export
 dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
@@ -133,6 +154,10 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateLineItemCreativeAssociationsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateLineItemCreativeAssociations(request_data)
+#' }
 #' @export
 dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)

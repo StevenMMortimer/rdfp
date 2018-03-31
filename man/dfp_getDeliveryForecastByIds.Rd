@@ -22,6 +22,17 @@ a \code{data.frame} or \code{list} containing all the elements of a getDeliveryF
 \description{
 Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItemIds the IDs of line items to be forecasted for delivery @param forecastOptions options controlling the forecast Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @param lineItemIds the IDs of line items to be forecasted for delivery @param forecastOptions options controlling the forecast
 }
+\examples{
+\dontrun{
+filter <- "WHERE Status='DELIVERING' LIMIT 1"
+one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
+
+# not specifying forecastOptions brings up NotNullError.ARG2_NULL, so send, but keep null
+request_data <- list(lineItemIds=one_li$id,
+                     forecastOptions=list(ignoredLineItemIds=NULL))
+result <- dfp_getDeliveryForecastByIds(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 }

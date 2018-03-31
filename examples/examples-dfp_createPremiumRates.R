@@ -1,3 +1,4 @@
+#' @examples
 #' \dontrun{
-#'  res <- dfp_createPremiumRates()
+#'  res <- dfp_createPremiumRates(request_data)
 #' }

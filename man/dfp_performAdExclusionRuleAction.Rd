@@ -23,6 +23,11 @@ a \code{data.frame} or \code{list} containing all the elements of a performAdExc
 \description{
 Performs action on AdExclusionRule objects that satisfy the given Statement query.
 }
+\examples{
+\dontrun{
+ res <- dfp_performAdExclusionRuleAction(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 }

@@ -19,6 +19,12 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldOptionsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(customFieldId=rep(dfp_createCustomFields_result$id, 3),
+#'                            displayName=c('Morning', 'Afternoon', 'Evening'))
+#' result <- dfp_createCustomFieldOptions(request_data)
+#' }
 #' @export
 dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
@@ -46,6 +52,15 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createCustomFieldsResponse 
+#' @examples
+#' \dontrun{
+#' request_data <- data.frame(name='Timing',
+#'                            description='The time that this creative runs.', 
+#'                            entityType='CREATIVE',
+#'                            dataType='DROP_DOWN',
+#'                            visibility='FULL')
+#' result <- dfp_createCustomFields(request_data)
+#' }
 #' @export
 dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
@@ -67,6 +82,10 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldOptionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_getCustomFieldOption(request_data)
+#' }
 #' @export
 dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=request_data)
@@ -95,6 +114,11 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getCustomFieldsByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getCustomFieldsByStatement(dat)
+#' }
 #' @export
 dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
@@ -116,6 +140,10 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performCustomFieldActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performCustomFieldAction(request_data)
+#' }
 #' @export
 dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
@@ -137,6 +165,10 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomFieldOptionsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCustomFieldOptions(request_data)
+#' }
 #' @export
 dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
@@ -158,6 +190,10 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateCustomFieldsResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateCustomFields(request_data)
+#' }
 #' @export
 dfp_updateCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)

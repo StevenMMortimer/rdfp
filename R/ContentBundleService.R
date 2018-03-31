@@ -19,6 +19,10 @@
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createContentBundlesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_createContentBundles(request_data)
+#' }
 #' @export
 dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
@@ -45,6 +49,11 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a getContentBundlesByStatementResponse 
+#' @examples
+#' \dontrun{
+#'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
+#'  res <- dfp_getContentBundlesByStatement(dat)
+#' }
 #' @export
 dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
@@ -66,6 +75,10 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a performContentBundleActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performContentBundleAction(request_data)
+#' }
 #' @export
 dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
@@ -87,6 +100,10 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' a \code{data.frame}
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a updateContentBundlesResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_updateContentBundles(request_data)
+#' }
 #' @export
 dfp_updateContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)

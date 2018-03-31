@@ -39,6 +39,11 @@ createLineItemCreativeAssociations
 
 Creates new LineItemCreativeAssociation objects
 }
+\examples{
+\dontrun{
+ res <- dfp_createLineItemCreativeAssociations(request_data)
+}
+}
 \seealso{
 \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 }

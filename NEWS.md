@@ -2,8 +2,14 @@
 
 ### Features
 
-  * `dfp_report_url_to_dataframe()` now returns a `tbl_df` object for better printing and casted data types
-  * Simplified `dfp_select()` so that it automatically uses `dfp_select_parse()` to format the result into a `tbl_df`
+  * `dfp_report_url_to_dataframe()` now returns a `tbl_df` object for better 
+  printing and casted data types
+  * Simplified `dfp_select()` so that it automatically uses `dfp_select_parse()` 
+  to format the result into a `tbl_df`
+  * Added `dfp_date_as_list()` that will convert a date or datetime representation 
+  in R to the required list format for submission to DFP  
+  * Started to add some examples to functions so that the inline documentation 
+  gives a better idea of how to make it work in R
 
 ### Bug Fixes
 
