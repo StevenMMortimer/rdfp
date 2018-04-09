@@ -26,11 +26,11 @@ myuuid <- paste(
   collapse=""
 )
 
-validemailaddon <- paste0(sample(1:9,3), collapse='')
+validemailaddon <- paste0(sample(1:9,4), collapse='')
 
 options(rdfp.network_code = rdfp_options$test_network_code)
 request_data <- list(users=list(name=paste0("TestUser - ", myuuid),
-                                email=paste0('testuser', validemailaddon, '@gmail.com'), 
+                                email=paste0('testuserr', validemailaddon, '@gmail.com'), 
                                 roleId=-1))
 dfp_createUsers_result <- dfp_createUsers(request_data)
 options(rdfp.network_code = rdfp_options$network_code)
@@ -106,7 +106,7 @@ test_that("dfp_updateUsers", {
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(users=list(id=dfp_createUsers_result$id, 
                                   name=paste0("TestUser - ", myuuid, "2"),
-                                  email=paste0('testuser', validemailaddon, '@gmail.com'), 
+                                  email=paste0('testuserr', validemailaddon, '@gmail.com'), 
                                   roleId=-1))
   
   dfp_updateUsers_result <- dfp_updateUsers(request_data)
