@@ -44,7 +44,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98603021-1', 'auto');
+  ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -68,6 +68,8 @@
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa fas fa-book"></span>
+     
     Articles
      
     <span class="caret"></span>
@@ -91,10 +93,18 @@
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Reference
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       
@@ -103,6 +113,7 @@
   <a href="https://github.com/StevenMMortimer/rdfp">
     <span class="fa fa-github fa-lg"></span>
      
+    GitHub
   </a>
 </li>
       </ul>
@@ -121,27 +132,21 @@
     </div>
 
     <div class="contents">
-    <div id="rdfp-0-1-1-9000" class="section level2">
+    <div id="rdfp-0-1-2-release" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rdfp-0-1-1-9000" class="anchor"></a>rdfp 0.1.1.9000</h2>
+<a href="#rdfp-0-1-2-release" class="anchor"></a>rdfp 0.1.2 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.2">release</a>
+</h2>
 <div id="features" class="section level3">
 <h3 class="hasAnchor">
 <a href="#features" class="anchor"></a>Features</h3>
 <ul>
 <li>
 <code><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe()</a></code> now returns a <code>tbl_df</code> object for better printing and casted data types</li>
-<li>Simplified <code><a href="../reference/dfp_select.html">dfp_select()</a></code> so that it automatically uses <code><a href="../reference/dfp_select_parse.html">dfp_select_parse()</a></code> to format the result into a <code>tbl_df</code>
+<li>Simplify <code><a href="../reference/dfp_select.html">dfp_select()</a></code> so that it automatically uses <code><a href="../reference/dfp_select_parse.html">dfp_select_parse()</a></code> to format the result into a <code>tbl_df</code>
 </li>
-<li>Added <code>dfp_date_as_list()</code> that will convert a date or datetime representation in R to the required list format for submission to DFP<br>
-</li>
-<li>Started to add some examples to functions so that the inline documentation gives a better idea of how to make it work in R</li>
-</ul>
-</div>
-<div id="bug-fixes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug Fixes</h3>
-<ul>
-<li>Nothing yet!</li>
+<li>Add <code>dfp_date_as_list()</code> that will convert a date or datetime representation in R to the required list format for submission to DFP</li>
+<li>Add examples to functions so that the inline documentation gives a better idea of how to make it work in R</li>
+<li>Add <code>addtl_scopes</code> arugment to <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code> so that users can create token that can be used with other R packages to connect to other Google services</li>
 </ul>
 <hr>
 </div>
@@ -159,9 +164,9 @@
 <li>Created more efficient parsers <code><a href="../reference/parse_soap_response.html">parse_soap_response()</a></code>. Warning: This will cause some breaking changes because how certain results are returned may be different.</li>
 </ul>
 </div>
-<div id="bug-fixes-1" class="section level3">
+<div id="bug-fixes" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bug-fixes-1" class="anchor"></a>Bug Fixes</h3>
+<a href="#bug-fixes" class="anchor"></a>Bug Fixes</h3>
 <ul>
 <li>Line item targeting does not come back as a matrix. It is preserved as a list so it can be directly passed back into the ForecastService functions or LineItemService to get detailed availability</li>
 </ul>
@@ -211,9 +216,9 @@
 </li>
 </ul>
 </div>
-<div id="bug-fixes-2" class="section level3">
+<div id="bug-fixes-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bug-fixes-2" class="anchor"></a>Bug Fixes</h3>
+<a href="#bug-fixes-1" class="anchor"></a>Bug Fixes</h3>
 <ul>
 <li>None.</li>
 </ul>
@@ -226,7 +231,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#rdfp-0-1-1-9000">0.1.1.9000</a></li>
+        <li><a href="#rdfp-0-1-2-release">0.1.2</a></li>
         <li><a href="#rdfp-0-1-1-release">0.1.1</a></li>
         <li><a href="#rdfp-0-1-0-release">0.1.0</a></li>
       </ul>

@@ -1,16 +1,19 @@
 Package: rdfp
-Title: DoubleClick for Publishers API from R
-Version: 0.1.1.9000
-Date: 2018-03-29
-Description: An implementation of Google's DoubleClick for Publishers API in R. 
+Title: An Implementation of the 'DoubleClick for Publishers' API
+Version: 0.1.2
+Date: 2018-04-07
+Description: An implementation of Google's 'DoubleClick for Publishers' (DFP) API 
+    <https://developers.google.com/doubleclick-publishers/docs/start>. 
     This package is automatically compiled from the API WSDLs (Web Service Description 
     Language) files to dictate how the API is structured. Theoretically, all API 
     actions are possible using this package; however, care must be taken to format 
-    the inputs correctly and parse the outputs correctly as well. See Google's DFP 
-    API reference and the rdfp pkgdown website for more information, documentation 
-    and examples.
+    the inputs correctly and parse the outputs correctly as well. Please see Google's 
+    DFP API reference and this package's website <https://stevenmmortimer.github.io/rdfp/> 
+    for more information, documentation, and examples.
 Authors@R: c(
-    person(c("Steven", "M."), "Mortimer", , "reportmort@gmail.com", c("aut", "cre"))
+    person(c("Steven", "M."), "Mortimer", , "reportmort@gmail.com", c("aut", "cre")),
+    person("Jennifer", "Bryan", , "jenny@rstudio.com", c("ctb")),
+    person("Joanna", "Zhao", , "joanna.zhao@alumni.ubc.ca", c("ctb"))
     )
 URL: https://github.com/StevenMMortimer/rdfp
 BugReports: https://github.com/StevenMMortimer/rdfp/issues
@@ -34,7 +37,8 @@ Imports:
 Suggests:
     knitr,
     testthat,
-    rmarkdown
+    rmarkdown,
+    here
 RoxygenNote: 6.0.1
 Collate: 
     'ActivityGroupService.R'

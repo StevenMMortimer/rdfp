@@ -44,7 +44,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98603021-1', 'auto');
+  ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -68,6 +68,8 @@
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa fas fa-book"></span>
+     
     Articles
      
     <span class="caret"></span>
@@ -91,10 +93,18 @@
   </ul>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Reference
+  </a>
 </li>
 <li>
-  <a href="news/index.html">News</a>
+  <a href="news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       
@@ -103,6 +113,7 @@
   <a href="https://github.com/StevenMMortimer/rdfp">
     <span class="fa fa-github fa-lg"></span>
      
+    GitHub
   </a>
 </li>
       </ul>
@@ -135,8 +146,7 @@
 <li>
 <a href="#usage">Usage</a>
 <ul>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#set-api-version">Set API Version</a></li>
+<li><a href="#load-package-and-set-api-version">Set API Version</a></li>
 <li><a href="#authenticate">Authenticate</a></li>
 <li><a href="#get-current-user-info">Get Current User Info</a></li>
 <li><a href="#pull-a-lineitem">Pull a LineItem</a></li>
@@ -150,8 +160,9 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this package is currently not on CRAN, so it should be installed from GitHub</span>
-<span class="co"># install.packages("devtools")</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"devtools"</span>)
+
+<span class="co"># or to get the latest version available on GitHub</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"StevenMMortimer/rdfp"</span>)</code></pre></div>
 <p>If you encounter a clear bug, please file a minimal reproducible example on <a href="https://github.com/StevenMMortimer/rdfp/issues">GitHub</a>.</p>
 </div>
@@ -170,11 +181,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<div id="functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h3>
 <p>All functions start with <code>dfp_</code> so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most <strong>rdfp</strong> functions will return a <code>data.frame</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
-</div>
 <div id="load-package-and-set-api-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#load-package-and-set-api-version" class="anchor"></a>Load Package and Set API Version</h3>
@@ -190,14 +197,13 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <h3 class="hasAnchor">
 <a href="#authenticate" class="anchor"></a>Authenticate</h3>
 <p>To authenticate you will first need to specify the <code>network_code</code> of the DFP instance you’d like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. After setting the <code>network_code</code> all you need to do is run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code>. If you already have a cached <code>.httr-oauth</code> file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.</p>
-<p>The package has other options like a client_id and client_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the [Google Developers Console] (<a href="https://console.developers.google.com" class="uri">https://console.developers.google.com</a>).</p>
+<p>The package has other options like a client_id and client_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the <a href="https://console.developers.google.com">Google Developers Console</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="st">"12345678"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)
 
-<span class="co"># this function will use the options set above and </span>
-<span class="co"># cache an OAuth token in the working directory</span>
+<span class="co"># dfp_auth will use the options above and cache an OAuth token in the working directory</span>
 <span class="co"># the token will be refreshed when necessary</span>
 <span class="kw"><a href="reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
 </div>
@@ -253,20 +259,20 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 <span class="co"># if you would like more control, see the example below which moves through each step in the process</span>
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)
 report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
-<span class="co">#&gt; # A tibble: 25 x 3</span>
+<span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
 <span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-03                            133765096.                   1778.</span>
-<span class="co">#&gt;  2 2018-03                            133765216.                    422.</span>
-<span class="co">#&gt;  3 2018-03                            133765336.                    642.</span>
-<span class="co">#&gt;  4 2018-03                            133765456.                   2176.</span>
-<span class="co">#&gt;  5 2018-03                            142461136.                     91.</span>
-<span class="co">#&gt;  6 2018-03                            133765576.                  17581.</span>
-<span class="co">#&gt;  7 2018-03                            133765696.                    945.</span>
-<span class="co">#&gt;  8 2018-03                            133765936.                  18171.</span>
-<span class="co">#&gt;  9 2018-03                            142461016.                    312.</span>
-<span class="co">#&gt; 10 2018-03                            143543776.                   1496.</span>
-<span class="co">#&gt; # ... with 15 more rows</span></code></pre></div>
+<span class="co">#&gt;  1 2018-04                            133765096.                   1815.</span>
+<span class="co">#&gt;  2 2018-04                            133765216.                    452.</span>
+<span class="co">#&gt;  3 2018-04                            133765336.                    652.</span>
+<span class="co">#&gt;  4 2018-04                            133765456.                   2247.</span>
+<span class="co">#&gt;  5 2018-04                            142461136.                     88.</span>
+<span class="co">#&gt;  6 2018-04                            133765576.                  17440.</span>
+<span class="co">#&gt;  7 2018-04                            133765696.                    961.</span>
+<span class="co">#&gt;  8 2018-04                            133765936.                  17514.</span>
+<span class="co">#&gt;  9 2018-04                            142461016.                    324.</span>
+<span class="co">#&gt; 10 2018-04                            143543776.                   1348.</span>
+<span class="co">#&gt; # ... with 17 more rows</span></code></pre></div>
 </div>
 </div>
 <div id="credits" class="section level2">

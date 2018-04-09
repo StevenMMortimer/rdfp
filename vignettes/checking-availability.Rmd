@@ -8,7 +8,7 @@ output:
     toc_depth: 4
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Availability and Reporting with rdfp}
+  %\VignetteIndexEntry{Checking Availability with rdfp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -28,16 +28,21 @@ Then we authenticate by using `dfp_auth()`. Any existing cached token would be u
 or we will be prompted to authenticate via the browser.
 
 ```{r load-package, eval=FALSE}
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(lubridate)))
 library(rdfp)
 options(rdfp.network_code = 123456789)
 df_auth()
 ```
 
 ```{r auth, include = FALSE}
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(lubridate)))
+library(here)
 library(rdfp)
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+token_path <- here::here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here::here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 ```
@@ -105,7 +110,7 @@ and day into 3 separate integers. The special DFP format requires a function to
 convert `Date` objects in R into the corresponding DFP list. The following 
 function is helpful in doing just that.
 
-```{r date-converter-func}
+```{r date-converter-func, warning=FALSE}
 # supply a datetime
 dfp_date_to_list(Sys.time())
 # supply a date and assume the beginning of the day for hours, mins, secs
@@ -319,7 +324,7 @@ cases of utilizing the package functions.
 
 For example, if you're not sure on how to use custom date ranges when 
 requesting a report through the ReportService, just check out the tests at 
-https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test_ReportService.R
+https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test-ReportService.R
 
 If you want to know how to create a user, just look at the test for `dfp_createUsers()`
 

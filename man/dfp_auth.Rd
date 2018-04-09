@@ -5,6 +5,15 @@
 \title{Authorize \code{rdfp}}
 \usage{
 dfp_auth(token = NULL, new_user = FALSE,
+  addtl_scopes = c("https://spreadsheets.google.com/feeds",
+  "https://www.googleapis.com/auth/drive",
+  "https://www.googleapis.com/auth/spreadsheets",
+  "https://www.googleapis.com/auth/presentations",
+  "https://www.googleapis.com/auth/analytics",
+  "https://www.googleapis.com/auth/yt-analytics.readonly",
+  "https://www.googleapis.com/auth/gmail.readonly",
+  "https://www.googleapis.com/auth/gmail.compose",
+  "https://www.googleapis.com/auth/gmail.send"),
   key = getOption("rdfp.client_id"),
   secret = getOption("rdfp.client_secret"),
   cache = getOption("rdfp.httr_oauth_cache"), verbose = TRUE)
@@ -17,6 +26,11 @@ dfp_auth(token = NULL, new_user = FALSE,
 want to wipe the slate clean and re-authenticate with the same or different
 Google account. This deletes the \code{.httr-oauth} file in current working
 directory.}
+
+\item{addtl_scopes}{character, strings that indicate additional Google services 
+the client should authorize. Use this when trying to generate a token that will 
+work to authenticate to other packages using Google services, such as the googlesheets 
+package or RGoogleAnalytics package.}
 
 \item{key, secret}{the "Client ID" and "Client secret" for the application}
 
@@ -33,9 +47,9 @@ an OAuth token object, specifically a
 Authorize \code{rdfp} to access your Google user data. You will be
 directed to a web browser, asked to sign in to your Google account, and to
 grant \code{rdfp} access to user data for Double Click for Publishers. 
-These user credentials are cached in a file named
-\code{.httr-oauth} in the current working directory, from where they can be
-automatically refreshed, as necessary.
+These user credentials are cached in a file named \code{.httr-oauth} in 
+the current working directory, from where they can be automatically refreshed, 
+as necessary.
 }
 \details{
 Most users, most of the time, do not need to call this function
@@ -56,7 +70,7 @@ suffice. However, when necessary, this function allows the user to
 
 In a call to \code{dfp_auth}, the user can provide the token, app key and
 secret explicitly and can dictate whether credentials will be cached in
-\code{.httr_oauth}. They must be specified.
+\code{.httr-oauth}. They must be specified.
 
 To set options in a more persistent way, predefine one or more of
 them with lines like this in a \code{.Rprofile} file:

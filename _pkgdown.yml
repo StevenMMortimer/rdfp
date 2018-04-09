@@ -3,7 +3,7 @@ url: https://stevenmmortimer.github.io/rdfp/
 template:
   params:
     bootswatch: spacelab
-    ganalytics: UA-98603021-1
+    ganalytics: UA-98603021-2
 
 home:
   strip_header: true
@@ -12,6 +12,7 @@ navbar:
   type: default
   left:
     - text: "Articles"
+      icon: fas fa-book
       menu: 
       -  text: Administrative Tasks
          href: articles/administrative-tasks.html
@@ -24,11 +25,14 @@ navbar:
       -  text: Pulling Reports
          href: articles/pulling-reports.html
     - text: Reference
+      icon: fa-file-code-o
       href: reference/index.html
     - text: News
+      icon: fa-newspaper-o
       href: news/index.html
   right:
-    - icon: fa-github fa-lg
+    - text: GitHub
+      icon: fa-github fa-lg
       href: https://github.com/StevenMMortimer/rdfp
       
 reference:

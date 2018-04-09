@@ -21,7 +21,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98603021-1', 'auto');
+  ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -42,6 +42,8 @@
       <ul class="nav navbar-nav">
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa fas fa-book"></span>
+     
     Articles
      
     <span class="caret"></span>
@@ -65,10 +67,18 @@
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Reference
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    News
+  </a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -76,6 +86,7 @@
   <a href="https://github.com/StevenMMortimer/rdfp">
     <span class="fa fa-github fa-lg"></span>
      
+    GitHub
   </a>
 </li>
       </ul>
@@ -123,7 +134,21 @@
                              )
                       )
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)
-report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</code></pre></div>
+report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
+<span class="co">#&gt; # A tibble: 1,493 x 3</span>
+<span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
+<span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2018-04                            133765096.                     37.</span>
+<span class="co">#&gt;  2 2018-04                            133765096.                     16.</span>
+<span class="co">#&gt;  3 2018-04                            133765096.                     13.</span>
+<span class="co">#&gt;  4 2018-04                            133765096.                     11.</span>
+<span class="co">#&gt;  5 2018-04                            133765096.                      7.</span>
+<span class="co">#&gt;  6 2018-04                            133765096.                     42.</span>
+<span class="co">#&gt;  7 2018-04                            133765096.                    247.</span>
+<span class="co">#&gt;  8 2018-04                            133765096.                     18.</span>
+<span class="co">#&gt;  9 2018-04                            133765096.                      1.</span>
+<span class="co">#&gt; 10 2018-04                            133765096.                      0.</span>
+<span class="co">#&gt; # ... with 1,483 more rows</span></code></pre></div>
 </div>
 <div id="working-with-saved-queries" class="section level4">
 <h4 class="hasAnchor">
@@ -137,7 +162,21 @@ this_report_query &lt;-<span class="st"> </span>this_result[[<span class="dv">1<
 <span class="co"># resubmit the report job with the saved query</span>
 report_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery =</span> this_report_query))
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(report_data)
-report_data[,<span class="kw">c</span>(<span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</code></pre></div>
+report_data[,<span class="kw">c</span>(<span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
+<span class="co">#&gt; # A tibble: 1,750 x 2</span>
+<span class="co">#&gt;    Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
+<span class="co">#&gt;                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
+<span class="co">#&gt;  1           133765096.                    115.</span>
+<span class="co">#&gt;  2           133765096.                     63.</span>
+<span class="co">#&gt;  3           133765096.                     60.</span>
+<span class="co">#&gt;  4           133765096.                     44.</span>
+<span class="co">#&gt;  5           133765096.                     71.</span>
+<span class="co">#&gt;  6           133765096.                    167.</span>
+<span class="co">#&gt;  7           133765096.                   1122.</span>
+<span class="co">#&gt;  8           133765096.                     81.</span>
+<span class="co">#&gt;  9           133765096.                      5.</span>
+<span class="co">#&gt; 10           133765096.                      2.</span>
+<span class="co">#&gt; # ... with 1,740 more rows</span></code></pre></div>
 </div>
 <div id="a-more-detailed-explanation-of-the-report-process" class="section level4">
 <h4 class="hasAnchor">
@@ -157,12 +196,17 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 <span class="co"># the result is a list and most importantly the ID is included for checking its status</span>
 dfp_runReportJob_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_runReportJob.html">dfp_runReportJob</a></span>(request_data)
 dfp_runReportJob_result<span class="op">$</span>id
+<span class="co">#&gt; [1] 10127044058</span>
 
 <span class="co"># to check the status repeatedly you just need to provide the id</span>
 <span class="co"># dfp_getReportJobStatus_result returns a character string of the reportJob status</span>
 request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id)
 dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data)
 dfp_getReportJobStatus_result
+<span class="co">#&gt; # A tibble: 1 x 1</span>
+<span class="co">#&gt;   V1         </span>
+<span class="co">#&gt;   &lt;chr&gt;      </span>
+<span class="co">#&gt; 1 IN_PROGRESS</span>
 
 <span class="co"># a simple while loop can keep checking a long running request until ready</span>
 counter &lt;-<span class="st"> </span><span class="dv">0</span>
@@ -180,7 +224,21 @@ dfp_getReportDownloadURL_result &lt;-<span class="st"> </span><span class="kw"><
 <span class="co"># supported exportFormats are currently c('CSV_DUMP', 'TSV', 'TSV_EXCEL')</span>
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe</a></span>(<span class="dt">report_url=</span>dfp_getReportDownloadURL_result<span class="op">$</span>V1, 
                                            <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)
-report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</code></pre></div>
+report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
+<span class="co">#&gt; # A tibble: 21 x 3</span>
+<span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
+<span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2018-04                            133765096.                   1815.</span>
+<span class="co">#&gt;  2 2018-04                            133765216.                    452.</span>
+<span class="co">#&gt;  3 2018-04                            133765336.                    652.</span>
+<span class="co">#&gt;  4 2018-04                            133765456.                   2247.</span>
+<span class="co">#&gt;  5 2018-04                            142461136.                     88.</span>
+<span class="co">#&gt;  6 2018-04                            133765576.                  17441.</span>
+<span class="co">#&gt;  7 2018-04                            133765696.                    961.</span>
+<span class="co">#&gt;  8 2018-04                            133765936.                  17514.</span>
+<span class="co">#&gt;  9 2018-04                            142461016.                    324.</span>
+<span class="co">#&gt; 10 2018-04                            143543776.                   1348.</span>
+<span class="co">#&gt; # ... with 11 more rows</span></code></pre></div>
 </div>
 </div>
   </div>

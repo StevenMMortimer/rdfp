@@ -21,7 +21,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98603021-1', 'auto');
+  ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -42,6 +42,8 @@
       <ul class="nav navbar-nav">
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa fas fa-book"></span>
+     
     Articles
      
     <span class="caret"></span>
@@ -65,10 +67,18 @@
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Reference
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    News
+  </a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -76,6 +86,7 @@
   <a href="https://github.com/StevenMMortimer/rdfp">
     <span class="fa fa-github fa-lg"></span>
      
+    GitHub
   </a>
 </li>
       </ul>
@@ -100,7 +111,9 @@
     
 <div class="contents">
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
+<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
+<span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
 <span class="kw">df_auth</span>()</code></pre></div>
 <div id="availability-by-month" class="section level3">
@@ -147,8 +160,53 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <p>DFP keeps track of dates and times by separating things like the year, month, and day into 3 separate integers. The special DFP format requires a function to convert <code>Date</code> objects in R into the corresponding DFP list. The following function is helpful in doing just that.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># supply a datetime</span>
 <span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.time</span>())
+<span class="co">#&gt; The date provided is not at least 1 hour into the future. Setting to one hour after now.</span>
+<span class="co">#&gt; $date</span>
+<span class="co">#&gt; $date$year</span>
+<span class="co">#&gt; [1] 2018</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $date$month</span>
+<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $date$day</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $hour</span>
+<span class="co">#&gt; [1] 12</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $minute</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $second</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $timeZoneID</span>
+<span class="co">#&gt; [1] "America/New_York"</span>
 <span class="co"># supply a date and assume the beginning of the day for hours, mins, secs</span>
-<span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>()<span class="op">+</span><span class="dv">1</span>, <span class="st">"beginning"</span>)</code></pre></div>
+<span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>()<span class="op">+</span><span class="dv">1</span>, <span class="st">"beginning"</span>)
+<span class="co">#&gt; $date</span>
+<span class="co">#&gt; $date$year</span>
+<span class="co">#&gt; [1] 2018</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $date$month</span>
+<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $date$day</span>
+<span class="co">#&gt; [1] 10</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $hour</span>
+<span class="co">#&gt; [1] 0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $minute</span>
+<span class="co">#&gt; [1] 0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $second</span>
+<span class="co">#&gt; [1] 0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $timeZoneID</span>
+<span class="co">#&gt; [1] "America/New_York"</span></code></pre></div>
 </div>
 <div id="generating-forecasts" class="section level4">
 <h4 class="hasAnchor">
@@ -156,7 +214,7 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <p>Here is an example of how to loop through individual months and determine availability 6 months out for the sample line item created previously. It is fairly straightforward to take the month start and end dates and substitute them into the hypothetical line item. The one quirk is that, in order to follow the API, we must create lists of lists that are redundant at times. For example, the forecast request has a <code>lineItem</code> field that takes a <code>ProspectiveLineItem</code> that contains its own <code>lineItem</code> field: <code>list(lineItem=list(lineItem=this_sample_line) ...</code>. As long as you follow the object fields according to the Google reference documentation, then everything should work. Most everything needs to be formed as a list of lists with field names.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_forecasts &lt;-<span class="st"> </span><span class="ot">NULL</span>
 month_start_dates &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">format</span>(<span class="kw">Sys.Date</span>() <span class="op">%m+%</span><span class="st"> </span><span class="kw">months</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="st">'%Y-%m-01'</span>))
-month_end_dates &lt;-<span class="st"> </span><span class="kw">ceiling_date</span>(month_start_dates, <span class="st">'months'</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+month_end_dates &lt;-<span class="st"> </span><span class="kw"><a href="http://lubridate.tidyverse.org/reference/round_date.html">ceiling_date</a></span>(month_start_dates, <span class="st">'months'</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(month_start_dates)){
   this_sample_line &lt;-<span class="st"> </span>sample_line
   this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(month_start_dates[i], <span class="dt">daytime=</span><span class="st">'beginning'</span>)
@@ -169,7 +227,16 @@ month_end_dates &lt;-<span class="st"> </span><span class="kw">ceiling_date</spa
   this_result<span class="op">$</span>forecast_month &lt;-<span class="st"> </span><span class="kw">format</span>(month_start_dates[i], <span class="st">'%Y-%m'</span>)
   all_forecasts &lt;-<span class="st"> </span><span class="kw">rbind</span>(all_forecasts, this_result)
 }
-all_forecasts</code></pre></div>
+all_forecasts
+<span class="co">#&gt; # A tibble: 6 x 4</span>
+<span class="co">#&gt;   unitType    availableUnits reservedUnits forecast_month</span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         </span>
+<span class="co">#&gt; 1 IMPRESSIONS       7828358.         1000. 2018-05       </span>
+<span class="co">#&gt; 2 IMPRESSIONS       7755085.         1000. 2018-06       </span>
+<span class="co">#&gt; 3 IMPRESSIONS       8146438.         1000. 2018-07       </span>
+<span class="co">#&gt; 4 IMPRESSIONS       8030500.         1000. 2018-08       </span>
+<span class="co">#&gt; 5 IMPRESSIONS       7894108.         1000. 2018-09       </span>
+<span class="co">#&gt; 6 IMPRESSIONS       8249649.         1000. 2018-10</span></code></pre></div>
 </div>
 </div>
 <div id="availability-by-targeting-criteria" class="section level3">
@@ -193,14 +260,14 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 
 us_geos &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select.html">dfp_select</a></span>(request_data)
 texas_id &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, <span class="dt">state=</span>name)
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, <span class="dt">state=</span>name)
 
 us_counties &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> 'COUNTY'</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, canonicalparentid, <span class="dt">county=</span>name)
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'COUNTY'</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, canonicalparentid, <span class="dt">county=</span>name)
 
-texas_counties &lt;-<span class="st"> </span><span class="kw">inner_join</span>(us_counties, texas_id, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">'canonicalparentid'</span>=<span class="st">'id'</span>))</code></pre></div>
+texas_counties &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(us_counties, texas_id, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">'canonicalparentid'</span>=<span class="st">'id'</span>))</code></pre></div>
 <p>Next, we need to format the geographies into objects of type <code>Location</code> that at least contain an id denoting the area.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># format the county ids into a list so they can be passed </span>
 <span class="co"># over to the geoTargeting field of the ProspectiveLineItem</span>
@@ -261,14 +328,15 @@ avails &lt;-<span class="st"> </span>plyr<span class="op">::</span><span class="
                       }, <span class="dt">.id=</span><span class="ot">NULL</span>)
 
 avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ImpressionsTotal=</span><span class="kw">as.integer</span>(matchedUnits),
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">ImpressionsTotal=</span><span class="kw">as.integer</span>(matchedUnits),
          <span class="dt">ImpressionsAvailable=</span><span class="kw">as.integer</span>(availableUnits), 
          <span class="dt">ImpressionsBooked=</span><span class="kw">as.integer</span>(ImpressionsTotal<span class="op">-</span>ImpressionsAvailable), 
          <span class="dt">PctAvail=</span>ImpressionsAvailable<span class="op">/</span>ImpressionsTotal) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(targetingCriteriaName, ImpressionsTotal, ImpressionsBooked, ImpressionsAvailable, PctAvail)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(targetingCriteriaName, ImpressionsTotal, ImpressionsBooked, ImpressionsAvailable, PctAvail)</code></pre></div>
 <p>The breakdowns are not necessarily mutually exclusive, so be careful when totaling them up. The counties are exclusive, so it’s okay to sum them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total availability across Texas counties</span>
-<span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)</code></pre></div>
+<span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)
+<span class="co">#&gt; [1] 1.014021</span></code></pre></div>
 </div>
 </div>
 <div id="availability-for-an-existing-line" class="section level3">
@@ -280,13 +348,17 @@ forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<spa
                          <span class="dt">forecastOptions =</span> <span class="kw">list</span>())
 
 this_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getAvailabilityForecastById.html">dfp_getAvailabilityForecastById</a></span>(forecast_request)
-this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <span class="st">'orderId'</span>, <span class="st">'availableUnits'</span>, <span class="st">'deliveredUnits'</span>, <span class="st">'matchedUnits'</span>)]</code></pre></div>
+this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <span class="st">'orderId'</span>, <span class="st">'availableUnits'</span>, <span class="st">'deliveredUnits'</span>, <span class="st">'matchedUnits'</span>)]
+<span class="co">#&gt; # A tibble: 1 x 5</span>
+<span class="co">#&gt;    lineItemId     orderId availableUnits deliveredUnits matchedUnits</span>
+<span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 4382815843. 2117726531.       1366889.        209417.     1675231.</span></code></pre></div>
 </div>
 <div id="check-out-the-tests" class="section level3">
 <h3 class="hasAnchor">
 <a href="#check-out-the-tests" class="anchor"></a>Check out the Tests</h3>
 <p>The <strong>rdfp</strong> package has quite a bit of unit test coverage to track any changes made between newly released versions of DFP (typically 4 each year). These tests are an excellent source of examples because they cover most all cases of utilizing the package functions.</p>
-<p>For example, if you’re not sure on how to use custom date ranges when requesting a report through the ReportService, just check out the tests at <a href="https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test_ReportService.R" class="uri">https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test_ReportService.R</a></p>
+<p>For example, if you’re not sure on how to use custom date ranges when requesting a report through the ReportService, just check out the tests at <a href="https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test-ReportService.R" class="uri">https://github.com/StevenMMortimer/rdfp/blob/master/tests/testthat/test-ReportService.R</a></p>
 <p>If you want to know how to create a user, just look at the test for <code><a href="../reference/dfp_createUsers.html">dfp_createUsers()</a></code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">users=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestUser - 1"</span>,
                                 <span class="dt">email=</span><span class="st">"testuser123456789@gmail.com"</span>,

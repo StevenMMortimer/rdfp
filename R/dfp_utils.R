@@ -95,7 +95,7 @@ dfp_date_to_list <- function(this_date,
   which_daytime <- match.arg(daytime)
   
   if(ensure_today_works & (difftime(this_date, (Sys.time()+hours(1))) < 0)){
-    warning("The date provided is not at least 1 hour into the future. Setting to one hour after now.")
+    message("The date provided is not at least 1 hour into the future. Setting to one hour after now.")
     this_date <- Sys.time() + hours(1)
   }  
   
@@ -106,7 +106,7 @@ dfp_date_to_list <- function(this_date,
   } else {
     this_hour <- hour(this_date)
     this_minute <- minute(this_date)
-    this_second <- second(this_date)
+    this_second <- round(second(this_date), 0)
   }
   
   x <- list(date=list(year = year(this_date),

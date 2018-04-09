@@ -6,6 +6,10 @@
 
 ## R CMD check results
 
-? ERRORs | ? WARNINGs | ? NOTEs
+0 ERRORs | 0 WARNINGs | 1 NOTEs
 
 * checking CRAN incoming feasibility ... NOTE
+
+Possibly mis-spelled words in DESCRIPTION:
+  DFP (5:74, 11:5)
+  WSDLs (7:57)

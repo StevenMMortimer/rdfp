@@ -32,9 +32,9 @@
 <meta property="og:description" content="Authorize rdfp to access your Google user data. You will be
 directed to a web browser, asked to sign in to your Google account, and to
 grant rdfp access to user data for Double Click for Publishers. 
-These user credentials are cached in a file named
-.httr-oauth in the current working directory, from where they can be
-automatically refreshed, as necessary." />
+These user credentials are cached in a file named .httr-oauth in 
+the current working directory, from where they can be automatically refreshed, 
+as necessary." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -52,7 +52,7 @@ automatically refreshed, as necessary." />
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98603021-1', 'auto');
+  ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -76,6 +76,8 @@ automatically refreshed, as necessary." />
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa fas fa-book"></span>
+     
     Articles
      
     <span class="caret"></span>
@@ -99,10 +101,18 @@ automatically refreshed, as necessary." />
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Reference
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       
@@ -111,6 +121,7 @@ automatically refreshed, as necessary." />
   <a href="https://github.com/StevenMMortimer/rdfp">
     <span class="fa fa-github fa-lg"></span>
      
+    GitHub
   </a>
 </li>
       </ul>
@@ -131,12 +142,21 @@ automatically refreshed, as necessary." />
     <p>Authorize <code>rdfp</code> to access your Google user data. You will be
 directed to a web browser, asked to sign in to your Google account, and to
 grant <code>rdfp</code> access to user data for Double Click for Publishers. 
-These user credentials are cached in a file named
-<code>.httr-oauth</code> in the current working directory, from where they can be
-automatically refreshed, as necessary.</p>
+These user credentials are cached in a file named <code>.httr-oauth</code> in 
+the current working directory, from where they can be automatically refreshed, 
+as necessary.</p>
     
 
     <pre class="usage"><span class='fu'>dfp_auth</span>(<span class='kw'>token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>new_user</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>addtl_scopes</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"https://spreadsheets.google.com/feeds"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/drive"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/spreadsheets"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/presentations"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/analytics"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/yt-analytics.readonly"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/gmail.readonly"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/gmail.compose"</span>,
+  <span class='st'>"https://www.googleapis.com/auth/gmail.send"</span>),
   <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.client_id"</span>),
   <span class='kw'>secret</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.client_secret"</span>),
   <span class='kw'>cache</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.httr_oauth_cache"</span>), <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -155,6 +175,13 @@ automatically refreshed, as necessary.</p>
 want to wipe the slate clean and re-authenticate with the same or different
 Google account. This deletes the <code>.httr-oauth</code> file in current working
 directory.</p></td>
+    </tr>
+    <tr>
+      <th>addtl_scopes</th>
+      <td><p>character, strings that indicate additional Google services 
+the client should authorize. Use this when trying to generate a token that will 
+work to authenticate to other packages using Google services, such as the googlesheets 
+package or RGoogleAnalytics package.</p></td>
     </tr>
     <tr>
       <th>key, secret</th>
@@ -193,7 +220,7 @@ suffice. However, when necessary, this function allows the user to</p><ul>
 </ul>
     <p>In a call to <code>dfp_auth</code>, the user can provide the token, app key and
 secret explicitly and can dictate whether credentials will be cached in
-<code>.httr_oauth</code>. They must be specified.</p>
+<code>.httr-oauth</code>. They must be specified.</p>
 <p>To set options in a more persistent way, predefine one or more of
 them with lines like this in a <code>.Rprofile</code> file:</p><pre>
 options(rdfp.network_code = "12345678",

@@ -29,8 +29,7 @@ inventory, create orders, pull reports, and more!
   * [Installation](#installation)
   * [Vignettes](#vignettes)
   * [Usage](#usage)
-    * [Functions](#functions)
-    * [Set API Version](#set-api-version)
+    * [Set API Version](#load-package-and-set-api-version)
     * [Authenticate](#authenticate)
     * [Get Current User Info](#get-current-user-info)
     * [Pull a LineItem](#pull-a-lineitem)
@@ -41,8 +40,9 @@ inventory, create orders, pull reports, and more!
 ## Installation
 
 ```{r, eval = FALSE}
-# this package is currently not on CRAN, so it should be installed from GitHub
-# install.packages("devtools")
+install.packages("devtools")
+
+# or to get the latest version available on GitHub
 devtools::install_github("StevenMMortimer/rdfp")
 ```
 
@@ -61,8 +61,6 @@ more detailed examples on usage.
   * [Pulling Reports](articles/pulling-reports.html)
 
 ## Usage  
-
-### Functions
 
 All functions start with `dfp_` so that you can easily identify DFP-specific 
 operations and use tab completion in RStudio. Most **rdfp** functions will 
@@ -95,8 +93,8 @@ your browswer will pop open and you will interactively authenticate.
 
 The package has other options like a client\_id and client\_secret where you can 
 connect using your own API client instead of the package default. Using your own 
-client requires setting one up in the [Google Developers Console] 
-(https://console.developers.google.com).
+client requires setting one up in the 
+[Google Developers Console](https://console.developers.google.com).
 
 ```{r eval = FALSE}
 options(rdfp.network_code = "12345678")
@@ -104,16 +102,16 @@ options(rdfp.application_name = "MyApp")
 options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
 options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
 
-# this function will use the options set above and 
-# cache an OAuth token in the working directory
+# dfp_auth will use the options above and cache an OAuth token in the working directory
 # the token will be refreshed when necessary
 dfp_auth()
 ```
 
 ```{r auth, include = FALSE}
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+library(here)
+token_path <- here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 ```

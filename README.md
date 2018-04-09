@@ -14,8 +14,7 @@ Table of Contents
 -   [Installation](#installation)
 -   [Vignettes](#vignettes)
 -   [Usage](#usage)
-    -   [Functions](#functions)
-    -   [Set API Version](#set-api-version)
+    -   [Set API Version](#load-package-and-set-api-version)
     -   [Authenticate](#authenticate)
     -   [Get Current User Info](#get-current-user-info)
     -   [Pull a LineItem](#pull-a-lineitem)
@@ -27,8 +26,9 @@ Installation
 ------------
 
 ``` r
-# this package is currently not on CRAN, so it should be installed from GitHub
-# install.packages("devtools")
+install.packages("devtools")
+
+# or to get the latest version available on GitHub
 devtools::install_github("StevenMMortimer/rdfp")
 ```
 
@@ -47,8 +47,6 @@ The README below outlines the package functionality, but review the vignettes fo
 
 Usage
 -----
-
-### Functions
 
 All functions start with `dfp_` so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most **rdfp** functions will return a `data.frame` or `list` parsed from the XML returned in the SOAP response.
 
@@ -69,7 +67,7 @@ options(rdfp.version = "v201711")
 
 To authenticate you will first need to specify the `network_code` of the DFP instance you'd like to connect to. This is the only required option that the user must specify when using the **rdfp** package. After setting the `network_code` all you need to do is run `dfp_auth()`. If you already have a cached `.httr-oauth` file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.
 
-The package has other options like a client\_id and client\_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the \[Google Developers Console\] (<https://console.developers.google.com>).
+The package has other options like a client\_id and client\_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the [Google Developers Console](https://console.developers.google.com).
 
 ``` r
 options(rdfp.network_code = "12345678")
@@ -77,8 +75,7 @@ options(rdfp.application_name = "MyApp")
 options(rdfp.client_id = "012345678901-99thisisatest99.apps.googleusercontent.com")
 options(rdfp.client_secret = "Th1s1sMyC1ientS3cr3t")
 
-# this function will use the options set above and 
-# cache an OAuth token in the working directory
+# dfp_auth will use the options above and cache an OAuth token in the working directory
 # the token will be refreshed when necessary
 dfp_auth()
 ```
@@ -139,20 +136,20 @@ request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR'
 # if you would like more control, see the example below which moves through each step in the process
 report_data <- dfp_full_report_wrapper(request_data)
 report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
-#> # A tibble: 25 x 3
+#> # A tibble: 27 x 3
 #>    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS
 #>    <chr>                                   <dbl>                   <dbl>
-#>  1 2018-03                            133765096.                   1778.
-#>  2 2018-03                            133765216.                    422.
-#>  3 2018-03                            133765336.                    642.
-#>  4 2018-03                            133765456.                   2176.
-#>  5 2018-03                            142461136.                     91.
-#>  6 2018-03                            133765576.                  17581.
-#>  7 2018-03                            133765696.                    945.
-#>  8 2018-03                            133765936.                  18171.
-#>  9 2018-03                            142461016.                    312.
-#> 10 2018-03                            143543776.                   1496.
-#> # ... with 15 more rows
+#>  1 2018-04                            133765096.                   1815.
+#>  2 2018-04                            133765216.                    452.
+#>  3 2018-04                            133765336.                    652.
+#>  4 2018-04                            133765456.                   2247.
+#>  5 2018-04                            142461136.                     88.
+#>  6 2018-04                            133765576.                  17440.
+#>  7 2018-04                            133765696.                    961.
+#>  8 2018-04                            133765936.                  17514.
+#>  9 2018-04                            142461016.                    324.
+#> 10 2018-04                            143543776.                   1348.
+#> # ... with 17 more rows
 ```
 
 Credits

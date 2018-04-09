@@ -8,7 +8,7 @@ output:
     toc_depth: 4
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Availability and Reporting with rdfp}
+  %\VignetteIndexEntry{Manipulating Orders and LineItems with rdfp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -34,10 +34,11 @@ df_auth()
 ```
 
 ```{r auth, include = FALSE}
+library(here)
 library(rdfp)
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+token_path <- here::here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here::here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 ```

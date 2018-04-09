@@ -9,7 +9,7 @@
 #    of allowing httr to refresh if 401 error occurs
 #  - renamed the function gs_auth to dfp_auth to be consistent with package endpoint
 
-# Copyright (c) 2015 Jennifer Bryan, Joanna Zhao
+# Copyright (c) 2017 Jennifer Bryan, Joanna Zhao
 
 # Licensed under MIT license.
 
@@ -55,9 +55,9 @@ is_legit_token <- function(x, verbose = FALSE) {
 #' Authorize \code{rdfp} to access your Google user data. You will be
 #' directed to a web browser, asked to sign in to your Google account, and to
 #' grant \code{rdfp} access to user data for Double Click for Publishers. 
-#' These user credentials are cached in a file named
-#' \code{.httr-oauth} in the current working directory, from where they can be
-#' automatically refreshed, as necessary.
+#' These user credentials are cached in a file named \code{.httr-oauth} in 
+#' the current working directory, from where they can be automatically refreshed, 
+#' as necessary.
 #'
 #' Most users, most of the time, do not need to call this function
 #' explicitly -- it will be triggered by the first action that
@@ -77,7 +77,7 @@ is_legit_token <- function(x, verbose = FALSE) {
 #'
 #' In a call to \code{dfp_auth}, the user can provide the token, app key and
 #' secret explicitly and can dictate whether credentials will be cached in
-#' \code{.httr_oauth}. They must be specified.
+#' \code{.httr-oauth}. They must be specified.
 #'
 #' To set options in a more persistent way, predefine one or more of
 #' them with lines like this in a \code{.Rprofile} file:
@@ -101,6 +101,10 @@ is_legit_token <- function(x, verbose = FALSE) {
 #'   want to wipe the slate clean and re-authenticate with the same or different
 #'   Google account. This deletes the \code{.httr-oauth} file in current working
 #'   directory.
+#' @param addtl_scopes character, strings that indicate additional Google services 
+#' the client should authorize. Use this when trying to generate a token that will 
+#' work to authenticate to other packages using Google services, such as the googlesheets 
+#' package or RGoogleAnalytics package.
 #' @param key,secret the "Client ID" and "Client secret" for the application
 #' @param cache logical indicating if \code{rdfp} should cache
 #'   credentials in the default cache file \code{.httr-oauth}
@@ -111,6 +115,15 @@ is_legit_token <- function(x, verbose = FALSE) {
 #' @export
 dfp_auth <- function(token = NULL,
                      new_user = FALSE,
+                     addtl_scopes = c("https://spreadsheets.google.com/feeds",
+                                      "https://www.googleapis.com/auth/drive",
+                                      "https://www.googleapis.com/auth/spreadsheets",
+                                      "https://www.googleapis.com/auth/presentations",
+                                      "https://www.googleapis.com/auth/analytics",
+                                      "https://www.googleapis.com/auth/yt-analytics.readonly",
+                                      "https://www.googleapis.com/auth/gmail.readonly", 
+                                      "https://www.googleapis.com/auth/gmail.compose", 
+                                      "https://www.googleapis.com/auth/gmail.send"),
                      key = getOption("rdfp.client_id"),
                      secret = getOption("rdfp.client_secret"),
                      cache = getOption("rdfp.httr_oauth_cache"), 
@@ -124,6 +137,10 @@ dfp_auth <- function(token = NULL,
   if(is.null(token)) {
     
     scope_list <- c("https://www.googleapis.com/auth/dfp")
+    if(!missing(addtl_scopes)){
+      addtl_scopes <- match.arg(addtl_scopes, several.ok = TRUE)
+      scope_list <- c(scope_list, addtl_scopes)
+    }
     
     rdfp_app <- httr::oauth_app("google", key = key, secret = secret)
     
