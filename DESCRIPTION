@@ -1,7 +1,7 @@
 Package: rdfp
 Title: An Implementation of the 'DoubleClick for Publishers' API
-Version: 0.1.2
-Date: 2018-04-07
+Version: 0.1.2.9000
+Date: 2018-04-09
 Description: An implementation of Google's 'DoubleClick for Publishers' (DFP) API 
     <https://developers.google.com/doubleclick-publishers/docs/start>. 
     This package is automatically compiled from the API WSDLs (Web Service Description 

@@ -173,13 +173,13 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $hour</span>
-<span class="co">#&gt; [1] 12</span>
+<span class="co">#&gt; [1] 16</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $minute</span>
-<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] 31</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $second</span>
-<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; [1] 23</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $timeZoneID</span>
 <span class="co">#&gt; [1] "America/New_York"</span>
@@ -231,8 +231,8 @@ all_forecasts
 <span class="co">#&gt; # A tibble: 6 x 4</span>
 <span class="co">#&gt;   unitType    availableUnits reservedUnits forecast_month</span>
 <span class="co">#&gt;   &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         </span>
-<span class="co">#&gt; 1 IMPRESSIONS       7828358.         1000. 2018-05       </span>
-<span class="co">#&gt; 2 IMPRESSIONS       7755085.         1000. 2018-06       </span>
+<span class="co">#&gt; 1 IMPRESSIONS       7822838.         1000. 2018-05       </span>
+<span class="co">#&gt; 2 IMPRESSIONS       7750942.         1000. 2018-06       </span>
 <span class="co">#&gt; 3 IMPRESSIONS       8146438.         1000. 2018-07       </span>
 <span class="co">#&gt; 4 IMPRESSIONS       8030500.         1000. 2018-08       </span>
 <span class="co">#&gt; 5 IMPRESSIONS       7894108.         1000. 2018-09       </span>
@@ -336,7 +336,7 @@ avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span 
 <p>The breakdowns are not necessarily mutually exclusive, so be careful when totaling them up. The counties are exclusive, so it’s okay to sum them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total availability across Texas counties</span>
 <span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)
-<span class="co">#&gt; [1] 1.014021</span></code></pre></div>
+<span class="co">#&gt; [1] 1.015811</span></code></pre></div>
 </div>
 </div>
 <div id="availability-for-an-existing-line" class="section level3">
@@ -352,7 +352,7 @@ this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <sp
 <span class="co">#&gt; # A tibble: 1 x 5</span>
 <span class="co">#&gt;    lineItemId     orderId availableUnits deliveredUnits matchedUnits</span>
 <span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 4382815843. 2117726531.       1366889.        209417.     1675231.</span></code></pre></div>
+<span class="co">#&gt; 1 4382815843. 2117726531.       1354811.        209780.     1670891.</span></code></pre></div>
 </div>
 <div id="check-out-the-tests" class="section level3">
 <h3 class="hasAnchor">
