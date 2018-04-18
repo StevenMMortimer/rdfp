@@ -24,7 +24,7 @@ dfp_auth(token = NULL, new_user = FALSE,
 
 \item{new_user}{logical, defaults to \code{FALSE}. Set to \code{TRUE} if you
 want to wipe the slate clean and re-authenticate with the same or different
-Google account. This deletes the \code{.httr-oauth} file in current working
+Google account. This deletes the \code{.httr-oauth-rdfp} file in current working
 directory.}
 
 \item{addtl_scopes}{character, strings that indicate additional Google services 
@@ -35,7 +35,7 @@ package or RGoogleAnalytics package.}
 \item{key, secret}{the "Client ID" and "Client secret" for the application}
 
 \item{cache}{logical indicating if \code{rdfp} should cache
-credentials in the default cache file \code{.httr-oauth}}
+credentials in the default cache file \code{.httr-oauth-rdfp}}
 
 \item{verbose}{a logical indicating if messages should be printed}
 }
@@ -65,12 +65,12 @@ suffice. However, when necessary, this function allows the user to
   \item provide your own app key and secret -- this requires setting up a new
   project in
   \href{https://console.developers.google.com}{Google Developers Console}
-  \item prevent caching of credentials in \code{.httr-oauth}
+  \item prevent caching of credentials in \code{.httr-oauth-rdfp}
 }
 
 In a call to \code{dfp_auth}, the user can provide the token, app key and
 secret explicitly and can dictate whether credentials will be cached in
-\code{.httr-oauth}. They must be specified.
+\code{.httr-oauth-rdfp}. They must be specified.
 
 To set options in a more persistent way, predefine one or more of
 them with lines like this in a \code{.Rprofile} file:

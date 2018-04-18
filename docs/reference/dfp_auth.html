@@ -190,7 +190,7 @@ as necessary.</p>
       <th>new_user</th>
       <td><p>logical, defaults to <code>FALSE</code>. Set to <code>TRUE</code> if you
 want to wipe the slate clean and re-authenticate with the same or different
-Google account. This deletes the <code>.httr-oauth</code> file in current working
+Google account. This deletes the <code>.httr-oauth-rdfp</code> file in current working
 directory.</p></td>
     </tr>
     <tr>
@@ -207,7 +207,7 @@ package or RGoogleAnalytics package.</p></td>
     <tr>
       <th>cache</th>
       <td><p>logical indicating if <code>rdfp</code> should cache
-credentials in the default cache file <code>.httr-oauth</code></p></td>
+credentials in the default cache file <code>.httr-oauth-rdfp</code></p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -234,11 +234,11 @@ suffice. However, when necessary, this function allows the user to</p>
 <li><p>provide your own app key and secret -- this requires setting up a new
   project in
   <a href='https://console.developers.google.com'>Google Developers Console</a></p></li>
-<li><p>prevent caching of credentials in <code>.httr-oauth</code></p></li>
+<li><p>prevent caching of credentials in <code>.httr-oauth-rdfp</code></p></li>
 </ul>
     <p>In a call to <code>dfp_auth</code>, the user can provide the token, app key and
 secret explicitly and can dictate whether credentials will be cached in
-<code>.httr-oauth</code>. They must be specified.</p>
+<code>.httr-oauth-rdfp</code>. They must be specified.</p>
 <p>To set options in a more persistent way, predefine one or more of
 them with lines like this in a <code>.Rprofile</code> file:</p><pre>
 options(rdfp.network_code = "12345678",
