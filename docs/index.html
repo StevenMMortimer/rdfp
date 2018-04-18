@@ -31,10 +31,10 @@
   ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -43,8 +43,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li class="dropdown">
@@ -97,7 +101,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -106,12 +116,11 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     
 
     
     
-<div class="contents">
 
 <p><br><img src="reference/figures/rdfp.png" width="120px" align="right"></p>
 <p><strong>Compiled using DFP API version: <code>v201802</code></strong></p>
@@ -166,6 +175,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#load-package-and-set-api-version" class="anchor"></a>Load Package and Set API Version</h3>
 <p>Google releases 4 versions of the DFP API each year and deprecates versions older than one year, so there is a lot that’s regularly changing in this package. <strong>rdfp</strong> is periodically compiled against a recent version of the API. If you would like to use an older or newer API version that what is the package default, then just specify it as an option.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<span class="co">#&gt; Warning: package 'rdfp' was built under R version 3.4.4</span>
 <span class="co"># see the package default version</span>
 <span class="kw">getOption</span>(<span class="st">"rdfp.version"</span>)
 <span class="co">#&gt; [1] "v201802"</span>
@@ -241,16 +251,16 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
 <span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
 <span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-04                            133765096.                   1815.</span>
-<span class="co">#&gt;  2 2018-04                            133765216.                    452.</span>
-<span class="co">#&gt;  3 2018-04                            133765336.                    652.</span>
-<span class="co">#&gt;  4 2018-04                            133765456.                   2247.</span>
-<span class="co">#&gt;  5 2018-04                            142461136.                     88.</span>
-<span class="co">#&gt;  6 2018-04                            133765576.                  17440.</span>
-<span class="co">#&gt;  7 2018-04                            133765696.                    961.</span>
-<span class="co">#&gt;  8 2018-04                            133765936.                  17514.</span>
-<span class="co">#&gt;  9 2018-04                            142461016.                    324.</span>
-<span class="co">#&gt; 10 2018-04                            143543776.                   1348.</span>
+<span class="co">#&gt;  1 2018-04                            133765096.                   1747.</span>
+<span class="co">#&gt;  2 2018-04                            133765216.                    403.</span>
+<span class="co">#&gt;  3 2018-04                            133765336.                    609.</span>
+<span class="co">#&gt;  4 2018-04                            133765456.                   2249.</span>
+<span class="co">#&gt;  5 2018-04                            142461136.                     86.</span>
+<span class="co">#&gt;  6 2018-04                            133765576.                  16989.</span>
+<span class="co">#&gt;  7 2018-04                            133765696.                    925.</span>
+<span class="co">#&gt;  8 2018-04                            133765936.                  16568.</span>
+<span class="co">#&gt;  9 2018-04                            142461016.                    319.</span>
+<span class="co">#&gt; 10 2018-04                            143543776.                   1177.</span>
 <span class="co">#&gt; # ... with 17 more rows</span></code></pre></div>
 </div>
 </div>
@@ -266,27 +276,37 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
 <p>Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the <a href="https://developers.google.com/doubleclick-publishers/docs/rel_notes">DFP API Reference</a> when using this package. Details on formatting, attributes, and methods are all better explained by Google’s documentation.</p>
 <p><a href="#">Top</a></p>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2 class="hasAnchor">
-<a href="#sidebar" class="anchor"></a>Links</h2>
+    <div class="links">
+<h2>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cran.r-project.org/package=rdfp">https://​cran.r-project.org/​package=rdfp</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=rdfp">https://​cloud.r-project.org/​package=rdfp</a>
 </li>
 <li>Browse source code at <br><a href="https://github.com/StevenMMortimer/rdfp">https://​github.com/​StevenMMortimer/​rdfp</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/StevenMMortimer/rdfp/issues">https://​github.com/​StevenMMortimer/​rdfp/​issues</a>
 </li>
 </ul>
+</div>
+<div class="license">
 <h2>License</h2>
-<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
+<ul class="list-unstyled">
+<li>
+<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
+</ul>
+</div>
+<div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Steven M. Mortimer <br><small class="roles"> Author, maintainer </small>  </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
+</div>
+
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/StevenMMortimer/rdfp"><img src="https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master" alt="Build Status"></a></li>
@@ -294,6 +314,7 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
 <li><a href="http://cran.r-project.org/package=rdfp"><img src="http://www.r-pkg.org/badges/version/rdfp" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://codecov.io/gh/StevenMMortimer/rdfp?branch=master"><img src="https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg" alt="Coverage Status"></a></li>
 </ul>
+</div>
 </div>
 
 </div>
@@ -310,5 +331,15 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
       </footer>
 </div>
 
-  </body>
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+</body>
 </html>

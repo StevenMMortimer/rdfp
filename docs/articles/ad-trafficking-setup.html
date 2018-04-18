@@ -24,10 +24,10 @@
   ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -36,8 +36,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li class="dropdown">
@@ -90,7 +94,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -99,17 +109,19 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Ad Trafficking Setup with rdfp</h1>
                         <h4 class="author">Steven M. Mortimer</h4>
             
             <h4 class="date">2018-03-29</h4>
-          </div>
+      
+      <small>Source: <a href="https://github.com/StevenMMortimer/rdfp/blob/master/vignettes/ad-trafficking-setup.Rmd"><code>vignettes/ad-trafficking-setup.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
@@ -160,7 +172,7 @@ dfp_createCustomTargetingKeys_result
 <span class="co">#&gt; # A tibble: 1 x 5</span>
 <span class="co">#&gt;          id name      displayName  type     status</span>
 <span class="co">#&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span>
-<span class="co">#&gt; 1 11687523. Test31687 TestKey31687 FREEFORM ACTIVE</span>
+<span class="co">#&gt; 1 11688717. Test11965 TestKey11965 FREEFORM ACTIVE</span>
 
 <span class="co"># create the values</span>
 request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),
@@ -172,9 +184,8 @@ dfp_createCustomTargetingValues_result
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   customTargetingKeyId            id name     displayName matchType status</span>
 <span class="co">#&gt;                  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span>
-<span class="co">#&gt; 1            11687523. 447924431580. TestVal… TestValue1  EXACT     ACTIVE</span>
-<span class="co">#&gt; 2            11687523. 447924615746. TestVal… TestValue2  EXACT     ACTIVE</span></code></pre></div>
-</div>
+<span class="co">#&gt; 1            11688717. 447926603843. TestVal… TestValue1  EXACT     ACTIVE</span>
+<span class="co">#&gt; 2            11688717. 447926378835. TestVal… TestValue2  EXACT     ACTIVE</span></code></pre></div>
 </div>
   </div>
 
@@ -195,5 +206,15 @@ dfp_createCustomTargetingValues_result
       </footer>
 </div>
 
-  </body>
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+</body>
 </html>

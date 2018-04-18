@@ -25,8 +25,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="getContentByStatementAndCustomTargetingValue — dfp_getContentByStatementAndCustomTargetingValue" />
 
 <meta property="og:description" content="Gets a ContentPage of Content objects that satisfy the given Statement query. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:
@@ -36,6 +34,8 @@ name
 lastModifiedDateTime
 " />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -57,6 +57,11 @@ lastModifiedDateTime
 
 </script>
 
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
   </head>
 
   <body>
@@ -70,8 +75,12 @@ lastModifiedDateTime
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
@@ -125,6 +134,13 @@ lastModifiedDateTime
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -132,10 +148,11 @@ lastModifiedDateTime
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>getContentByStatementAndCustomTargetingValue</h1>
+    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/ContentService.R'><code>R/ContentService.R</code></a></small>
     </div>
 
     
@@ -150,7 +167,7 @@ lastModifiedDateTime
     <pre class="usage"><span class='fu'>dfp_getContentByStatementAndCustomTargetingValue</span>(<span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -170,7 +187,7 @@ a <code>data.frame</code></p></td>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatementAndCustomTargetingValue'>Google Documentation for getContentByStatementAndCustomTargetingValue</a></p>
+    <div class='dont-index'><p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatementAndCustomTargetingValue'>Google Documentation for getContentByStatementAndCustomTargetingValue</a></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -204,6 +221,19 @@ a <code>data.frame</code></p></td>
 
       </footer>
    </div>
+
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+
 
   </body>
 </html>

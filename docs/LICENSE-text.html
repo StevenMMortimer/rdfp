@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>updateCompanies — dfp_updateCompanies • rdfp</title>
+<title>License • rdfp</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -22,13 +22,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
-<script src="../pkgdown.js"></script>
-<meta property="og:title" content="updateCompanies — dfp_updateCompanies" />
-
-<meta property="og:description" content="Updates the specified Company objects." />
-<meta name="twitter:card" content="summary" />
+<link href="pkgdown.css" rel="stylesheet">
+<script src="jquery.sticky-kit.min.js"></script>
+<script src="pkgdown.js"></script>
+<meta property="og:title" content="License" />
 
 
 <!-- mathjax -->
@@ -60,7 +57,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -71,7 +68,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">rdfp</a>
+        <a class="navbar-link" href="index.html">rdfp</a>
         <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
       </span>
     </div>
@@ -88,31 +85,31 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/administrative-tasks.html">Administrative Tasks</a>
+      <a href="articles/administrative-tasks.html">Administrative Tasks</a>
     </li>
     <li>
-      <a href="../articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
+      <a href="articles/ad-trafficking-setup.html">Ad Trafficking Setup</a>
     </li>
     <li>
-      <a href="../articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
+      <a href="articles/manipulating-orders-and-lineitems.html">Manipulating Orders and LineItems</a>
     </li>
     <li>
-      <a href="../articles/checking-availability.html">Checking Availability</a>
+      <a href="articles/checking-availability.html">Checking Availability</a>
     </li>
     <li>
-      <a href="../articles/pulling-reports.html">Pulling Reports</a>
+      <a href="articles/pulling-reports.html">Pulling Reports</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">
+  <a href="reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
     Reference
   </a>
 </li>
 <li>
-  <a href="../news/index.html">
+  <a href="news/index.html">
     <span class="fa fa-newspaper-o"></span>
      
     News
@@ -144,66 +141,19 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>updateCompanies</h1>
-    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/CompanyService.R'><code>R/CompanyService.R</code></a></small>
+      <h1>License</h1>
     </div>
 
-    
-    <p>Updates the specified Company objects.</p>
-    
-
-    <pre class="usage"><span class='fu'>dfp_updateCompanies</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>request_data</th>
-      <td><p>a <code>list</code> or <code>data.frame</code> of data elements
-to be formatted for a SOAP
-request (XML format, but passed as character string)</p></td>
-    </tr>
-    <tr>
-      <th>as_df</th>
-      <td><p>a boolean indicating whether to attempt to parse the result into
-a <code>data.frame</code></p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p>a boolean indicating whether to print the service URL and POSTed XML</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>a <code>data.frame</code> or <code>list</code> containing all the elements of a updateCompaniesResponse</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#updateCompanies'>Google Documentation for updateCompanies</a></p></div>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
- <span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_updateCompanies</span>(<span class='no'>request_data</span>)
-<span class='co'># }</span></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+<pre>YEAR: 2018
+COPYRIGHT HOLDER: Steven M. Mortimer
+</pre>
 
   </div>
+
 </div>
+
 
       <footer>
       <div class="copyright">

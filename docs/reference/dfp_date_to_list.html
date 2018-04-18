@@ -25,13 +25,13 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Format a datetime for DFP — dfp_date_to_list" />
 
 <meta property="og:description" content="Take a datetime representation in R and convert it to the list required by 
 DFP to indicate a datetime" />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -53,6 +53,11 @@ DFP to indicate a datetime" />
 
 </script>
 
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
   </head>
 
   <body>
@@ -66,8 +71,12 @@ DFP to indicate a datetime" />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
@@ -121,6 +130,13 @@ DFP to indicate a datetime" />
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -128,10 +144,11 @@ DFP to indicate a datetime" />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Format a datetime for DFP</h1>
+    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/dfp_utils.R'><code>R/dfp_utils.R</code></a></small>
     </div>
 
     
@@ -142,7 +159,7 @@ DFP to indicate a datetime</p>
     <pre class="usage"><span class='fu'>dfp_date_to_list</span>(<span class='no'>this_date</span>, <span class='kw'>daytime</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"beginning"</span>, <span class='st'>"end"</span>),
   <span class='kw'>timeZoneID</span> <span class='kw'>=</span> <span class='st'>"America/New_York"</span>, <span class='kw'>ensure_today_works</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -182,7 +199,7 @@ it will already be too late to be in the future.</p></td>
 #&gt; [1] 4
 #&gt; 
 #&gt; $date$day
-#&gt; [1] 10
+#&gt; [1] 19
 #&gt; 
 #&gt; 
 #&gt; $hour
@@ -222,6 +239,19 @@ it will already be too late to be in the future.</p></td>
 
       </footer>
    </div>
+
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+
 
   </body>
 </html>

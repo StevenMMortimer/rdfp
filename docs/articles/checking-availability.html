@@ -24,10 +24,10 @@
   ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -36,8 +36,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li class="dropdown">
@@ -90,7 +94,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -99,17 +109,19 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Checking Availability with rdfp</h1>
                         <h4 class="author">Steven M. Mortimer</h4>
             
             <h4 class="date">2018-03-29</h4>
-          </div>
+      
+      <small>Source: <a href="https://github.com/StevenMMortimer/rdfp/blob/master/vignettes/checking-availability.Rmd"><code>vignettes/checking-availability.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
 <span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
@@ -169,17 +181,17 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <span class="co">#&gt; [1] 4</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$day</span>
-<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] 18</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $hour</span>
-<span class="co">#&gt; [1] 16</span>
+<span class="co">#&gt; [1] 15</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $minute</span>
-<span class="co">#&gt; [1] 31</span>
+<span class="co">#&gt; [1] 22</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $second</span>
-<span class="co">#&gt; [1] 23</span>
+<span class="co">#&gt; [1] 15</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $timeZoneID</span>
 <span class="co">#&gt; [1] "America/New_York"</span>
@@ -193,7 +205,7 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <span class="co">#&gt; [1] 4</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$day</span>
-<span class="co">#&gt; [1] 10</span>
+<span class="co">#&gt; [1] 19</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $hour</span>
@@ -231,12 +243,12 @@ all_forecasts
 <span class="co">#&gt; # A tibble: 6 x 4</span>
 <span class="co">#&gt;   unitType    availableUnits reservedUnits forecast_month</span>
 <span class="co">#&gt;   &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         </span>
-<span class="co">#&gt; 1 IMPRESSIONS       7822838.         1000. 2018-05       </span>
-<span class="co">#&gt; 2 IMPRESSIONS       7750942.         1000. 2018-06       </span>
-<span class="co">#&gt; 3 IMPRESSIONS       8146438.         1000. 2018-07       </span>
-<span class="co">#&gt; 4 IMPRESSIONS       8030500.         1000. 2018-08       </span>
-<span class="co">#&gt; 5 IMPRESSIONS       7894108.         1000. 2018-09       </span>
-<span class="co">#&gt; 6 IMPRESSIONS       8249649.         1000. 2018-10</span></code></pre></div>
+<span class="co">#&gt; 1 IMPRESSIONS       7745231.         1000. 2018-05       </span>
+<span class="co">#&gt; 2 IMPRESSIONS       7614531.         1000. 2018-06       </span>
+<span class="co">#&gt; 3 IMPRESSIONS       7947313.         1000. 2018-07       </span>
+<span class="co">#&gt; 4 IMPRESSIONS       7920485.         1000. 2018-08       </span>
+<span class="co">#&gt; 5 IMPRESSIONS       7660654.         1000. 2018-09       </span>
+<span class="co">#&gt; 6 IMPRESSIONS       8010511.         1000. 2018-10</span></code></pre></div>
 </div>
 </div>
 <div id="availability-by-targeting-criteria" class="section level3">
@@ -336,7 +348,7 @@ avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span 
 <p>The breakdowns are not necessarily mutually exclusive, so be careful when totaling them up. The counties are exclusive, so it’s okay to sum them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total availability across Texas counties</span>
 <span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)
-<span class="co">#&gt; [1] 1.015811</span></code></pre></div>
+<span class="co">#&gt; [1] 0.9921919</span></code></pre></div>
 </div>
 </div>
 <div id="availability-for-an-existing-line" class="section level3">
@@ -352,7 +364,7 @@ this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <sp
 <span class="co">#&gt; # A tibble: 1 x 5</span>
 <span class="co">#&gt;    lineItemId     orderId availableUnits deliveredUnits matchedUnits</span>
 <span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 4382815843. 2117726531.       1354811.        209780.     1670891.</span></code></pre></div>
+<span class="co">#&gt; 1 4382815843. 2117726531.       1212764.        217098.     1488868.</span></code></pre></div>
 </div>
 <div id="check-out-the-tests" class="section level3">
 <h3 class="hasAnchor">
@@ -365,7 +377,6 @@ this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <sp
                                 <span class="dt">roleId=</span><span class="op">-</span><span class="dv">1</span>)
                      )
 dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUsers.html">dfp_createUsers</a></span>(request_data)</code></pre></div>
-</div>
 </div>
   </div>
 
@@ -386,5 +397,15 @@ dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href=".
       </footer>
 </div>
 
-  </body>
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+</body>
 </html>

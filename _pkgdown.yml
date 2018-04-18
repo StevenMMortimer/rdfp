@@ -1,9 +1,12 @@
 title: rdfp
-url: https://stevenmmortimer.github.io/rdfp/
+url: https://stevenmmortimer.github.io/rdfp
 template:
   params:
     bootswatch: spacelab
     ganalytics: UA-98603021-2
+    docsearch:
+      api_key: 8ecf941477ebecebe34b5825a4ae705e
+      index_name: rdfp
 
 home:
   strip_header: true

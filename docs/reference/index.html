@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Function reference" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -49,6 +49,11 @@
 
 </script>
 
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
   </head>
 
   <body>
@@ -62,8 +67,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
@@ -117,6 +126,13 @@
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -124,174 +140,169 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.1.2.9000</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-authentication" class="hasAnchor"><a href="#section-authentication" class="anchor"></a>Authentication</h2>
-            <p class="section-desc"><p>Functions used for authenticating.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_auth.html">dfp_auth</a></code> </p>
-          </td>
-          <td><p>Authorize <code>rdfp</code></p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-administrative-tools" class="hasAnchor"><a href="#section-administrative-tools" class="anchor"></a>Administrative Tools</h2>
-            <p class="section-desc"><p>Functions used for basic environment setup.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_getCurrentUser.html">dfp_getCurrentUser</a></code> </p>
-          </td>
-          <td><p>getCurrentUser</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></code> </p>
-          </td>
-          <td><p>getCurrentNetwork</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createTeams.html">dfp_createTeams</a></code> </p>
-          </td>
-          <td><p>TeamService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createUsers.html">dfp_createUsers</a></code> </p>
-          </td>
-          <td><p>UserService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createUserTeamAssociations.html">dfp_createUserTeamAssociations</a></code> </p>
-          </td>
-          <td><p>UserTeamAssociationService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createCompanies.html">dfp_createCompanies</a></code> </p>
-          </td>
-          <td><p>CompanyService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createContacts.html">dfp_createContacts</a></code> </p>
-          </td>
-          <td><p>ContactService</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-ad-trafficking-setup" class="hasAnchor"><a href="#section-ad-trafficking-setup" class="anchor"></a>Ad Trafficking Setup</h2>
-            <p class="section-desc"><p>Functions setup the environment for trafficking ads.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createLabels.html">dfp_createLabels</a></code> </p>
-          </td>
-          <td><p>LabelService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createCustomFields.html">dfp_createCustomFields</a></code> </p>
-          </td>
-          <td><p>createCustomFields</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createCustomFieldOptions.html">dfp_createCustomFieldOptions</a></code> </p>
-          </td>
-          <td><p>CustomFieldService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys</a></code> </p>
-          </td>
-          <td><p>CustomTargetingService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createCustomTargetingValues.html">dfp_createCustomTargetingValues</a></code> </p>
-          </td>
-          <td><p>createCustomTargetingValues</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-manipulating-orders-and-lineitems" class="hasAnchor"><a href="#section-manipulating-orders-and-lineitems" class="anchor"></a>Manipulating Orders and LineItems</h2>
-            <p class="section-desc"><p>Functions used working with Orders and LineItems.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_createOrders.html">dfp_createOrders</a></code> </p>
-          </td>
-          <td><p>OrderService</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></code> </p>
-          </td>
-          <td><p>getLineItemsByStatement</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-forecasting-and-reporting" class="hasAnchor"><a href="#section-forecasting-and-reporting" class="anchor"></a>Forecasting and Reporting</h2>
-            <p class="section-desc"><p>Functions used to determine availability and other metrics.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></code> </p>
-          </td>
-          <td><p>Take report request and return data.frame</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_getDeliveryForecast.html">dfp_getDeliveryForecast</a></code> </p>
-          </td>
-          <td><p>getDeliveryForecast</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast</a></code> </p>
-          </td>
-          <td><p>ForecastService</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-authentication" class="hasAnchor"><a href="#section-authentication" class="anchor"></a>Authentication</h2>
+          <p class="section-desc"><p>Functions used for authenticating.</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_auth.html">dfp_auth()</a></code> </p>
+        </td>
+        <td><p>Authorize <code>rdfp</code></p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-administrative-tools" class="hasAnchor"><a href="#section-administrative-tools" class="anchor"></a>Administrative Tools</h2>
+          <p class="section-desc"><p>Functions used for basic environment setup.</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_getCurrentUser.html">dfp_getCurrentUser()</a></code> </p>
+        </td>
+        <td><p>getCurrentUser</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_getCurrentNetwork.html">dfp_getCurrentNetwork()</a></code> </p>
+        </td>
+        <td><p>getCurrentNetwork</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createTeams.html">dfp_createTeams()</a></code> </p>
+        </td>
+        <td><p>TeamService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createUsers.html">dfp_createUsers()</a></code> </p>
+        </td>
+        <td><p>UserService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createUserTeamAssociations.html">dfp_createUserTeamAssociations()</a></code> </p>
+        </td>
+        <td><p>UserTeamAssociationService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createCompanies.html">dfp_createCompanies()</a></code> </p>
+        </td>
+        <td><p>CompanyService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createContacts.html">dfp_createContacts()</a></code> </p>
+        </td>
+        <td><p>ContactService</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-ad-trafficking-setup" class="hasAnchor"><a href="#section-ad-trafficking-setup" class="anchor"></a>Ad Trafficking Setup</h2>
+          <p class="section-desc"><p>Functions setup the environment for trafficking ads.</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createLabels.html">dfp_createLabels()</a></code> </p>
+        </td>
+        <td><p>LabelService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createCustomFields.html">dfp_createCustomFields()</a></code> </p>
+        </td>
+        <td><p>createCustomFields</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createCustomFieldOptions.html">dfp_createCustomFieldOptions()</a></code> </p>
+        </td>
+        <td><p>CustomFieldService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys()</a></code> </p>
+        </td>
+        <td><p>CustomTargetingService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createCustomTargetingValues.html">dfp_createCustomTargetingValues()</a></code> </p>
+        </td>
+        <td><p>createCustomTargetingValues</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-manipulating-orders-and-lineitems" class="hasAnchor"><a href="#section-manipulating-orders-and-lineitems" class="anchor"></a>Manipulating Orders and LineItems</h2>
+          <p class="section-desc"><p>Functions used working with Orders and LineItems.</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_createOrders.html">dfp_createOrders()</a></code> </p>
+        </td>
+        <td><p>OrderService</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement()</a></code> </p>
+        </td>
+        <td><p>getLineItemsByStatement</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-forecasting-and-reporting" class="hasAnchor"><a href="#section-forecasting-and-reporting" class="anchor"></a>Forecasting and Reporting</h2>
+          <p class="section-desc"><p>Functions used to determine availability and other metrics.</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_full_report_wrapper.html">dfp_full_report_wrapper()</a></code> </p>
+        </td>
+        <td><p>Take report request and return data.frame</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_getDeliveryForecast.html">dfp_getDeliveryForecast()</a></code> </p>
+        </td>
+        <td><p>getDeliveryForecast</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast()</a></code> </p>
+        </td>
+        <td><p>ForecastService</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -317,6 +328,19 @@
 
       </footer>
    </div>
+
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+
 
   </body>
 </html>

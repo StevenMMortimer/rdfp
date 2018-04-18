@@ -25,8 +25,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Authorize <code>rdfp</code> — dfp_auth" />
 
 <meta property="og:description" content="Authorize rdfp to access your Google user data. You will be
@@ -36,6 +34,8 @@ These user credentials are cached in a file named .httr-oauth in
 the current working directory, from where they can be automatically refreshed, 
 as necessary." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -57,6 +57,11 @@ as necessary." />
 
 </script>
 
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
   </head>
 
   <body>
@@ -70,8 +75,12 @@ as necessary." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
@@ -125,6 +134,13 @@ as necessary." />
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -132,10 +148,11 @@ as necessary." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Authorize <code>rdfp</code></h1>
+    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/dfp_auth.R'><code>R/dfp_auth.R</code></a></small>
     </div>
 
     
@@ -161,7 +178,7 @@ as necessary.</p>
   <span class='kw'>secret</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.client_secret"</span>),
   <span class='kw'>cache</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"rdfp.httr_oauth_cache"</span>), <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -208,7 +225,8 @@ credentials in the default cache file <code>.httr-oauth</code></p></td>
     <p>Most users, most of the time, do not need to call this function
 explicitly -- it will be triggered by the first action that
 requires authorization. Even when called, the default arguments will often
-suffice. However, when necessary, this function allows the user to</p><ul>
+suffice. However, when necessary, this function allows the user to</p>
+<ul>
 <li><p>store a token -- the token is invisibly returned and can be assigned
   to an object or written to an <code>.rds</code> file</p></li>
 <li><p>read the token from an <code>.rds</code> file or pre-existing object in the
@@ -260,6 +278,19 @@ implications thereof.</p>
 
       </footer>
    </div>
+
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+
 
   </body>
 </html>

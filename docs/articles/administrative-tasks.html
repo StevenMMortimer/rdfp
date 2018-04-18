@@ -24,10 +24,10 @@
   ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -36,8 +36,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li class="dropdown">
@@ -90,7 +94,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -99,21 +109,24 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Administrative Tasks with rdfp</h1>
                         <h4 class="author">Steven M. Mortimer</h4>
             
             <h4 class="date">2018-03-29</h4>
-          </div>
+      
+      <small>Source: <a href="https://github.com/StevenMMortimer/rdfp/blob/master/vignettes/administrative-tasks.Rmd"><code>vignettes/administrative-tasks.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette along with loading the <code>rdfp</code> package and specifying the DFP network we would like to connect to.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
 <span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
 <span class="kw">library</span>(rdfp)
+<span class="co">#&gt; Warning: package 'rdfp' was built under R version 3.4.4</span>
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</code></pre></div>
 <p>Just a note, that it’s not necessary to setup your own application client_id and client_secret through the Google Developer’s Console. The only difference is that the authentication will be run through the client created and associated with the <code>rdfp</code> package. By using the package client, you will <em>NOT</em> be giving access to your DFP to anyone, the package is just the medium for you to connect to your own data. If you wanted more control you would specify those options like so:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
@@ -191,7 +204,6 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
                                     <span class="dt">email=</span><span class="st">'testcontact1@gmail.com'</span>))
 dfp_createContacts_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createContacts.html">dfp_createContacts</a></span>(request_data)</code></pre></div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -211,5 +223,15 @@ dfp_createContacts_result &lt;-<span class="st"> </span><span class="kw"><a href
       </footer>
 </div>
 
-  </body>
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+</body>
 </html>

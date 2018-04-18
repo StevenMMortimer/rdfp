@@ -24,10 +24,10 @@
   ga('create', 'UA-98603021-2', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -36,8 +36,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">rdfp</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">rdfp</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li class="dropdown">
@@ -90,7 +94,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -99,17 +109,19 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Pulling Reports with rdfp</h1>
                         <h4 class="author">Steven M. Mortimer</h4>
             
             <h4 class="date">2018-03-29</h4>
-          </div>
+      
+      <small>Source: <a href="https://github.com/StevenMMortimer/rdfp/blob/master/vignettes/pulling-reports.Rmd"><code>vignettes/pulling-reports.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
@@ -135,20 +147,20 @@
                       )
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)
 report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
-<span class="co">#&gt; # A tibble: 1,493 x 3</span>
+<span class="co">#&gt; # A tibble: 1,527 x 3</span>
 <span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
 <span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-04                            133765096.                     37.</span>
-<span class="co">#&gt;  2 2018-04                            133765096.                     16.</span>
+<span class="co">#&gt;  1 2018-04                            133765096.                     90.</span>
+<span class="co">#&gt;  2 2018-04                            133765096.                     13.</span>
 <span class="co">#&gt;  3 2018-04                            133765096.                     13.</span>
-<span class="co">#&gt;  4 2018-04                            133765096.                     11.</span>
-<span class="co">#&gt;  5 2018-04                            133765096.                      7.</span>
-<span class="co">#&gt;  6 2018-04                            133765096.                     42.</span>
-<span class="co">#&gt;  7 2018-04                            133765096.                    247.</span>
-<span class="co">#&gt;  8 2018-04                            133765096.                     18.</span>
-<span class="co">#&gt;  9 2018-04                            133765096.                      1.</span>
-<span class="co">#&gt; 10 2018-04                            133765096.                      0.</span>
-<span class="co">#&gt; # ... with 1,483 more rows</span></code></pre></div>
+<span class="co">#&gt;  4 2018-04                            133765096.                     10.</span>
+<span class="co">#&gt;  5 2018-04                            133765096.                     14.</span>
+<span class="co">#&gt;  6 2018-04                            133765096.                     34.</span>
+<span class="co">#&gt;  7 2018-04                            133765096.                    229.</span>
+<span class="co">#&gt;  8 2018-04                            133765096.                     12.</span>
+<span class="co">#&gt;  9 2018-04                            133765096.                      0.</span>
+<span class="co">#&gt; 10 2018-04                            133765096.                      1.</span>
+<span class="co">#&gt; # ... with 1,517 more rows</span></code></pre></div>
 </div>
 <div id="working-with-saved-queries" class="section level4">
 <h4 class="hasAnchor">
@@ -196,7 +208,7 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 <span class="co"># the result is a list and most importantly the ID is included for checking its status</span>
 dfp_runReportJob_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_runReportJob.html">dfp_runReportJob</a></span>(request_data)
 dfp_runReportJob_result<span class="op">$</span>id
-<span class="co">#&gt; [1] 10127136657</span>
+<span class="co">#&gt; [1] 10132047589</span>
 
 <span class="co"># to check the status repeatedly you just need to provide the id</span>
 <span class="co"># dfp_getReportJobStatus_result returns a character string of the reportJob status</span>
@@ -225,21 +237,20 @@ dfp_getReportDownloadURL_result &lt;-<span class="st"> </span><span class="kw"><
 report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe</a></span>(<span class="dt">report_url=</span>dfp_getReportDownloadURL_result<span class="op">$</span>V1, 
                                            <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)
 report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]
-<span class="co">#&gt; # A tibble: 21 x 3</span>
+<span class="co">#&gt; # A tibble: 24 x 3</span>
 <span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span>
 <span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-04                            133765096.                   1815.</span>
-<span class="co">#&gt;  2 2018-04                            133765216.                    452.</span>
-<span class="co">#&gt;  3 2018-04                            133765336.                    652.</span>
-<span class="co">#&gt;  4 2018-04                            133765456.                   2247.</span>
-<span class="co">#&gt;  5 2018-04                            142461136.                     88.</span>
-<span class="co">#&gt;  6 2018-04                            133765576.                  17440.</span>
-<span class="co">#&gt;  7 2018-04                            133765696.                    961.</span>
-<span class="co">#&gt;  8 2018-04                            133765936.                  17514.</span>
-<span class="co">#&gt;  9 2018-04                            142461016.                    324.</span>
-<span class="co">#&gt; 10 2018-04                            143543776.                   1348.</span>
-<span class="co">#&gt; # ... with 11 more rows</span></code></pre></div>
-</div>
+<span class="co">#&gt;  1 2018-04                            133765096.                   1747.</span>
+<span class="co">#&gt;  2 2018-04                            133765216.                    403.</span>
+<span class="co">#&gt;  3 2018-04                            133765336.                    609.</span>
+<span class="co">#&gt;  4 2018-04                            133765456.                   2249.</span>
+<span class="co">#&gt;  5 2018-04                            142461136.                     86.</span>
+<span class="co">#&gt;  6 2018-04                            133765576.                  16989.</span>
+<span class="co">#&gt;  7 2018-04                            133765696.                    925.</span>
+<span class="co">#&gt;  8 2018-04                            133765936.                  16568.</span>
+<span class="co">#&gt;  9 2018-04                            142461016.                    319.</span>
+<span class="co">#&gt; 10 2018-04                            143543776.                   1177.</span>
+<span class="co">#&gt; # ... with 14 more rows</span></code></pre></div>
 </div>
   </div>
 
@@ -260,5 +271,15 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
       </footer>
 </div>
 
-  </body>
+  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
+  docsearch({
+    
+    apiKey: '8ecf941477ebecebe34b5825a4ae705e',
+    indexName: 'rdfp',
+    inputSelector: 'input#search-input.form-control',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+</body>
 </html>
