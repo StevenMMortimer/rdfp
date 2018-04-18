@@ -2,7 +2,8 @@
 
 ### Features
 
-  * Nothing Yet!
+  * Make the default file name for a cached token `".httr-oauth-rdfp"` so that 
+  it does not clash with other package token names
 
 ### Bug Fixes
 

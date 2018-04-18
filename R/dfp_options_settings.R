@@ -4,7 +4,7 @@
   op.rdfp <- list(
     rdfp.network_code = NULL,
     rdfp.application_name = "DFP API from R",
-    rdfp.httr_oauth_cache = TRUE,
+    rdfp.httr_oauth_cache = ".httr-oauth-rdfp",
     rdfp.version = 'v201802',
     rdfp.client_id = "1017468132430-k0h1fmcnqvuf3tt62si7c574sridq32b.apps.googleusercontent.com",
     rdfp.client_secret = "dzFYtzTPbkcF90GhUOqTgIM-",
