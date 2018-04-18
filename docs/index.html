@@ -171,7 +171,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>All functions start with <code>dfp_</code> so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most <strong>rdfp</strong> functions will return a <code>data.frame</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
+<p>All functions start with <code>dfp_</code> so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most <strong>rdfp</strong> functions will return a <code>tbl_df</code> or <code>list</code> parsed from the XML returned in the SOAP response.</p>
 <div id="load-package-and-set-api-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#load-package-and-set-api-version" class="anchor"></a>Load Package and Set API Version</h3>
@@ -187,8 +187,8 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="authenticate" class="section level3">
 <h3 class="hasAnchor">
 <a href="#authenticate" class="anchor"></a>Authenticate</h3>
-<p>To authenticate you will first need to specify the <code>network_code</code> of the DFP instance you’d like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. After setting the <code>network_code</code> all you need to do is run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code>. If you already have a cached <code>.httr-oauth</code> file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.</p>
-<p>The package has other options like a client_id and client_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the <a href="https://console.developers.google.com">Google Developers Console</a>.</p>
+<p>To authenticate you will first need to specify the <code>network_code</code> of the DFP instance you would like to connect to. This is the only required option that the user must specify when using the <strong>rdfp</strong> package. After setting the <code>network_code</code> all you need to do is run <code><a href="reference/dfp_auth.html">dfp_auth()</a></code>. If you already have a cached <code>.httr-oauth-rdfp</code> file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.</p>
+<p>The package has other options like a client_id and client_secret where you can connect using your own Google Client instead of the package default. Using your own client requires you to first set one up in the <a href="https://console.developers.google.com">Google Developers Console</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="st">"12345678"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)

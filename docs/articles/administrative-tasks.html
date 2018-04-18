@@ -122,13 +122,13 @@
 
     
     
-<p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette along with loading the <code>rdfp</code> package and specifying the DFP network we would like to connect to.</p>
+<p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette. Next we load the <code>rdfp</code> package and specify the DFP Network ID that we would like to connect to.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
 <span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
 <span class="kw">library</span>(rdfp)
 <span class="co">#&gt; Warning: package 'rdfp' was built under R version 3.4.4</span>
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</code></pre></div>
-<p>Just a note, that it’s not necessary to setup your own application client_id and client_secret through the Google Developer’s Console. The only difference is that the authentication will be run through the client created and associated with the <code>rdfp</code> package. By using the package client, you will <em>NOT</em> be giving access to your DFP to anyone, the package is just the medium for you to connect to your own data. If you wanted more control you would specify those options like so:</p>
+<p>To use the package it is <strong>not</strong> necessary to setup your own application <code>client_id</code> and <code>client_secret</code>. By default you will be using the package client. The package client does not grant anyone access to your DFP instance it simply provides the medium for you to connect to your own data. If you wanted to setup your own Google Client to connect to DFP then go to the <a href="https://console.developers.google.com">Google Developer’s Console</a> and then specify your <code>client_id</code> and <code>client_secret</code> like so:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
 <span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)

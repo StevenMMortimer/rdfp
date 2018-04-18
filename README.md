@@ -1,6 +1,6 @@
 
-rdfp <img src="man/figures/rdfp.png" width="120px" align="right" />
-===================================================================
+rdfp<img src="man/figures/rdfp.png" width="120px" align="right" />
+==================================================================
 
 [![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp) [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
@@ -50,7 +50,7 @@ The README below outlines the package functionality, but review the vignettes fo
 Usage
 -----
 
-All functions start with `dfp_` so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most **rdfp** functions will return a `data.frame` or `list` parsed from the XML returned in the SOAP response.
+All functions start with `dfp_` so that you can easily identify DFP-specific operations and use tab completion in RStudio. Most **rdfp** functions will return a `tbl_df` or `list` parsed from the XML returned in the SOAP response.
 
 ### Load Package and Set API Version
 
@@ -68,9 +68,9 @@ options(rdfp.version = "v201711")
 
 ### Authenticate
 
-To authenticate you will first need to specify the `network_code` of the DFP instance you'd like to connect to. This is the only required option that the user must specify when using the **rdfp** package. After setting the `network_code` all you need to do is run `dfp_auth()`. If you already have a cached `.httr-oauth` file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.
+To authenticate you will first need to specify the `network_code` of the DFP instance you would like to connect to. This is the only required option that the user must specify when using the **rdfp** package. After setting the `network_code` all you need to do is run `dfp_auth()`. If you already have a cached `.httr-oauth-rdfp` file in the current working directory, then the token will be loaded and refreshed if necessary. Otherwise, your browswer will pop open and you will interactively authenticate.
 
-The package has other options like a client\_id and client\_secret where you can connect using your own API client instead of the package default. Using your own client requires setting one up in the [Google Developers Console](https://console.developers.google.com).
+The package has other options like a client\_id and client\_secret where you can connect using your own Google Client instead of the package default. Using your own client requires you to first set one up in the [Google Developers Console](https://console.developers.google.com).
 
 ``` r
 options(rdfp.network_code = "12345678")
@@ -169,7 +169,7 @@ Most all operations supported by the DFP API are available via this package. It 
 
 More information is also available on the `pkgdown` site at <https://StevenMMortimer.github.io/rdfp/>.
 
-[Top](#rdfp-)
+[Top](#rdfp)
 
 ------------------------------------------------------------------------
 

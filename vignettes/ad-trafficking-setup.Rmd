@@ -30,7 +30,7 @@ or we will be prompted to authenticate via the browser.
 ```{r load-package, eval=FALSE}
 library(rdfp)
 options(rdfp.network_code = 123456789)
-df_auth()
+dfp_auth()
 ```
 
 ```{r auth, include = FALSE}

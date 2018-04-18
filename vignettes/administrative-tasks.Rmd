@@ -23,8 +23,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-First, we load `dplyr` and `lubridate` to use in this vignette along with loading 
-the `rdfp` package and specifying the DFP network we would like to connect to. 
+First, we load `dplyr` and `lubridate` to use in this vignette. Next we load the 
+`rdfp` package and specify the DFP Network ID that we would like to connect to.
 
 ```{r load-package}
 suppressWarnings(suppressMessages(library(dplyr)))
@@ -33,12 +33,12 @@ library(rdfp)
 options(rdfp.network_code = 123456789)
 ```
 
-Just a note, that it's not necessary to setup your own application client_id and 
-client_secret through the Google Developer's Console. The only difference is that 
-the authentication will be run through the client created and associated with the 
-`rdfp` package. By using the package client, you will *NOT* be giving access to 
-your DFP to anyone, the package is just the medium for you to connect to 
-your own data. If you wanted more control you would specify those options like so: 
+To use the package it is **not** necessary to setup your own application `client_id`
+and `client_secret`. By default you will be using the package client. The package 
+client does not grant anyone access to your DFP instance it simply provides the 
+medium for you to connect to your own data. If you wanted to setup your own Google 
+Client to connect to DFP then go to the [Google Developer's Console](https://console.developers.google.com)
+and then specify your `client_id` and `client_secret` like so: 
 
 ```{r other-params, eval=FALSE}
 options(rdfp.application_name = "MyApp")

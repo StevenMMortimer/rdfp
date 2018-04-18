@@ -32,7 +32,7 @@ suppressWarnings(suppressMessages(library(dplyr)))
 suppressWarnings(suppressMessages(library(lubridate)))
 library(rdfp)
 options(rdfp.network_code = 123456789)
-df_auth()
+dfp_auth()
 ```
 
 ```{r auth, include = FALSE}

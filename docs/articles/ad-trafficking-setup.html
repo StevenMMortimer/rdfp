@@ -125,7 +125,7 @@
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw">df_auth</span>()</code></pre></div>
+<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
 <div id="setup-custom-labels-for-items" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-labels-for-items" class="anchor"></a>Setup Custom Labels for Items</h4>
@@ -172,7 +172,7 @@ dfp_createCustomTargetingKeys_result
 <span class="co">#&gt; # A tibble: 1 x 5</span>
 <span class="co">#&gt;          id name      displayName  type     status</span>
 <span class="co">#&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span>
-<span class="co">#&gt; 1 11667682. Test50914 TestKey50914 FREEFORM ACTIVE</span>
+<span class="co">#&gt; 1 11667736. Test53338 TestKey53338 FREEFORM ACTIVE</span>
 
 <span class="co"># create the values</span>
 request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),
@@ -184,8 +184,8 @@ dfp_createCustomTargetingValues_result
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   customTargetingKeyId            id name     displayName matchType status</span>
 <span class="co">#&gt;                  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span>
-<span class="co">#&gt; 1            11667682. 447926381685. TestVal… TestValue1  EXACT     ACTIVE</span>
-<span class="co">#&gt; 2            11667682. 447926199715. TestVal… TestValue2  EXACT     ACTIVE</span></code></pre></div>
+<span class="co">#&gt; 1            11667736. 447926215351. TestVal… TestValue1  EXACT     ACTIVE</span>
+<span class="co">#&gt; 2            11667736. 447926618294. TestVal… TestValue2  EXACT     ACTIVE</span></code></pre></div>
 </div>
   </div>
 
