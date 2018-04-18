@@ -26,9 +26,11 @@ Installation
 ------------
 
 ``` r
-install.packages("devtools")
+# install from CRAN
+install.packages("rdfp")
 
-# or to get the latest version available on GitHub
+# or get the latest version available on GitHub using the devtools package
+# install.packages("devtools")
 devtools::install_github("StevenMMortimer/rdfp")
 ```
 
@@ -56,6 +58,7 @@ Google releases 4 versions of the DFP API each year and deprecates versions olde
 
 ``` r
 library(rdfp)
+#> Warning: package 'rdfp' was built under R version 3.4.4
 # see the package default version
 getOption("rdfp.version")
 #> [1] "v201802"
@@ -139,16 +142,16 @@ report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SE
 #> # A tibble: 27 x 3
 #>    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS
 #>    <chr>                                   <dbl>                   <dbl>
-#>  1 2018-04                            133765096.                   1815.
-#>  2 2018-04                            133765216.                    452.
-#>  3 2018-04                            133765336.                    652.
-#>  4 2018-04                            133765456.                   2247.
-#>  5 2018-04                            142461136.                     88.
-#>  6 2018-04                            133765576.                  17440.
-#>  7 2018-04                            133765696.                    961.
-#>  8 2018-04                            133765936.                  17514.
-#>  9 2018-04                            142461016.                    324.
-#> 10 2018-04                            143543776.                   1348.
+#>  1 2018-04                            133765096.                   1747.
+#>  2 2018-04                            133765216.                    403.
+#>  3 2018-04                            133765336.                    609.
+#>  4 2018-04                            133765456.                   2249.
+#>  5 2018-04                            142461136.                     86.
+#>  6 2018-04                            133765576.                  16989.
+#>  7 2018-04                            133765696.                    925.
+#>  8 2018-04                            133765936.                  16568.
+#>  9 2018-04                            142461016.                    319.
+#> 10 2018-04                            143543776.                   1177.
 #> # ... with 17 more rows
 ```
 

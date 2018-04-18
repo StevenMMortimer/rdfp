@@ -39,9 +39,11 @@ inventory, create orders, pull reports, and more!
 ## Installation
 
 ```{r, eval = FALSE}
-install.packages("devtools")
+# install from CRAN
+install.packages("rdfp")
 
-# or to get the latest version available on GitHub
+# or get the latest version available on GitHub using the devtools package
+# install.packages("devtools")
 devtools::install_github("StevenMMortimer/rdfp")
 ```
 
