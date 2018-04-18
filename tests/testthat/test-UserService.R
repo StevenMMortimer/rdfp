@@ -1,5 +1,7 @@
 context("UserService")
 
+skip("Skipping User Creation Since New Users Cannot Be Deleted")
+
 rdfp_options <- readRDS("rdfp_options.rds")
 options(rdfp.network_code = rdfp_options$network_code)
 options(rdfp.httr_oauth_cache = FALSE)
