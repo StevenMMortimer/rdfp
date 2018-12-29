@@ -1,15 +1,16 @@
 Package: rdfp
 Title: An Implementation of the 'DoubleClick for Publishers' API
-Version: 0.1.2.9000
-Date: 2018-04-09
+Version: 0.1.3
+Date: 2018-12-29
 Description: An implementation of Google's 'DoubleClick for Publishers' (DFP) API 
-    <https://developers.google.com/doubleclick-publishers/docs/start>. 
-    This package is automatically compiled from the API WSDLs (Web Service Description 
-    Language) files to dictate how the API is structured. Theoretically, all API 
-    actions are possible using this package; however, care must be taken to format 
-    the inputs correctly and parse the outputs correctly as well. Please see Google's 
-    DFP API reference and this package's website <https://stevenmmortimer.github.io/rdfp/> 
-    for more information, documentation, and examples.
+    <https://developers.google.com/ad-manager/api/start> (recently renamed to 
+    'Google Ad Manager'). This package is automatically compiled from the API WSDLs 
+    (Web Service Description Language) files to dictate how the API is structured. 
+    Theoretically, all API actions are possible using this package; however, care 
+    must be taken to format the inputs correctly and parse the outputs correctly 
+    as well. Please see Google's DFP API reference and this package's website 
+    <https://stevenmmortimer.github.io/rdfp/> for more information, documentation, 
+    and examples.
 Authors@R: c(
     person(c("Steven", "M."), "Mortimer", , "reportmort@gmail.com", c("aut", "cre")),
     person("Jennifer", "Bryan", , "jenny@rstudio.com", c("ctb")),

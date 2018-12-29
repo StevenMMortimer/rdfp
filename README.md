@@ -4,9 +4,9 @@ rdfp<img src="man/figures/rdfp.png" width="120px" align="right" />
 
 [![Build Status](https://travis-ci.org/StevenMMortimer/rdfp.svg?branch=master)](https://travis-ci.org/StevenMMortimer/rdfp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/StevenMMortimer/rdfp?branch=master&svg=true)](https://ci.appveyor.com/project/StevenMMortimer/rdfp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp) [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
-**Compiled using DFP API version: `v201802`**
+**Compiled using DFP API version: `v201811`**
 
-**rdfp** allows you to use the DoubleClick for Publishers API from R. Manage inventory, create orders, pull reports, and more!
+**rdfp** allows you to use the DoubleClick for Publishers API from R (recently renamed to Google Ad Manager). Manage inventory, create orders, pull reports, and more!
 
 Table of Contents
 -----------------
@@ -58,12 +58,14 @@ Google releases 4 versions of the DFP API each year and deprecates versions olde
 
 ``` r
 library(rdfp)
-#> Warning: package 'rdfp' was built under R version 3.4.4
 # see the package default version
 getOption("rdfp.version")
-#> [1] "v201802"
-# this will force all calls to be against the version "v201711"
-options(rdfp.version = "v201711")
+#> [1] "v201811"
+```
+
+``` r
+# this will force all calls to be against the version "v201808"
+options(rdfp.version = "v201808")
 ```
 
 ### Authenticate
@@ -90,15 +92,15 @@ dfp_auth()
 user_info <- dfp_getCurrentUser()
 user_info[,c('id', 'isActive')]
 #> # A tibble: 1 x 2
-#>           id isActive
-#>        <dbl> <chr>   
-#> 1 185549536. true
+#>          id isActive
+#>       <dbl> <lgl>   
+#> 1 185549536 TRUE
 network_info <- dfp_getCurrentNetwork()
 network_info[,c('id', 'networkCode')]
 #> # A tibble: 1 x 2
-#>        id networkCode
-#>     <dbl>       <dbl>
-#> 1 109096.    1019096.
+#>       id networkCode
+#>    <dbl>       <dbl>
+#> 1 109096     1019096
 ```
 
 #### Pull a LineItem
@@ -111,11 +113,11 @@ request_data <- list('filterStatement'=list('query'="WHERE status='DELIVERING' L
 resultset <- dfp_getLineItemsByStatement(request_data, as_df=TRUE) 
 resultset[,c('orderId', 'id', 'priority', 'deliveryRateType')]
 #> # A tibble: 3 x 4
-#>       orderId          id priority deliveryRateType
-#>         <dbl>       <dbl>    <dbl> <chr>           
-#> 1 1254227776. 1928427256.      12. EVENLY          
-#> 2 1393728736. 2038280896.      12. EVENLY          
-#> 3 1265251936. 2060032216.      16. EVENLY
+#>      orderId         id priority deliveryRateType
+#>        <dbl>      <dbl>    <dbl> <chr>           
+#> 1 2231707164 4557799162       12 EVENLY          
+#> 2 2231707164 4557800341       12 EVENLY          
+#> 3 2231707164 4557803758       12 EVENLY
 ```
 
 ### Run a Report
@@ -139,20 +141,18 @@ request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR'
 # if you would like more control, see the example below which moves through each step in the process
 report_data <- dfp_full_report_wrapper(request_data)
 report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
-#> # A tibble: 27 x 3
-#>    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS
-#>    <chr>                                   <dbl>                   <dbl>
-#>  1 2018-04                            133765096.                   1747.
-#>  2 2018-04                            133765216.                    403.
-#>  3 2018-04                            133765336.                    609.
-#>  4 2018-04                            133765456.                   2249.
-#>  5 2018-04                            142461136.                     86.
-#>  6 2018-04                            133765576.                  16989.
-#>  7 2018-04                            133765696.                    925.
-#>  8 2018-04                            133765936.                  16568.
-#>  9 2018-04                            142461016.                    319.
-#> 10 2018-04                            143543776.                   1177.
-#> # ... with 17 more rows
+#> # A tibble: 9 x 3
+#>   Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS
+#>   <chr>                                   <dbl>                   <dbl>
+#> 1 2018-12                           21677451947                     864
+#> 2 2018-12                           21677451950                     210
+#> 3 2018-12                           21677553898                    5049
+#> 4 2018-12                           21677553901                     174
+#> 5 2018-12                           21677553904                    3474
+#> 6 2018-12                           21677451953                    1687
+#> 7 2018-12                           21677553910                      65
+#> 8 2018-12                           21677553913                    2589
+#> 9 2018-12                           21677554012                      75
 ```
 
 Credits

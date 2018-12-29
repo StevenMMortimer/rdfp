@@ -1,4 +1,12 @@
-## rdfp 0.1.2.9000
+## rdfp 0.1.3 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3)
+
+**Note**: DoubleClick for Publishers was recently renamed to Google Ad Manager. For 
+this version we will continue to use the "dfp" abbreviation although everything else 
+has been updated to `v201811` from the Google Ad Manager API reference.
+
+Also, please note that the API has changed the name of `timeZoneID` to `timeZoneId`. 
+We have modified functions to follow suit. You may need to update this argument in existing 
+scripts, especially when dealing with forecasts, reports, orders, and lineitems.
 
 ### Features
 
