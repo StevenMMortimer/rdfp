@@ -28,5 +28,5 @@ Performs actions on BaseRate objects that satisfy the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 }

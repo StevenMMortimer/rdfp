@@ -11,7 +11,7 @@
 #' 
 #' Creates new ProposalLineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -49,7 +49,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{isProgrammatic}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -75,7 +75,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on ProposalLineItem objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -98,9 +98,9 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' updateProposalLineItems
 #' 
-#' Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
+#' Updates the specified ProposalLineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

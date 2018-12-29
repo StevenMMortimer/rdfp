@@ -28,5 +28,5 @@ Performs action on Product objects that satisfy the given Statement.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#performProductAction}{Google Documentation for performProductAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#performProductAction}{Google Documentation for performProductAction}
 }

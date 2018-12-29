@@ -6,7 +6,7 @@
 #' 
 #' Creates new Contact objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#createContacts}{Google Documentation for createContacts}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#createContacts}{Google Documentation for createContacts}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -49,7 +49,7 @@ dfp_createContacts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -75,7 +75,7 @@ dfp_getContactsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Contact objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#updateContacts}{Google Documentation for updateContacts}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#updateContacts}{Google Documentation for updateContacts}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

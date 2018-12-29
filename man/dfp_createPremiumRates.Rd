@@ -38,5 +38,5 @@ Creates a list of new PremiumRate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }

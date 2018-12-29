@@ -28,5 +28,5 @@ Updates the specified CustomField objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 }

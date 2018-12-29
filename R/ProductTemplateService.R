@@ -14,7 +14,7 @@
 #' 
 #' Creates new ProductTemplate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -50,7 +50,7 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{rateType}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -76,7 +76,7 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs action on ProductTemplate objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -101,7 +101,7 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified ProductTemplate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

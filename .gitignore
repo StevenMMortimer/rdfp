@@ -10,3 +10,4 @@ rdfp_options.rds
 setup.tar
 misc/*
 inst/doc
+.httr-oauth-rdfp

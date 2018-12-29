@@ -41,5 +41,5 @@ Gets a ProductTemplatePage of ProductTemplate objects that satisfy the filtering
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
 }

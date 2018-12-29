@@ -4,7 +4,8 @@
 \alias{dfp_createProposalLineItems}
 \title{ProposalLineItemService}
 \usage{
-dfp_createProposalLineItems(request_data, as_df = TRUE, verbose = FALSE)
+dfp_createProposalLineItems(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -38,5 +39,5 @@ Creates new ProposalLineItem objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 }

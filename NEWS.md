@@ -2,12 +2,19 @@
 
 ### Features
 
+  * Update to latest version which is `v201811` (#8)
   * Make the default file name for a cached token `".httr-oauth-rdfp"` so that 
   it does not clash with other package token names
+  * `dfp_date_to_list()` now infers the timezone if not provided. Previously it always defaulted 
+  to a value of `America/New_York` (#6)
+  * Increased the default `max_tries` argument in `dfp_full_report_wrapper()` from 
+  10 to 20 tries so that long running queries do not "timeout" by reaching the max 
+  number of tries without completing
 
 ### Bug Fixes
 
-  * Nothing Yet!
+  * Update vignette names so that they are not duplicated, which is now a required 
+  check for CRAN
 
 ___
 

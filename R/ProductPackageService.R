@@ -13,7 +13,7 @@
 #' 
 #' Creates new ProductPackage objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#createProductPackages}{Google Documentation for createProductPackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -46,7 +46,7 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#getProductPackagesByStatement}{Google Documentation for getProductPackagesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -72,7 +72,7 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' Performs actions on ProductPackage objects that match the given \{@@link Statement query\}.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -97,7 +97,7 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' Updates the specified ProductPackage objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

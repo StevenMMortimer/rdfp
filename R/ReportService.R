@@ -27,7 +27,7 @@
 #' Returns the URL at which the report file can be downloaded.
 #' The report will be generated as a gzip archive, containing the report file itself.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -66,7 +66,7 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report.
 #' By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,7 +91,7 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -141,7 +141,7 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -176,7 +176,7 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #'   \item{ReportJob reportQuery}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#runReportJob}{Google Documentation for runReportJob}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

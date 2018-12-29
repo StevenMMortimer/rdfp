@@ -11,31 +11,6 @@
 #' not see a "Sales" tab in \href{https://www.google.com/dfp}{DoubleClick for
 #' Publishers (DFP)}, you will not be able to use this service.
 #' 
-#' createProducts
-#' 
-#' Creates new Product objects. This method is only available when creating programmatic guaranteed products when not using sales management.
-#' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#createProducts}{Google Documentation for createProducts}
-#' 
-#' @param request_data a \code{list} or \code{data.frame} of data elements
-#' to be formatted for a SOAP
-#' request (XML format, but passed as character string)
-#' @param as_df a boolean indicating whether to attempt to parse the result into
-#' a \code{data.frame}
-#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
-#' @return a \code{data.frame} or \code{list} containing all the elements of a createProductsResponse 
-#' @examples
-#' \dontrun{
-#'  res <- dfp_createProducts(request_data)
-#' }
-#' @export
-dfp_createProducts <- function(request_data, as_df=TRUE, verbose=FALSE){
-  request_body <- form_request_body(service='ProductService', root_name='createProducts', data=request_data)
-  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
-  result <- parse_soap_response(httr_response=httr_response, resp_element='createProductsResponse', as_df=as_df)
-  return(result)
-}
-#' 
 #' getProductsByStatement
 #' 
 #' Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query.  When using sales management, the following fields are supported for filtering and/or sorting.  
@@ -52,7 +27,7 @@ dfp_createProducts <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -78,7 +53,7 @@ dfp_getProductsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs action on Product objects that satisfy the given Statement.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#performProductAction}{Google Documentation for performProductAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#performProductAction}{Google Documentation for performProductAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -103,7 +78,7 @@ dfp_performProductAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Product objects. Note non-updatable fields will not be backfilled.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#updateProducts}{Google Documentation for updateProducts}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#updateProducts}{Google Documentation for updateProducts}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

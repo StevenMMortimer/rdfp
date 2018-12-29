@@ -10,7 +10,7 @@
 #'   \item{CustomFieldOption customFieldId}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -43,7 +43,7 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #'   \item{CustomField visibility}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -73,7 +73,7 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the CustomFieldOption uniquely identified by the given ID.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -105,7 +105,7 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{visibility}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -131,7 +131,7 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Performs actions on CustomField objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -156,7 +156,7 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified CustomFieldOption objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -181,7 +181,7 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified CustomField objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

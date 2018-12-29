@@ -11,7 +11,7 @@
 #' 
 #' Creates new Order objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#createOrders}{Google Documentation for createOrders}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#createOrders}{Google Documentation for createOrders}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -65,7 +65,7 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,7 +91,7 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Order objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#performOrderAction}{Google Documentation for performOrderAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -116,7 +116,7 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Order objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/OrderService#updateOrders}{Google Documentation for updateOrders}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#updateOrders}{Google Documentation for updateOrders}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

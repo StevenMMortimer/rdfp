@@ -4,7 +4,8 @@
 \alias{dfp_updateCdnConfigurations}
 \title{updateCdnConfigurations}
 \usage{
-dfp_updateCdnConfigurations(request_data, as_df = TRUE, verbose = FALSE)
+dfp_updateCdnConfigurations(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,5 +29,5 @@ Updates the specified CdnConfiguration objects. Updates the specified CdnConfigu
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 }

@@ -11,7 +11,7 @@
 #'   \item{CustomTargetingKey type}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -43,7 +43,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{CustomTargetingValue name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,7 +79,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #'   \item{type}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -112,7 +112,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #'   \item{matchType}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -138,7 +138,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' Performs actions on CustomTargetingKey objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -163,7 +163,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on CustomTargetingValue objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -188,7 +188,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' 
 #' Updates the specified CustomTargetingKey objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -213,7 +213,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' Updates the specified CustomTargetingValue objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

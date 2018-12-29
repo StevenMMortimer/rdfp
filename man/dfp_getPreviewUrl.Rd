@@ -24,5 +24,5 @@ Returns an insite preview URL that references the specified site URL with the sp
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 }

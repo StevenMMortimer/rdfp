@@ -33,7 +33,7 @@
 #'   \item{daiIngestStatus}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -65,7 +65,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}

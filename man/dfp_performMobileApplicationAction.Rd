@@ -29,5 +29,5 @@ Performs an action on MobileApplication mobile applications.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
 }

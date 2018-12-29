@@ -28,5 +28,5 @@ Updates the specified Company objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 }

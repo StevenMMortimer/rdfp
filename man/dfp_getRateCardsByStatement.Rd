@@ -4,7 +4,8 @@
 \alias{dfp_getRateCardsByStatement}
 \title{getRateCardsByStatement}
 \usage{
-dfp_getRateCardsByStatement(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getRateCardsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -36,5 +37,5 @@ Gets a RateCardPage of RateCard objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 }

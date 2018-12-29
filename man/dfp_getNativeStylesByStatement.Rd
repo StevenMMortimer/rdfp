@@ -4,7 +4,8 @@
 \alias{dfp_getNativeStylesByStatement}
 \title{getNativeStylesByStatement}
 \usage{
-dfp_getNativeStylesByStatement(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getNativeStylesByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -33,5 +34,5 @@ Gets a NativeStylePage NativeStylePage of NativeStyle objects that satisfy the g
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 }

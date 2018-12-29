@@ -6,7 +6,7 @@
 #' 
 #' Creates and claims MobileApplication mobile applications to be used for targeting in the network.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -39,7 +39,7 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
 #'   \item{isArchived}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -65,7 +65,7 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
 #' 
 #' Performs an action on MobileApplication mobile applications.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#performMobileApplicationAction}{Google Documentation for performMobileApplicationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -90,7 +90,7 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Updates the specified MobileApplication mobile applications.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

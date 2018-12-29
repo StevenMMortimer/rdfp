@@ -36,5 +36,5 @@ Creates new AdRule objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 }

@@ -21,14 +21,26 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="<code>rdfp</code> package — rdfp" />
 
 <meta property="og:description" content="DoubleClick for Publishers API from R" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -40,22 +52,15 @@
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98603021-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-98603021-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-98603021-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -132,7 +137,7 @@
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -147,25 +152,28 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1><code>rdfp</code> package</h1>
-    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/rdfp.R'><code>R/rdfp.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/rdfp.R'><code>R/rdfp.R</code></a></small>
+    <div class="hidden name"><code>rdfp.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>DoubleClick for Publishers API from R</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The DoubleClick for Publishers (DFP) API consists of roughly 50 services. 
-Each service is written to handle a particular set of operations within the 
-API and grouped.</p>
+    <p>The DoubleClick for Publishers (DFP) API (recently renamed to Google Ad Manager) 
+consists of roughly 50 services. Each service is written to handle a particular 
+set of operations within the API and grouped.</p>
 <p>The official documentation, provided by Google, is available at:
-<a href='https://developers.google.com/doubleclick-publishers/docs/rel_notes'>https://developers.google.com/doubleclick-publishers/docs/rel_notes</a></p>
+<a href='https://developers.google.com/ad-manager/api/rel_notes'>https://developers.google.com/ad-manager/api/rel_notes</a></p>
 <p>This package attempts to scrape the functionality and documentation from the 
 references and WSDL to provide an interface via R. Each function has its own
 documentation, but additional material can be found in the 
-<a href='https://github.com/reportmort/rdfp'>README</a> on GitHub</p>
+<a href='https://github.com/StevenMMortimer/rdfp'>README</a> on GitHub</p>
     
 
   </div>
@@ -196,10 +204,16 @@ documentation, but additional material can be found in the
 <script>
   docsearch({
     
+    
     apiKey: '8ecf941477ebecebe34b5825a4ae705e',
     indexName: 'rdfp',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

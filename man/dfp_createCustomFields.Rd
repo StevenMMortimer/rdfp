@@ -39,5 +39,5 @@ result <- dfp_createCustomFields(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 }

@@ -38,5 +38,5 @@ Creates new Creative objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeService#createCreatives}{Google Documentation for createCreatives}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#createCreatives}{Google Documentation for createCreatives}
 }

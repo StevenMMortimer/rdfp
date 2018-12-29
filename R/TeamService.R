@@ -12,7 +12,7 @@
 #'   \item{Team name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#createTeams}{Google Documentation for createTeams}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#createTeams}{Google Documentation for createTeams}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -47,7 +47,7 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{description}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -73,7 +73,7 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Team objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#performTeamAction}{Google Documentation for performTeamAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#performTeamAction}{Google Documentation for performTeamAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -98,7 +98,7 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Team objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/TeamService#updateTeams}{Google Documentation for updateTeams}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

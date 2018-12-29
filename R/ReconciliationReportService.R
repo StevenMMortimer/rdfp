@@ -14,7 +14,7 @@
 #'   \item{startDate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -40,7 +40,7 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' Updates the specified ReconciliationReport objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

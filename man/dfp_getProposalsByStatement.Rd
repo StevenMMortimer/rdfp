@@ -4,7 +4,8 @@
 \alias{dfp_getProposalsByStatement}
 \title{getProposalsByStatement}
 \usage{
-dfp_getProposalsByStatement(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getProposalsByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -43,5 +44,5 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 }

@@ -4,7 +4,8 @@
 \alias{dfp_performContentBundleAction}
 \title{performContentBundleAction}
 \usage{
-dfp_performContentBundleAction(request_data, as_df = TRUE, verbose = FALSE)
+dfp_performContentBundleAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,5 +29,5 @@ Performs actions on ContentBundle objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 }

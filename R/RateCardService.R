@@ -11,7 +11,7 @@
 #' 
 #' Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#createRateCards}{Google Documentation for createRateCards}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#createRateCards}{Google Documentation for createRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -43,7 +43,7 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{Status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -69,7 +69,7 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Performs action on RateCard objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -94,7 +94,7 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates a list of RateCard objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

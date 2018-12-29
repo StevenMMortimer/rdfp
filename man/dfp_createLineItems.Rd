@@ -44,5 +44,5 @@ Creates new LineItem objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#createLineItems}{Google Documentation for createLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#createLineItems}{Google Documentation for createLineItems}
 }

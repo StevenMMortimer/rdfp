@@ -39,5 +39,5 @@ result <- dfp_createContacts(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#createContacts}{Google Documentation for createContacts}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#createContacts}{Google Documentation for createContacts}
 }

@@ -30,5 +30,5 @@ By default, the report will be generated as a gzip archive, containing the repor
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 }

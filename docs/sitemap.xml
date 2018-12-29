@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/index.html</loc>
+  </url>
+  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/build_xml_from_list.html</loc>
   </url>
   <url>
@@ -67,6 +70,9 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createCustomTargetingValues.html</loc>
   </url>
   <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createDaiAuthenticationKeys.html</loc>
+  </url>
+  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createExchangeRates.html</loc>
   </url>
   <url>
@@ -107,9 +113,6 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createProductTemplates.html</loc>
-  </url>
-  <url>
-    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createProducts.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createProposalLineItems.html</loc>
@@ -221,6 +224,9 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCustomTargetingValuesByStatement.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getDaiAuthenticationKeysByStatement.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getDeliveryForecast.html</loc>
@@ -352,6 +358,9 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performBaseRateAction.html</loc>
   </url>
   <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performCdnConfigurationAction.html</loc>
+  </url>
+  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performContentBundleAction.html</loc>
   </url>
   <url>
@@ -368,6 +377,9 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performCustomTargetingValueAction.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performDaiAuthenticationKeyAction.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performExchangeRateAction.html</loc>
@@ -509,6 +521,9 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateCustomTargetingValues.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateDaiAuthenticationKeys.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateExchangeRates.html</loc>

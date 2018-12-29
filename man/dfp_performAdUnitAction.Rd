@@ -28,5 +28,5 @@ Performs actions on AdUnit objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
 }

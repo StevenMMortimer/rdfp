@@ -28,5 +28,5 @@ Updates the given RuleBasedFirstPartyAudienceSegment objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 }

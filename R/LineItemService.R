@@ -17,7 +17,7 @@
 #' 
 #' Creates new LineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#createLineItems}{Google Documentation for createLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#createLineItems}{Google Documentation for createLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -60,7 +60,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{UnitsBought}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,7 +86,7 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' 
 #' Performs actions on LineItem objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -111,7 +111,7 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified LineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

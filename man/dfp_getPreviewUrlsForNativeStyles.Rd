@@ -24,5 +24,5 @@ Returns a list of URLs that reference the specified site URL with the specified 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
 }

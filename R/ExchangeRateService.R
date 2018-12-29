@@ -10,7 +10,7 @@
 #'   \item{ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -42,7 +42,7 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{exchangeRate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -75,7 +75,7 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #'   \item{exchangeRate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -100,7 +100,7 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' Updates the specified ExchangeRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

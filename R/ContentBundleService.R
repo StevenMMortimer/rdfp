@@ -10,7 +10,7 @@
 #' 
 #' Creates new ContentBundle objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -40,7 +40,7 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -66,7 +66,7 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Performs actions on ContentBundle objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,7 +91,7 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified ContentBundle objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -42,5 +42,5 @@ dfp_runReportJob_result$id
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService#runReportJob}{Google Documentation for runReportJob}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#runReportJob}{Google Documentation for runReportJob}
 }

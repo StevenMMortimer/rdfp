@@ -6,7 +6,7 @@
 #' 
 #' Creates new Label objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#createLabels}{Google Documentation for createLabels}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#createLabels}{Google Documentation for createLabels}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -43,7 +43,7 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{isActive}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -69,7 +69,7 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Label objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -94,7 +94,7 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Label objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LabelService#updateLabels}{Google Documentation for updateLabels}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#updateLabels}{Google Documentation for updateLabels}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

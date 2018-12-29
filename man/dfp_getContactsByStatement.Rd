@@ -41,5 +41,5 @@ Gets a ContactPage of Contact objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#getContactsByStatement}{Google Documentation for getContactsByStatement}
 }

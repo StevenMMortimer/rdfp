@@ -39,5 +39,5 @@ Creates a new Activity objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ActivityService#createActivities}{Google Documentation for createActivities}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#createActivities}{Google Documentation for createActivities}
 }

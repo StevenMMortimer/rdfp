@@ -13,7 +13,7 @@
 #' 
 #' Creates new ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -46,7 +46,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{archived}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -72,7 +72,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' Performs actions on ProductPackageItem objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -97,7 +97,7 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Updates the specified ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

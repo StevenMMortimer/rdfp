@@ -16,7 +16,7 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a registerSessionsForMonitoringResponse
 }
 \description{
-Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the DFP UI.
+Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the Ad Manager UI.
 A session ID is a unique identifier of a single user watching a live stream event.
 }
 \examples{
@@ -25,5 +25,5 @@ A session ID is a unique identifier of a single user watching a live stream even
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 }

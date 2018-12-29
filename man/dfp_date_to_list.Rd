@@ -5,7 +5,7 @@
 \title{Format a datetime for DFP}
 \usage{
 dfp_date_to_list(this_date, daytime = c("beginning", "end"),
-  timeZoneID = "America/New_York", ensure_today_works = TRUE)
+  timeZoneId = Sys.timezone(), ensure_today_works = TRUE)
 }
 \arguments{
 \item{this_date}{Date; formatted as Date, POSIXct, or POSIXlt}
@@ -13,7 +13,7 @@ dfp_date_to_list(this_date, daytime = c("beginning", "end"),
 \item{daytime}{character; either "beginning" or "end" so that the function 
 knows which hours to set if needed}
 
-\item{timeZoneID}{character; a string indicating the timezone that should be used. 
+\item{timeZoneId}{character; a string indicating the timezone that should be used. 
 The timezone ID must be in Time_Zone database}
 
 \item{ensure_today_works}{logical; an indicator that will automatically offset 

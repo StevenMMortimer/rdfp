@@ -77,7 +77,7 @@ execute_soap_request <- function(request_body, service = NULL,
 #' @param this_date Date; formatted as Date, POSIXct, or POSIXlt
 #' @param daytime character; either "beginning" or "end" so that the function 
 #' knows which hours to set if needed
-#' @param timeZoneID character; a string indicating the timezone that should be used. 
+#' @param timeZoneId character; a string indicating the timezone that should be used. 
 #' The timezone ID must be in Time_Zone database
 #' @param ensure_today_works logical; an indicator that will automatically offset 
 #' the current time by 1 hour so that forecasts will actually work. If you try to 
@@ -89,10 +89,14 @@ execute_soap_request <- function(request_body, service = NULL,
 #' @export
 dfp_date_to_list <- function(this_date,
                              daytime = c('beginning','end'), 
-                             timeZoneID = 'America/New_York', 
+                             timeZoneId = Sys.timezone(), 
                              ensure_today_works=TRUE){
   
   which_daytime <- match.arg(daytime)
+  
+  if(is.na(timeZoneId) || timeZoneId == ""){
+    timeZoneId <- "UTC"
+  }
   
   if(ensure_today_works & (difftime(this_date, (Sys.time()+hours(1))) < 0)){
     message("The date provided is not at least 1 hour into the future. Setting to one hour after now.")
@@ -115,7 +119,7 @@ dfp_date_to_list <- function(this_date,
             hour = this_hour, 
             minute = this_minute,
             second = this_second,
-            timeZoneID = timeZoneID)
+            timeZoneId = timeZoneId)
   return(x)
 }
 
@@ -201,7 +205,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
 #' 
 #' @usage dfp_full_report_wrapper(request_data, 
 #'                                check_interval=3, 
-#'                                max_tries=10, 
+#'                                max_tries=20, 
 #'                                verbose=FALSE)
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP 
@@ -234,7 +238,7 @@ dfp_report_url_to_dataframe <- function(report_url, exportFormat="CSV_DUMP"){
 #' @export
 dfp_full_report_wrapper <- function(request_data, 
                                     check_interval=3, 
-                                    max_tries=10, 
+                                    max_tries=20, 
                                     verbose=FALSE){
   
   dfp_runReportJob_result <- dfp_runReportJob(request_data)

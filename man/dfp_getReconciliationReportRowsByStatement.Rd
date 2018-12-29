@@ -57,5 +57,5 @@ Gets a ReconciliationReportRowPage of ReconciliationReportRow objects that satis
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
 }

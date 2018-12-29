@@ -41,5 +41,5 @@ Creates new ProductTemplate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 }

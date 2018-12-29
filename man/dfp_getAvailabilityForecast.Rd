@@ -4,7 +4,8 @@
 \alias{dfp_getAvailabilityForecast}
 \title{ForecastService}
 \usage{
-dfp_getAvailabilityForecast(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getAvailabilityForecast(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -57,5 +58,5 @@ dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 }

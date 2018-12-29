@@ -29,5 +29,5 @@ Performs actions on CreativeWrapper objects that match the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
 }

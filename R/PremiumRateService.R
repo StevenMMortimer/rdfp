@@ -11,7 +11,7 @@
 #' 
 #' Creates a list of new PremiumRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,7 +41,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{pricingMethod}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -67,7 +67,7 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified PremiumRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -10,7 +10,7 @@
 #' 
 #' Creates new AdExclusionRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -40,7 +40,7 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -66,7 +66,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs action on AdExclusionRule objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,7 +91,7 @@ dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified AdExclusionRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

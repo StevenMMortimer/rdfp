@@ -4,7 +4,8 @@
 \alias{dfp_updateMobileApplications}
 \title{updateMobileApplications}
 \usage{
-dfp_updateMobileApplications(request_data, as_df = TRUE, verbose = FALSE)
+dfp_updateMobileApplications(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,5 +29,5 @@ Updates the specified MobileApplication mobile applications.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 }

@@ -28,7 +28,7 @@
 #'   \item{reconciledLineItemDays}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -54,7 +54,7 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' 
 #' Updates a list of ReconciliationReportRow which belong to same ReconciliationReport.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -11,7 +11,7 @@
 #' 
 #' Creates new Creative objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeService#createCreatives}{Google Documentation for createCreatives}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#createCreatives}{Google Documentation for createCreatives}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -44,7 +44,7 @@ dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -70,7 +70,7 @@ dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Updates the specified Creative objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

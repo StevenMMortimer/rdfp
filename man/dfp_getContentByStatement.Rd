@@ -61,5 +61,5 @@ Gets a ContentPage of Content objects that satisfy the given \{@link Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 }

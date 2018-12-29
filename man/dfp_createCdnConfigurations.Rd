@@ -4,7 +4,8 @@
 \alias{dfp_createCdnConfigurations}
 \title{CdnConfigurationService}
 \usage{
-dfp_createCdnConfigurations(request_data, as_df = TRUE, verbose = FALSE)
+dfp_createCdnConfigurations(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -34,5 +35,5 @@ Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Crea
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 }

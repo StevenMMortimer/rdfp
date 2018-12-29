@@ -28,5 +28,5 @@ Updates the specified ContentBundle objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 }

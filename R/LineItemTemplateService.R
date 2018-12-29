@@ -10,7 +10,7 @@
 #'   \item{id}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemTemplateService#getLineItemTemplatesByStatement}{Google Documentation for getLineItemTemplatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

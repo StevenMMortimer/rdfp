@@ -17,31 +17,31 @@ a \code{data.frame} or \code{list} containing all the elements of a makeTestNetw
 }
 \description{
 Creates a new blank network for testing purposes using the current login.
-Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the Ad Manager UI.
 Test networks are limited in the following ways:
 \itemize{
   \item{Test networks cannot serve ads.}
   \item{Because test networks cannot serve ads, reports will always come back without data.}
   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
-  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are, by default, Ad Manager networks and don't have any features from Ad Manager 360. To have additional features turned on, please contact your account manager.}
   \item{Test networks are limited to 10,000 objects per entity type.}
 } Creates a new blank network for testing purposes using the current login.
-Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the Ad Manager UI.
 Test networks are limited in the following ways:
 \itemize{
   \item{Test networks cannot serve ads.}
   \item{Because test networks cannot serve ads, reports will always come back without data.}
   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
-  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are, by default, Ad Manager networks and don't have any features from Ad Manager 360. To have additional features turned on, please contact your account manager.}
   \item{Test networks are limited to 10,000 objects per entity type.}
 } Creates a new blank network for testing purposes using the current login.
-Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the DFP UI.
+Each login(i.e. email address) can only have one test network. Data from any of your existing networks will not be transferred to the new test network. Once the test network is created, the test network can be used in the API by supplying the Network networkCode in the SOAP header or by logging into the Ad Manager UI.
 Test networks are limited in the following ways:
 \itemize{
   \item{Test networks cannot serve ads.}
   \item{Because test networks cannot serve ads, reports will always come back without data.}
   \item{Since forecasting requires serving history, forecast service results will be faked. See ForecastService for more info.}
-  \item{Test networks are, by default, small business networks and do not have any premium features. To have additional features turned on, please contact your account manager.}
+  \item{Test networks are, by default, Ad Manager networks and don't have any features from Ad Manager 360. To have additional features turned on, please contact your account manager.}
   \item{Test networks are limited to 10,000 objects per entity type.}
 }
 }
@@ -51,5 +51,5 @@ Test networks are limited in the following ways:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 }

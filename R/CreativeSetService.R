@@ -6,7 +6,7 @@
 #' 
 #' Creates a new CreativeSet.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -37,7 +37,7 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -63,7 +63,7 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified CreativeSet.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

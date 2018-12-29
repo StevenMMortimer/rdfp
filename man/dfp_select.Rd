@@ -48,7 +48,6 @@ The following tables are supported:
   \item{Audience_Segment_Category}
   \item{Audience_Segment}
   \item{Proposal_Retraction_Reason}
-  \item{Audience_Explorer}
   \item{Time_Zone}
   \item{Proposal_Terms_And_Conditions}
   \item{Change_History}
@@ -78,5 +77,5 @@ Retrieves rows of data that satisfy the given Statement query from the system.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#select}{Google Documentation for select}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/PublisherQueryLanguageService#select}{Google Documentation for select}
 }

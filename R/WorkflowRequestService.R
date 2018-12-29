@@ -20,7 +20,7 @@
 #'   \item{type}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -46,7 +46,7 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Perform actions on WorkflowRequest objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

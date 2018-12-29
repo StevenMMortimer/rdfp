@@ -28,5 +28,5 @@ Updates the specified Package objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#updatePackages}{Google Documentation for updatePackages}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#updatePackages}{Google Documentation for updatePackages}
 }

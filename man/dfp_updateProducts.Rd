@@ -28,5 +28,5 @@ Updates the specified Product objects. Note non-updatable fields will not be bac
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#updateProducts}{Google Documentation for updateProducts}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#updateProducts}{Google Documentation for updateProducts}
 }

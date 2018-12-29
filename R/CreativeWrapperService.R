@@ -16,7 +16,7 @@
 #'   \item{CreativeWrapper header or CreativeWrapper footer}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -47,7 +47,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{ordering}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -73,7 +73,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs actions on CreativeWrapper objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -98,7 +98,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified CreativeWrapper objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

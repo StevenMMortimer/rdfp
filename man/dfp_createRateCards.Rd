@@ -38,5 +38,5 @@ Creates a list of RateCard objects. Rate cards must be activated before being as
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/RateCardService#createRateCards}{Google Documentation for createRateCards}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#createRateCards}{Google Documentation for createRateCards}
 }

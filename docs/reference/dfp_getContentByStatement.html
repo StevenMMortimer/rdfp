@@ -21,10 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="ContentService — dfp_getContentByStatement" />
 
 <meta property="og:description" content="Service for retrieving Content.
@@ -34,19 +45,20 @@ You can query for content that belongs to a particular
 category or has assigned metadata. Categories and metadata for Content are
 stored in DFP as CustomCriteria.
 For example, to find all Content that
-is "genre=comedy", you would:
+is &quot;genre=comedy&quot;, you would:
 Retrieve the custom targeting key
-corresponding to "genre" using
+corresponding to &quot;genre&quot; using
 CustomTargetingService#getCustomTargetingKeysByStatement
 Using the
 CustomTargetingService#getCustomTargetingValuesByStatement method and a
-filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'",
-retrieve the ID for the "comedy" custom targeting value.
+filter like &quot;WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'&quot;,
+retrieve the ID for the &quot;comedy&quot; custom targeting value.
 Call
-#getContentByStatementAndCustomTargetingValue with a filter like "WHERE
-status = 'ACTIVE'" and the ID of the custom targeting value from step 2.
+#getContentByStatementAndCustomTargetingValue with a filter like &quot;WHERE
+status = 'ACTIVE'&quot; and the ID of the custom targeting value from step 2.
 " />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -58,22 +70,15 @@ status = 'ACTIVE'" and the ID of the custom targeting value from step 2.
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98603021-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-98603021-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-98603021-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -150,7 +155,7 @@ status = 'ACTIVE'" and the ID of the custom targeting value from step 2.
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -165,9 +170,11 @@ status = 'ACTIVE'" and the ID of the custom targeting value from step 2.
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>ContentService</h1>
-    <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/ContentService.R'><code>R/ContentService.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/R/ContentService.R'><code>R/ContentService.R</code></a></small>
+    <div class="hidden name"><code>dfp_getContentByStatement.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Service for retrieving Content.
 Content entities can be targeted in
@@ -189,6 +196,7 @@ retrieve the ID for the "comedy" custom targeting value.</p></li>
 status = 'ACTIVE'" and the ID of the custom targeting value from step 2.</p></li>
 </ul>
     
+    </div>
 
     <pre class="usage"><span class='fu'>dfp_getContentByStatement</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
@@ -230,7 +238,7 @@ a <code>data.frame</code></p></td>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatement'>Google Documentation for getContentByStatement</a></p></div>
+    <div class='dont-index'><p><a href='https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatement'>Google Documentation for getContentByStatement</a></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -273,10 +281,16 @@ a <code>data.frame</code></p></td>
 <script>
   docsearch({
     
+    
     apiKey: '8ecf941477ebecebe34b5825a4ae705e',
     indexName: 'rdfp',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

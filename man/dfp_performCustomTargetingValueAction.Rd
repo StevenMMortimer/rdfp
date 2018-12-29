@@ -29,5 +29,5 @@ Performs actions on CustomTargetingValue objects that match the given Statement 
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 }

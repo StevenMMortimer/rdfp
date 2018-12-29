@@ -4,8 +4,8 @@
 \alias{dfp_getLineItemCreativeAssociationsByStatement}
 \title{getLineItemCreativeAssociationsByStatement}
 \usage{
-dfp_getLineItemCreativeAssociationsByStatement(request_data, as_df = TRUE,
-  verbose = FALSE)
+dfp_getLineItemCreativeAssociationsByStatement(request_data,
+  as_df = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -38,5 +38,5 @@ Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects th
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 }

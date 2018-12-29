@@ -33,5 +33,5 @@ Gets a LiveStreamEventPage of LiveStreamEvent objects that satisfy the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 }

@@ -4,7 +4,8 @@
 \alias{dfp_performExchangeRateAction}
 \title{performExchangeRateAction}
 \usage{
-dfp_performExchangeRateAction(request_data, as_df = TRUE, verbose = FALSE)
+dfp_performExchangeRateAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -35,5 +36,5 @@ Performs an action on ExchangeRate objects that satisfy the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 }

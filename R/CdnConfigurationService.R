@@ -7,7 +7,7 @@
 #' 
 #' Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Creates new CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -36,7 +36,7 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -58,11 +58,36 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
   return(result)
 }
 #' 
+#' performCdnConfigurationAction
+#' 
+#' Performs actions on CdnConfiguration objects that match the given \{@@link Statement query\}.
+#' 
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
+#' 
+#' @param request_data a \code{list} or \code{data.frame} of data elements
+#' to be formatted for a SOAP
+#' request (XML format, but passed as character string)
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
+#' @return a \code{data.frame} or \code{list} containing all the elements of a performCdnConfigurationActionResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_performCdnConfigurationAction(request_data)
+#' }
+#' @export
+dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
+  request_body <- form_request_body(service='CdnConfigurationService', root_name='performCdnConfigurationAction', data=request_data)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='performCdnConfigurationActionResponse', as_df=as_df)
+  return(result)
+}
+#' 
 #' updateCdnConfigurations
 #' 
 #' Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -24,5 +24,5 @@ Returns the current User. Returns the current User. @return the current user Ret
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 }

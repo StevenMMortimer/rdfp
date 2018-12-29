@@ -33,5 +33,5 @@ Gets a MarketplaceCommentPage of MarketplaceComment objects that satisfy the giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 }

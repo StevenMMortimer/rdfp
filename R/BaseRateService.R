@@ -11,7 +11,7 @@
 #' 
 #' Creates a list of new BaseRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#createBaseRates}{Google Documentation for createBaseRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,7 +41,7 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{productTemplateId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -67,7 +67,7 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Performs actions on BaseRate objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#performBaseRateAction}{Google Documentation for performBaseRateAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -92,7 +92,7 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified BaseRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#updateBaseRates}{Google Documentation for updateBaseRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

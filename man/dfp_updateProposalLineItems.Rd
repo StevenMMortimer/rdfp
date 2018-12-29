@@ -4,7 +4,8 @@
 \alias{dfp_updateProposalLineItems}
 \title{updateProposalLineItems}
 \usage{
-dfp_updateProposalLineItems(request_data, as_df = TRUE, verbose = FALSE)
+dfp_updateProposalLineItems(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -20,7 +21,7 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a updateProposalLineItemsResponse
 }
 \description{
-Updates the specified ProposalLineItem objects. If free editing mode is enabled, this will trigger inventory reservation and cause the proposal to be pushed to DFP again.
+Updates the specified ProposalLineItem objects.
 }
 \examples{
 \dontrun{
@@ -28,5 +29,5 @@ Updates the specified ProposalLineItem objects. If free editing mode is enabled,
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 }

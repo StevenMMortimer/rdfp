@@ -10,7 +10,7 @@
 #' 
 #' Creates new UserTeamAssociation objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,7 +41,7 @@ dfp_createUserTeamAssociations <- function(request_data, as_df=TRUE, verbose=FAL
 #'   \item{teamId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#getUserTeamAssociationsByStatement}{Google Documentation for getUserTeamAssociationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -67,7 +67,7 @@ dfp_getUserTeamAssociationsByStatement <- function(request_data, as_df=TRUE, ver
 #' 
 #' Performs actions on UserTeamAssociation objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#performUserTeamAssociationAction}{Google Documentation for performUserTeamAssociationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -92,7 +92,7 @@ dfp_performUserTeamAssociationAction <- function(request_data, as_df=TRUE, verbo
 #' 
 #' Updates the specified UserTeamAssociation objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

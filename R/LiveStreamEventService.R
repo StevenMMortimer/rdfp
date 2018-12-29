@@ -17,7 +17,7 @@
 #'   \item{LiveStreamEvent adTags}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -45,7 +45,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{id}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -71,7 +71,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs actions on LiveStreamEvent objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -94,10 +94,10 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' registerSessionsForMonitoring
 #' 
-#' Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the DFP UI.
+#' Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the Ad Manager UI.
 #' A session ID is a unique identifier of a single user watching a live stream event.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -119,7 +119,7 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified LiveStreamEvent objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

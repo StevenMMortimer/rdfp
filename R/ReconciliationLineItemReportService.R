@@ -15,7 +15,7 @@
 #'   \item{proposalLineItemId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,7 +41,7 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' 
 #' Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

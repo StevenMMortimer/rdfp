@@ -31,5 +31,5 @@ Gets a ContentPage of Content objects that satisfy the given Statement query. Ad
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 }

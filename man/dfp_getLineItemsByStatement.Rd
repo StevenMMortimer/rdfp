@@ -4,7 +4,8 @@
 \alias{dfp_getLineItemsByStatement}
 \title{getLineItemsByStatement}
 \usage{
-dfp_getLineItemsByStatement(request_data, as_df = FALSE, verbose = FALSE)
+dfp_getLineItemsByStatement(request_data, as_df = FALSE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -47,5 +48,5 @@ result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 }

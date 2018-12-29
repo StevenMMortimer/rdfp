@@ -6,7 +6,7 @@
 #' 
 #' Creates new Company objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#createCompanies}{Google Documentation for createCompanies}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#createCompanies}{Google Documentation for createCompanies}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -42,7 +42,7 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -68,7 +68,7 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Updates the specified Company objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#updateCompanies}{Google Documentation for updateCompanies}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

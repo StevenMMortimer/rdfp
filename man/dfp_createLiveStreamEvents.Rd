@@ -44,5 +44,5 @@ Creates new LiveStreamEvent objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 }

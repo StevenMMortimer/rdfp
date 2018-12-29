@@ -4,7 +4,8 @@
 \alias{dfp_performNativeStyleAction}
 \title{performNativeStyleAction}
 \usage{
-dfp_performNativeStyleAction(request_data, as_df = TRUE, verbose = FALSE)
+dfp_performNativeStyleAction(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -28,5 +29,5 @@ Performs actions on NativeStyle native styles that match the given Statement.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 }

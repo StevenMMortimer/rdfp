@@ -6,7 +6,7 @@
 #' 
 #' Creates new NativeStyle objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -35,7 +35,7 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -61,7 +61,7 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Performs actions on NativeStyle native styles that match the given Statement.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,7 +86,7 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified NativeStyle objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

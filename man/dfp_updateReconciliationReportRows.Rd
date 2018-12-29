@@ -29,5 +29,5 @@ Updates a list of ReconciliationReportRow which belong to same ReconciliationRep
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
 }

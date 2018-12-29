@@ -37,5 +37,5 @@ Gets a UserPage of User objects that satisfy the given Statement query. The foll
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 }

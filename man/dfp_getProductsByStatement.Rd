@@ -2,7 +2,7 @@
 % Please edit documentation in R/ProductService.R
 \name{dfp_getProductsByStatement}
 \alias{dfp_getProductsByStatement}
-\title{getProductsByStatement}
+\title{ProductService}
 \usage{
 dfp_getProductsByStatement(request_data, as_df = TRUE, verbose = FALSE)
 }
@@ -20,6 +20,20 @@ a \code{data.frame}}
 a \code{data.frame} or \code{list} containing all the elements of a getProductsByStatementResponse
 }
 \description{
+Provides methods for updating and retrieving Product objects.
+A Product
+represents a line item proposal. Products are generated from
+ProductTemplate product templates on a periodic basis using the product
+template's attributes. Products are typically used by inventory managers to
+restrict what salespeople can sell.
+To use this service, you need to
+have the new sales management solution enabled on your network. If you do
+not see a "Sales" tab in \href{https://www.google.com/dfp}{DoubleClick for
+Publishers (DFP)}, you will not be able to use this service.
+}
+\details{
+getProductsByStatement
+
 Gets a ProductPage of Product objects that satisfy the criteria specified by given Statement query.  When using sales management, the following fields are supported for filtering and/or sorting.  
 \itemize{
   \item{rateCardId}
@@ -41,5 +55,5 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }

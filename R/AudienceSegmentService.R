@@ -7,7 +7,7 @@
 #' 
 #' Creates new RuleBasedFirstPartyAudienceSegment objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -44,7 +44,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{endDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -70,7 +70,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -95,7 +95,7 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the given RuleBasedFirstPartyAudienceSegment objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

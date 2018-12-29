@@ -43,5 +43,5 @@ Creates new Package objects. For each package, the following fields are required
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PackageService#createPackages}{Google Documentation for createPackages}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#createPackages}{Google Documentation for createPackages}
 }

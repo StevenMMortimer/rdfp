@@ -17,7 +17,7 @@
 #' 
 #' Creates new LineItemCreativeAssociation objects
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -50,7 +50,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -76,7 +76,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' 
 #' Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -98,7 +98,7 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns a list of URLs that reference the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. Each URL corresponds to one available native style for previewing the specified creative. creative
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -120,7 +120,7 @@ dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on LineItemCreativeAssociation objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -145,7 +145,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' Updates the specified LineItemCreativeAssociation objects
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -29,5 +29,5 @@ Performs action on AdExclusionRule objects that satisfy the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 }

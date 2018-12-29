@@ -6,7 +6,7 @@
 \usage{
 dfp_full_report_wrapper(request_data, 
                                check_interval=3, 
-                               max_tries=10, 
+                               max_tries=20, 
                                verbose=FALSE)
 }
 \arguments{

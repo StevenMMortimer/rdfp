@@ -4,7 +4,8 @@
 \alias{dfp_createCustomTargetingValues}
 \title{createCustomTargetingValues}
 \usage{
-dfp_createCustomTargetingValues(request_data, as_df = TRUE, verbose = FALSE)
+dfp_createCustomTargetingValues(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -36,5 +37,5 @@ result <- dfp_createCustomTargetingValues(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }

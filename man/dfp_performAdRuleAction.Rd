@@ -28,5 +28,5 @@ Performs actions on AdRule objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 }

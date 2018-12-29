@@ -9,7 +9,7 @@
 #' 
 #' Creates new AdRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#createAdRules}{Google Documentation for createAdRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#createAdRules}{Google Documentation for createAdRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -40,7 +40,7 @@ dfp_createAdRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -66,7 +66,7 @@ dfp_getAdRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on AdRule objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#performAdRuleAction}{Google Documentation for performAdRuleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,7 +91,7 @@ dfp_performAdRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified AdRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#updateAdRules}{Google Documentation for updateAdRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

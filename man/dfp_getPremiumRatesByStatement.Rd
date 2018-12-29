@@ -4,7 +4,8 @@
 \alias{dfp_getPremiumRatesByStatement}
 \title{getPremiumRatesByStatement}
 \usage{
-dfp_getPremiumRatesByStatement(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getPremiumRatesByStatement(request_data, as_df = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -34,5 +35,5 @@ Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 }

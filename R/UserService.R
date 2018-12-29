@@ -10,7 +10,7 @@
 #' 
 #' Creates new User objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#createUsers}{Google Documentation for createUsers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#createUsers}{Google Documentation for createUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -38,7 +38,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getAllRoles}{Google Documentation for getAllRoles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getAllRoles}{Google Documentation for getAllRoles}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -60,7 +60,7 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the current User. Returns the current User. @@return the current user Returns the current User. @@return the current user
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -90,7 +90,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -116,7 +116,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on User objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#performUserAction}{Google Documentation for performUserAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#performUserAction}{Google Documentation for performUserAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -141,7 +141,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified User objects.
 #' 
-#' @seealso \href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/UserService#updateUsers}{Google Documentation for updateUsers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#updateUsers}{Google Documentation for updateUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

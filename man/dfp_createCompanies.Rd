@@ -38,5 +38,5 @@ result <- dfp_createCompanies(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/doubleclick-publishers/docs/reference/v201802/CompanyService#createCompanies}{Google Documentation for createCompanies}
+\href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#createCompanies}{Google Documentation for createCompanies}
 }
