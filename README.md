@@ -105,7 +105,7 @@ network_info[,c('id', 'networkCode')]
 
 #### Pull a LineItem
 
-The function `dfp_getLineItemsByStatement()` function from the [LineItemService](https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService) allows you to retrieve Line Items by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML that needs to be created in the request.
+The function `dfp_getLineItemsByStatement()` function from the [LineItemService](https://developers.google.com/ad-manager/api/reference/v201811/LineItemService) allows you to retrieve Line Items by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML that needs to be created in the request.
 
 ``` r
 # Retrieve up to 3 Line Items that have a status of "DELIVERING"
@@ -163,9 +163,9 @@ This application uses other open source software components. The authentication 
 More Information
 ----------------
 
-Google provides support for client libraries [here](https://developers.google.com/doubleclick-publishers/docs/clients), but unfortunately, R is not a supported language. Google's client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.
+Google provides support for client libraries [here](https://developers.google.com/ad-manager/api/clients), but unfortunately, R is not a supported language. Google's client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.
 
-Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the [DFP API Reference](https://developers.google.com/doubleclick-publishers/docs/rel_notes) when using this package. Details on formatting, attributes, and methods are all better explained by Google's documentation.
+Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the [DFP API Reference](https://developers.google.com/ad-manager/api/rel_notes) when using this package. Details on formatting, attributes, and methods are all better explained by Google's documentation.
 
 More information is also available on the `pkgdown` site at <https://StevenMMortimer.github.io/rdfp/>.
 

@@ -216,7 +216,7 @@ network_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span clas
 <div id="pull-a-lineitem" class="section level4">
 <h4 class="hasAnchor">
 <a href="#pull-a-lineitem" class="anchor"></a>Pull a LineItem</h4>
-<p>The function <code><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement()</a></code> function from the <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService">LineItemService</a> allows you to retrieve Line Items by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML that needs to be created in the request.</p>
+<p>The function <code><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement()</a></code> function from the <a href="https://developers.google.com/ad-manager/api/reference/v201811/LineItemService">LineItemService</a> allows you to retrieve Line Items by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML that needs to be created in the request.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Retrieve up to 3 Line Items that have a status of "DELIVERING"</span>
 request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))
 resultset &lt;-<span class="st"> </span><span class="kw"><a href="reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(request_data, <span class="dt">as_df=</span><span class="ot">TRUE</span>) 
@@ -271,8 +271,8 @@ report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEA
 <div id="more-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#more-information" class="anchor"></a>More Information</h2>
-<p>Google provides support for client libraries <a href="https://developers.google.com/doubleclick-publishers/docs/clients">here</a>, but unfortunately, R is not a supported language. Google’s client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.</p>
-<p>Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the <a href="https://developers.google.com/doubleclick-publishers/docs/rel_notes">DFP API Reference</a> when using this package. Details on formatting, attributes, and methods are all better explained by Google’s documentation.</p>
+<p>Google provides support for client libraries <a href="https://developers.google.com/ad-manager/api/clients">here</a>, but unfortunately, R is not a supported language. Google’s client libraries directly reference the production WSDLs to interact with the API, but this package makes SOAP requests best formatted to match the WSDL standards. This articulation is not perfect and continued progress will be made to bring functionality up to par with the client libraries.</p>
+<p>Most all operations supported by the DFP API are available via this package. It is strongly recommended that you use the <a href="https://developers.google.com/ad-manager/api/rel_notes">DFP API Reference</a> when using this package. Details on formatting, attributes, and methods are all better explained by Google’s documentation.</p>
 <p><a href="#">Top</a></p>
 </div>
   </div>
