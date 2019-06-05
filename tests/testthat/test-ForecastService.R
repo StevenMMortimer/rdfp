@@ -23,9 +23,7 @@ hypothetical_line_item <- list(lineItem=
                                      lineItemType=line_item_detail$lineItemType,
                                      costType=line_item_detail$costType, 
                                      primaryGoal=line_item_detail$primaryGoal, 
-                                     targeting=line_item_detail$targeting
-                                )
-)
+                                     targeting=line_item_detail$targeting))
 
 test_that("dfp_getAvailabilityForecast", {
 
@@ -52,30 +50,24 @@ test_that("dfp_getAvailabilityForecastById", {
 })
 
 test_that("dfp_getDeliveryForecast", {
-  
   request_data <- list(lineItems=hypothetical_line_item,
                        forecastOptions=list(ignoredLineItemIds=NULL))
   dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
-
   expect_is(dfp_getDeliveryForecast_result, "data.frame")
-  expect_true(all(paste0("lineItemDeliveryForecasts.",
-                         c("lineItemId", "orderId", "unitType", 
-                           "predictedDeliveryUnits", "deliveredUnits",
-                           "matchedUnits")) %in% 
-                    names(dfp_getDeliveryForecast_result)))
+  expect_equal(nrow(dfp_getDeliveryForecast_result), 1)
+  expect_true(all(c("lineItemId", "orderId", "unitType", 
+                    "predictedDeliveryUnits", "deliveredUnits", "matchedUnits") %in% 
+                    names(dfp_getDeliveryForecast_result$lineItemDeliveryForecasts[[1]])))
 })
 
 test_that("dfp_getDeliveryForecastByIds", {
-
   # not specifying forecastOptions brings up NotNullError.ARG2_NULL, so send, but keep null
   request_data <- list(lineItemIds=line_item_detail$id,
                        forecastOptions=list(ignoredLineItemIds=NULL))
   dfp_getDeliveryForecastByIds_result <- dfp_getDeliveryForecastByIds(request_data)
-  
   expect_is(dfp_getDeliveryForecastByIds_result, "data.frame")
-  expect_true(all(paste0("lineItemDeliveryForecasts.",
-                         c("lineItemId", "orderId", "unitType", 
-                           "predictedDeliveryUnits", "deliveredUnits",
-                           "matchedUnits")) %in% 
-                    names(dfp_getDeliveryForecastByIds_result)))
+  expect_equal(nrow(dfp_getDeliveryForecastByIds_result), 1)
+  expect_true(all(c("lineItemId", "orderId", "unitType", 
+                    "predictedDeliveryUnits", "deliveredUnits", "matchedUnits") %in% 
+                    names(dfp_getDeliveryForecastByIds_result$lineItemDeliveryForecasts[[1]])))
 })

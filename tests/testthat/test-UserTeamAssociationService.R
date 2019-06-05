@@ -10,7 +10,6 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createUserTeamAssociations", {
-  
   request_data <- list(userteamassociations=list(teamId=239587,
                                                  userId=149461448))
   options(rdfp.network_code = rdfp_options$test_network_code)
@@ -19,31 +18,24 @@ test_that("dfp_createUserTeamAssociations", {
 })
 
 test_that("dfp_getUserTeamAssociationsByStatement", {
-
    request_data <- list('filterStatement'=list('query'=paste0("WHERE userId='", dfp_getCurrentUser()$id, "'")))
-
    dfp_getUserTeamAssociationsByStatement_result <- dfp_getUserTeamAssociationsByStatement(request_data)
-
    expect_is(dfp_getUserTeamAssociationsByStatement_result, "data.frame")
    expect_true(all(c('teamId', 'defaultTeamAccessType', 'userId') %in% names(dfp_getUserTeamAssociationsByStatement_result)))
-
 })
 
 test_that("dfp_performUserTeamAssociationAction", {
-  
   options(rdfp.network_code = rdfp_options$test_network_code)
   request_data <- list(userTeamAssociationAction='DeleteUserTeamAssociations',
                        statement=list('query'=paste0("WHERE name like 'Test%'")))
-  
-  dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction(request_data, as_df=FALSE)
-  expect_is(dfp_performUserTeamAssociationAction_result, "list")
-  expect_length(dfp_performUserTeamAssociationAction_result, 1)
-  expect_named(dfp_performUserTeamAssociationAction_result[[1]], c("numChanges")) 
+  dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction(request_data)
+  expect_is(dfp_performUserTeamAssociationAction_result, "data.frame")
+  expect_true(all(c('numChanges') %in% names(dfp_performUserTeamAssociationAction_result)))
+  expect_equal(as.integer(dfp_performUserTeamAssociationAction_result$numChanges), 1)
   options(rdfp.network_code = rdfp_options$network_code)
 })
 
 test_that("dfp_updateUserTeamAssociations", {
-  
   request_data <- list(userTeamAssociations=list(teamId=239587,
                                                  userId=149461448))
   options(rdfp.network_code = rdfp_options$test_network_code)
