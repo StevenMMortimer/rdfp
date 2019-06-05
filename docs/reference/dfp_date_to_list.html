@@ -78,7 +78,7 @@ DFP to indicate a datetime" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rdfp</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4.9000</span>
       </span>
     </div>
 
@@ -199,7 +199,7 @@ it will already be too late to be in the future.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>dfp_date_to_list</span>(<span class='fu'>Sys.Date</span>()+<span class='fl'>1</span>)</div><div class='output co'>#&gt; $date
+    <pre class="examples"><div class='input'><span class='fu'>dfp_date_to_list</span>(<span class='fu'>Sys.Date</span>()+<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='message'>The date provided is not at least 1 hour into the future. Setting to one hour after now.</span></div><div class='output co'>#&gt; $date
 #&gt; $date$year
 #&gt; [1] 2019
 #&gt; 
@@ -207,17 +207,17 @@ it will already be too late to be in the future.</p></td>
 #&gt; [1] 6
 #&gt; 
 #&gt; $date$day
-#&gt; [1] 6
+#&gt; [1] 5
 #&gt; 
 #&gt; 
 #&gt; $hour
-#&gt; [1] 0
+#&gt; [1] 20
 #&gt; 
 #&gt; $minute
-#&gt; [1] 0
+#&gt; [1] 51
 #&gt; 
 #&gt; $second
-#&gt; [1] 0
+#&gt; [1] 45
 #&gt; 
 #&gt; $timeZoneId
 #&gt; [1] "America/New_York"

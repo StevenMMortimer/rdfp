@@ -1,6 +1,6 @@
 Package: rdfp
 Title: An Implementation of the 'DoubleClick for Publishers' API
-Version: 0.1.4
+Version: 0.1.4.9000
 Date: 2019-06-05
 Description: Functions to interact with the 'Google DoubleClick for Publishers (DFP)' API 
     <https://developers.google.com/ad-manager/api/start> (recently renamed to 

@@ -1,3 +1,15 @@
+## rdfp 0.1.4.9000
+
+### Features
+
+  * None
+  
+### Bug Fixes
+
+  * None
+  
+___
+
 ## rdfp 0.1.4 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.4)
 
 In this version of the package we have upgraded from `v201811` to `v201905`. Please 
@@ -6,20 +18,20 @@ package exactly as explained there at https://developers.google.com/ad-manager/a
 
 ### Features
 
-  * The `as_df` argument will now return tidier tibbles, meaning that elements that 
-  are nested lists will stay as nested lists. For example, if you use `dfp_getLineItemsByStatement()` 
-  then each row will be a line item, but the nested parts, like `targeting` will 
-  be in a single column as a column of lists. Also, setting `as_df=FALSE` will no 
-  longer return lists of length one, but the actual result so you do not need to always 
-  be using result[[1]] to get after the returned result. This means that some of your 
-  existing scripts may break if you are stil using this notation. Please view the 
-  examples and/or vignettes to see the current structure you should be using if you 
-  are having trouble.
+  * The `as_df` argument will now return tidier tibbles, meaning that elements 
+  that are nested lists will stay as nested lists. For example, if you use 
+  `dfp_getLineItemsByStatement()` then each row will be a line item, but the 
+  nested parts like `targeting` will be in a single column as a column of lists. 
+  Also, setting `as_df=FALSE` will no longer return lists of length one so you do 
+  not need to always be using notation like `result[[1]]` to get after the returned 
+  result. This means that some of your existing scripts may break if you are still 
+  using this notation. Please view the examples and/or vignettes to see how you 
+  should be working through this change if you are having trouble.
 
 ### Bug Fixes
 
-  * Fix an issue with the `dfp_full_report_wrapper()` that was ignoring the `check_interval` 
-  argument (#11)
+  * Fix an issue with the `dfp_full_report_wrapper()` that was ignoring the 
+  `check_interval` argument (#11)
 
 ___
 
@@ -112,4 +124,4 @@ ___
     
 ### Bug Fixes
 
-  * None.
+  * None
