@@ -80,7 +80,7 @@ test_that("dfp_performOrderAction", {
   dfp_performOrderAction_result <- dfp_performOrderAction(request_data)
   expect_is(dfp_performOrderAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performOrderAction_result)))
-  expect_equal(as.integer(dfp_performOrderAction_result$numChanges), 1)
+  expect_equal(dfp_performOrderAction_result$numChanges, 1)
   
   # check that action worked
   request_data <- list('filterStatement'=

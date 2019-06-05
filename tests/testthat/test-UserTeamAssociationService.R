@@ -31,7 +31,7 @@ test_that("dfp_performUserTeamAssociationAction", {
   dfp_performUserTeamAssociationAction_result <- dfp_performUserTeamAssociationAction(request_data)
   expect_is(dfp_performUserTeamAssociationAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performUserTeamAssociationAction_result)))
-  expect_equal(as.integer(dfp_performUserTeamAssociationAction_result$numChanges), 1)
+  expect_equal(dfp_performUserTeamAssociationAction_result$numChanges, 0)
   options(rdfp.network_code = rdfp_options$network_code)
 })
 

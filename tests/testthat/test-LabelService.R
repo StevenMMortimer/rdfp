@@ -43,7 +43,7 @@ test_that("dfp_createLabels", {
 
 test_that("dfp_getLabelsByStatement", {
   options(rdfp.network_code = rdfp_options$test_network_code)
-  request_data <- list('filterStatement'=list('query'="WHERE name='Test'"))
+  request_data <- list('filterStatement'=list('query'="WHERE name like 'Test%'"))
   dfp_getLabelsByStatement_result <- dfp_getLabelsByStatement(request_data)
   expect_is(dfp_getLabelsByStatement_result, "data.frame")
   options(rdfp.network_code = rdfp_options$network_code)
@@ -56,7 +56,7 @@ test_that("dfp_performLabelAction", {
   dfp_performLabelAction_result <- dfp_performLabelAction(request_data)
   expect_is(dfp_performLabelAction_result, "data.frame")
   expect_true(all(c('numChanges') %in% names(dfp_performLabelAction_result)))
-  expect_equal(as.integer(dfp_performLabelAction_result$numChanges), 1)
+  expect_equal(dfp_performLabelAction_result$numChanges, 1)
   
   # check that action worked
   request_data <- list('filterStatement'=
