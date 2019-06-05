@@ -250,7 +250,7 @@ dfp_full_report_wrapper <- function(request_data,
   counter <- 0
   while(dfp_getReportJobStatus_result[[1]] != 'COMPLETED' & counter < max_tries){
     dfp_getReportJobStatus_result <- dfp_getReportJobStatus(status_request_data, as_df=FALSE)
-    Sys.sleep(3)
+    Sys.sleep(check_interval)
     counter <- counter + 1
   }  
   
