@@ -203,6 +203,7 @@ xmlToList2 <- function(node){
 #' A function specifically for parsing an XML node into a \code{data.frame}
 #' 
 #' @importFrom dplyr as_tibble
+#' @importFrom purrr modify_if
 #' @importFrom utils capture.output
 #' @param this_node \code{xml_node}; to be parsed out
 #' @return \code{data.frame} parsed from the supplied xml
@@ -211,6 +212,10 @@ xmlToList2 <- function(node){
 #' @export
 xml_nodeset_to_df <- function(this_node){
   # capture any xmlToList grumblings about Namespace prefix
-  invisible(capture.output(node_vals <- unlist(xmlToList2(as.character(this_node)))))
-  return(as_tibble(t(node_vals)))
+  invisible(capture.output(node_vals <- xmlToList2(as.character(this_node))))
+  # make things tidy so if it's a nested list then that is one row still
+  # suppressWarning about tibble::enframe
+  suppressWarnings(res <- as_tibble(modify_if(node_vals, ~(length(.x) > 1 | is.list(.x)), list), 
+                                    .name_repair = "unique"))
+  return(res)
 }

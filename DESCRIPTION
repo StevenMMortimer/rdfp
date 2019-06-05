@@ -1,7 +1,7 @@
 Package: rdfp
 Title: An Implementation of the 'DoubleClick for Publishers' API
 Version: 0.1.4
-Date: 2019-06-05
+Date: 2019-06-04
 Description: Functions to interact with the 'Google DoubleClick for Publishers (DFP)' API 
     <https://developers.google.com/ad-manager/api/start> (recently renamed to 
     'Google Ad Manager'). This package is automatically compiled from the API WSDL 
@@ -54,7 +54,6 @@ Collate:
     'CompanyService.R'
     'ContactService.R'
     'ContentBundleService.R'
-    'ContentMetadataKeyHierarchyService.R'
     'ContentService.R'
     'CreativeService.R'
     'CreativeSetService.R'

@@ -46,9 +46,6 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createContentBundles.html</loc>
   </url>
   <url>
-    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createContentMetadataKeyHierarchies.html</loc>
-  </url>
-  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_createCreativeSet.html</loc>
   </url>
   <url>
@@ -200,9 +197,6 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getContentByStatementAndCustomTargetingValue.html</loc>
-  </url>
-  <url>
-    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getContentMetadataKeyHierarchiesByStatement.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCreativeSetsByStatement.html</loc>
@@ -382,9 +376,6 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performContentBundleAction.html</loc>
   </url>
   <url>
-    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performContentMetadataKeyHierarchyAction.html</loc>
-  </url>
-  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_performCreativeWrapperAction.html</loc>
   </url>
   <url>
@@ -515,9 +506,6 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateContentBundles.html</loc>
-  </url>
-  <url>
-    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateContentMetadataKeyHierarchies.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateCreativeSet.html</loc>

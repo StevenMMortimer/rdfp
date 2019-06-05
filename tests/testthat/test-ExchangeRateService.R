@@ -10,12 +10,11 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 test_that("dfp_createExchangeRates", {
-  
   request_data <- data.frame(currencyCode='GBP', 
                              refreshRate='FIXED',
                              direction='TO_NETWORK', 
                              exchangeRate=1.52*10000000)
-  expect_error(dfp_createExchangeRates(request_data), 'PermissionError.PERMISSION_DENIED')
+  expect_error(dfp_createExchangeRates(request_data), 'FeatureError.MISSING_FEATURE')
 })
 
 test_that("dfp_getExchangeRatesByStatement", {
@@ -25,10 +24,9 @@ test_that("dfp_getExchangeRatesByStatement", {
 })
 
 test_that("dfp_performExchangeRateAction", {
-  
   request_data <- list(exchangeRateAction='DeleteExchangeRates',
                        filterStatement=list('query'=paste0("WHERE currencyCode='USD'")))
-  expect_error(dfp_performExchangeRateAction(request_data), 'PermissionError.PERMISSION_DENIED')
+  expect_error(dfp_performExchangeRateAction(request_data), 'FeatureError.MISSING_FEATURE')
 })
 
 test_that("dfp_updateExchangeRates", {

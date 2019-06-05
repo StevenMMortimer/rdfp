@@ -11,11 +11,12 @@ dfp_auth(token = "rdfp_token.rds")
 
 report_request_data <- list(reportJob=
                               list(reportQuery=
-                                     list(dimensions='MONTH_AND_YEAR', 
-                                          dimensions='AD_UNIT_ID',
-                                          adUnitView='FLAT',
-                                          columns='TOTAL_INVENTORY_LEVEL_IMPRESSIONS', 
-                                          dateRangeType='LAST_MONTH')))
+                                             list(dimensions='MONTH_AND_YEAR', 
+                                                  dimensions='AD_UNIT_ID',
+                                                  adUnitView='FLAT',
+                                                  columns = 'AD_SERVER_IMPRESSIONS', 
+                                                  columns = 'AD_SERVER_CLICKS',
+                                                  dateRangeType='LAST_WEEK')))
 
 # run report
 dfp_runReportJob_result <- dfp_runReportJob(report_request_data)
@@ -37,10 +38,8 @@ url_request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='C
 dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(url_request_data, as_df=FALSE)
 
 test_that("dfp_runReportJob", {
-  
-  expect_is(dfp_runReportJob_result, "data.frame")
+  expect_is(dfp_runReportJob_result, "tbl_df")
   expect_true(all(c('id') %in% names(dfp_runReportJob_result)))
-  
 })
 
 test_that("dfp_getReportJobStatus", {
@@ -56,8 +55,9 @@ test_that("dfp_getReportDownloadURL", {
   expect_is(report_dat, "data.frame")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
-                                    "Dimension.AD_UNIT_NAME", 
-                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
+                                    "Dimension.AD_UNIT_NAME",
+                                    "Column.AD_SERVER_IMPRESSIONS", 
+                                    "Column.AD_SERVER_CLICKS"))
 })
 
 test_that("dfp_getReportDownloadUrlWithOptions", {
@@ -76,7 +76,8 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   expect_equal(names(report_dat), c("Month and year", 
                                     "Ad unit ID", 
                                     "Ad unit", 
-                                    "Total impressions"))
+                                    "Ad server impressions", 
+                                    "Ad server clicks"))
   
   request_data <- list(reportJobId=dfp_runReportJob_result$id, 
                        reportDownloadOptions=list(exportFormat='CSV_DUMP', 
@@ -92,7 +93,8 @@ test_that("dfp_getReportDownloadUrlWithOptions", {
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
                                     "Dimension.AD_UNIT_NAME", 
-                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
+                                    "Column.AD_SERVER_IMPRESSIONS", 
+                                    "Column.AD_SERVER_CLICKS"))
   expect_equal(sum(report_dat$Dimension.MONTH_AND_YEAR=='Total'), 1)
 })
 
@@ -103,6 +105,7 @@ test_that("dfp_full_report_wrapper", {
   expect_is(report_dat, "tbl_df")
   expect_equal(names(report_dat), c("Dimension.MONTH_AND_YEAR", 
                                     "Dimension.AD_UNIT_ID", 
-                                    "Dimension.AD_UNIT_NAME", 
-                                    "Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS"))
+                                    "Dimension.AD_UNIT_NAME",
+                                    "Column.AD_SERVER_IMPRESSIONS", 
+                                    "Column.AD_SERVER_CLICKS"))
 })

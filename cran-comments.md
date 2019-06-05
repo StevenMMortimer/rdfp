@@ -11,5 +11,4 @@
 * checking CRAN incoming feasibility ... NOTE
 
 Possibly mis-spelled words in DESCRIPTION:
-  DFP (5:74, 11:5)
-  WSDLs (7:57)
+  WSDL (7:79)
