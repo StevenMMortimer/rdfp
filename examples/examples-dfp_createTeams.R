@@ -1,5 +1,5 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' request_data <- list(teams=list(name="TestTeam1", 
 #'                                 description='API Test Team 1', 
 #'                                 hasAllCompanies='true', 

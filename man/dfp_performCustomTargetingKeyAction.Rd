@@ -29,5 +29,5 @@ Performs actions on CustomTargetingKey objects that match the given Statement qu
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 }

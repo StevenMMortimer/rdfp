@@ -35,5 +35,5 @@ Gets a DaiAuthenticationKeyPage of DaiAuthenticationKey objects that satisfy the
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#getDaiAuthenticationKeysByStatement}{Google Documentation for getDaiAuthenticationKeysByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#getDaiAuthenticationKeysByStatement}{Google Documentation for getDaiAuthenticationKeysByStatement}
 }

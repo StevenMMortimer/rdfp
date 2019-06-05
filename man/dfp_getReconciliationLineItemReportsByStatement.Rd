@@ -44,5 +44,5 @@ Gets a ReconciliationLineItemReportPage of ReconciliationLineItemReport objects 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
 }

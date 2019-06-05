@@ -33,5 +33,5 @@ Performs actions on Proposal objects that match the given Statement query. The f
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 }

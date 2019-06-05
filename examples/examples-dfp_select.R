@@ -1,5 +1,5 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  request_data <- list(selectStatement=
 #'  list(query='SELECT Id, Name, Targeting FROM LineItem LIMIT 3')) 
 #'  dfp_select_result <- dfp_select(request_data)

@@ -33,5 +33,5 @@ Gets a set of AdUnitSize objects that satisfy the given Statement query. The fol
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 }

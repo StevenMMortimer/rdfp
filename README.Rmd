@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rdfp)](http://cran.r-project.org/package=rdfp)
 [![Coverage Status](https://codecov.io/gh/StevenMMortimer/rdfp/branch/master/graph/badge.svg)](https://codecov.io/gh/StevenMMortimer/rdfp?branch=master)
 
-**Compiled using DFP API version: `v201811`**
+**Compiled using DFP API version: `v201905`**
 
 **rdfp** allows you to use the DoubleClick for Publishers API from R (recently renamed 
 to Google Ad Manager). Manage inventory, create orders, pull reports, and more!
@@ -83,8 +83,8 @@ getOption("rdfp.version")
 ```
 
 ```{r set-version, eval=FALSE}
-# this will force all calls to be against the version "v201808"
-options(rdfp.version = "v201808")
+# this will force all calls to be against the version "v201902"
+options(rdfp.version = "v201902")
 ```
 
 ### Authenticate
@@ -132,7 +132,7 @@ network_info[,c('id', 'networkCode')]
 
 #### Pull a LineItem
 
-The function `dfp_getLineItemsByStatement()` function from the [LineItemService](https://developers.google.com/ad-manager/api/reference/v201811/LineItemService) 
+The function `dfp_getLineItemsByStatement()` function from the [LineItemService](https://developers.google.com/ad-manager/api/reference/v201905/LineItemService) 
 allows you to retrieve Line Items by Publishers Query Language (PQL) statement. 
 The statement is constructed as a list of lists that are nested to emulate the 
 hierarchy of the XML that needs to be created in the request. 
@@ -152,7 +152,7 @@ Below is an example of how to make a simple report request.
 # In order to run a report you must specify how the report should be structured 
 # by specifying a reportQuery inside a reportJob. All of the dimensions, columns, 
 # date range options, etc. are documented at:
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
+# https://developers.google.com/ad-manager/api/reference/v201905/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
@@ -194,5 +194,5 @@ More information is also available on the `pkgdown` site at https://StevenMMorti
 [Top](#rdfp)
 
 ---
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/StevenMMortimer/rdfp/blob/master/CONDUCT.md).
 By participating in this project you agree to abide by its terms.

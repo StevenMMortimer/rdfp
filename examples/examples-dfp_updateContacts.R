@@ -1,4 +1,4 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  res <- dfp_updateContacts(request_data)
 #' }

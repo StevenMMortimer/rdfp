@@ -6,14 +6,14 @@
 #' a ProductPackage.
 #' To use this service, you need to have the new sales
 #' management solution enabled on your network. If you do not see a "Sales"
-#' tab in \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)},
-#' you will not be able to use this service.
+#' tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
+#' (DFP)</a>, you will not be able to use this service.
 #' 
 #' createProductPackageItems
 #' 
 #' Creates new ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -46,7 +46,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{archived}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -72,7 +72,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' Performs actions on ProductPackageItem objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -97,7 +97,7 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Updates the specified ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -33,5 +33,5 @@ Creates new NativeStyle objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 }

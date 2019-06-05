@@ -23,8 +23,8 @@ a \code{data.frame} or \code{list} containing all the elements of a createPremiu
 Provides methods for managing PremiumRate objects.
 To use this service,
 you need to have the new sales management solution enabled on your network.
-If you do not see a "Sales" tab in
-\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 will not be able to use this service.
 }
 \details{
@@ -38,5 +38,5 @@ Creates a list of new PremiumRate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 }

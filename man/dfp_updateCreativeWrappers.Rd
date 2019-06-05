@@ -28,5 +28,5 @@ Updates the specified CreativeWrapper objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 }

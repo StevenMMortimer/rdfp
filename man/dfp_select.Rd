@@ -51,6 +51,7 @@ The following tables are supported:
   \item{Time_Zone}
   \item{Proposal_Terms_And_Conditions}
   \item{Change_History}
+  \item{ad_category}
 }
 
 Visit the See Also section below to proceed to Google and view columns in each of these tables.
@@ -77,5 +78,5 @@ Retrieves rows of data that satisfy the given Statement query from the system.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PublisherQueryLanguageService#select}{Google Documentation for select}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PublisherQueryLanguageService#select}{Google Documentation for select}
 }

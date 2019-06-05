@@ -25,8 +25,8 @@ Provides methods to retrieve and perform actions on WorkflowRequest objects
 }
 \details{
 To use this service, you need to have the new sales management solution
-enabled on your network. If you do not see a "Sales" tab in
-\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 will not be able to use this service.
 
 getWorkflowRequestsByStatement
@@ -49,5 +49,5 @@ Gets a list of WorkflowRequest objects that satisfy the given Statement query. T
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 }

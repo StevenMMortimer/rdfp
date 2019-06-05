@@ -24,5 +24,5 @@ Returns the Role objects that are defined for the users of the network. Returns 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getAllRoles}{Google Documentation for getAllRoles}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#getAllRoles}{Google Documentation for getAllRoles}
 }

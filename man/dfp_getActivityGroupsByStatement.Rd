@@ -37,5 +37,5 @@ Gets an ActivityGroupPage of ActivityGroup objects that satisfy the given Statem
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 }

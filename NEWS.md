@@ -1,3 +1,20 @@
+## rdfp 0.1.4
+
+In this version of the package we have upgraded from `v201811` to `v201905`. Please 
+read the announced changes on Google's website since they will be reflected in the 
+package exactly as explained there at https://developers.google.com/ad-manager/api/rel_notes#v201905
+
+### Features
+
+  * None
+
+### Bug Fixes
+
+  * Fix an issue with the `dfp_full_report_wrapper()` that was ignoring the `check_interval` 
+  argument (#11)
+
+___
+
 ## rdfp 0.1.3 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3)
 
 **Note**: DoubleClick for Publishers was recently renamed to Google Ad Manager. For 

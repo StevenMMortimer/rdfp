@@ -24,8 +24,8 @@ a \code{data.frame} or \code{list} containing all the elements of a createPropos
 Provides methods for creating, updating and retrieving ProposalLineItem
 objects.
 To use this service, you need to have the new sales management
-solution enabled on your network. If you do not see a "Sales" tab in
-\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+solution enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 will not be able to use this service.
 }
 \details{
@@ -39,5 +39,5 @@ Creates new ProposalLineItem objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 }

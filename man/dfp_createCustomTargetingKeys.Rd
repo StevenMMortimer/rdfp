@@ -42,5 +42,5 @@ result <- dfp_createCustomTargetingKeys(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 }

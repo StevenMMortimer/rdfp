@@ -35,5 +35,5 @@ Intended to be used without a network code in the SOAP header when the login may
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 }

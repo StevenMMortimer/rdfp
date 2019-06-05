@@ -28,5 +28,5 @@ Updates the specified CreativeSet.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 }

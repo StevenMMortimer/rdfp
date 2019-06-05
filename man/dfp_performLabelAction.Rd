@@ -28,5 +28,5 @@ Performs actions on Label objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 }

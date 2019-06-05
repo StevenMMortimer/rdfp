@@ -38,5 +38,5 @@ Gets a LineItemCreativeAssociationPage of LineItemCreativeAssociation objects th
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 }

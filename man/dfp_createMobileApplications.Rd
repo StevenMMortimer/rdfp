@@ -34,5 +34,5 @@ Creates and claims MobileApplication mobile applications to be used for targetin
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/MobileApplicationService#createMobileApplications}{Google Documentation for createMobileApplications}
 }

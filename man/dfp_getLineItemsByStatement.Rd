@@ -48,5 +48,5 @@ result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 }

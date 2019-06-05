@@ -28,5 +28,5 @@ Updates the specified LineItem objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 }

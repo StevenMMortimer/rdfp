@@ -1,4 +1,4 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  res <- dfp_createNativeStyles(request_data)
 #' }

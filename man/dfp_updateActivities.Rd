@@ -28,5 +28,5 @@ Updates the specified Activity objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#updateActivities}{Google Documentation for updateActivities}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityService#updateActivities}{Google Documentation for updateActivities}
 }

@@ -29,5 +29,5 @@ Updates the specified CdnConfiguration objects. Updates the specified CdnConfigu
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 }

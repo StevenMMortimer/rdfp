@@ -56,5 +56,5 @@ Gets a SuggestedAdUnitPage of SuggestedAdUnit objects that satisfy the filter qu
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/SuggestedAdUnitService#getSuggestedAdUnitsByStatement}{Google Documentation for getSuggestedAdUnitsByStatement}
 }

@@ -42,5 +42,5 @@ Gets an AudienceSegmentPage of AudienceSegment objects that satisfy the given St
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 }

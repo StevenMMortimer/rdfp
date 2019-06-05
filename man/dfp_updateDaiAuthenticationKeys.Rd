@@ -29,5 +29,5 @@ Updates the specified DaiAuthenticationKey objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#updateDaiAuthenticationKeys}{Google Documentation for updateDaiAuthenticationKeys}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#updateDaiAuthenticationKeys}{Google Documentation for updateDaiAuthenticationKeys}
 }

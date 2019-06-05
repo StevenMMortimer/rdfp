@@ -28,5 +28,5 @@ Returns the CustomFieldOption uniquely identified by the given ID.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 }

@@ -29,5 +29,5 @@ Performs action on ProductTemplate objects that satisfy the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
 }

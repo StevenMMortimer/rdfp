@@ -37,5 +37,5 @@ result <- dfp_getAvailabilityForecastById(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 }

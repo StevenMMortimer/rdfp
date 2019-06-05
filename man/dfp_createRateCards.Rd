@@ -23,8 +23,8 @@ a \code{data.frame} or \code{list} containing all the elements of a createRateCa
 Provides methods for managing RateCard objects.
 To use this service, you
 need to have the new sales management solution enabled on your network. If
-you do not see a "Sales" tab in
-\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 will not be able to use this service.
 }
 \details{
@@ -38,5 +38,5 @@ Creates a list of RateCard objects. Rate cards must be activated before being as
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#createRateCards}{Google Documentation for createRateCards}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#createRateCards}{Google Documentation for createRateCards}
 }

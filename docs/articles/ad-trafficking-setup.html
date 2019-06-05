@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rdfp</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
       </span>
     </div>
 
@@ -123,69 +123,69 @@
     
     
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(rdfp)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</a></code></pre></div>
 <div id="setup-custom-labels-for-items" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-labels-for-items" class="anchor"></a>Setup Custom Labels for Items</h4>
 <p>Custom labels are helpful for “tagging” DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/190565?hl=en&amp;ref_topic=30224" class="uri">https://support.google.com/dfp\_premium/answer/190565?hl=en&amp;ref_topic=30224</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this creates a label called "Auto - Competitive Exclusion" that we can add</span>
-<span class="co"># to any line item or order that we might want to use to prevent from clashing </span>
-<span class="co"># where two different car advertisers ads should not be shown at once.</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">"Auto - Competitive Exclusion"</span>,
-                           <span class="dt">description=</span><span class="kw">paste0</span>(<span class="st">"A label to prevent two different car "</span>,
-                                              <span class="st">"companies from showing ads together"</span>),
-                           <span class="dt">types=</span><span class="st">'COMPETITIVE_EXCLUSION'</span>)
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'labels'</span>=hypothetical_label)
-result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createLabels.html">dfp_createLabels</a></span>(request_data)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># this creates a label called "Auto - Competitive Exclusion" that we can add</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co"># to any line item or order that we might want to use to prevent from clashing </span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co"># where two different car advertisers ads should not be shown at once.</span></a>
+<a class="sourceLine" id="cb2-4" title="4">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">"Auto - Competitive Exclusion"</span>,</a>
+<a class="sourceLine" id="cb2-5" title="5">                           <span class="dt">description=</span><span class="kw">paste0</span>(<span class="st">"A label to prevent two different car "</span>,</a>
+<a class="sourceLine" id="cb2-6" title="6">                                              <span class="st">"companies from showing ads together"</span>),</a>
+<a class="sourceLine" id="cb2-7" title="7">                           <span class="dt">types=</span><span class="st">'COMPETITIVE_EXCLUSION'</span>)</a>
+<a class="sourceLine" id="cb2-8" title="8">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'labels'</span>=hypothetical_label)</a>
+<a class="sourceLine" id="cb2-9" title="9">result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createLabels.html">dfp_createLabels</a></span>(request_data)</a></code></pre></div>
 </div>
 <div id="setup-custom-fields-for-items" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-fields-for-items" class="anchor"></a>Setup Custom Fields for Items</h4>
 <p>Custom fields are helpful for “tagging” DFP items with metadata that can later be used filtering or reporting. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/2694303?hl=en" class="uri">https://support.google.com/dfp\_premium/answer/2694303?hl=en</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this creates an extra field on the CREATIVE entity type that denotes the time of </span>
-<span class="co"># day that the creative typically runs. First we create the field, then populate</span>
-<span class="co"># with potential options since it is a dropdown field.</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">'Timing'</span>,
-                           <span class="dt">description=</span><span class="st">'The time of day that this creative usually runs.'</span>, 
-                           <span class="dt">entityType=</span><span class="st">'CREATIVE'</span>,
-                           <span class="dt">dataType=</span><span class="st">'DROP_DOWN'</span>,
-                           <span class="dt">visibility=</span><span class="st">'FULL'</span>)
-dfp_createCustomFields_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomFields.html">dfp_createCustomFields</a></span>(request_data)
-
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customFieldId=</span><span class="kw">rep</span>(dfp_createCustomFields_result<span class="op">$</span>id, <span class="dv">3</span>),
-                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'Morning'</span>, <span class="st">'Afternoon'</span>, <span class="st">'Evening'</span>))
-dfp_createCustomFieldOptions_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomFieldOptions.html">dfp_createCustomFieldOptions</a></span>(request_data)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># this creates an extra field on the CREATIVE entity type that denotes the time of </span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># day that the creative typically runs. First we create the field, then populate</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co"># with potential options since it is a dropdown field.</span></a>
+<a class="sourceLine" id="cb3-4" title="4">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name=</span><span class="st">'Timing'</span>,</a>
+<a class="sourceLine" id="cb3-5" title="5">                           <span class="dt">description=</span><span class="st">'The time of day that this creative usually runs.'</span>, </a>
+<a class="sourceLine" id="cb3-6" title="6">                           <span class="dt">entityType=</span><span class="st">'CREATIVE'</span>,</a>
+<a class="sourceLine" id="cb3-7" title="7">                           <span class="dt">dataType=</span><span class="st">'DROP_DOWN'</span>,</a>
+<a class="sourceLine" id="cb3-8" title="8">                           <span class="dt">visibility=</span><span class="st">'FULL'</span>)</a>
+<a class="sourceLine" id="cb3-9" title="9">dfp_createCustomFields_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomFields.html">dfp_createCustomFields</a></span>(request_data)</a>
+<a class="sourceLine" id="cb3-10" title="10"></a>
+<a class="sourceLine" id="cb3-11" title="11">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customFieldId=</span><span class="kw">rep</span>(dfp_createCustomFields_result<span class="op">$</span>id, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb3-12" title="12">                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'Morning'</span>, <span class="st">'Afternoon'</span>, <span class="st">'Evening'</span>))</a>
+<a class="sourceLine" id="cb3-13" title="13">dfp_createCustomFieldOptions_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomFieldOptions.html">dfp_createCustomFieldOptions</a></span>(request_data)</a></code></pre></div>
 </div>
 <div id="setup-custom-targeting-keys-and-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-targeting-keys-and-values" class="anchor"></a>Setup Custom Targeting Keys and Values</h4>
 <p>DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/188092?hl=en" class="uri">https://support.google.com/dfp\_premium/answer/188092?hl=en</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create the key</span>
-unique_numb &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">100000</span>))
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">'Test'</span>, unique_numb), 
-                               <span class="dt">displayName=</span><span class="kw">paste0</span>(<span class="st">'TestKey'</span>, unique_numb), 
-                               <span class="dt">type=</span><span class="st">'FREEFORM'</span>))
-dfp_createCustomTargetingKeys_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys</a></span>(request_data)
-dfp_createCustomTargetingKeys_result
-<span class="co">#&gt; # A tibble: 1 x 5</span>
-<span class="co">#&gt;         id name      displayName  type     status</span>
-<span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span>
-<span class="co">#&gt; 1 11840152 Test34586 TestKey34586 FREEFORM ACTIVE</span>
-
-<span class="co"># create the values</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),
-                           <span class="dt">name=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), 
-                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), 
-                           <span class="dt">matchType=</span><span class="kw">rep</span>(<span class="st">'EXACT'</span>, <span class="dv">2</span>))
-dfp_createCustomTargetingValues_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomTargetingValues.html">dfp_createCustomTargetingValues</a></span>(request_data)
-dfp_createCustomTargetingValues_result
-<span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   customTargetingKeyId           id name       displayName matchType status</span>
-<span class="co">#&gt;                  &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span>
-<span class="co">#&gt; 1             11840152 448054980194 TestValue1 TestValue1  EXACT     ACTIVE</span>
-<span class="co">#&gt; 2             11840152 448054454026 TestValue2 TestValue2  EXACT     ACTIVE</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># create the key</span></a>
+<a class="sourceLine" id="cb4-2" title="2">unique_numb &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">100000</span>))</a>
+<a class="sourceLine" id="cb4-3" title="3">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">'Test'</span>, unique_numb), </a>
+<a class="sourceLine" id="cb4-4" title="4">                               <span class="dt">displayName=</span><span class="kw">paste0</span>(<span class="st">'TestKey'</span>, unique_numb), </a>
+<a class="sourceLine" id="cb4-5" title="5">                               <span class="dt">type=</span><span class="st">'FREEFORM'</span>))</a>
+<a class="sourceLine" id="cb4-6" title="6">dfp_createCustomTargetingKeys_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomTargetingKeys.html">dfp_createCustomTargetingKeys</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-7" title="7">dfp_createCustomTargetingKeys_result</a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; # A tibble: 1 x 5</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;         id name      displayName  type     status</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; 1 11910776 Test47847 TestKey47847 FREEFORM ACTIVE</span></a>
+<a class="sourceLine" id="cb4-12" title="12"></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co"># create the values</span></a>
+<a class="sourceLine" id="cb4-14" title="14">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb4-15" title="15">                           <span class="dt">name=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), </a>
+<a class="sourceLine" id="cb4-16" title="16">                           <span class="dt">displayName=</span><span class="kw">c</span>(<span class="st">'TestValue1'</span>,<span class="st">'TestValue2'</span>), </a>
+<a class="sourceLine" id="cb4-17" title="17">                           <span class="dt">matchType=</span><span class="kw">rep</span>(<span class="st">'EXACT'</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb4-18" title="18">dfp_createCustomTargetingValues_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCustomTargetingValues.html">dfp_createCustomTargetingValues</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-19" title="19">dfp_createCustomTargetingValues_result</a>
+<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
+<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt;   customTargetingKeyId           id name       displayName matchType status</span></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt;                  &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span></a>
+<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; 1             11910776 448122477687 TestValue1 TestValue1  EXACT     ACTIVE</span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; 2             11910776 448122477705 TestValue2 TestValue2  EXACT     ACTIVE</span></a></code></pre></div>
 </div>
   </div>
 

@@ -25,7 +25,6 @@ Gets a PlacementPage of Placement objects that satisfy the given Statement query
 \itemize{
   \item{description}
   \item{id}
-  \item{isAdSenseTargetingEnabled}
   \item{name}
   \item{placementCode}
   \item{status}
@@ -39,5 +38,5 @@ Gets a PlacementPage of Placement objects that satisfy the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 }

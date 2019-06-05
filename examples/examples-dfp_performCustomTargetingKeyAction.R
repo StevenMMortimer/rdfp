@@ -1,4 +1,4 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  res <- dfp_performCustomTargetingKeyAction(request_data)
 #' }

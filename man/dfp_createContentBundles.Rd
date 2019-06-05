@@ -37,5 +37,5 @@ Creates new ContentBundle objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 }

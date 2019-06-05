@@ -38,5 +38,5 @@ Gets a CreativePage of Creative objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeService#getCreativesByStatement}{Google Documentation for getCreativesByStatement}
 }

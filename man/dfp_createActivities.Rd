@@ -34,10 +34,10 @@ createActivities
 Creates a new Activity objects.
 }
 \examples{
-\dontrun{
+\donttest{
  res <- dfp_createActivities(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#createActivities}{Google Documentation for createActivities}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityService#createActivities}{Google Documentation for createActivities}
 }

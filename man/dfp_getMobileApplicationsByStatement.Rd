@@ -38,5 +38,5 @@ Gets a MobileApplicationPage mobileApplicationPage of MobileApplication mobile a
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/MobileApplicationService#getMobileApplicationsByStatement}{Google Documentation for getMobileApplicationsByStatement}
 }

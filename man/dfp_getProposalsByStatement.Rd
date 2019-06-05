@@ -44,5 +44,5 @@ Gets a ProposalPage of Proposal objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 }

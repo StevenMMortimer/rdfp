@@ -34,5 +34,5 @@ Gets a CdnConfigurationPage of CdnConfiguration objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
 }

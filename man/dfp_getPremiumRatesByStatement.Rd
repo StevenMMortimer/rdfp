@@ -35,5 +35,5 @@ Gets a PremiumRatePage of PremiumRate objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 }

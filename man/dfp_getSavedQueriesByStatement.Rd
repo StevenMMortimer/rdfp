@@ -39,5 +39,5 @@ report_data <- dfp_full_report_wrapper(report_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 }

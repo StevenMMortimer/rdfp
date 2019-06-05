@@ -39,5 +39,5 @@ The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#createDaiAuthenticationKeys}{Google Documentation for createDaiAuthenticationKeys}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#createDaiAuthenticationKeys}{Google Documentation for createDaiAuthenticationKeys}
 }

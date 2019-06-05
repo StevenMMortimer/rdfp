@@ -28,5 +28,5 @@ Updates the specified User objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#updateUsers}{Google Documentation for updateUsers}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#updateUsers}{Google Documentation for updateUsers}
 }

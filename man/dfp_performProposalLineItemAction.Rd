@@ -29,5 +29,5 @@ Performs actions on ProposalLineItem objects that match the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 }

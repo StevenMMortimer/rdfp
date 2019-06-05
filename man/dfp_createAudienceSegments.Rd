@@ -34,5 +34,5 @@ Creates new RuleBasedFirstPartyAudienceSegment objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 }

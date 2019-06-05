@@ -29,5 +29,5 @@ Updates the specified MobileApplication mobile applications.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/MobileApplicationService#updateMobileApplications}{Google Documentation for updateMobileApplications}
 }

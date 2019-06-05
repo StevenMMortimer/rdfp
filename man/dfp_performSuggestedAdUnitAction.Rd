@@ -33,5 +33,5 @@ Performs actions on SuggestedAdUnit objects that match the given Statement query
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/SuggestedAdUnitService#performSuggestedAdUnitAction}{Google Documentation for performSuggestedAdUnitAction}
 }

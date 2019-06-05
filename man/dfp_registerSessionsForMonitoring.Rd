@@ -25,5 +25,5 @@ A session ID is a unique identifier of a single user watching a live stream even
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 }

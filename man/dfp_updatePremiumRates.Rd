@@ -28,5 +28,5 @@ Updates the specified PremiumRate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 }

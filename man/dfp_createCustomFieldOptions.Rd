@@ -40,5 +40,5 @@ result <- dfp_createCustomFieldOptions(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 }

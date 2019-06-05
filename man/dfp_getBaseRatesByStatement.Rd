@@ -35,5 +35,5 @@ Gets a BaseRatePage of BaseRate objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/BaseRateService#getBaseRatesByStatement}{Google Documentation for getBaseRatesByStatement}
 }

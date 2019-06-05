@@ -40,5 +40,5 @@ result <- dfp_createUserTeamAssociations(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/UserTeamAssociationService#createUserTeamAssociations}{Google Documentation for createUserTeamAssociations}
 }

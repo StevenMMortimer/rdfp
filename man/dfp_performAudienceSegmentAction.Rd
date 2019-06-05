@@ -29,5 +29,5 @@ Performs the given AudienceSegmentAction on the set of segments identified by th
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 }

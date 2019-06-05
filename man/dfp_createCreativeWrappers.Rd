@@ -43,5 +43,5 @@ Creates a new CreativeWrapper objects. The following fields are required:
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 }

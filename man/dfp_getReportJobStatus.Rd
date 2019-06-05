@@ -49,5 +49,5 @@ while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 }

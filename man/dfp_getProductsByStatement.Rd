@@ -28,8 +28,8 @@ template's attributes. Products are typically used by inventory managers to
 restrict what salespeople can sell.
 To use this service, you need to
 have the new sales management solution enabled on your network. If you do
-not see a "Sales" tab in \href{https://www.google.com/dfp}{DoubleClick for
-Publishers (DFP)}, you will not be able to use this service.
+not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
+for Publishers (DFP)</a>, you will not be able to use this service.
 }
 \details{
 getProductsByStatement
@@ -55,5 +55,5 @@ Gets a ProductPage of Product objects that satisfy the criteria specified by giv
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductService#getProductsByStatement}{Google Documentation for getProductsByStatement}
 }

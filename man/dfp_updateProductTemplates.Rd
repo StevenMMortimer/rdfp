@@ -28,5 +28,5 @@ Updates the specified ProductTemplate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 }

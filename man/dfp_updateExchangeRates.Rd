@@ -28,5 +28,5 @@ Updates the specified ExchangeRate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 }

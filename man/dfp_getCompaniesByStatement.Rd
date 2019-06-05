@@ -36,5 +36,5 @@ Gets a CompanyPage of Company objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CompanyService#getCompaniesByStatement}{Google Documentation for getCompaniesByStatement}
 }

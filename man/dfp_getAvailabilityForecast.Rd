@@ -58,5 +58,5 @@ dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 }

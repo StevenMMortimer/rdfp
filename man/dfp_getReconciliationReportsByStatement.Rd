@@ -43,5 +43,5 @@ Gets an ReconciliationReportPage of ReconciliationReport objects that satisfy th
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 }

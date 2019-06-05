@@ -43,5 +43,5 @@ Gets a ProposalLineItemPage of ProposalLineItem objects that satisfy the given S
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 }

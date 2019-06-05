@@ -29,5 +29,5 @@ Performs actions on ProductPackageItem objects that satisfy the given Statement 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 }

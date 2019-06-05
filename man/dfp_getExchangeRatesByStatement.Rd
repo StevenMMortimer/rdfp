@@ -37,5 +37,5 @@ Gets a ExchangeRatePage of ExchangeRate objects that satisfy the given Statement
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 }

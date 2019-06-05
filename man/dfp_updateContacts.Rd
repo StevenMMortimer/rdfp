@@ -28,5 +28,5 @@ Updates the specified Contact objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ContactService#updateContacts}{Google Documentation for updateContacts}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ContactService#updateContacts}{Google Documentation for updateContacts}
 }

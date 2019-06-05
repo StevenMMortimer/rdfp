@@ -28,5 +28,5 @@ Performs actions on LineItem objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 }

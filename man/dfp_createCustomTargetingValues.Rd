@@ -37,5 +37,5 @@ result <- dfp_createCustomTargetingValues(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 }

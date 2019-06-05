@@ -35,5 +35,5 @@ result <- dfp_getDeliveryForecastByIds(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 }

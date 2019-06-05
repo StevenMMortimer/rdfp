@@ -36,5 +36,5 @@ Performs an action on ExchangeRate objects that satisfy the given Statement quer
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 }

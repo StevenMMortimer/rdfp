@@ -28,5 +28,5 @@ Updates the specified Team objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#updateTeams}{Google Documentation for updateTeams}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/TeamService#updateTeams}{Google Documentation for updateTeams}
 }

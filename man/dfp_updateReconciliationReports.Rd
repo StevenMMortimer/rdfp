@@ -29,5 +29,5 @@ Updates the specified ReconciliationReport objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
 }

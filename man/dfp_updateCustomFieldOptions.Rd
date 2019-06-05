@@ -29,5 +29,5 @@ Updates the specified CustomFieldOption objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 }

@@ -29,5 +29,5 @@ Performs actions on NativeStyle native styles that match the given Statement.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 }

@@ -29,5 +29,5 @@ Updates the specified UserTeamAssociation objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/UserTeamAssociationService#updateUserTeamAssociations}{Google Documentation for updateUserTeamAssociations}
 }

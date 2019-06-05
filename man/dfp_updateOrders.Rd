@@ -28,5 +28,5 @@ Updates the specified Order objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#updateOrders}{Google Documentation for updateOrders}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#updateOrders}{Google Documentation for updateOrders}
 }

@@ -29,5 +29,5 @@ Updates the specified CustomTargetingValue objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 }

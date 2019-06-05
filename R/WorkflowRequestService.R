@@ -3,8 +3,8 @@
 #' Provides methods to retrieve and perform actions on WorkflowRequest objects
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' enabled on your network. If you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' getWorkflowRequestsByStatement
@@ -20,7 +20,7 @@
 #'   \item{type}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/WorkflowRequestService#getWorkflowRequestsByStatement}{Google Documentation for getWorkflowRequestsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -46,7 +46,7 @@ dfp_getWorkflowRequestsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Perform actions on WorkflowRequest objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/WorkflowRequestService#performWorkflowRequestAction}{Google Documentation for performWorkflowRequestAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

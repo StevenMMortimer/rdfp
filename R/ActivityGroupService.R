@@ -12,7 +12,7 @@
 #' 
 #' Creates a new ActivityGroup objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,7 +22,7 @@
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createActivityGroupsResponse 
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  res <- dfp_createActivityGroups(request_data)
 #' }
 #' @export
@@ -44,7 +44,7 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#getActivityGroupsByStatement}{Google Documentation for getActivityGroupsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -70,7 +70,7 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified ActivityGroup objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#updateActivityGroups}{Google Documentation for updateActivityGroups}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

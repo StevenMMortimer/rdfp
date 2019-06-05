@@ -51,5 +51,5 @@ Test networks are limited in the following ways:
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 }

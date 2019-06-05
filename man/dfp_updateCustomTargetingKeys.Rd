@@ -29,5 +29,5 @@ Updates the specified CustomTargetingKey objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 }

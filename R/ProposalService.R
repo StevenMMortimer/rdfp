@@ -9,7 +9,7 @@
 #'   \item{Proposal name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#createProposals}{Google Documentation for createProposals}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#createProposals}{Google Documentation for createProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -37,7 +37,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{proposalId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -77,7 +77,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #'   \item{negotiationStatus Only applicable for programmatic proposals}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -108,7 +108,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{Proposal primaryTraffickerId}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -133,7 +133,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Proposal objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#updateProposals}{Google Documentation for updateProposals}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

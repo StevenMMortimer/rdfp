@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rdfp</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
       </span>
     </div>
 
@@ -123,47 +123,47 @@
     
     
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code><a href="../reference/dfp_auth.html">dfp_auth()</a></code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(rdfp)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</a></code></pre></div>
 <div id="create-an-order" class="section level4">
 <h4 class="hasAnchor">
 <a href="#create-an-order" class="anchor"></a>Create an Order</h4>
 <p>This example uses a test company as an advertiser and yourself as the trafficker, to create an order.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE name = 'TestCompany1'"</span>))
-dfp_getCompaniesByStatement_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCompaniesByStatement.html">dfp_getCompaniesByStatement</a></span>(request_data) 
-
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">name=</span><span class="st">'TestOrder'</span>, 
-                          <span class="dt">startDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">1</span>), 
-                                             <span class="dt">hour=</span><span class="dv">0</span>,
-                                             <span class="dt">minute=</span><span class="dv">0</span>,
-                                             <span class="dt">second=</span><span class="dv">0</span>,
-                                             <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>),
-                          <span class="dt">endDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">31</span>), 
-                                           <span class="dt">hour=</span><span class="dv">23</span>,
-                                           <span class="dt">minute=</span><span class="dv">59</span>,
-                                           <span class="dt">second=</span><span class="dv">59</span>,
-                                           <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>), 
-                          <span class="dt">notes=</span><span class="st">'API Test Order'</span>, 
-                          <span class="dt">externalOrderId=</span><span class="dv">99999</span>, 
-                          <span class="dt">advertiserId=</span>dfp_getCompaniesByStatement_result<span class="op">$</span>id, 
-                          <span class="dt">traffickerId=</span><span class="kw"><a href="../reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()<span class="op">$</span>id))
-dfp_createOrders_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createOrders.html">dfp_createOrders</a></span>(request_data)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE name = 'TestCompany1'"</span>))</a>
+<a class="sourceLine" id="cb2-2" title="2">dfp_getCompaniesByStatement_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCompaniesByStatement.html">dfp_getCompaniesByStatement</a></span>(request_data) </a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">name=</span><span class="st">'TestOrder'</span>, </a>
+<a class="sourceLine" id="cb2-5" title="5">                          <span class="dt">startDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">1</span>), </a>
+<a class="sourceLine" id="cb2-6" title="6">                                             <span class="dt">hour=</span><span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb2-7" title="7">                                             <span class="dt">minute=</span><span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb2-8" title="8">                                             <span class="dt">second=</span><span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb2-9" title="9">                                             <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>),</a>
+<a class="sourceLine" id="cb2-10" title="10">                          <span class="dt">endDateTime=</span><span class="kw">list</span>(<span class="dt">date=</span><span class="kw">list</span>(<span class="dt">year=</span><span class="dv">2018</span>, <span class="dt">month=</span><span class="dv">12</span>, <span class="dt">day=</span><span class="dv">31</span>), </a>
+<a class="sourceLine" id="cb2-11" title="11">                                           <span class="dt">hour=</span><span class="dv">23</span>,</a>
+<a class="sourceLine" id="cb2-12" title="12">                                           <span class="dt">minute=</span><span class="dv">59</span>,</a>
+<a class="sourceLine" id="cb2-13" title="13">                                           <span class="dt">second=</span><span class="dv">59</span>,</a>
+<a class="sourceLine" id="cb2-14" title="14">                                           <span class="dt">timeZoneID=</span><span class="st">'America/New_York'</span>), </a>
+<a class="sourceLine" id="cb2-15" title="15">                          <span class="dt">notes=</span><span class="st">'API Test Order'</span>, </a>
+<a class="sourceLine" id="cb2-16" title="16">                          <span class="dt">externalOrderId=</span><span class="dv">99999</span>, </a>
+<a class="sourceLine" id="cb2-17" title="17">                          <span class="dt">advertiserId=</span>dfp_getCompaniesByStatement_result<span class="op">$</span>id, </a>
+<a class="sourceLine" id="cb2-18" title="18">                          <span class="dt">traffickerId=</span><span class="kw"><a href="../reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()<span class="op">$</span>id))</a>
+<a class="sourceLine" id="cb2-19" title="19">dfp_createOrders_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createOrders.html">dfp_createOrders</a></span>(request_data)</a></code></pre></div>
 </div>
 <div id="get-line-items-by-a-filter" class="section level4">
 <h4 class="hasAnchor">
 <a href="#get-line-items-by-a-filter" class="anchor"></a>Get Line Items By A Filter</h4>
 <p>Below is an example of how to get objects by Publishers Query Language (PQL) statement. The statement is constructed as a list of lists that are nested to emulate the hierarchy of the XML to be created. The example uses the <code>dfp_getLineItemsByStatement</code> function from the [LineItemService] (<a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService</a>)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># retrieve 3 line items that have a status of "DELIVERING"</span>
-request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))
-resultset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(request, <span class="dt">as_df=</span><span class="ot">TRUE</span>)
-resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span class="st">'id'</span>, <span class="st">'priority'</span>, <span class="st">'deliveryRateType'</span>)]
-<span class="co">#&gt; # A tibble: 3 x 4</span>
-<span class="co">#&gt;      orderId         id priority deliveryRateType</span>
-<span class="co">#&gt;        &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt; 1 2231707164 4557799162       12 EVENLY          </span>
-<span class="co">#&gt; 2 2231707164 4557800341       12 EVENLY          </span>
-<span class="co">#&gt; 3 2231707164 4557803758       12 EVENLY</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># retrieve 3 line items that have a status of "DELIVERING"</span></a>
+<a class="sourceLine" id="cb3-2" title="2">request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">'filterStatement'</span>=<span class="kw">list</span>(<span class="st">'query'</span>=<span class="st">"WHERE status='DELIVERING' LIMIT 3"</span>))</a>
+<a class="sourceLine" id="cb3-3" title="3">resultset &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getLineItemsByStatement.html">dfp_getLineItemsByStatement</a></span>(request, <span class="dt">as_df=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb3-4" title="4">resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span class="st">'id'</span>, <span class="st">'priority'</span>, <span class="st">'deliveryRateType'</span>)]</a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; # A tibble: 3 x 4</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt;      orderId         id priority deliveryRateType</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt;        &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           </span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 1 2231707164 4557799162       12 EVENLY          </span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 2 2231707164 4557800341       12 EVENLY          </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 3 2231707164 4557803758       12 EVENLY</span></a></code></pre></div>
 </div>
   </div>
 

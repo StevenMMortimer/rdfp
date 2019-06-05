@@ -35,5 +35,5 @@ Gets an AdRulePage of AdRule objects that satisfy the given \{@link Statement qu
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/AdRuleService#getAdRulesByStatement}{Google Documentation for getAdRulesByStatement}
 }

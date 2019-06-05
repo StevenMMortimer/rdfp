@@ -1,5 +1,5 @@
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' filter <- "WHERE Status='DELIVERING' LIMIT 1"
 #' one_li <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))[[1]]
 #' request_data <- list(lineItemId=one_li$id,

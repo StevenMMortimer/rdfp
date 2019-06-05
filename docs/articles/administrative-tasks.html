@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rdfp</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
       </span>
     </div>
 
@@ -123,85 +123,85 @@
     
     
 <p>First, we load <code>dplyr</code> and <code>lubridate</code> to use in this vignette. Next we load the <code>rdfp</code> package and specify the DFP Network ID that we would like to connect to.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
-<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
-<span class="kw">library</span>(rdfp)
-<span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(rdfp)</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)</a></code></pre></div>
 <p>To use the package it is <strong>not</strong> necessary to setup your own application <code>client_id</code> and <code>client_secret</code>. By default you will be using the package client. The package client does not grant anyone access to your DFP instance it simply provides the medium for you to connect to your own data. If you wanted to setup your own Google Client to connect to DFP then go to the <a href="https://console.developers.google.com">Google Developer’s Console</a> and then specify your <code>client_id</code> and <code>client_secret</code> like so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)
-<span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)
-
-<span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">options</span>(<span class="dt">rdfp.application_name =</span> <span class="st">"MyApp"</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">options</span>(<span class="dt">rdfp.client_id =</span> <span class="st">"012345678901-99thisisatest99.apps.googleusercontent.com"</span>)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">options</span>(<span class="dt">rdfp.client_secret =</span> <span class="st">"Th1s1sMyC1ientS3cr3t"</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="../reference/dfp_auth.html">dfp_auth</a></span>()</a></code></pre></div>
 <div id="check-current-user-info" class="section level4">
 <h4 class="hasAnchor">
 <a href="#check-current-user-info" class="anchor"></a>Check Current User Info</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check current user or network</span>
-user_info &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()
-user_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'isActive'</span>)]
-<span class="co">#&gt; # A tibble: 1 x 2</span>
-<span class="co">#&gt;          id isActive</span>
-<span class="co">#&gt;       &lt;dbl&gt; &lt;lgl&gt;   </span>
-<span class="co">#&gt; 1 185549536 TRUE</span>
-network_info &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()
-network_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'networkCode'</span>)]
-<span class="co">#&gt; # A tibble: 1 x 2</span>
-<span class="co">#&gt;       id networkCode</span>
-<span class="co">#&gt;    &lt;dbl&gt;       &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 109096     1019096</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Check current user or network</span></a>
+<a class="sourceLine" id="cb3-2" title="2">user_info &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCurrentUser.html">dfp_getCurrentUser</a></span>()</a>
+<a class="sourceLine" id="cb3-3" title="3">user_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'isActive'</span>)]</a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; # A tibble: 1 x 2</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt;          id isActive</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt;       &lt;dbl&gt; &lt;lgl&gt;   </span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 1 185549536 TRUE</span></a>
+<a class="sourceLine" id="cb3-8" title="8">network_info &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getCurrentNetwork.html">dfp_getCurrentNetwork</a></span>()</a>
+<a class="sourceLine" id="cb3-9" title="9">network_info[,<span class="kw">c</span>(<span class="st">'id'</span>, <span class="st">'networkCode'</span>)]</a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; # A tibble: 1 x 2</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;       id networkCode</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;    &lt;dbl&gt;       &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 1 109096     1019096</span></a></code></pre></div>
 </div>
 <div id="create-team-and-users" class="section level4">
 <h4 class="hasAnchor">
 <a href="#create-team-and-users" class="anchor"></a>Create Team and Users</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a team and user and add the user to that team</span>
-
-<span class="co">#first create the team</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">teams=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestTeam1"</span>, 
-                                <span class="dt">description=</span><span class="st">'API Test Team 1'</span>, 
-                                <span class="dt">hasAllCompanies=</span><span class="st">'true'</span>, 
-                                <span class="dt">hasAllInventory=</span><span class="st">'true'</span>,
-                                <span class="dt">teamAccessType=</span><span class="st">'READ_WRITE'</span>))
-dfp_createTeams_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createTeams.html">dfp_createTeams</a></span>(request_data)
-
-<span class="co"># second create the user</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">paste0</span>(<span class="st">"TestUser"</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>),
-                           <span class="dt">email =</span> <span class="kw">paste0</span>(<span class="st">'testuser'</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">'@gmail.com'</span>), 
-                           <span class="dt">roleId =</span> <span class="kw">rep</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>))
-dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUsers.html">dfp_createUsers</a></span>(request_data)
-
-<span class="co"># third associate the user to that team</span>
-request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">teamid=</span><span class="kw">rep</span>(dfp_createTeams_result<span class="op">$</span>id, <span class="dv">3</span>),
-                           <span class="dt">userid=</span>dfp_createUsers_result<span class="op">$</span>id)
-dfp_createUserTeamAssociations_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUserTeamAssociations.html">dfp_createUserTeamAssociations</a></span>(request_data)
-
-<span class="co"># Note: User roleId = -1 is the Administrative role</span>
-<span class="co"># use dfp_getAllRoles() to view other options</span>
-
-<span class="co"># Creating custom roles is a premium feature, which</span>
-<span class="co"># small business accounts won't have and creating the roles </span>
-<span class="co"># can only be done from the user interface, not the API.</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># create a team and user and add the user to that team</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">#first create the team</span></a>
+<a class="sourceLine" id="cb4-4" title="4">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">teams=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestTeam1"</span>, </a>
+<a class="sourceLine" id="cb4-5" title="5">                                <span class="dt">description=</span><span class="st">'API Test Team 1'</span>, </a>
+<a class="sourceLine" id="cb4-6" title="6">                                <span class="dt">hasAllCompanies=</span><span class="st">'true'</span>, </a>
+<a class="sourceLine" id="cb4-7" title="7">                                <span class="dt">hasAllInventory=</span><span class="st">'true'</span>,</a>
+<a class="sourceLine" id="cb4-8" title="8">                                <span class="dt">teamAccessType=</span><span class="st">'READ_WRITE'</span>))</a>
+<a class="sourceLine" id="cb4-9" title="9">dfp_createTeams_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createTeams.html">dfp_createTeams</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-10" title="10"></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co"># second create the user</span></a>
+<a class="sourceLine" id="cb4-12" title="12">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">paste0</span>(<span class="st">"TestUser"</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb4-13" title="13">                           <span class="dt">email =</span> <span class="kw">paste0</span>(<span class="st">'testuser'</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">'@gmail.com'</span>), </a>
+<a class="sourceLine" id="cb4-14" title="14">                           <span class="dt">roleId =</span> <span class="kw">rep</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb4-15" title="15">dfp_createUsers_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUsers.html">dfp_createUsers</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-16" title="16"></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co"># third associate the user to that team</span></a>
+<a class="sourceLine" id="cb4-18" title="18">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">teamid=</span><span class="kw">rep</span>(dfp_createTeams_result<span class="op">$</span>id, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb4-19" title="19">                           <span class="dt">userid=</span>dfp_createUsers_result<span class="op">$</span>id)</a>
+<a class="sourceLine" id="cb4-20" title="20">dfp_createUserTeamAssociations_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createUserTeamAssociations.html">dfp_createUserTeamAssociations</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-21" title="21"></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co"># Note: User roleId = -1 is the Administrative role</span></a>
+<a class="sourceLine" id="cb4-23" title="23"><span class="co"># use dfp_getAllRoles() to view other options</span></a>
+<a class="sourceLine" id="cb4-24" title="24"></a>
+<a class="sourceLine" id="cb4-25" title="25"><span class="co"># Creating custom roles is a premium feature, which</span></a>
+<a class="sourceLine" id="cb4-26" title="26"><span class="co"># small business accounts won't have and creating the roles </span></a>
+<a class="sourceLine" id="cb4-27" title="27"><span class="co"># can only be done from the user interface, not the API.</span></a></code></pre></div>
 </div>
 <div id="create-companies-and-contacts" class="section level4">
 <h4 class="hasAnchor">
 <a href="#create-companies-and-contacts" class="anchor"></a>Create Companies and Contacts</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a company and add a contact to it</span>
-
-<span class="co"># first create the company</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">companies=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestCompany1"</span>, 
-                                    <span class="dt">type=</span><span class="st">'HOUSE_ADVERTISER'</span>, 
-                                    <span class="dt">address=</span><span class="st">'123 Main St Hometown, FL USA'</span>, 
-                                    <span class="dt">email=</span><span class="st">'testcompany1@gmail.com'</span>, 
-                                    <span class="dt">comment=</span><span class="st">'API Test'</span>))
-dfp_createCompanies_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCompanies.html">dfp_createCompanies</a></span>(request_data)
-
-<span class="co"># second create the contact and specify the companyId</span>
-request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">contacts=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestContact1"</span>, 
-                                    <span class="dt">companyId=</span>dfp_createCompanies_result<span class="op">$</span>id, 
-                                    <span class="dt">status=</span><span class="st">'UNINVITED'</span>, 
-                                    <span class="dt">cellPhone=</span><span class="st">'(888) 999-7777'</span>,
-                                    <span class="dt">comment=</span><span class="st">'API Test'</span>, 
-                                    <span class="dt">email=</span><span class="st">'testcontact1@gmail.com'</span>))
-dfp_createContacts_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createContacts.html">dfp_createContacts</a></span>(request_data)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># create a company and add a contact to it</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co"># first create the company</span></a>
+<a class="sourceLine" id="cb5-4" title="4">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">companies=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestCompany1"</span>, </a>
+<a class="sourceLine" id="cb5-5" title="5">                                    <span class="dt">type=</span><span class="st">'HOUSE_ADVERTISER'</span>, </a>
+<a class="sourceLine" id="cb5-6" title="6">                                    <span class="dt">address=</span><span class="st">'123 Main St Hometown, FL USA'</span>, </a>
+<a class="sourceLine" id="cb5-7" title="7">                                    <span class="dt">email=</span><span class="st">'testcompany1@gmail.com'</span>, </a>
+<a class="sourceLine" id="cb5-8" title="8">                                    <span class="dt">comment=</span><span class="st">'API Test'</span>))</a>
+<a class="sourceLine" id="cb5-9" title="9">dfp_createCompanies_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createCompanies.html">dfp_createCompanies</a></span>(request_data)</a>
+<a class="sourceLine" id="cb5-10" title="10"></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co"># second create the contact and specify the companyId</span></a>
+<a class="sourceLine" id="cb5-12" title="12">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">contacts=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="st">"TestContact1"</span>, </a>
+<a class="sourceLine" id="cb5-13" title="13">                                    <span class="dt">companyId=</span>dfp_createCompanies_result<span class="op">$</span>id, </a>
+<a class="sourceLine" id="cb5-14" title="14">                                    <span class="dt">status=</span><span class="st">'UNINVITED'</span>, </a>
+<a class="sourceLine" id="cb5-15" title="15">                                    <span class="dt">cellPhone=</span><span class="st">'(888) 999-7777'</span>,</a>
+<a class="sourceLine" id="cb5-16" title="16">                                    <span class="dt">comment=</span><span class="st">'API Test'</span>, </a>
+<a class="sourceLine" id="cb5-17" title="17">                                    <span class="dt">email=</span><span class="st">'testcontact1@gmail.com'</span>))</a>
+<a class="sourceLine" id="cb5-18" title="18">dfp_createContacts_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_createContacts.html">dfp_createContacts</a></span>(request_data)</a></code></pre></div>
 </div>
   </div>
 

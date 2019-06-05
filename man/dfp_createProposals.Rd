@@ -36,5 +36,5 @@ Creates new Proposal objects. For each proposal, the following fields are requir
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#createProposals}{Google Documentation for createProposals}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#createProposals}{Google Documentation for createProposals}
 }

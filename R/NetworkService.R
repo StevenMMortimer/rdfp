@@ -12,7 +12,7 @@
 #' Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@@return the networks to which the current login has access Returns the list of Network objects to which the current login has access.
 #' Intended to be used without a network code in the SOAP header when the login may have more than one network associated with it.@@return the networks to which the current login has access
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#getAllNetworks}{Google Documentation for getAllNetworks}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -34,7 +34,7 @@ dfp_getAllNetworks <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the current network for which requests are being made. Returns the current network for which requests are being made. @@return the network for which the user is currently making the request Returns the current network for which requests are being made. @@return the network for which the user is currently making the request
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -83,7 +83,7 @@ dfp_getCurrentNetwork <- function(as_df=TRUE, verbose=FALSE){
 #'   \item{Test networks are limited to 10,000 objects per entity type.}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#makeTestNetwork}{Google Documentation for makeTestNetwork}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -105,7 +105,7 @@ dfp_makeTestNetwork <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified network. Currently, only the network display name can be updated.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

@@ -28,5 +28,5 @@ Updates the specified Creative objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeService#updateCreatives}{Google Documentation for updateCreatives}
 }

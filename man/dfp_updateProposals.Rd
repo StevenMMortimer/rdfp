@@ -28,5 +28,5 @@ Updates the specified Proposal objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#updateProposals}{Google Documentation for updateProposals}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#updateProposals}{Google Documentation for updateProposals}
 }

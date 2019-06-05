@@ -7,7 +7,7 @@
 #' 
 #' Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Creates new CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -36,7 +36,7 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -62,7 +62,7 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on CdnConfiguration objects that match the given \{@@link Statement query\}.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -87,7 +87,7 @@ dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

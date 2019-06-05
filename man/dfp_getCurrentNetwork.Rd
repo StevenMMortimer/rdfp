@@ -24,5 +24,5 @@ Returns the current network for which requests are being made. Returns the curre
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#getCurrentNetwork}{Google Documentation for getCurrentNetwork}
 }

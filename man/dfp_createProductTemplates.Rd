@@ -27,8 +27,8 @@ Products allow inventory managers to control what salespeople can sell.
 }
 \details{
 To use this service, you need to have the new sales management solution
-enabled on your network. If you do not see a "Sales" tab in
-\href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+enabled on your network. If you do not see a "Sales" tab in <a
+href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 will not be able to use this service.
 
 createProductTemplates
@@ -41,5 +41,5 @@ Creates new ProductTemplate objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 }

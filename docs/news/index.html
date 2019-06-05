@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rdfp</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
       </span>
     </div>
 
@@ -152,15 +152,35 @@
       <small>Source: <a href='https://github.com/StevenMMortimer/rdfp/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="rdfp-0-1-3-release" class="section level2">
+    <div id="rdfp-014" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rdfp-0-1-3-release" class="anchor"></a>rdfp 0.1.3 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3">release</a>
-</h2>
-<p><strong>Note</strong>: DoubleClick for Publishers was recently renamed to Google Ad Manager. For this version we will continue to use the “dfp” abbreviation although everything else has been updated to <code>v201811</code> from the Google Ad Manager API reference.</p>
-<p>Also, please note that the API has changed the name of <code>timeZoneID</code> to <code>timeZoneId</code>. We have modified functions to follow suit. You may need to update this argument in existing scripts, especially when dealing with forecasts, reports, orders, and lineitems.</p>
+<a href="#rdfp-014" class="anchor"></a>rdfp 0.1.4</h2>
+<p>In this version of the package we have upgraded from <code>v201811</code> to <code>v201905</code>. Please read the announced changes on Google’s website since they will be reflected in the package exactly as explained there at <a href="https://developers.google.com/ad-manager/api/rel_notes#v201905" class="uri">https://developers.google.com/ad-manager/api/rel_notes#v201905</a></p>
 <div id="features" class="section level3">
 <h3 class="hasAnchor">
 <a href="#features" class="anchor"></a>Features</h3>
+<ul>
+<li>None</li>
+</ul>
+</div>
+<div id="bug-fixes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug Fixes</h3>
+<ul>
+<li>Fix an issue with the <code><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper()</a></code> that was ignoring the <code>check_interval</code> argument (<a href='https://github.com/StevenMMortimer/rdfp/issues/11'>#11</a>)</li>
+</ul>
+<hr>
+</div>
+</div>
+    <div id="rdfp-013-release" class="section level2">
+<h2 class="hasAnchor">
+<a href="#rdfp-013-release" class="anchor"></a>rdfp 0.1.3 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3">release</a>
+</h2>
+<p><strong>Note</strong>: DoubleClick for Publishers was recently renamed to Google Ad Manager. For this version we will continue to use the “dfp” abbreviation although everything else has been updated to <code>v201811</code> from the Google Ad Manager API reference.</p>
+<p>Also, please note that the API has changed the name of <code>timeZoneID</code> to <code>timeZoneId</code>. We have modified functions to follow suit. You may need to update this argument in existing scripts, especially when dealing with forecasts, reports, orders, and lineitems.</p>
+<div id="features-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#features-1" class="anchor"></a>Features</h3>
 <ul>
 <li>Update to latest version which is <code>v201811</code> (<a href='https://github.com/StevenMMortimer/rdfp/issues/8'>#8</a>)</li>
 <li>Make the default file name for a cached token <code>".httr-oauth-rdfp"</code> so that it does not clash with other package token names</li>
@@ -169,22 +189,22 @@
 <li>Increased the default <code>max_tries</code> argument in <code><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper()</a></code> from 10 to 20 tries so that long running queries do not “timeout” by reaching the max number of tries without completing</li>
 </ul>
 </div>
-<div id="bug-fixes" class="section level3">
+<div id="bug-fixes-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug Fixes</h3>
+<a href="#bug-fixes-1" class="anchor"></a>Bug Fixes</h3>
 <ul>
 <li>Update vignette names so that they are not duplicated, which is now a required check for CRAN</li>
 </ul>
 <hr>
 </div>
 </div>
-    <div id="rdfp-0-1-2-release" class="section level2">
+    <div id="rdfp-012-release" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rdfp-0-1-2-release" class="anchor"></a>rdfp 0.1.2 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.2">release</a>
+<a href="#rdfp-012-release" class="anchor"></a>rdfp 0.1.2 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.2">release</a>
 </h2>
-<div id="features-1" class="section level3">
+<div id="features-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#features-1" class="anchor"></a>Features</h3>
+<a href="#features-2" class="anchor"></a>Features</h3>
 <ul>
 <li>
 <code><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe()</a></code> now returns a <code>tbl_df</code> object for better printing and casted data types</li>
@@ -197,35 +217,35 @@
 <hr>
 </div>
 </div>
-    <div id="rdfp-0-1-1-release" class="section level2">
+    <div id="rdfp-011-release" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rdfp-0-1-1-release" class="anchor"></a>rdfp 0.1.1 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.1">release</a>
+<a href="#rdfp-011-release" class="anchor"></a>rdfp 0.1.1 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.1">release</a>
 </h2>
-<div id="features-2" class="section level3">
+<div id="features-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#features-2" class="anchor"></a>Features</h3>
+<a href="#features-3" class="anchor"></a>Features</h3>
 <ul>
 <li>Upgraded to API version <code>v201802</code>
 </li>
 <li>Created more efficient parsers <code><a href="../reference/parse_soap_response.html">parse_soap_response()</a></code>. Warning: This will cause some breaking changes because how certain results are returned may be different.</li>
 </ul>
 </div>
-<div id="bug-fixes-1" class="section level3">
+<div id="bug-fixes-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bug-fixes-1" class="anchor"></a>Bug Fixes</h3>
+<a href="#bug-fixes-2" class="anchor"></a>Bug Fixes</h3>
 <ul>
 <li>Line item targeting does not come back as a matrix. It is preserved as a list so it can be directly passed back into the ForecastService functions or LineItemService to get detailed availability</li>
 </ul>
 <hr>
 </div>
 </div>
-    <div id="rdfp-0-1-0-release" class="section level2">
+    <div id="rdfp-010-release" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rdfp-0-1-0-release" class="anchor"></a>rdfp 0.1.0 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.0">release</a>
+<a href="#rdfp-010-release" class="anchor"></a>rdfp 0.1.0 <a href="https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.0">release</a>
 </h2>
-<div id="features-3" class="section level3">
+<div id="features-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#features-3" class="anchor"></a>Features</h3>
+<a href="#features-4" class="anchor"></a>Features</h3>
 <ul>
 <li>Simple Administrative Tools:
 <ul>
@@ -262,9 +282,9 @@
 </li>
 </ul>
 </div>
-<div id="bug-fixes-2" class="section level3">
+<div id="bug-fixes-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bug-fixes-2" class="anchor"></a>Bug Fixes</h3>
+<a href="#bug-fixes-3" class="anchor"></a>Bug Fixes</h3>
 <ul>
 <li>None.</li>
 </ul>
@@ -276,10 +296,11 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#rdfp-0-1-3-release">0.1.3</a></li>
-        <li><a href="#rdfp-0-1-2-release">0.1.2</a></li>
-        <li><a href="#rdfp-0-1-1-release">0.1.1</a></li>
-        <li><a href="#rdfp-0-1-0-release">0.1.0</a></li>
+        <li><a href="#rdfp-014">0.1.4</a></li>
+        <li><a href="#rdfp-013-release">0.1.3</a></li>
+        <li><a href="#rdfp-012-release">0.1.2</a></li>
+        <li><a href="#rdfp-011-release">0.1.1</a></li>
+        <li><a href="#rdfp-010-release">0.1.0</a></li>
       </ul>
     </div>
   </div>

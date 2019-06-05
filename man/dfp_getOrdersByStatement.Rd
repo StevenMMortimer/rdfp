@@ -40,5 +40,5 @@ Gets an OrderPage of Order objects that satisfy the given Statement query. The f
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 }

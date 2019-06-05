@@ -40,5 +40,5 @@ dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 }

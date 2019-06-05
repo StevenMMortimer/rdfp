@@ -29,5 +29,5 @@ Performs actions on CdnConfiguration objects that match the given \{@link Statem
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
 }

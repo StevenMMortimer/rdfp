@@ -36,5 +36,5 @@ Gets a CreativeSetPage of CreativeSet objects that satisfy the given Statement q
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 }

@@ -29,5 +29,5 @@ Performs actions on LineItemCreativeAssociation objects that match the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 }

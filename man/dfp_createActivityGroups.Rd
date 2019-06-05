@@ -34,10 +34,10 @@ createActivityGroups
 Creates a new ActivityGroup objects.
 }
 \examples{
-\dontrun{
+\donttest{
  res <- dfp_createActivityGroups(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }

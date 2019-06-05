@@ -28,5 +28,5 @@ Updates the specified ProductPackage objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageService#updateProductPackages}{Google Documentation for updateProductPackages}
 }

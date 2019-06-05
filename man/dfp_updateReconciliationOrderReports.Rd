@@ -29,5 +29,5 @@ Updates a list of ReconciliationOrderReport reconciliation order reports which b
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 }

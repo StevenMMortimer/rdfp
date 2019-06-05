@@ -28,5 +28,5 @@ Performs actions on Placement objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 }

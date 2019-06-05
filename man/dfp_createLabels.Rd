@@ -38,5 +38,5 @@ result <- dfp_createLabels(request_data)
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#createLabels}{Google Documentation for createLabels}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#createLabels}{Google Documentation for createLabels}
 }

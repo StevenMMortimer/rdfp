@@ -29,5 +29,5 @@ Performs actions on ProductPackage objects that match the given \{@link Statemen
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageService#performProductPackageAction}{Google Documentation for performProductPackageAction}
 }

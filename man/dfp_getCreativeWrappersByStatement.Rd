@@ -36,5 +36,5 @@ Gets a CreativeWrapperPage of CreativeWrapper objects that satisfy the given Sta
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 }

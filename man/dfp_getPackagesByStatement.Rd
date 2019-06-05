@@ -37,5 +37,5 @@ Gets a PackagePage of Package objects that satisfy the given Statement query. Th
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
 }

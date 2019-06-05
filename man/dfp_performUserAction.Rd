@@ -28,5 +28,5 @@ Performs actions on User objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#performUserAction}{Google Documentation for performUserAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#performUserAction}{Google Documentation for performUserAction}
 }

@@ -28,5 +28,5 @@ Updates the specified network. Currently, only the network display name can be u
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NetworkService#updateNetwork}{Google Documentation for updateNetwork}
 }

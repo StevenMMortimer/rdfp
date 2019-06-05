@@ -30,5 +30,5 @@ DAI authentication keys cannot be deactivated if there are active LiveStreamEven
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#performDaiAuthenticationKeyAction}{Google Documentation for performDaiAuthenticationKeyAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#performDaiAuthenticationKeyAction}{Google Documentation for performDaiAuthenticationKeyAction}
 }

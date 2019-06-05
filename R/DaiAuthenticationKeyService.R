@@ -11,7 +11,7 @@
 #'   \item{DaiAuthenticationKey name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#createDaiAuthenticationKeys}{Google Documentation for createDaiAuthenticationKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#createDaiAuthenticationKeys}{Google Documentation for createDaiAuthenticationKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -41,7 +41,7 @@ dfp_createDaiAuthenticationKeys <- function(request_data, as_df=TRUE, verbose=FA
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#getDaiAuthenticationKeysByStatement}{Google Documentation for getDaiAuthenticationKeysByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#getDaiAuthenticationKeysByStatement}{Google Documentation for getDaiAuthenticationKeysByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -68,7 +68,7 @@ dfp_getDaiAuthenticationKeysByStatement <- function(request_data, as_df=TRUE, ve
 #' Performs actions on DaiAuthenticationKey objects that match the given \{@@link Statement query\}.
 #' DAI authentication keys cannot be deactivated if there are active LiveStreamEvents or Content Sources that are using them.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#performDaiAuthenticationKeyAction}{Google Documentation for performDaiAuthenticationKeyAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#performDaiAuthenticationKeyAction}{Google Documentation for performDaiAuthenticationKeyAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -93,7 +93,7 @@ dfp_performDaiAuthenticationKeyAction <- function(request_data, as_df=TRUE, verb
 #' 
 #' Updates the specified DaiAuthenticationKey objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/DaiAuthenticationKeyService#updateDaiAuthenticationKeys}{Google Documentation for updateDaiAuthenticationKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/DaiAuthenticationKeyService#updateDaiAuthenticationKeys}{Google Documentation for updateDaiAuthenticationKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

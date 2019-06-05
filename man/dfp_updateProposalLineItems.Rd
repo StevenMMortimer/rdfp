@@ -29,5 +29,5 @@ Updates the specified ProposalLineItem objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 }

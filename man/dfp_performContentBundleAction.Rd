@@ -29,5 +29,5 @@ Performs actions on ContentBundle objects that match the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 }

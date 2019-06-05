@@ -40,5 +40,5 @@ Creates new AdUnit objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 }

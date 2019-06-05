@@ -28,5 +28,5 @@ Performs action on RateCard objects that satisfy the given Statement query.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 }

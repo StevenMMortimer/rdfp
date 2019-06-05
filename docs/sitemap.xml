@@ -151,6 +151,9 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getAdRulesByStatement.html</loc>
   </url>
   <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getAdSpotsByStatement.html</loc>
+  </url>
+  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getAdUnitSizesByStatement.html</loc>
   </url>
   <url>
@@ -176,6 +179,12 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCdnConfigurationsByStatement.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCmsMetadataKeysByStatement.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCmsMetadataValuesByStatement.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getCompaniesByStatement.html</loc>
@@ -328,7 +337,13 @@
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getSuggestedAdUnitsByStatement.html</loc>
   </url>
   <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getTargetingPresetsByStatement.html</loc>
+  </url>
+  <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getTeamsByStatement.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getTrafficAdjustmentsByStatement.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getUserTeamAssociationsByStatement.html</loc>
@@ -338,6 +353,9 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_getWorkflowRequestsByStatement.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_hasCustomPacingCurve.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_makeTestNetwork.html</loc>
@@ -596,6 +614,9 @@
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateTeams.html</loc>
+  </url>
+  <url>
+    <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateTrafficAdjustments.html</loc>
   </url>
   <url>
     <loc>https://stevenmmortimer.github.io/rdfp/reference/dfp_updateUserTeamAssociations.html</loc>

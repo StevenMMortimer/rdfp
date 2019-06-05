@@ -28,5 +28,5 @@ Updates the specified NativeStyle objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 }

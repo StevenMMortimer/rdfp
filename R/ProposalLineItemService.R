@@ -3,15 +3,15 @@
 #' Provides methods for creating, updating and retrieving ProposalLineItem
 #' objects.
 #' To use this service, you need to have the new sales management
-#' solution enabled on your network. If you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' solution enabled on your network. If you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' createProposalLineItems
 #' 
 #' Creates new ProposalLineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#createProposalLineItems}{Google Documentation for createProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -49,7 +49,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{isProgrammatic}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#getProposalLineItemsByStatement}{Google Documentation for getProposalLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -75,7 +75,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on ProposalLineItem objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#performProposalLineItemAction}{Google Documentation for performProposalLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -100,7 +100,7 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' Updates the specified ProposalLineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalLineItemService#updateProposalLineItems}{Google Documentation for updateProposalLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP

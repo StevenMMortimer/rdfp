@@ -34,5 +34,5 @@ Gets a NativeStylePage NativeStylePage of NativeStyle objects that satisfy the g
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 }

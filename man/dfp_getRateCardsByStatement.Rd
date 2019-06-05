@@ -37,5 +37,5 @@ Gets a RateCardPage of RateCard objects that satisfy the given Statement query. 
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 }
