@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createBaseRates(request_data)
 #' }
+
 #' @export
 dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='createBaseRates', data=request_data)
@@ -55,6 +56,7 @@ dfp_createBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getBaseRatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='getBaseRatesByStatement', data=request_data)
@@ -80,6 +82,7 @@ dfp_getBaseRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_performBaseRateAction(request_data)
 #' }
+
 #' @export
 dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='performBaseRateAction', data=request_data)
@@ -105,6 +108,7 @@ dfp_performBaseRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateBaseRates(request_data)
 #' }
+
 #' @export
 dfp_updateBaseRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='BaseRateService', root_name='updateBaseRates', data=request_data)

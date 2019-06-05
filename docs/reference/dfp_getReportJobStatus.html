@@ -162,7 +162,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>dfp_getReportJobStatus</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>dfp_getReportJobStatus</span>(<span class='no'>request_data</span>, <span class='kw'>as_df</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -212,7 +212,7 @@ a <code>data.frame</code></p></td>
 
 <span class='co'># a simple while loop can keep checking a long running request until ready</span>
 <span class='no'>counter</span> <span class='kw'>&lt;-</span> <span class='fl'>0</span>
-<span class='kw'>while</span>(<span class='no'>dfp_getReportJobStatus_result</span>$<span class='no'>V1</span> <span class='kw'>!=</span> <span class='st'>'COMPLETED'</span> <span class='kw'>&amp;</span> <span class='no'>counter</span> <span class='kw'>&lt;</span> <span class='fl'>10</span>){
+<span class='kw'>while</span>(<span class='no'>dfp_getReportJobStatus_result</span> <span class='kw'>!=</span> <span class='st'>'COMPLETED'</span> <span class='kw'>&amp;</span> <span class='no'>counter</span> <span class='kw'>&lt;</span> <span class='fl'>10</span>){
   <span class='no'>dfp_getReportJobStatus_result</span> <span class='kw'>&lt;-</span> <span class='fu'>dfp_getReportJobStatus</span>(<span class='no'>request_data</span>)
   <span class='fu'>Sys.sleep</span>(<span class='fl'>3</span>)
   <span class='no'>counter</span> <span class='kw'>&lt;-</span> <span class='no'>counter</span> + <span class='fl'>1</span>

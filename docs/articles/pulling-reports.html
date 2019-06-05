@@ -169,11 +169,11 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># look for a particular saved query</span></a>
 <a class="sourceLine" id="cb3-2" title="2">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">filterStatement=</span><span class="kw">list</span>(<span class="dt">query=</span><span class="st">"WHERE id = 936165016"</span>))</a>
 <a class="sourceLine" id="cb3-3" title="3">this_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getSavedQueriesByStatement.html">dfp_getSavedQueriesByStatement</a></span>(request_data, <span class="dt">as_df=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb3-4" title="4">this_report_query &lt;-<span class="st"> </span>this_result[[<span class="dv">1</span>]]<span class="op">$</span>reportQuery</a>
+<a class="sourceLine" id="cb3-4" title="4">this_report_query &lt;-<span class="st"> </span>this_result<span class="op">$</span>reportQuery</a>
 <a class="sourceLine" id="cb3-5" title="5"></a>
 <a class="sourceLine" id="cb3-6" title="6"><span class="co"># resubmit the report job with the saved query</span></a>
-<a class="sourceLine" id="cb3-7" title="7">report_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery =</span> this_report_query))</a>
-<a class="sourceLine" id="cb3-8" title="8">report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(report_data)</a>
+<a class="sourceLine" id="cb3-7" title="7">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery =</span> this_report_query))</a>
+<a class="sourceLine" id="cb3-8" title="8">report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_full_report_wrapper.html">dfp_full_report_wrapper</a></span>(request_data)</a>
 <a class="sourceLine" id="cb3-9" title="9">report_data[,<span class="kw">c</span>(<span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; # A tibble: 11,363 x 2</span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;    Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span></a>
@@ -193,11 +193,11 @@
 <div id="a-more-detailed-explanation-of-the-report-process" class="section level4">
 <h4 class="hasAnchor">
 <a href="#a-more-detailed-explanation-of-the-report-process" class="anchor"></a>A More Detailed Explanation of the Report Process</h4>
-<p>Reports actually require 3 steps from the [ReportService] (<a href="https://developers.google.com/ad-manager/api/reference/v201811/ReportService" class="uri">https://developers.google.com/ad-manager/api/reference/v201811/ReportService</a>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named <code>dfp_full_report_wrapper</code> manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.</p>
+<p>Reports actually require 3 steps from the [ReportService] (<a href="https://developers.google.com/ad-manager/api/reference/v201905/ReportService" class="uri">https://developers.google.com/ad-manager/api/reference/v201905/ReportService</a>): 1) to request the report, 2) check on its status, and 3) download. This basic process flow is required for all reports requested via this service. The wrapper function used above named <code>dfp_full_report_wrapper</code> manages all aspects of reporting, so this level of detail is not needed unless the wrapper service does not quite fit your needs.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># In order to run a report you must specify how the report should be structured </span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co"># by specifying a reportQuery inside a reportJob. All of the dimensions, columns, </span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co"># date range options, etc. are documented at:</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co"># https://developers.google.com/ad-manager/api/reference/v201811/ReportService.ReportQuery</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># https://developers.google.com/ad-manager/api/reference/v201905/ReportService.ReportQuery</span></a>
 <a class="sourceLine" id="cb4-5" title="5">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJob=</span><span class="kw">list</span>(<span class="dt">reportQuery=</span><span class="kw">list</span>(<span class="dt">dimensions=</span><span class="st">'MONTH_AND_YEAR'</span>, </a>
 <a class="sourceLine" id="cb4-6" title="6">                                                     <span class="dt">dimensions=</span><span class="st">'AD_UNIT_ID'</span>,</a>
 <a class="sourceLine" id="cb4-7" title="7">                                                     <span class="dt">adUnitView=</span><span class="st">'FLAT'</span>,</a>
@@ -208,56 +208,53 @@
 <a class="sourceLine" id="cb4-12" title="12"><span class="co"># the result is a list and most importantly the ID is included for checking its status</span></a>
 <a class="sourceLine" id="cb4-13" title="13">dfp_runReportJob_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_runReportJob.html">dfp_runReportJob</a></span>(request_data)</a>
 <a class="sourceLine" id="cb4-14" title="14">dfp_runReportJob_result<span class="op">$</span>id</a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [1] 11264421340</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [1] 11265131298</span></a>
 <a class="sourceLine" id="cb4-16" title="16"></a>
 <a class="sourceLine" id="cb4-17" title="17"><span class="co"># to check the status repeatedly you just need to provide the id</span></a>
 <a class="sourceLine" id="cb4-18" title="18"><span class="co"># dfp_getReportJobStatus_result returns a character string of the reportJob status</span></a>
-<a class="sourceLine" id="cb4-19" title="19">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id)</a>
-<a class="sourceLine" id="cb4-20" title="20">dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data)</a>
+<a class="sourceLine" id="cb4-19" title="19">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId =</span> dfp_runReportJob_result<span class="op">$</span>id)</a>
+<a class="sourceLine" id="cb4-20" title="20">dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data, <span class="dt">as_df =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-21" title="21">dfp_getReportJobStatus_result</a>
-<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt;   V1         </span></a>
-<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt;   &lt;chr&gt;      </span></a>
-<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; 1 IN_PROGRESS</span></a>
-<a class="sourceLine" id="cb4-26" title="26"></a>
-<a class="sourceLine" id="cb4-27" title="27"><span class="co"># a simple while loop can keep checking a long running request until ready</span></a>
-<a class="sourceLine" id="cb4-28" title="28">counter &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="cf">while</span>(dfp_getReportJobStatus_result<span class="op">$</span>V1 <span class="op">!=</span><span class="st"> 'COMPLETED'</span> <span class="op">&amp;</span><span class="st"> </span>counter <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>){</a>
-<a class="sourceLine" id="cb4-30" title="30">  dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data)</a>
-<a class="sourceLine" id="cb4-31" title="31">  <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb4-32" title="32">  counter &lt;-<span class="st"> </span>counter <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb4-33" title="33">}</a>
-<a class="sourceLine" id="cb4-34" title="34"></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="co"># once the status is "COMPLETED" the data download URL can be retrieved</span></a>
-<a class="sourceLine" id="cb4-36" title="36">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id, <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)</a>
-<a class="sourceLine" id="cb4-37" title="37">dfp_getReportDownloadURL_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportDownloadURL.html">dfp_getReportDownloadURL</a></span>(request_data)</a>
-<a class="sourceLine" id="cb4-38" title="38"></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="co"># this function has been provided to download the data from URL and convert to a tbl_df</span></a>
-<a class="sourceLine" id="cb4-40" title="40"><span class="co"># supported exportFormats are currently c('CSV_DUMP', 'TSV', 'TSV_EXCEL')</span></a>
-<a class="sourceLine" id="cb4-41" title="41">report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe</a></span>(<span class="dt">report_url=</span>dfp_getReportDownloadURL_result<span class="op">$</span>V1, </a>
-<a class="sourceLine" id="cb4-42" title="42">                                           <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)</a>
-<a class="sourceLine" id="cb4-43" title="43">report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</a>
-<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; # A tibble: 18 x 3</span></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span></a>
-<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt;  1 2019-05                           21677451947                     936</span></a>
-<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt;  2 2019-05                           21677451950                     173</span></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt;  3 2019-05                           21677553898                    5447</span></a>
-<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt;  4 2019-05                           21677553901                     102</span></a>
-<a class="sourceLine" id="cb4-51" title="51"><span class="co">#&gt;  5 2019-05                           21677553904                    4304</span></a>
-<a class="sourceLine" id="cb4-52" title="52"><span class="co">#&gt;  6 2019-05                           21677451953                    2264</span></a>
-<a class="sourceLine" id="cb4-53" title="53"><span class="co">#&gt;  7 2019-05                           21677553910                      44</span></a>
-<a class="sourceLine" id="cb4-54" title="54"><span class="co">#&gt;  8 2019-05                           21677553913                    2637</span></a>
-<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt;  9 2019-05                           21677554012                      69</span></a>
-<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; 10 2019-06                           21677451947                     431</span></a>
-<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; 11 2019-06                           21677451950                      66</span></a>
-<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; 12 2019-06                           21677553898                    1740</span></a>
-<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; 13 2019-06                           21677553901                      43</span></a>
-<a class="sourceLine" id="cb4-60" title="60"><span class="co">#&gt; 14 2019-06                           21677553904                    1895</span></a>
-<a class="sourceLine" id="cb4-61" title="61"><span class="co">#&gt; 15 2019-06                           21677451953                     865</span></a>
-<a class="sourceLine" id="cb4-62" title="62"><span class="co">#&gt; 16 2019-06                           21677553910                      20</span></a>
-<a class="sourceLine" id="cb4-63" title="63"><span class="co">#&gt; 17 2019-06                           21677553913                    1146</span></a>
-<a class="sourceLine" id="cb4-64" title="64"><span class="co">#&gt; 18 2019-06                           21677554012                      34</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [1] "IN_PROGRESS"</span></a>
+<a class="sourceLine" id="cb4-23" title="23"></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co"># a simple while loop can keep checking a long running request until ready</span></a>
+<a class="sourceLine" id="cb4-25" title="25">counter &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-26" title="26"><span class="cf">while</span>(dfp_getReportJobStatus_result <span class="op">!=</span><span class="st"> 'COMPLETED'</span> <span class="op">&amp;</span><span class="st"> </span>counter <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb4-27" title="27">  dfp_getReportJobStatus_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportJobStatus.html">dfp_getReportJobStatus</a></span>(request_data, <span class="dt">as_df =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-28" title="28">  <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb4-29" title="29">  counter &lt;-<span class="st"> </span>counter <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb4-30" title="30">}</a>
+<a class="sourceLine" id="cb4-31" title="31"></a>
+<a class="sourceLine" id="cb4-32" title="32"><span class="co"># once the status is "COMPLETED" the data download URL can be retrieved</span></a>
+<a class="sourceLine" id="cb4-33" title="33">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">reportJobId=</span>dfp_runReportJob_result<span class="op">$</span>id, <span class="dt">exportFormat=</span><span class="st">'CSV_DUMP'</span>)</a>
+<a class="sourceLine" id="cb4-34" title="34">dfp_getReportDownloadURL_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getReportDownloadURL.html">dfp_getReportDownloadURL</a></span>(request_data, <span class="dt">as_df =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-35" title="35"></a>
+<a class="sourceLine" id="cb4-36" title="36"><span class="co"># this function has been provided to download the data from URL and convert to a tbl_df</span></a>
+<a class="sourceLine" id="cb4-37" title="37"><span class="co"># supported exportFormats are currently c('CSV_DUMP', 'TSV', 'TSV_EXCEL')</span></a>
+<a class="sourceLine" id="cb4-38" title="38">report_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_report_url_to_dataframe.html">dfp_report_url_to_dataframe</a></span>(<span class="dt">report_url =</span> dfp_getReportDownloadURL_result, </a>
+<a class="sourceLine" id="cb4-39" title="39">                                           <span class="dt">exportFormat =</span> <span class="st">'CSV_DUMP'</span>)</a>
+<a class="sourceLine" id="cb4-40" title="40">report_data[,<span class="kw">c</span>(<span class="st">'Dimension.MONTH_AND_YEAR'</span>, <span class="st">'Dimension.AD_UNIT_ID'</span>, <span class="st">'Column.AD_SERVER_CLICKS'</span>)]</a>
+<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; # A tibble: 18 x 3</span></a>
+<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt;    Dimension.MONTH_AND_YEAR Dimension.AD_UNIT_ID Column.AD_SERVER_CLICKS</span></a>
+<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt;    &lt;chr&gt;                                   &lt;dbl&gt;                   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt;  1 2019-05                           21677451947                     936</span></a>
+<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt;  2 2019-05                           21677451950                     173</span></a>
+<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt;  3 2019-05                           21677553898                    5447</span></a>
+<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt;  4 2019-05                           21677553901                     102</span></a>
+<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt;  5 2019-05                           21677553904                    4304</span></a>
+<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt;  6 2019-05                           21677451953                    2264</span></a>
+<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt;  7 2019-05                           21677553910                      44</span></a>
+<a class="sourceLine" id="cb4-51" title="51"><span class="co">#&gt;  8 2019-05                           21677553913                    2637</span></a>
+<a class="sourceLine" id="cb4-52" title="52"><span class="co">#&gt;  9 2019-05                           21677554012                      69</span></a>
+<a class="sourceLine" id="cb4-53" title="53"><span class="co">#&gt; 10 2019-06                           21677451947                     431</span></a>
+<a class="sourceLine" id="cb4-54" title="54"><span class="co">#&gt; 11 2019-06                           21677451950                      66</span></a>
+<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt; 12 2019-06                           21677553898                    1740</span></a>
+<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; 13 2019-06                           21677553901                      43</span></a>
+<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; 14 2019-06                           21677553904                    1895</span></a>
+<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; 15 2019-06                           21677451953                     865</span></a>
+<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; 16 2019-06                           21677553910                      20</span></a>
+<a class="sourceLine" id="cb4-60" title="60"><span class="co">#&gt; 17 2019-06                           21677553913                    1146</span></a>
+<a class="sourceLine" id="cb4-61" title="61"><span class="co">#&gt; 18 2019-06                           21677554012                      34</span></a></code></pre></div>
 </div>
   </div>
 

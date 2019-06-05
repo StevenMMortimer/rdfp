@@ -43,6 +43,7 @@
 #'                                           includeContendingLineItems='true'))
 #' dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
 #' }
+
 #' @export
 dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
@@ -76,6 +77,7 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'                                           includeContendingLineItems='true'))
 #' result <- dfp_getAvailabilityForecastById(request_data)
 #' }
+
 #' @export
 dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
@@ -113,6 +115,7 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #'                      forecastOptions=list(ignoredLineItemIds=NULL))
 #' dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
 #' }
+
 #' @export
 dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
@@ -144,6 +147,7 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'                      forecastOptions=list(ignoredLineItemIds=NULL))
 #' result <- dfp_getDeliveryForecastByIds(request_data)
 #' }
+
 #' @export
 dfp_getDeliveryForecastByIds <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)

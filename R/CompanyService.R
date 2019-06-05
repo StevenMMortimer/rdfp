@@ -24,6 +24,7 @@
 #'                                     comment='API Test'))
 #' result <- dfp_createCompanies(request_data)
 #' }
+
 #' @export
 dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='createCompanies', data=request_data)
@@ -56,6 +57,7 @@ dfp_createCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCompaniesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='getCompaniesByStatement', data=request_data)
@@ -81,6 +83,7 @@ dfp_getCompaniesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_updateCompanies(request_data)
 #' }
+
 #' @export
 dfp_updateCompanies <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CompanyService', root_name='updateCompanies', data=request_data)

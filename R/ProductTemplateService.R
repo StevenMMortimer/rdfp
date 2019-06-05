@@ -27,6 +27,7 @@
 #' \dontrun{
 #'  res <- dfp_createProductTemplates(request_data)
 #' }
+
 #' @export
 dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
@@ -64,6 +65,7 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProductTemplatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
@@ -89,6 +91,7 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performProductTemplateAction(request_data)
 #' }
+
 #' @export
 dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
@@ -114,6 +117,7 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateProductTemplates(request_data)
 #' }
+
 #' @export
 dfp_updateProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)

@@ -29,6 +29,7 @@
 #' \dontrun{
 #'  res <- dfp_createCreativeWrappers(request_data)
 #' }
+
 #' @export
 dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
@@ -61,6 +62,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeWrappersByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
@@ -86,6 +88,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performCreativeWrapperAction(request_data)
 #' }
+
 #' @export
 dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
@@ -111,6 +114,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateCreativeWrappers(request_data)
 #' }
+
 #' @export
 dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)

@@ -32,7 +32,7 @@ createAdExclusionRules
 Creates new AdExclusionRule objects.
 }
 \examples{
-\donttest{
+\dontrun{
  res <- dfp_createAdExclusionRules(request_data)
 }
 }

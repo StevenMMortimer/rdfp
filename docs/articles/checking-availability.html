@@ -139,7 +139,7 @@
 <div id="a-lineitem-from-scratch" class="section level4">
 <h4 class="hasAnchor">
 <a href="#a-lineitem-from-scratch" class="anchor"></a>A LineItem from Scratch</h4>
-<p>Creating your own line item is easy. Some line item fields are absolutely required in order to forecast so you may need to try different lines to see how they forecast. Personally, I’ve found that most line items need the fields we create in the example below (e.g <code>primaryGoal</code>, <code>targeting</code>, etc). <strong>One quirk with the DFP API is that the fields on your line item must be provided in the same order as the reference documentation.</strong> You can review the documentation for this object at <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService.LineItem" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService.LineItem</a></p>
+<p>Creating your own line item is easy. Some line item fields are absolutely required in order to forecast so you may need to try different lines to see how they forecast. Personally, I’ve found that most line items need the fields we create in the example below (e.g <code>primaryGoal</code>, <code>targeting</code>, etc). <strong>One quirk with the DFP API is that the fields on your line item must be provided in the same order as the reference documentation.</strong> You can review the documentation for this object at <a href="https://developers.google.com/ad-manager/api/reference/v201905/LineItemService.LineItem" class="uri">https://developers.google.com/ad-manager/api/reference/v201905/LineItemService.LineItem</a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">sample_line &lt;-<span class="st"> </span><span class="kw">list</span>()</a>
 <a class="sourceLine" id="cb2-2" title="2">sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> ''</span></a>
 <a class="sourceLine" id="cb2-3" title="3">sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> ''</span></a>
@@ -181,45 +181,44 @@
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; [1] 6</span></a>
 <a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; $date$day</span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; [1] 4</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; [1] 5</span></a>
 <a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; $hour</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [1] 23</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [1] 12</span></a>
 <a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; $minute</span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; [1] 24</span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; [1] 47</span></a>
 <a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; $second</span></a>
-<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [1] 49</span></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [1] 1</span></a>
 <a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; $timeZoneId</span></a>
 <a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; [1] "America/New_York"</span></a>
 <a class="sourceLine" id="cb4-26" title="26"><span class="co"># supply a date and assume the beginning of the day for hours, mins, secs</span></a>
 <a class="sourceLine" id="cb4-27" title="27"><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>()<span class="op">+</span><span class="dv">1</span>, <span class="st">"beginning"</span>)</a>
-<a class="sourceLine" id="cb4-28" title="28"><span class="co">#&gt; The date provided is not at least 1 hour into the future. Setting to one hour after now.</span></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="co">#&gt; $date</span></a>
-<a class="sourceLine" id="cb4-30" title="30"><span class="co">#&gt; $date$year</span></a>
-<a class="sourceLine" id="cb4-31" title="31"><span class="co">#&gt; [1] 2019</span></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; $date$month</span></a>
-<a class="sourceLine" id="cb4-34" title="34"><span class="co">#&gt; [1] 6</span></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-36" title="36"><span class="co">#&gt; $date$day</span></a>
-<a class="sourceLine" id="cb4-37" title="37"><span class="co">#&gt; [1] 4</span></a>
+<a class="sourceLine" id="cb4-28" title="28"><span class="co">#&gt; $date</span></a>
+<a class="sourceLine" id="cb4-29" title="29"><span class="co">#&gt; $date$year</span></a>
+<a class="sourceLine" id="cb4-30" title="30"><span class="co">#&gt; [1] 2019</span></a>
+<a class="sourceLine" id="cb4-31" title="31"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-32" title="32"><span class="co">#&gt; $date$month</span></a>
+<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; [1] 6</span></a>
+<a class="sourceLine" id="cb4-34" title="34"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-35" title="35"><span class="co">#&gt; $date$day</span></a>
+<a class="sourceLine" id="cb4-36" title="36"><span class="co">#&gt; [1] 6</span></a>
+<a class="sourceLine" id="cb4-37" title="37"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-38" title="38"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-40" title="40"><span class="co">#&gt; $hour</span></a>
-<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; [1] 23</span></a>
-<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt; $minute</span></a>
-<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; [1] 24</span></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt; $second</span></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt; [1] 49</span></a>
-<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt; $timeZoneId</span></a>
-<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt; [1] "America/New_York"</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-39" title="39"><span class="co">#&gt; $hour</span></a>
+<a class="sourceLine" id="cb4-40" title="40"><span class="co">#&gt; [1] 0</span></a>
+<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt; $minute</span></a>
+<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt; [1] 0</span></a>
+<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt; $second</span></a>
+<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt; [1] 0</span></a>
+<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt; $timeZoneId</span></a>
+<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt; [1] "America/New_York"</span></a></code></pre></div>
 </div>
 <div id="generating-forecasts" class="section level4">
 <h4 class="hasAnchor">
@@ -269,16 +268,16 @@
 <a class="sourceLine" id="cb6-7" title="7"><span class="st">                                    , CountryCode</span></a>
 <a class="sourceLine" id="cb6-8" title="8"><span class="st">                                    , Type </span></a>
 <a class="sourceLine" id="cb6-9" title="9"><span class="st">                                  FROM Geo_Target </span></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="st">                                  WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"</span>))</a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="st">                                  WHERE CountryCode='US' AND (Type='State' OR Type='County')"</span>))</a>
 <a class="sourceLine" id="cb6-11" title="11"></a>
 <a class="sourceLine" id="cb6-12" title="12">us_geos &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_select.html">dfp_select</a></span>(request_data)</a>
 <a class="sourceLine" id="cb6-13" title="13">texas_id &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb6-14" title="14"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'STATE'</span>, name <span class="op">==</span><span class="st"> 'Texas'</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-15" title="15"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, <span class="dt">state=</span>name)</a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, <span class="dt">state =</span> name)</a>
 <a class="sourceLine" id="cb6-16" title="16"></a>
 <a class="sourceLine" id="cb6-17" title="17">us_counties &lt;-<span class="st"> </span>us_geos <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb6-18" title="18"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> 'COUNTY'</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-19" title="19"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, canonicalparentid, <span class="dt">county=</span>name)</a>
+<a class="sourceLine" id="cb6-19" title="19"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(id, canonicalparentid, <span class="dt">county =</span> name)</a>
 <a class="sourceLine" id="cb6-20" title="20"></a>
 <a class="sourceLine" id="cb6-21" title="21">texas_counties &lt;-<span class="st"> </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(us_counties, texas_id, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">'canonicalparentid'</span>=<span class="st">'id'</span>))</a></code></pre></div>
 <p>Next, we need to format the geographies into objects of type <code>Location</code> that at least contain an id denoting the area.</p>
@@ -292,13 +291,12 @@
 <a class="sourceLine" id="cb8-2" title="2"></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co"># look at availability for the next 90 days</span></a>
 <a class="sourceLine" id="cb8-4" title="4">this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">daytime=</span><span class="st">'beginning'</span>)</a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt; The date provided is not at least 1 hour into the future. Setting to one hour after now.</span></a>
-<a class="sourceLine" id="cb8-6" title="6">this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">91</span>, <span class="dt">daytime=</span><span class="st">'end'</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb8-5" title="5">this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_date_to_list.html">dfp_date_to_list</a></span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">91</span>, <span class="dt">daytime=</span><span class="st">'end'</span>)</a></code></pre></div>
 </div>
 <div id="setting-up-the-targeting" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setting-up-the-targeting" class="anchor"></a>Setting up The Targeting</h4>
-<p>Specifying the targeting can be a little tricky. We need to NULL the original targeting field we created in the sample line and put geoTargeting first because the documentation and the API needs elements in the order that they are specified. For example, the ForecastService needs the targeting fields to be in the order listed at <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService.Targeting" class="uri">https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService.Targeting</a>.</p>
+<p>Specifying the targeting can be a little tricky. We need to NULL the original targeting field we created in the sample line and put geoTargeting first because the documentation and the API needs elements in the order that they are specified. For example, the ForecastService needs the targeting fields to be in the order listed at <a href="https://developers.google.com/ad-manager/api/reference/v201905/ForecastService.Targeting" class="uri">https://developers.google.com/ad-manager/api/reference/v201905/ForecastService.Targeting</a>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># recreate the targeting field from scratch</span></a>
 <a class="sourceLine" id="cb9-2" title="2">this_sample_line<span class="op">$</span>targeting &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
 <a class="sourceLine" id="cb9-3" title="3">this_sample_line<span class="op">$</span>targeting<span class="op">$</span>geoTargeting &lt;-<span class="st"> </span>geo_targets</a>
@@ -310,19 +308,19 @@
 <a href="#requesting-targeting-criteria-breakdowns" class="anchor"></a>Requesting Targeting Criteria Breakdowns</h4>
 <p>Finally, we’ll make the request to determine availability. There are 2 important details in getting back the breakdown of availability for each county in this example.</p>
 <ol style="list-style-type: decimal">
-<li>Ensure that <code>includeTargetingCriteriaBreakdown='true'</code>
+<li>Ensure that <code>includeTargetingCriteriaBreakdown = 'true'</code>
 </li>
-<li>Ensure that <code>as_df=FALSE</code> in <code><a href="../reference/dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast()</a></code>
+<li>Ensure that <code>as_df = FALSE</code> in <code><a href="../reference/dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast()</a></code>
 </li>
 </ol>
 <p>Targeting criteria breakdowns are omitted by default so we need to tell DFP to return them. Those breakdowns are formatted as a nested list, so if you do not specify, you’ll be stuck with a very wide data.frame containing one column for every element in the nested list and it is not easy to work with.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># request the targeting criteria breakdown this time to get that detail</span></a>
-<a class="sourceLine" id="cb10-2" title="2">forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lineItem=</span><span class="kw">list</span>(<span class="dt">lineItem=</span>this_sample_line),</a>
-<a class="sourceLine" id="cb10-3" title="3">                         <span class="dt">forecastOptions=</span><span class="kw">list</span>(<span class="dt">includeTargetingCriteriaBreakdown=</span><span class="st">'true'</span>, </a>
-<a class="sourceLine" id="cb10-4" title="4">                                              <span class="dt">includeContendingLineItems=</span><span class="st">'false'</span>))</a>
+<a class="sourceLine" id="cb10-2" title="2">forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lineItem =</span> <span class="kw">list</span>(<span class="dt">lineItem =</span> this_sample_line),</a>
+<a class="sourceLine" id="cb10-3" title="3">                         <span class="dt">forecastOptions =</span> <span class="kw">list</span>(<span class="dt">includeTargetingCriteriaBreakdown =</span> <span class="st">'true'</span>, </a>
+<a class="sourceLine" id="cb10-4" title="4">                                                <span class="dt">includeContendingLineItems =</span> <span class="st">'false'</span>))</a>
 <a class="sourceLine" id="cb10-5" title="5"></a>
 <a class="sourceLine" id="cb10-6" title="6"><span class="co"># get the forecasted availability and make sure to specify as_df=FALSE</span></a>
-<a class="sourceLine" id="cb10-7" title="7">this_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast</a></span>(forecast_request, <span class="dt">as_df=</span><span class="ot">FALSE</span>)[[<span class="dv">1</span>]]</a>
+<a class="sourceLine" id="cb10-7" title="7">this_result &lt;-<span class="st"> </span><span class="kw"><a href="../reference/dfp_getAvailabilityForecast.html">dfp_getAvailabilityForecast</a></span>(forecast_request, <span class="dt">as_df=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb10-8" title="8">breakdowns &lt;-<span class="st"> </span>this_result[<span class="kw">c</span>(<span class="kw">names</span>(this_result) <span class="op">%in%</span><span class="st"> 'targetingCriteriaBreakdowns'</span>)]</a></code></pre></div>
 </div>
 <div id="parsing-targeting-criteria-breakdowns" class="section level4">
@@ -366,7 +364,7 @@
 <a class="sourceLine" id="cb13-7" title="7"><span class="co">#&gt; # A tibble: 1 x 5</span></a>
 <a class="sourceLine" id="cb13-8" title="8"><span class="co">#&gt;   lineItemId    orderId availableUnits deliveredUnits matchedUnits</span></a>
 <a class="sourceLine" id="cb13-9" title="9"><span class="co">#&gt;        &lt;dbl&gt;      &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb13-10" title="10"><span class="co">#&gt; 1 4889155175 2445937625          47478         120027       102424</span></a></code></pre></div>
+<a class="sourceLine" id="cb13-10" title="10"><span class="co">#&gt; 1 4889155175 2445937625          38778         120211        93731</span></a></code></pre></div>
 </div>
 <div id="check-out-the-tests" class="section level3">
 <h3 class="hasAnchor">

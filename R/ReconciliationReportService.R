@@ -28,6 +28,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationReportsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportService', root_name='getReconciliationReportsByStatement', data=request_data)
@@ -53,6 +54,7 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
 #' \dontrun{
 #'  res <- dfp_updateReconciliationReports(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportService', root_name='updateReconciliationReports', data=request_data)

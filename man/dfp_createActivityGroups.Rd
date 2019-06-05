@@ -34,7 +34,7 @@ createActivityGroups
 Creates a new ActivityGroup objects.
 }
 \examples{
-\donttest{
+\dontrun{
  res <- dfp_createActivityGroups(request_data)
 }
 }

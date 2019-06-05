@@ -26,6 +26,7 @@
 #' \dontrun{
 #'  res <- dfp_createAdUnits(request_data)
 #' }
+
 #' @export
 dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='createAdUnits', data=request_data)
@@ -55,6 +56,7 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAdUnitSizesByStatement(dat)
 #' }
+
 #' @export
 dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
@@ -89,6 +91,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAdUnitsByStatement(dat)
 #' }
+
 #' @export
 dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
@@ -114,6 +117,7 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performAdUnitAction(request_data)
 #' }
+
 #' @export
 dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
@@ -139,6 +143,7 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateAdUnits(request_data)
 #' }
+
 #' @export
 dfp_updateAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='updateAdUnits', data=request_data)

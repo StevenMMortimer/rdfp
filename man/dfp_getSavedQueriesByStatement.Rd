@@ -4,7 +4,7 @@
 \alias{dfp_getSavedQueriesByStatement}
 \title{getSavedQueriesByStatement}
 \usage{
-dfp_getSavedQueriesByStatement(request_data, as_df = TRUE,
+dfp_getSavedQueriesByStatement(request_data, as_df = FALSE,
   verbose = FALSE)
 }
 \arguments{
@@ -30,8 +30,8 @@ Retrieves a page of the saved queries either created by or shared with the curre
 \examples{
 \dontrun{
 request_data <- list(filterStatement=list(query="WHERE id = 936165016"))
-this_result <- dfp_getSavedQueriesByStatement(request_data, as_df=FALSE)
-this_report_query <- this_result[[1]]$reportQuery
+this_result <- dfp_getSavedQueriesByStatement(request_data)
+this_report_query <- this_result$reportQuery
 
 # resubmit the report job with the saved query
 report_data <- list(reportJob=list(reportQuery = this_report_query))

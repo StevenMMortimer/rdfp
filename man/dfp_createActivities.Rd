@@ -34,7 +34,7 @@ createActivities
 Creates a new Activity objects.
 }
 \examples{
-\donttest{
+\dontrun{
  res <- dfp_createActivities(request_data)
 }
 }

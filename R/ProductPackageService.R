@@ -26,6 +26,7 @@
 #' \dontrun{
 #'  res <- dfp_createProductPackages(request_data)
 #' }
+
 #' @export
 dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='createProductPackages', data=request_data)
@@ -60,6 +61,7 @@ dfp_createProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProductPackagesByStatement(dat)
 #' }
+
 #' @export
 dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='getProductPackagesByStatement', data=request_data)
@@ -85,6 +87,7 @@ dfp_getProductPackagesByStatement <- function(request_data, as_df=TRUE, verbose=
 #' \dontrun{
 #'  res <- dfp_performProductPackageAction(request_data)
 #' }
+
 #' @export
 dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='performProductPackageAction', data=request_data)
@@ -110,6 +113,7 @@ dfp_performProductPackageAction <- function(request_data, as_df=TRUE, verbose=FA
 #' \dontrun{
 #'  res <- dfp_updateProductPackages(request_data)
 #' }
+
 #' @export
 dfp_updateProductPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageService', root_name='updateProductPackages', data=request_data)

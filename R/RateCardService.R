@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createRateCards(request_data)
 #' }
+
 #' @export
 dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
@@ -57,6 +58,7 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getRateCardsByStatement(dat)
 #' }
+
 #' @export
 dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
@@ -82,6 +84,7 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_performRateCardAction(request_data)
 #' }
+
 #' @export
 dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
@@ -107,6 +110,7 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateRateCards(request_data)
 #' }
+
 #' @export
 dfp_updateRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)

@@ -113,7 +113,9 @@ form_request_body <- function(service, root_name, data=NULL){
 #' 
 #' @importFrom readr type_convert cols
 #' @importFrom httr content
-#' @importFrom purrr map map_df
+#' @importFrom purrr map
+#' @importFrom dplyr as_tibble
+#' @importFrom data.table rbindlist
 #' @importFrom XML xmlToList
 #' @importFrom xml2 xml_ns_strip xml_find_all xml_find_first xml_length
 #' @param httr_response an httr response from a POST to the API
@@ -143,7 +145,9 @@ parse_soap_response <- function(httr_response, resp_element, as_df){
 
   if (as_df){
     result <- xml_parsed %>%
-      map_df(xml_nodeset_to_df) %>%
+      map(xml_nodeset_to_df) %>% 
+      rbindlist(use.names=TRUE, fill=TRUE, idcol=NULL) %>%
+      as_tibble(.name_repair = "minimal") %>%
       type_convert(col_types = cols())
   } else {
     # we must use XML because character elements are not automatically unboxed
@@ -152,6 +156,9 @@ parse_soap_response <- function(httr_response, resp_element, as_df){
       map(.f=function(x){
         xmlToList(xmlParse(as(object=x, Class="character")))
       })
+    if(is.list(result) & length(result) == 1){
+      result <- result[[1]]
+    }
   }
   return(result)
 }
@@ -213,9 +220,11 @@ xmlToList2 <- function(node){
 xml_nodeset_to_df <- function(this_node){
   # capture any xmlToList grumblings about Namespace prefix
   invisible(capture.output(node_vals <- xmlToList2(as.character(this_node))))
+  # replace any NULL list elements with NA so it can be turned into a tbl_df
+  node_vals[sapply(node_vals, is.null)] <- NA
   # make things tidy so if it's a nested list then that is one row still
   # suppressWarning about tibble::enframe
   suppressWarnings(res <- as_tibble(modify_if(node_vals, ~(length(.x) > 1 | is.list(.x)), list), 
-                                    .name_repair = "unique"))
+                                    .name_repair = "minimal"))
   return(res)
 }

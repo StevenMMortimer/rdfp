@@ -26,6 +26,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeTemplatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeTemplatesByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeTemplateService', root_name='getCreativeTemplatesByStatement', data=request_data)

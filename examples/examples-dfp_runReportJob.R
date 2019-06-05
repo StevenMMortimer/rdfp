@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- list(reportJob=
 #'                        list(reportQuery=
 #'                               list(dimensions='MONTH_AND_YEAR', 

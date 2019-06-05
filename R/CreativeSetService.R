@@ -19,6 +19,7 @@
 #' \dontrun{
 #'  res <- dfp_createCreativeSet(request_data)
 #' }
+
 #' @export
 dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='createCreativeSet', data=request_data)
@@ -51,6 +52,7 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeSetsByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='getCreativeSetsByStatement', data=request_data)
@@ -76,6 +78,7 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_updateCreativeSet(request_data)
 #' }
+
 #' @export
 dfp_updateCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='updateCreativeSet', data=request_data)

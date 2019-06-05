@@ -30,6 +30,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationOrderReportsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
@@ -60,6 +61,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' \dontrun{
 #'  res <- dfp_performReconciliationOrderReportAction(request_data)
 #' }
+
 #' @export
 dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
@@ -85,6 +87,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' \dontrun{
 #'  res <- dfp_updateReconciliationOrderReports(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)

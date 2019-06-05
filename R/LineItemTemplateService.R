@@ -24,6 +24,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getLineItemTemplatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getLineItemTemplatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemTemplateService', root_name='getLineItemTemplatesByStatement', data=request_data)

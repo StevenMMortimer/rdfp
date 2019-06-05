@@ -10,7 +10,7 @@ options(rdfp.client_secret = rdfp_options$client_secret)
 dfp_auth(token = "rdfp_token.rds")
 
 # reconstruct hypothetical from an existing lineitem
-filter_statement <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 1"
+filter_statement <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 3"
 line_item_detail <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter_statement)))[[1]]
 hypothetical_line_item <- list(lineItem=
                                 list(id=line_item_detail$id,

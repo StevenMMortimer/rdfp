@@ -65,12 +65,13 @@
 #'              WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
 #'  us_geos <- dfp_select(request_data)
 #' }
+
 #' @export
 dfp_select <- function(request_data, verbose=FALSE){
   request_body <- form_request_body(service='PublisherQueryLanguageService', root_name='select', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
   result <- parse_soap_response(httr_response=httr_response, resp_element='selectResponse', as_df=FALSE)
-  result <- dfp_select_parse(result[[1]])
+  result <- dfp_select_parse(result)
   return(result)
 }
 #' 

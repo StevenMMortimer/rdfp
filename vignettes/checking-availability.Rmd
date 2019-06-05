@@ -66,7 +66,7 @@ in order to forecast so you may need to try different lines to see how they fore
 Personally, I've found that most line items need the fields we create in the example 
 below (e.g `primaryGoal`, `targeting`, etc). **One quirk with the DFP API is that the 
 fields on your line item must be provided in the same order as the reference documentation.** 
-You can review the documentation for this object at https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService.LineItem
+You can review the documentation for this object at https://developers.google.com/ad-manager/api/reference/v201905/LineItemService.LineItem.
 
 ```{r line-item-from-scratch}
 sample_line <- list()
@@ -179,16 +179,16 @@ request_data <- list(selectStatement=
                                     , CountryCode
                                     , Type 
                                   FROM Geo_Target 
-                                  WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
+                                  WHERE CountryCode='US' AND (Type='State' OR Type='County')"))
 
 us_geos <- dfp_select(request_data)
 texas_id <- us_geos %>%
   filter(type == 'STATE', name == 'Texas') %>%
-  select(id, state=name)
+  select(id, state = name)
 
 us_counties <- us_geos %>%
   filter(type == 'COUNTY') %>%
-  select(id, canonicalparentid, county=name)
+  select(id, canonicalparentid, county = name)
 
 texas_counties <- inner_join(us_counties, texas_id, by=c('canonicalparentid'='id'))
 ```
@@ -221,7 +221,7 @@ Specifying the targeting can be a little tricky. We need to NULL the original
 targeting field we created in the sample line and put geoTargeting first because 
 the documentation and the API needs elements in the order that they are specified. 
 For example, the ForecastService needs the targeting fields to be in the order listed at
-https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ForecastService.Targeting. 
+https://developers.google.com/ad-manager/api/reference/v201905/ForecastService.Targeting. 
 
 ```{r setup-targeting}
 # recreate the targeting field from scratch
@@ -236,8 +236,8 @@ this_sample_line$targeting$inventoryTargeting <- sample_line$targeting$inventory
 Finally, we'll make the request to determine availability. There are 2 important 
 details in getting back the breakdown of availability for each county in this example. 
 
-1. Ensure that `includeTargetingCriteriaBreakdown='true'`
-2. Ensure that `as_df=FALSE` in `dfp_getAvailabilityForecast()`
+1. Ensure that `includeTargetingCriteriaBreakdown = 'true'`
+2. Ensure that `as_df = FALSE` in `dfp_getAvailabilityForecast()`
 
 Targeting criteria breakdowns are omitted by default so we need to tell DFP to 
 return them. Those breakdowns are formatted as a nested list, so if you do not 
@@ -246,12 +246,12 @@ for every element in the nested list and it is not easy to work with.
 
 ```{r make-county-request}
 # request the targeting criteria breakdown this time to get that detail
-forecast_request <- list(lineItem=list(lineItem=this_sample_line),
-                         forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
-                                              includeContendingLineItems='false'))
+forecast_request <- list(lineItem = list(lineItem = this_sample_line),
+                         forecastOptions = list(includeTargetingCriteriaBreakdown = 'true', 
+                                                includeContendingLineItems = 'false'))
 
 # get the forecasted availability and make sure to specify as_df=FALSE
-this_result <- dfp_getAvailabilityForecast(forecast_request, as_df=FALSE)[[1]]
+this_result <- dfp_getAvailabilityForecast(forecast_request, as_df=FALSE)
 breakdowns <- this_result[c(names(this_result) %in% 'targetingCriteriaBreakdowns')]
 ```
 

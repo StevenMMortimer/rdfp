@@ -1,4 +1,4 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'  res <- dfp_updateContentBundles(request_data)
 #' }

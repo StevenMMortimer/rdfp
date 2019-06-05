@@ -30,6 +30,7 @@
 #' \dontrun{
 #'  res <- dfp_createLiveStreamEvents(request_data)
 #' }
+
 #' @export
 dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='createLiveStreamEvents', data=request_data)
@@ -59,6 +60,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getLiveStreamEventsByStatement(dat)
 #' }
+
 #' @export
 dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='getLiveStreamEventsByStatement', data=request_data)
@@ -84,6 +86,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performLiveStreamEventAction(request_data)
 #' }
+
 #' @export
 dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='performLiveStreamEventAction', data=request_data)
@@ -107,6 +110,7 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_registerSessionsForMonitoring()
 #' }
+
 #' @export
 dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='registerSessionsForMonitoring', data=NULL)
@@ -132,6 +136,7 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateLiveStreamEvents(request_data)
 #' }
+
 #' @export
 dfp_updateLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='updateLiveStreamEvents', data=request_data)

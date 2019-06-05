@@ -20,6 +20,7 @@
 #' \dontrun{
 #'  res <- dfp_createAudienceSegments(request_data)
 #' }
+
 #' @export
 dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='createAudienceSegments', data=request_data)
@@ -58,6 +59,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAudienceSegmentsByStatement(dat)
 #' }
+
 #' @export
 dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='getAudienceSegmentsByStatement', data=request_data)
@@ -83,6 +85,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performAudienceSegmentAction(request_data)
 #' }
+
 #' @export
 dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
@@ -108,6 +111,7 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateAudienceSegments(request_data)
 #' }
+
 #' @export
 dfp_updateAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='updateAudienceSegments', data=request_data)

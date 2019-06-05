@@ -31,6 +31,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getTrafficAdjustmentsByStatement(dat)
 #' }
+
 #' @export
 dfp_getTrafficAdjustmentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdjustmentService', root_name='getTrafficAdjustmentsByStatement', data=request_data)
@@ -62,6 +63,7 @@ dfp_getTrafficAdjustmentsByStatement <- function(request_data, as_df=TRUE, verbo
 #' \dontrun{
 #'  res <- dfp_updateTrafficAdjustments(request_data)
 #' }
+
 #' @export
 dfp_updateTrafficAdjustments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdjustmentService', root_name='updateTrafficAdjustments', data=request_data)

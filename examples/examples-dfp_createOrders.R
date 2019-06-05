@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- list('filterStatement'=list('query'="WHERE name = 'TestCompany1'"))
 #' dfp_getCompaniesByStatement_result <- dfp_getCompaniesByStatement(request_data) 
 #' 

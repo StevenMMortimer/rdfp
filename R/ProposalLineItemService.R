@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createProposalLineItems(request_data)
 #' }
+
 #' @export
 dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='createProposalLineItems', data=request_data)
@@ -63,6 +64,7 @@ dfp_createProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProposalLineItemsByStatement(dat)
 #' }
+
 #' @export
 dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='getProposalLineItemsByStatement', data=request_data)
@@ -88,6 +90,7 @@ dfp_getProposalLineItemsByStatement <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_performProposalLineItemAction(request_data)
 #' }
+
 #' @export
 dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='performProposalLineItemAction', data=request_data)
@@ -113,6 +116,7 @@ dfp_performProposalLineItemAction <- function(request_data, as_df=TRUE, verbose=
 #' \dontrun{
 #'  res <- dfp_updateProposalLineItems(request_data)
 #' }
+
 #' @export
 dfp_updateProposalLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalLineItemService', root_name='updateProposalLineItems', data=request_data)

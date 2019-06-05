@@ -129,7 +129,7 @@
 <div id="setup-custom-labels-for-items" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-labels-for-items" class="anchor"></a>Setup Custom Labels for Items</h4>
-<p>Custom labels are helpful for “tagging” DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/190565?hl=en&amp;ref_topic=30224" class="uri">https://support.google.com/dfp\_premium/answer/190565?hl=en&amp;ref_topic=30224</a>)</p>
+<p>Custom labels are helpful for “tagging” DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/admanager/answer/190565?hl=en&amp;ref_topic=30224" class="uri">https://support.google.com/admanager/answer/190565?hl=en&amp;ref_topic=30224</a>)</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># this creates a label called "Auto - Competitive Exclusion" that we can add</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co"># to any line item or order that we might want to use to prevent from clashing </span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co"># where two different car advertisers ads should not be shown at once.</span></a>
@@ -143,7 +143,7 @@
 <div id="setup-custom-fields-for-items" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-fields-for-items" class="anchor"></a>Setup Custom Fields for Items</h4>
-<p>Custom fields are helpful for “tagging” DFP items with metadata that can later be used filtering or reporting. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/2694303?hl=en" class="uri">https://support.google.com/dfp\_premium/answer/2694303?hl=en</a>)</p>
+<p>Custom fields are helpful for “tagging” DFP items with metadata that can later be used filtering or reporting. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/admanager/answer/2694303?hl=en" class="uri">https://support.google.com/admanager/answer/2694303?hl=en</a>)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># this creates an extra field on the CREATIVE entity type that denotes the time of </span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="co"># day that the creative typically runs. First we create the field, then populate</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="co"># with potential options since it is a dropdown field.</span></a>
@@ -161,7 +161,7 @@
 <div id="setup-custom-targeting-keys-and-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-custom-targeting-keys-and-values" class="anchor"></a>Setup Custom Targeting Keys and Values</h4>
-<p>DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp%5C_premium/answer/188092?hl=en" class="uri">https://support.google.com/dfp\_premium/answer/188092?hl=en</a>)</p>
+<p>DFP allows traffickers to create custom tags to better target line items on their site. For example, a certain section of the site or search term used by a visitor can be encoded as custom targeting keys and values that can later be used when creating orders and line items, and evaluating potential inventory. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/admanager/answer/188092?hl=en" class="uri">https://support.google.com/admanager/answer/188092?hl=en</a>)</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># create the key</span></a>
 <a class="sourceLine" id="cb4-2" title="2">unique_numb &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">100000</span>))</a>
 <a class="sourceLine" id="cb4-3" title="3">request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">keys=</span><span class="kw">list</span>(<span class="dt">name=</span><span class="kw">paste0</span>(<span class="st">'Test'</span>, unique_numb), </a>
@@ -172,7 +172,7 @@
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;         id name      displayName  type     status reportableType</span></a>
 <a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;         </span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; 1 11910782 Test64614 TestKey64614 FREEFORM ACTIVE OFF</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; 1 11915466 Test49137 TestKey49137 FREEFORM ACTIVE OFF</span></a>
 <a class="sourceLine" id="cb4-12" title="12"></a>
 <a class="sourceLine" id="cb4-13" title="13"><span class="co"># create the values</span></a>
 <a class="sourceLine" id="cb4-14" title="14">request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),</a>
@@ -184,8 +184,8 @@
 <a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt;   customTargetingKeyId           id name       displayName matchType status</span></a>
 <a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt;                  &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; 1             11910782 448122484077 TestValue1 TestValue1  EXACT     ACTIVE</span></a>
-<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; 2             11910782 448122285853 TestValue2 TestValue2  EXACT     ACTIVE</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; 1             11915466 448122937394 TestValue1 TestValue1  EXACT     ACTIVE</span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; 2             11915466 448122937592 TestValue2 TestValue2  EXACT     ACTIVE</span></a></code></pre></div>
 </div>
   </div>
 

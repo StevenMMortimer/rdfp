@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createPremiumRates(request_data)
 #' }
+
 #' @export
 dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
@@ -55,6 +56,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getPremiumRatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
@@ -80,6 +82,7 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_updatePremiumRates(request_data)
 #' }
+
 #' @export
 dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)

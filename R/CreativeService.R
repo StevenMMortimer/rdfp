@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createCreatives(request_data)
 #' }
+
 #' @export
 dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeService', root_name='createCreatives', data=request_data)
@@ -58,6 +59,7 @@ dfp_createCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeService', root_name='getCreativesByStatement', data=request_data)
@@ -83,6 +85,7 @@ dfp_getCreativesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_updateCreatives(request_data)
 #' }
+
 #' @export
 dfp_updateCreatives <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeService', root_name='updateCreatives', data=request_data)

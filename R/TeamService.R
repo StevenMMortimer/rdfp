@@ -30,6 +30,7 @@
 #'                                 teamAccessType='READ_WRITE'))
 #' result <- dfp_createTeams(request_data)
 #' }
+
 #' @export
 dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='createTeams', data=request_data)
@@ -61,6 +62,7 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getTeamsByStatement(dat)
 #' }
+
 #' @export
 dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
@@ -86,6 +88,7 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performTeamAction(request_data)
 #' }
+
 #' @export
 dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='performTeamAction', data=request_data)
@@ -111,6 +114,7 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateTeams(request_data)
 #' }
+
 #' @export
 dfp_updateTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='updateTeams', data=request_data)

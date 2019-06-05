@@ -20,6 +20,7 @@
 #' \dontrun{
 #'  res <- dfp_createCdnConfigurations(request_data)
 #' }
+
 #' @export
 dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='createCdnConfigurations', data=request_data)
@@ -50,6 +51,7 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCdnConfigurationsByStatement(dat)
 #' }
+
 #' @export
 dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='getCdnConfigurationsByStatement', data=request_data)
@@ -75,6 +77,7 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_performCdnConfigurationAction(request_data)
 #' }
+
 #' @export
 dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='performCdnConfigurationAction', data=request_data)
@@ -100,6 +103,7 @@ dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=
 #' \dontrun{
 #'  res <- dfp_updateCdnConfigurations(request_data)
 #' }
+
 #' @export
 dfp_updateCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='updateCdnConfigurations', data=request_data)

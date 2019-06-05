@@ -26,6 +26,7 @@
 #'                            roleId = rep(-1, 3))
 #' result <- dfp_createUsers(request_data)
 #' }
+
 #' @export
 dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='createUsers', data=request_data)
@@ -48,6 +49,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getAllRoles()
 #' }
+
 #' @export
 dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getAllRoles', data=NULL)
@@ -70,6 +72,7 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getCurrentUser()
 #' }
+
 #' @export
 dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
@@ -104,6 +107,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getUsersByStatement(dat)
 #' }
+
 #' @export
 dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
@@ -129,6 +133,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performUserAction(request_data)
 #' }
+
 #' @export
 dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='performUserAction', data=request_data)
@@ -154,6 +159,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateUsers(request_data)
 #' }
+
 #' @export
 dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='updateUsers', data=request_data)

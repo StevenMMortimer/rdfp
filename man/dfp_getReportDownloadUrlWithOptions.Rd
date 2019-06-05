@@ -4,7 +4,7 @@
 \alias{dfp_getReportDownloadUrlWithOptions}
 \title{getReportDownloadUrlWithOptions}
 \usage{
-dfp_getReportDownloadUrlWithOptions(request_data, as_df = TRUE,
+dfp_getReportDownloadUrlWithOptions(request_data, as_df = FALSE,
   verbose = FALSE)
 }
 \arguments{

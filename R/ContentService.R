@@ -47,6 +47,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getContentByStatement(dat)
 #' }
+
 #' @export
 dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
@@ -75,6 +76,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getContentByStatementAndCustomTargetingValue()
 #' }
+
 #' @export
 dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)

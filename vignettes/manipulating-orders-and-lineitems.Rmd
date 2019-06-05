@@ -75,7 +75,7 @@ dfp_createOrders_result <- dfp_createOrders(request_data)
 Below is an example of how to get objects by Publishers Query Language (PQL) statement.
 The statement is constructed as a list of lists that are nested to emulate
 the hierarchy of the XML to be created. The example uses the `dfp_getLineItemsByStatement`
-function from the [LineItemService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/LineItemService)
+function from the [LineItemService] (https://developers.google.com/ad-manager/api/reference/v201905/LineItemService)
 
 ```{r}
 # retrieve 3 line items that have a status of "DELIVERING"

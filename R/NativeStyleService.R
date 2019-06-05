@@ -19,6 +19,7 @@
 #' \dontrun{
 #'  res <- dfp_createNativeStyles(request_data)
 #' }
+
 #' @export
 dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='createNativeStyles', data=request_data)
@@ -49,6 +50,7 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getNativeStylesByStatement(dat)
 #' }
+
 #' @export
 dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='getNativeStylesByStatement', data=request_data)
@@ -74,6 +76,7 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_performNativeStyleAction(request_data)
 #' }
+
 #' @export
 dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='performNativeStyleAction', data=request_data)
@@ -99,6 +102,7 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_updateNativeStyles(request_data)
 #' }
+
 #' @export
 dfp_updateNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='updateNativeStyles', data=request_data)

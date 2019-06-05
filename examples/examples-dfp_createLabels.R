@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- data.frame(name="Auto - Competitive Exclusion",
 #'                            description=paste0("A label to prevent two different car ",
 #'                                               "companies from showing ads together"),

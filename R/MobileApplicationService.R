@@ -19,6 +19,7 @@
 #' \dontrun{
 #'  res <- dfp_createMobileApplications(request_data)
 #' }
+
 #' @export
 dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='createMobileApplications', data=request_data)
@@ -53,6 +54,7 @@ dfp_createMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getMobileApplicationsByStatement(dat)
 #' }
+
 #' @export
 dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='getMobileApplicationsByStatement', data=request_data)
@@ -78,6 +80,7 @@ dfp_getMobileApplicationsByStatement <- function(request_data, as_df=TRUE, verbo
 #' \dontrun{
 #'  res <- dfp_performMobileApplicationAction(request_data)
 #' }
+
 #' @export
 dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='performMobileApplicationAction', data=request_data)
@@ -103,6 +106,7 @@ dfp_performMobileApplicationAction <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_updateMobileApplications(request_data)
 #' }
+
 #' @export
 dfp_updateMobileApplications <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='MobileApplicationService', root_name='updateMobileApplications', data=request_data)

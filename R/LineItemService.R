@@ -30,6 +30,7 @@
 #' \dontrun{
 #'  res <- dfp_createLineItems(request_data)
 #' }
+
 #' @export
 dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
@@ -74,6 +75,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' filter <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 10"
 #' result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
 #' }
+
 #' @export
 dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
@@ -96,6 +98,7 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_hasCustomPacingCurve()
 #' }
+
 #' @export
 dfp_hasCustomPacingCurve <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='hasCustomPacingCurve', data=NULL)
@@ -121,6 +124,7 @@ dfp_hasCustomPacingCurve <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performLineItemAction(request_data)
 #' }
+
 #' @export
 dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
@@ -146,6 +150,7 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateLineItems(request_data)
 #' }
+
 #' @export
 dfp_updateLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)

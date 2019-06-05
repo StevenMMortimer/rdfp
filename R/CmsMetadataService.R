@@ -28,6 +28,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCmsMetadataKeysByStatement(dat)
 #' }
+
 #' @export
 dfp_getCmsMetadataKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CmsMetadataService', root_name='getCmsMetadataKeysByStatement', data=request_data)
@@ -60,6 +61,7 @@ dfp_getCmsMetadataKeysByStatement <- function(request_data, as_df=TRUE, verbose=
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCmsMetadataValuesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCmsMetadataValuesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CmsMetadataService', root_name='getCmsMetadataValuesByStatement', data=request_data)

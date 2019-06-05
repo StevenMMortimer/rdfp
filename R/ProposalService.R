@@ -22,6 +22,7 @@
 #' \dontrun{
 #'  res <- dfp_createProposals(request_data)
 #' }
+
 #' @export
 dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='createProposals', data=request_data)
@@ -51,6 +52,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getMarketplaceCommentsByStatement(dat)
 #' }
+
 #' @export
 dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
@@ -91,6 +93,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProposalsByStatement(dat)
 #' }
+
 #' @export
 dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
@@ -121,6 +124,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_performProposalAction(request_data)
 #' }
+
 #' @export
 dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
@@ -146,6 +150,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateProposals(request_data)
 #' }
+
 #' @export
 dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='updateProposals', data=request_data)

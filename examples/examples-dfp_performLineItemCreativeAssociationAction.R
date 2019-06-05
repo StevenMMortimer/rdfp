@@ -1,4 +1,4 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'  res <- dfp_performLineItemCreativeAssociationAction(request_data)
 #' }

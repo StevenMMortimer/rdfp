@@ -22,9 +22,10 @@
 #' @param verbose a boolean indicating whether to print the service URL and POSTed XML
 #' @return a \code{data.frame} or \code{list} containing all the elements of a createActivityGroupsResponse 
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'  res <- dfp_createActivityGroups(request_data)
 #' }
+
 #' @export
 dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='createActivityGroups', data=request_data)
@@ -58,6 +59,7 @@ dfp_createActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getActivityGroupsByStatement(dat)
 #' }
+
 #' @export
 dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='getActivityGroupsByStatement', data=request_data)
@@ -83,6 +85,7 @@ dfp_getActivityGroupsByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateActivityGroups(request_data)
 #' }
+
 #' @export
 dfp_updateActivityGroups <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityGroupService', root_name='updateActivityGroups', data=request_data)

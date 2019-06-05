@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createDaiAuthenticationKeys(request_data)
 #' }
+
 #' @export
 dfp_createDaiAuthenticationKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='DaiAuthenticationKeyService', root_name='createDaiAuthenticationKeys', data=request_data)
@@ -55,6 +56,7 @@ dfp_createDaiAuthenticationKeys <- function(request_data, as_df=TRUE, verbose=FA
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getDaiAuthenticationKeysByStatement(dat)
 #' }
+
 #' @export
 dfp_getDaiAuthenticationKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='DaiAuthenticationKeyService', root_name='getDaiAuthenticationKeysByStatement', data=request_data)
@@ -81,6 +83,7 @@ dfp_getDaiAuthenticationKeysByStatement <- function(request_data, as_df=TRUE, ve
 #' \dontrun{
 #'  res <- dfp_performDaiAuthenticationKeyAction(request_data)
 #' }
+
 #' @export
 dfp_performDaiAuthenticationKeyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='DaiAuthenticationKeyService', root_name='performDaiAuthenticationKeyAction', data=request_data)
@@ -106,6 +109,7 @@ dfp_performDaiAuthenticationKeyAction <- function(request_data, as_df=TRUE, verb
 #' \dontrun{
 #'  res <- dfp_updateDaiAuthenticationKeys(request_data)
 #' }
+
 #' @export
 dfp_updateDaiAuthenticationKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='DaiAuthenticationKeyService', root_name='updateDaiAuthenticationKeys', data=request_data)

@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- list(contacts=list(name="TestContact1", 
 #'                                    companyId=dfp_createCompanies_result$id, 
 #'                                    status='UNINVITED', 

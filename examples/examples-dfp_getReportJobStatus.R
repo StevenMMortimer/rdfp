@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- list(reportJob=
 #'                        list(reportQuery=
 #'                               list(dimensions='MONTH_AND_YEAR', 
@@ -17,7 +17,7 @@
 #' 
 #' # a simple while loop can keep checking a long running request until ready
 #' counter <- 0
-#' while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
+#' while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < 10){
 #'   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
 #'   Sys.sleep(3)
 #'   counter <- counter + 1

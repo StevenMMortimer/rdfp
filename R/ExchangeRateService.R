@@ -23,6 +23,7 @@
 #' \dontrun{
 #'  res <- dfp_createExchangeRates(request_data)
 #' }
+
 #' @export
 dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='createExchangeRates', data=request_data)
@@ -56,6 +57,7 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getExchangeRatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='getExchangeRatesByStatement', data=request_data)
@@ -88,6 +90,7 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #' \dontrun{
 #'  res <- dfp_performExchangeRateAction(request_data)
 #' }
+
 #' @export
 dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
@@ -113,6 +116,7 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' \dontrun{
 #'  res <- dfp_updateExchangeRates(request_data)
 #' }
+
 #' @export
 dfp_updateExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='updateExchangeRates', data=request_data)

@@ -42,6 +42,7 @@
 #'                           traffickerId=dfp_getCurrentUser()$id))
 #' dfp_createOrders_result <- dfp_createOrders(request_data)
 #' }
+
 #' @export
 dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='createOrders', data=request_data)
@@ -79,6 +80,7 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getOrdersByStatement(dat)
 #' }
+
 #' @export
 dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
@@ -104,6 +106,7 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performOrderAction(request_data)
 #' }
+
 #' @export
 dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
@@ -129,6 +132,7 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateOrders(request_data)
 #' }
+
 #' @export
 dfp_updateOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='updateOrders', data=request_data)

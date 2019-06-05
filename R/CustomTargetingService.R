@@ -27,6 +27,7 @@
 #'                                type='FREEFORM'))
 #' result <- dfp_createCustomTargetingKeys(request_data)
 #' }
+
 #' @export
 dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
@@ -60,6 +61,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #'                            matchType=rep('EXACT', 2))
 #' result <- dfp_createCustomTargetingValues(request_data)
 #' }
+
 #' @export
 dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
@@ -93,6 +95,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCustomTargetingKeysByStatement(dat)
 #' }
+
 #' @export
 dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
@@ -126,6 +129,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCustomTargetingValuesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
@@ -151,6 +155,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' \dontrun{
 #'  res <- dfp_performCustomTargetingKeyAction(request_data)
 #' }
+
 #' @export
 dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
@@ -176,6 +181,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_performCustomTargetingValueAction(request_data)
 #' }
+
 #' @export
 dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
@@ -201,6 +207,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' \dontrun{
 #'  res <- dfp_updateCustomTargetingKeys(request_data)
 #' }
+
 #' @export
 dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
@@ -226,6 +233,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' \dontrun{
 #'  res <- dfp_updateCustomTargetingValues(request_data)
 #' }
+
 #' @export
 dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)

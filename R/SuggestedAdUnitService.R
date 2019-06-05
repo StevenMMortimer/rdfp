@@ -41,6 +41,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getSuggestedAdUnitsByStatement(dat)
 #' }
+
 #' @export
 dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='SuggestedAdUnitService', root_name='getSuggestedAdUnitsByStatement', data=request_data)
@@ -70,6 +71,7 @@ dfp_getSuggestedAdUnitsByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performSuggestedAdUnitAction(request_data)
 #' }
+
 #' @export
 dfp_performSuggestedAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='SuggestedAdUnitService', root_name='performSuggestedAdUnitAction', data=request_data)

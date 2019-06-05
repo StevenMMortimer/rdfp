@@ -4,7 +4,7 @@
 \alias{dfp_getReportDownloadURL}
 \title{ReportService}
 \usage{
-dfp_getReportDownloadURL(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getReportDownloadURL(request_data, as_df = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements

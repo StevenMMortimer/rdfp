@@ -1,5 +1,5 @@
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' request_data <- data.frame(name='Timing',
 #'                            description='The time that this creative runs.', 
 #'                            entityType='CREATIVE',
