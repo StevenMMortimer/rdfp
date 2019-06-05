@@ -1,4 +1,4 @@
-## rdfp 0.1.4
+## rdfp 0.1.4 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.4)
 
 In this version of the package we have upgraded from `v201811` to `v201905`. Please 
 read the announced changes on Google's website since they will be reflected in the 
